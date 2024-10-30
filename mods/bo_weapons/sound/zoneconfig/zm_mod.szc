@@ -1,0 +1,67 @@
+{
+ "Name" : "zm_mod",
+ "Parent" : "",
+ "IsStandalone" : true,
+ "IsShipped" : true,
+ "NoStreamBank" : false,
+ "OptimizePoint" : false,
+ "MapFile" : "",
+ "Sources" : [
+{
+ "Type" : "ALIAS",
+ "Name" : "user_aliases",
+ "Filename" : "user_aliases.csv",
+ "Specs" : []
+},
+{
+    "Type" : "ALIAS",
+    "Name" : "ray_phdflopper",
+    "Filename" : "ray_phdflopper.csv",
+    "Specs" : [ ]
+},
+{
+ "Type" : "ALIAS",
+ "Name" : "claymore",
+ "Filename" : "claymore.csv",
+ "Specs" : [ ]
+},
+{
+ "Type" : "ALIAS",
+ "Name" : "t7_weapons_dlc",
+ "Filename" : "t7_weapons_dlc.csv",
+ "Specs" : [ ] 
+},
+{
+ "Type" : "ALIAS",
+ "Name" : "aliases_shadowman_announcer",
+ "Filename" : "aliases_shadowman_announcer.csv",
+ "Specs" : [ ] 
+},
+{
+			"Type" : "ALIAS",
+			"Name" : "moon_richtofen_ann",
+			"Filename" : "moon_richtofen_ann.csv",
+ 			"Specs" : [ ] 
+},
+{
+	"Type" : "ALIAS",
+	"Name" : "ori_sam_announcer",
+	"Filename" : "ori_sam_announcer.csv",
+	"Specs" : [ ] 
+},
+{
+ "Type" : "ALIAS",
+ "Name" : "aliases_drmonty_announcer",
+ "Filename" : "aliases_drmonty_announcer.csv",
+ "Specs" : [ ] 
+},
+{
+	"Type" : "ALIAS",
+	"Name" : "custom_hellhound",
+	"Filename" : "custom_hellhound.csv",
+	"Specs" : [ ]
+}
+],
+ "Ducks" : [ ] ,
+ "MusicFiles" : [ "zm_mod.mus" ] 
+}
