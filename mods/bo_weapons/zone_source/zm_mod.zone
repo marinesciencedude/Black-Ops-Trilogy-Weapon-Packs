@@ -31,6 +31,10 @@ scriptparsetree,scripts/zm/_zm_powerup_random_weapon.gsc
 scriptparsetree,scripts/zm/_zm_powerup_random_weapon.csc
 
 scriptparsetree,scripts/zm/_zm_pack_a_punch.gsc
+scriptparsetree,scripts/zm/bgbs/_zm_bgb_fatal_contraption.gsc
+scriptparsetree,scripts/zm/bgbs/_zm_bgb_im_feelin_lucky.gsc
+scriptparsetree,scripts/zm/bgbs/_zm_bgb_on_the_house.gsc
+scriptparsetree,scripts/zm/bgbs/_zm_bgb_reign_drops.gsc
 
 scriptparsetree,scripts/zm/_zm_weap_shrink_ray.gsc
 
@@ -111,9 +115,7 @@ scriptparsetree,scripts/zm/zm_sumpf_perks.gsc
 rawfile,ui/uieditor/menus/hud/hud_zm_mapname.lua
 rawfile,ui/uieditor/widgets/hud/zm_perks/ZMPerksContainerFactory.lua
 rawfile,ui/uieditor/widgets/hud/zm_perks/ZMPerksContainer.lua
-//rawfile,ui/uieditor/widgets/StartMenu/CustomGameOptions.lua
 rawfile,ui/uieditor/widgets/StartMenu/StartMenu_GameOptions_ZM.lua
-//rawfile,ui/uieditor/menus/hud/HUD_ZM_require.lua
 
 material,mc/mtl_t7_camo_zmbhd_bo1_pap
 image,i_t7_camo_zmbhd_bo1_pap_c
@@ -364,6 +366,9 @@ weapon,t5_spectre_up
 weapon,t5_stakeout
 weapon,t5_stakeout_up
 xmodel,wallbuy_stakeout
+//image,i_t5_weapon_ithaca_r
+//material,mc/mtl_t5_weapon_ithaca
+//material,mc/mtl_t5_weapon_ithaca_detail
 
 //Improved Ray Gun
 weaponfull,ray_gun_zm
@@ -389,18 +394,16 @@ material,claymore_hud
 material,claymore_hud_inactive
 fx,custom/weapon/fx_claymore_laser
 xmodel,wallbuy_claymore
-scriptparsetree,scripts/zm/_zm_sidequests.gsc
 scriptparsetree,scripts/zm/zm_temple_ffotd.gsc
 
-scriptparsetree,scripts/zm/_zm_sidequests.gsc
-
 scriptparsetree,scripts/zm/zm_cosmodrome_ffotd.gsc
-//scriptparsetree,scripts/zm/zm_moon_ffotd.gsc
 
 weapon,t5_ak47
 weapon,t5_ak47_up_zm
 weapon,t5_ak47_flamethrower_zm
 weapon,t5_ak47_up_alt
+//image,i_t5_weapon_mtl_ak47_gunset_r
+//material,mc/t5_weapon_mtl_ak47_gunset
 
 weapon,t5_uzi
 weapon,t5_uzi_up
@@ -418,9 +421,7 @@ weapon,knife_ballistic_sickle
 weapon,knife_ballistic_sickle_upgraded
 scriptparsetree,scripts/zm/_zm_weap_ballistic_knife.gsc
 scriptparsetree,scripts/zm/_zm_melee_weapon.gsc
-//scriptparsetree,scripts/zm/_zm_weap_crossbow.gsc
-scriptparsetree,scripts/zm/_explosive_bolt.gsc
-scriptparsetree,scripts/zm/_explosive_bolt.csc
+scriptparsetree,scripts/zm/_zm_weap_crossbow.gsc
 
 weapon,t5_stoner63
 weapon,t5_stoner63_up
@@ -434,7 +435,10 @@ weapon,t5_enfield_up_zm
 weapon,t5_enfield_shotty_zm
 
 weapon,sticky_grenade_zm
-fx,weapon/fx_equip_light_os
+
+//weaponfull,scavenger_zm
+//weaponfull,scavenger_up_zm
+//scriptparsetree,scripts/zm/lednors_craftables/lednors_scavenger_weapon.gsc
 
 weapon,raygun_mark_ii_zm
 weapon,raygun_mark_ii_upgraded_zm
@@ -525,8 +529,6 @@ weaponfull,t4r_ppsh_etch_upgraded_zm
 
 //weapon,t9_ppsh41_drum
 //weapon,t9_ppsh41_drum_up
-
-sound,zm_mod
 
 image,i_t7_zm_chalk_buy_arak_c
 image,i_t7_zm_chalk_buy_cqw_c
@@ -628,3 +630,50 @@ fx,frost_iceforge/blue_zombie_eyes.efx
 fx,frost_iceforge/purple_zombie_eyes.efx
 fx,frost_iceforge/pink_zombie_eyes.efx
 fx,frost_iceforge/white_zombie_eyes.efx
+
+scriptparsetree,scripts/zm/_zm_counter.gsc
+
+scriptparsetree,scripts/zm/bo4_full_ammo.gsc
+scriptparsetree,scripts/zm/better_nuke.gsc
+scriptparsetree,scripts/zm/bo4_carpenter.gsc
+
+// NSZ Zombie Money 
+scriptparsetree,scripts/_NSZ/nsz_powerup_money.gsc
+scriptparsetree,scripts/_NSZ/nsz_powerup_money.csc
+xmodel,powerup_money
+
+// NSZ Bottomless Clip
+scriptparsetree,scripts/_NSZ/nsz_powerup_bottomless_clip.gsc
+scriptparsetree,scripts/_NSZ/nsz_powerup_bottomless_clip.csc
+xmodel,bottomless_clip
+material,bottomless_clip
+
+// NSZ Zombie Blood Powerup
+scriptparsetree,scripts/_NSZ/nsz_powerup_zombie_blood.gsc
+scriptparsetree,scripts/_NSZ/nsz_powerup_zombie_blood.csc
+xmodel,zombie_blood
+material,zombie_blood
+
+//Custom Powerups By ZoekMeMaar
+scriptparsetree,scripts/_ZoekMeMaar/custom_powerup_free_packapunch_with_time.gsc
+scriptparsetree,scripts/_ZoekMeMaar/custom_powerup_free_packapunch_with_time.csc
+xmodel,free_packapunch
+
+
+//timed gameplay
+
+scriptparsetree,scripts/zm/ugxmods_timedgp.gsc
+
+
+
+scriptparsetree,scripts/zm/_zm_weap_riotshield.csc
+scriptparsetree,scripts/zm/_zm_weap_riotshield.gsc
+
+scriptparsetree,scripts/zm/zm_damagefeedback.gsc
+
+//Custom Sound
+sound,zm_mod
+
+//Frost Iceforge's BO4 Carpenter
+scriptparsetree,scripts/zm/bo4_carpenter.gsc
+scriptparsetree,scripts/zm/_zm_powerup_carpenter.gsc

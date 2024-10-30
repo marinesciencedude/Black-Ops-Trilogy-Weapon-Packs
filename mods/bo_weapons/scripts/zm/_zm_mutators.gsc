@@ -19,7 +19,6 @@
 #using scripts\zm\_zm_weapons;
 #using scripts\shared\aat_shared;
 #using scripts\zm\_zm_powerups;
-#using scripts\zm\_zm_audio;
 
 // Inserts
 #insert scripts\shared\shared.gsh;
@@ -124,7 +123,6 @@ function private register_mutators()
 	register_mutator("MutatorSettings_DoubleTap", "mutator_doubletap", undefined, &doubletap);
 	register_mutator("MutatorSettings_DoubleTapExistence", "mutator_doubletap_existence", undefined, &doubletap_existence);
 	register_mutator("MutatorSettings_DeadshotExistence", "mutator_deadshot_existence", undefined, &deadshot_existence);
-	//register_mutator("MutatorSettings_CharacterVoicelines", "mutator_character_voicelines", undefined, &character_voicelines);
 }
 
 function private double_packapunch(dvar_value)
@@ -510,14 +508,6 @@ function camo_weaponized_115(dvar_value)
 			level.pack_a_punch_camo_list[level.pack_a_punch_camo_list.size] = 28;
 	}
 }
-
-/*function character_voicelines(dvar_value)
-{
-	if(dvar_value == 3)
-	{
-		
-	}
-}*/
 
 function private nullfunc()
 {

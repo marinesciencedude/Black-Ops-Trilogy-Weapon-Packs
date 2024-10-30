@@ -41,4 +41,4 @@ t5_stakeout,t5_stakeout_up,,1500,shotgun,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,shot
 t9_crossbow,t9_crossbow_up,,4000,,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,special,TRUE,,
 t9_ballistic_knife,t9_ballistic_knife_up,,2000,,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,special,TRUE,,
 knife_ballistic_bowie,knife_ballistic_bowie_upgraded,,2000,,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,special,TRUE,,
-s2_sten,s2_sten_up,,2000,smg,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,smg,,,
+s2_sten,s2_sten_up,,2000,smg,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,smg,,,

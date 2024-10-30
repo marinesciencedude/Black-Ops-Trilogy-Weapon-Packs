@@ -3,9 +3,10 @@
 #using scripts\shared\callbacks_shared;
 #using scripts\shared\system_shared;
 #using scripts\zm\_zm_mod;
+//#using scripts\zm\_zm_powerups;
+#using scripts\shared\util_shared;
 #using scripts\zm\_zm_mutators;
 #using scripts\shared\flag_shared;
-#using scripts\shared\util_shared;
 #using scripts\shared\laststand_shared;
 
 #insert scripts\shared\shared.gsh;
@@ -35,8 +36,8 @@ function init()
 	SetDvar("r_lodbiasrigid", "-1000");
 	SetDvar("r_modellodbias", "10");
 	SetDvar("r_dof_enable", "0");
-
-	level.game_began = false;
+	if(GetDvarString("mapname") != "zm_coast") //breaks George A. Romero
+		level.game_began = false;
 }
 
 function on_player_connect()
@@ -75,20 +76,20 @@ function disableSlide()
 	}
 }
 
+
 function on_player_spawned()
 {
 
-	if(!level.game_began) 
+	if(!level.game_began || GetDvarString("mapname") == "zm_coast") 
 	{
     	if( self isHost() )
     	{
     		self thread zm_mod::load_tf_options();	
 			
 			self thread watch_for_pause();
+
     	}	
 	}
-	
-	
 }
 
 function DebugFuncTest() {

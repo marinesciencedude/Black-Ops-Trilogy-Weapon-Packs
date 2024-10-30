@@ -12,7 +12,13 @@
  "Name" : "user_aliases",
  "Filename" : "user_aliases.csv",
  "Specs" : []
-},
+}, 
+        { 
+			"Type" : "ALIAS", 
+			"Name" : "zm_mod",
+			"Filename" : "zm_mod.csv", 
+			"Specs" : [ ] 
+        },
 {
     "Type" : "ALIAS",
     "Name" : "ray_phdflopper",

@@ -4,6 +4,7 @@ require("ui.uieditor.actions_helper")
 require("ui.t6.lobby.lobbymenubuttons_og")
 require("ui.scobalula.frontend.menus.mutators_menu_data")
 require("ui.scobalula.frontend.menus.mutators_menu")
+--require( "ui.uieditor.widgets.ZM.MatchSettings.ChangeZMGameMode" )
 
 CoD.LobbyButtons.ZM_OPTIONS_BUTTON =
 {
@@ -19,3 +20,32 @@ CoD.LobbyButtons.ZM_OPTIONS_BUTTON =
 	customId = "btnMutators",
 	starterPack = CoD.LobbyButtons.STARTERPACK_UPGRADE
 }
+
+CoD.LobbyButtons.ZM_SERVER_SETTINGS = {stringRef = "TF'S ZOMBIE OPTIONS", action = OpenServerSettings, customId = "btnServerSettings", starterPack = CoD.LobbyButtons.STARTERPACK_UPGRADE}
+
+CoD.LobbyButtons.ZM_TFOPTIONS = {stringRef = "TF'S ZOMBIE OPTIONS", action = OpenServerSettings, param = "ZMLobbyOnlineCustomGame", customId = "btnTFOptions", starterPack = CoD.LobbyButtons.STARTERPACK_UPGRADE}
+
+
+CoD.LobbyBase.OpenServerSettings = function (arg0, arg1)
+	CoD.LobbyBase.SetLeaderActivity(arg1, CoD.LobbyBase.LeaderActivity.EDITING_GAME_RULES)
+	
+	LUI.OverrideFunction_CallOriginalFirst(OpenOverlay(arg0, "TFOptions", arg1), "close", function ()
+	
+		CoD.LobbyBase.ResetLeaderActivity(arg1)
+	end)
+end
+
+--CoD.LobbyButtons.ZM_CHANGE_GAME_MODE =
+--{
+--	stringRef = "CHANGE GAME MODE",
+--	action =
+--	function(arg0, arg1, arg2, arg3, arg4)
+--		CoD.LobbyBase.SetLeaderActivity(arg2, CoD.LobbyBase.LeaderActivity.EDITING_GAME_RULES)
+--		LUI.OverrideFunction_CallOriginalFirst(OpenOverlay(arg0, "ChangeGameMode", arg2), "close",
+--		function()
+--			CoD.LobbyBase.ResetLeaderActivity(arg2)
+--		end)
+--	end,
+--	customId = "btnZMChangeGameMode",
+--	starterPack = CoD.LobbyButtons.STARTERPACK_UPGRADE
+--}

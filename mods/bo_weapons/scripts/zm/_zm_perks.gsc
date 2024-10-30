@@ -1477,6 +1477,7 @@ function perk_machine_spawn_init()
 		n_random_perks_assigned = 0;
 	}
 
+	mule_kick = 0;
 	// Now spawn perk machines
 	foreach( s_spawn_pos in a_s_spawn_pos )
 	{
@@ -1487,6 +1488,16 @@ function perk_machine_spawn_init()
 		
 		if(GetDvarInt("mutator_doubletap") == 1 && perk == PERK_DOUBLETAP2)
 			perk = "specialty_rof";
+		
+		/*if(GetDvarInt("mutator_shinonuma_perk") == 1 && perk == PERK_QUICK_REVIVE && GetDvarString("mapname") == "zm_sumpf")
+		{
+			perk = "specialty_additionalprimaryweapon";
+			mule_kick = 1;
+		}
+	
+		if(mule_kick == 1 && perk == PERK_ADDITIONAL_PRIMARY_WEAPON)
+			perk = PERK_QUICK_REVIVE;*/
+			
 			
 		if(isdefined(perk) && isdefined(s_spawn_pos.model))
 		{

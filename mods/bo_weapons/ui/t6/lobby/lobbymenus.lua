@@ -546,12 +546,14 @@ function CoD.LobbyMenus.ZMButtonsOnline(InstanceRef, ButtonList, IsHost)
 	if IsHost == 1.000000 then
 		AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_SOLO_GAME)
 		AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_CUSTOM_GAMES)
+		--AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_CHANGE_GAME_MODE)
 		SetLastButtonInGroup(ButtonList)
 	end
 	AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_BUBBLEGUM_BUFFS)
 
 	if IsHost == 1.000000 then
 		AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_OPTIONS_BUTTON)
+		AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_TFOPTIONS)
 	end
 end
 
@@ -560,11 +562,16 @@ function CoD.LobbyMenus.ZMButtonsPublicGame(InstanceRef, ButtonList)
 		AddSmallButton(InstanceRef, ButtonList, CoD.LobbyButtons.QUIT)
 		return
 	end
+	
 	AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_READY_UP)
+	--if IsHost == 1.000000 then
+		--AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_CHANGE_GAME_MODE)
+	--end
 	AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_BUBBLEGUM_BUFFS)
 
 	if IsHost == 1.000000 then
 		AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_OPTIONS_BUTTON)
+		AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_TFOPTIONS)
 	end
 end
 
@@ -576,6 +583,7 @@ function CoD.LobbyMenus.ZMButtonsCustomGame(InstanceRef, ButtonList, IsHost)
 	if IsHost == 1.000000 then
 		AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_START_CUSTOM_GAME)
 		AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_CHANGE_MAP)
+		--AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_CHANGE_GAME_MODE)
 		SetLastButtonInGroup(ButtonList)
 		AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_CHANGE_RANKED_SETTTINGS)
 		if CoD.isPC then
@@ -589,6 +597,7 @@ function CoD.LobbyMenus.ZMButtonsCustomGame(InstanceRef, ButtonList, IsHost)
 
 	if IsHost == 1.000000 then
 		AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_OPTIONS_BUTTON)
+		AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_TFOPTIONS)
 	end
 end
 
@@ -600,12 +609,14 @@ function CoD.LobbyMenus.ZMButtonsLAN(InstanceRef, ButtonList, IsHost)
 	if IsHost == 1.000000 then
 		AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_START_LAN_GAME)
 		AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_CHANGE_MAP)
+		--AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_CHANGE_GAME_MODE)
 		SetLastButtonInGroup(ButtonList)
 	end
 	AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_BUBBLEGUM_BUFFS)
 
 	if IsHost == 1.000000 then
 		AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_OPTIONS_BUTTON)
+		AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_TFOPTIONS)
 	end
 end
 

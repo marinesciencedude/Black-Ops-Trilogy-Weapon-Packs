@@ -358,18 +358,6 @@ function earlyExplode()
 		}
 	}
 	
-	//Setup for spikemore plug hole easter egg step
-	if(GetDvarString("mapname") == "zm_temple")
-	{
-		ents = GetEntArray("trigger_damage", "targetname");
-		for(i = 0; ents.size; i++)
-		{
-			if(DistanceSquared(ents[i].origin, self.origin) < 200 * 200)
-				ents[i] notify("spiked", self.owner);
-				//ents[i] doDamage(666, self.origin, self.owner, self, "MOD_EXPLOSIVE", undefined, getweapon("claymore"));
-		}
-	}
-	
 	playsoundatposition("claymore_explode", self.origin);
 	self thread delete_claymore();
 }

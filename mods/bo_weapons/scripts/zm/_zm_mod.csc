@@ -9,11 +9,11 @@
 
 #using scripts\zm\_zm_weapons;
 #using scripts\zm\_zm_powerups;
-#using scripts\zm\_zm_powerup_random_weapon;
 
 #insert scripts\shared\shared.gsh;
 #insert scripts\shared\version.gsh;
 #insert scripts\zm\_zm_mutators.gsh;
+
 
 #namespace zm_mod;
 
