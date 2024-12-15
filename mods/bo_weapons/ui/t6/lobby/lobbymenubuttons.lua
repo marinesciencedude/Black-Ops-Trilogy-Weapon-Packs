@@ -19,3 +19,17 @@ CoD.LobbyButtons.ZM_OPTIONS_BUTTON =
 	customId = "btnMutators",
 	starterPack = CoD.LobbyButtons.STARTERPACK_UPGRADE
 }
+
+CoD.LobbyButtons.ZM_SERVER_SETTINGS = {stringRef = "TF'S ZOMBIE OPTIONS", action = OpenServerSettings, customId = "btnServerSettings", starterPack = CoD.LobbyButtons.STARTERPACK_UPGRADE}
+
+CoD.LobbyButtons.ZM_TFOPTIONS = {stringRef = "TF'S ZOMBIE OPTIONS", action = OpenServerSettings, param = "ZMLobbyOnlineCustomGame", customId = "btnTFOptions", starterPack = CoD.LobbyButtons.STARTERPACK_UPGRADE}
+
+
+CoD.LobbyBase.OpenServerSettings = function (arg0, arg1)
+	CoD.LobbyBase.SetLeaderActivity(arg1, CoD.LobbyBase.LeaderActivity.EDITING_GAME_RULES)
+
+	LUI.OverrideFunction_CallOriginalFirst(OpenOverlay(arg0, "TFOptions", arg1), "close", function ()
+
+		CoD.LobbyBase.ResetLeaderActivity(arg1)
+	end)
+end
