@@ -47,6 +47,9 @@ It's advised to make a back-up of wpn_t7_zmb_weapons.gdt, black_ops_3_fx.gdt, si
 * GCP, Kingslayer, Kyle, Lilrifa, Jarik, Scobalula, DTZxPorter T5_HUD: https://discord.com/channels/230615005194616834/233220803439755264/1380942431784145010
 * GCPeinhardt's Winter's Howl: https://discord.com/channels/230615005194616834/233220803439755264/1328900707969142798
 
+Required for TF's Zombie Options:
+* natesmithzombies's Zombie Money, Bottomless Clip, Zombie Blood Powerups; ZoekMeMaar's Free Pack a Punch Powerup: https://forum.modme.co/wiki/threads/2831.html (ignore script files, these are installed from this repo)
+
 Then install all files from this repo into your Black Ops III installation apart from the folder chalk_drawing_models, which is for reference purposes only
 
 ## Credits
