@@ -29,6 +29,9 @@ Install *all* of these assets first, since files from this repo are meant to ove
 * emptyFXIW.efx file from WETEGG's Infinite Warfare Perk Ports: https://www.devraw.net/releases/infinite-warfare-perk-ports
 * Rayjiun's black-and-white visionset: https://discord.com/channels/230615005194616834/230616047613378560/1128724861666218046
 
+Required for TF's Zombie Options:
+* natesmithzombies's Zombie Money, Bottomless Clip, Zombie Blood Powerups; ZoekMeMaar's Free Pack a Punch Powerup: https://forum.modme.co/wiki/threads/2831.html (ignore script files, these are installed from this repo)
+
 Then install all files from this repo into your Black Ops III installation apart from the folder chalk_drawing_models, which is for reference purposes only
 
 ## Credits
