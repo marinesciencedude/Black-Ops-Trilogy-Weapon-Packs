@@ -34,6 +34,9 @@ It's advised to make a back-up of wpn_t7_zmb_weapons.gdt, since this will be rep
 * ai_zombie_spets_roll_ and ai_zombie_spets_sidestep_left_ .xanim files (xanim_export\black_ops_3\zombie) from Harrybo21's New BT Stuff v3.0.0: https://www.devraw.net/releases/bt-stuff-presets
 * MikeyRay's Customizable PHD Flopper: https://forum.modme.co/wiki/threads/3537.html
 
+Required for TF's Zombie Options:
+* natesmithzombies's Zombie Money, Bottomless Clip, Zombie Blood Powerups; ZoekMeMaar's Free Pack a Punch Powerup: https://forum.modme.co/wiki/threads/2831.html (ignore script files, these are installed from this repo)
+
 Then install all files from this repo into your Black Ops III installation apart from the folder chalk_drawing_models, which is for reference purposes only
 
 ## Credits
