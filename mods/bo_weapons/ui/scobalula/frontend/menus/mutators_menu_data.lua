@@ -372,7 +372,7 @@ function (arg0, arg1, arg2, arg3, arg4)
 		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Health Difficulty",
-			"BO III has 3-hit-down system, All other settings are 2-hit-down.\nRecruit has the longest delay before health regeneration, Hardened/Veteran has the shortest delay\nVeteran shows the critically injured overlay at 50% health (i.e. after a single hit pre-Juggernog)",
+			"BO III has 3-hit-down system, All other settings are 2-hit-down. THIS HEALTH CHANGE IS OVERRIDEN BY TF'S ZOMBIE OPTIONS\nRecruit has the longest delay before health regeneration, Hardened/Veteran has the shortest delay\nVeteran shows the critically injured overlay at 50% health (i.e. after a single hit pre-Juggernog)",
 			"MutatorSettings_HealthDifficulty",
 			"flagDecayTime",
 			--BuildStringSettings({"BO III", "Recruit", "Regular", "Hardened", "Veteran"}, "BO III") ),
