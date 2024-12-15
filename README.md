@@ -35,6 +35,9 @@ It's advised to make a back-up of wpn_t7_zmb_weapons.gdt, since this will be rep
 * MikeyRay's Customizable PHD Flopper: https://forum.modme.co/wiki/threads/3537.html
 * Pmr360's Black Ops 1/4 - Revive animation: https://www.devraw.net/approved-assets/pmr360/black-ops-1%2F4---revive-animation
 
+Required for TF's Zombie Options:
+* natesmithzombies's Zombie Money, Bottomless Clip, Zombie Blood Powerups; ZoekMeMaar's Free Pack a Punch Powerup: https://forum.modme.co/wiki/threads/2831.html (ignore script files, these are installed from this repo)
+
 Then install all files from this repo into your Black Ops III installation apart from the folder chalk_drawing_models, which is for reference purposes only
 
 ## Credits
