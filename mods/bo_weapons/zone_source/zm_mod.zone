@@ -418,9 +418,8 @@ weapon,knife_ballistic_sickle
 weapon,knife_ballistic_sickle_upgraded
 scriptparsetree,scripts/zm/_zm_weap_ballistic_knife.gsc
 scriptparsetree,scripts/zm/_zm_melee_weapon.gsc
-//scriptparsetree,scripts/zm/_zm_weap_crossbow.gsc
-scriptparsetree,scripts/zm/_explosive_bolt.gsc
-scriptparsetree,scripts/zm/_explosive_bolt.csc
+scriptparsetree,scripts/zm/crossbow_bolt.gsc
+scriptparsetree,scripts/zm/crossbow_bolt.csc
 
 weapon,t5_stoner63
 weapon,t5_stoner63_up
@@ -434,7 +433,6 @@ weapon,t5_enfield_up_zm
 weapon,t5_enfield_shotty_zm
 
 weapon,sticky_grenade_zm
-fx,weapon/fx_equip_light_os
 
 weapon,raygun_mark_ii_zm
 weapon,raygun_mark_ii_upgraded_zm

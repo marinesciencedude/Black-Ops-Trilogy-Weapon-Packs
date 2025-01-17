@@ -47,6 +47,6 @@ Then install all files from this repo into your Black Ops III installation apart
 * Scobabula's [HydraX](https://github.com/Scobalula/HydraX) for general asset decompilation, especially map _weapons.csv files
 * [Birdman's XModel Tools For Blender](https://github.com/Wast-3/birdmans-xmodel-tools-for-blender)
 * Scobalula's [Bo3Mutators](https://github.com/Scobalula/Bo3Mutators) for options menu set-up, and Serious for pointing this out to me
-* MikeyRay, Humphrey, MotoLegacy, JBird632 for [Customisable PhD Flopper](https://web.archive.org/web/20240206031305/https://t7wiki.com/en/guides/customizable-phd-flopper) [NOTE: site is broken and there no working archive exists]
 * Logical Edits for [Custom Perk Icons set-up](https://www.youtube.com/watch?v=m_HqGZy0afs&feature=youtu.be)
 * TescoFresco for [TF's Zombie Options](https://github.com/tescfresc/TFs-Zombie-Options)
+* Harrybo21 for crossbow bolt FX and PaP 'monkey bomb' set-up from Blundergat Weapon Pack: https://www.devraw.net/releases/blundergat-weapon-pack
