@@ -2349,7 +2349,7 @@
 		"backlightScatterColor" "1 1 1 1"
 		"bulletClip" "0"
 		"camoDetailMap" ""
-		"camoMaskMap" "i_weapon_commando_main_r"
+		"camoMaskMap" "$reveal"
 		"canShootClip" "0"
 		"caulk" "0"
 		"causticMap" ""

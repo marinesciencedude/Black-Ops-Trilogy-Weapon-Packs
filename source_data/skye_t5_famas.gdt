@@ -1943,7 +1943,7 @@
 		"backlightScatterColor" "1 1 1 1"
 		"bulletClip" "0"
 		"camoDetailMap" ""
-		"camoMaskMap" "i_t5_weapon_famas_r"
+		"camoMaskMap" "$reveal"
 		"canShootClip" "0"
 		"caulk" "0"
 		"causticMap" ""
