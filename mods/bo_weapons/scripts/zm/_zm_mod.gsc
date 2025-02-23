@@ -123,11 +123,22 @@ function apply_choices() {
 		}
 	}
 	
-	if(GetDvarInt("mutator_skorpion") == MUTATOR_OFFON_ON)
+	switch(GetDvarInt("mutator_skorpion"))
 	{
-		zm_utility::include_weapon( "t5_skorpion", true );
-		zm_utility::include_weapon( "t5_skorpion_rdw_up", false );
-		zm_weapons::add_zombie_weapon( "t5_skorpion", "t5_skorpion_rdw_up", "", 1100, "smg", "", 500, "", false, "" );
+	case 2:
+		{
+			zm_utility::include_weapon( "t5_skorpion", true );
+			zm_utility::include_weapon( "t5_skorpion_rdw_up", false );
+			zm_weapons::add_zombie_weapon( "t5_skorpion", "t5_skorpion_rdw_up", "", 1100, "smg", "", 500, "", false, "" );
+			break;
+		}
+	case 3:
+		{
+			zm_utility::include_weapon( "t5_skorpion_alt", true );
+			zm_utility::include_weapon( "t5_skorpion_alt_rdw_up", false );
+			zm_weapons::add_zombie_weapon( "t5_skorpion_alt", "t5_skorpion_alt_rdw_up", "", 1100, "smg", "", 500, "", false, "" );
+			break;
+		}
 	}
 	
 	if(GetDvarInt("mutator_stoner63") == MUTATOR_OFFON_ON)
@@ -388,11 +399,47 @@ function apply_choices() {
 		zm_weapons::add_zombie_weapon( "shotgun_energy", "shotgun_energy_upgraded", "", 5000, "shotgun", "", 500, "", false, "quickdraw stalker holo" );
 	}*/
 	
-	if(GetDvarInt("mutator_enfield") == MUTATOR_OFFON_ON)
+	switch(GetDvarInt("mutator_enfield"))
 	{
-		zm_utility::include_weapon( "t5_enfield", true );
-		zm_utility::include_weapon( "t5_enfield_up", false );
-		zm_weapons::add_zombie_weapon( "t5_enfield", "t5_enfield_up", "", 1250, "rifle", "", 500, "", false, "" );
+	case 2:
+		{
+			zm_utility::include_weapon( "t5_enfield_alt", true );
+			zm_utility::include_weapon( "t5_enfield_alt_up", false );
+			zm_weapons::add_zombie_weapon( "t5_enfield_alt", "t5_enfield_alt_up", "", 1250, "rifle", "", 500, "", false, "" );
+			break;
+		}
+	case 3:
+		{
+			zm_utility::include_weapon( "t5_enfield", true );
+			zm_utility::include_weapon( "t5_enfield_up", false );
+			zm_weapons::add_zombie_weapon( "t5_enfield", "t5_enfield_up", "", 1250, "rifle", "", 500, "", false, "" );
+			break;
+		}
+	}
+	
+	switch(GetDvarInt("mutator_mac11"))
+	{
+	case 2:
+		{
+			zm_utility::include_weapon( "t5_mac11_alt", true );
+			zm_utility::include_weapon( "t5_mac11_alt_up", false );
+			zm_weapons::add_zombie_weapon( "t5_mac11_alt", "t5_mac11_alt_up", "", 900, "smg", "", 500, "", false, "" );
+			break;
+		}
+	case 3:
+		{
+			zm_utility::include_weapon( "t5_mac11", true );
+			zm_utility::include_weapon( "t5_mac11_up", false );
+			zm_weapons::add_zombie_weapon( "t5_mac11", "t5_mac11_up", "", 900, "smg", "", 500, "", false, "" );
+			break;
+		}
+	}
+	
+	if(GetDvarInt("mutator_m60") == MUTATOR_OFFON_ON)
+	{
+		zm_utility::include_weapon( "t5_m60e3", true );
+		zm_utility::include_weapon( "t5_m60e3_up", false );
+		zm_weapons::add_zombie_weapon( "t5_m60e3", "t5_m60e3_up", "", 2750, "lmg", "", 500, "", false, "" );
 	}
 	
 	if(GetDvarInt("mutator_wa2000") == MUTATOR_OFFON_ON && GetDvarInt("mutator_scopeads") == MUTATOR_OFFON_ON)

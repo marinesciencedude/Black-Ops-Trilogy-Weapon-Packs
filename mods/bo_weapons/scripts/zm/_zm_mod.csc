@@ -89,10 +89,20 @@ function applyChoices() {
 		}
 	}
 	
-	if(GetDvarInt("mutator_skorpion") == MUTATOR_OFFON_ON)
+	switch(GetDvarInt("mutator_skorpion"))
 	{
-		zm_weapons::include_weapon( "t5_skorpion", true, 1100, 500);
-		zm_weapons::include_upgraded_weapon( "t5_skorpion", "t5_skorpion_rdw_up", false, 1100, 500);
+	case 2:
+		{
+			zm_weapons::include_weapon( "t5_skorpion", true, 1100, 500);
+			zm_weapons::include_upgraded_weapon( "t5_skorpion", "t5_skorpion_rdw_up", false, 1100, 500);
+			break;
+		}
+	case 3:
+		{
+			zm_weapons::include_weapon( "t5_skorpion_alt", true, 1100, 500);
+			zm_weapons::include_upgraded_weapon( "t5_skorpion_alt", "t5_skorpion_alt_rdw_up", false, 1100, 500);
+			break;
+		}
 	}
 	
 	if(GetDvarInt("mutator_stoner63") == MUTATOR_OFFON_ON)
@@ -323,10 +333,42 @@ function applyChoices() {
 	if(GetDvarInt("mutator_ballistic_knife") == MUTATOR_ONOFF_OFF)
 		RemoveZombieBoxWeapon(GetWeapon("t9_ballistic_knife"));
 	
-	if(GetDvarInt("mutator_enfield") == MUTATOR_OFFON_ON)
+	switch(GetDvarInt("mutator_enfield"))
 	{
-		zm_weapons::include_weapon( "t5_enfield", true, 1250, 500);
-		zm_weapons::include_upgraded_weapon( "t5_enfield", "t5_enfield_up", false, 1250, 500);
+	case 2:
+		{
+			zm_weapons::include_weapon( "t5_enfield_alt", true, 1250, 500);
+			zm_weapons::include_upgraded_weapon( "t5_enfield_alt", "t5_enfield_alt_up", false, 1250, 500);
+			break;
+		}
+	case 3:
+		{
+			zm_weapons::include_weapon( "t5_enfield", true, 1250, 500);
+			zm_weapons::include_upgraded_weapon( "t5_enfield", "t5_enfield_up", false, 1250, 500);
+			break;
+		}
+	}
+	
+	switch(GetDvarInt("mutator_mac11"))
+	{
+	case 2:
+		{
+			zm_weapons::include_weapon( "t5_mac11_alt", true, 900, 500 );
+			zm_weapons::include_upgraded_weapon( "t5_mac11_alt", "t5_mac11_alt_up", false, 900, 500 );
+			break;
+		}
+	case 3:
+		{
+			zm_weapons::include_weapon( "t5_mac11", true, 900, 500 );
+			zm_weapons::include_upgraded_weapon( "t5_mac11", "t5_mac11_up", false, 900, 500 );
+			break;
+		}
+	}
+	
+	if(GetDvarInt("mutator_m60" == MUTATOR_OFFON_ON))
+	{
+		zm_weapons::include_weapon( "t5_m60e3", true, 2750, 500 );
+		zm_weapons::include_upgraded_weapon( "t5_m60e3", "t5_m60e3_up", false, 2750, 500);
 	}
 	
 	if(GetDvarInt("mutator_wa2000") == MUTATOR_OFFON_ON && GetDvarInt("mutator_scopeads") == 2)

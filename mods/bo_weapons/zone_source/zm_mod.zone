@@ -427,10 +427,15 @@ weapon,t5_stoner63_up
 weapon,t5_skorpion
 weapon,t5_skorpion_rdw_up_zm
 weapon,t5_skorpion_ldw_up_zm
+weapon,t5_skorpion_alt
+weapon,t5_skorpion_alt_rdw_up_zm
+weapon,t5_skorpion_alt_ldw_up_zm
 
 weapon,t5_enfield
 weapon,t5_enfield_up_zm
 weapon,t5_enfield_shotty_zm
+weapon,t5_enfield_alt
+weapon,t5_enfield_alt_up
 
 weapon,sticky_grenade_zm
 
@@ -460,6 +465,14 @@ weapon,t5_psg1_up_switch_zm
 
 weaponfull,t4r_ppsh_zm
 weaponfull,t4r_ppsh_etch_upgraded_zm
+
+weaponfull,t5_mac11
+weaponfull,t5_mac11_up
+weaponfull,t5_mac11_alt
+weaponfull,t5_mac11_alt_up
+
+weaponfull,t5_m60e3
+weaponfull,t5_m60e3_up
 
 //weapon,t9_xm4
 //weapon,t9_xm4_up

@@ -170,6 +170,8 @@ ResetGameSettings = function(arg0, arg1, arg2, arg3)
 	Engine.SetDvar("mutator_bo3_m1927", 0)
 	Engine.SetDvar("mutator_bo3_mg08", 0)
 	Engine.SetDvar("mutator_bo3_stg", 0)
+	Engine.SetDvar("mutator_mac11", 0)
+	Engine.SetDvar("mutator_m60", 0)
 	--Engine.SetDvar("mutator_bocw_1911", 0)
 	--Engine.SetDvar("mutator_bocw_magnum", 0)
 	--Engine.SetDvar("mutator_bocw_mp5k", 0)
@@ -500,17 +502,31 @@ function (arg0, arg1, arg2, arg3, arg4)
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Uzi",
-			"Add Uzi to the mystery box. SP/MP has a 32+192/64+448 base/PaP ammo capacity, BO II has a 25+275/25+300 base/PaP ammo capacity.",
+			"Add Uzi to the mystery box. SP/MP has a 32+192/64+448 base/PaP ammo capacity, ZM (based on BO II but mostly matching the cut version from BO) has a 25+275/25+300 base/PaP ammo capacity.",
 			"MutatorSettings_Uzi",
 			"mutator_uzi",
-            BuildStringSettings({"Disabled", "SP/MP", "BO II"}, "Disabled"), nil, SetDvarSetting),
+            BuildStringSettings({"Disabled", "SP/MP", "ZM"}, "Disabled"), nil, SetDvarSetting),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Skorpion",
-			"Add Skorpion to the mystery box.",
+			"Add Skorpion to the mystery box. SP/MP has 20/30 round mags while ZM has 10/40 round mags, among other differences from the cut version.",
 			"MutatorSettings_Skorpion",
 			"mutator_skorpion",
-            BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+            BuildStringSettings({"Disabled", "SP/MP", "ZM"}, "Disabled"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"MAC11",
+			"Add MAC11 to the mystery box. SP/MP has 20/30 round mags while ZM has 10/20 round mags",
+			"MutatorSettings_MAC11",
+			"mutator_mac11",
+			BuildStringSettings({"Disabled", "SP/MP", "ZM"}, "Disabled"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"M60",
+			"Add M60 to the mystery box.",
+			"MutatorSettings_M60",
+			"mutator_m60",
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Stoner 63",
@@ -521,10 +537,10 @@ function (arg0, arg1, arg2, arg3, arg4)
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Enfield",
-			"Add Enfield to the mystery box.",
+			"Add Enfield to the mystery box. ZM is based on the cut version from BO with increased mag capacity with PaP while Alternate is balanced differently with higher PaP damage, RoF and Masterkey",
 			"MutatorSettings_Enfield",
 			"mutator_enfield",
-            BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+            BuildStringSettings({"Disabled", "ZM", "Alternate"}, "Disabled"), nil, SetDvarSetting),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"WA2000",
