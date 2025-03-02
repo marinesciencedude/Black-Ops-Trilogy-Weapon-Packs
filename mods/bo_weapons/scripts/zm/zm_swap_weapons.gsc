@@ -133,6 +133,8 @@ function starter_weapon()
 		thread zm::last_stand_pistol_rank_init();
 		starter_weapon_extra();
 	}
+	if(GetDvarInt("mutator_revive_anim") == 1)
+		level.weaponrevivetool = getweapon("legacy_syrette");
 }
 
 /*

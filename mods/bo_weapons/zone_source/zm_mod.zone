@@ -537,6 +537,8 @@ weaponfull,t5_m60e3_up
 //weapon,t9_ppsh41_drum
 //weapon,t9_ppsh41_drum_up
 
+weapon,legacy_syrette_zm
+
 sound,zm_mod
 
 image,i_t7_zm_chalk_buy_arak_c

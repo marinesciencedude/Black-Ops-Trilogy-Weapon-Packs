@@ -167,6 +167,7 @@ ResetGameSettings = function(arg0, arg1, arg2, arg3)
 	Engine.SetDvar("mutator_ascension_visionset", 0)
 	Engine.SetDvar("mutator_health_difficulty", 0)
 	Engine.SetDvar("mutator_startingweapon", 0)
+	Engine.SetDvar("mutator_revive_anim", 0)
 	Engine.SetDvar("mutator_bo3_m1927", 0)
 	Engine.SetDvar("mutator_bo3_mg08", 0)
 	Engine.SetDvar("mutator_bo3_stg", 0)
@@ -337,7 +338,14 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_HealthDifficulty",
 			"mutator_health_difficulty",
 			--BuildStringSettings({"BO III", "Recruit", "Regular", "Hardened", "Veteran"}, "BO III"), nil, SetDvarSetting)
-			BuildStringSettings({"BO III", "Recruit", "Regular", "Veteran"}, "BO III"), nil, SetDvarSetting)
+			BuildStringSettings({"BO III", "Recruit", "Regular", "Veteran"}, "BO III"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Revive Animation",
+			"Change between the classic revive animation and the Black Ops III one.",
+			"MutatorSettings_ReviveAnimation",
+			"mutator_revive_anim",
+			BuildStringSettings({"Classic", "BO III"}, "Classic"), nil, SetDvarSetting)
 	}
 end, nil, nil, Update)
 
