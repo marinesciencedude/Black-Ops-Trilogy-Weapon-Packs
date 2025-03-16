@@ -9,7 +9,7 @@ sticky_grenade_custom,,,250,grenade,,250,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenad
 knife,,,0,,,0,,,FALSE,FALSE,,,,FALSE,FALSE,special,,,
 bowie_knife,,,3000,wpck_bowie,,,,,FALSE,FALSE,,,,FALSE,FALSE,special,,,
 t4_ray_gun,t4_ray_gun_camo_up,,10000,wpck_ray,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,special,TRUE,TRUE,
-tesla_gun,tesla_gun_upgraded,,10000,tesla,,,,,TRUE,FALSE,TRUE,1,,FALSE,TRUE,special,TRUE,TRUE,
+tesla_gun,tesla_gun_upgraded,,10000,tesla,,,,,FALSE,FALSE,TRUE,1,,FALSE,TRUE,special,TRUE,TRUE,
 t4_spring,t4_spring_up,,200,rifle,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,rifle,,,
 t4_kar98k,t4_kar98k_up,,200,rifle,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,
 t4_m1,t4_m1_up,,600,rifle,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,rifle,,,
@@ -52,3 +52,4 @@ t5_crossbow,t5_crossbow_up,,5000,special,,,,,TRUE,FALSE,TRUE,1,,FALSE,TRUE,speci
 t9_ballistic_knife,t9_ballistic_knife_up,,2000,,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,special,TRUE,,
 knife_ballistic_bowie,knife_ballistic_bowie_upgraded,,2000,,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,special,TRUE,,
 s2_sten,s2_sten_up,,2000,smg,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,smg,,,
+freezegun,freezegun_upgraded,,10000,freezegun,,,,,TRUE,FALSE,TRUE,1,,FALSE,TRUE,special,TRUE,TRUE,

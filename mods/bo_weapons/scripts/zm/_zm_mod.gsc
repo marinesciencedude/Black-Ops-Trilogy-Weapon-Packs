@@ -691,6 +691,15 @@ function apply_choices() {
 		zm_utility::include_weapon( "t9_ballistic_knife", false);
 	}
 	
+	if(GetDvarString("mapname") != "zm_asylum" && GetDvarInt("mutator_freezegun") == MUTATOR_OFFON_ON)
+	{
+		zm_utility::include_weapon( "freezegun", true );
+		zm_utility::include_weapon( "freezegun_upgraded", false );
+		zm_weapons::add_zombie_weapon( "freezegun", "freezegun_upgraded", "", 10000, "freezegun", "", 500, "", true, "" );
+		zm_weapons::add_limited_weapon("freezegun", 1);
+		aat::register_aat_exemption(getweapon("freezegun"));
+	}
+	
 	if(GetDvarInt("mutator_enable_wunderfizz") == 2)
 	{
 		foreach(perk_random_machine in level.perk_random_machines)

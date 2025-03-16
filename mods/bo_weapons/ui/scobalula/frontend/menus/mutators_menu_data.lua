@@ -177,7 +177,7 @@ ResetGameSettings = function(arg0, arg1, arg2, arg3)
 	Engine.SetDvar("mutator_wallbuys_origins", 0)
 	Engine.SetDvar("mutator_wallbuys_der_eisendrache", 0)
 	Engine.SetDvar("mutator_wallbuys_callofthedead", 0)
-	
+	Engine.SetDvar("mutator_freezegun", 0)
 	Engine.SetDvar("mutator_bo3_m1927", 0)
 	Engine.SetDvar("mutator_bo3_mg08", 0)
 	Engine.SetDvar("mutator_bo3_stg", 0)
@@ -657,6 +657,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 		--	"MutatorSettings_RayGun",
 		--	"mutator_ray_gun",
 		--	BuildStringSettings({"WaW", "BO III"}, "WaW"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Winter's Howl",
+			"Add Winter's Howl to all maps' mystery boxes.",
+			"MutatorSettings_FreezeGun",
+			"mutator_freezegun",
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Ray Gun Mark II",

@@ -111,6 +111,12 @@
 	"Name" : "custom_hellhound",
 	"Filename" : "custom_hellhound.csv",
 	"Specs" : [ ]
+},
+{
+ "Type" : "ALIAS",
+ "Name" : "freezegun_sounds",
+ "Filename" : "freezegun_sounds.csv",
+ "Specs" : [ ] 
 }
 ],
  "Ducks" : [ ] ,

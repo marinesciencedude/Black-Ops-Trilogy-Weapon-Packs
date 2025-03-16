@@ -36,15 +36,41 @@
                     "type": "condition_script",
                     "interruptName": "death"
                 },
-                {
-                    "id": "deathaction",
-                    "type": "action",
-                    "ActionName": "defaultaction",
-                    "ASMStateName": "death@zombie",
-                    "actionNotify": "death",
-                    "StartFunction": "zombiedeathaction",
-                    "TerminateFunction": "startragdoll"
-                }
+				{
+                    "id": "selector",
+                    "type": "selector",
+                    "children": [
+						{
+							"id": "freezegundeath",
+							"type": "sequence",
+							"children": [
+								{
+									"id": "waskilledbyfreezegun",
+									"type": "condition_script",
+									"scriptFunction": "zombiewasKilledByFreezeGun",
+									"interruptName": "death"
+								},
+								{
+									"id": "freezegundeathaction",
+									"type": "action",
+									"ActionName": "defaultaction",
+									"ASMStateName": "freezegun_death@zombie",
+									"actionNotify": "death",
+									"StartFunction": "zombiedeathaction"
+								}
+							]
+						},
+						{
+							"id": "deathaction",
+							"type": "action",
+							"ActionName": "defaultaction",
+							"ASMStateName": "death@zombie",
+							"actionNotify": "death",
+							"StartFunction": "zombiedeathaction",
+							"TerminateFunction": "startragdoll"
+						}
+					]
+				}
             ]
         },
         {

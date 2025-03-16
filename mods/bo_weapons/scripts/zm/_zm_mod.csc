@@ -468,6 +468,12 @@ function applyChoices() {
 		}
 	}
 	
+	if(GetDvarString("mapname") != "zm_asylum" && GetDvarInt("mutator_freezegun") == MUTATOR_OFFON_ON)
+	{
+		zm_weapons::include_weapon( "freezegun", true, 10000, 500 );
+		zm_weapons::include_upgraded_weapon( "freezegun", "freezegun_upgraded", false, 10000, 500 );
+	}
+	
 	if(GetDvarInt("mutator_bocw_1911") == MUTATOR_OFFON_ON)
 	{
 		zm_weapons::include_weapon( "t9_1911", false, 300, undefined );

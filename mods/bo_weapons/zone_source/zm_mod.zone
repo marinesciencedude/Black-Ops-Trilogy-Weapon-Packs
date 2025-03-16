@@ -603,6 +603,29 @@ weapon,t5_thundergun_upgraded_zm
 
 weapon,legacy_syrette_zm
 
+weapon,freezegun_zm
+weapon,freezegun_upgraded_zm
+scriptparsetree,scripts/zm/_zm_weap_freezegun.gsh
+scriptparsetree,scripts/zm/_zm_weap_freezegun.csc
+scriptparsetree,scripts/zm/_zm_weap_freezegun.gsc
+xanim,ai_zm_dlc5_zombie_crawl_freeze_death_01
+xanim,ai_zm_dlc5_zombie_crawl_freeze_death_02
+xanim,ai_zm_dlc5_zombie_freeze_death_a
+xanim,ai_zm_dlc5_zombie_freeze_death_b
+xanim,ai_zm_dlc5_zombie_freeze_death_c
+xanim,ai_zm_dlc5_zombie_freeze_death_d
+xanim,ai_zm_dlc5_zombie_freeze_death_e
+fx,blood/fx_blood_decal_impact_ground
+fx,dlc2/island/fx_zombie_gib_trail
+fx,dlc5/zmb_weapon/fx_freezegun_crumple
+fx,dlc5/zmb_weapon/fx_freezegun_smoke_cloud
+fx,dlc5/zmb_weapon/fx_freezegun_freeze_md
+fx,dlc5/zmb_weapon/fx_freezegun_reload_smoke
+fx,dlc5/zmb_weapon/fx_freezegun_shatter
+fx,dlc5/zmb_weapon/fx_freezegun_shatter_upg
+fx,dlc5/zmb_weapon/fx_freezegun_freeze_torso
+material,mc/c_t8_freezegun_mtl
+
 sound,zm_mod
 
 image,i_t7_zm_chalk_buy_arak_c
