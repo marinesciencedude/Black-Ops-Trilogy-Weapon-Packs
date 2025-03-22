@@ -9,6 +9,12 @@ Install *all* of these assets first, since files from this repo are meant to ove
 It's advised to make a back-up of wpn_t7_zmb_weapons.gdt, since this will be replaced with a version that doesn't produce duplicate asset errors with Smurphy's Improved BO3 Ray Gun
 
 * TheSkyeLord's BO1 Weapon Ports: https://www.ugx-mods.com/forum/full-weapons/84/skyes-bo1-weapon-ports/23143/
+* TheAllNightFall's WaW Weapon Ports (don't forget [Weapon Common](https://drive.google.com/file/d/1pzasvTU0tIFtmKbepyGXPPpdEYNyMXmq):
+  * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-shotguns
+  * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-lmg's
+  * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-rifles
+  * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-smg-ports
+  * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-snipers%2Fbolt-action
 * L3akMod: https://wiki.modme.co/wiki/black_ops_3/lua_(lui)/Installation.html
 * Scobalula's T7MTEnhancements: https://github.com/Scobalula/T7MTEnhancements
 * Smurphy's Improved BO3 Ray Gun: https://forum.modme.co/wiki/threads/3714.html
@@ -42,6 +48,7 @@ Then install all files from this repo into your Black Ops III installation apart
 * TheSkyeLord for making this possible with the majority of the weapon ports in this mod, also the source for these wallbuy assets:
   * chalk drawing images for Gewehr 43, M1A1 Carbine, StG 44, MP40, Kar98k, Thompson M1A1, Type 100, FG42, M30 from Skye's CoD WWII Weapon Ports: https://www.ugx-mods.com/forum/full-weapons/84/skyes-wwii-weapon-ports-page-1/23134/
   * chalk drawing for M1897 Trebuchet from Skye's BO4 Weapon Ports: https://www.ugx-mods.com/forum/full-weapons/84/skyes-bo4-weapon-ports/23133/ 
+* TheAllNightFall for making the WaW weapon part of the mod possible
 * [Beandon](https://steamcommunity.com/id/Beandon11) for providing Death Machine announcer voicelines
 * [N7aster](https://steamcommunity.com/profiles/76561199467224180) for providing Black Ops explosion sounds (weapons, PhD Flopper) and "FIVE" quotes from Ascension's Red Telephones
 * Scobalula's [Greyhound](https://github.com/Scobalula/Greyhound) for image extraction (circuits camo, chalk drawings)

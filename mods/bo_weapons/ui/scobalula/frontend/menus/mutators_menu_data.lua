@@ -161,6 +161,7 @@ ResetGameSettings = function(arg0, arg1, arg2, arg3)
 	Engine.SetDvar("mutator_eye_colour", 0)
 	Engine.SetDvar("mutator_camo_weaponized_115", 0)
 	Engine.SetDvar("mutator_waw_wall_weapons", 0)
+	Engine.SetDvar("mutator_verruckt_springfield", 0)
 	Engine.SetDvar("mutator_map_visionset", 0)
 	Engine.SetDvar("mutator_shinonuma_perk", 0)
 	Engine.SetDvar("mutator_sidestep", 0)
@@ -387,7 +388,21 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"If the starting weapon should be the BO M1911 or leave it at the map's default. For maps like Origins which have unique starting weapons.",
 			"MutatorSettings_StartingWeapon",
 			"mutator_startingweapon",
-			BuildStringSettings({"M1911", "Use Map"}, "M1911"), nil, SetDvarSetting)
+			BuildStringSettings({"M1911", "Use Map"}, "M1911"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"WaW Wallbuys",
+			"Whether WaW map wallbuys should use the original World at War weapons, Black Ops weapons or for Der Riese: Declassified to remain unchanged.",
+			"MutatorSettings_WaWWallWeapons",
+			"mutator_waw_wall_weapons",
+			BuildStringSettings({"World at War Weapons", "Black Ops Weapons", "Use Custom Map"}, "World at War Weapons"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Verrückt Bolt Action Wallbuy",
+			"Whether it should be a Springfield on the American starting room or a Kar98k",
+			"MutatorSettings_VerrucktSpringfield",
+			"mutator_verruckt_springfield",
+			BuildStringSettings({"Kar98k", "Springfield"}, "Kar98k"), nil, SetDvarSetting)
 		--CoD.OptionsUtility.CreateDvarSettings(
 		--	arg0,
 		--	"Random Moon Solo Character",
@@ -472,13 +487,6 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_EyeColour",
 			"mutator_eye_colour",
 			BuildStringSettings({"Use Map", "Orange", "Blue", "Red", "White", "Green", "Purple", "Pink", "No Glow FX"}, "Use Map"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
-			arg0,
-			"WaW Wall Buys",
-			"Whether WaW map wallbuys should use Black Ops weapons or for Der Riese: Declassified to remain unchanged.",
-			"MutatorSettings_WaWWallWeapons",
-			"mutator_waw_wall_weapons",
-			BuildStringSettings({"Black Ops Weapons", "Use Custom Map"}, "Use Custom Map"), nil, SetDvarSetting),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Random Perk Machine Locations",
