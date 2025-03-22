@@ -365,7 +365,7 @@ function applyChoices() {
 		}
 	}
 	
-	if(GetDvarInt("mutator_m60" == MUTATOR_OFFON_ON))
+	if(GetDvarInt("mutator_m60") == MUTATOR_OFFON_ON)
 	{
 		zm_weapons::include_weapon( "t5_m60e3", true, 2750, 500 );
 		zm_weapons::include_upgraded_weapon( "t5_m60e3", "t5_m60e3_up", false, 2750, 500);
