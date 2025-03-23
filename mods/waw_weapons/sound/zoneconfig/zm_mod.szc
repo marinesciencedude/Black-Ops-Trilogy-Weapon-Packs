@@ -1,0 +1,61 @@
+{
+ "Name" : "zm_mod",
+ "Parent" : "",
+ "IsStandalone" : true,
+ "IsShipped" : true,
+ "NoStreamBank" : false,
+ "OptimizePoint" : false,
+ "MapFile" : "",
+ "Sources" : [
+{
+ "Type" : "ALIAS",
+ "Name" : "t4_bolt_action_sounds",
+ "Filename" : "t4_bolt_action_sounds.csv",
+ "Specs" : [ ] 
+},
+{
+ "Type" : "ALIAS",
+ "Name" : "t4_rifle_sounds",
+ "Filename" : "t4_rifle_sounds.csv",
+ "Specs" : [ ] 
+},
+{
+ "Type" : "ALIAS",
+ "Name" : "t4_smg_sounds",
+ "Filename" : "t4_smg_sounds.csv",
+ "Specs" : [ ] 
+},
+{
+ "Type" : "ALIAS",
+ "Name" : "t4_lmg_sounds",
+ "Filename" : "t4_lmg_sounds.csv",
+ "Specs" : [ ] 
+},
+{
+ "Type" : "ALIAS",
+ "Name" : "t4_shotguns_sounds",
+ "Filename" : "t4_shotguns_sounds.csv",
+ "Specs" : [ ] 
+},
+{
+ "Type" : "ALIAS",
+ "Name" : "t4_pistol_sounds",
+ "Filename" : "t4_pistol_sounds.csv",
+ "Specs" : [ ] 
+},
+{
+	"Type" : "ALIAS",
+	"Name" : "flamethrower",
+	"Filename" : "flamethrower.csv",
+	"Specs" : [ ]
+},
+{
+	"Type" : "ALIAS",
+	"Name" : "custom_hellhound",
+	"Filename" : "custom_hellhound.csv",
+	"Specs" : [ ]
+}
+],
+ "Ducks" : [ ] ,
+ "MusicFiles" : [ "zm_mod.mus" ] 
+}
