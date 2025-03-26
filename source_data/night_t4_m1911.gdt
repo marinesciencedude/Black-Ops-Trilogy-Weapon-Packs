@@ -5886,7 +5886,7 @@
 		"standRotP" "0.0"
 		"standRotR" "0.0"
 		"standRotY" "0"
-		"startAmmo" "40"
+		"startAmmo" "32"
 		"startFireSound" ""
 		"startFireSoundPlayer" ""
 		"startSpinSound" ""
