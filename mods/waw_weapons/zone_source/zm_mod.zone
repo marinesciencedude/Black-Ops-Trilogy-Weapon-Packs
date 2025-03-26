@@ -109,6 +109,24 @@ xmodel,gear_flametank
 weapon,m2_flamethrower
 weapon,m2_flamethrower_up
 
+//Improved Ray Gun
+weaponfull,ray_gun_zm
+weaponfull,ray_gun_upgraded_zm
+
+//Classic Ray Gun Effects
+fx,zombie/fx_raygun_geotrail_zmb
+fx,zombie/fx_raygun_geotrail_ug_zmb
+fx,zombie/fx_raygun_impact_zmb
+fx,zombie/fx_raygun_impact_ug_zmb
+fx,zombie/fx_raygun_trail_ring_emit_zmb
+fx,zombie/fx_raygun_trail_ring_emit_ug_zmb
+fx,zombie/fx_raygun_1p_zmb
+fx,zombie/fx_raygun_3p_zmb
+fx,zombie/fx_raygun_1p_ugw_zmb
+fx,zombie/fx_raygun_3p_ugw_zmb
+
+image,i_wpn_t7_zmb_raygun_plastic_r
+
 sound,zm_mod
 
 image,i_t7_zm_chalk_buy_arak_c
