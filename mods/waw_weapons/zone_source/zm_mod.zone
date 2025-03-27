@@ -20,6 +20,8 @@ stringtable,gamedata/weapons/zm/zm_sumpf_weapons.csv
 stringtable,gamedata/weapons/zm/zm_factory_weapons.csv
 stringtable,gamedata/weapons/zm/zm_der_riese_weapons.csv
 
+stringtable,gamedata/weapons/common/weaponoptions.csv
+
 weapon,t4_kar98k
 weapon,t4_kar98k_up
 xmodel,wallbuy_kar98k
@@ -126,6 +128,14 @@ fx,zombie/fx_raygun_1p_ugw_zmb
 fx,zombie/fx_raygun_3p_ugw_zmb
 
 image,i_wpn_t7_zmb_raygun_plastic_r
+
+weapon,t4_m1garand_rg_zm
+weapon,t4_m1garand_rg_launcher_zm
+weapon,t4_m1garand_rg_up_zm
+weapon,t4_m1garand_rg_launcher_up_zm
+
+weapon,t4_panzerschreck
+weapon,t4_panzerschreck_up
 
 sound,zm_mod
 

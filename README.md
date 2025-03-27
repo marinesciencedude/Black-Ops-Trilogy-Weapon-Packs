@@ -1,6 +1,6 @@
 # World at War Weapon Pack
 
-As seen on the [Steam Workshop]() and [UGX]()
+As seen on the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3450780956) and [UGX](https://www.ugx-mods.com/forum/mod-releases/75/world-at-war-zombies-weapon-pack/24597/)
 
 ## Installation instructions for building this mod:
 
@@ -15,6 +15,7 @@ It's advised to make a back-up of wpn_t7_zmb_weapons.gdt, since this will be rep
   * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-smg-ports
   * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-snipers%2Fbolt-action
   * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-pistols
+* TheSkyeLord's [M1 Garand Rifle Grenade and Panzerschreck ports](https://www.ugx-mods.com/forum/full-weapons/84/skyes-waw-weapon-ports/24598/) (don't forget [Weapon Common](https://www.icloud.com/iclouddrive/04bF59Ei7A2KzlUMau4i3KBRg#Skye%5FWaW%5FWeapon%5FCommon))
 * ZeRoY's Flamethrower: https://drive.google.com/file/d/1k4FVM1TKrOxHhzy53g34k7Hc4W8Jxm6X
 * Smurphy's Improved BO3 Ray Gun: https://forum.modme.co/wiki/threads/3714.html
 
