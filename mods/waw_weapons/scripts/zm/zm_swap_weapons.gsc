@@ -121,8 +121,8 @@ function starter_weapon_extra()
 			player zm_weapons::weapon_give(starting_weapon, 0, 0, 1, 1);
 		}
 	}
-	/*level.pack_a_punch_camo_index = 136;
-	foreach(player in GetPlayers())
+	level.pack_a_punch_camo_index = 141;
+	/*foreach(player in GetPlayers())
 	{
 		player thread zm_equipment::show_hint_text("There is currently a known bug of crashing in co-op around round 16-17", 5, 1.5, 150);
 	}
