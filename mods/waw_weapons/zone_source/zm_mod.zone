@@ -86,9 +86,13 @@ xmodel,wallbuy_sawedoff
 
 weapon,t4_m1919
 weapon,t4_m1919_up
+weapon,t4_m1919_bipod
+weapon,t4_m1919_bipod_up
 
 weapon,t4_mg42
 weapon,t4_mg42_up
+weapon,t4_mg42_bipod
+weapon,t4_mg42_bipod_up
 
 weapon,t4_ppsh
 weapon,t4_ppsh_up
@@ -106,28 +110,13 @@ weapon,t4_357_up
 weapon,t4_m1911
 weapon,t4_m1911_up
 
+weapon,t4_ray_gun
+weapon,t4_ray_gun_up
+
 scriptparsetree,scripts/zm/zm_flamethrower.gsc
 xmodel,gear_flametank
 weapon,m2_flamethrower
 weapon,m2_flamethrower_up
-
-//Improved Ray Gun
-weaponfull,ray_gun_zm
-weaponfull,ray_gun_upgraded_zm
-
-//Classic Ray Gun Effects
-fx,zombie/fx_raygun_geotrail_zmb
-fx,zombie/fx_raygun_geotrail_ug_zmb
-fx,zombie/fx_raygun_impact_zmb
-fx,zombie/fx_raygun_impact_ug_zmb
-fx,zombie/fx_raygun_trail_ring_emit_zmb
-fx,zombie/fx_raygun_trail_ring_emit_ug_zmb
-fx,zombie/fx_raygun_1p_zmb
-fx,zombie/fx_raygun_3p_zmb
-fx,zombie/fx_raygun_1p_ugw_zmb
-fx,zombie/fx_raygun_3p_ugw_zmb
-
-image,i_wpn_t7_zmb_raygun_plastic_r
 
 weapon,t4_m1garand_rg_zm
 weapon,t4_m1garand_rg_launcher_zm
