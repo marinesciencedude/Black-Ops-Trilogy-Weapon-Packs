@@ -44,6 +44,12 @@
  "Specs" : [ ] 
 },
 {
+ "Type" : "ALIAS",
+ "Name" : "t4_raygun_sounds",
+ "Filename" : "t4_raygun_sounds.csv",
+ "Specs" : [ ] 
+},
+{
 	"Type" : "ALIAS",
 	"Name" : "flamethrower",
 	"Filename" : "flamethrower.csv",

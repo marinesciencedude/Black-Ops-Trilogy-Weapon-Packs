@@ -321,7 +321,7 @@ function swap_wall_weapon()
 					}
 				case "ar_longburst": //M8A7
 					{
-						ent.zombie_weapon_upgrade = "t4_bar";
+						ent.zombie_weapon_upgrade = "t4_type100";
 					
 						ent.origin += (9*cos(spawn_loc.angles[1]), 9*sin(spawn_loc.angles[1]), 4);
 						spawn_loc = struct::get(ent.target, "targetname");
@@ -329,7 +329,7 @@ function swap_wall_weapon()
 						break;
 					}
 				case "ar_standard": //KN-44
-					ent.zombie_weapon_upgrade = "t4_type100";
+					ent.zombie_weapon_upgrade = "t4_bar";
 					break;
 				case "shotgun_precision": //Argus
 				case "smg_standard": //Kuda

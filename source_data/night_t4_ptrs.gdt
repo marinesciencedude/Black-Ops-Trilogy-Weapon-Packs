@@ -14451,7 +14451,7 @@
 		"scale" "1"
 		"scaleCollMap" "0"
 		"ShadowLOD" "Auto"
-		"skinOverride" "mtl_ammo_belt mtl_ammo_belt_up2\r\nmtl_rus_scope_trans gold\r\nmtl_silver_etching waw_pap_camo\r\nmtl_weapon_30cal_gold mtl_weapon_ptrs_up\r\nmtl_weapon_ptrs_wood mtl_weapon_ptrs_up\r\n"
+		"skinOverride" "mtl_ammo_belt mtl_ammo_belt_up2\r\nmtl_rus_scope_trans mtl_weapon_kar98_scope_lens\r\nmtl_silver_etching waw_pap_camo\r\nmtl_weapon_30cal_gold mtl_weapon_ptrs_up\r\nmtl_weapon_ptrs_wood mtl_weapon_ptrs_up\r\n"
 		"submodel0_Name" ""
 		"submodel0_OffsetPitch" "0"
 		"submodel0_OffsetRoll" "0"

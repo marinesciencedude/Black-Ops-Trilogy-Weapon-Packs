@@ -15,9 +15,10 @@ It's advised to make a back-up of wpn_t7_zmb_weapons.gdt, since this will be rep
   * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-smg-ports
   * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-snipers%2Fbolt-action
   * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-pistols
+  * https://drive.google.com/file/d/1UyoYcCG2dup9oX7U0YLPscSbbrJVpWoD/
 * TheSkyeLord's [M1 Garand Rifle Grenade and Panzerschreck ports](https://www.ugx-mods.com/forum/full-weapons/84/skyes-waw-weapon-ports/24598/) (don't forget [Weapon Common](https://www.icloud.com/iclouddrive/04bF59Ei7A2KzlUMau4i3KBRg#Skye%5FWaW%5FWeapon%5FCommon))
 * ZeRoY's Flamethrower: https://drive.google.com/file/d/1k4FVM1TKrOxHhzy53g34k7Hc4W8Jxm6X
-* Smurphy's Improved BO3 Ray Gun: https://forum.modme.co/wiki/threads/3714.html
+* Smurphy's Improved BO3 Ray Gun: https://forum.modme.co/wiki/threads/3714.html (install ONLY share\raw\fx folder)
 
 Then install all files from this repo into your Black Ops III installation apart from the folder chalk_drawing_models, which is for reference purposes only
 
