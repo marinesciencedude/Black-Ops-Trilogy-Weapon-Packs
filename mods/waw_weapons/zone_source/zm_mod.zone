@@ -19,6 +19,8 @@ stringtable,gamedata/weapons/zm/zm_asylum_weapons.csv
 stringtable,gamedata/weapons/zm/zm_sumpf_weapons.csv
 stringtable,gamedata/weapons/zm/zm_factory_weapons.csv
 stringtable,gamedata/weapons/zm/zm_der_riese_weapons.csv
+stringtable,gamedata/weapons/zm/zm_theater_weapons.csv
+stringtable,gamedata/weapons/zm/zm_levelcommon_weapons.csv
 
 stringtable,gamedata/weapons/common/weaponoptions.csv
 
@@ -146,6 +148,7 @@ image,i_t7_zm_chalk_buy_stg44_c
 image,i_t7_zm_chalk_buy_locus_c
 image,i_t7_zm_chalk_buy_sten_c
 
+//Remove Der Riese: Declassified chalk drawings
 image,i_ger_gewehr43_wall_chalk_c
 image,i_usa_m1carbine_wall_chalk_c
 image,i_usa_m1carbine_wall_chalk_c
@@ -157,6 +160,17 @@ image,i_jpn_type100_wall_chalk_c
 image,i_ger_fg42_wall_chalk_c
 image,i_ger_m30_wall_chalk_c
 image,i_t8_wpn_shotty_m1897_wall_chalk_c
+
+//Remove Call of the Dead chalk drawings
+image,i_t4rm_weapon_mp40_wall_chalk_c
+image,i_t5_weapon_ak74u_wall_chalk_c
+image,i_t5_weapon_beretta682_wall_chalk_c
+image,i_t5_weapon_ithaca_wall_chalk_c
+image,i_t5_weapon_m14_wall_chalk_c
+image,i_t5_weapon_mp5_wall_chalk_c
+image,i_t5_weapon_mpl_wall_chalk_c
+image,i_t5_weapon_pm63_wall_chalk_c
+image,i_weapon_m16a1_wall_chalk_c
 
 image,specialty_giant_2x_zombies
 image,specialty_giant_firesale_zombies
