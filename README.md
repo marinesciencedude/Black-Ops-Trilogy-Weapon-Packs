@@ -15,9 +15,11 @@ It's advised to make a back-up of wpn_t7_zmb_weapons.gdt, since this will be rep
   * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-rifles
   * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-smg-ports
   * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-snipers%2Fbolt-action
+  * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-raygun
+* Carrabella & WetEgg's Black ops 1 and 2 crossbow: https://drive.google.com/file/d/1QpNYEj8BWTOKtFTKXWFSnD-k1scunuZJ/view
 * L3akMod: https://wiki.modme.co/wiki/black_ops_3/lua_(lui)/Installation.html
 * Scobalula's T7MTEnhancements: https://github.com/Scobalula/T7MTEnhancements
-* Smurphy's Improved BO3 Ray Gun: https://forum.modme.co/wiki/threads/3714.html
+* Smurphy's Improved BO3 Ray Gun: https://forum.modme.co/wiki/threads/3714.html (install ONLY share\raw\fx folder)
 * Smurphy's Remastered WaW PPSh: https://mega.nz/file/u0dljYBS#XneH4eOMTpdzHvuj6BewspVSj1f5JnHOCM1FrGKSsHw
 * Hogarth935's Black Ops 1 Style PaP Camo: https://www.devraw.net/approved-assets/hogarth/black-ops-1-pap-camo
 * Ronan's Custom Perk & Powerup Shaders: https://forum.modme.co/wiki/threads/3206.html (install in texture_assets\Ronans_Classic_Shaders)

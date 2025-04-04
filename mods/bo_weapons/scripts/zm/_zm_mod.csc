@@ -315,23 +315,18 @@ function applyChoices() {
 		zm_weapons::include_upgraded_weapon( "shotgun_energy", "shotgun_energy_upgraded", false, 5000, 500);
 	}*/
 	
-	if(GetDvarString("mapname") == "zm_coast")
+	if(GetDvarInt("mutator_crossbow") == MUTATOR_ONOFF_OFF)
 	{
-		zm_weapons::include_weapon( "t9_crossbow", true, 4000, 500 );
-		zm_weapons::include_upgraded_weapon( "t9_crossbow", "t9_crossbow_up", false, 4000, 500 );
-		
-		zm_weapons::include_weapon( "t9_ballistic_knife", true, 2000, 500 );
-		zm_weapons::include_upgraded_weapon( "t9_ballistic_knife", "t9_ballistic_knife_up", false, 2000, 500 );
-		
-		zm_weapons::include_weapon( "knife_ballistic_sickle", false, 2000, 500 );
-		zm_weapons::include_upgraded_weapon( "knife_ballistic_sickle", "knife_ballistic_sickle_upgraded", false, 2000, 500 );
+		/*if(GetDvarInt("mutator_bocw_crossbow") == MUTATOR_OFFON_ON
+			RemoveZombieBoxWeapon(GetWeapon("t9_crossbow"));
+		else*/
+			RemoveZombieBoxWeapon(GetWeapon("t5_crossbow"));
 	}
 	
-	if(GetDvarInt("mutator_crossbow") == MUTATOR_ONOFF_OFF)
-		RemoveZombieBoxWeapon(GetWeapon("t9_crossbow"));
-	
 	if(GetDvarInt("mutator_ballistic_knife") == MUTATOR_ONOFF_OFF)
+	{
 		RemoveZombieBoxWeapon(GetWeapon("t9_ballistic_knife"));
+	}
 	
 	switch(GetDvarInt("mutator_enfield"))
 	{

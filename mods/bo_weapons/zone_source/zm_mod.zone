@@ -62,6 +62,7 @@ stringtable,gamedata/weapons/zm/zm_asylum_weapons.csv
 stringtable,gamedata/weapons/zm/zm_sumpf_weapons.csv
 stringtable,gamedata/weapons/zm/zm_factory_weapons.csv
 stringtable,gamedata/weapons/zm/zm_tomb_weapons.csv
+stringtable,gamedata/weapons/zm/zm_levelcommon_weapons.csv
 
 stringtable,gamedata/weapons/zm/zm_zod_weapons.csv
 stringtable,gamedata/tables/zm/zm_zod_pods.csv
@@ -300,6 +301,9 @@ weapon,t4_db_saw
 weapon,t4_db_saw_up
 xmodel,wallbuy_sawedoff
 
+weapon,t4_ray_gun
+weapon,t4_ray_gun_camo_up
+
 weapon,t5_ak74u
 weapon,t5_ak74u_up_zm
 weapon,t5_ak74u_launcher_zm
@@ -427,24 +431,6 @@ weapon,t5_stakeout
 weapon,t5_stakeout_up
 xmodel,wallbuy_stakeout
 
-//Improved Ray Gun
-weaponfull,ray_gun_zm
-weaponfull,ray_gun_upgraded_zm
-
-//Classic Ray Gun Effects
-fx,zombie/fx_raygun_geotrail_zmb
-fx,zombie/fx_raygun_geotrail_ug_zmb
-fx,zombie/fx_raygun_impact_zmb
-fx,zombie/fx_raygun_impact_ug_zmb
-fx,zombie/fx_raygun_trail_ring_emit_zmb
-fx,zombie/fx_raygun_trail_ring_emit_ug_zmb
-fx,zombie/fx_raygun_1p_zmb
-fx,zombie/fx_raygun_3p_zmb
-fx,zombie/fx_raygun_1p_ugw_zmb
-fx,zombie/fx_raygun_3p_ugw_zmb
-
-image,i_wpn_t7_zmb_raygun_plastic_r
-
 scriptparsetree,scripts/zm/zm_claymore.gsc
 weapon,claymore_zm
 material,claymore_hud
@@ -469,8 +455,11 @@ weapon,t5_uzi_up
 weapon,t5_uzi_alt
 weapon,t5_uzi_up_alt
 
-weapon,t9_crossbow
-weapon,t9_crossbow_up
+include,carrabella_wetegg_crossbow
+//weapon,t9_crossbow
+//weapon,t9_crossbow_up
+scriptparsetree,scripts/zm/crossbow_bolt.csc
+scriptparsetree,scripts/zm/crossbow_bolt.gsc
 
 weapon,t9_ballistic_knife
 weapon,t9_ballistic_knife_up
@@ -480,8 +469,6 @@ weapon,knife_ballistic_sickle
 weapon,knife_ballistic_sickle_upgraded
 scriptparsetree,scripts/zm/_zm_weap_ballistic_knife.gsc
 scriptparsetree,scripts/zm/_zm_melee_weapon.gsc
-scriptparsetree,scripts/zm/crossbow_bolt.gsc
-scriptparsetree,scripts/zm/crossbow_bolt.csc
 
 weapon,t5_stoner63
 weapon,t5_stoner63_up
@@ -499,7 +486,7 @@ weapon,t5_enfield_shotty_zm
 weapon,t5_enfield_alt
 weapon,t5_enfield_alt_up
 
-weapon,sticky_grenade_zm
+weapon,sticky_grenade_custom
 
 weapon,raygun_mark_ii_zm
 weapon,raygun_mark_ii_upgraded_zm

@@ -8,6 +8,7 @@
 #using scripts\zm\_hb21_zm_behavior;
 
 #using scripts\zm\crossbow_bolt;
+#using scripts\zm\zm_weap_crossbow;
 
 #precache( "fx", "custom/magic_box_og/fx_weapon_box_marker_fl_og" );
 #precache( "fx", "custom/magic_box_og/fx_weapon_box_marker_og" );

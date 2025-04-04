@@ -94,7 +94,7 @@ function __main__()
 
 function blundersplat_missile( n_local_client_num, n_old_value, n_new_value, b_new_ent, b_initial_snap, str_field, b_was_time_jump )
 {
-	if ( self.weapon.name == "t9_crossbow" || self.weapon.name == "t9_crossbow_up" || self.weapon.name == "sticky_grenade_zm" )
+	if ( self.weapon.name == "sticky_grenade_custom" )
 		self thread blundersplat_missile_sound_and_fx_loop( n_local_client_num );
 	
 }

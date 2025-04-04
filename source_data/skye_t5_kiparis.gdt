@@ -1755,7 +1755,7 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
-	"i_t5_weapon_kiparis_wall_chalk_c" ( "image.gdf" )
+	"i_t5_weapon_kiparis_wall_chalk_c_bo1" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
 		"baseImage" "model_export\\skye_ports\\t5_kiparis\\images\\t5_weapon_kiparis_wall_chalk.tiff"
@@ -3810,7 +3810,7 @@
 		"colorDetailScaleX" "8"
 		"colorDetailScaleY" "8"
 		"colorMap" "i_t5_weapon_kiparis_wall_chalk_c"
-		"colorMap00" "i_t5_weapon_kiparis_wall_chalk_c"
+		"colorMap00" "i_t5_weapon_kiparis_wall_chalk_c_bo1"
 		"colorMap01" ""
 		"colorMap02" ""
 		"colorMap03" ""
@@ -4536,9 +4536,9 @@
 		"zoomMin" "1"
 		"zoomRate" "0"
 	}
-	"t5_camo_kiparis_custom_base140" ( "weaponcamo.gdf" )
+	"t5_camo_kiparis_custom_base136" ( "weaponcamo.gdf" )
 	{
-		"baseIndex" "140"
+		"baseIndex" "136"
 		"configstringFileType" "WEAPONCAMO"
 		"material1_10_base_material_1" "mtl_t5_weapon_kiparis"
 		"material1_10_base_material_10" ""
@@ -4915,7 +4915,7 @@
 		"material1_1_detail_normal_scale_x" "8"
 		"material1_1_detail_normal_scale_y" "8"
 		"material1_1_gloss_blend" "0"
-		"material1_1_material" "mtl_t7_camo_bo1_pap"
+		"material1_1_material" ""
 		"material1_1_normal_amount" "0"
 		"material1_1_numBaseMaterials" "2"
 		"material1_1_rotation" "0"
@@ -5300,7 +5300,7 @@
 		"material1_2_detail_normal_scale_x" "8"
 		"material1_2_detail_normal_scale_y" "8"
 		"material1_2_gloss_blend" "0"
-		"material1_2_material" "mtl_t7_camo_etching"
+		"material1_2_material" ""
 		"material1_2_normal_amount" "0"
 		"material1_2_numBaseMaterials" "2"
 		"material1_2_rotation" "0"
@@ -9790,7 +9790,7 @@
 		"material2_9_trans_y" "0"
 		"material2_9_useGlossMap" "0"
 		"material2_9_useNormalMap" "0"
-		"numCamos" "2"
+		"numCamos" "1"
 	}
 	"t5_camo_kiparis_dlc1_base76" ( "weaponcamo.gdf" )
 	{
@@ -22227,8 +22227,8 @@
 		"material1_5_normal_amount" "0"
 		"material1_5_numBaseMaterials" "2"
 		"material1_5_rotation" "0"
-		"material1_5_scale_x" "0.5"
-		"material1_5_scale_y" "0.5"
+		"material1_5_scale_x" "1.0"
+		"material1_5_scale_y" "1.0"
 		"material1_5_trans_x" "0.0"
 		"material1_5_trans_y" "0"
 		"material1_5_useGlossMap" "0"
@@ -30824,7 +30824,7 @@
 		"table_02_name" "t5_camo_kiparis_dlc1_base76"
 		"table_03_name" "t5_camo_kiparis_dlc4_base121"
 		"table_04_name" "t5_camo_kiparis_dlc5_base128"
-		"table_05_name" "t5_camo_kiparis_custom_base140"
+		"table_05_name" "t5_camo_kiparis_custom_base136"
 		"table_06_name" ""
 		"table_07_name" ""
 		"table_08_name" ""

@@ -2034,7 +2034,7 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
-	"i_t5_weapon_l96a1_wall_chalk_c" ( "image.gdf" )
+	"i_t5_weapon_l96a1_wall_chalk_c_bo1" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
 		"baseImage" "model_export\\skye_ports\\t5_l96a1\\images\\t5_weapon_l96a1_wall_chalk.tiff"
@@ -5913,7 +5913,7 @@
 		"colorDetailScaleX" "8"
 		"colorDetailScaleY" "8"
 		"colorMap" "i_t5_weapon_l96a1_wall_chalk_c"
-		"colorMap00" "i_t5_weapon_l96a1_wall_chalk_c"
+		"colorMap00" "i_t5_weapon_l96a1_wall_chalk_c_bo1"
 		"colorMap01" ""
 		"colorMap02" ""
 		"colorMap03" ""

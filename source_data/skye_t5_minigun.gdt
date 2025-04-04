@@ -1540,7 +1540,7 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
-	"i_weapon_t5_minigun_wall_chalk_c" ( "image.gdf" )
+	"i_weapon_t5_minigun_wall_chalk_c_bo1" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
 		"baseImage" "model_export\\skye_ports\\t5_minigun\\images\\t5_weapon_carry_minigun_wall_chalk.tiff"
@@ -5419,7 +5419,7 @@
 		"colorDetailScaleX" "8"
 		"colorDetailScaleY" "8"
 		"colorMap" "i_weapon_t5_minigun_wall_chalk_c"
-		"colorMap00" "i_weapon_t5_minigun_wall_chalk_c"
+		"colorMap00" "i_weapon_t5_minigun_wall_chalk_c_bo1"
 		"colorMap01" ""
 		"colorMap02" ""
 		"colorMap03" ""

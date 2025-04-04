@@ -44,6 +44,18 @@
  "Specs" : [ ] 
 },
 {
+ "Type" : "ALIAS",
+ "Name" : "t4_raygun_sounds",
+ "Filename" : "t4_raygun_sounds.csv",
+ "Specs" : [ ] 
+},
+{
+ "Type" : "ALIAS",
+ "Name" : "t6_crossbow",
+ "Filename" : "_wetegg/t6/weapons/t6_crossbow.csv",
+ "Specs" : [ ] 
+},
+{
     "Type" : "ALIAS",
     "Name" : "ray_phdflopper",
     "Filename" : "ray_phdflopper.csv",

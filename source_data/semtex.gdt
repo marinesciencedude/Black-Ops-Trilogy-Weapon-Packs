@@ -1,5 +1,5 @@
 {
-	"sticky_grenade_zm" ( "grenadeweapon.gdf" )
+	"sticky_grenade_custom" ( "grenadeweapon.gdf" )
 	{
 		"activate_mode" "hold"
 		"activate_with_primed_delay" "0"
@@ -628,7 +628,7 @@
 		"projExplosionEffect5ForceNormalUp" "0"
 		"projExplosionEffectForceNormalUp" "0"
 		"projExplosionEffectPlayer" ""
-		"projExplosionSound" "wpn_grenade_explode"
+		"projExplosionSound" "blackops_explode"
 		"projExplosionType" "grenade"
 		"projImpactExplode" "0"
 		"projImpactExplodeNoSentients" "0"

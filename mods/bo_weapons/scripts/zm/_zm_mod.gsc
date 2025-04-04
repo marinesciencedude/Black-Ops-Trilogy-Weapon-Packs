@@ -43,7 +43,7 @@
 function init() {
     //level.round_prestart_func = &do_pregame_menu;
     
-	zm_utility::register_lethal_grenade_for_level( "sticky_grenade" );
+	zm_utility::register_lethal_grenade_for_level( "sticky_grenade_custom" );
 	zm_weapons::add_retrievable_knife_init_name("t9_ballistic_knife");
 	zm_weapons::add_retrievable_knife_init_name("t9_ballistic_knife_up");
 }
@@ -645,28 +645,18 @@ function apply_choices() {
 		}
 	}
 	
-	if(GetDvarString("mapname") == "zm_coast")
-	{
-		zm_utility::include_weapon( "t9_crossbow", true );
-		zm_utility::include_weapon( "t9_crossbow_up", false );
-		zm_weapons::add_zombie_weapon( "t9_crossbow", "t9_crossbow_up", "", 4000, "special", "", 500, "", false, "" );
-		aat::register_aat_exemption(getweapon("t9_crossbow_up"));
-		
-		zm_utility::include_weapon( "t9_ballistic_knife", true );
-		zm_utility::include_weapon( "t9_ballistic_knife_up", false );
-		zm_weapons::add_zombie_weapon( "t9_ballistic_knife", "t9_ballistic_knife_up", "", 2000, "special", "", 500, "", false, "" );
-		aat::register_aat_exemption(getweapon("t9_ballistic_knife_up"));
-		
-		zm_utility::include_weapon( "knife_ballistic_sickle", false );
-		zm_utility::include_weapon( "knife_ballistic_sickle_upgraded", false );
-		zm_weapons::add_zombie_weapon( "knife_ballistic_sickle", "knife_ballistic_sickle_upgraded", "", 2000, "special", "", 500, "", false, "" );
-		aat::register_aat_exemption(getweapon("knife_ballistic_sickle_upgraded"));
-	}
-	
 	if(GetDvarInt("mutator_crossbow") == MUTATOR_ONOFF_OFF)
 	{
-		level.zombie_weapons[GetWeapon("t9_crossbow")].is_in_box = false;
-		zm_utility::include_weapon( "t9_crossbow", false);
+		/*if(GetDvarInt("mutator_bocw_crossbow") == MUTATOR_OFFON_ON
+		{
+			level.zombie_weapons[GetWeapon("t9_crossbow")].is_in_box = false;
+			zm_utility::include_weapon( "t9_crossbow", false);
+		}
+		else*/
+		{
+			level.zombie_weapons[GetWeapon("t5_crossbow")].is_in_box = false;
+			zm_utility::include_weapon( "t5_crossbow", false);
+		}
 	}
 	
 	if(GetDvarInt("mutator_ballistic_knife") == MUTATOR_ONOFF_OFF)

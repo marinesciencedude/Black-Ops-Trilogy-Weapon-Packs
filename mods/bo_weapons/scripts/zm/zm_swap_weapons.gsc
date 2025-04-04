@@ -671,15 +671,15 @@ function swap_wall_weapon()
 						}
 					case "ar_longburst": //M8A7
 						{
-							ent.zombie_weapon_upgrade = "t4_bar";
-						
+							ent.zombie_weapon_upgrade = "t4_type100";
+					
 							ent.origin += (9*cos(spawn_loc.angles[1]), 9*sin(spawn_loc.angles[1]), 4);
 							spawn_loc = struct::get(ent.target, "targetname");
 							spawn_loc.origin += (9*cos(spawn_loc.angles[1]), 9*sin(spawn_loc.angles[1]), 4);
 							break;
 						}
 					case "ar_standard": //KN-44
-						ent.zombie_weapon_upgrade = "t4_type100";
+						ent.zombie_weapon_upgrade = "t4_bar";
 						break;
 					case "shotgun_precision": //Argus
 					case "smg_standard": //Kuda
@@ -1175,7 +1175,7 @@ function swap_wall_weapon()
 					}
 					case "frag_grenade":
 					{
-						ent.zombie_weapon_upgrade = "sticky_grenade";
+						ent.zombie_weapon_upgrade = "sticky_grenade_custom";
 						break;
 					}
 				}
@@ -1269,7 +1269,7 @@ function swap_wall_weapon()
 					}
 					case "frag_grenade":
 					{
-						ent.zombie_weapon_upgrade = "sticky_grenade";
+						ent.zombie_weapon_upgrade = "sticky_grenade_custom";
 						break;
 					}
 				}
@@ -1648,17 +1648,17 @@ function swap_wall_weapon()
 			}
 		}
 		
-		if(ent.zombie_weapon_upgrade == "sticky_grenade" && GetDvarInt("mutator_grenade_wallbuy") == 2)
+		if(ent.zombie_weapon_upgrade == "sticky_grenade_custom" && GetDvarInt("mutator_grenade_wallbuy") == 2)
 			ent.zombie_weapon_upgrade = "frag_grenade";
 		else if(ent.zombie_weapon_upgrade == "frag_grenade" && GetDvarInt("mutator_grenade_wallbuy") == 3)
 		{
-			if(!isdefined(level.zombie_weapons[GetWeapon("sticky_grenade")]))
+			if(!isdefined(level.zombie_weapons[GetWeapon("sticky_grenade_custom")]))
 			{
-				zm_utility::include_weapon( "sticky_grenade", false );
-				zm_weapons::add_zombie_weapon( "sticky_grenade", "", "", 250, "grenade", "", 250, "", false, "" );
+				zm_utility::include_weapon( "sticky_grenade_custom", false );
+				zm_weapons::add_zombie_weapon( "sticky_grenade_custom", "", "", 250, "grenade", "", 250, "", false, "" );
 			}
 			
-			ent.zombie_weapon_upgrade = "sticky_grenade";
+			ent.zombie_weapon_upgrade = "sticky_grenade_custom";
 		}
 		
 		if(isdefined(ent.target) && isdefined(VAL))

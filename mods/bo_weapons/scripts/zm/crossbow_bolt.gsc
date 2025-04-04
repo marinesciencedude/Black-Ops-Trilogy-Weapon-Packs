@@ -83,15 +83,6 @@ function __init__()
 	// # CLIENTFIELD REGISTRATION
 	clientfield::register( "missile", "blundersplat_missile", VERSION_SHIP, 1, "int" );
 	// # CLIENTFIELD REGISTRATION
-
-	// # VARIABLES AND SETTINGS
-	level.w_magmagat_upgraded = getWeapon( "t9_crossbow_up" );
-	level.w_magmagat_upgraded.ptr_weapon_grenade_fired_cb = &magmagat_fired;
-	// # VARIABLES AND SETTINGS
-	
-	// # REGISTER CALLBACKS
-	callback::on_spawned( &magmagat_on_player_spawned );
-	// # REGISTER CALLBACKS
 }
 
 /* 
@@ -107,71 +98,3 @@ function __main__()
 
 // ============================== CALLBACKS ==============================
 
-function magmagat_on_player_spawned()
-{
-	self thread monitor_weapon_grenade_fired();
-}
-
-function monitor_weapon_grenade_fired()
-{
-	self endon( "death_or_disconnect" );
-	self notify( "monitor_weapon_grenade_fired" );
-	self endon( "monitor_weapon_grenade_fired" );
-	
-	while ( isDefined( self ) )
-	{
-		self waittill( "grenade_fire", e_projectile, w_weapon );
-		
-		if ( isDefined( e_projectile ) && IS_TRUE( e_projectile.b_additional_shot ) )
-			continue;
-		
-		if ( isDefined( w_weapon.ptr_weapon_grenade_fired_cb ) )
-			self thread [ [ w_weapon.ptr_weapon_grenade_fired_cb ] ]( e_projectile, w_weapon, self.chargeshotlevel );
-			
-	}
-}
-
-// ============================== CALLBACKS ==============================
-
-// ============================== FUNCTIONALITY ==============================
-
-function magmagat_fired( e_projectile, w_weapon )
-{	
-	e_projectile util::waittill_any( "death", "grenade_bounce", "stationary", "grenade_stuck" );
-	
-	if ( !isDefined( e_projectile ) )
-		return;
-	
-	max_attract_dist = level.monkey_attract_dist;
-	if(!isdefined(max_attract_dist))
-	{
-		max_attract_dist = 1536;
-	}
-	num_attractors = level.num_monkey_attractors;
-	if(!isdefined(num_attractors))
-	{
-		num_attractors = 96;
-	}
-	
-	valid_poi = zm_utility::check_point_in_enabled_zone(e_projectile.origin, undefined, undefined);
-	
-	if(!valid_poi)
-	{
-		valid_poi = zm_utility::check_point_in_playable_area(e_projectile.origin);
-	}
-	
-	if(valid_poi)
-	{
-		a_targets = getAITeamArray( level.zombie_team );
-		for ( i = 0; i < a_targets.size; i++ )
-		{
-			if ( e_projectile isLinkedTo( a_targets[ i ] ) )
-			{
-				e_projectile zm_utility::create_zombie_point_of_interest( max_attract_dist, num_attractors, 10000 );
-				return;
-			}
-		}
-		
-		e_projectile zm_utility::create_zombie_point_of_interest( max_attract_dist, num_attractors, 10000 );
-	}
-}
