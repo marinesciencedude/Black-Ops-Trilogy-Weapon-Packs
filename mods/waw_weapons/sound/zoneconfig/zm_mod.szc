@@ -9,6 +9,12 @@
  "Sources" : [
 {
  "Type" : "ALIAS",
+ "Name" : "user_aliases",
+ "Filename" : "user_aliases.csv",
+ "Specs" : []
+},
+{
+ "Type" : "ALIAS",
  "Name" : "t4_bolt_action_sounds",
  "Filename" : "t4_bolt_action_sounds.csv",
  "Specs" : [ ] 
@@ -54,6 +60,36 @@
 	"Name" : "flamethrower",
 	"Filename" : "flamethrower.csv",
 	"Specs" : [ ]
+},
+{
+    "Type" : "ALIAS",
+    "Name" : "ray_phdflopper",
+    "Filename" : "ray_phdflopper.csv",
+    "Specs" : [ ]
+},
+{
+ "Type" : "ALIAS",
+ "Name" : "aliases_shadowman_announcer",
+ "Filename" : "aliases_shadowman_announcer.csv",
+ "Specs" : [ ] 
+},
+{
+			"Type" : "ALIAS",
+			"Name" : "moon_richtofen_ann",
+			"Filename" : "moon_richtofen_ann.csv",
+ 			"Specs" : [ ] 
+},
+{
+	"Type" : "ALIAS",
+	"Name" : "ori_sam_announcer",
+	"Filename" : "ori_sam_announcer.csv",
+	"Specs" : [ ] 
+},
+{
+ "Type" : "ALIAS",
+ "Name" : "aliases_drmonty_announcer",
+ "Filename" : "aliases_drmonty_announcer.csv",
+ "Specs" : [ ] 
 },
 {
 	"Type" : "ALIAS",

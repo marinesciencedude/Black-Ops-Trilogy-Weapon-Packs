@@ -4,6 +4,9 @@
 #using scripts\shared\callbacks_shared;
 #using scripts\zm\_zm_utility;
 
+#using scripts\shared\spawner_shared;
+//#using scripts\zm\_hb21_zm_behavior;
+
 #using scripts\zm\zm_flamethrower;
 
 #namespace zm_ffotd;
@@ -19,6 +22,8 @@
 */
 function main_start()
 {
+	if(GetDvarInt("mutator_random_perk_machines") == 2)
+		level.randomize_perk_machine_location = 0;
 }
 
 /*
@@ -35,6 +40,24 @@ function main_end()
 	difficulty = 1;
 	column = int(difficulty) + 1;
 	zombie_utility::set_zombie_var("zombie_move_speed_multiplier", 4, 0, column);
+	
+	//spawner::add_archetype_spawn_function( "zombie", &test );
+	
+	if(!IsInArray(getarraykeys(level.exert_sounds[1]), "burp"))
+	{
+		level.exert_sounds[1]["burp"][0] = "evt_belch";
+		level.exert_sounds[1]["burp"][1] = "evt_belch";
+		level.exert_sounds[1]["burp"][2] = "evt_belch";
+		level.exert_sounds[2]["burp"][0] = "evt_belch";
+		level.exert_sounds[2]["burp"][1] = "evt_belch";
+		level.exert_sounds[2]["burp"][2] = "evt_belch";
+		level.exert_sounds[3]["burp"][0] = "evt_belch";
+		level.exert_sounds[3]["burp"][1] = "evt_belch";
+		level.exert_sounds[3]["burp"][2] = "evt_belch";
+		level.exert_sounds[4]["burp"][0] = "evt_belch";
+		level.exert_sounds[4]["burp"][1] = "evt_belch";
+		level.exert_sounds[4]["burp"][2] = "evt_belch";
+	}
 	
 	zm_flamethrower::init();
 }
@@ -64,3 +87,8 @@ function optimize_for_splitscreen()
 	return false;
 }
 
+/*function test()
+{
+	if(GetDvarInt("mutator_sidestep") == 2)
+		self hb21_zm_behavior::enable_side_step();
+}*/

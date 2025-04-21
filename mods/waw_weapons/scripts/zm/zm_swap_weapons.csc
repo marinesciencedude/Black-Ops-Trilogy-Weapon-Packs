@@ -131,11 +131,11 @@ function swap_wall_weapon()
 				{
 				case "ar_marksman": //Sheiva
 					{
-						if(sheiva == 0)
+						if(sheiva == 0 && GetDvarInt("mutator_verruckt_springfield") == 2)
 							ent.zombie_weapon_upgrade = "t4_spring";
 						else
 							ent.zombie_weapon_upgrade = "t4_kar98k";
-						
+							
 						sheiva++;
 						break;
 					}

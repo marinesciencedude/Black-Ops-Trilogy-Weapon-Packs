@@ -92,6 +92,8 @@ function starter_weapon()
 	thread zm::last_stand_pistol_rank_init();
 	starter_weapon_extra();
 	
+	if(GetDvarInt("mutator_revive_anim") == 1)
+		level.weaponrevivetool = getweapon("legacy_syrette");
 }
 
 /*
@@ -215,11 +217,11 @@ function swap_wall_weapon()
 				{
 				case "ar_marksman": //Sheiva
 					{
-						if(sheiva == 0)
+						if(sheiva == 0 && GetDvarInt("mutator_verruckt_springfield") == 2)
 							ent.zombie_weapon_upgrade = "t4_spring";
 						else
 							ent.zombie_weapon_upgrade = "t4_kar98k";
-						
+							
 						sheiva++;
 						break;
 					}
@@ -609,8 +611,15 @@ function swap_chalk()
 					ent.var_47896610 = util::spawn_model("wallbuy_kar98k", spawn_loc.origin + VectorScale((0, 13, -3), 1), spawn_loc.angles);
 					break;
 				case "zm_asylum":
-					ent.var_47896610 = util::spawn_model("wallbuy_kar98k", spawn_loc.origin + VectorScale((1, 14, -4), 1), spawn_loc.angles);
-					break;
+					{
+						if((GetDvarInt("mutator_verruckt_springfield") == 1 || !GetDvarInt("mutator_verruckt_springfield")) && kar98k == 0)
+							ent.var_47896610 = util::spawn_model("wallbuy_kar98k", spawn_loc.origin + VectorScale((-14, 0, -4), 1), spawn_loc.angles);
+						else
+							ent.var_47896610 = util::spawn_model("wallbuy_kar98k", spawn_loc.origin + VectorScale((1, 14, -4), 1), spawn_loc.angles);
+						
+						kar98k++;
+						break;
+					}
 				case "zm_coast":
 					ent.var_47896610 = util::spawn_model("wallbuy_kar98k", spawn_loc.origin + VectorScale((0, -13, -3), 1), spawn_loc.angles);
 					break;
