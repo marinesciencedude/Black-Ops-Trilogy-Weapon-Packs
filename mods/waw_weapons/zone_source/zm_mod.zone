@@ -25,6 +25,7 @@ scriptparsetree,scripts/zm/_zm_mod.csc
 scriptparsetree,scripts/zm/_zm_mutators.csc
 scriptparsetree,scripts/zm/_zm_mutators.gsc
 scriptparsetree,scripts/zm/_zm_mutators.gsh
+scriptparsetree,scripts/zm/_zm_magicbox.gsc
 
 scriptparsetree,scripts/zm/_zm_weap_quantum_bomb.gsc
 scriptparsetree,scripts/zm/_zm_powerup_random_weapon.gsc
@@ -296,8 +297,8 @@ image,t7_hud_zm_powerup_deathmachine
 
 fx,custom/magic_box_og/fx_weapon_box_open_glow_og
 fx,custom/magic_box_og/fx_weapon_box_idle_glow_og
-//fx,custom/magic_box_og/fx_weapon_box_marker_og
-//fx,custom/magic_box_og/fx_weapon_box_marker_fl_og
+fx,custom/magic_box_og/fx_weapon_box_marker_og
+fx,custom/magic_box_og/fx_weapon_box_marker_fl_og
 fx,wetegg/iwperks/emptyFXIW
 
 //Frost Iceforge's custom eye color

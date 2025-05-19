@@ -9435,7 +9435,7 @@
 		"fireDelayStartSound" ""
 		"fireDelayStartSoundPlayer" ""
 		"fireIntroAnim" "viewmodel_m1garand_grenade_fire"
-		"fireRumble" ""
+		"fireRumble" "smg_fire"
 		"fireSound" ""
 		"fireSoundPlayer" ""
 		"fireTime" "0.1"

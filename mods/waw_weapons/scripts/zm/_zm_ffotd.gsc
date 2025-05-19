@@ -59,6 +59,12 @@ function main_end()
 		level.exert_sounds[4]["burp"][2] = "evt_belch";
 	}
 	
+	if(GetDvarInt("mutator_mystery_box_fx") == 2)
+	{
+		level._effect["lght_marker"] = "custom/magic_box_og/fx_weapon_box_marker_og";
+		level._effect["lght_marker_flare"] = "custom/magic_box_og/fx_weapon_box_marker_fl_og";
+	}
+	
 	zm_flamethrower::init();
 }
 
