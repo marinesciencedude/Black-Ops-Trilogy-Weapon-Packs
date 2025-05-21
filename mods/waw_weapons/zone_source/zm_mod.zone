@@ -55,6 +55,8 @@ stringtable,gamedata/weapons/zm/zm_factory_weapons.csv
 stringtable,gamedata/weapons/zm/zm_der_riese_weapons.csv
 stringtable,gamedata/weapons/zm/zm_theater_weapons.csv
 stringtable,gamedata/weapons/zm/zm_levelcommon_weapons.csv
+stringtable,gamedata/weapons/zm/zm_castle_weapons.csv
+stringtable,gamedata/weapons/zm/zm_island_weapons.csv
 
 scriptparsetree,scripts/zm/perks/_zm_perk_phdflopper.gsc
 scriptparsetree,scripts/zm/perks/_zm_perk_phdflopper.csc
@@ -103,6 +105,7 @@ xmodel,wallbuy_kar98k
 
 weapon,t4_kar98k_scope
 weapon,t4_kar98k_scope_up
+xmodel,wallbuy_kar98k_scoped
 
 weapon,t4_spring
 weapon,t4_spring_up
@@ -221,7 +224,7 @@ image,i_t7_zm_chalk_buy_argus_c
 image,i_t7_zm_chalk_buy_pharaoh_c
 image,i_t7_zm_chalk_buy_mp40_c
 image,i_t7_zm_chalk_buy_hvk30_c
-image,i_t7_zm_chalk_buy_trip_mine_c
+//image,i_t7_zm_chalk_buy_trip_mine_c
 image,i_t7_zm_chalk_buy_stg44_c
 image,i_t7_zm_chalk_buy_locus_c
 image,i_t7_zm_chalk_buy_sten_c

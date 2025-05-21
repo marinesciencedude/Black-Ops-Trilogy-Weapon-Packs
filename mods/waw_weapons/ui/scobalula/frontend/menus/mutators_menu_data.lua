@@ -140,7 +140,7 @@ ResetGameSettings = function(arg0, arg1, arg2, arg3)
 	Engine.SetDvar("mutator_health_difficulty", 0)
 	--Engine.SetDvar("mutator_startingweapon", 0)
 	Engine.SetDvar("mutator_revive_anim", 0)
-	
+	Engine.SetDvar("mutator_wallbuys_der_eisendrache", 0)
 
 	Engine.ForceNotifyModelSubscriptions(Engine.CreateModel(Engine.GetGlobalModel(), "GametypeSettings.Update"))
 end
@@ -341,7 +341,14 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"Whether it should be a Springfield on the American starting room or a Kar98k",
 			"MutatorSettings_VerrucktSpringfield",
 			"mutator_verruckt_springfield",
-			BuildStringSettings({"Kar98k", "Springfield"}, "Springfield"), nil, SetDvarSetting)
+			BuildStringSettings({"Kar98k", "Springfield"}, "Springfield"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Der Eisendrache Wallbuys",
+			"WaW Layout 1 is by poyzee, WaW Layout 2 is by Conn6orsuper117",
+			"MutatorSettings_WallbuysDerEisendrache",
+			"mutator_wallbuys_der_eisendrache",
+			BuildStringSettings({"WaW Layout 1", "WaW Layout 2"}, "WaW Layout 3"), nil, SetDvarSetting)
 		--CoD.OptionsUtility.CreateDvarSettings(
 		--	arg0,
 		--	"Random Moon Solo Character",
