@@ -738,7 +738,7 @@ function swap_wall_weapon()
 				case "ar_cqb": //HVK-30
 					{
 						if(hvk30 == 0) //Lab A
-							ent.zombie_weapon_upgrade = "t4_mp40";
+							ent.zombie_weapon_upgrade = "t4_type100";
 						else //Bunker
 							ent.zombie_weapon_upgrade = "t4_mp44";
 						
@@ -763,8 +763,15 @@ function swap_wall_weapon()
 					ent.zombie_weapon_upgrade = "t4_type100";
 					break;
 				case "smg_standard": //Kuda
-					ent.zombie_weapon_upgrade = "t4_m1";
-					break;
+					{
+						if(kuda == 0) //Outside Laboratory A
+							ent.zombie_weapon_upgrade = "t4_mp40";
+						else //Bunker
+							ent.zombie_weapon_upgrade = "t4_m1";
+						
+						kuda++;
+						break;
+					}
 				case "ar_longburst": //M8A7
 					{
 						if(m8a7 == 0)

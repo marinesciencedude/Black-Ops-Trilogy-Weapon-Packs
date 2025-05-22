@@ -824,7 +824,7 @@ function swap_wall_weapon()
 				case "ar_cqb": //HVK-30
 					{
 						if(hvk30 == 0) //Lab A
-							ent.zombie_weapon_upgrade = "t4_mp40";
+							ent.zombie_weapon_upgrade = "t4_type100";
 						else //Bunker
 							ent.zombie_weapon_upgrade = "t4_mp44";
 						
@@ -849,8 +849,15 @@ function swap_wall_weapon()
 					ent.zombie_weapon_upgrade = "t4_type100";
 					break;
 				case "smg_standard": //Kuda
-					ent.zombie_weapon_upgrade = "t4_m1";
-					break;
+					{
+						if(kuda == 0) //Outside Laboratory A
+							ent.zombie_weapon_upgrade = "t4_mp40";
+						else //Bunker
+							ent.zombie_weapon_upgrade = "t4_m1";
+						
+						kuda++;
+						break;
+					}
 				case "ar_longburst": //M8A7
 					{
 						if(m8a7 == 0)
@@ -1411,8 +1418,15 @@ function swap_chalk()
 						break;
 					}
 				case "zm_island": //Zetsubou no Shima
-					ent.var_47896610 = util::spawn_model("wallbuy_mp40_waw", spawn_loc.origin + VectorScale((14, 0, -4), 1), spawn_loc.angles);
-					break;
+					{
+						if(mp40 == 0)  //Outside Laboratory A
+							ent.var_47896610 = util::spawn_model("wallbuy_mp40_waw", spawn_loc.origin + VectorScale((-1, -14, -4), 1), spawn_loc.angles);
+						else //Bunker
+							ent.var_47896610 = util::spawn_model("wallbuy_mp40_waw", spawn_loc.origin + VectorScale((14, 0, -4), 1), spawn_loc.angles);
+				
+						mp40++;
+						break;
+					}
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_mp40_waw", spawn_loc.origin, spawn_loc.angles);
 					break;
