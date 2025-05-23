@@ -66,6 +66,12 @@ function main_end()
 	}
 	
 	zm_flamethrower::init();
+	
+	if(GetDvarString("mapname") != "zm_der_riese")
+	{
+		zm_utility::register_lethal_grenade_for_level( "frag_grenade_potato_masher" );
+		level.zombie_lethal_grenade_player_init = GetWeapon( "frag_grenade_potato_masher" );
+	}
 }
 
 /*

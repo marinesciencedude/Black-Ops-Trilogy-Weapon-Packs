@@ -2,7 +2,7 @@ weapon_name,upgrade_name,hint,cost,weaponVO,weaponVOresp,ammo_cost,create_vox,is
 t4_m1911,t4_m1911_up,,100,pistol,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,pistol,,,
 cymbal_monkey,cymbal_monkey_upgraded,,2000,monkey,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,
 cymbal_monkey_upgraded,,,5000,monkey,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,
-frag_grenade,,,250,grenade,,250,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,
+frag_grenade_potato_masher,,,250,grenade,,250,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,
 knife,,,0,,,0,,,FALSE,FALSE,,,,FALSE,FALSE,special,,,
 bowie_knife,,,3000,wpck_bowie,,,,,FALSE,FALSE,,,,FALSE,FALSE,special,,,
 t4_ray_gun,t4_ray_gun_up,,10000,wpck_ray,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,special,TRUE,TRUE,

@@ -19,6 +19,7 @@ It's advised to make a back-up of wpn_t7_zmb_weapons.gdt, since this will be rep
 * TheSkyeLord's [M1 Garand Rifle Grenade and Panzerschreck ports](https://www.ugx-mods.com/forum/full-weapons/84/skyes-waw-weapon-ports/24598/) (don't forget [Weapon Common](https://www.icloud.com/iclouddrive/04bF59Ei7A2KzlUMau4i3KBRg#Skye%5FWaW%5FWeapon%5FCommon))
 * ZeRoY's Flamethrower: https://drive.google.com/file/d/1k4FVM1TKrOxHhzy53g34k7Hc4W8Jxm6X
 * Smurphy's Improved BO3 Ray Gun: https://forum.modme.co/wiki/threads/3714.html (install ONLY share\raw\fx folder)
+* Kingslayer Kyle's Stielhandgranate (wpn_t7_grenade_german_m24) from the BO3 Gun Pack: https://drive.google.com/file/d/1aMRDiL1esfDM31sb9tIlkgiQzpx6fnKj/view
 * L3akMod: https://wiki.modme.co/wiki/black_ops_3/lua_(lui)/Installation.html
 * Scobalula's T7MTEnhancements: https://github.com/Scobalula/T7MTEnhancements
 * Ronan's Custom Perk & Powerup Shaders: https://forum.modme.co/wiki/threads/3206.html (install in texture_assets\Ronans_Classic_Shaders)

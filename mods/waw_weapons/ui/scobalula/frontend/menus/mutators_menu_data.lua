@@ -344,6 +344,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 			BuildStringSettings({"Kar98k", "Springfield"}, "Springfield"), nil, SetDvarSetting),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
+			"Kino der Toten Wallbuys",
+			"WaW Layout 1 is roughly based on Der Riese, WaW Layout 2 is by Conn6orsuper117, WaW Layout 3 is based on rough counterparts to BO weapons with an further option to swap the FG42/BAR (MPL/PM63)",
+			"MutatorSettings_WallbuysKinoderToten",
+			"mutator_wallbuys_kino_der_toten",
+			BuildStringSettings({"WaW Layout 1", "WaW Layout 2", "WaW Layout 3", "WaW Layout 3 (Swapped)"}, "Black Ops"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
 			"Der Eisendrache Wallbuys",
 			"WaW Layout 1 is by poyzee, WaW Layout 2 is by Conn6orsuper117",
 			"MutatorSettings_WallbuysDerEisendrache",

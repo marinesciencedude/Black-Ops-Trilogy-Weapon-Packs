@@ -209,6 +209,10 @@ weapon,t4_panzerschreck_up
 
 weapon,legacy_syrette_zm
 
+weapon,frag_grenade_potato_masher_zm
+//chalk drawing image from iw_03.iwd
+xmodel,wallbuy_grenade_bag
+
 sound,zm_mod
 
 image,i_t7_zm_chalk_buy_arak_c
@@ -228,6 +232,7 @@ image,i_t7_zm_chalk_buy_hvk30_c
 image,i_t7_zm_chalk_buy_stg44_c
 image,i_t7_zm_chalk_buy_locus_c
 image,i_t7_zm_chalk_buy_sten_c
+image,i_t7_zm_chalk_buy_frag_c
 
 //Remove Der Riese: Declassified chalk drawings
 image,i_ger_gewehr43_wall_chalk_c
