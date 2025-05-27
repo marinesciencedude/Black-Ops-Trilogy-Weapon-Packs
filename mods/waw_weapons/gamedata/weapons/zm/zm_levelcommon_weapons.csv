@@ -13,6 +13,7 @@ sticky_grenade,,,250,wpck_bowie,,,,,false,false,,,,false,false,grenade,,,,
 claymore,,,1000,claymore,,,,,false,false,false,,,false,true,special,,,,
 #dump absolutely everything here
 t4_m1911,t4_m1911_up,,100,pistol,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,pistol,,,
+t5_m1911,t5_m1911_rdw_up,,300,pistol,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,pistol,TRUE,,
 t4_kar98k,t4_kar98k_up,,200,rifle,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,
 t4_carbine,t4_carbine_up,,600,rifle,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,rifle,,,
 t4_g43,t4_g43_up,,600,rifle,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,rifle,,,

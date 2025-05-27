@@ -101,6 +101,15 @@ function applyChoices() {
 		}
 	}*/
 	
+	if(GetDvarInt("mutator_ray_gun") == 2)
+	{
+		zm_weapons::include_weapon( "ray_gun", true, 10000, 500 );
+		zm_weapons::include_upgraded_weapon( "ray_gun", "ray_gun_upgraded", false, 10000, 500 );
+		RemoveZombieBoxWeapon(GetWeapon("t4_ray_gun"));
+	}
+	
+	if(GetDvarInt("mutator_monkey_bomb") == MUTATOR_ONOFF_OFF)
+		RemoveZombieBoxWeapon(GetWeapon("cymbal_monkey"));
 }
 
 function tempCallback(localClientNum, oldVal, newVal, bNewEnt, bInitialSnap, fieldName, bWasTimeJump) {

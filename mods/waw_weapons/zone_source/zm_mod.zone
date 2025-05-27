@@ -99,6 +99,13 @@ rawfile,ui/uieditor/widgets/StartMenu/StartMenu_GameOptions_ZM.lua
 
 stringtable,gamedata/weapons/common/weaponoptions.csv
 
+//Smurphy's PPSh port
+material,mc/mtl_t7_camo_etching
+image,mtl_t4_etching_c
+image,mtl_t4_etching_n
+image,mtl_t4_etching_o
+image,mtl_t4_etching_s
+
 weapon,t4_kar98k
 weapon,t4_kar98k_up
 xmodel,wallbuy_kar98k
@@ -190,6 +197,9 @@ weapon,t4_m1911_up
 
 weapon,t4_ray_gun
 weapon,t4_ray_gun_up
+//Improved Ray Gun
+weaponfull,ray_gun_zm
+weaponfull,ray_gun_upgraded_zm
 
 scriptparsetree,scripts/zm/zm_flamethrower.gsc
 xmodel,gear_flametank

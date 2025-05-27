@@ -3,6 +3,7 @@
 #using scripts\shared\ai\zombie_utility;
 #using scripts\shared\callbacks_shared;
 #using scripts\zm\_zm_utility;
+#using scripts\zm\_zm;
 
 #using scripts\shared\spawner_shared;
 //#using scripts\zm\_hb21_zm_behavior;

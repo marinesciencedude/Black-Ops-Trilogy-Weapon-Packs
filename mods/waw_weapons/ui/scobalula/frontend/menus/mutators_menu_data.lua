@@ -138,9 +138,10 @@ ResetGameSettings = function(arg0, arg1, arg2, arg3)
 	--Engine.SetDvar("mutator_sidestep", 0)
 	--Engine.SetDvar("mutator_ascension_visionset", 0)
 	Engine.SetDvar("mutator_health_difficulty", 0)
-	--Engine.SetDvar("mutator_startingweapon", 0)
+	Engine.SetDvar("mutator_startingweapon", 0)
 	Engine.SetDvar("mutator_revive_anim", 0)
 	Engine.SetDvar("mutator_wallbuys_der_eisendrache", 0)
+	Engine.SetDvar("mutator_mule_kick", 0)
 
 	Engine.ForceNotifyModelSubscriptions(Engine.CreateModel(Engine.GetGlobalModel(), "GametypeSettings.Update"))
 end
@@ -164,16 +165,16 @@ function (arg0, arg1, arg2, arg3, arg4)
         },
 		{
             models        = { tabName 	= "Map Features", 				tabIcon = "" },
-            properties    = { tabId 	= "MutatorSettingsBOMaps", 				dataSourceName 	= "MutatorSettingsBOMaps",	title =	"Map-based Black Ops Features Settings" }
+            properties    = { tabId 	= "MutatorSettingsBOMaps", 				dataSourceName 	= "MutatorSettingsBOMaps",	title =	"Map-specific Settings" }
         },
 		{
             models        = { tabName 	= "General", 				        tabIcon = "" },
             properties    = { tabId 	= "MutatorSettingsGeneral", 		dataSourceName 	= "MutatorSettingsGeneral",	title =	"General Game Settings" }
         },
-        --{
-        --    models        = { tabName 	= "Mystery Box", 				    tabIcon = "" },
-        --    properties    = { tabId 	= "MutatorSettingsMysteryBox", 		dataSourceName 	= "MutatorSettingsMysteryBox",	title =	"Mystery Box Settings" }
-        --},
+        {
+            models        = { tabName 	= "Mystery Box", 				    tabIcon = "" },
+            properties    = { tabId 	= "MutatorSettingsMysteryBox", 		dataSourceName 	= "MutatorSettingsMysteryBox",	title =	"Mystery Box Settings" }
+        },
 		--{
 		--	models		  = { tabName	= "PaP Camo",						tabIcon = "" },
 		--	properties	  = { tabId		= "MutatorSettingsPaPCamo",			dataSourceName	= "MutatorSettingsPaPCamo",		title = "Pack-a-Punch Camouflage Settings" }
@@ -222,6 +223,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_DoubleTapExistence",
 			"mutator_doubletap_existence",
             BuildStringSettings({"Enabled", "Removed from Wunderfizz", "Removed from Map"}, "Enabled"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Quick Revive",
+			"If Quick Revive should cost 500 and work in solo like in Black Ops, or if it should always require power + cost 1500 and not provide solo revives like in World at War.",
+			"MutatorSettings_QuickRevive",
+			"mutator_quickrevive",
+			BuildStringSettings({"BO", "WaW"}, "BO"), nil, SetDvarSetting),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Deadshot Daiquiri Perk",
@@ -292,7 +300,29 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"Change between the classic revive animation and the Black Ops III one.",
 			"MutatorSettings_ReviveAnimation",
 			"mutator_revive_anim",
-			BuildStringSettings({"Classic", "BO III"}, "Classic"), nil, SetDvarSetting)
+			BuildStringSettings({"Classic", "BO III"}, "Classic"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Carpenter",
+			"Enable or disable the Carpenter powerup, for pre-Der Riese maps that didn't have it.",
+			"MutatorSettings_Carpenter",
+			"mutator_carpenter",
+			BuildStringSettings({"On", "Off"}, "On"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Fire Sale",
+			"Enable or disable the Fire Sale powerup.",
+			"MutatorSettings_FireSale",
+			"mutator_firesale",
+			BuildStringSettings({"On", "Off"}, "On"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Death Machine",
+			"Enable or disable the Death Machine powerup.",
+			"MutatorSettings_DeathMachine",
+			"mutator_deathmachine",
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting)
+			
 	}
 end, nil, nil, Update)
 
@@ -328,13 +358,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 		--	"MutatorSettings_AscensionVisionset",
 		--	"mutator_ascension_visionset",
 		--	BuildStringSettings({"BO III", "BO"}, "BO III"), nil, SetDvarSetting),
-		--CoD.OptionsUtility.CreateDvarSettings(
-		--	arg0,
-		--	"Starting Weapon",
-		--	"If the starting weapon should be the BO M1911 or leave it at the map's default. For maps like Origins which have unique starting weapons.",
-		--	"MutatorSettings_StartingWeapon",
-		--	"mutator_startingweapon",
-		--	BuildStringSettings({"M1911", "Use Map"}, "M1911"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Starting Weapon",
+			"Set starting weapon to the WaW M1911 (C-3000 b1at-ch35), BO M1911 (Mustang and Sally) or leave it at the map's default.",
+			"MutatorSettings_StartingWeapon",
+			"mutator_startingweapon",
+			BuildStringSettings({"WaW", "BO", "Use Map"}, "WaW"), nil, SetDvarSetting),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Verrückt Bolt Action Wallbuy",
@@ -457,10 +487,17 @@ function (arg0, arg1, arg2, arg3, arg4)
 	}
 end, nil, nil, Update)
 
---DataSources.MutatorSettingsMysteryBox = DataSourceHelpers.ListSetup("MutatorSettingsMysteryBox",
---function (arg0, arg1, arg2, arg3, arg4)
---	return
---	{
+DataSources.MutatorSettingsMysteryBox = DataSourceHelpers.ListSetup("MutatorSettingsMysteryBox",
+function (arg0, arg1, arg2, arg3, arg4)
+	return
+	{
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Ray Gun",
+			"Switch between WaW Ray Gun and Improved BO3 Ray Gun",
+			"MutatorSettings_RayGun",
+			"mutator_ray_gun",
+			BuildStringSettings({"WaW", "BO III"}, "WaW"), nil, SetDvarSetting),
 --		CoD.OptionsUtility.CreateDvarSettings(
 --			arg0,
 --			"Ray Gun Mark II",
@@ -468,8 +505,15 @@ end, nil, nil, Update)
 --			"MutatorSettings_RayGunMkII",
 --			"mutator_raygunmkii",
 --           BuildStringSettings({"On", "Off"}, "On"), nil, SetDvarSetting),
---	}
---end, nil, nil, Update)
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Monkey Bomb",
+			"Enable or disable Monkey Bombs in the mystery box.",
+			"MutatorSettings_MonkeyBomb",
+			"mutator_monkey_bomb",
+			BuildStringSettings({"On", "Off"}, "On"), nil, SetDvarSetting)
+	}
+end, nil, nil, Update)
 
 --DataSources.MutatorSettingsPaPCamo = DataSourceHelpers.ListSetup("MutatorSettingsPaPCamo",
 --function(arg0, arg1, arg2, arg3, arg4)
@@ -593,6 +637,13 @@ function(arg0, arg1, arg2, arg3, arg4)
 			"Force spawns Lightning Bolt powerup (Wunderwaffe DG-2) in place of Death Machine when defeating George A. Romero",
 			"MutatorSettings_GeorgeReward",
 			"mutator_george_reward",
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Bonus Points",
+			"Enable or disable the Bonus Points powerup. For Der Riese: Declassified.",
+			"MutatorSettings_DeclassifiedBonusPoints",
+			"mutator_declassified_bonuspoints",
 			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting)
 	}
 end, nil, nil, Update)
