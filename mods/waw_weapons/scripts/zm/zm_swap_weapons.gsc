@@ -83,17 +83,14 @@ function starter_weapon()
 {
 	wait(1);
 	
-	starting_weapon = GetWeapon("t4_m1911");
-	starting_weapon_pap = GetWeapon("t4_m1911_up");
-		
-	level.start_weapon = starting_weapon;
-	level.default_laststandpistol = starting_weapon;
-	level.default_solo_laststandpistol = starting_weapon_pap;
-	thread zm::last_stand_pistol_rank_init();
-	starter_weapon_extra();
-	
 	if(GetDvarInt("mutator_revive_anim") == 1)
 		level.weaponrevivetool = getweapon("legacy_syrette");
+		
+	level.pack_a_punch_camo_index = 141;
+	
+	//if(GetDvarString("mutator_startingweapon") != "Use Map")
+	if(!GetDvarInt("mutator_startingweapon") || GetDvarInt("mutator_startingweapon") != 3)
+		starter_weapon_extra();
 }
 
 /*
@@ -105,16 +102,43 @@ function starter_weapon()
 	Parameters: 0
 	Flags: None
 */
-function starter_weapon_extra()
+function starter_weapon_extra(starting_weapon)
 {
-	level flag::wait_till("initial_blackscreen_passed");
-	
-	starting_weapon = GetWeapon("t4_m1911");
-	starting_weapon_pap = GetWeapon("t4_m1911_up");
-	
+	/*wpnname = GetDvarString("mutator_startingweapon");
+	starting_weapon = GetWeapon(wpnname);
+	wpnname_pap = wpnname;*/
+	wpnname = "";
+	if(!GetDvarInt("mutator_startingweapon"))
+		wpnname = "t4_m1911";
+	wpnname_pap = "";
+	switch(GetDvarInt("mutator_startingweapon"))
+	//switch(wpnname)
+	{
+	case 1:
+	//case "t4_m1911":
+		wpnname = "t4_m1911";
+		wpnname_pap = "t4_m1911_up";
+		//wpnname_pap += "_up";
+		break;
+	case 2:
+	//case "t5_m1911":
+		wpnname = "t5_m1911";
+		wpnname_pap = "t5_m1911_rdw_up";
+		//wpnname_pap += "_rdw_up";
+		break;
+	/*default:
+		wpnname_pap += "_upgraded";
+		break;*/
+	}
+	starting_weapon = GetWeapon(wpnname);
+	starting_weapon_pap = GetWeapon(wpnname_pap);
 	level.start_weapon = starting_weapon;
 	level.default_laststandpistol = starting_weapon;
 	level.default_solo_laststandpistol = starting_weapon_pap;
+	thread zm::last_stand_pistol_rank_init();
+	
+	level flag::wait_till("initial_blackscreen_passed");
+	
 	foreach(player in GetPlayers())
 	{
 		if(player GetCurrentWeapon() != starting_weapon)
@@ -123,16 +147,6 @@ function starter_weapon_extra()
 			player zm_weapons::weapon_give(starting_weapon, 0, 0, 1, 1);
 		}
 	}
-	level.pack_a_punch_camo_index = 141;
-	/*foreach(player in GetPlayers())
-	{
-		player thread zm_equipment::show_hint_text("There is currently a known bug of crashing in co-op around round 16-17", 5, 1.5, 150);
-	}
-	wait(6);
-	foreach(player in GetPlayers())
-	{
-		player thread zm_equipment::show_hint_text("The mod should work fine in solo, hope you enjoy!", 5, 1.5, 150);
-	}*/
 }
 
 /*

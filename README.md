@@ -7,6 +7,7 @@ As seen on the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetai
 Install *all* of these assets first, since files from this repo are meant to override some of the assets.
 
 It's advised to make a back-up of wpn_t7_zmb_weapons.gdt, since this will be replaced with a version that doesn't produce duplicate asset errors with Smurphy's Improved BO3 Ray Gun
+Note also that share\raw\sound\aliases\user_aliases.csv and share\raw\sound\globals\loadspec.csv are replaced if you need to make a back-up of them.
 
 * TheAllNightFall's WaW Weapon Ports (don't forget [Weapon Common](https://drive.google.com/file/d/1pzasvTU0tIFtmKbepyGXPPpdEYNyMXmq)):
   * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-shotguns
@@ -18,7 +19,8 @@ It's advised to make a back-up of wpn_t7_zmb_weapons.gdt, since this will be rep
   * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-raygun
 * TheSkyeLord's [M1 Garand Rifle Grenade and Panzerschreck ports](https://www.ugx-mods.com/forum/full-weapons/84/skyes-waw-weapon-ports/24598/) (don't forget [Weapon Common](https://www.icloud.com/iclouddrive/04bF59Ei7A2KzlUMau4i3KBRg#Skye%5FWaW%5FWeapon%5FCommon))
 * ZeRoY's Flamethrower: https://drive.google.com/file/d/1k4FVM1TKrOxHhzy53g34k7Hc4W8Jxm6X
-* Smurphy's Improved BO3 Ray Gun: https://forum.modme.co/wiki/threads/3714.html (install ONLY share\raw\fx folder)
+* Smurphy's Improved BO3 Ray Gun: https://forum.modme.co/wiki/threads/3714.html
+* Etching camo from Smurphy's Remastered WaW PPSh: https://mega.nz/file/u0dljYBS#XneH4eOMTpdzHvuj6BewspVSj1f5JnHOCM1FrGKSsHw
 * Kingslayer Kyle's Stielhandgranate (wpn_t7_grenade_german_m24) from the BO3 Gun Pack: https://drive.google.com/file/d/1aMRDiL1esfDM31sb9tIlkgiQzpx6fnKj/view
 * L3akMod: https://wiki.modme.co/wiki/black_ops_3/lua_(lui)/Installation.html
 * Scobalula's T7MTEnhancements: https://github.com/Scobalula/T7MTEnhancements

@@ -223,7 +223,7 @@ function use_solo_revive()
 
 	players = GetPlayers();
 	solo_mode = 0;
-	if ( players.size == 1 || IS_TRUE( level.force_solo_quick_revive ) )
+	if ( (players.size == 1 || IS_TRUE( level.force_solo_quick_revive )) && GetDvarInt("mutator_quickrevive") == 1 )
 	{
 		solo_mode = 1;
 	}
@@ -1488,7 +1488,7 @@ function perk_machine_spawn_init()
 		if(GetDvarInt("mutator_doubletap") == 1 && perk == PERK_DOUBLETAP2)
 			perk = "specialty_rof";
 		
-		if(GetDvarString("mapname") == "zm_sumpf" && GetDvarInt("mutator_shinonuma_perk") == 3 && perk == PERK_ADDITIONAL_PRIMARY_WEAPON)
+		if((GetDvarString("mapname") == "zm_sumpf" && GetDvarInt("mutator_shinonuma_perk") == 3) && perk == PERK_ADDITIONAL_PRIMARY_WEAPON)
 			continue;
 			
 		if(isdefined(perk) && isdefined(s_spawn_pos.model))

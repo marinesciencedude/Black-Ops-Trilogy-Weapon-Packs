@@ -141,6 +141,22 @@ function apply_choices() {
 			aat::register_aat_exemption(keys[i]);
 	}
 	
+	if(GetDvarInt("mutator_ray_gun") == 2)
+	{
+		level.zombie_weapons[GetWeapon("t4_ray_gun")].is_in_box = false;
+		zm_utility::include_weapon( "t4_ray_gun", false);
+		zm_utility::include_weapon( "ray_gun", true );
+		zm_utility::include_weapon( "ray_gun_upgraded", false );
+		zm_weapons::add_zombie_weapon( "ray_gun", "ray_gun_upgraded", "", 10000, "raygun", "", 500, "", false, "" );
+		aat::register_aat_exemption(getweapon("ray_gun_upgraded"));
+	}
+	
+	if(GetDvarInt("mutator_monkey_bomb") == MUTATOR_ONOFF_OFF)
+	{
+		level.zombie_weapons[GetWeapon("cymbal_monkey")].is_in_box = false;
+		zm_utility::include_weapon( "cymbal_monkey", false);
+	}
+	
 	if(GetDvarInt("mutator_enable_gobblegum") == MUTATOR_OFFON_ON)
 	{
 		foreach(bgb_machine in level.bgb_machines)
@@ -296,6 +312,18 @@ function apply_choices() {
 			}
 		}
 	//}
+	
+	if(GetDvarInt("mutator_carpenter") == MUTATOR_ONOFF_OFF)
+		zm_powerups::powerup_remove_from_regular_drops("carpenter");
+	
+	if(GetDvarInt("mutator_firesale") == MUTATOR_ONOFF_OFF)
+		zm_powerups::powerup_remove_from_regular_drops("fire_sale");
+	
+	if(GetDvarInt("mutator_deathmachine") == MUTATOR_OFFON_OFF)
+		zm_powerups::powerup_remove_from_regular_drops("minigun");
+	
+	if(GetDvarInt("mutator_declassified_bonuspoints") == MUTATOR_OFFON_OFF)
+		zm_powerups::powerup_remove_from_regular_drops("bonus_points_team");
 	
     //notify csc for client side scripts
     foreach(player in level.players){
