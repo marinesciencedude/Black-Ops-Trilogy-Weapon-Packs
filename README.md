@@ -42,6 +42,9 @@ Note also that share\raw\sound\aliases\user_aliases.csv and share\raw\sound\glob
 * natesmithzombies's Custom Random Weapon Powerup: https://forum.modme.co/wiki/threads/706.html
 * Rayjiun's black-and-white visionset: https://discord.com/channels/230615005194616834/230616047613378560/1128724861666218046
 
+Required for TF's Zombie Options:
+* natesmithzombies's Zombie Money, Bottomless Clip, Zombie Blood Powerups; ZoekMeMaar's Free Pack a Punch Powerup: https://forum.modme.co/wiki/threads/2831.html (ignore script files, these are installed from this repo)
+
 Then install all files from this repo into your Black Ops III installation apart from the folder chalk_drawing_models, which is for reference purposes only
 
 ## Credits
@@ -57,3 +60,4 @@ Then install all files from this repo into your Black Ops III installation apart
 * XcDylan93 for dive-to-prone and sprint/reload cancel script
 * TheSkyeLord for weaponcamo setup from [his own pack](https://www.ugx-mods.com/forum/full-weapons/84/skyes-waw-weapon-ports/24598/) used by me as a basis for WaW weapons
 * Apex for xmodelalias fix ([originally here](https://steamcommunity.com/sharedfiles/filedetails/?id=1833845566), one file extracted with Cerberus and other files downloaded [from here](https://github.com/clixmods/zm_nuked/blob/main/scripts/shared))
+* TescoFresco for [TF's Zombie Options](TescoFresco for TF's Zombie Options)
