@@ -13,12 +13,13 @@ function autoexec __init__sytem__()
 
 function __init__()
 {
-	enable_doubletap_perk_for_level();
+	if(GetDvarString("mapname") != "zm_factory_classic")
+		enable_doubletap_perk_for_level();
 }
 
 function enable_doubletap_perk_for_level()
 {
-	zm_perks::register_perk_clientfields("specialty_rof", &doubletap_client_field_func, &doubletap_code_callback_func);
+	//zm_perks::register_perk_clientfields("specialty_rof", &doubletap_client_field_func, &doubletap_code_callback_func);
 	zm_perks::register_perk_effects("specialty_rof", "doubletap_light");
 	zm_perks::register_perk_init_thread("specialty_rof", &init_doubletap);
 }
@@ -31,7 +32,8 @@ function init_doubletap()
 	}
 }
 
-function doubletap_client_field_func()
+//As a result of the code being moved away from the .gsc this too needs to go
+/*function doubletap_client_field_func()
 {
 	clientfield::register( "clientuimodel", "hudItems.perks.doubletap", 1, 2, "int", undefined, 0, 1); 
 	clientfield::register( "clientuimodel", "hudItems.perks.doubletap_bo", 1, 2, "int", undefined, 0, 1); 
@@ -40,4 +42,4 @@ function doubletap_client_field_func()
 
 function doubletap_code_callback_func()
 {
-}
+}*/

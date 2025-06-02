@@ -644,6 +644,13 @@ function(arg0, arg1, arg2, arg3, arg4)
 			"Enable or disable the Bonus Points powerup. For Der Riese: Declassified.",
 			"MutatorSettings_DeclassifiedBonusPoints",
 			"mutator_declassified_bonuspoints",
-			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting)
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+		--CoD.OptionsUtility.CreateDvarSettings(
+		--	arg0,
+		--	"gcp345's Der Riese Weapons",
+		--	"Choose either the map's weapons or this mod's weapons for gcp345's Der Riese.",
+		--	"MutatorSettings_FactoryClassic",
+		--	"mutator_factory_classic",
+		--	BuildStringSettings({"Use Map", "Use Mod"}, "Use Map"), nil, SetDvarSetting)
 	}
 end, nil, nil, Update)

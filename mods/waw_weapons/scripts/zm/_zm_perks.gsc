@@ -31,6 +31,7 @@
 
 #using scripts\zm\perks\_zm_perk_phdflopper;
 #using scripts\zm\_zm_perk_doubletap;
+#using scripts\zm\doubletap2;
 
 #insert scripts\zm\_zm_perks.gsh;
 #insert scripts\zm\_zm_utility.gsh;
@@ -1485,8 +1486,13 @@ function perk_machine_spawn_init()
 		if(GetDvarInt("mutator_phd_widows") == 1 && perk == PERK_WIDOWS_WINE)
 			perk = PERK_PHDFLOPPER;
 		
-		if(GetDvarInt("mutator_doubletap") == 1 && perk == PERK_DOUBLETAP2)
+		if(!GetDvarInt("mutator_doubletap") || GetDvarInt("mutator_doubletap") == 1 && perk == PERK_DOUBLETAP2)
 			perk = "specialty_rof";
+		
+		if(GetDvarInt("mutator_doubletap") == 2 && perk == "specialty_rof")
+		{
+			perk = PERK_DOUBLETAP2;
+		}
 		
 		if((GetDvarString("mapname") == "zm_sumpf" && GetDvarInt("mutator_shinonuma_perk") == 3) && perk == PERK_ADDITIONAL_PRIMARY_WEAPON)
 			continue;

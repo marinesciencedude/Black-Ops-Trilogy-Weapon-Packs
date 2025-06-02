@@ -21,14 +21,15 @@ function autoexec __init__sytem__()
 
 function __init__()
 {
-	enable_doubletap_perk_for_level();
+	if(GetDvarString("mapname") != "zm_factory_classic")
+		enable_doubletap_perk_for_level();
 }
 
 function enable_doubletap_perk_for_level()
 {
 	zm_perks::register_perk_basic_info("specialty_rof", "doubletap", 2000, &"ZOMBIE_PERK_DOUBLETAP", getweapon("zombie_perk_bottle_doubletap"));
 	zm_perks::register_perk_precache_func("specialty_rof", &doubletap_precache);
-	zm_perks::register_perk_clientfields("specialty_rof", &doubletap_register_clientfield, &doubletap_set_clientfield);
+	//zm_perks::register_perk_clientfields("specialty_rof", &doubletap_register_clientfield, &doubletap_set_clientfield);
 	zm_perks::register_perk_machine("specialty_rof", &doubletap_perk_machine_setup);
 	zm_perks::register_perk_host_migration_params("specialty_rof", "vending_doubletap", "doubletap_light");
 }
@@ -47,13 +48,14 @@ function doubletap_precache()
 	level.machine_assets["specialty_rof"].on_model = "p7_zm_vending_doubletap2";
 }
 
-function doubletap_register_clientfield()
+/*function doubletap_register_clientfield()
 {
 	clientfield::register( "clientuimodel", "hudItems.perks.doubletap", 1, 2, "int");
 	clientfield::register( "clientuimodel", "hudItems.perks.doubletap_bo", 1, 2, "int");
 	clientfield::register( "clientuimodel", "hudItems.perks.doubletap_recolour", 1, 2, "int");
 }
 
+//Moving elsewhere to avoid overriding gcp345's Der Riese
 function doubletap_set_clientfield(state)
 {
 	if(GetDvarInt("mutator_bo_perk_icons") == 1 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
@@ -68,7 +70,7 @@ function doubletap_set_clientfield(state)
 	{
 		self clientfield::set_player_uimodel("hudItems.perks.doubletap", state);
 	}
-}
+}*/
 
 function doubletap_perk_machine_setup(use_trigger, perk_machine, bump_trigger, collision)
 {

@@ -101,10 +101,38 @@ function applyChoices() {
 		}
 	}*/
 	
+	/*if(GetDvarInt("mutator_factory_classic") == 2 && GetDvarString("mapname") == "zm_factory_classic")
+	{
+		RemoveZombieBoxWeapon(GetWeapon("zombie_ray_gun")); AddZombieBoxWeapon(GetWeapon("t4_ray_gun"), "wm_raygun", false);
+		RemoveZombieBoxWeapon(GetWeapon("zombie_sw_357")); AddZombieBoxWeapon(GetWeapon("t4_357"), "wm_357", false);
+		RemoveZombieBoxWeapon(GetWeapon("zombie_m1garand")); AddZombieBoxWeapon(GetWeapon("t4_m1"), "wm_m1", false);
+		RemoveZombieBoxWeapon(GetWeapon("zombie_kar98k")); AddZombieBoxWeapon(GetWeapon("t4_kar98k"), "wm_kar98k", false);
+		RemoveZombieBoxWeapon(GetWeapon("zombie_gewehr43")); AddZombieBoxWeapon(GetWeapon("t4_g43"), "wm_g43", false);
+		RemoveZombieBoxWeapon(GetWeapon("zombie_m1carbine")); AddZombieBoxWeapon(GetWeapon("t4_carbine"), "wm_carbine", false);
+		RemoveZombieBoxWeapon(GetWeapon("zombie_stg44")); AddZombieBoxWeapon(GetWeapon("t4_mp44"), "worldmodel_stg44", false);
+		RemoveZombieBoxWeapon(GetWeapon("zombie_fg42")); AddZombieBoxWeapon(GetWeapon("t4_fg42"), "worldmodel_fg42", false);
+		RemoveZombieBoxWeapon(GetWeapon("zombie_bar")); AddZombieBoxWeapon(GetWeapon("t4_bar"), "wm_bar_bipod", false);
+		RemoveZombieBoxWeapon(GetWeapon("zombie_mg42")); AddZombieBoxWeapon(GetWeapon("t4_mg42"), "wm_mg42", false);
+		RemoveZombieBoxWeapon(GetWeapon("zombie_30cal")); AddZombieBoxWeapon(GetWeapon("t4_m1919"), "wm_m1919", false);
+		RemoveZombieBoxWeapon(GetWeapon("zombie_thompson")); AddZombieBoxWeapon(GetWeapon("t4_thompson"), "wm_thompson", false);
+		RemoveZombieBoxWeapon(GetWeapon("zombie_mp40")); AddZombieBoxWeapon(GetWeapon("t4_mp40"), "wm_mp40", false);
+		RemoveZombieBoxWeapon(GetWeapon("zombie_ppsh")); AddZombieBoxWeapon(GetWeapon("t4_ppsh"), "wm_ppsh_drummag", false);
+		RemoveZombieBoxWeapon(GetWeapon("zombie_type100_smg")); AddZombieBoxWeapon(GetWeapon("t4_type100"), "wm_type100", false);
+		RemoveZombieBoxWeapon(GetWeapon("zombie_doublebarrel")); AddZombieBoxWeapon(GetWeapon("t4_db"), "wm_db", false);
+		RemoveZombieBoxWeapon(GetWeapon("zombie_shotgun")); AddZombieBoxWeapon(GetWeapon("t4_m1897"), "wm_m1987", false);
+		RemoveZombieBoxWeapon(GetWeapon("m1garand_gl_zombie")); AddZombieBoxWeapon(GetWeapon("t4_m1garand_rg"), "wm_t4_m1garand", false);
+		RemoveZombieBoxWeapon(GetWeapon("ptrs41_zombie")); AddZombieBoxWeapon(GetWeapon("t4_ptrs"), "wm_ptrs", false);
+		RemoveZombieBoxWeapon(GetWeapon("m2_flamethrower_zombie")); AddZombieBoxWeapon(GetWeapon("m2_flamethrower"), "weapon_usa_flamethrower", false);
+		RemoveZombieBoxWeapon(GetWeapon("panzershreck_zombie")); AddZombieBoxWeapon(GetWeapon("t4_panzerschreck"), "wm_t4_panzerschreck", false);
+		
+		//zm_weapons::load_weapon_spec_from_table("gamedata/weapons/zm/zm_factory_classic_mod.csv", 1);
+	}*/
+	
 	if(GetDvarInt("mutator_ray_gun") == 2)
 	{
-		zm_weapons::include_weapon( "ray_gun", true, 10000, 500 );
-		zm_weapons::include_upgraded_weapon( "ray_gun", "ray_gun_upgraded", false, 10000, 500 );
+														 // auto-calculate ammo cost
+		zm_weapons::include_weapon( "ray_gun", true, 10000, 0 );
+		zm_weapons::include_upgraded_weapon( "ray_gun", "ray_gun_upgraded", false, 10000, 0 );
 		RemoveZombieBoxWeapon(GetWeapon("t4_ray_gun"));
 	}
 	

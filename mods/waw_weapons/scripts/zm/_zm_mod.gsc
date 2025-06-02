@@ -134,6 +134,33 @@ function apply_choices() {
 		}
 	}*/
 	
+	/*if(GetDvarInt("mutator_factory_classic") == 2 && GetDvarString("mapname") == "zm_factory_classic")
+	{
+		zm_utility::include_weapon( "zombie_ray_gun", false ); level.zombie_weapons[GetWeapon("zombie_ray_gun")].is_in_box = false; zm_utility::include_weapon( "t4_ray_gun", true ); level.zombie_weapons[GetWeapon("t4_ray_gun")].is_in_box = true;
+		zm_utility::include_weapon( "zombie_sw_357", false ); level.zombie_weapons[GetWeapon("zombie_sw_357")].is_in_box = false; zm_utility::include_weapon( "t4_357", true ); level.zombie_weapons[GetWeapon("t4_357")].is_in_box = true;
+		zm_utility::include_weapon( "zombie_m1garand", false ); level.zombie_weapons[GetWeapon("zombie_m1garand")].is_in_box = false; zm_utility::include_weapon( "t4_m1", true ); level.zombie_weapons[GetWeapon("t4_m1")].is_in_box = true;
+		zm_utility::include_weapon( "zombie_kar98k", false ); level.zombie_weapons[GetWeapon("zombie_kar98k")].is_in_box = false; zm_utility::include_weapon( "t4_kar98k", true ); level.zombie_weapons[GetWeapon("t4_kar98k")].is_in_box = true;
+		zm_utility::include_weapon( "zombie_gewehr43", false ); level.zombie_weapons[GetWeapon("zombie_gewehr43")].is_in_box = false; zm_utility::include_weapon( "t4_g43", true ); level.zombie_weapons[GetWeapon("t4_g43")].is_in_box = true;
+		zm_utility::include_weapon( "zombie_m1carbine", false ); level.zombie_weapons[GetWeapon("zombie_m1carbine")].is_in_box = false; zm_utility::include_weapon( "t4_carbine", true ); level.zombie_weapons[GetWeapon("t4_carbine")].is_in_box = true;
+		zm_utility::include_weapon( "zombie_stg44", false ); level.zombie_weapons[GetWeapon("zombie_stg44")].is_in_box = false; zm_utility::include_weapon( "t4_mp44", true ); level.zombie_weapons[GetWeapon("t4_mp44")].is_in_box = true;
+		zm_utility::include_weapon( "zombie_fg42", false ); level.zombie_weapons[GetWeapon("zombie_fg42")].is_in_box = false; zm_utility::include_weapon( "t4_fg42", true ); level.zombie_weapons[GetWeapon("t4_fg42")].is_in_box = true;
+		zm_utility::include_weapon( "zombie_bar", false ); level.zombie_weapons[GetWeapon("zombie_bar")].is_in_box = false; zm_utility::include_weapon( "t4_bar", true ); level.zombie_weapons[GetWeapon("t4_bar")].is_in_box = true;
+		zm_utility::include_weapon( "zombie_mg42", false ); level.zombie_weapons[GetWeapon("zombie_mg42")].is_in_box = false; zm_utility::include_weapon( "t4_mg42", true ); level.zombie_weapons[GetWeapon("t4_mg42")].is_in_box = true;
+		zm_utility::include_weapon( "zombie_30cal", false ); level.zombie_weapons[GetWeapon("zombie_30cal")].is_in_box = false; zm_utility::include_weapon( "t4_m1919", true ); level.zombie_weapons[GetWeapon("t4_m1919")].is_in_box = true;
+		zm_utility::include_weapon( "zombie_thompson", false ); level.zombie_weapons[GetWeapon("zombie_thompson")].is_in_box = false; zm_utility::include_weapon( "t4_thompson", true ); level.zombie_weapons[GetWeapon("t4_thompson")].is_in_box = true;
+		zm_utility::include_weapon( "zombie_mp40", false ); level.zombie_weapons[GetWeapon("zombie_mp40")].is_in_box = false; zm_utility::include_weapon( "t4_mp40", true ); level.zombie_weapons[GetWeapon("t4_mp40")].is_in_box = true;
+		zm_utility::include_weapon( "zombie_ppsh", false ); level.zombie_weapons[GetWeapon("zombie_ppsh")].is_in_box = false; zm_utility::include_weapon( "t4_ppsh", true ); level.zombie_weapons[GetWeapon("t4_ppsh")].is_in_box = true;
+		zm_utility::include_weapon( "zombie_type100_smg", false ); level.zombie_weapons[GetWeapon("zombie_type100_smg")].is_in_box = false; zm_utility::include_weapon( "t4_type100", true ); level.zombie_weapons[GetWeapon("t4_type100")].is_in_box = true;
+		zm_utility::include_weapon( "zombie_doublebarrel", false ); level.zombie_weapons[GetWeapon("zombie_doublebarrel")].is_in_box = false; zm_utility::include_weapon( "t4_db", true ); level.zombie_weapons[GetWeapon("t4_db")].is_in_box = true;
+		zm_utility::include_weapon( "zombie_shotgun", false ); level.zombie_weapons[GetWeapon("zombie_shotgun")].is_in_box = false; zm_utility::include_weapon( "t4_m1897", true ); level.zombie_weapons[GetWeapon("t4_m1897")].is_in_box = true;
+		zm_utility::include_weapon( "m1garand_gl_zombie", false ); level.zombie_weapons[GetWeapon("m1garand_gl_zombie")].is_in_box = false; zm_utility::include_weapon( "t4_m1garand_rg", true ); level.zombie_weapons[GetWeapon("t4_m1garand_rg")].is_in_box = true;
+		zm_utility::include_weapon( "ptrs41_zombie", false ); level.zombie_weapons[GetWeapon("ptrs41_zombie")].is_in_box = false; zm_utility::include_weapon( "t4_ptrs", true ); level.zombie_weapons[GetWeapon("t4_ptrs")].is_in_box = true;
+		zm_utility::include_weapon( "m2_flamethrower_zombie", false ); level.zombie_weapons[GetWeapon("m2_flamethrower_zombie")].is_in_box = false; zm_utility::include_weapon( "m2_flamethrower", true ); level.zombie_weapons[GetWeapon("m2_flamethrower")].is_in_box = true;
+		zm_utility::include_weapon( "panzershreck_zombie", false ); level.zombie_weapons[GetWeapon("panzershreck_zombie")].is_in_box = false; zm_utility::include_weapon( "t4_panzerschreck", true ); level.zombie_weapons[GetWeapon("t4_panzerschreck")].is_in_box = true;
+		
+		//zm_weapons::load_weapon_spec_from_table("gamedata/weapons/zm/zm_factory_classic_mod.csv", 1);
+	}*/
+	
 	if(GetDvarInt("mutator_double_packapunch") == MUTATOR_ONOFF_OFF)
 	{
 		keys = GetArrayKeys(level.zombie_weapons_upgraded);
@@ -239,7 +266,20 @@ function apply_choices() {
 	//if(GetDvarInt("mutator_health_difficulty" != 1))
 	//{
 		switch(GetDvarInt("mutator_health_difficulty"))
-		{	
+		{
+			case 1: //BO III
+			{
+				if(GetDvarString("mapname") == "zm_factory_classic")
+				{
+					//After two hits leave player at same health as they would normally
+					foreach(player in level.players){
+						player zombie_utility::set_zombie_var( "player_base_health", 110, false);
+						player.maxhealth = 110;
+						player.health = 110;
+					}
+				}
+				break;
+			}
 			case 2: //Recruit
 			{
 				level.player_deathinvulnerabletime = 4000;
@@ -250,11 +290,14 @@ function apply_choices() {
 				level.playerhealth_regularregendelay = 3000;
 				level.worthydamageratio = 0.0;
 				
-				//well, TF's Zombie Options set it to 75 so...
-				foreach(player in level.players){
-					player zombie_utility::set_zombie_var( "player_base_health", 75, false);
-					player.maxhealth = 75;
-					player.health = 75;
+				if(GetDvarString("mapname") != "zm_factory_classic")
+				{
+					//well, TF's Zombie Options set it to 75 so...
+					foreach(player in level.players){
+						player zombie_utility::set_zombie_var( "player_base_health", 75, false);
+						player.maxhealth = 75;
+						player.health = 75;
+					}
 				}
 				break;
 			}
@@ -267,11 +310,14 @@ function apply_choices() {
 				level.invultime_postshield = 0.3;
 				level.playerhealth_regularregendelay = 2400;
 				
-				//well, TF's Zombie Options set it to 75 so...
-				foreach(player in level.players){
-					player zombie_utility::set_zombie_var( "player_base_health", 75, false);
-					player.maxhealth = 75;
-					player.health = 75;
+				if(GetDvarString("mapname") != "zm_factory_classic")
+				{
+					//well, TF's Zombie Options set it to 75 so...
+					foreach(player in level.players){
+						player zombie_utility::set_zombie_var( "player_base_health", 75, false);
+						player.maxhealth = 75;
+						player.health = 75;
+					}
 				}
 				break;
 			}
@@ -284,11 +330,14 @@ function apply_choices() {
 				level.invultime_postshield = 0.1;
 				level.playerhealth_regularregendelay = 1200;
 				
-				//well, TF's Zombie Options set it to 75 so...
-				foreach(player in level.players){
-					player zombie_utility::set_zombie_var( "player_base_health", 75, false);
-					player.maxhealth = 75;
-					player.health = 75;
+				if(GetDvarString("mapname") != "zm_factory_classic")
+				{
+					//well, TF's Zombie Options set it to 75 so...
+					foreach(player in level.players){
+						player zombie_utility::set_zombie_var( "player_base_health", 75, false);
+						player.maxhealth = 75;
+						player.health = 75;
+					}
 				}
 				break;
 			}*/
@@ -302,11 +351,14 @@ function apply_choices() {
 				level.invultime_postshield = 0.0;
 				level.playerhealth_regularregendelay = 1200;
 				
-				//well, TF's Zombie Options set it to 75 so...
-				foreach(player in level.players){
-					player zombie_utility::set_zombie_var( "player_base_health", 75, false);
-					player.maxhealth = 75;
-					player.health = 75;
+				if(GetDvarString("mapname") != "zm_factory_classic")
+				{
+					//well, TF's Zombie Options set it to 75 so...
+					foreach(player in level.players){
+						player zombie_utility::set_zombie_var( "player_base_health", 75, false);
+						player.maxhealth = 75;
+						player.health = 75;
+					}
 				}
 				break;
 			}

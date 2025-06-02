@@ -24,91 +24,7 @@
 #insert scripts\zm\_zm_perks.gsh;
 #insert scripts\zm\_zm_utility.gsh;
 
-#precache( "material", QUICK_REVIVE_SHADER );
-#precache( "string", "ZOMBIE_PERK_QUICKREVIVE" );
-#precache( "fx", "zombie/fx_perk_quick_revive_zmb" );
-
-#namespace zm_perk_quick_revive;
-
-REGISTER_SYSTEM( "zm_perk_quick_revive", &__init__, undefined )
-
-// QUICK REVIVE ( QUICK REVIVE )
-
-//-----------------------------------------------------------------------------------
-// setup
-//-----------------------------------------------------------------------------------
-function __init__()
-{
-	enable_quick_revive_perk_for_level();
-	level.check_quickrevive_hotjoin = &check_quickrevive_for_hotjoin;
-}
-
-function enable_quick_revive_perk_for_level()
-{	
-	// register quick revive perk for level
-	zm_perks::register_perk_basic_info( PERK_QUICK_REVIVE, "revive", &revive_cost_override, &"ZOMBIE_PERK_QUICKREVIVE", GetWeapon( QUICK_REVIVE_PERK_BOTTLE_WEAPON ) );
-	zm_perks::register_perk_precache_func( PERK_QUICK_REVIVE, &quick_revive_precache );
-	zm_perks::register_perk_clientfields( PERK_QUICK_REVIVE, &quick_revive_register_clientfield, &quick_revive_set_clientfield );
-	zm_perks::register_perk_machine( PERK_QUICK_REVIVE, &quick_revive_perk_machine_setup );
-	zm_perks::register_perk_threads( PERK_QUICK_REVIVE, &give_quick_revive_perk, &take_quick_revive_perk );
-	zm_perks::register_perk_host_migration_params( PERK_QUICK_REVIVE, QUICK_REVIVE_RADIANT_MACHINE_NAME, QUICK_REVIVE_MACHINE_LIGHT_FX );
-	zm_perks::register_perk_machine_power_override( PERK_QUICK_REVIVE, &turn_revive_on );
-	level flag::init( "solo_revive" );
-	
-}
-
-function quick_revive_precache()
-{
-	if( IsDefined(level.quick_revive_precache_override_func) )
-	{
-		[[ level.quick_revive_precache_override_func ]]();
-		return;
-	}
-	
-	level._effect[QUICK_REVIVE_MACHINE_LIGHT_FX] = "zombie/fx_perk_quick_revive_zmb";
-	
-	level.machine_assets[PERK_QUICK_REVIVE] = SpawnStruct();
-	level.machine_assets[PERK_QUICK_REVIVE].weapon = GetWeapon( QUICK_REVIVE_PERK_BOTTLE_WEAPON );
-	level.machine_assets[PERK_QUICK_REVIVE].off_model = QUICK_REVIVE_MACHINE_DISABLED_MODEL;
-	level.machine_assets[PERK_QUICK_REVIVE].on_model = QUICK_REVIVE_MACHINE_ACTIVE_MODEL;	
-}
-
-function quick_revive_register_clientfield()
-{
-	clientfield::register( "clientuimodel", PERK_CLIENTFIELD_QUICK_REVIVE, VERSION_SHIP, 2, "int" );
-	clientfield::register( "clientuimodel", "hudItems.perks.quick_revive_bo", VERSION_SHIP, 2, "int" );
-	clientfield::register( "clientuimodel", "hudItems.perks.quick_revive_recolour", VERSION_SHIP, 2, "int" );
-}
-
-function quick_revive_set_clientfield( state )
-{
-	if(GetDvarInt("mutator_bo_perk_icons") == 1 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
-	{
-		self clientfield::set_player_uimodel( "hudItems.perks.quick_revive_bo", state );
-	}
-	else if(GetDvarInt("mutator_bo_perk_icons") == 2)
-	{
-		self clientfield::set_player_uimodel( "hudItems.perks.quick_revive_recolour", state );
-	}
-	else
-	{
-		self clientfield::set_player_uimodel( PERK_CLIENTFIELD_QUICK_REVIVE, state );
-	}
-}
-
-function quick_revive_perk_machine_setup( use_trigger, perk_machine, bump_trigger, collision )
-{
-	use_trigger.script_sound = "mus_perks_revive_jingle";
-	use_trigger.script_string = "revive_perk";
-	use_trigger.script_label = "mus_perks_revive_sting";
-	use_trigger.target = QUICK_REVIVE_RADIANT_MACHINE_NAME;
-	perk_machine.script_string = "revive_perk";
-	perk_machine.targetname = QUICK_REVIVE_RADIANT_MACHINE_NAME;
-	if(IsDefined(bump_trigger))
-	{
-		bump_trigger.script_string = "revive_perk";
-	}
-}
+#namespace quick_revive;
 
 function revive_cost_override()
 {
@@ -849,9 +765,3 @@ function give_quick_revive_perk()
 		self thread solo_revive_buy_trigger_move( PERK_QUICK_REVIVE );
 	}
 }
-
-function take_quick_revive_perk( b_pause, str_perk, str_result )
-{
-}
-
-

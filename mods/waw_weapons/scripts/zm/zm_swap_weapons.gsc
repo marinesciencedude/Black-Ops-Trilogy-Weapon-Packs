@@ -61,11 +61,8 @@ function init()
 */
 function main()
 {
-	/*if(GetDvarString("mapname") != "zm_coast")
-	{
-		return;
-	}*/
-	thread swap_chalk();
+	if(GetDvarString("mapname") != "zm_factory_classic")
+		thread swap_chalk();
 	thread starter_weapon();
 	level flag::wait_till("initial_blackscreen_passed");
 }
@@ -102,7 +99,7 @@ function starter_weapon()
 	Parameters: 0
 	Flags: None
 */
-function starter_weapon_extra(starting_weapon)
+function starter_weapon_extra()
 {
 	/*wpnname = GetDvarString("mutator_startingweapon");
 	starting_weapon = GetWeapon(wpnname);
@@ -441,6 +438,93 @@ function swap_wall_weapon()
 				}
 				break;
 			}
+		/*case "zm_factory_classic": //gcp345's DER RIESE
+			{
+				if(GetDvarInt("mutator_factory_classic") == 2) {
+				switch(VAL)
+				{
+				case "zombie_kar98k":
+					{
+						ent.zombie_weapon_upgrade = "t4_kar98k";
+						ent.origin += (0, -10, 0.5);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, -10, 0.5);
+						break;
+					}
+				case "zombie_gewehr43":
+					{
+						ent.zombie_weapon_upgrade = "t4_g43";
+						ent.origin += (0, -10, 1);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, -10, 1);
+						break;
+					}
+				case "zombie_doublebarrel":
+					{
+						ent.zombie_weapon_upgrade = "t4_db";
+						ent.origin += (0, -10, 2);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, -10, 2);
+						break;
+					}
+				case "zombie_thompson":
+					{
+						ent.zombie_weapon_upgrade = "t4_thompson";
+						ent.origin += (9, 0, 2);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (9, 0, 2);
+						break;
+					}
+				case "zombie_m1carbine":
+					{
+						ent.zombie_weapon_upgrade = "t4_carbine";
+						ent.origin += (12, 0, 0.5);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (12, 0, 0.5);
+						break;
+					}
+				case "zombie_fg42":
+					{
+						ent.zombie_weapon_upgrade = "t4_fg42";
+						ent.origin += (9, 0, 2);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (9, 0, 2);
+						break;
+					}
+				case "zombie_shotgun":
+					{
+						ent.zombie_weapon_upgrade = "t4_m1897";
+						ent.origin += (0, 10, 2);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, 10, 2);
+						break;
+					}
+				case "zombie_mp40":
+					{
+						ent.zombie_weapon_upgrade = "t4_mp40";
+						ent.origin += (0, -9, 2);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, -9, 2);
+						break;
+					}
+				case "zombie_type100_smg":
+					{
+						ent.zombie_weapon_upgrade = "t4_type100";
+						ent.origin += (-10.5, 0, 2.5);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (-10.5, 0, 2.5);
+						break;
+					}
+				case "zombie_stg44":
+					{
+						ent.zombie_weapon_upgrade = "t4_mp44";
+						ent.origin += (0, 10, 2);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, 10, 2);
+						break;
+					}
+				} }
+			}*/
 		case "zm_der_riese": //Der Riese: Declassified
 			{
 				switch(VAL)
