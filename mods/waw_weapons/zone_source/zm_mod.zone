@@ -57,8 +57,13 @@ stringtable,gamedata/weapons/zm/zm_factory_classic_weapons.csv
 stringtable,gamedata/weapons/zm/zm_der_riese_weapons.csv
 stringtable,gamedata/weapons/zm/zm_theater_weapons.csv
 stringtable,gamedata/weapons/zm/zm_levelcommon_weapons.csv
+stringtable,gamedata/weapons/zm/zm_tomb_weapons.csv
 stringtable,gamedata/weapons/zm/zm_castle_weapons.csv
 stringtable,gamedata/weapons/zm/zm_island_weapons.csv
+
+scriptparsetree,scripts/zm/zm_tomb_dig.gsc
+//scriptparsetree,scripts/zm/zm_tomb_ee_side.gsc //oh wow script error from decompiled file line 228: unexpected TOKEN_LEFT_PAREN, expecting TOKEN_SEMICOLON
+scriptparsetree,scripts/zm/zm_tomb_challenges.gsc
 
 scriptparsetree,scripts/zm/perks/_zm_perk_phdflopper.gsc
 scriptparsetree,scripts/zm/perks/_zm_perk_phdflopper.csc
@@ -231,6 +236,7 @@ image,i_t7_zm_chalk_buy_stg44_c
 image,i_t7_zm_chalk_buy_locus_c
 image,i_t7_zm_chalk_buy_sten_c
 image,i_t7_zm_chalk_buy_frag_c
+image,i_t7_zm_chalk_buy_thomp_c
 
 //Remove Der Riese: Declassified chalk drawings
 image,i_ger_gewehr43_wall_chalk_c

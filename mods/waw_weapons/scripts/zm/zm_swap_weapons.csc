@@ -682,6 +682,55 @@ function swap_wall_weapon()
 				}
 				break;
 			}
+		case "zm_tomb": //Origins
+		{
+			switch(VAL)
+			{
+				case "pistol_burst": //RK5
+					ent.zombie_weapon_upgrade = "t4_g43";
+					break;
+				case "ar_marksman": //Sheiva
+					ent.zombie_weapon_upgrade = "t4_kar98k";
+					break;
+				case "shotgun_pump": //KRM-262
+					ent.zombie_weapon_upgrade = "t4_m1897";
+					break;
+				case "ar_standard": //KN-44
+					ent.zombie_weapon_upgrade = "t4_mp40";
+					break;
+				case "smg_standard": //Kuda
+					ent.zombie_weapon_upgrade = "t4_thompson";
+					break;
+				case "pistol_fullauto": //L-CAR 9
+					ent.zombie_weapon_upgrade = "t4_carbine";
+					break;
+				case "smg_fastfire": //Vesper
+					ent.zombie_weapon_upgrade = "t4_fg42";
+					break;
+				case "ar_accurate": //ICR-1
+					ent struct::delete();
+					break;
+				case "ar_cqb": //HVK-30
+					ent.zombie_weapon_upgrade = "t4_bar";
+					break;
+				case "smg_versatile": //VMP
+					ent.zombie_weapon_upgrade = "t4_mp40";
+					break;
+				case "shotgun_precision": //Argus
+					ent.zombie_weapon_upgrade = "t4_db";
+					break;
+				case "ar_longburst": //M8A7
+					ent.zombie_weapon_upgrade = "t4_type100";
+					break;
+				case "ar_stg44":
+					ent.zombie_weapon_upgrade = "t4_mp44";
+					break;
+				case "smg_thompson":
+					ent.zombie_weapon_upgrade = "t4_mp44";
+					break;
+			}
+			break;
+		}
 		case "zm_castle": //Der Eisendrache
 			{
 				if(!GetDvarInt("mutator_wallbuys_der_eisendrache") || GetDvarInt("mutator_wallbuys_der_eisendrache") == 1) //poyzee
