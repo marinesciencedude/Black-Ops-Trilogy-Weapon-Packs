@@ -11,7 +11,7 @@
 #define PHDFLOPPER_EXPLOSIVE_DAMAGE_INCREASE	1.75 	// Increases by 75%
 
 // Explode Fall Settings
-#define PHDFLOPPER_EXPLOSIVE_FALL_RANGE			48		// How many units the player needs to be off the ground for the explosion to happen
+#define PHDFLOPPER_EXPLOSIVE_FALL_RANGE			65		// How many units the player needs to be off the ground for the explosion to happen
 #define PHDFLOPPER_EXPLOSIVE_FALL_WAIT			3 		// How long the cooldown is before you can explode again from height
 
 // Explode Slide Settings

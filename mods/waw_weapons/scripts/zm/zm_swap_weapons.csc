@@ -949,8 +949,15 @@ function swap_wall_weapon()
 						break;
 					}
 				case "shotgun_precision": //Argus
-					ent.zombie_weapon_upgrade = "t4_m1897";
-					break;
+					{
+						if(argus == 0) //Ruins to the right
+							ent.zombie_weapon_upgrade = "t4_m1897";
+						else //Bunker left room underwater
+							ent.zombie_weapon_upgrade = "t4_db";
+						
+						argus++;
+						break;
+					}
 				case "ar_accurate": //ICR-1
 					{
 						if(icr == 0)
@@ -964,7 +971,7 @@ function swap_wall_weapon()
 				case "smg_fastfire": //Vesper
 					{
 						if(vesper == 0) //Inside Bunker
-							ent.zombie_weapon_upgrade = "t4_db";
+							ent.zombie_weapon_upgrade = "t4_thompson"; //developer's choice
 						else //Outside Lab B
 						{
 							ent.zombie_weapon_upgrade = "t4_thompson";
@@ -1005,7 +1012,7 @@ function swap_wall_weapon()
 						ent.zombie_weapon_upgrade = "t4_fg42";
 					else
 					{
-						ent.zombie_weapon_upgrade = "t4_m1897";
+						ent.zombie_weapon_upgrade = "t4_m1897"; //developer's choice
 						
 						ent.origin += (0, 0, 5);
 						spawn_loc = struct::get(ent.target, "targetname");
@@ -1038,6 +1045,7 @@ function swap_wall_weapon()
 						break;
 					}
 				}
+				break;
 			}
 		}
 		

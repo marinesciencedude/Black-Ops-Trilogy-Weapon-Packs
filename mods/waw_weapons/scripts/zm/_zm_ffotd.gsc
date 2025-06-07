@@ -12,6 +12,7 @@
 #using scripts\shared\flag_shared;
 
 #using scripts\zm\zm_flamethrower;
+#using scripts\zm\dive;
 
 #insert scripts\zm\_zm_perks.gsh;
 #insert scripts\shared\version.gsh;
@@ -131,6 +132,15 @@ function main_end()
 	}
 	else if(GetDvarInt("mutator_doubletap") == 2 && GetDvarString("mapname") == "zm_factory_classic")
 		level._custom_perks[ PERK_DOUBLETAP2 ].clientfield_set = level._custom_perks[ "specialty_rof" ].clientfield_set;
+	
+	if(GetDvarInt("mutator_falldamage") == 2)
+	{
+		//as per https://www.thetechgame.com/Archives/t=2401729/all-black-ops-patch-gpd-codes-dvar-list-l-updated-l.html
+		setdvar("bg_fallDamageMinHeight", 128);
+		setdvar("bg_fallDamageMaxHeight", 300); //whatever this sets the max to, certainly receive more damage when you fall further than this
+												//closest height in testing is 136 (1 damage) and farthest height before death is 563 (98 damage)
+												//136-564 range giving a difference of 428 being equal to 128+300 is probably a coincidence
+	}
 }
 
 function quick_revive_set_clientfield( state )

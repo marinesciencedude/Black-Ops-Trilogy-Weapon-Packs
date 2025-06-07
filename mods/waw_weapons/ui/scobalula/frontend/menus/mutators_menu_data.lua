@@ -142,6 +142,9 @@ ResetGameSettings = function(arg0, arg1, arg2, arg3)
 	Engine.SetDvar("mutator_revive_anim", 0)
 	Engine.SetDvar("mutator_wallbuys_der_eisendrache", 0)
 	Engine.SetDvar("mutator_mule_kick", 0)
+	Engine.SetDvar("mutator_health_difficulty", 0)
+	Engine.SetDvar("mutator_reload_cancel", 0)
+	Engine.SetDvar("mutator_sprint_cancel", 0)
 
 	Engine.ForceNotifyModelSubscriptions(Engine.CreateModel(Engine.GetGlobalModel(), "GametypeSettings.Update"))
 end
@@ -451,11 +454,32 @@ function (arg0, arg1, arg2, arg3, arg4)
 			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
-			"Sliding",
-			"Enable or disable sliding",
+			"Fall Damage",
+			"Set height values for fall damage to previous games' values",
+			"MutatorSetings_FallDamage",
+			"mutator_falldamage",
+			BuildStringSettings({"BO III", "Classic"}, "Classic"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Sprinting movement mechanic",
+			"Whether you should dive-to-prone, slide, or do nothing at all when pressing crouch/prone while sprinting",
 			"MutatorSettings_SlideDive",
 			"mutator_slide_dive",
-			BuildStringSettings({"On", "Off"}, "On"), nil, SetDvarSetting),
+			BuildStringSettings({"Dive to Prone", "Sliding", "None"}, "None"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Sprinting cancels reloads",
+			"Enable reload cancelling",
+			"MutatorSettings_ReloadCancel",
+			"mutator_reload_cancel",
+			BuildStringSettings({"Off", "On"}, "On"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Reloading cancels sprinting",
+			"Stop sprinting when you start a reload",
+			"MutatorSettings_SprintCancel",
+			"mutator_sprint_cancel",
+			BuildStringSettings({"Off", "On"}, "On"), nil, SetDvarSetting),
 		--CoD.OptionsUtility.CreateDvarSettings(
 		--	arg0,
 		--	"Grenade Wallbuy",

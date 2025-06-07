@@ -224,7 +224,7 @@ function use_solo_revive()
 
 	players = GetPlayers();
 	solo_mode = 0;
-	if ( (players.size == 1 || IS_TRUE( level.force_solo_quick_revive )) && GetDvarInt("mutator_quickrevive") == 1 )
+	if ( (players.size == 1 || IS_TRUE( level.force_solo_quick_revive )) && (GetDvarInt("mutator_quickrevive") == 1 || !GetDvarInt("mutator_quickrevive")) )
 	{
 		solo_mode = 1;
 	}
@@ -1486,7 +1486,7 @@ function perk_machine_spawn_init()
 		if(GetDvarInt("mutator_phd_widows") == 1 && perk == PERK_WIDOWS_WINE)
 			perk = PERK_PHDFLOPPER;
 		
-		if(!GetDvarInt("mutator_doubletap") || GetDvarInt("mutator_doubletap") == 1 && perk == PERK_DOUBLETAP2)
+		if((!GetDvarInt("mutator_doubletap") || GetDvarInt("mutator_doubletap") == 1) && perk == PERK_DOUBLETAP2)
 			perk = "specialty_rof";
 		
 		if(GetDvarInt("mutator_doubletap") == 2 && perk == "specialty_rof")
