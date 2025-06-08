@@ -9,6 +9,7 @@
 
 #using scripts\zm\crossbow_bolt;
 #using scripts\zm\zm_weap_crossbow;
+#using scripts\zm\dive;
 
 #precache( "fx", "custom/magic_box_og/fx_weapon_box_marker_fl_og" );
 #precache( "fx", "custom/magic_box_og/fx_weapon_box_marker_og" );
@@ -75,6 +76,15 @@ function main_end()
 		level.exert_sounds[4]["burp"][0] = "evt_belch";
 		level.exert_sounds[4]["burp"][1] = "evt_belch";
 		level.exert_sounds[4]["burp"][2] = "evt_belch";
+	}
+	
+	if(GetDvarInt("mutator_falldamage") == 2)
+	{
+		//as per https://www.thetechgame.com/Archives/t=2401729/all-black-ops-patch-gpd-codes-dvar-list-l-updated-l.html
+		setdvar("bg_fallDamageMinHeight", 128);
+		setdvar("bg_fallDamageMaxHeight", 300); //whatever this sets the max to, certainly receive more damage when you fall further than this
+												//closest height in testing is 136 (1 damage) and farthest height before death is 563 (98 damage)
+												//136-564 range giving a difference of 428 being equal to 128+300 is probably a coincidence
 	}
 }
 

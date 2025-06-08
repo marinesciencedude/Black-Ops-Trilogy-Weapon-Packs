@@ -196,23 +196,31 @@ function phd_flopper_explosive_fall()
 
     for(;;)
     {
-		self util::waittill_any_return("jump_begin", "slide_begin");
-        
+		if(GetDvarInt("mutator_slide_dive") == 1)
+			self waittill( "dive_begin" );
+		else
+			self util::waittill_any_return("jump_begin", "slide_begin");
+		
         startPos = self.origin[2];
+		
+		if(GetDvarInt("mutator_slide_dive") == 1)
+			self waittill( "dive_end" );
+		else
+		{
+			while(self IsSliding())
+				wait 0.1;
 
-        while(self IsSliding())
-        	wait 0.1;
-
-        while(!self IsOnGround())
-            wait 0.1;
-        
+			while(!self IsOnGround())
+				wait 0.1;
+		}
+		
         endPos = self.origin[2];
         heightDiff = startPos - endPos;
-
+        
         if(heightDiff > PHDFLOPPER_EXPLOSIVE_FALL_RANGE) 
         {
             self phd_flopper_explode();
-            wait PHDFLOPPER_EXPLOSIVE_FALL_WAIT;
+            // there used to be a wait here that probably caused the inconsistency in explosion functionality
         }
         
     }

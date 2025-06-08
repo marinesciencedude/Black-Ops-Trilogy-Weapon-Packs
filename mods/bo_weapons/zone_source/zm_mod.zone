@@ -25,6 +25,7 @@ scriptparsetree,scripts/zm/_zm_mod.csc
 scriptparsetree,scripts/zm/_zm_mutators.csc
 scriptparsetree,scripts/zm/_zm_mutators.gsc
 scriptparsetree,scripts/zm/_zm_mutators.gsh
+scriptparsetree,scripts/zm/dive.gsc
 
 scriptparsetree,scripts/zm/_zm_weap_quantum_bomb.gsc
 scriptparsetree,scripts/zm/_zm_powerup_random_weapon.gsc
@@ -46,9 +47,9 @@ aitype,archetype_zm_usermap_zombie
 aitype,spawner_zm_theater_zombie
 aitype,archetype_zm_tomb_zombie
 aitype,spawner_zm_castle_zombie
-aitype,spawner_zm_tomb_crusader
+//aitype,spawner_zm_tomb_crusader
 aitype,spawner_zm_tomb_zombie
-aitype,spawner_zm_tomb_templar
+//aitype,spawner_zm_tomb_templar
 scriptparsetree,scripts/zm/_hb21_zm_behavior.gsc
 
 //scriptparsetree,scripts/zm/_zm_ai_dogs.gsc
