@@ -49,3 +49,4 @@ Then install all files from this repo into your Black Ops III installation apart
 * Ronan_M for [Custom Powerup Shaders](https://forum.modme.co/wiki/threads/3206.html)
 * [Poyzee](https://steamcommunity.com/profiles/76561199105452001) and [Conn6orsuper117](https://steamcommunity.com/id/Conn6orsuper117) for contributing wallbuy layouts for Der Eisendrache (both) and Zetsubou no Shima (Connor)
 * [HzRetro](https://www.ugx-mods.com/forum/mlist/hzretro_764845) for contributing wallbuy layout for Origins
+* XcDylan93 for dive-to-prone and sprint/reload cancel script

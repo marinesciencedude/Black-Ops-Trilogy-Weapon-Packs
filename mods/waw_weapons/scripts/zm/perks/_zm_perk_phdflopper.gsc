@@ -199,13 +199,7 @@ function phd_flopper_explosive_fall()
 		if(GetDvarInt("mutator_slide_dive") == 1)
 			self waittill( "dive_begin" );
 		else
-		{
-			while(self IsSliding())
-				wait 0.1;
-
-			while(!self IsOnGround())
-				wait 0.1;
-		}
+			self util::waittill_any_return("jump_begin", "slide_begin");
 		
         startPos = self.origin[2];
 		
