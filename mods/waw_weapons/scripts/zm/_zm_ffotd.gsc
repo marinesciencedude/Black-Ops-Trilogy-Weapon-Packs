@@ -120,15 +120,24 @@ function main_end()
 	
 	if(GetDvarInt("mutator_bo_perk_icons") != 3 && GetDvarString("mapname") != "zm_factory_classic")
 	{
-		level._custom_perks[ PERK_QUICK_REVIVE ].clientfield_set = &quick_revive_set_clientfield;
-		level._custom_perks[ PERK_ADDITIONAL_PRIMARY_WEAPON ].clientfield_set = &additional_primary_weapon_set_clientfield;
-		level._custom_perks[ PERK_DEAD_SHOT ].clientfield_set = &deadshot_set_clientfield;
-		level._custom_perks[ PERK_ELECTRIC_CHERRY ].clientfield_set = &electric_cherry_set_clientfield;
-		level._custom_perks[ PERK_JUGGERNOG ].clientfield_set = &juggernaut_set_clientfield;
-		level._custom_perks[ PERK_SLEIGHT_OF_HAND ].clientfield_set = &sleight_of_hand_set_clientfield;
-		level._custom_perks[ PERK_STAMINUP ].clientfield_set = &staminup_set_clientfield;
-		level._custom_perks[ PERK_WIDOWS_WINE ].clientfield_set = &widows_wine_set_clientfield;
-		level._custom_perks[ "specialty_rof" ].clientfield_set = &doubletap_set_clientfield;
+		if(isdefined(level._custom_perks[ PERK_QUICK_REVIVE ]))
+			level._custom_perks[ PERK_QUICK_REVIVE ].clientfield_set = &quick_revive_set_clientfield;
+		if(isdefined(level._custom_perks[ PERK_ADDITIONAL_PRIMARY_WEAPON ]))
+			level._custom_perks[ PERK_ADDITIONAL_PRIMARY_WEAPON ].clientfield_set = &additional_primary_weapon_set_clientfield;
+		if(isdefined(level._custom_perks[ PERK_DEAD_SHOT ]))
+			level._custom_perks[ PERK_DEAD_SHOT ].clientfield_set = &deadshot_set_clientfield;
+		if(isdefined(level._custom_perks[ PERK_ELECTRIC_CHERRY ]))
+			level._custom_perks[ PERK_ELECTRIC_CHERRY ].clientfield_set = &electric_cherry_set_clientfield;
+		if(isdefined(level._custom_perks[ PERK_JUGGERNOG ]))
+			level._custom_perks[ PERK_JUGGERNOG ].clientfield_set = &juggernaut_set_clientfield;
+		if(isdefined(level._custom_perks[ PERK_SLEIGHT_OF_HAND ]))
+			level._custom_perks[ PERK_SLEIGHT_OF_HAND ].clientfield_set = &sleight_of_hand_set_clientfield;
+		if(isdefined(level._custom_perks[ PERK_STAMINUP ]))
+			level._custom_perks[ PERK_STAMINUP ].clientfield_set = &staminup_set_clientfield;
+		if(isdefined(level._custom_perks[ PERK_WIDOWS_WINE ]))
+			level._custom_perks[ PERK_WIDOWS_WINE ].clientfield_set = &widows_wine_set_clientfield;
+		if(isdefined(level._custom_perks[ "specialty_rof" ]))
+			level._custom_perks[ "specialty_rof" ].clientfield_set = &doubletap_set_clientfield;
 	}
 	else if(GetDvarInt("mutator_doubletap") == 2 && GetDvarString("mapname") == "zm_factory_classic")
 		level._custom_perks[ PERK_DOUBLETAP2 ].clientfield_set = level._custom_perks[ "specialty_rof" ].clientfield_set;

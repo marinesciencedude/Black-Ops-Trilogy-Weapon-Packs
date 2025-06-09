@@ -473,7 +473,7 @@ function private deadshot_existence(dvar_value)
 
 function private doubletap(dvar_value)
 {
-	if(dvar_value == 1)
+	if(dvar_value == 0 || dvar_value == 1)
 	{
 		if(isdefined(level._random_perk_machine_perk_list))
 		{	
