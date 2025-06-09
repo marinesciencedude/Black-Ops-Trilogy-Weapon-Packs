@@ -217,6 +217,10 @@ weapon,frag_grenade_potato_masher_zm
 //chalk drawing image from iw_03.iwd
 xmodel,wallbuy_grenade_bag
 
+weapon,t5_m1911
+weapon,t5_m1911_rdw_up_zm
+weapon,t5_m1911_ldw_up_zm
+
 sound,zm_mod
 
 image,i_t7_zm_chalk_buy_arak_c
