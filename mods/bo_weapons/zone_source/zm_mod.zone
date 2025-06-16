@@ -64,6 +64,8 @@ stringtable,gamedata/weapons/zm/zm_sumpf_weapons.csv
 stringtable,gamedata/weapons/zm/zm_factory_weapons.csv
 stringtable,gamedata/weapons/zm/zm_tomb_weapons.csv
 stringtable,gamedata/weapons/zm/zm_levelcommon_weapons.csv
+stringtable,gamedata/weapons/zm/zm_castle_weapons.csv
+stringtable,gamedata/weapons/zm/zm_island_weapons.csv
 
 stringtable,gamedata/weapons/zm/zm_zod_weapons.csv
 stringtable,gamedata/tables/zm/zm_zod_pods.csv
@@ -75,6 +77,7 @@ rawfile,vision/black_and_white.vision
 scriptparsetree,scripts/zm/zm_cosmodrome_ffotd.csc
 
 scriptparsetree,scripts/zm/zm_tomb_dig.gsc
+scriptparsetree,scripts/zm/zm_tomb_challenges.gsc
 
 scriptparsetree,scripts/zm/perks/_zm_perk_phdflopper.gsc
 scriptparsetree,scripts/zm/perks/_zm_perk_phdflopper.csc
@@ -432,6 +435,10 @@ weapon,t5_stakeout
 weapon,t5_stakeout_up
 xmodel,wallbuy_stakeout
 
+//Improved Ray Gun
+weaponfull,ray_gun_zm
+weaponfull,ray_gun_upgraded_zm
+
 scriptparsetree,scripts/zm/zm_claymore.gsc
 weapon,claymore_zm
 material,claymore_hud
@@ -607,6 +614,8 @@ image,i_t7_zm_chalk_buy_hvk30_c
 image,i_t7_zm_chalk_buy_trip_mine_c
 image,i_t7_zm_chalk_buy_stg44_c
 image,i_t7_zm_chalk_buy_locus_c
+image,i_t7_zm_chalk_buy_thomp_c
+xmodel,wallbuy_t7_m1927
 
 image,i_ger_gewehr43_wall_chalk_c
 image,i_usa_m1carbine_wall_chalk_c

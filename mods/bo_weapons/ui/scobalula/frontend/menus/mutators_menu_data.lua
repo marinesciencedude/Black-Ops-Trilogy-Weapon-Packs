@@ -172,6 +172,11 @@ ResetGameSettings = function(arg0, arg1, arg2, arg3)
 	Engine.SetDvar("mutator_health_difficulty", 0)
 	Engine.SetDvar("mutator_reload_cancel", 0)
 	Engine.SetDvar("mutator_sprint_cancel", 0)
+	Engine.SetDvar("mutator_deathmachine", 0)
+	Engine.SetDvar("mutator_wallbuys_kino_der_toten", 0)
+	Engine.SetDvar("mutator_wallbuys_origins", 0)
+	Engine.SetDvar("mutator_wallbuys_der_eisendrache", 0)
+	Engine.SetDvar("mutator_wallbuys_callofthedead", 0)
 	
 	Engine.SetDvar("mutator_bo3_m1927", 0)
 	Engine.SetDvar("mutator_bo3_mg08", 0)
@@ -310,13 +315,6 @@ function (arg0, arg1, arg2, arg3, arg4)
             BuildStringSettings({"Black Ops", "Recoloured BO III", "Use Map"}, "Black Ops"), nil, SetDvarSetting),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
-			"Mine Wallbuy",
-			"If the wallbuy should be Claymores instead of Trip Mines.",
-			"MutatorSettings_Claymore",
-			"mutator_claymore",
-            BuildStringSettings({"Claymore", "Trip Mines"}, "Claymore"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
-			arg0,
 			"Scope ADS",
 			"If aiming down scope should be a 2D overlay, 3D viewmodel or changeable mid-game",
 			"MutatorSettings_ScopeADS",
@@ -357,7 +355,14 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"Change between the classic revive animation and the Black Ops III one.",
 			"MutatorSettings_ReviveAnimation",
 			"mutator_revive_anim",
-			BuildStringSettings({"Classic", "BO III"}, "Classic"), nil, SetDvarSetting)
+			BuildStringSettings({"Classic", "BO III"}, "Classic"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Death Machine",
+			"Enable or disable the Death Machine powerup.",
+			"MutatorSettings_DeathMachine",
+			"mutator_deathmachine",
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting)
 	}
 end, nil, nil, Update)
 
@@ -372,6 +377,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_AUG",
 			"mutator_aug",
             BuildStringSettings({"On", "Off"}, "Off"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Mine Wallbuy",
+			"If the wallbuy should be Claymores instead of Trip Mines.",
+			"MutatorSettings_Claymore",
+			"mutator_claymore",
+            BuildStringSettings({"Claymore", "Trip Mines"}, "Claymore"), nil, SetDvarSetting),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Ascension Red Telephone Quotes",
@@ -413,7 +425,28 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"Whether it should be a Springfield on the American starting room or a Kar98k",
 			"MutatorSettings_VerrucktSpringfield",
 			"mutator_verruckt_springfield",
-			BuildStringSettings({"Kar98k", "Springfield"}, "Kar98k"), nil, SetDvarSetting)
+			BuildStringSettings({"Kar98k", "Springfield"}, "Kar98k"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Kino der Toten Wallbuys",
+			"WaW Layout 1 is roughly based on Der Riese, WaW Layout 2 is by Conn6orsuper117, WaW Layout 3 is based on rough counterparts to BO weapons with an further option to swap the FG42/BAR (MPL/PM63)",
+			"MutatorSettings_WallbuysKinoderToten",
+			"mutator_wallbuys_kino_der_toten",
+			BuildStringSettings({"WaW Layout 1", "WaW Layout 2", "WaW Layout 3", "WaW Layout 3 (Swapped)", "Black Ops"}, "Black Ops"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Origins Wallbuys",
+			"BO Layout 1 is by Conn6orsuper117, WaW Layout 1 is by HzRetro",
+			"MutatorSettings_WallbuysOrigins",
+			"mutator_wallbuys_origins",
+			BuildStringSettings({"BO Layout 1", "WaW Layout 1"}, "BO Layout 2"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Der Eisendrache Wallbuys",
+			"WaW Layout 1 is by poyzee, WaW Layout 2 is by Conn6orsuper117",
+			"MutatorSettings_WallbuysDerEisendrache",
+			"mutator_wallbuys_der_eisendrache",
+			BuildStringSettings({"WaW Layout 1", "WaW Layout 2"}, "WaW Layout 3"), nil, SetDvarSetting)
 		--CoD.OptionsUtility.CreateDvarSettings(
 		--	arg0,
 		--	"Random Moon Solo Character",
@@ -610,6 +643,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_PPSh",
 			"mutator_ppsh",
 			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+		--CoD.OptionsUtility.CreateDvarSettings(
+		--	arg0,
+		--	"Ray Gun",
+		--	"Switch between WaW Ray Gun and Improved BO3 Ray Gun",
+		--	"MutatorSettings_RayGun",
+		--	"mutator_ray_gun",
+		--	BuildStringSettings({"WaW", "BO III"}, "WaW"), nil, SetDvarSetting),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Ray Gun Mark II",
@@ -1057,6 +1097,13 @@ function(arg0, arg1, arg2, arg3, arg4)
 			"Force spawns Lightning Bolt powerup (Wunderwaffe DG-2) in place of Death Machine when defeating George A. Romero",
 			"MutatorSettings_GeorgeReward",
 			"mutator_george_reward",
-			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting)
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Call of the Dead Wallbuys",
+			"Whether Call of the Dead wallbuys should use the original Black Ops or World at War weapons.",
+			"MutatorSettings_CalloftheDead",
+			"mutator_wallbuys_callofthedead",
+			BuildStringSettings({"Black Ops", "World at War"}, "Black Ops"), nil, SetDvarSetting)
 	}
 end, nil, nil, Update)

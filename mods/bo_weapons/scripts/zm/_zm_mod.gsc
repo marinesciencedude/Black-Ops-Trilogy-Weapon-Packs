@@ -623,6 +623,16 @@ function apply_choices() {
 		}
 	}
 	
+	/*if(GetDvarInt("mutator_ray_gun") == 2)
+	{
+		level.zombie_weapons[GetWeapon("t4_ray_gun")].is_in_box = false;
+		zm_utility::include_weapon( "t4_ray_gun", false);
+		zm_utility::include_weapon( "ray_gun", true );
+		zm_utility::include_weapon( "ray_gun_upgraded", false );
+		zm_weapons::add_zombie_weapon( "ray_gun", "ray_gun_upgraded", "", 10000, "raygun", "", 500, "", false, "" );
+		aat::register_aat_exemption(getweapon("ray_gun_upgraded"));
+	}*/
+	
 	if(GetDvarInt("mutator_raygunmkii") == MUTATOR_ONOFF_OFF)
 		level.zombie_weapons[GetWeapon("raygun_mark2")].is_in_box = false;
 	else
@@ -789,6 +799,9 @@ function apply_choices() {
 			}
 		}
 	//}
+	
+	if(GetDvarInt("mutator_deathmachine") == MUTATOR_OFFON_OFF)
+		zm_powerups::powerup_remove_from_regular_drops("minigun");
 	
     //notify csc for client side scripts
     foreach(player in level.players){

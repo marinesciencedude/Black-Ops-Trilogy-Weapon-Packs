@@ -714,7 +714,11 @@ function dig_up_grenade(player)
 */
 function dig_up_weapon(digger)
 {
-	var_43f586fe = array(getweapon("pistol_c96"), getweapon("t5_olympia"), getweapon("t5_stakeout"));
+	starting_weapon = getweapon("t5_m1911");
+	//starting_weapon = GetDvarString("mutator_startingweapon");
+	if(GetDvarInt("mutator_startingweapon") == 2)
+		starting_weapon = level.start_weapon;
+	var_43f586fe = array(starting_weapon, getweapon("t5_olympia"), getweapon("t5_stakeout"));
 	var_63eba41d = array(getweapon("t5_l96a1"), getweapon("t5_hs10"));
 	if(digger.dig_vars["has_upgraded_shovel"])
 	{

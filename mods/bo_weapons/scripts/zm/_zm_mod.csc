@@ -514,6 +514,14 @@ function applyChoices() {
 		zm_weapons::include_upgraded_weapon( "t9_rpk", "t9_rpk_up", false, 2500, undefined );
 		RemoveZombieBoxWeapon(GetWeapon("t5_rpk"));
 	}
+	
+	/*if(GetDvarInt("mutator_ray_gun") == 2)
+	{
+														 // auto-calculate ammo cost
+		zm_weapons::include_weapon( "ray_gun", true, 10000, 0 );
+		zm_weapons::include_upgraded_weapon( "ray_gun", "ray_gun_upgraded", false, 10000, 0 );
+		RemoveZombieBoxWeapon(GetWeapon("t4_ray_gun"));
+	}*/
 }
 
 function tempCallback(localClientNum, oldVal, newVal, bNewEnt, bInitialSnap, fieldName, bWasTimeJump) {
