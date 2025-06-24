@@ -13,6 +13,7 @@
 
 #using scripts\zm\zm_flamethrower;
 #using scripts\zm\dive;
+#using scripts\zm\_zm_t4_hud;
 
 #insert scripts\zm\_zm_perks.gsh;
 #insert scripts\shared\version.gsh;

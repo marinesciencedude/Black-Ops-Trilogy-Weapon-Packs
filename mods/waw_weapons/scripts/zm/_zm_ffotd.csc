@@ -1,6 +1,7 @@
 
 #using scripts\zm\_zm_mod;
 #using scripts\shared\clientfield_shared;
+#using scripts\zm\_zm_t4_hud;
 
 #insert scripts\shared\version.gsh;
 

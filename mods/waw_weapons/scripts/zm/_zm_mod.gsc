@@ -174,7 +174,6 @@ function apply_choices() {
 		zm_utility::include_weapon( "t4_ray_gun", false);
 		zm_utility::include_weapon( "ray_gun", true );
 		zm_utility::include_weapon( "ray_gun_upgraded", false );
-		zm_weapons::add_zombie_weapon( "ray_gun", "ray_gun_upgraded", "", 10000, "raygun", "", 500, "", false, "" );
 		aat::register_aat_exemption(getweapon("ray_gun_upgraded"));
 	}
 	

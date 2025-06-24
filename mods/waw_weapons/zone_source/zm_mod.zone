@@ -77,6 +77,8 @@ weapon,zombie_perk_bottle_phd
 fx,_mikeyray/perks/phd/fx_perk_phd
 image,specialty_phdflopper_zombies
 
+include,t4_hud
+
 scriptparsetree,scripts/zm/quick_revive.gsc
 scriptparsetree,scripts/zm/_zm_perk_doubletap.gsc
 scriptparsetree,scripts/zm/_zm_perk_doubletap.csc

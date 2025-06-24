@@ -37,6 +37,7 @@ Note also that share\raw\sound\aliases\user_aliases.csv and share\raw\sound\glob
 * emptyFXIW.efx file from WETEGG's Infinite Warfare Perk Ports: https://drive.google.com/file/d/1I5-RkXzoDX8zieCfyIPNt4QVNx7R6Nz-/view?usp=sharing
 * MikeyRay's Customizable PHD Flopper: https://forum.modme.co/wiki/threads/3537.html
 * Pmr360's Black Ops 1/4 - Revive animation: https://www.devraw.net/approved-assets/pmr360/black-ops-1%2F4---revive-animation
+* Kingslayer Kyle's World at War HUD: https://drive.google.com/file/d/1TwEbNNcF1H59AsKANSvK-MC_09aAbouk/view (including [BlackOps3Shaders](https://github.com/LG-RZ/BlackOps3Shaders/releases))
 
 Then install all files from this repo into your Black Ops III installation apart from the folder chalk_drawing_models, which is for reference purposes only
 

@@ -207,6 +207,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 	{
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
+			"HUD",
+			"Set Heads-Up Display to that of previous games",
+			"MutatorSettings_HUD",
+			"mutator_hud",
+			BuildStringSettings({"Use Map", "WaW"}, "WaW"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
 			"Perk Machine",
 			"Which perk machine out of PhD Flopper/Widow's Wine will be spawned in the game.",
 			"MutatorSettings_PhDWidows",
