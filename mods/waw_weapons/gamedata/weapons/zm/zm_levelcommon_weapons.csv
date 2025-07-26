@@ -12,6 +12,8 @@ sickle,,,3000,wpck_sickle,,,,,false,false,,,,false,false,special,,,,
 nesting_dolls,,,2000,dolls,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,,
 sticky_grenade,,,250,wpck_bowie,,,,,false,false,,,,false,false,grenade,,,,
 claymore,,,1000,claymore,,,,,false,false,false,,,false,true,special,,,,
+#TrustInUma's DER RIESE
+bouncingbetty,,,1000,betty,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,,
 #dump absolutely everything here
 t4_m1911,t4_m1911_up,,100,pistol,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,pistol,,,
 t5_m1911,t5_m1911_rdw_up,,300,pistol,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,pistol,TRUE,,

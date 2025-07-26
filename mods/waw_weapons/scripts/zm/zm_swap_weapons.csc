@@ -428,6 +428,47 @@ function swap_wall_weapon()
 					}
 				} }
 			}*/
+		case "zm_giant": //TrustInUma's DER RIESE
+			{
+				switch(VAL)
+				{
+				case "ar_marksman": //Sheiva
+					ent.zombie_weapon_upgrade = "t4_g43";
+					break;
+				case "pistol_burst": //RK5
+					ent.zombie_weapon_upgrade = "t4_kar98k";
+					break;
+				case "pistol_fullauto": //L-CAR 9
+					ent.zombie_weapon_upgrade = "t4_carbine";
+					break;
+				case "ar_cqb": //HVK-30
+					ent.zombie_weapon_upgrade = "t4_fg42";
+					break;
+				case "shotgun_pump": //KRM-262
+					ent.zombie_weapon_upgrade = "t4_db";
+					break;
+				case "smg_burst": //Pharo
+					ent.zombie_weapon_upgrade = "t4_thompson";
+					break;
+				case "shotgun_precision": //Argus
+					ent.zombie_weapon_upgrade = "t4_m1897";
+					break;
+				case "smg_mp40_1940":
+					{
+						ent.origin += (4, 0, 0);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (4, 0, 0);
+						break;
+					}
+				case "smg_sten":
+					ent.zombie_weapon_upgrade = "t4_type100";
+					break;
+				case "ar_stg44":
+					ent.zombie_weapon_upgrade = "t4_mp44";
+					break;
+				}
+				break;
+			}
 		case "zm_der_riese": //Der Riese: Declassified
 			{
 				switch(VAL)

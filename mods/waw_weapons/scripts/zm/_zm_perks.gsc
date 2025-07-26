@@ -1496,6 +1496,14 @@ function perk_machine_spawn_init()
 		
 		if((GetDvarString("mapname") == "zm_sumpf" && GetDvarInt("mutator_shinonuma_perk") == 3) && perk == PERK_ADDITIONAL_PRIMARY_WEAPON)
 			continue;
+		
+		if(GetDvarString("mapname") == "zm_giant")
+		{
+			if(perk == PERK_ADDITIONAL_PRIMARY_WEAPON)
+				perk = PERK_QUICK_REVIVE;
+			else if(perk == PERK_QUICK_REVIVE)
+				perk = PERK_ADDITIONAL_PRIMARY_WEAPON;
+		}
 			
 		if(isdefined(perk) && isdefined(s_spawn_pos.model))
 		{

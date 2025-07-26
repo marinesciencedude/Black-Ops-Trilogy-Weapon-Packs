@@ -138,6 +138,9 @@ function applyChoices() {
 	
 	if(GetDvarInt("mutator_monkey_bomb") == MUTATOR_ONOFF_OFF)
 		RemoveZombieBoxWeapon(GetWeapon("cymbal_monkey"));
+	
+	if(GetDvarString("mapname") == "zm_giant")
+		zm_weapons::include_weapon( "tesla_gun", true, 10000, 0 );
 }
 
 function tempCallback(localClientNum, oldVal, newVal, bNewEnt, bInitialSnap, fieldName, bWasTimeJump) {

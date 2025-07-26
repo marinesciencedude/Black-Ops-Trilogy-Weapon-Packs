@@ -183,6 +183,12 @@ function apply_choices() {
 		zm_utility::include_weapon( "cymbal_monkey", false);
 	}
 	
+	if(GetDvarString("mapname") == "zm_giant")
+	{
+		zm_utility::include_weapon( "tesla_gun", true );
+		level.zombie_weapons[GetWeapon("tesla_gun")].is_in_box = true;
+	}
+	
 	if(GetDvarInt("mutator_enable_gobblegum") == MUTATOR_OFFON_ON)
 	{
 		foreach(bgb_machine in level.bgb_machines)
