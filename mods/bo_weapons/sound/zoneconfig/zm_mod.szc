@@ -59,6 +59,12 @@
  "Specs" : [ ] 
 },
 {
+ "Type" : "ALIAS",
+ "Name" : "t5_thundergun_sounds",
+ "Filename" : "t5_thundergun_sounds.csv",
+ "Specs" : [ ] 
+},
+{
     "Type" : "ALIAS",
     "Name" : "ray_phdflopper",
     "Filename" : "ray_phdflopper.csv",

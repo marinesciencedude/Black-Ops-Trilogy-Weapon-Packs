@@ -7,7 +7,7 @@ sticky_grenade_custom,,,250,grenade,,250,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenad
 knife,,,0,,,0,,,FALSE,FALSE,,,,FALSE,FALSE,special,,,
 bowie_knife,,,3000,wpck_bowie,,,,,FALSE,FALSE,,,,FALSE,FALSE,special,,,
 t4_ray_gun,t4_ray_gun_camo_up,,10000,wpck_ray,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,special,TRUE,TRUE,
-thundergun,thundergun_upgraded,,5000,thundergun,,,,,TRUE,FALSE,TRUE,1,,FALSE,TRUE,special,TRUE,TRUE,
+t5_thundergun,t5_thundergun_upgraded,,5000,thundergun,,,,,TRUE,FALSE,TRUE,1,,FALSE,TRUE,special,TRUE,TRUE,
 raygun_mark2,raygun_mark2_upgraded,,10000,wpck_ray,,0,,,TRUE,FALSE,TRUE,1,,FALSE,FALSE,special,TRUE,TRUE,
 t4_kar98k,t4_kar98k_up,,200,rifle,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,
 t4_kar98k_scope,t4_kar98k_scope_up,,1500,rifle,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,rifle,,,

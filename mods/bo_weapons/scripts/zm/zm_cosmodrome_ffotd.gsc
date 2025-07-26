@@ -285,7 +285,7 @@ function wait_for_combo(trig)
 		trig waittill("damage", amount, inflictor, direction, point, type, tagname, modelname, partname, weapon);
 		if(isdefined(inflictor))
 		{
-			if(type == "MOD_PROJECTILE" && (weapon.name == "ray_gun_upgraded" || weapon.name == "raygun_mark2_upgraded"))
+			if(type == "MOD_PROJECTILE" && (weapon.name == "ray_gun_upgraded" || weapon.name == "raygun_mark2_upgraded" || weapon.name == "t4_ray_gun_up" || weapon.name == "t4_ray_gun_camo_up"))
 			{
 				ray_gun_hit = 1;
 			}
@@ -310,7 +310,7 @@ function thundergun_check(model, trig, weapon_combo_spot)
 	{
 		self waittill("weapon_fired");
 		var_ca8d49bb = self getcurrentweapon();
-		if(var_ca8d49bb.name == "thundergun_upgraded")
+		if(var_ca8d49bb.name == "thundergun_upgraded" || var_ca8d49bb.name == "t5_thundergun_upgraded")
 		{
 			if(distancesquared(self.origin, weapon_combo_spot.origin) < 90000)
 			{

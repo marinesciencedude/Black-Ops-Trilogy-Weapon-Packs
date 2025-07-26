@@ -9,7 +9,7 @@ incendiary_grenade,,,500,grenade,,0,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,,
 bowie_knife,,,3000,wpck_bowie,,0,,,FALSE,,,,,FALSE,FALSE,special,,,,
 knife,,,0,,,0,,,FALSE,,,,,FALSE,FALSE,special,,,,
 ray_gun,ray_gun_upgraded,,10000,raygun,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,special,TRUE,TRUE,
-t4_ray_gun,t4_ray_gun_up,,10000,wpck_ray,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,special,TRUE,TRUE
+t4_ray_gun,t4_ray_gun_camo_up,,10000,wpck_ray,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,special,TRUE,TRUE
 t5_ak74u,t5_ak74u_up,,1200,smg,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,smg,,,
 t5_aug,t5_aug_up,,1200,rifle,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,rifle,,,
 t5_china_lake,t5_china_lake_up,,1600,launcher,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,launcher,TRUE,,

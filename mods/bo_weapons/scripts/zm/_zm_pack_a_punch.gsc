@@ -517,10 +517,6 @@ function private vending_weapon_upgrade()
 		// Remember what weapon we have.  This is needed to check unique weapon counts.
 		self.current_weapon = current_weapon;
 		
-		upgrade_weapon = zm_weapons::get_upgrade_weapon( current_weapon, b_weapon_supports_aat );
-											
-		player third_person_weapon_upgrade( current_weapon, upgrade_weapon, packa_rollers, pap_machine, self );
-		
 		if(GetDvarInt("mutator_camo_ingame_cycle") == 2 && GetDvarInt("mutator_camo_disable") != 2 && isdefined(level.pack_a_punch_camo_list))
 		{
 			pap_camo = array::random(level.pack_a_punch_camo_list);
@@ -533,7 +529,27 @@ function private vending_weapon_upgrade()
 				break;
 			}
 			level.pack_a_punch_camo_index = pap_camo;
+			
+			if(current_weapon == GetWeapon("t4_ray_gun"))
+			{
+				if(pap_camo == 141)
+				{
+					ArrayRemoveIndex(level.zombie_weapons_upgraded, GetWeapon("t4_ray_gun_camo_up"));
+					level.zombie_weapons_upgraded[GetWeapon("t4_ray_gun_up")] = GetWeapon("t4_ray_gun");
+					level.zombie_weapons[GetWeapon("t4_ray_gun")].upgrade = GetWeapon("t4_ray_gun_up");
+				}
+				else
+				{
+					ArrayRemoveIndex(level.zombie_weapons_upgraded, GetWeapon("t4_ray_gun_up"));
+					level.zombie_weapons_upgraded[GetWeapon("t4_ray_gun_camo_up")] = GetWeapon("t4_ray_gun");
+					level.zombie_weapons[GetWeapon("t4_ray_gun")].upgrade = GetWeapon("t4_ray_gun_camo_up");
+				}
+			}
 		}
+		
+		upgrade_weapon = zm_weapons::get_upgrade_weapon( current_weapon, b_weapon_supports_aat );
+											
+		player third_person_weapon_upgrade( current_weapon, upgrade_weapon, packa_rollers, pap_machine, self );
 		
 		self TriggerEnable( true );
 		self SetCursorHint("HINT_WEAPON", upgrade_weapon);

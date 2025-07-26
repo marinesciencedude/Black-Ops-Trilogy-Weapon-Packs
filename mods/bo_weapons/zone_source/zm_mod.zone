@@ -306,6 +306,7 @@ weapon,t4_db_saw_up
 xmodel,wallbuy_sawedoff
 
 weapon,t4_ray_gun
+weapon,t4_ray_gun_up
 weapon,t4_ray_gun_camo_up
 
 weapon,t5_ak74u
@@ -530,6 +531,9 @@ weaponfull,t5_mac11_alt_up
 
 weaponfull,t5_m60e3
 weaponfull,t5_m60e3_up
+
+weapon,t5_thundergun_zm
+weapon,t5_thundergun_upgraded_zm
 
 //weapon,t9_xm4
 //weapon,t9_xm4_up

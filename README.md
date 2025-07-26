@@ -6,16 +6,17 @@ As seen on the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetai
 
 Install *all* of these assets first, since files from this repo are meant to override some of the assets. L3akMod and T7MTEnhancements are required additions to ensure Mod Tools can properly build the mod.
 
-It's advised to make a back-up of wpn_t7_zmb_weapons.gdt, since this will be replaced with a version that doesn't produce duplicate asset errors with Smurphy's Improved BO3 Ray Gun
+It's advised to make a back-up of wpn_t7_zmb_weapons.gdt, black_ops_3_fx.gdt, since this will be replaced with a version that doesn't produce duplicate asset errors with Smurphy's Improved BO3 Ray Gun
 
 * TheSkyeLord's BO1 Weapon Ports: https://www.ugx-mods.com/forum/full-weapons/84/skyes-bo1-weapon-ports/23143/
-* TheAllNightFall's WaW Weapon Ports (don't forget [Weapon Common](https://drive.google.com/file/d/1pzasvTU0tIFtmKbepyGXPPpdEYNyMXmq):
+* TheAllNightFall's Weapon Ports (don't forget [Weapon Common](https://drive.google.com/file/d/1pzasvTU0tIFtmKbepyGXPPpdEYNyMXmq):
   * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-shotguns
   * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-lmg's
   * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-rifles
   * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-smg-ports
   * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-snipers%2Fbolt-action
   * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-raygun
+  * https://www.devraw.net/approved-assets/theallnightfall/black-ops-1-thundergun
 * Carrabella & WetEgg's Black ops 1 and 2 crossbow: https://drive.google.com/file/d/1QpNYEj8BWTOKtFTKXWFSnD-k1scunuZJ/view
 * L3akMod: https://wiki.modme.co/wiki/black_ops_3/lua_(lui)/Installation.html
 * Scobalula's T7MTEnhancements: https://github.com/Scobalula/T7MTEnhancements
@@ -62,3 +63,4 @@ Then install all files from this repo into your Black Ops III installation apart
 * TescoFresco for [TF's Zombie Options](https://github.com/tescfresc/TFs-Zombie-Options)
 * Harrybo21 for crossbow bolt FX and PaP 'monkey bomb' set-up from Blundergat Weapon Pack: https://www.devraw.net/releases/blundergat-weapon-pack
 * XcDylan93 for dive-to-prone and sprint/reload cancel script
+* [hb21_black_ops_3_fx_library_v2.1.0](https://mega.nz/file/6WYARBxB#-NUWhmjzCySBXx9FCBpTy_wvjhe5FsyBec7nPKYwOl0) for fx_muz_thundergun_1p.efx, fx_muz_thundergun_3p.efx, fx_trail_thundergun.efx, fx_muz_thundergun_1p_ug.efx, fx_muz_thundergun_3p_ug.efx, fx_trail_thundergun_ug.efx, fx_muz_thundergun_1p_ug_child.efx, fx_trail_thundergun_tread.efx, fx_trail_thundergun_tread_ug.efx, fx_muz_thundergun_1p_ug_child.efx and pre-requisites gfx_ring_thin_nocull, gfx_fog_slow_md_anim_em_nocull, gfx_decal_blast_white_01

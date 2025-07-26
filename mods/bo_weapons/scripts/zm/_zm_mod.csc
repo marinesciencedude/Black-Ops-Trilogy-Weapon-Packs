@@ -522,6 +522,12 @@ function applyChoices() {
 		zm_weapons::include_upgraded_weapon( "ray_gun", "ray_gun_upgraded", false, 10000, 0 );
 		RemoveZombieBoxWeapon(GetWeapon("t4_ray_gun"));
 	}*/
+	
+	if(level.pack_a_punch_camo_index == 141 && GetDvarInt("mutator_camo_ingame_cycle") != 2)
+	{
+		zm_weapons::include_upgraded_weapon( "t4_ray_gun", "t4_ray_gun_up", false, 10000, 0 );
+		ArrayRemoveIndex(level.zombie_weapons_upgraded, GetWeapon("t4_ray_gun_camo_up"));
+	}
 }
 
 function tempCallback(localClientNum, oldVal, newVal, bNewEnt, bInitialSnap, fieldName, bWasTimeJump) {

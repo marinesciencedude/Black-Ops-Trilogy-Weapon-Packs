@@ -633,6 +633,16 @@ function apply_choices() {
 		aat::register_aat_exemption(getweapon("ray_gun_upgraded"));
 	}*/
 	
+	if(level.pack_a_punch_camo_index == 141 && GetDvarInt("mutator_camo_ingame_cycle") != 2)
+	{
+		ArrayRemoveIndex(level.zombie_weapons_upgraded, GetWeapon("t4_ray_gun_camo_up"));
+		level.zombie_weapons[GetWeapon("t4_ray_gun")].upgrade = GetWeapon("t4_ray_gun_up");
+		aat::register_aat_exemption(getweapon("t4_ray_gun_up"));
+	}
+	
+	level.weaponzmthundergun = getweapon("t5_thundergun");
+	level.weaponzmthundergunupgraded = getweapon("t5_thundergun_upgraded");
+	
 	if(GetDvarInt("mutator_raygunmkii") == MUTATOR_ONOFF_OFF)
 		level.zombie_weapons[GetWeapon("raygun_mark2")].is_in_box = false;
 	else
