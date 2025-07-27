@@ -1388,6 +1388,132 @@ function swap_wall_weapon()
 				}
 				break;
 			}
+		case "zm_giant": //TrustInUma's DER RIESE
+			{
+				if(GetDvarInt("mutator_waw_wall_weapons") != 2 || !GetDvarInt("mutator_waw_wall_weapons"))
+				{
+					switch(VAL)
+					{
+					case "ar_marksman": //Sheiva
+						ent.zombie_weapon_upgrade = "t4_g43";
+						break;
+					case "pistol_burst": //RK5
+						ent.zombie_weapon_upgrade = "t4_kar98k";
+						break;
+					case "pistol_fullauto": //L-CAR 9
+						ent.zombie_weapon_upgrade = "t4_carbine";
+						break;
+					case "ar_cqb": //HVK-30
+						ent.zombie_weapon_upgrade = "t4_fg42";
+						break;
+					case "shotgun_pump": //KRM-262
+						ent.zombie_weapon_upgrade = "t4_db";
+						break;
+					case "smg_burst": //Pharo
+						ent.zombie_weapon_upgrade = "t4_thompson";
+						break;
+					case "shotgun_precision": //Argus
+						ent.zombie_weapon_upgrade = "t4_m1897";
+						break;
+					case "smg_mp40_1940":
+						{
+							ent.origin += (4, 0, 0);
+							spawn_loc = struct::get(ent.target, "targetname");
+							spawn_loc.origin += (4, 0, 0);
+							break;
+						}
+					case "smg_sten":
+						ent.zombie_weapon_upgrade = "t4_type100";
+						break;
+					case "ar_stg44":
+						ent.zombie_weapon_upgrade = "t4_mp44";
+						break;
+					}
+				}
+				else if(GetDvarInt("mutator_waw_wall_weapons") == 2)
+				{
+					switch(VAL)
+					{
+					case "pistol_burst": //RK5
+						ent.zombie_weapon_upgrade = "t5_olympia";
+						break;
+					case "ar_marksman": //Sheiva
+						{
+							if(GetDvarInt("mutator_bocw_m14") == 2)
+								ent.zombie_weapon_upgrade = "t9_m14classic";
+							else
+								ent.zombie_weapon_upgrade = "t5_m14";
+							
+							break;
+						}
+					case "shotgun_pump": //KRM-262
+						ent.zombie_weapon_upgrade = "t5_mpl";
+						break;
+					case "smg_burst": //Pharo
+						{
+							if(GetDvarInt("mutator_bocw_ak74u") == 2)
+								ent.zombie_weapon_upgrade = "t9_ak74u";
+							else
+								ent.zombie_weapon_upgrade = "t5_ak74u";
+							
+							break;
+						}
+					case "pistol_fullauto": //L-CAR 9
+						{
+							if(GetDvarInt("mutator_bocw_pm63") == 2)
+								ent.zombie_weapon_upgrade = "t9_amp63";
+							else
+								ent.zombie_weapon_upgrade = "t5_pm63";
+							
+							break;
+						}
+					case "ar_cqb": //HVK-30
+						{
+							/*if(GetDvarInt("mutator_bocw_aug") == 2)
+								ent.zombie_weapon_upgrade = "t9_aug";
+							else*/
+								ent.zombie_weapon_upgrade = "t5_aug";
+							
+							break;
+						}
+					case "shotgun_precision": //Argus
+						{
+							if(GetDvarInt("mutator_bocw_hauer77") == 2)
+								ent.zombie_weapon_upgrade = "t9_hauer77";
+							else
+								ent.zombie_weapon_upgrade = "t5_stakeout";
+							
+							break;
+						}
+					case "smg_mp40_1940":
+						{
+							ent.origin += (4, 0, 0);
+							spawn_loc = struct::get(ent.target, "targetname");
+							spawn_loc.origin += (4, 0, 0);
+							break;
+						}
+					case "smg_sten":
+						{
+							if(GetDvarInt("mutator_bocw_mp5k") == 2)
+								ent.zombie_weapon_upgrade = "t9_mp5k";
+							else
+								ent.zombie_weapon_upgrade = "t5_mp5k";
+							
+							break;
+						}
+					case "ar_stg44":
+						{
+							if(GetDvarInt("mutator_bocw_m16") == 2)
+								ent.zombie_weapon_upgrade = "t9_m16";
+							else	
+								ent.zombie_weapon_upgrade = "t5_m16a1";
+							
+							break;
+						}
+					}
+				}
+				break;
+			}
 		case "zm_der_riese": //Der Riese: Declassified
 			{
 				if(GetDvarInt("mutator_waw_wall_weapons") == 1 || !GetDvarInt("mutator_waw_wall_weapons"))

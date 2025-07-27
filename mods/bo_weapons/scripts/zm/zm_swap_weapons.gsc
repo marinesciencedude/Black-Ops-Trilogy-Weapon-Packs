@@ -1553,6 +1553,132 @@ function swap_wall_weapon()
 				}
 				break;
 			}
+		case "zm_giant": //TrustInUma's DER RIESE
+			{
+				if(GetDvarInt("mutator_waw_wall_weapons") != 2 || !GetDvarInt("mutator_waw_wall_weapons"))
+				{
+					switch(VAL)
+					{
+					case "ar_marksman": //Sheiva
+						ent.zombie_weapon_upgrade = "t4_g43";
+						break;
+					case "pistol_burst": //RK5
+						ent.zombie_weapon_upgrade = "t4_kar98k";
+						break;
+					case "pistol_fullauto": //L-CAR 9
+						ent.zombie_weapon_upgrade = "t4_carbine";
+						break;
+					case "ar_cqb": //HVK-30
+						ent.zombie_weapon_upgrade = "t4_fg42";
+						break;
+					case "shotgun_pump": //KRM-262
+						ent.zombie_weapon_upgrade = "t4_db";
+						break;
+					case "smg_burst": //Pharo
+						ent.zombie_weapon_upgrade = "t4_thompson";
+						break;
+					case "shotgun_precision": //Argus
+						ent.zombie_weapon_upgrade = "t4_m1897";
+						break;
+					case "smg_mp40_1940":
+						{
+							ent.origin += (4, 0, 0);
+							spawn_loc = struct::get(ent.target, "targetname");
+							spawn_loc.origin += (4, 0, 0);
+							break;
+						}
+					case "smg_sten":
+						ent.zombie_weapon_upgrade = "t4_type100";
+						break;
+					case "ar_stg44":
+						ent.zombie_weapon_upgrade = "t4_mp44";
+						break;
+					}
+				}
+				else if(GetDvarInt("mutator_waw_wall_weapons") == 2)
+				{
+					switch(VAL)
+					{
+					case "pistol_burst": //RK5
+						ent.zombie_weapon_upgrade = "t5_olympia";
+						break;
+					case "ar_marksman": //Sheiva
+						{
+							if(GetDvarInt("mutator_bocw_m14") == 2)
+								ent.zombie_weapon_upgrade = "t9_m14classic";
+							else
+								ent.zombie_weapon_upgrade = "t5_m14";
+							
+							break;
+						}
+					case "shotgun_pump": //KRM-262
+						ent.zombie_weapon_upgrade = "t5_mpl";
+						break;
+					case "smg_burst": //Pharo
+						{
+							if(GetDvarInt("mutator_bocw_ak74u") == 2)
+								ent.zombie_weapon_upgrade = "t9_ak74u";
+							else
+								ent.zombie_weapon_upgrade = "t5_ak74u";
+							
+							break;
+						}
+					case "pistol_fullauto": //L-CAR 9
+						{
+							if(GetDvarInt("mutator_bocw_pm63") == 2)
+								ent.zombie_weapon_upgrade = "t9_amp63";
+							else
+								ent.zombie_weapon_upgrade = "t5_pm63";
+							
+							break;
+						}
+					case "ar_cqb": //HVK-30
+						{
+							/*if(GetDvarInt("mutator_bocw_aug") == 2)
+								ent.zombie_weapon_upgrade = "t9_aug";
+							else*/
+								ent.zombie_weapon_upgrade = "t5_aug";
+							
+							break;
+						}
+					case "shotgun_precision": //Argus
+						{
+							if(GetDvarInt("mutator_bocw_hauer77") == 2)
+								ent.zombie_weapon_upgrade = "t9_hauer77";
+							else
+								ent.zombie_weapon_upgrade = "t5_stakeout";
+							
+							break;
+						}
+					case "smg_mp40_1940":
+						{
+							ent.origin += (4, 0, 0);
+							spawn_loc = struct::get(ent.target, "targetname");
+							spawn_loc.origin += (4, 0, 0);
+							break;
+						}
+					case "smg_sten":
+						{
+							if(GetDvarInt("mutator_bocw_mp5k") == 2)
+								ent.zombie_weapon_upgrade = "t9_mp5k";
+							else
+								ent.zombie_weapon_upgrade = "t5_mp5k";
+							
+							break;
+						}
+					case "ar_stg44":
+						{
+							if(GetDvarInt("mutator_bocw_m16") == 2)
+								ent.zombie_weapon_upgrade = "t9_m16";
+							else	
+								ent.zombie_weapon_upgrade = "t5_m16a1";
+							
+							break;
+						}
+					}
+				}
+				break;
+			}
 		case "zm_der_riese": //Der Riese: Declassified
 			{
 				if(GetDvarInt("mutator_waw_wall_weapons") == 1 || !GetDvarInt("mutator_waw_wall_weapons"))
@@ -2317,6 +2443,7 @@ function swap_chalk()
 				case "zm_prototype":
 				case "zm_factory":
 				case "zm_der_riese":
+				case "zm_giant":
 				case "zm_theater":																		// ↔   ↔  ↕
 					ent.var_47896610 = util::spawn_model("wallbuy_kar98k", spawn_loc.origin + VectorScale((0, 13, -3), 1), spawn_loc.angles);
 					break;
@@ -2404,6 +2531,7 @@ function swap_chalk()
 					break;
 				case "zm_factory":
 				case "zm_der_riese":
+				case "zm_giant":
 				case "zm_coast":
 					ent.var_47896610 = util::spawn_model("wallbuy_gewehr43", spawn_loc.origin + VectorScale((1, 13, -2), 1), spawn_loc.angles);
 					break;
@@ -2438,6 +2566,7 @@ function swap_chalk()
 					break;
 				case "zm_factory":
 				case "zm_der_riese":
+				case "zm_giant":
 					ent.var_47896610 = util::spawn_model("wallbuy_stg44", spawn_loc.origin + VectorScale((-1, -20, -4), 1), spawn_loc.angles);
 					break;
 				case "zm_theater":
@@ -2493,6 +2622,7 @@ function swap_chalk()
 					break;
 				case "zm_factory":
 				case "zm_der_riese":
+				case "zm_giant":
 					ent.var_47896610 = util::spawn_model("wallbuy_m1carbine", spawn_loc.origin + VectorScale((-16, 1, -4), 1), spawn_loc.angles);
 					break;
 				case "zm_coast":
@@ -2549,6 +2679,7 @@ function swap_chalk()
 					break;
 				case "zm_factory":
 				case "zm_der_riese":
+				case "zm_giant":
 					ent.var_47896610 = util::spawn_model("wallbuy_type100", spawn_loc.origin + VectorScale((14, -1, -4), 1), spawn_loc.angles);
 					break;
 				case "zm_theater":
@@ -2595,6 +2726,7 @@ function swap_chalk()
 					break;
 				case "zm_factory":
 				case "zm_der_riese":
+				case "zm_giant":
 					ent.var_47896610 = util::spawn_model("wallbuy_thompson", spawn_loc.origin + VectorScale((-19, 1, -4), 1), spawn_loc.angles);
 					break;
 				case "zm_coast":
@@ -2661,6 +2793,7 @@ function swap_chalk()
 				{
 				case "zm_factory":
 				case "zm_der_riese":
+				case "zm_giant":
 					ent.var_47896610 = util::spawn_model("wallbuy_fg42", spawn_loc.origin + VectorScale((-15, 1, -2), 1), spawn_loc.angles);
 					break;
 				case "zm_theater":
@@ -2710,6 +2843,7 @@ function swap_chalk()
 					break;
 				case "zm_factory":
 				case "zm_der_riese":
+				case "zm_giant":
 					ent.var_47896610 = util::spawn_model("wallbuy_trenchgun", spawn_loc.origin + VectorScale((-1, -15, -4), 1), spawn_loc.angles);
 					break;
 				case "zm_theater":
@@ -2773,6 +2907,7 @@ function swap_chalk()
 					}
 				case "zm_factory":
 				case "zm_der_riese":
+				case "zm_giant":
 					ent.var_47896610 = util::spawn_model("wallbuy_doublebarrel", spawn_loc.origin + VectorScale((1, 12, -4), 1), spawn_loc.angles);
 					break;
 				case "zm_theater":
@@ -2859,6 +2994,7 @@ function swap_chalk()
 					break;
 				case "zm_der_riese": //Der Riese: Declassified
 				case "zm_factory": //The Giant
+				case "zm_giant": // TrustInUma's DER RIESE
 					ent.var_47896610 = util::spawn_model("wallbuy_m14", spawn_loc.origin + VectorScale((1, 0, 0), 1), spawn_loc.angles);
 				case "zm_asylum": // Verrückt
 					{
@@ -2890,6 +3026,7 @@ function swap_chalk()
 				case "zm_sumpf": //Shi no Numa
 				case "zm_prototype": //Nacht der Untoten
 				case "zm_factory": //The Giant
+				case "zm_giant": // TrustInUma's DER RIESE
 				case "zm_tomb": //Origins
 					ent.var_47896610 = util::spawn_model("wallbuy_olympia", spawn_loc.origin + VectorScale((0, 0, -1), 1), spawn_loc.angles);
 					break;
@@ -2946,6 +3083,7 @@ function swap_chalk()
 					ent.var_47896610 = util::spawn_model("wallbuy_stakeout", spawn_loc.origin + VectorScale((0, 4, 0), 1), spawn_loc.angles);
 					break;
 				case "zm_factory": //The Giant
+				case "zm_giant": // TrustInUma's DER RIESE
 					ent.var_47896610 = util::spawn_model("wallbuy_stakeout", spawn_loc.origin + VectorScale((-1, 3, 1), 1), spawn_loc.angles);
 					break;
 				case "zm_tomb": //Origins
@@ -2983,6 +3121,9 @@ function swap_chalk()
 					break;
 				case "zm_factory": //The Giant
 					ent.var_47896610 = util::spawn_model("wallbuy_mp40", spawn_loc.origin + VectorScale((1, 1, 0), 1), spawn_loc.angles);
+					break;
+				case "zm_giant": //TrustInUma's DER RIESE
+					ent.var_47896610 = util::spawn_model("wallbuy_mp40", spawn_loc.origin + VectorScale((0, 1, 0), 1), spawn_loc.angles);
 					break;
 				case "zm_tomb": //Origins
 					{
@@ -3055,6 +3196,7 @@ function swap_chalk()
 					ent.var_47896610 = util::spawn_model("wallbuy_mpl", spawn_loc.origin + VectorScale((0, -1, -1), 1), spawn_loc.angles);
 					break;
 				case "zm_factory": //The Giant
+				case "zm_giant": // TrustInUma's DER RIESE
 					ent.var_47896610 = util::spawn_model("wallbuy_mpl", spawn_loc.origin + VectorScale((1, 1, 0), 1), spawn_loc.angles);
 					break;
 				default:
@@ -3094,6 +3236,7 @@ function swap_chalk()
 					}
 				case "zm_der_riese": //Der Riese: Declassified
 				case "zm_factory": //The Giant
+				case "zm_giant": // TrustInUma's DER RIESE
 					ent.var_47896610 = util::spawn_model("wallbuy_pm63", spawn_loc.origin + VectorScale((-5, 1, 1), 1), spawn_loc.angles);
 					break;
 				case "zm_asylum": //Verrückt
@@ -3152,6 +3295,7 @@ function swap_chalk()
 					break;
 				case "zm_der_riese": //Der Riese: Declassified
 				case "zm_factory": //The Giant
+				case "zm_giant": // TrustInUma's DER RIESE
 					ent.var_47896610 = util::spawn_model("wallbuy_ak74u", spawn_loc.origin + VectorScale((-1, 1, 0), 1), spawn_loc.angles);
 					break;
 				case "zm_asylum": //Verrückt
@@ -3183,6 +3327,7 @@ function swap_chalk()
 					ent.var_47896610 = util::spawn_model("wallbuy_mp5k", spawn_loc.origin + VectorScale((-0.5 , 0.5, 1.1), 1), spawn_loc.angles);
 					break;
 				case "zm_der_riese": //Der Riese: Declassified
+				case "zm_giant": // TrustInUma's DER RIESE
 					ent.var_47896610 = util::spawn_model("wallbuy_mp5k", spawn_loc.origin + VectorScale((0, -2, 0), 1), spawn_loc.angles);
 					break;
 				case "zm_factory": //The Giant
@@ -3234,6 +3379,7 @@ function swap_chalk()
 					}
 				case "zm_der_riese": //Der Riese: Declassified
 				case "zm_factory": //The Giant
+				case "zm_giant": // TrustInUma's DER RIESE
 					ent.var_47896610 = util::spawn_model("wallbuy_m16a1", spawn_loc.origin + VectorScale((-1, -3, 1), 1), spawn_loc.angles);
 					break;
 				case "zm_asylum": //Verrückt
@@ -3262,6 +3408,7 @@ function swap_chalk()
 					ent.var_47896610 = util::spawn_model("wallbuy_aug", spawn_loc.origin + VectorScale((8, 0, 0), 1), spawn_loc.angles);
 					break;
 				case "zm_der_riese": //Der Riese: Declassified
+				case "zm_giant": // TrustInUma's DER RIESE
 					ent.var_47896610 = util::spawn_model("wallbuy_aug", spawn_loc.origin + VectorScale((-11, 1, 0), 1), spawn_loc.angles);
 					break;
 				case "zm_factory": //The Giant

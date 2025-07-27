@@ -640,6 +640,12 @@ function apply_choices() {
 		aat::register_aat_exemption(getweapon("t4_ray_gun_up"));
 	}
 	
+	if(GetDvarString("mapname") == "zm_giant")
+	{
+		zm_utility::include_weapon( "tesla_gun", true );
+		level.zombie_weapons[GetWeapon("tesla_gun")].is_in_box = true;
+	}
+	
 	level.weaponzmthundergun = getweapon("t5_thundergun");
 	level.weaponzmthundergunupgraded = getweapon("t5_thundergun_upgraded");
 	

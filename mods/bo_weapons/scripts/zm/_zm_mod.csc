@@ -528,6 +528,12 @@ function applyChoices() {
 		zm_weapons::include_upgraded_weapon( "t4_ray_gun", "t4_ray_gun_up", false, 10000, 0 );
 		ArrayRemoveIndex(level.zombie_weapons_upgraded, GetWeapon("t4_ray_gun_camo_up"));
 	}
+	
+	if(GetDvarString("mapname") == "zm_giant")
+		zm_weapons::include_weapon( "tesla_gun", true, 10000, 0 );
+	
+	level.weaponzmthundergun = getweapon("t5_thundergun");
+	level.weaponzmthundergunupgraded = getweapon("t5_thundergun_upgraded");
 }
 
 function tempCallback(localClientNum, oldVal, newVal, bNewEnt, bInitialSnap, fieldName, bWasTimeJump) {

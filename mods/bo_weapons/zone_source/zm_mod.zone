@@ -645,6 +645,12 @@ xmodel,wallbuy_s2_stg44
 xmodel,wallbuy_s2_m1a1thompson
 xmodel,wallbuy_t7_sten
 
+//TrustInUma's DER RIESE
+image,i_t7_zm_chalk_buy_pharo_c
+image,bo3_mp40_chalk_c
+image,bo3_stg44_chalk_c
+image,i_smg_sten_wallbuy_c
+
 image,classic_clean_cherry
 image,classic_clean_deadshot
 image,classic_clean_doubletap_alt

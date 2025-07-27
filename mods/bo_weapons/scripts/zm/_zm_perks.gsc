@@ -1487,6 +1487,14 @@ function perk_machine_spawn_init()
 		
 		if(GetDvarInt("mutator_doubletap") == 1 && perk == PERK_DOUBLETAP2)
 			perk = "specialty_rof";
+		
+		if(GetDvarString("mapname") == "zm_giant")
+		{
+			if(perk == PERK_ADDITIONAL_PRIMARY_WEAPON)
+				perk = PERK_QUICK_REVIVE;
+			else if(perk == PERK_QUICK_REVIVE)
+				perk = PERK_ADDITIONAL_PRIMARY_WEAPON;
+		}
 			
 		if(isdefined(perk) && isdefined(s_spawn_pos.model))
 		{
