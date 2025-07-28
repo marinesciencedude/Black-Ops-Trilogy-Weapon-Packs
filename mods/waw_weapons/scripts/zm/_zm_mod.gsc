@@ -161,6 +161,13 @@ function apply_choices() {
 		//zm_weapons::load_weapon_spec_from_table("gamedata/weapons/zm/zm_factory_classic_mod.csv", 1);
 	}*/
 	
+	if(GetDvarString("mapname") != "zm_stalingrad" && GetDvarInt("mutator_dp27") == MUTATOR_OFFON_ON)
+	{
+		zm_utility::include_weapon( "t4_dp28", true );
+		zm_utility::include_weapon( "t4_dp28_up", false );
+		zm_weapons::add_zombie_weapon( "t4_dp28", "t4_dp28_up", "", 2400, "lmg", "", undefined, "", false, "" );
+	}
+	
 	if(GetDvarInt("mutator_double_packapunch") == MUTATOR_ONOFF_OFF)
 	{
 		keys = GetArrayKeys(level.zombie_weapons_upgraded);

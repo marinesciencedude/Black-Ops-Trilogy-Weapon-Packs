@@ -61,6 +61,7 @@ stringtable,gamedata/weapons/zm/zm_levelcommon_weapons.csv
 stringtable,gamedata/weapons/zm/zm_tomb_weapons.csv
 stringtable,gamedata/weapons/zm/zm_castle_weapons.csv
 stringtable,gamedata/weapons/zm/zm_island_weapons.csv
+stringtable,gamedata/weapons/zm/zm_stalingrad_weapons.csv
 
 scriptparsetree,scripts/zm/zm_tomb_dig.gsc
 //scriptparsetree,scripts/zm/zm_tomb_ee_side.gsc //oh wow script error from decompiled file line 228: unexpected TOKEN_LEFT_PAREN, expecting TOKEN_SEMICOLON
@@ -222,6 +223,10 @@ xmodel,wallbuy_grenade_bag
 weapon,t5_m1911
 weapon,t5_m1911_rdw_up_zm
 weapon,t5_m1911_ldw_up_zm
+
+weapon,t4_dp28
+weapon,t4_dp28_up
+xmodel,wallbuy_dp27
 
 sound,zm_mod
 

@@ -524,6 +524,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 	{
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
+			"DP-28",
+			"Enable DP-28 in the mystery box for all maps.",
+			"MutatorSetings_DP27",
+			"mutator_dp27",
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
 			"Ray Gun",
 			"Switch between WaW Ray Gun and Improved BO3 Ray Gun",
 			"MutatorSettings_RayGun",
