@@ -25,6 +25,7 @@ scriptparsetree,scripts/zm/_zm_mod.csc
 scriptparsetree,scripts/zm/_zm_mutators.csc
 scriptparsetree,scripts/zm/_zm_mutators.gsc
 scriptparsetree,scripts/zm/_zm_mutators.gsh
+scriptparsetree,scripts/zm/_zm_magicbox.gsc
 scriptparsetree,scripts/zm/dive.gsc
 
 scriptparsetree,scripts/zm/_zm_weap_quantum_bomb.gsc
@@ -446,11 +447,8 @@ material,claymore_hud
 material,claymore_hud_inactive
 fx,custom/weapon/fx_claymore_laser
 xmodel,wallbuy_claymore
-scriptparsetree,scripts/zm/_zm_sidequests.gsc
+
 scriptparsetree,scripts/zm/zm_temple_ffotd.gsc
-
-scriptparsetree,scripts/zm/_zm_sidequests.gsc
-
 scriptparsetree,scripts/zm/zm_cosmodrome_ffotd.gsc
 //scriptparsetree,scripts/zm/zm_moon_ffotd.gsc
 

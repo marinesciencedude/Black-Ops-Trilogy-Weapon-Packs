@@ -59,6 +59,8 @@ function main_end()
 	spawncollision("collision_player_slick_wall_128x128x10", "collider", (546.5, -499.5, -347), vectorscale((0, 1, 0), 3.79971));
 	spawncollision("collision_player_slick_wall_128x128x10", "collider", (541, -439.5, -347), vectorscale((0, 1, 0), 6.299));
 	
+	level._sq_perk_array[level._sq_perk_array.size] = "specialty_phdflopper";
+	
 	ents = ArrayCombine(getentarray("sq_sundial", "targetname"), getentarray("sq_sundial_button", "targetname"), true, false);
 	for(i = 0; i < ents.size; i++)
 	{
