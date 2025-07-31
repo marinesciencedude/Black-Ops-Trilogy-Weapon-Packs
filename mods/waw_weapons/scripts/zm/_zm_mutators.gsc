@@ -136,6 +136,9 @@ function private widowswine_existence(dvar_value)
 		if(isdefined(level._random_perk_machine_perk_list))
 			ArrayRemoveValue(level._random_perk_machine_perk_list, PERK_WIDOWS_WINE);
 		level._custom_perks = Array::remove_index(level._custom_perks, "specialty_widowswine", 1);
+		
+		if(isdefined(level._sq_perk_array))
+			ArrayRemoveValue(level._sq_perk_array, PERK_WIDOWS_WINE);
 	}
 }
 
@@ -456,6 +459,12 @@ function private doubletap_existence(dvar_value)
 		}
 		level._custom_perks = Array::remove_index(level._custom_perks, PERK_DOUBLETAP2, 1);
 		level._custom_perks = Array::remove_index(level._custom_perks, "specialty_rof", 1);
+		
+		if(isdefined(level._sq_perk_array))
+		{
+			ArrayRemoveValue(level._sq_perk_array, PERK_DOUBLETAP2);
+			ArrayRemoveValue(level._sq_perk_array, "specialty_rof");
+		}
 	}
 }
 
@@ -468,6 +477,9 @@ function private deadshot_existence(dvar_value)
 		if(isdefined(level._random_perk_machine_perk_list))
 			ArrayRemoveValue(level._random_perk_machine_perk_list, PERK_DEAD_SHOT);
 		level._custom_perks = Array::remove_index(level._custom_perks, PERK_DEAD_SHOT, 1);
+		
+		if(isdefined(level._sq_perk_array))
+			ArrayRemoveValue(level._sq_perk_array, PERK_DEAD_SHOT);
 	}
 }
 
@@ -482,6 +494,11 @@ function private doubletap(dvar_value)
 			ArrayRemoveValue(level._random_perk_machine_perk_list, PERK_DOUBLETAP2);
 		}
 		level._custom_perks = Array::remove_index(level._custom_perks, PERK_DOUBLETAP2, 1);
+		if(isdefined(level._sq_perk_array))
+		{
+			ArrayRemoveValue(level._sq_perk_array, PERK_DOUBLETAP2);
+			level._sq_perk_array[level._sq_perk_array.size] = "specialty_rof";
+		}
 	}
 	else
 	{

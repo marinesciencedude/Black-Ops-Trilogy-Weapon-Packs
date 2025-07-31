@@ -28,9 +28,14 @@ scriptparsetree,scripts/zm/_zm_mutators.gsh
 scriptparsetree,scripts/zm/_zm_magicbox.gsc
 scriptparsetree,scripts/zm/dive.gsc
 
+scriptparsetree,scripts/zm/zm_temple_ffotd.gsc
+scriptparsetree,scripts/zm/zm_cosmodrome_ffotd.gsc
+
 scriptparsetree,scripts/zm/_zm_weap_quantum_bomb.gsc
 scriptparsetree,scripts/zm/_zm_powerup_random_weapon.gsc
 scriptparsetree,scripts/zm/_zm_powerup_random_weapon.csc
+
+scriptparsetree,scripts/zm/_zm_weap_shrink_ray.gsc
 
 //aitype,archetype_zm_factory_zombie
 //aitype,spawner_zm_prototype_zombie
@@ -62,6 +67,12 @@ stringtable,gamedata/weapons/zm/zm_tomb_weapons.csv
 stringtable,gamedata/weapons/zm/zm_castle_weapons.csv
 stringtable,gamedata/weapons/zm/zm_island_weapons.csv
 stringtable,gamedata/weapons/zm/zm_stalingrad_weapons.csv
+stringtable,gamedata/weapons/zm/zm_cosmodrome_weapons.csv
+stringtable,gamedata/weapons/zm/zm_temple_weapons.csv
+stringtable,gamedata/weapons/zm/zm_moon_weapons.csv
+
+rawfile,vision/black_and_white.vision
+scriptparsetree,scripts/zm/zm_cosmodrome_ffotd.csc
 
 scriptparsetree,scripts/zm/zm_tomb_dig.gsc
 //scriptparsetree,scripts/zm/zm_tomb_ee_side.gsc //oh wow script error from decompiled file line 228: unexpected TOKEN_LEFT_PAREN, expecting TOKEN_SEMICOLON

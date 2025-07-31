@@ -1250,17 +1250,17 @@ function treasure_chest_CanPlayerReceiveWeapon( player, weapon, pap_triggers )
 		}
 	}
 
-	if ( weapon.name == "ray_gun" )
+	if ( weapon.name == "ray_gun" || weapon.name == "t4_ray_gun" )
 	{
-		if ( player zm_weapons::has_weapon_or_upgrade( GetWeapon( "raygun_mark2" ) ) )
+		if ( player zm_weapons::has_weapon_or_upgrade( GetWeapon( "raygun_mark2" ) ) || player zm_weapons::has_weapon_or_upgrade( GetWeapon( "raygun_mark_ii" ) ) )
 		{
 			return false;
 		}
 	}
 	
-	if ( weapon.name == "raygun_mark2" )
+	if ( weapon.name == "raygun_mark2" || weapon.name == "raygun_mark_ii" )
 	{
-		if ( player zm_weapons::has_weapon_or_upgrade( GetWeapon( "ray_gun" ) ) )
+		if ( player zm_weapons::has_weapon_or_upgrade( GetWeapon( "ray_gun" ) ) || player zm_weapons::has_weapon_or_upgrade( GetWeapon( "t4_ray_gun" ) ) )
 		{
 			return false;
 		}

@@ -347,13 +347,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 		--	"MutatorSettings_AUG",
 		--	"mutator_aug",
         --    BuildStringSettings({"On", "Off"}, "Off"), nil, SetDvarSetting),
-		--CoD.OptionsUtility.CreateDvarSettings(
-		--	arg0,
-		--	"Ascension Red Telephone Quotes",
-		--	"Restore FIVE quotes to the Red Telephones in Ascension",
-		--	"MutatorSettings_RedTelephone",
-		--	"mutator_redphone",
-		--	BuildStringSettings({"Call of the Dead", "FIVE"}, "Call of the Dead"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Ascension Red Telephone Quotes",
+			"Restore FIVE quotes to the Red Telephones in Ascension",
+			"MutatorSettings_RedTelephone",
+			"mutator_redphone",
+			BuildStringSettings({"Call of the Dead", "FIVE"}, "Call of the Dead"), nil, SetDvarSetting),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Shi no Numa Starting Room Perk",
@@ -361,13 +361,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_ShiNoNumaPerk",
 			"mutator_shinonuma_perk",
 			BuildStringSettings({"Mule Kick", "Quick Revive", "None"}, "Mule Kick"), nil, SetDvarSetting),
-		--CoD.OptionsUtility.CreateDvarSettings(
-		--	arg0,
-		--	"Ascension Black-and-White Vision",
-		--	"If the vision effect before turning on power in Ascension should be sepia (BO III) or black-and-white (BO)",
-		--	"MutatorSettings_AscensionVisionset",
-		--	"mutator_ascension_visionset",
-		--	BuildStringSettings({"BO III", "BO"}, "BO III"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Ascension Black-and-White Vision",
+			"If the vision effect before turning on power in Ascension should be sepia (BO III) or black-and-white (BO)",
+			"MutatorSettings_AscensionVisionset",
+			"mutator_ascension_visionset",
+			BuildStringSettings({"BO III", "BO"}, "BO III"), nil, SetDvarSetting),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Starting Weapon",

@@ -551,32 +551,32 @@ function quantum_bomb_random_weapon_starburst_result(position)
 	{
 		weapon = var_46d0740e;
 	}*/
-	weapon = GetWeapon("ray_gun");
+	weapon = GetWeapon("t4_ray_gun");
 	rand = RandomInt( 20 );
 	switch ( rand )
 	{
 	case 0:
 	case 1:
 	case 2:
-		weapon = GetWeapon("ray_gun_upgraded");
+		weapon = GetWeapon("t4_ray_gun_up");
 		break;
 	case 3:
 	case 4:
-		weapon = GetWeapon("t5_spas12_up");
+		weapon = GetWeapon("t4_m1897_up");
 		break;
 	case 5:
 	case 6:
-		weapon = GetWeapon("t5_china_lake_up");
+		weapon = GetWeapon("t4_m1garand_rg_launcher_up");
 		break;
 	case 7:
 	case 8:
-		weapon = GetWeapon("t5_m72_up");
+		weapon = GetWeapon("t4_panzerschreck_up");
 		break;
 	case 9:
-		weapon = GetWeapon("t5_python_rdw_up");
+		weapon = GetWeapon("t4_357_up");
 		break;
 	default:
-		weapon = GetWeapon("ray_gun");
+		weapon = GetWeapon("t4_ray_gun");
 		break;
 	}
 	/#

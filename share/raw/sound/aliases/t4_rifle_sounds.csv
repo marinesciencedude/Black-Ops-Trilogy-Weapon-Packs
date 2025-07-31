@@ -1,308 +1,308 @@
 Name,Behavior,Storage,FileSpec,FileSpecSustain,FileSpecRelease,Template,Loadspec,Secondary,SustainAlias,ReleaseAlias,Bus,VolumeGroup,DuckGroup,Duck,ReverbSend,CenterSend,VolMin,VolMax,DistMin,DistMaxDry,DistMaxWet,DryMinCurve,DryMaxCurve,WetMinCurve,WetMaxCurve,LimitCount,LimitType,EntityLimitCount,EntityLimitType,PitchMin,PitchMax,PriorityMin,PriorityMax,PriorityThresholdMin,PriorityThresholdMax,AmplitudePriority,PanType,Pan,Futz,Looping,RandomizeType,Probability,StartDelay,EnvelopMin,EnvelopMax,EnvelopPercent,OcclusionLevel,IsBig,DistanceLpf,FluxType,FluxTime,Subtitle,Doppler,ContextType,ContextValue,ContextType1,ContextValue1,ContextType2,ContextValue2,ContextType3,ContextValue3,Timescale,IsMusic,IsCinematic,FadeIn,FadeOut,Pauseable,StopOnEntDeath,Compression,StopOnPlay,DopplerScale,FutzPatch,VoiceLimit,IgnoreMaxDist,NeverPlayTwice,ContinuousPan,FileSource,FileSourceSustain,FileSourceRelease,FileTarget,FileTargetSustain,FileTargetRelease,Platform,Language,OutputDevices,PlatformMask,WiiUMono,StopAlias,DistanceLpfMin,DistanceLpfMax,FacialAnimationName,RestartContextLoops,SilentInCPZ,ContextFailsafe,GPAD,GPADOnly,MuteVoice,MuteMusic,RowSourceFileName,RowSourceShortName,RowSourceLineNumber
-
-
-################## m1 carbine start ##################
-#FIRE START
-
-#Plr
-wpn_m1c_shot_plr,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_m1c_shot_plr,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_m1c_shot_plr,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_m1c_pap_shot_plr,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_pap_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_m1c_pap_shot_plr,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_pap_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_m1c_pap_shot_plr,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_pap_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_m1c_shot_supp_plr,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_shot_supp.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_m1c_pap_shot_supp_plr,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_shot_supp_pap.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-
-#Npc
-wpn_m1c_shot_npc,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_m1c_shot_npc,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_m1c_shot_npc,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_m1c_pap_shot_npc,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_pap_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_m1c_pap_shot_npc,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_pap_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_m1c_pap_shot_npc,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_pap_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_m1c_shot_supp_npc,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_shot_supp.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_m1c_pap_shot_supp_npc,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_shot_supp_pap.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-
-#FIRE END 
-
-#FOLEY START
-
-m1c_mag_in,,loaded,world_at_war_ports\t4_carbine\foley\gr_m1carbine_mag_in.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,,
-m1c_mag_out,,loaded,world_at_war_ports\t4_carbine\foley\gr_m1carbine_mag_out.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,,
-m1c_futz,,loaded,world_at_war_ports\t4_carbine\foley\gr_m1carbine_futz.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,,
-m1c_charge,,loaded,world_at_war_ports\t4_carbine\foley\gr_m1carbine_charge.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,,
-
-#FOLEY END
-################## m1 carbine End ##################
-
-################## m1 garand start ##################
-#FIRE START
-
-#Plr
-wpn_svt_shot_plr,,loaded,world_at_war_ports\t4_svt\wpn_svt_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_svt_shot_plr,,loaded,world_at_war_ports\t4_svt\wpn_svt_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_svt_shot_plr,,loaded,world_at_war_ports\t4_svt\wpn_svt_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_svt_pap_shot_plr,,loaded,world_at_war_ports\t4_svt\wpn_svt_pap_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_svt_pap_shot_plr,,loaded,world_at_war_ports\t4_svt\wpn_svt_pap_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_svt_pap_shot_plr,,loaded,world_at_war_ports\t4_svt\wpn_svt_pap_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-
-#Npc
-wpn_svt_shot_npc,,loaded,world_at_war_ports\t4_svt\wpn_svt_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_svt_shot_npc,,loaded,world_at_war_ports\t4_svt\wpn_svt_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_svt_shot_npc,,loaded,world_at_war_ports\t4_svt\wpn_svt_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_svt_pap_shot_npc,,loaded,world_at_war_ports\t4_svt\wpn_svt_pap_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_svt_pap_shot_npc,,loaded,world_at_war_ports\t4_svt\wpn_svt_pap_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_svt_pap_shot_npc,,loaded,world_at_war_ports\t4_svt\wpn_svt_pap_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-
-#FIRE END 
-
-#FOLEY START
-
-svt_mag_in,,loaded,world_at_war_ports\t4_svt\foley\wpn_svt_mag_in.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,,
-svt_mag_out,,loaded,world_at_war_ports\t4_svt\foley\wpn_svt_mag_out.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,,
-svt_mag_contact,,loaded,world_at_war_ports\t4_svt\foley\wpn_svt_mag_contact.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,,
-svt_pull_slide,,loaded,world_at_war_ports\t4_svt\foley\wpn_svt_slide.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,,
-
-
-#FOLEY END
-################## m1 garand End ##################
-
-################## svt start ##################
-#FIRE START
-
-#Plr
-wpn_m1g_shot_plr,,loaded,world_at_war_ports\t4_m1\wpn_m1_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_m1g_shot_plr,,loaded,world_at_war_ports\t4_m1\wpn_m1_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_m1g_shot_plr,,loaded,world_at_war_ports\t4_m1\wpn_m1_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_m1g_pap_shot_plr,,loaded,world_at_war_ports\t4_m1\wpn_m1_pap_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_m1g_pap_shot_plr,,loaded,world_at_war_ports\t4_m1\wpn_m1_pap_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_m1g_pap_shot_plr,,loaded,world_at_war_ports\t4_m1\wpn_m1_pap_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-
-#Npc
-wpn_m1g_shot_npc,,loaded,world_at_war_ports\t4_m1\wpn_m1_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_m1g_shot_npc,,loaded,world_at_war_ports\t4_m1\wpn_m1_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_m1g_shot_npc,,loaded,world_at_war_ports\t4_m1\wpn_m1_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_m1g_pap_shot_npc,,loaded,world_at_war_ports\t4_m1\wpn_m1_pap_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_m1g_pap_shot_npc,,loaded,world_at_war_ports\t4_m1\wpn_m1_pap_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_m1g_pap_shot_npc,,loaded,world_at_war_ports\t4_m1\wpn_m1_pap_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-
-#FIRE END 
-
-#FOLEY START
-
-m1g_mag_in,,loaded,world_at_war_ports\t4_m1\foley\m1gar_clip_in.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,,
-m1g_mag_out,,loaded,world_at_war_ports\t4_m1\foley\m1gar_clip_out.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,,
-m1c_breech_close,,loaded,world_at_war_ports\t4_m1\foley\m1gar_breech_close.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,,
-m1c_pull_slide,,loaded,world_at_war_ports\t4_m1\foley\m1gar_pull_slide.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,,
-m1c_m1garand_clip,,loaded,world_at_war_ports\t4_m1\foley\wpn_m1garand_clip.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,,
-
-#FOLEY END
-################## svt End ##################
-
-################## Gewehr43 start ##################
-#FIRE START
-
-#Plr
-wpn_g43_shot_plr,,loaded,world_at_war_ports\t4_g43\g43_shot1.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_g43_shot_plr,,loaded,world_at_war_ports\t4_g43\g43_shot2.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_g43_shot_plr,,loaded,world_at_war_ports\t4_g43\g43_shot3.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_g43_pap_shot_plr,,loaded,world_at_war_ports\t4_g43\g43_pap_shot1.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_g43_pap_shot_plr,,loaded,world_at_war_ports\t4_g43\g43_pap_shot2.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_g43_pap_shot_plr,,loaded,world_at_war_ports\t4_g43\g43_pap_shot3.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_g43_shot_sli_plr,,loaded,world_at_war_ports\t4_g43\wpn_g43_shot_sli.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_g43_pap_shot_sli_plr,,loaded,world_at_war_ports\t4_g43\wpn_g43_pap_shot_sli.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-
-#Npc
-wpn_g43_shot_npc,,loaded,world_at_war_ports\t4_g43\g43_shot1.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_g43_shot_npc,,loaded,world_at_war_ports\t4_g43\g43_shot2.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_g43_shot_npc,,loaded,world_at_war_ports\t4_g43\g43_shot3.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_g43_pap_shot_npc,,loaded,world_at_war_ports\t4_g43\g43_pap_shot1.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_g43_pap_shot_npc,,loaded,world_at_war_ports\t4_g43\g43_pap_shot2.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_g43_pap_shot_npc,,loaded,world_at_war_ports\t4_g43\g43_pap_shot3.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_g43_shot_sli_npc,,loaded,world_at_war_ports\t4_g43\wpn_g43_shot_sli.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_g43_pap_shot_sli_npc,,loaded,world_at_war_ports\t4_g43\wpn_g43_pap_shot_sli.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-
-#FIRE END 
-
-#FOLEY START
-
-gr_g43_mag_contact,,loaded,world_at_war_ports\t4_g43\foley\gr_g43_mag_contact.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,,
-gr_g43_mag_in,,loaded,world_at_war_ports\t4_g43\foley\gr_g43_mag_in.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,,
-gr_g43_mag_out,,loaded,world_at_war_ports\t4_g43\foley\gr_g43_mag_out.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,,
-gr_g43_slide_back,,loaded,world_at_war_ports\t4_g43\foley\gr_g43_slide_back.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,,
-gr_g43_slide_forward,,loaded,world_at_war_ports\t4_g43\foley\gr_g43_slide_forward.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,,
-wpn_t4_kar98_bolt_forward,,loaded,world_at_war_ports\t4_g43\foley\gr_kar98_bolt_forward.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,,
-#FOLEY END
-################## Gewehr43 End ##################
-
-################## Stg start ##################
-#FIRE START
-
-#Plr
-wpn_t4_mp44_shot_plr,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_t4_mp44_shot_plr,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_t4_mp44_shot_plr,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_t4_mp44_pap_shot_plr,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_pap_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_t4_mp44_pap_shot_plr,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_pap_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_t4_mp44_pap_shot_plr,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_pap_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_t4_mp44_silencer_shot_plr,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_flash_hider_shot.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_t4_mp44_pap_silencer_shot_plr,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_flash_hider_pap_shot.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-
-#Npc
-wpn_t4_mp44_shot_npc,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_t4_mp44_shot_npc,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_t4_mp44_shot_npc,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_t4_mp44_pap_shot_npc,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_pap_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_t4_mp44_pap_shot_npc,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_pap_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_t4_mp44_pap_shot_npc,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_pap_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_t4_mp44_silencer_shot_npc,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_flash_hider_shot.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-wpn_t4_mp44_pap_silencer_shot_npc,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_flash_hider_pap_shot.wav,,,UIN_MOD,,,,,BUS_FX,,,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-
-#FIRE END 
-
-#FOLEY START
-
-wpn_t4_mp44_charge,,loaded,world_at_war_ports\t4_stg44\foley\gr_mp44_charge.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,,
-wpn_t4_mp44_mag_in,,loaded,world_at_war_ports\t4_stg44\foley\gr_mp44_mag_in.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,,
-wpn_t4_mp44_mag_out,,loaded,world_at_war_ports\t4_stg44\foley\gr_mp44_mag_out.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,,
-wpn_t4_mp44_raise,,loaded,world_at_war_ports\t4_stg44\foley\stg44_raise.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,,
-wpn_t4_mp44_futz,,loaded,world_at_war_ports\t4_stg44\foley\gr_mp44_futz.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,,
-
-#FOLEY END
-################## Stg End ##################
-
-#WaW John C. Garand's M1 Garand / M1C/M1E7
-wpn_t4_m1garand_shot_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_plr,,wpn_t4_m1garand_mech_plr
-wpn_t4_m1garand_shot_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_npc,,wpn_t4_m1garand_mech_npc
-wpn_t4_m1garand_pap_shot_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_plr,,wpn_t4_m1garand_pap_flux_plr
-wpn_t4_m1garand_pap_shot_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_npc,,wpn_t4_m1garand_pap_flux_npc
-wpn_t4_m1garand_shot_last_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_plr,,wpn_t4_m1garand_ping_plr
-wpn_t4_m1garand_shot_last_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_npc,,wpn_t4_m1garand_ping_npc
-wpn_t4_m1garand_pap_shot_last_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_plr,,wpn_t4_m1garand_pap_flux_last_plr
-wpn_t4_m1garand_pap_shot_last_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_npc,,wpn_t4_m1garand_pap_flux_last_npc
-wpn_t4_m1garand_ping_plr,,,skye_ports\t4_m1garand\foley\wpn_t4_m1garand_ping.wav,,,wpn_t4_pap_shot_plr,,wpn_t4_m1garand_mech_plr
-wpn_t4_m1garand_ping_npc,,,skye_ports\t4_m1garand\foley\wpn_t4_m1garand_ping.wav,,,wpn_t4_pap_shot_npc,,wpn_t4_m1garand_mech_npc
-wpn_t4_m1garand_mech_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_mech.wav,,,wpn_t4_shot_plr,,wpn_t4_m1garand_tail_plr
-wpn_t4_m1garand_mech_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_mech.wav,,,wpn_t4_shot_npc,,wpn_t4_m1garand_tail_npc
-wpn_t4_m1garand_tail_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_tail_ext.wav,,,wpn_t4_reverb_ext_plr,,
-wpn_t4_m1garand_tail_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_tail_ext.wav,,,wpn_t4_reverb_ext_npc,,
-wpn_t4_m1garand_tail_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_tail_int.wav,,,wpn_t4_reverb_int_plr,,
-wpn_t4_m1garand_tail_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_tail_int.wav,,,wpn_t4_reverb_int_npc,,
-wpn_t4_m1garand_pap_flux_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_pap_flux.wav,,,wpn_t4_pap_shot_plr,,wpn_t4_m1garand_mech_plr
-wpn_t4_m1garand_pap_flux_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_pap_flux.wav,,,wpn_t4_pap_shot_npc,,wpn_t4_m1garand_mech_npc
-wpn_t4_m1garand_pap_flux_last_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_pap_flux.wav,,,wpn_t4_pap_shot_plr,,wpn_t4_m1garand_ping_plr
-wpn_t4_m1garand_pap_flux_last_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_pap_flux.wav,,,wpn_t4_pap_shot_npc,,wpn_t4_m1garand_ping_npc
-wpn_t4_m1garand_bolt_back,,,skye_ports\t4_m1garand\foley\wpn_t4_m1garand_bolt_back.wav,,,wpn_t4_reload_plr,,
-wpn_t4_m1garand_bolt_forward,,,skye_ports\t4_m1garand\foley\wpn_t4_m1garand_bolt_forward.wav,,,wpn_t4_reload_plr,,
-wpn_t4_m1garand_clip_in,,,skye_ports\t4_common\shared\wpn_t4_m1garand_clip_in.wav,,,wpn_t4_reload_plr,,
-wpn_t4_m1garand_clip_out,,,skye_ports\t4_m1garand\foley\wpn_t4_m1garand_clip_out.wav,,,wpn_t4_reload_plr,,
-#WaW M1 Garand
-wpn_t4_m1garand_shot_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_wtr_plr,,wpn_t4_m1garand_mech_plr
-wpn_t4_m1garand_shot_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_wtr_npc,,wpn_t4_m1garand_mech_npc
-wpn_t4_m1garand_pap_shot_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_wtr_plr,,wpn_t4_m1garand_pap_flux_plr
-wpn_t4_m1garand_pap_shot_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_wtr_npc,,wpn_t4_m1garand_pap_flux_npc
-wpn_t4_m1garand_shot_last_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_wtr_plr,,wpn_t4_m1garand_ping_plr
-wpn_t4_m1garand_shot_last_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_wtr_npc,,wpn_t4_m1garand_ping_npc
-wpn_t4_m1garand_pap_shot_last_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_wtr_plr,,wpn_t4_m1garand_pap_flux_last_plr
-wpn_t4_m1garand_pap_shot_last_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_wtr_npc,,wpn_t4_m1garand_pap_flux_last_npc
-wpn_t4_m1garand_ping_plr,,,skye_ports\t4_m1garand\foley\wpn_t4_m1garand_ping.wav,,,wpn_t4_pap_shot_wtr_plr,,wpn_t4_m1garand_mech_plr
-wpn_t4_m1garand_ping_npc,,,skye_ports\t4_m1garand\foley\wpn_t4_m1garand_ping.wav,,,wpn_t4_pap_shot_wtr_npc,,wpn_t4_m1garand_mech_npc
-wpn_t4_m1garand_mech_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_mech.wav,,,wpn_t4_shot_wtr_plr,,wpn_t4_m1garand_tail_plr
-wpn_t4_m1garand_mech_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_mech.wav,,,wpn_t4_shot_wtr_npc,,wpn_t4_m1garand_tail_npc
-wpn_t4_m1garand_tail_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_tail_ext.wav,,,wpn_t4_reverb_wtr_plr,,
-wpn_t4_m1garand_tail_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_tail_ext.wav,,,wpn_t4_reverb_wtr_npc,,
-wpn_t4_m1garand_pap_flux_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_pap_flux.wav,,,wpn_t4_pap_shot_wtr_plr,,wpn_t4_m1garand_mech_plr
-wpn_t4_m1garand_pap_flux_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_pap_flux.wav,,,wpn_t4_pap_shot_wtr_npc,,wpn_t4_m1garand_mech_npc
-wpn_t4_m1garand_pap_flux_last_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_pap_flux.wav,,,wpn_t4_pap_shot_wtr_plr,,wpn_t4_m1garand_ping_plr
-wpn_t4_m1garand_pap_flux_last_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_pap_flux.wav,,,wpn_t4_pap_shot_wtr_npc,,wpn_t4_m1garand_ping_npc
-wpn_t4_m1garand_bolt_back,,,skye_ports\t4_m1garand\foley\wpn_t4_m1garand_bolt_back.wav,,,wpn_t4_reload_wtr_plr,,
-wpn_t4_m1garand_bolt_forward,,,skye_ports\t4_m1garand\foley\wpn_t4_m1garand_bolt_forward.wav,,,wpn_t4_reload_wtr_plr,,
-wpn_t4_m1garand_clip_in,,,skye_ports\t4_common\shared\wpn_t4_m1garand_clip_in.wav,,,wpn_t4_reload_wtr_plr,,
-wpn_t4_m1garand_clip_out,,,skye_ports\t4_m1garand\foley\wpn_t4_m1garand_clip_out.wav,,,wpn_t4_reload_wtr_plr,,
-
-#WaW Common Sounds
-###########################################
-###WaW Dyakonov, M7, & Schiessbecher GLs###
-###########################################
-wpn_t4_rg_shot_plr,,,skye_ports\t4_common\rg\wpn_t4_rg_shot.wav,,,wpn_t4_shot_plr,,wpn_t4_rg_tail_plr
-wpn_t4_rg_shot_npc,,,skye_ports\t4_common\rg\wpn_t4_rg_shot.wav,,,wpn_t4_shot_npc,,wpn_t4_rg_tail_npc
-wpn_t4_rg_pap_shot_plr,,,skye_ports\t4_common\rg\wpn_t4_rg_shot.wav,,,wpn_t4_shot_plr,,wpn_t4_rg_pap_flux_plr
-wpn_t4_rg_pap_shot_npc,,,skye_ports\t4_common\rg\wpn_t4_rg_shot.wav,,,wpn_t4_shot_npc,,wpn_t4_rg_pap_flux_npc
-wpn_t4_rg_tail_plr,,,skye_ports\t4_common\rg\wpn_t4_rg_tail_ext.wav,,,wpn_t4_reverb_ext_plr,,
-wpn_t4_rg_tail_npc,,,skye_ports\t4_common\rg\wpn_t4_rg_tail_ext.wav,,,wpn_t4_reverb_ext_npc,,
-wpn_t4_rg_tail_plr,,,skye_ports\t4_common\rg\wpn_t4_rg_tail_int.wav,,,wpn_t4_reverb_int_plr,,
-wpn_t4_rg_tail_npc,,,skye_ports\t4_common\rg\wpn_t4_rg_tail_int.wav,,,wpn_t4_reverb_int_npc,,
-wpn_t4_rg_pap_flux_plr,,,skye_ports\t4_common\rg\wpn_t4_rg_pap_flux.wav,,,wpn_t4_pap_shot_plr,,wpn_t4_rg_tail_plr
-wpn_t4_rg_pap_flux_npc,,,skye_ports\t4_common\rg\wpn_t4_rg_pap_flux.wav,,,wpn_t4_pap_shot_npc,,wpn_t4_rg_tail_npc
-wpn_t4_rg_lever,,,skye_ports\t4_common\rg\wpn_t4_rg_lever.wav,,,wpn_t4_reload_plr,,
-wpn_t4_rg_futz,,,skye_ports\t4_common\rg\wpn_t4_rg_futz.wav,,,wpn_t4_reload_plr,,
-wpn_t4_rg_grenade_in,,,skye_ports\t4_common\rg\wpn_t4_rg_grenade_in.wav,,,wpn_t4_reload_plr,,
-wpn_t4_rg_grenade_out,,,skye_ports\t4_common\rg\wpn_t4_rg_grenade_out.wav,,,wpn_t4_reload_plr,,
-#WaW GLs (UW)
-wpn_t4_rg_shot_plr,,,skye_ports\t4_common\rg\wpn_t4_rg_shot.wav,,,wpn_t4_shot_wtr_plr,,wpn_t4_rg_tail_plr
-wpn_t4_rg_shot_npc,,,skye_ports\t4_common\rg\wpn_t4_rg_shot.wav,,,wpn_t4_shot_wtr_npc,,wpn_t4_rg_tail_npc
-wpn_t4_rg_pap_shot_plr,,,skye_ports\t4_common\rg\wpn_t4_rg_shot.wav,,,wpn_t4_shot_wtr_plr,,wpn_t4_rg_pap_flux_plr
-wpn_t4_rg_pap_shot_npc,,,skye_ports\t4_common\rg\wpn_t4_rg_shot.wav,,,wpn_t4_shot_wtr_npc,,wpn_t4_rg_pap_flux_npc
-wpn_t4_rg_tail_plr,,,skye_ports\t4_common\rg\wpn_t4_rg_tail_ext.wav,,,wpn_t4_reverb_wtr_plr,,
-wpn_t4_rg_tail_npc,,,skye_ports\t4_common\rg\wpn_t4_rg_tail_ext.wav,,,wpn_t4_reverb_wtr_npc,,
-wpn_t4_rg_pap_flux_plr,,,skye_ports\t4_common\rg\wpn_t4_rg_pap_flux.wav,,,wpn_t4_pap_shot_wtr_plr,,wpn_t4_rg_tail_plr
-wpn_t4_rg_pap_flux_npc,,,skye_ports\t4_common\rg\wpn_t4_rg_pap_flux.wav,,,wpn_t4_pap_shot_wtr_npc,,wpn_t4_rg_tail_npc
-wpn_t4_rg_lever,,,skye_ports\t4_common\rg\wpn_t4_rg_lever.wav,,,wpn_t4_reload_wtr_plr,,
-wpn_t4_rg_futz,,,skye_ports\t4_common\rg\wpn_t4_rg_futz.wav,,,wpn_t4_reload_wtr_plr,,
-wpn_t4_rg_grenade_in,,,skye_ports\t4_common\rg\wpn_t4_rg_grenade_in.wav,,,wpn_t4_reload_wtr_plr,,
-wpn_t4_rg_grenade_out,,,skye_ports\t4_common\rg\wpn_t4_rg_grenade_out.wav,,,wpn_t4_reload_wtr_plr,,
-
-################################
-###WaW Rocket Launcher Sounds###
-################################
-#Edward Uhl's M9A1 Bazooka / Raketenpanzerbüchse 54 (Panzerschreck)
-wpn_t4_rl_shot_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_shot.wav,,,wpn_t4_shot_strong_plr,,wpn_t4_rl_mech_plr
-wpn_t4_rl_shot_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_shot.wav,,,wpn_t4_shot_strong_npc,,wpn_t4_rl_mech_npc
-wpn_t4_rl_pap_shot_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_shot.wav,,,wpn_t4_shot_strong_plr,,wpn_t4_rl_pap_flux_plr
-wpn_t4_rl_pap_shot_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_shot.wav,,,wpn_t4_shot_strong_npc,,wpn_t4_rl_pap_flux_npc
-wpn_t4_rl_mech_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_mech.wav,,,wpn_t4_shot_strong_plr,,wpn_t4_rl_whistle_plr
-wpn_t4_rl_mech_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_mech.wav,,,wpn_t4_shot_strong_npc,,wpn_t4_rl_whistle_npc
-wpn_t4_rl_whistle_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_whistle1.wav,,,wpn_t4_shot_strong_plr,,wpn_t4_rl_sub_plr
-wpn_t4_rl_whistle_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_whistle2.wav,,,wpn_t4_shot_strong_plr,,wpn_t4_rl_sub_plr
-wpn_t4_rl_whistle_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_whistle1.wav,,,wpn_t4_shot_strong_npc,,wpn_t4_rl_sub_npc
-wpn_t4_rl_whistle_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_whistle2.wav,,,wpn_t4_shot_strong_npc,,wpn_t4_rl_sub_npc
-wpn_t4_rl_sub_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_mech.wav,,,wpn_t4_shot_strong_plr,,wpn_t4_rl_tail_plr
-wpn_t4_rl_sub_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_mech.wav,,,wpn_t4_shot_strong_npc,,wpn_t4_rl_tail_npc
-wpn_t4_rl_tail_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_tail_ext.wav,,,wpn_t4_reverb_ext_plr,,
-wpn_t4_rl_tail_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_tail_ext.wav,,,wpn_t4_reverb_ext_npc,,
-wpn_t4_rl_tail_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_tail_int.wav,,,wpn_t4_reverb_int_strong_plr,,
-wpn_t4_rl_tail_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_tail_int.wav,,,wpn_t4_reverb_int_strong_npc,,
-wpn_t4_rl_rocket_loop,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_rocket_loop1.wav,,,wpn_t4_shot_loop_npc,,
-wpn_t4_rl_rocket_loop,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_rocket_loop2.wav,,,wpn_t4_shot_loop_npc,,
-wpn_t4_rl_pap_flux_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_pap_flux.wav,,,wpn_t4_pap_shot_strong_plr,,wpn_t4_rl_mech_plr
-wpn_t4_rl_pap_flux_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_pap_flux.wav,,,wpn_t4_pap_shot_strong_npc,,wpn_t4_rl_mech_npc
-wpn_t4_rl_end,,,skye_ports\t4_common\rl\foley\wpn_t4_rl_end.wav,,,wpn_t4_reload_plr,,
-wpn_t4_rl_mvmnt,,,skye_ports\t4_common\rl\foley\wpn_t4_rl_mvmnt.wav,,,wpn_t4_reload_plr,,
-wpn_t4_rl_mvmnt2,,,skye_ports\t4_common\rl\foley\wpn_t4_rl_mvmnt2.wav,,,wpn_t4_reload_plr,,
-wpn_t4_rl_rocket_in,,,skye_ports\t4_common\rl\foley\wpn_t4_rl_rocket_in.wav,,,wpn_t4_reload_plr,,
-wpn_t4_rl_start,,,skye_ports\t4_common\rl\foley\wpn_t4_rl_start.wav,,,wpn_t4_reload_plr,,
-#WaW Rocket Launcher Sounds (UW)
-wpn_t4_rl_shot_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_shot.wav,,,wpn_t4_shot_wtr_strong_plr,,wpn_t4_rl_mech_plr
-wpn_t4_rl_shot_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_shot.wav,,,wpn_t4_shot_wtr_strong_npc,,wpn_t4_rl_mech_npc
-wpn_t4_rl_pap_shot_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_shot.wav,,,wpn_t4_shot_wtr_strong_plr,,wpn_t4_rl_pap_flux_plr
-wpn_t4_rl_pap_shot_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_shot.wav,,,wpn_t4_shot_wtr_strong_npc,,wpn_t4_rl_pap_flux_npc
-wpn_t4_rl_mech_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_mech.wav,,,wpn_t4_shot_wtr_strong_plr,,wpn_t4_rl_whistle_plr
-wpn_t4_rl_mech_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_mech.wav,,,wpn_t4_shot_wtr_strong_npc,,wpn_t4_rl_whistle_npc
-wpn_t4_rl_whistle_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_whistle1.wav,,,wpn_t4_shot_wtr_strong_plr,,wpn_t4_rl_sub_plr
-wpn_t4_rl_whistle_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_whistle2.wav,,,wpn_t4_shot_wtr_strong_plr,,wpn_t4_rl_sub_plr
-wpn_t4_rl_whistle_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_whistle1.wav,,,wpn_t4_shot_wtr_strong_npc,,wpn_t4_rl_sub_npc
-wpn_t4_rl_whistle_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_whistle2.wav,,,wpn_t4_shot_wtr_strong_npc,,wpn_t4_rl_sub_npc
-wpn_t4_rl_sub_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_mech.wav,,,wpn_t4_shot_wtr_strong_plr,,wpn_t4_rl_tail_plr
-wpn_t4_rl_sub_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_mech.wav,,,wpn_t4_shot_wtr_strong_npc,,wpn_t4_rl_tail_npc
-wpn_t4_rl_tail_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_tail_ext.wav,,,wpn_t4_reverb_wtr_plr,,
-wpn_t4_rl_tail_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_tail_ext.wav,,,wpn_t4_reverb_wtr_npc,,
-wpn_t4_rl_rocket_loop,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_rocket_loop1.wav,,,wpn_t4_shot_loop_wtr_npc,,
-wpn_t4_rl_rocket_loop,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_rocket_loop2.wav,,,wpn_t4_shot_loop_wtr_npc,,
-wpn_t4_rl_pap_flux_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_pap_flux.wav,,,wpn_t4_pap_shot_wtr_strong_plr,,wpn_t4_rl_mech_plr
-wpn_t4_rl_pap_flux_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_pap_flux.wav,,,wpn_t4_pap_shot_wtr_strong_npc,,wpn_t4_rl_mech_npc
-wpn_t4_rl_end,,,skye_ports\t4_common\rl\foley\wpn_t4_rl_end.wav,,,wpn_t4_reload_wtr_plr,,
-wpn_t4_rl_mvmnt,,,skye_ports\t4_common\rl\foley\wpn_t4_rl_mvmnt.wav,,,wpn_t4_reload_wtr_plr,,
-wpn_t4_rl_mvmnt2,,,skye_ports\t4_common\rl\foley\wpn_t4_rl_mvmnt2.wav,,,wpn_t4_reload_wtr_plr,,
-wpn_t4_rl_rocket_in,,,skye_ports\t4_common\rl\foley\wpn_t4_rl_rocket_in.wav,,,wpn_t4_reload_wtr_plr,,
-wpn_t4_rl_start,,,skye_ports\t4_common\rl\foley\wpn_t4_rl_start.wav,,,wpn_t4_reload_wtr_plr,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+################## m1 carbine start ##################,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#FIRE START,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#Plr,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1c_shot_plr,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1c_shot_plr,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1c_shot_plr,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1c_pap_shot_plr,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_pap_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1c_pap_shot_plr,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_pap_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1c_pap_shot_plr,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_pap_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1c_shot_supp_plr,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_shot_supp.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1c_pap_shot_supp_plr,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_shot_supp_pap.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#Npc,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1c_shot_npc,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1c_shot_npc,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1c_shot_npc,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1c_pap_shot_npc,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_pap_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1c_pap_shot_npc,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_pap_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1c_pap_shot_npc,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_pap_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1c_shot_supp_npc,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_shot_supp.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1c_pap_shot_supp_npc,,loaded,world_at_war_ports\t4_carbine\wpn_carbine_shot_supp_pap.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#FIRE END ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#FOLEY START,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+m1c_mag_in,,loaded,world_at_war_ports\t4_carbine\foley\gr_m1carbine_mag_in.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,
+m1c_mag_out,,loaded,world_at_war_ports\t4_carbine\foley\gr_m1carbine_mag_out.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,
+m1c_futz,,loaded,world_at_war_ports\t4_carbine\foley\gr_m1carbine_futz.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,
+m1c_charge,,loaded,world_at_war_ports\t4_carbine\foley\gr_m1carbine_charge.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#FOLEY END,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+################## m1 carbine End ##################,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+################## svt start ##################,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#FIRE START,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#Plr,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_svt_shot_plr,,loaded,world_at_war_ports\t4_svt\wpn_svt_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_svt_shot_plr,,loaded,world_at_war_ports\t4_svt\wpn_svt_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_svt_shot_plr,,loaded,world_at_war_ports\t4_svt\wpn_svt_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_svt_pap_shot_plr,,loaded,world_at_war_ports\t4_svt\wpn_svt_pap_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_svt_pap_shot_plr,,loaded,world_at_war_ports\t4_svt\wpn_svt_pap_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_svt_pap_shot_plr,,loaded,world_at_war_ports\t4_svt\wpn_svt_pap_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#Npc,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_svt_shot_npc,,loaded,world_at_war_ports\t4_svt\wpn_svt_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_svt_shot_npc,,loaded,world_at_war_ports\t4_svt\wpn_svt_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_svt_shot_npc,,loaded,world_at_war_ports\t4_svt\wpn_svt_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_svt_pap_shot_npc,,loaded,world_at_war_ports\t4_svt\wpn_svt_pap_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_svt_pap_shot_npc,,loaded,world_at_war_ports\t4_svt\wpn_svt_pap_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_svt_pap_shot_npc,,loaded,world_at_war_ports\t4_svt\wpn_svt_pap_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#FIRE END ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#FOLEY START,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+svt_mag_in,,loaded,world_at_war_ports\t4_svt\foley\wpn_svt_mag_in.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,
+svt_mag_out,,loaded,world_at_war_ports\t4_svt\foley\wpn_svt_mag_out.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,
+svt_mag_contact,,loaded,world_at_war_ports\t4_svt\foley\wpn_svt_mag_contact.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,
+svt_pull_slide,,loaded,world_at_war_ports\t4_svt\foley\wpn_svt_slide.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#FOLEY END,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+################## svt End ##################,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+################## m1 garand start ##################,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#FIRE START,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#Plr,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1g_shot_plr,,loaded,world_at_war_ports\t4_m1\wpn_m1_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1g_shot_plr,,loaded,world_at_war_ports\t4_m1\wpn_m1_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1g_shot_plr,,loaded,world_at_war_ports\t4_m1\wpn_m1_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1g_pap_shot_plr,,loaded,world_at_war_ports\t4_m1\wpn_m1_pap_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1g_pap_shot_plr,,loaded,world_at_war_ports\t4_m1\wpn_m1_pap_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1g_pap_shot_plr,,loaded,world_at_war_ports\t4_m1\wpn_m1_pap_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#Npc,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1g_shot_npc,,loaded,world_at_war_ports\t4_m1\wpn_m1_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1g_shot_npc,,loaded,world_at_war_ports\t4_m1\wpn_m1_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1g_shot_npc,,loaded,world_at_war_ports\t4_m1\wpn_m1_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1g_pap_shot_npc,,loaded,world_at_war_ports\t4_m1\wpn_m1_pap_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1g_pap_shot_npc,,loaded,world_at_war_ports\t4_m1\wpn_m1_pap_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_m1g_pap_shot_npc,,loaded,world_at_war_ports\t4_m1\wpn_m1_pap_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,3d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#FIRE END ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#FOLEY START,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+m1g_mag_in,,loaded,world_at_war_ports\t4_m1\foley\m1gar_clip_in.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,
+m1g_mag_out,,loaded,world_at_war_ports\t4_m1\foley\m1gar_clip_out.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,
+m1c_breech_close,,loaded,world_at_war_ports\t4_m1\foley\m1gar_breech_close.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,
+m1c_pull_slide,,loaded,world_at_war_ports\t4_m1\foley\m1gar_pull_slide.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,
+m1c_m1garand_clip,,loaded,world_at_war_ports\t4_m1\foley\wpn_m1garand_clip.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#FOLEY END,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+################## m1 garand End ##################,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+################## Gewehr43 start ##################,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#FIRE START,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#Plr,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_g43_shot_plr,,loaded,world_at_war_ports\t4_g43\g43_shot1.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_g43_shot_plr,,loaded,world_at_war_ports\t4_g43\g43_shot2.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_g43_shot_plr,,loaded,world_at_war_ports\t4_g43\g43_shot3.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_g43_pap_shot_plr,,loaded,world_at_war_ports\t4_g43\g43_pap_shot1.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_g43_pap_shot_plr,,loaded,world_at_war_ports\t4_g43\g43_pap_shot2.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_g43_pap_shot_plr,,loaded,world_at_war_ports\t4_g43\g43_pap_shot3.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_g43_shot_sli_plr,,loaded,world_at_war_ports\t4_g43\wpn_g43_shot_sli.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_g43_pap_shot_sli_plr,,loaded,world_at_war_ports\t4_g43\wpn_g43_pap_shot_sli.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#Npc,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_g43_shot_npc,,loaded,world_at_war_ports\t4_g43\g43_shot1.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_g43_shot_npc,,loaded,world_at_war_ports\t4_g43\g43_shot2.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_g43_shot_npc,,loaded,world_at_war_ports\t4_g43\g43_shot3.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_g43_pap_shot_npc,,loaded,world_at_war_ports\t4_g43\g43_pap_shot1.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_g43_pap_shot_npc,,loaded,world_at_war_ports\t4_g43\g43_pap_shot2.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_g43_pap_shot_npc,,loaded,world_at_war_ports\t4_g43\g43_pap_shot3.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_g43_shot_sli_npc,,loaded,world_at_war_ports\t4_g43\wpn_g43_shot_sli.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_g43_pap_shot_sli_npc,,loaded,world_at_war_ports\t4_g43\wpn_g43_pap_shot_sli.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#FIRE END ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#FOLEY START,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+gr_g43_mag_contact,,loaded,world_at_war_ports\t4_g43\foley\gr_g43_mag_contact.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,
+gr_g43_mag_in,,loaded,world_at_war_ports\t4_g43\foley\gr_g43_mag_in.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,
+gr_g43_mag_out,,loaded,world_at_war_ports\t4_g43\foley\gr_g43_mag_out.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,
+gr_g43_slide_back,,loaded,world_at_war_ports\t4_g43\foley\gr_g43_slide_back.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,
+gr_g43_slide_forward,,loaded,world_at_war_ports\t4_g43\foley\gr_g43_slide_forward.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,
+wpn_t4_kar98_bolt_forward,,loaded,world_at_war_ports\t4_g43\foley\gr_kar98_bolt_forward.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,
+#FOLEY END,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+################## Gewehr43 End ##################,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+################## Stg start ##################,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#FIRE START,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#Plr,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_mp44_shot_plr,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_mp44_shot_plr,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_mp44_shot_plr,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_mp44_pap_shot_plr,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_pap_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_mp44_pap_shot_plr,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_pap_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_mp44_pap_shot_plr,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_pap_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_mp44_silencer_shot_plr,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_flash_hider_shot.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_mp44_pap_silencer_shot_plr,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_flash_hider_pap_shot.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_1p_shot,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#Npc,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_mp44_shot_npc,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_mp44_shot_npc,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_mp44_shot_npc,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_mp44_pap_shot_npc,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_pap_shot_01.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_mp44_pap_shot_npc,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_pap_shot_02.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_mp44_pap_shot_npc,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_pap_shot_03.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_mp44_silencer_shot_npc,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_flash_hider_shot.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_mp44_pap_silencer_shot_npc,,loaded,world_at_war_ports\t4_stg44\wpn_mp44_flash_hider_pap_shot.wav,,,UIN_MOD,,,,,BUS_FX,,snp_wpn_3p,,,,80,80,0,1000,1000,,,,,,,,,,,,,,,,2d,,,NONLOOPING,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#FIRE END ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#FOLEY START,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_mp44_charge,,loaded,world_at_war_ports\t4_stg44\foley\gr_mp44_charge.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,
+wpn_t4_mp44_mag_in,,loaded,world_at_war_ports\t4_stg44\foley\gr_mp44_mag_in.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,
+wpn_t4_mp44_mag_out,,loaded,world_at_war_ports\t4_stg44\foley\gr_mp44_mag_out.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,
+wpn_t4_mp44_raise,,loaded,world_at_war_ports\t4_stg44\foley\stg44_raise.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,
+wpn_t4_mp44_futz,,loaded,world_at_war_ports\t4_stg44\foley\gr_mp44_futz.wav,,,,,,,,BUS_FX,grp_foley,snp_foley,,60,0,90,94,0,10000,10000,allon,default,allon,default,8,priority,8,oldest,-88,84,70,70,0.25,1,no,2d,front_mostly,,nonlooping,,1,0,0,0,0,0.25,no,yes,,0,,no,water,over,,,,,,,yes,no,no,0,0,yes,no,,,,,no,no,no,yes,,,,,,,,,,,,,800,3000,,no,no,no,no,no,no,no,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#FOLEY END,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+################## Stg End ##################,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#WaW John C. Garand's M1 Garand / M1C/M1E7,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_shot_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_plr,,wpn_t4_m1garand_mech_plr,,,,,snp_wpn_1p_shot,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_shot_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_npc,,wpn_t4_m1garand_mech_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_pap_shot_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_plr,,wpn_t4_m1garand_pap_flux_plr,,,,,snp_wpn_1p_shot,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_pap_shot_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_npc,,wpn_t4_m1garand_pap_flux_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_shot_last_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_plr,,wpn_t4_m1garand_ping_plr,,,,,snp_wpn_1p_shot,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_shot_last_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_npc,,wpn_t4_m1garand_ping_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_pap_shot_last_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_plr,,wpn_t4_m1garand_pap_flux_last_plr,,,,,snp_wpn_1p_shot,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_pap_shot_last_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_npc,,wpn_t4_m1garand_pap_flux_last_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_ping_plr,,,skye_ports\t4_m1garand\foley\wpn_t4_m1garand_ping.wav,,,wpn_t4_pap_shot_plr,,wpn_t4_m1garand_mech_plr,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_ping_npc,,,skye_ports\t4_m1garand\foley\wpn_t4_m1garand_ping.wav,,,wpn_t4_pap_shot_npc,,wpn_t4_m1garand_mech_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_mech_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_mech.wav,,,wpn_t4_shot_plr,,wpn_t4_m1garand_tail_plr,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_mech_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_mech.wav,,,wpn_t4_shot_npc,,wpn_t4_m1garand_tail_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_tail_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_tail_ext.wav,,,wpn_t4_reverb_ext_plr,,,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_tail_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_tail_ext.wav,,,wpn_t4_reverb_ext_npc,,,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_tail_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_tail_int.wav,,,wpn_t4_reverb_int_plr,,,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_tail_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_tail_int.wav,,,wpn_t4_reverb_int_npc,,,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_pap_flux_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_pap_flux.wav,,,wpn_t4_pap_shot_plr,,wpn_t4_m1garand_mech_plr,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_pap_flux_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_pap_flux.wav,,,wpn_t4_pap_shot_npc,,wpn_t4_m1garand_mech_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_pap_flux_last_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_pap_flux.wav,,,wpn_t4_pap_shot_plr,,wpn_t4_m1garand_ping_plr,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_pap_flux_last_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_pap_flux.wav,,,wpn_t4_pap_shot_npc,,wpn_t4_m1garand_ping_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_bolt_back,,,skye_ports\t4_m1garand\foley\wpn_t4_m1garand_bolt_back.wav,,,wpn_t4_reload_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_bolt_forward,,,skye_ports\t4_m1garand\foley\wpn_t4_m1garand_bolt_forward.wav,,,wpn_t4_reload_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_clip_in,,,skye_ports\t4_common\shared\wpn_t4_m1garand_clip_in.wav,,,wpn_t4_reload_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_clip_out,,,skye_ports\t4_m1garand\foley\wpn_t4_m1garand_clip_out.wav,,,wpn_t4_reload_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#WaW M1 Garand,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_shot_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_wtr_plr,,wpn_t4_m1garand_mech_plr,,,,,snp_wpn_1p_shot,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_shot_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_wtr_npc,,wpn_t4_m1garand_mech_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_pap_shot_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_wtr_plr,,wpn_t4_m1garand_pap_flux_plr,,,,,snp_wpn_1p_shot,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_pap_shot_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_wtr_npc,,wpn_t4_m1garand_pap_flux_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_shot_last_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_wtr_plr,,wpn_t4_m1garand_ping_plr,,,,,snp_wpn_1p_shot,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_shot_last_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_wtr_npc,,wpn_t4_m1garand_ping_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_pap_shot_last_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_wtr_plr,,wpn_t4_m1garand_pap_flux_last_plr,,,,,snp_wpn_1p_shot,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_pap_shot_last_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_shot.wav,,,wpn_t4_shot_wtr_npc,,wpn_t4_m1garand_pap_flux_last_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_ping_plr,,,skye_ports\t4_m1garand\foley\wpn_t4_m1garand_ping.wav,,,wpn_t4_pap_shot_wtr_plr,,wpn_t4_m1garand_mech_plr,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_ping_npc,,,skye_ports\t4_m1garand\foley\wpn_t4_m1garand_ping.wav,,,wpn_t4_pap_shot_wtr_npc,,wpn_t4_m1garand_mech_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_mech_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_mech.wav,,,wpn_t4_shot_wtr_plr,,wpn_t4_m1garand_tail_plr,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_mech_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_mech.wav,,,wpn_t4_shot_wtr_npc,,wpn_t4_m1garand_tail_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_tail_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_tail_ext.wav,,,wpn_t4_reverb_wtr_plr,,,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_tail_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_tail_ext.wav,,,wpn_t4_reverb_wtr_npc,,,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_pap_flux_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_pap_flux.wav,,,wpn_t4_pap_shot_wtr_plr,,wpn_t4_m1garand_mech_plr,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_pap_flux_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_pap_flux.wav,,,wpn_t4_pap_shot_wtr_npc,,wpn_t4_m1garand_mech_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_pap_flux_last_plr,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_pap_flux.wav,,,wpn_t4_pap_shot_wtr_plr,,wpn_t4_m1garand_ping_plr,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_pap_flux_last_npc,,,skye_ports\t4_m1garand\fire\wpn_t4_m1garand_pap_flux.wav,,,wpn_t4_pap_shot_wtr_npc,,wpn_t4_m1garand_ping_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_bolt_back,,,skye_ports\t4_m1garand\foley\wpn_t4_m1garand_bolt_back.wav,,,wpn_t4_reload_wtr_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_bolt_forward,,,skye_ports\t4_m1garand\foley\wpn_t4_m1garand_bolt_forward.wav,,,wpn_t4_reload_wtr_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_clip_in,,,skye_ports\t4_common\shared\wpn_t4_m1garand_clip_in.wav,,,wpn_t4_reload_wtr_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_m1garand_clip_out,,,skye_ports\t4_m1garand\foley\wpn_t4_m1garand_clip_out.wav,,,wpn_t4_reload_wtr_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#WaW Common Sounds,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+###########################################,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+###WaW Dyakonov, M7, & Schiessbecher GLs###,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+###########################################,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_shot_plr,,,skye_ports\t4_common\rg\wpn_t4_rg_shot.wav,,,wpn_t4_shot_plr,,wpn_t4_rg_tail_plr,,,,,snp_wpn_1p_shot,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_shot_npc,,,skye_ports\t4_common\rg\wpn_t4_rg_shot.wav,,,wpn_t4_shot_npc,,wpn_t4_rg_tail_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_pap_shot_plr,,,skye_ports\t4_common\rg\wpn_t4_rg_shot.wav,,,wpn_t4_shot_plr,,wpn_t4_rg_pap_flux_plr,,,,,snp_wpn_1p_shot,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_pap_shot_npc,,,skye_ports\t4_common\rg\wpn_t4_rg_shot.wav,,,wpn_t4_shot_npc,,wpn_t4_rg_pap_flux_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_tail_plr,,,skye_ports\t4_common\rg\wpn_t4_rg_tail_ext.wav,,,wpn_t4_reverb_ext_plr,,,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_tail_npc,,,skye_ports\t4_common\rg\wpn_t4_rg_tail_ext.wav,,,wpn_t4_reverb_ext_npc,,,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_tail_plr,,,skye_ports\t4_common\rg\wpn_t4_rg_tail_int.wav,,,wpn_t4_reverb_int_plr,,,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_tail_npc,,,skye_ports\t4_common\rg\wpn_t4_rg_tail_int.wav,,,wpn_t4_reverb_int_npc,,,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_pap_flux_plr,,,skye_ports\t4_common\rg\wpn_t4_rg_pap_flux.wav,,,wpn_t4_pap_shot_plr,,wpn_t4_rg_tail_plr,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_pap_flux_npc,,,skye_ports\t4_common\rg\wpn_t4_rg_pap_flux.wav,,,wpn_t4_pap_shot_npc,,wpn_t4_rg_tail_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_lever,,,skye_ports\t4_common\rg\wpn_t4_rg_lever.wav,,,wpn_t4_reload_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_futz,,,skye_ports\t4_common\rg\wpn_t4_rg_futz.wav,,,wpn_t4_reload_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_grenade_in,,,skye_ports\t4_common\rg\wpn_t4_rg_grenade_in.wav,,,wpn_t4_reload_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_grenade_out,,,skye_ports\t4_common\rg\wpn_t4_rg_grenade_out.wav,,,wpn_t4_reload_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#WaW GLs (UW),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_shot_plr,,,skye_ports\t4_common\rg\wpn_t4_rg_shot.wav,,,wpn_t4_shot_wtr_plr,,wpn_t4_rg_tail_plr,,,,,snp_wpn_1p_shot,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_shot_npc,,,skye_ports\t4_common\rg\wpn_t4_rg_shot.wav,,,wpn_t4_shot_wtr_npc,,wpn_t4_rg_tail_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_pap_shot_plr,,,skye_ports\t4_common\rg\wpn_t4_rg_shot.wav,,,wpn_t4_shot_wtr_plr,,wpn_t4_rg_pap_flux_plr,,,,,snp_wpn_1p_shot,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_pap_shot_npc,,,skye_ports\t4_common\rg\wpn_t4_rg_shot.wav,,,wpn_t4_shot_wtr_npc,,wpn_t4_rg_pap_flux_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_tail_plr,,,skye_ports\t4_common\rg\wpn_t4_rg_tail_ext.wav,,,wpn_t4_reverb_wtr_plr,,,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_tail_npc,,,skye_ports\t4_common\rg\wpn_t4_rg_tail_ext.wav,,,wpn_t4_reverb_wtr_npc,,,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_pap_flux_plr,,,skye_ports\t4_common\rg\wpn_t4_rg_pap_flux.wav,,,wpn_t4_pap_shot_wtr_plr,,wpn_t4_rg_tail_plr,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_pap_flux_npc,,,skye_ports\t4_common\rg\wpn_t4_rg_pap_flux.wav,,,wpn_t4_pap_shot_wtr_npc,,wpn_t4_rg_tail_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_lever,,,skye_ports\t4_common\rg\wpn_t4_rg_lever.wav,,,wpn_t4_reload_wtr_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_futz,,,skye_ports\t4_common\rg\wpn_t4_rg_futz.wav,,,wpn_t4_reload_wtr_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_grenade_in,,,skye_ports\t4_common\rg\wpn_t4_rg_grenade_in.wav,,,wpn_t4_reload_wtr_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rg_grenade_out,,,skye_ports\t4_common\rg\wpn_t4_rg_grenade_out.wav,,,wpn_t4_reload_wtr_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+################################,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+###WaW Rocket Launcher Sounds###,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+################################,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#Edward Uhl's M9A1 Bazooka / Raketenpanzerbüchse 54 (Panzerschreck),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_shot_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_shot.wav,,,wpn_t4_shot_strong_plr,,wpn_t4_rl_mech_plr,,,,,snp_wpn_1p_shot,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_shot_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_shot.wav,,,wpn_t4_shot_strong_npc,,wpn_t4_rl_mech_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_pap_shot_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_shot.wav,,,wpn_t4_shot_strong_plr,,wpn_t4_rl_pap_flux_plr,,,,,snp_wpn_1p_shot,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_pap_shot_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_shot.wav,,,wpn_t4_shot_strong_npc,,wpn_t4_rl_pap_flux_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_mech_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_mech.wav,,,wpn_t4_shot_strong_plr,,wpn_t4_rl_whistle_plr,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_mech_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_mech.wav,,,wpn_t4_shot_strong_npc,,wpn_t4_rl_whistle_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_whistle_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_whistle1.wav,,,wpn_t4_shot_strong_plr,,wpn_t4_rl_sub_plr,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_whistle_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_whistle2.wav,,,wpn_t4_shot_strong_plr,,wpn_t4_rl_sub_plr,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_whistle_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_whistle1.wav,,,wpn_t4_shot_strong_npc,,wpn_t4_rl_sub_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_whistle_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_whistle2.wav,,,wpn_t4_shot_strong_npc,,wpn_t4_rl_sub_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_sub_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_mech.wav,,,wpn_t4_shot_strong_plr,,wpn_t4_rl_tail_plr,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_sub_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_mech.wav,,,wpn_t4_shot_strong_npc,,wpn_t4_rl_tail_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_tail_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_tail_ext.wav,,,wpn_t4_reverb_ext_plr,,,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_tail_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_tail_ext.wav,,,wpn_t4_reverb_ext_npc,,,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_tail_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_tail_int.wav,,,wpn_t4_reverb_int_strong_plr,,,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_tail_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_tail_int.wav,,,wpn_t4_reverb_int_strong_npc,,,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_rocket_loop,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_rocket_loop1.wav,,,wpn_t4_shot_loop_npc,,,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_rocket_loop,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_rocket_loop2.wav,,,wpn_t4_shot_loop_npc,,,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_pap_flux_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_pap_flux.wav,,,wpn_t4_pap_shot_strong_plr,,wpn_t4_rl_mech_plr,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_pap_flux_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_pap_flux.wav,,,wpn_t4_pap_shot_strong_npc,,wpn_t4_rl_mech_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_end,,,skye_ports\t4_common\rl\foley\wpn_t4_rl_end.wav,,,wpn_t4_reload_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_mvmnt,,,skye_ports\t4_common\rl\foley\wpn_t4_rl_mvmnt.wav,,,wpn_t4_reload_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_mvmnt2,,,skye_ports\t4_common\rl\foley\wpn_t4_rl_mvmnt2.wav,,,wpn_t4_reload_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_rocket_in,,,skye_ports\t4_common\rl\foley\wpn_t4_rl_rocket_in.wav,,,wpn_t4_reload_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_start,,,skye_ports\t4_common\rl\foley\wpn_t4_rl_start.wav,,,wpn_t4_reload_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#WaW Rocket Launcher Sounds (UW),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_shot_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_shot.wav,,,wpn_t4_shot_wtr_strong_plr,,wpn_t4_rl_mech_plr,,,,,snp_wpn_1p_shot,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_shot_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_shot.wav,,,wpn_t4_shot_wtr_strong_npc,,wpn_t4_rl_mech_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_pap_shot_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_shot.wav,,,wpn_t4_shot_wtr_strong_plr,,wpn_t4_rl_pap_flux_plr,,,,,snp_wpn_1p_shot,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_pap_shot_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_shot.wav,,,wpn_t4_shot_wtr_strong_npc,,wpn_t4_rl_pap_flux_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_mech_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_mech.wav,,,wpn_t4_shot_wtr_strong_plr,,wpn_t4_rl_whistle_plr,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_mech_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_mech.wav,,,wpn_t4_shot_wtr_strong_npc,,wpn_t4_rl_whistle_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_whistle_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_whistle1.wav,,,wpn_t4_shot_wtr_strong_plr,,wpn_t4_rl_sub_plr,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_whistle_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_whistle2.wav,,,wpn_t4_shot_wtr_strong_plr,,wpn_t4_rl_sub_plr,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_whistle_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_whistle1.wav,,,wpn_t4_shot_wtr_strong_npc,,wpn_t4_rl_sub_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_whistle_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_whistle2.wav,,,wpn_t4_shot_wtr_strong_npc,,wpn_t4_rl_sub_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_sub_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_mech.wav,,,wpn_t4_shot_wtr_strong_plr,,wpn_t4_rl_tail_plr,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_sub_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_mech.wav,,,wpn_t4_shot_wtr_strong_npc,,wpn_t4_rl_tail_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_tail_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_tail_ext.wav,,,wpn_t4_reverb_wtr_plr,,,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_tail_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_tail_ext.wav,,,wpn_t4_reverb_wtr_npc,,,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_rocket_loop,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_rocket_loop1.wav,,,wpn_t4_shot_loop_wtr_npc,,,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_rocket_loop,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_rocket_loop2.wav,,,wpn_t4_shot_loop_wtr_npc,,,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_pap_flux_plr,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_pap_flux.wav,,,wpn_t4_pap_shot_wtr_strong_plr,,wpn_t4_rl_mech_plr,,,,,snp_wpn_1p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_pap_flux_npc,,,skye_ports\t4_common\rl\fire\wpn_t4_rl_pap_flux.wav,,,wpn_t4_pap_shot_wtr_strong_npc,,wpn_t4_rl_mech_npc,,,,,snp_wpn_3p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_end,,,skye_ports\t4_common\rl\foley\wpn_t4_rl_end.wav,,,wpn_t4_reload_wtr_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_mvmnt,,,skye_ports\t4_common\rl\foley\wpn_t4_rl_mvmnt.wav,,,wpn_t4_reload_wtr_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_mvmnt2,,,skye_ports\t4_common\rl\foley\wpn_t4_rl_mvmnt2.wav,,,wpn_t4_reload_wtr_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_rocket_in,,,skye_ports\t4_common\rl\foley\wpn_t4_rl_rocket_in.wav,,,wpn_t4_reload_wtr_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+wpn_t4_rl_start,,,skye_ports\t4_common\rl\foley\wpn_t4_rl_start.wav,,,wpn_t4_reload_wtr_plr,,,,,,,snp_foley,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

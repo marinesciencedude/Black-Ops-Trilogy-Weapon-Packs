@@ -820,8 +820,148 @@ function swap_wall_weapon()
 				}
 				break;
 			}
+		case "zm_cosmodrome": //Ascension
+		{//SexyTurtle
+			switch(VAL)
+			{
+			case "ar_marksman": //Sheiva
+				ent.zombie_weapon_upgrade = "t4_kar98k";
+				break;
+			case "pistol_burst": //RK5
+				{
+					if (rk5 == 0)
+						ent.zombie_weapon_upgrade = "t4_g43";
+					else
+						ent.zombie_weapon_upgrade = "t4_mp40";
+					
+					rk5 = 1;
+					break;
+				}
+			case "pistol_fullauto": //L-CAR 9
+				{
+					ent.zombie_weapon_upgrade = "t4_carbine";
+					
+					ent.origin += (10, 0, 0);
+					spawn_loc = struct::get(ent.target, "targetname");
+					spawn_loc.origin += (10, 0, 0);
+					
+					break;
+				}
+			case "smg_versatile": //VMP
+				ent.zombie_weapon_upgrade = "t4_db";
+				break;
+			case "smg_fastfire": //Vesper
+				ent.zombie_weapon_upgrade = "t4_thompson";
+				break;
+			case "ar_accurate": //ICR-1
+				{
+					ent.zombie_weapon_upgrade = "t4_type100";
+					
+					ent.origin += (10*cos(spawn_loc.angles[1]), 10*sin(spawn_loc.angles[1]), 0);
+					spawn_loc = struct::get(ent.target, "targetname");
+					spawn_loc.origin += (10*cos(spawn_loc.angles[1]), 10*sin(spawn_loc.angles[1]), 0);
+					
+					break;
+				}
+			case "smg_standard": //Kuda
+				ent.zombie_weapon_upgrade = "t4_mp44";
+				break;
+			case "shotgun_precision": //Argus
+				ent.zombie_weapon_upgrade = "t4_m1897";
+				break;
+			case "ar_standard": //KN-44
+				ent.zombie_weapon_upgrade = "t4_bar";
+				break;
+			case "ar_cqb": //HVK-30
+				{
+					ent.zombie_weapon_upgrade = "t4_fg42";
+					
+					ent.origin += (0, -10, 0);
+					spawn_loc = struct::get(ent.target, "targetname");
+					spawn_loc.origin += (0, -10, 0);
+					
+					break;
+				}
+			}
+			break;
+		}
+		case "zm_temple": //Shangri La
+		{//SexyTurtle
+			switch(VAL)
+			{
+			case "pistol_burst": //RK5
+				ent.zombie_weapon_upgrade = "t4_type99r";
+				break;
+			case "ar_marksman": //Sheiva
+				ent.zombie_weapon_upgrade = "t4_g43";
+				break;
+			case "pistol_fullauto": //L-CAR 9
+				ent.zombie_weapon_upgrade = "t4_type100";
+				break;
+			case "smg_fastfire": //Vesper
+				ent.zombie_weapon_upgrade = "t4_mp40";
+				break;
+			case "ar_accurate": //ICR-1
+				ent.zombie_weapon_upgrade = "t4_m1897";
+				break;
+			case "smg_burst": //Pharo
+				ent.zombie_weapon_upgrade = "t4_thompson";
+				break;
+			case "smg_standard": //Kuda
+				ent.zombie_weapon_upgrade = "t4_mp44";
+				break;
+			case "ar_standard": //KN-44
+				ent.zombie_weapon_upgrade = "t4_bar";
+				break;
+			}
+			break;
+		}
+		case "zm_moon":
+		{//SexyTurtle
+			switch(VAL)
+			{
+			case "pistol_burst": //RK5
+				ent.zombie_weapon_upgrade = "t4_kar98k";
+				break;
+			case "ar_marksman": //Sheiva
+				{
+					ent.zombie_weapon_upgrade = "t4_g43";
+					
+					ent.origin += (0, 5, 0);
+					spawn_loc = struct::get(ent.target, "targetname");
+					spawn_loc.origin += (0, 5, 0);
+					
+					break;
+				}
+			case "pistol_fullauto": //L-CAR 9
+				{
+					ent.zombie_weapon_upgrade = "t4_carbine";
+					
+					ent.origin += (0, 20, 0);
+					spawn_loc = struct::get(ent.target, "targetname");
+					spawn_loc.origin += (0, 20, 0);
+					
+					break;
+				}
+			case "smg_burst": //Pharo
+				ent.zombie_weapon_upgrade = "t4_type100";
+				break;
+			case "smg_standard": //Kuda
+				ent.zombie_weapon_upgrade = "t4_thompson";
+				break;
+			case "shotgun_precision": //Argus
+				ent.zombie_weapon_upgrade = "t4_m1897";
+				break;
+			case "ar_standard": //KN-44
+				ent.zombie_weapon_upgrade = "t4_mp44";
+				break;
+			case "smg_versatile": //VMP
+				ent.zombie_weapon_upgrade = "t4_mp40";
+			}
+			break;
+		}
 		case "zm_tomb": //Origins
-		{
+		{//HzRetro
 			switch(VAL)
 			{
 				case "pistol_burst": //RK5
@@ -1304,7 +1444,8 @@ function swap_chalk()
 				case "zm_factory":
 				case "zm_der_riese":
 				case "zm_giant":
-				case "zm_theater":																		// ↔   ↔  ↕
+				case "zm_theater":																		
+				case "zm_moon": 																		// ↔   ↔  ↕
 					ent.var_47896610 = util::spawn_model("wallbuy_kar98k", spawn_loc.origin + VectorScale((0, 13, -3), 1), spawn_loc.angles);
 					break;
 				case "zm_asylum":
@@ -1319,6 +1460,9 @@ function swap_chalk()
 					}
 				case "zm_coast":
 					ent.var_47896610 = util::spawn_model("wallbuy_kar98k", spawn_loc.origin + VectorScale((0, -13, -3), 1), spawn_loc.angles);
+					break;
+				case "zm_cosmodrome": //Ascension
+					ent.var_47896610 = util::spawn_model("wallbuy_kar98k", spawn_loc.origin + VectorScale((13, -1, -3), 1), spawn_loc.angles);
 					break;
 				case "zm_tomb": //Origins
 					ent.var_47896610 = util::spawn_model("wallbuy_kar98k", spawn_loc.origin + VectorScale((-13, 0, -4), 1), spawn_loc.angles);
@@ -1374,6 +1518,9 @@ function swap_chalk()
 				case "zm_sumpf":
 					ent.var_47896610 = util::spawn_model("wallbuy_arisaka", spawn_loc.origin + VectorScale((0, -12, -3), 1), spawn_loc.angles);
 					break;
+				case "zm_temple": //Shangri La
+					ent.var_47896610 = util::spawn_model("wallbuy_arisaka", spawn_loc.origin + VectorScale((0, 12, -3), 1), spawn_loc.angles);
+					break;
 				case "zm_island": //Zetsubou no Shima
 					ent.var_47896610 = util::spawn_model("wallbuy_arisaka", spawn_loc.origin + VectorScale((1, 12, -3), 1), spawn_loc.angles);
 					break;
@@ -1401,7 +1548,12 @@ function swap_chalk()
 				case "zm_theater":
 					ent.var_47896610 = util::spawn_model("wallbuy_gewehr43", spawn_loc.origin + VectorScale((13, 0, -2), 1), spawn_loc.angles);
 					break;
-				case "zm_tomb":
+				case "zm_cosmodrome": //Ascension
+				case "zm_temple": //Shangri La
+				case "zm_moon":
+					ent.var_47896610 = util::spawn_model("wallbuy_gewehr43", spawn_loc.origin + VectorScale((0, -13, -2), 1), spawn_loc.angles);
+					break;
+				case "zm_tomb": //Origins
 					ent.var_47896610 = util::spawn_model("wallbuy_gewehr43", spawn_loc.origin + VectorScale((0, 13, -2), 1), spawn_loc.angles);
 					break;
 				case "zm_castle": //Der Eisendrache
@@ -1428,6 +1580,8 @@ function swap_chalk()
 					ent.var_47896610 = util::spawn_model("wallbuy_stg44", spawn_loc.origin + VectorScale((20, 0, -4), 1), spawn_loc.angles);
 					break;
 				case "zm_sumpf":
+				case "zm_temple": //Shangri La
+				case "zm_tomb": //Origins
 					ent.var_47896610 = util::spawn_model("wallbuy_stg44", spawn_loc.origin + VectorScale((-20*cos(spawn_loc.angles[1]), -20*sin(spawn_loc.angles[1]), -4), 1), spawn_loc.angles);
 					break;
 				case "zm_factory":
@@ -1444,11 +1598,8 @@ function swap_chalk()
 						
 						break;
 					}
-				case "zm_coast":
-					ent.var_47896610 = util::spawn_model("wallbuy_stg44", spawn_loc.origin + VectorScale((-20*cos(spawn_loc.angles[1]), -20*sin(spawn_loc.angles[1]), -3), 1), spawn_loc.angles);
-					break;
-				case "zm_tomb": //Origins
-					ent.var_47896610 = util::spawn_model("wallbuy_stg44", spawn_loc.origin + VectorScale((-20*cos(spawn_loc.angles[1]), -20*sin(spawn_loc.angles[1]), -4), 1), spawn_loc.angles);
+				case "zm_cosmodrome": //Ascension
+					ent.var_47896610 = util::spawn_model("wallbuy_stg44", spawn_loc.origin + VectorScale((-20*cos(spawn_loc.angles[1]), -20*sin(spawn_loc.angles[1])-1, -4), 1), spawn_loc.angles);
 					break;
 				case "zm_castle": //Der Eisendrache
 					{
@@ -1465,9 +1616,11 @@ function swap_chalk()
 						}
 						break;
 					}
-				case "zm_island": //Zetsubou no Shima
-					ent.var_47896610 = util::spawn_model("wallbuy_stg44", spawn_loc.origin + VectorScale((0, 20, -4), 1), spawn_loc.angles);
+				case "zm_coast":
+					ent.var_47896610 = util::spawn_model("wallbuy_stg44", spawn_loc.origin + VectorScale((-20*cos(spawn_loc.angles[1]), -20*sin(spawn_loc.angles[1]), -3), 1), spawn_loc.angles);
 					break;
+				case "zm_moon":
+				case "zm_island": //Zetsubou no Shima
 				case "zm_stalingrad": //Gorod Krovi
 					ent.var_47896610 = util::spawn_model("wallbuy_stg44", spawn_loc.origin + VectorScale((0, 20, -4), 1), spawn_loc.angles);
 					break;
@@ -1487,6 +1640,7 @@ function swap_chalk()
 					break;
 				case "zm_sumpf":
 				case "zm_theater":
+				case "zm_cosmodrome": //Ascension
 					ent.var_47896610 = util::spawn_model("wallbuy_m1carbine", spawn_loc.origin + VectorScale((16, 0, -4), 1), spawn_loc.angles);
 					break;
 				case "zm_factory":
@@ -1496,6 +1650,9 @@ function swap_chalk()
 					break;
 				case "zm_coast":
 					ent.var_47896610 = util::spawn_model("wallbuy_m1carbine", spawn_loc.origin + VectorScale((1, -16, -2), 1), spawn_loc.angles);
+					break;
+				case "zm_moon":
+					ent.var_47896610 = util::spawn_model("wallbuy_m1carbine", spawn_loc.origin + VectorScale((-1, -16, -2), 1), spawn_loc.angles);
 					break;
 				case "zm_tomb": //Origins
 					ent.var_47896610 = util::spawn_model("wallbuy_m1carbine", spawn_loc.origin + VectorScale((-16, 0, -4), 1), spawn_loc.angles);
@@ -1555,16 +1712,18 @@ function swap_chalk()
 				case "zm_factory":
 				case "zm_der_riese":
 				case "zm_giant":
+				case "zm_temple": //Shangri La
 					ent.var_47896610 = util::spawn_model("wallbuy_type100", spawn_loc.origin + VectorScale((14, -1, -4), 1), spawn_loc.angles);
 					break;
 				case "zm_theater":
+				case "zm_tomb": //Origins
 					ent.var_47896610 = util::spawn_model("wallbuy_type100", spawn_loc.origin + VectorScale((0, 14, -4), 1), spawn_loc.angles);
 					break;
 				case "zm_coast":
 					ent.var_47896610 = util::spawn_model("wallbuy_type100", spawn_loc.origin + VectorScale((-14, 0, -4), 1), spawn_loc.angles);
 					break;
-				case "zm_tomb": //Origins
-					ent.var_47896610 = util::spawn_model("wallbuy_type100", spawn_loc.origin + VectorScale((0, 14, -4), 1), spawn_loc.angles);
+				case "zm_moon":
+					ent.var_47896610 = util::spawn_model("wallbuy_type100", spawn_loc.origin + VectorScale((14, 0, -4), 1), spawn_loc.angles);
 					break;
 				case "zm_castle": //Der Eisendrache
 					{
@@ -1575,9 +1734,8 @@ function swap_chalk()
 						
 						break;
 					}
+				case "zm_cosmodrome": //Ascension
 				case "zm_island": //Zetsubou no Shima
-					ent.var_47896610 = util::spawn_model("wallbuy_type100", spawn_loc.origin + VectorScale((-14*cos(spawn_loc.angles[1]), -14*sin(spawn_loc.angles[1]), -4), 1), spawn_loc.angles);
-					break;
 				case "zm_stalingrad": //Gorod Krovi
 					ent.var_47896610 = util::spawn_model("wallbuy_type100", spawn_loc.origin + VectorScale((-14*cos(spawn_loc.angles[1]), -14*sin(spawn_loc.angles[1]), -4), 1), spawn_loc.angles);
 					break;
@@ -1610,6 +1768,7 @@ function swap_chalk()
 				case "zm_coast":
 					ent.var_47896610 = util::spawn_model("wallbuy_thompson", spawn_loc.origin + VectorScale((19, 2, -4), 1), spawn_loc.angles);
 					break;
+				case "zm_temple": //Shangri La
 				case "zm_tomb": //Origins
 					ent.var_47896610 = util::spawn_model("wallbuy_thompson", spawn_loc.origin + VectorScale((-19, 0, -4), 1), spawn_loc.angles);
 					break;
@@ -1619,6 +1778,8 @@ function swap_chalk()
 				case "zm_island": //Zetsubou no Shima
 					ent.var_47896610 = util::spawn_model("wallbuy_thompson", spawn_loc.origin + VectorScale((-19*cos(spawn_loc.angles[1]), -19*sin(spawn_loc.angles[1])-1, -4), 1), spawn_loc.angles);
 					break;
+				case "zm_cosmodrome": //Ascension
+				case "zm_moon":
 				case "zm_stalingrad": //Gorod Krovi
 					ent.var_47896610 = util::spawn_model("wallbuy_thompson", spawn_loc.origin + VectorScale((0, -19, -4), 1), spawn_loc.angles);
 					break;
@@ -1635,6 +1796,7 @@ function swap_chalk()
 				switch( GetDvarString("mapname") )
 				{
 				case "zm_prototype":
+				case "zm_temple": //Shangri La
 					ent.var_47896610 = util::spawn_model("wallbuy_bar", spawn_loc.origin + VectorScale((0, 11, -3), 1), spawn_loc.angles);
 					break;
 				case "zm_asylum":
@@ -1652,6 +1814,9 @@ function swap_chalk()
 
 						break;
 					}
+				case "zm_cosmodrome": //Ascension
+					ent.var_47896610 = util::spawn_model("wallbuy_bar", spawn_loc.origin + VectorScale((0, -12, -3), 1), spawn_loc.angles);
+					break;
 				case "zm_tomb": //Origins
 					ent.var_47896610 = util::spawn_model("wallbuy_bar", spawn_loc.origin + VectorScale((0, 12, -3), 1), spawn_loc.angles);
 					break;
@@ -1683,6 +1848,9 @@ function swap_chalk()
 				case "zm_theater":
 					ent.var_47896610 = util::spawn_model("wallbuy_fg42", spawn_loc.origin + VectorScale((15, 0, -2), 1), spawn_loc.angles);
 					break;
+				case "zm_cosmodrome": //Ascension
+					ent.var_47896610 = util::spawn_model("wallbuy_fg42", spawn_loc.origin + VectorScale((1, 15, -2), 1), spawn_loc.angles);
+					break;
 				case "zm_tomb": //Origins
 					ent.var_47896610 = util::spawn_model("wallbuy_fg42", spawn_loc.origin + VectorScale((-16*cos(spawn_loc.angles[1]), -16*sin(spawn_loc.angles[1]), -3), 1), spawn_loc.angles);
 					break;
@@ -1713,6 +1881,7 @@ function swap_chalk()
 				switch( GetDvarString("mapname") )
 				{
 				case "zm_prototype":
+				case "zm_stalingrad": //Gorod Krovi
 					ent.var_47896610 = util::spawn_model("wallbuy_trenchgun", spawn_loc.origin + VectorScale((14, 0, -3), 1), spawn_loc.angles);
 					break;
 				case "zm_asylum":
@@ -1734,10 +1903,15 @@ function swap_chalk()
 					ent.var_47896610 = util::spawn_model("wallbuy_trenchgun", spawn_loc.origin + VectorScale((-1, -15, -4), 1), spawn_loc.angles);
 					break;
 				case "zm_theater":
+				case "zm_cosmodrome": //Ascension
+				case "zm_moon":
 					ent.var_47896610 = util::spawn_model("wallbuy_trenchgun", spawn_loc.origin + VectorScale((0, 14, -3), 1), spawn_loc.angles);
 					break;
 				case "zm_coast":
 					ent.var_47896610 = util::spawn_model("wallbuy_trenchgun", spawn_loc.origin + VectorScale((-14*cos(spawn_loc.angles[1]), -14*sin(spawn_loc.angles[1]), -3), 1), spawn_loc.angles);
+					break;
+				case "zm_temple": //Shangri La
+					ent.var_47896610 = util::spawn_model("wallbuy_trenchgun", spawn_loc.origin + VectorScale((0, -14, -3), 1), spawn_loc.angles);
 					break;
 				case "zm_tomb": //Origins
 					ent.var_47896610 = util::spawn_model("wallbuy_trenchgun", spawn_loc.origin + VectorScale((-14, 0, -3), 1), spawn_loc.angles);
@@ -1768,9 +1942,6 @@ function swap_chalk()
 						trenchgun++;
 						break;
 					}
-				case "zm_stalingrad": //Gorod Krovi
-					ent.var_47896610 = util::spawn_model("wallbuy_trenchgun", spawn_loc.origin + VectorScale((14, 0, -3), 1), spawn_loc.angles);
-					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_trenchgun", spawn_loc.origin, spawn_loc.angles);
 					break;
@@ -1811,6 +1982,9 @@ function swap_chalk()
 					}
 				case "zm_coast":
 					ent.var_47896610 = util::spawn_model("wallbuy_doublebarrel", spawn_loc.origin + VectorScale((12*cos(spawn_loc.angles[1]), 12*sin(spawn_loc.angles[1]), -4), 1), spawn_loc.angles);
+					break;
+				case "zm_cosmodrome": //Ascension
+					ent.var_47896610 = util::spawn_model("wallbuy_doublebarrel", spawn_loc.origin + VectorScale((-12, 1, -4), 1), spawn_loc.angles);
 					break;
 				case "zm_tomb": //Origins
 					{
@@ -1895,11 +2069,18 @@ function swap_chalk()
 				case "zm_theater": //Kino der Toten
 					ent.var_47896610 = util::spawn_model("wallbuy_mp40_waw", spawn_loc.origin + VectorScale((-0.5, -14, -4), 1), spawn_loc.angles);
 					break;
-				case "zm_coast":
-					ent.var_47896610 = util::spawn_model("wallbuy_mp40_waw", spawn_loc.origin + VectorScale((-14*cos(spawn_loc.angles[1]), -14*sin(spawn_loc.angles[1]), -5), 1), spawn_loc.angles);
+				case "zm_cosmodrome": //Ascension
+					ent.var_47896610 = util::spawn_model("wallbuy_mp40_waw", spawn_loc.origin + VectorScale((0, -14, -4), 1), spawn_loc.angles);
 					break;
+				case "zm_temple": //Shangri La
+					ent.var_47896610 = util::spawn_model("wallbuy_mp40_waw", spawn_loc.origin + VectorScale((-14, 0, -4), 1), spawn_loc.angles);
+					break;
+				case "zm_coast":
 				case "zm_tomb": //Origins
 					ent.var_47896610 = util::spawn_model("wallbuy_mp40_waw", spawn_loc.origin + VectorScale((-14*cos(spawn_loc.angles[1]), -14*sin(spawn_loc.angles[1]), -5), 1), spawn_loc.angles);
+					break;
+				case "zm_moon":
+					ent.var_47896610 = util::spawn_model("wallbuy_mp40_waw", spawn_loc.origin + VectorScale((0, 14, -4), 1), spawn_loc.angles);
 					break;
 				case "zm_castle": //Der Eisendrache
 					{
@@ -1943,6 +2124,7 @@ function swap_chalk()
 				switch( GetDvarString("mapname") )
 				{
 				case "zm_prototype":
+				case "zm_cosmodrome": //Ascension
 					ent.var_47896610 = util::spawn_model("wallbuy_grenade_bag", spawn_loc.origin + VectorScale((-5, 0, 5), 1), spawn_loc.angles);
 					break;
 				case "zm_asylum":
@@ -1960,6 +2142,7 @@ function swap_chalk()
 						break;
 					}
 				case "zm_sumpf":
+				case "zm_moon":
 					ent.var_47896610 = util::spawn_model("wallbuy_grenade_bag", spawn_loc.origin + VectorScale((5, 0, 5), 1), spawn_loc.angles);
 					break;
 				case "zm_factory": //The Giant
@@ -1976,6 +2159,12 @@ function swap_chalk()
 					}
 				case "zm_theater":
 					ent.var_47896610 = util::spawn_model("wallbuy_grenade_bag", spawn_loc.origin + VectorScale((0, 5, 5), 1), spawn_loc.angles);
+					break;
+				case "zm_temple":
+					ent.var_47896610 = util::spawn_model("wallbuy_grenade_bag", spawn_loc.origin + VectorScale((-5*cos(spawn_loc.angles[1]), -5*sin(spawn_loc.angles[1]), 5), 1), spawn_loc.angles);
+					break;
+				default:
+					ent.var_47896610 = util::spawn_model("wallbuy_grenade_bag", spawn_loc.origin, spawn_loc.angles);
 					break;
 				}
 				break;
