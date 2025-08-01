@@ -97,7 +97,7 @@ function private register_mutators()
 	register_mutator("MutatorSettings_Gobblegum", "mutator_enable_gobblegum", undefined, &enable_gobblegum);
 	//register_mutator("MutatorSettings_AUG", "mutator_aug", undefined, &enable_aug); //handled using GetDvarInt
 	//register_mutator("MutatorSettings_Claymore", "mutator_claymore", undefined, &enable_claymore); //handled using GetDvarInt
-	//register_mutator("MutatorSettings_SpaceMonkey", "mutator_spacemonkey", undefined, &spacemonkey);
+	register_mutator("MutatorSettings_SpaceMonkey", "mutator_spacemonkey", undefined, &spacemonkey);
 	register_mutator("MutatorSettings_Wunderfizz", "mutator_enable_wunderfizz", undefined, &enable_wunderfizz);
 	/*register_mutator("MutatorSettings_CamoDarkMatter", "mutator_camo_dark_matter", &camo_dark_matter, undefined);
 	register_mutator("MutatorSettings_CamoRitual", "mutator_camo_ritual", undefined, &camo_ritual);

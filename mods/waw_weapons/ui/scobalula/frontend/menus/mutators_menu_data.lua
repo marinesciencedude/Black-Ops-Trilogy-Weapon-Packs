@@ -438,13 +438,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_WidowsWine",
 			"mutator_widowswine_existence",
             BuildStringSettings({"Enabled", "Removed from Wunderfizz", "Removed from Map"}, "Enabled"), nil, SetDvarSetting),
-		--CoD.OptionsUtility.CreateDvarSettings(
-		--	arg0,
-		--	"Space Monkeys",
-		--	"Enable Monkey Rounds on Ascension.",
-		--	"MutatorSettings_SpaceMonkey",
-		--	"mutator_spacemonkey",
-        --   BuildStringSettings({"On", "Off"}, "On"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Space Monkeys",
+			"Enable Monkey Rounds on Ascension.",
+			"MutatorSettings_SpaceMonkey",
+			"mutator_spacemonkey",
+           BuildStringSettings({"On", "Off"}, "On"), nil, SetDvarSetting),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Demonic Announcer",
