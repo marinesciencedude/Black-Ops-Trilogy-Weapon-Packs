@@ -1294,8 +1294,11 @@ function swap_wall_weapon()
 					break;
 				}
 				break;
-			}
+			}	
 		}
+		
+		if(GetDvarInt("mutator_wallbuybox") == 2)
+			RemoveZombieBoxWeapon(GetWeapon(ent.zombie_weapon_upgrade));
 		
 		if(isdefined(ent.target) && isdefined(VAL))
 		{

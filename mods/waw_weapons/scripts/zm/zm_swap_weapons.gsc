@@ -1391,7 +1391,13 @@ function swap_wall_weapon()
 					break;
 				}
 				break;
-			}
+			}			
+		}
+		
+		if(GetDvarInt("mutator_wallbuybox") == 2)
+		{
+			level.zombie_weapons[GetWeapon(ent.zombie_weapon_upgrade)].is_in_box = false;
+			zm_utility::include_weapon( ent.zombie_weapon_upgrade, false);
 		}
 		
 		if(isdefined(ent.target) && isdefined(VAL))

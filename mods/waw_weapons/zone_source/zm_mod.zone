@@ -239,6 +239,12 @@ weapon,t4_dp28
 weapon,t4_dp28_up
 xmodel,wallbuy_dp27
 
+weapon,t4_svt
+weapon,t4_svt_up
+
+weapon,t4_type99
+weapon,t4_type99_up
+
 sound,zm_mod
 
 image,i_t7_zm_chalk_buy_arak_c

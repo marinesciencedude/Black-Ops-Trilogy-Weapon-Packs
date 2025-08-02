@@ -524,10 +524,31 @@ function (arg0, arg1, arg2, arg3, arg4)
 	{
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
+			"Wall Weapons",
+			"If the mystery box should have wall weapons or not.",
+			"MutatorSettings_WallbuyBox",
+			"mutator_wallbuybox",
+			BuildStringSettings({"Remain in Box", "Removed from Box"}, "Remain in Box"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
 			"DP-28",
 			"Enable DP-28 in the mystery box for all maps.",
-			"MutatorSetings_DP27",
+			"MutatorSettings_DP27",
 			"mutator_dp27",
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"SVT-40",
+			"Enable SVT-40 in the mystery box.",
+			"MutatorSettings_SVT40",
+			"mutator_svt40",
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Type 99",
+			"Enable Type 99 in the mystery box.",
+			"MutatorSettings_Type99",
+			"mutator_type99",
 			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,

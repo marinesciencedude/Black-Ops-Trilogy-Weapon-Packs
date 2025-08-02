@@ -134,6 +134,17 @@ function applyChoices() {
 		zm_weapons::include_upgraded_weapon( "t4_dp28", "t4_dp28_up", false, 2400, 0 );
 	}
 	
+	if(GetDvarInt("mutator_svt40") == MUTATOR_OFFON_ON)
+	{
+		zm_weapons::include_weapon( "t4_svt", true, 600, 0 );
+		zm_weapons::include_upgraded_weapon( "t4_svt", "t4_svt_up", false );	}
+	
+	if(GetDvarInt("mutator_type99") == MUTATOR_OFFON_ON)
+	{
+		zm_weapons::include_weapon( "t4_type99", true, 2700, 0 );
+		zm_weapons::include_upgraded_weapon( "t4_type99", "t4_type99_up", false );
+	}
+	
 	if(GetDvarInt("mutator_ray_gun") == 2)
 	{
 														 // auto-calculate ammo cost

@@ -168,6 +168,20 @@ function apply_choices() {
 		zm_weapons::add_zombie_weapon( "t4_dp28", "t4_dp28_up", "", 2400, "lmg", "", undefined, "", false, "" );
 	}
 	
+	if(GetDvarInt("mutator_svt40") == MUTATOR_OFFON_ON)
+	{
+		zm_utility::include_weapon( "t4_svt", true );
+		zm_utility::include_weapon( "t4_svt_up", false );
+		zm_weapons::add_zombie_weapon( "t4_svt", "t4_svt_up", "", 600, "rifle", "", undefined, "", false, "" );
+	}
+	
+	if(GetDvarInt("mutator_type99") == MUTATOR_OFFON_ON)
+	{
+		zm_utility::include_weapon( "t4_type99", true );
+		zm_utility::include_weapon( "t4_type99_up", false );
+		zm_weapons::add_zombie_weapon( "t4_type99", "t4_type99_up", "", 2700, "lmg", "", undefined, "", false, "" );
+	}
+	
 	if(GetDvarInt("mutator_double_packapunch") == MUTATOR_ONOFF_OFF)
 	{
 		keys = GetArrayKeys(level.zombie_weapons_upgraded);
