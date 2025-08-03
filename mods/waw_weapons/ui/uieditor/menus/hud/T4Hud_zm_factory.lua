@@ -38,8 +38,8 @@ local PostLoadFunc = function ( self, controller )
 	CoD.Zombie.CommonPostLoadHud( self, controller )
 end
 
-LUI.createMenu.T7Hud_zm_factory = function ( controller )
-	local self = CoD.Menu.NewForUIEditor( "T7Hud_zm_factory" )
+LUI.createMenu.T4Hud_zm_factory = function ( controller )
+	local self = CoD.Menu.NewForUIEditor( "T4Hud_zm_factory" )
 
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
@@ -50,7 +50,7 @@ LUI.createMenu.T7Hud_zm_factory = function ( controller )
 	self:setLeftRight( true, true, 0, 0 )
 	self:setTopBottom( true, true, 0, 0 )
 	self:playSound( "menu_open", controller )
-	self.buttonModel = Engine.CreateModel( Engine.GetModelForController( controller ), "T7Hud_zm_factory.buttonPrompts" )
+	self.buttonModel = Engine.CreateModel( Engine.GetModelForController( controller ), "T4Hud_zm_factory.buttonPrompts" )
 	self.anyChildUsesUpdateState = true
 
 	self.DummyFont1 = LUI.UIText.new()
@@ -482,7 +482,7 @@ LUI.createMenu.T7Hud_zm_factory = function ( controller )
 		element.BubbleGumPackInGame:close()
 		element.GameTimeGroup:close()
 
-		Engine.UnsubscribeAndFreeModel( Engine.GetModel( Engine.GetModelForController( controller ), "T7Hud_zm_factory.buttonPrompts" ) )
+		Engine.UnsubscribeAndFreeModel( Engine.GetModel( Engine.GetModelForController( controller ), "T4Hud_zm_factory.buttonPrompts" ) )
 	end )
 
 	if PostLoadFunc then
@@ -491,3 +491,12 @@ LUI.createMenu.T7Hud_zm_factory = function ( controller )
 	
 	return self
 end
+
+LUI.createMenu.T7Hud_ZM = LUI.createMenu.T4Hud_zm_factory
+LUI.createMenu.T7Hud_zm_factory = LUI.createMenu.T4Hud_zm_factory
+LUI.createMenu.T7Hud_zm_castle = LUI.createMenu.T4Hud_zm_factory
+LUI.createMenu.T7Hud_zm_island = LUI.createMenu.T4Hud_zm_factory
+LUI.createMenu.T7Hud_zm_stalingrad = LUI.createMenu.T4Hud_zm_factory
+LUI.createMenu.T7Hud_zm_genesis = LUI.createMenu.T4Hud_zm_factory
+LUI.createMenu.T7Hud_zm_dlc5 = LUI.createMenu.T4Hud_zm_factory
+LUI.createMenu.T7Hud_zm_tomb = LUI.createMenu.T4Hud_zm_factory

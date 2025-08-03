@@ -19,7 +19,8 @@
 
 function init()
 {
-	LuiLoad( "ui.uieditor.menus.hud.hud_zm_mapname" );
+	if(GetDvarInt("mutator_hud") != 2)
+		LuiLoad( "ui.uieditor.menus.hud.hud_zm_mapname" );
 }
 
 function main () {
