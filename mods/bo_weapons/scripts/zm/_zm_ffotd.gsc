@@ -10,6 +10,7 @@
 #using scripts\zm\crossbow_bolt;
 #using scripts\zm\zm_weap_crossbow;
 #using scripts\zm\dive;
+#using scripts\zm\_zm_t5;
 
 #precache( "fx", "custom/magic_box_og/fx_weapon_box_marker_fl_og" );
 #precache( "fx", "custom/magic_box_og/fx_weapon_box_marker_og" );
