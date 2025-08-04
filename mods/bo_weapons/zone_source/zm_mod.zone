@@ -91,6 +91,8 @@ weapon,zombie_perk_bottle_phd
 fx,_mikeyray/perks/phd/fx_perk_phd
 image,specialty_phdflopper_zombies
 
+include,t5_hud
+
 scriptparsetree,scripts/zm/_zm_perk_additionalprimaryweapon.gsc
 scriptparsetree,scripts/zm/_zm_perk_additionalprimaryweapon.csc
 scriptparsetree,scripts/zm/_zm_perk_deadshot.gsc
@@ -650,16 +652,27 @@ image,bo3_stg44_chalk_c
 image,i_smg_sten_wallbuy_c
 
 image,classic_clean_cherry
+material,classic_clean_cherry
 image,classic_clean_deadshot
+material,classic_clean_deadshot
 image,classic_clean_doubletap_alt
+material,classic_clean_doubletap_alt
 image,classic_clean_flopper
+material,classic_clean_flopper
 image,classic_clean_juggernog
+material,classic_clean_juggernog
 image,classic_clean_mulekick
+material,classic_clean_mulekick
 image,classic_clean_revive
+material,classic_clean_revive
 image,classic_clean_speed
+material,classic_clean_speed
 image,classic_clean_staminup
+material,classic_clean_staminup
 image,classic_clean_widows
+material,classic_clean_widows
 image,classic_clean_doubletap
+material,classic_clean_doubletap
 
 image,zod_specialty_flopper
 image,zod_specialty_mule
@@ -672,16 +685,27 @@ image,zod_specialty_speedcola
 image,zod_specialty_widows
 
 image,madkixs_specialty_phdflopper
+material,madkixs_specialty_phdflopper
 image,madkixs_specialty_mulekick
+material,madkixs_specialty_mulekick
 image,madkixs_specialty_quickrevive
+material,madkixs_specialty_quickrevive
 image,madkixs_specialty_juggernog
+material,madkixs_specialty_juggernog
 image,madkixs_specialty_speedcola
+material,madkixs_specialty_speedcola
 image,madkixs_specialty_staminup
-image,madkixs_specialty_widowswine
+material,madkixs_specialty_widowswine
+image,madkixs_specialty_staminup
+material,madkixs_specialty_staminup
 image,madkixs_specialty_electriccherry
+material,madkixs_specialty_electriccherry
 image,madkixs_specialty_deadshot
+material,madkixs_specialty_deadshot
 image,madkixs_specialty_doubletap2
+material,madkixs_specialty_doubletap2
 image,madkixs_specialty_doubletap
+material,madkixs_specialty_doubletap
 image,specialty_giant_doubletap1_zombies
 
 image,specialty_giant_2x_zombies

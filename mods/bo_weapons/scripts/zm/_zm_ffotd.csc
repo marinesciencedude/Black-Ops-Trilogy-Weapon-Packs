@@ -2,6 +2,7 @@
 #using scripts\zm\_zm_mod;
 
 #using scripts\zm\crossbow_bolt;
+#using scripts\zm\_zm_t5;
 
 #precache( "client_fx", "custom/magic_box_og/fx_weapon_box_open_glow_og" );
 #precache( "client_fx", "wetegg/iwperks/emptyFXIW" );

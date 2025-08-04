@@ -104,15 +104,18 @@ function giveClaymores()
 	self thread claymore_death_think();
 
 	// Hud
-	self.claymoreHud = self hud::createServerIcon( "claymore_hud", 18, 18 );
-	self.claymoreHud.horzAlign = "right";
-	self.claymoreHud.vertAlign = "bottom";
-	self.claymoreHud.x = -36;
-	self.claymoreHud.y = -73;
-	self.claymoreHud.foreground = true;
-	self.claymoreHud.alpha = 1;
+	if(GetDvarInt("mutator_hud") != 2)
+	{
+		self.claymoreHud = self hud::createServerIcon( "claymore_hud", 18, 18 );
+		self.claymoreHud.horzAlign = "right";
+		self.claymoreHud.vertAlign = "bottom";
+		self.claymoreHud.x = -36;
+		self.claymoreHud.y = -73;
+		self.claymoreHud.foreground = true;
+		self.claymoreHud.alpha = 1;
 
-	self thread manageClaymoreHud();
+		self thread manageClaymoreHud();
+	}
 
 	self waittill("death");
 	self.claymoreHud hud::destroyElem();
