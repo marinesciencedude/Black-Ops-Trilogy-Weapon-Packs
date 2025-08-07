@@ -113,40 +113,7 @@ function set_weapon_class( local_client_num )
         self waittill( "weapon_change", weapon );
 
         weapon_class = undefined;
-        table = "gamedata/weapons/zm/zm_levelcommon_weapons.csv";
-		switch(GetDvarString("mapname"))
-		{
-		case "zm_prototype":
-			table = "gamedata/weapons/zm/zm_prototype_weapons.csv";
-			break;
-		case "zm_asylum":
-			table = "gamedata/weapons/zm/zm_asylum_weapons.csv";
-			break;
-		case "zm_sumpf":
-			table = "gamedata/weapons/zm/zm_sumpf_weapons.csv";
-			break;
-		case "zm_factory":
-			table = "gamedata/weapons/zm/zm_factory_weapons.csv";
-			break;
-		case "zm_der_riese":
-			table = "gamedata/weapons/zm/zm_der_riese_weapons.csv";
-			break;
-		case "zm_factory_classic":
-			table = "gamedata/weapons/zm/zm_factory_classic_weapons.csv";
-			break;
-		case "zm_theater":
-			table = "gamedata/weapons/zm/zm_theater_weapons.csv";
-			break;
-		case "zm_tomb":
-			table = "gamedata/weapons/zm/zm_tomb_weapons.csv";
-			break;
-		case "zm_castle":
-			table = "gamedata/weapons/zm/zm_castle_weapons.csv";
-			break;
-		case "zm_island":
-			table = "gamedata/weapons/zm/zm_island_weapons.csv";
-			break;
-		}
+        table = "gamedata/weapons/zm/hud_weapons.csv";
         index = 1;
         row = tablelookuprow( table, index );
 
@@ -159,12 +126,11 @@ function set_weapon_class( local_client_num )
 
             if( IS_EQUAL( weapon_name, table_weapon_name ) || IS_EQUAL( weapon_name, table_weapon_upgraded_name ) )
             {
-				//you know I don't think so for Ray Gun
-                /*if( IS_TRUE( is_wonder_weapon ) )
+                if( IS_TRUE( is_wonder_weapon ) )
                 {
                     weapon_class = "wonderweapon";
                 }
-                else*/
+                else
                 {
                     weapon_class = tolower( row[16] );
                 }

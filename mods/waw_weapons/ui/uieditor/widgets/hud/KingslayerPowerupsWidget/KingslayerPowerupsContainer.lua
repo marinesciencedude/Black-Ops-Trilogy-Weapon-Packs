@@ -11,7 +11,7 @@ CoD.PowerUps.ClientFieldNames = {
 	},
 	{
 		clientFieldName = "powerup_fire_sale",
-		image = "t4_powerup_fire_sale"
+		image = "specialty_firesale_zombies"
 	},
 	{
 		clientFieldName = "powerup_mini_gun",

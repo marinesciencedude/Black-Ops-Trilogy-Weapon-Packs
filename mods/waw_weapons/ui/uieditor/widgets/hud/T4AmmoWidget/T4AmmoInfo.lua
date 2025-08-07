@@ -9,13 +9,13 @@ local ammoPipInfo = {
 		image = "t4_weaponwidget_ammopip_smalla",
 		bulletWidth = 7 / 3,
 		bulletHeight = 21 / 3,
-		rowLength = 50
+		rowLength = 64
 	},
 	rifle = {
 		image = "t4_weaponwidget_ammopip_medium",
 		bulletWidth = 7 / 3,
 		bulletHeight = 27 / 3,
-		rowLength = 50
+		rowLength = 70
 	},
 	mg = {
 		image = "t4_weaponwidget_ammopip_belt",
@@ -27,7 +27,7 @@ local ammoPipInfo = {
 		image = "t4_weaponwidget_ammopip_shell",
 		bulletWidth = 49 / 3,
 		bulletHeight = 21 / 3,
-		rowLength = 8
+		rowLength = 12
 	},
 	sniper = {
 		image = "t4_weaponwidget_ammopip_largeahor",
@@ -39,13 +39,13 @@ local ammoPipInfo = {
 		image = "t4_weaponwidget_ammopip_rpg7",
 		bulletWidth = 146 / 3,
 		bulletHeight = 29 / 3,
-		rowLength = 3
+		rowLength = 5
 	},
 	wonderweapon = {
-		image = "ammo_counter_tesla",
+		image = "t4_ammo_counter_tesla",
 		bulletWidth = 16 / 2,
 		bulletHeight = 8 / 2,
-		rowLength = 10
+		rowLength = 18
 	}
 }
 

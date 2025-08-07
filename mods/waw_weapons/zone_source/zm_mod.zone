@@ -90,6 +90,9 @@ fx,_mikeyray/perks/phd/fx_perk_phd
 image,specialty_phdflopper_zombies
 
 include,t4_hud
+stringtable,gamedata/weapons/zm/hud_weapons.csv
+//that's from iw_24.iwd
+image,t4_ammo_counter_tesla
 
 scriptparsetree,scripts/zm/quick_revive.gsc
 scriptparsetree,scripts/zm/_zm_perk_doubletap.gsc
