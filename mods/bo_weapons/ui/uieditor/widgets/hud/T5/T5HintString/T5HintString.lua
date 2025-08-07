@@ -40,7 +40,7 @@ function CoD.T5HintString.new( menu, controller )
     self.HintstringText = HintstringText
 
 
-    local hintIcon = LUI.UIImage.new()
+    --[[local hintIcon = LUI.UIImage.new()
     hintIcon:setLeftRight(false, false, -32, 32) -- default to 2:1, 64x32
     hintIcon:setTopBottom(false, false, -16, 16)
     hintIcon:setImage( RegisterImage( "blacktransparent" ) )
@@ -67,9 +67,9 @@ function CoD.T5HintString.new( menu, controller )
                 hintIcon:setTopBottom(false, false, -h*0.5 + 32, h*0.5 + 32)
                 hintIcon:setScale( scale )
             end
-
+	
         end
-    end )
+    end )]]
 
     self.HintstringText:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), ( "HUDItems.cursorHintText" ) ), function( ModelRef )
         local ModelValue = Engine.GetModelValue( ModelRef )

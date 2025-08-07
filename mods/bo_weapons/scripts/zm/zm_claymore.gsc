@@ -115,11 +115,11 @@ function giveClaymores()
 		self.claymoreHud.alpha = 1;
 
 		self thread manageClaymoreHud();
-	}
 
-	self waittill("death");
-	self.claymoreHud hud::destroyElem();
-	self.claymoreHud = undefined;
+		self waittill("death");
+		self.claymoreHud hud::destroyElem();
+		self.claymoreHud = undefined;
+	}
 }
 
 function manageClaymoreHud()
