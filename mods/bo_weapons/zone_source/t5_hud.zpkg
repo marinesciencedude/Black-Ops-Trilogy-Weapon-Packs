@@ -62,9 +62,9 @@ ttf,fonts/helveticaneue.ttf
 ttf,fonts/morrissans.ttf
 ttf,fonts/helveticaneuebold.tff
 
-//image,hud_blackhole
-//image,hud_nestingbomb
-//image,hud_quantum_bomb
+image,hud_blackhole
+image,hud_nestingbomb
+image,hud_quantum_bomb
 
 rawfile,UI/LilrifaUtils.lua
 rawfile,UI/SubscriptionUtils.lua

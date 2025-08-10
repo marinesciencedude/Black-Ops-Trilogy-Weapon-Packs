@@ -190,7 +190,10 @@ function private third_person_weapon_upgrade( current_weapon, upgrade_weapon, pa
 	trigger.current_weapon_acvi = self GetBuildKitAttachmentCosmeticVariantIndexes( trigger.current_weapon, false );
 
 	trigger.upgrade_weapon = upgrade_weapon;
-	upgrade_weapon.pap_camo_to_use = zm_weapons::get_pack_a_punch_camo_index( upgrade_weapon.pap_camo_to_use );
+	if (current_weapon == GetWeapon("tesla_gun") && GetDvarInt("mutator_wunderwaffe_camo") == 1 && GetDvarInt("mutator_camo_disable") != 2)
+		upgrade_weapon.pap_camo_to_use = 15;
+	else
+		upgrade_weapon.pap_camo_to_use = zm_weapons::get_pack_a_punch_camo_index( upgrade_weapon.pap_camo_to_use );
 	trigger.upgrade_weapon_options = self GetBuildKitWeaponOptions( trigger.upgrade_weapon, upgrade_weapon.pap_camo_to_use );
 	trigger.upgrade_weapon_acvi = self GetBuildKitAttachmentCosmeticVariantIndexes( trigger.upgrade_weapon, true );
 

@@ -981,6 +981,13 @@ function(arg0, arg1, arg2, arg3, arg4)
 			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
+			"Wunderwaffe",
+			"Whether the Wunderwaffe should have Gold camo or the same PaP camo as everything else.",
+			"MutatorSettings_WunderwaffeCamo",
+			"mutator_wunderwaffe_camo",
+			BuildStringSettings({"Gold Camo", "PaP Camo"}, "Gold Camo"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
 			"Cycle camos in-game",
 			"Cycle through all selected camos every time you pack-a-punch",
 			"MutatorSettings_CamoInGameCycle",
@@ -999,6 +1006,13 @@ function(arg0, arg1, arg2, arg3, arg4)
 			"Add World at War PaP camo to be randomly selected for the game",
 			"MutatorSettings_CamoWorldAtWar",
 			"mutator_camo_world_at_war",
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Gold",
+			"Add Gold PaP camo to be randomly selected for the game",
+			"MutatorSettings_CamoGold",
+			"mutator_camo_gold",
 			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
@@ -1056,6 +1070,13 @@ function(arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_CamoRevelations",
 			"mutator_camo_revelations",
 			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"SCROLL TO SEE MORE CAMOS",
+			"",
+			"MutatorSettings_More_Camos",
+			"mutator_more_camos",
+			BuildStringSettings({""}, ""), nil, SetDvarSetting),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Circuits",

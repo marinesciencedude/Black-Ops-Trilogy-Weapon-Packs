@@ -117,6 +117,7 @@ function private register_mutators()
 	register_mutator("MutatorSettings_CamoWorldAtWar", "mutator_camo_world_at_war", &camo_waw, undefined);
 	register_mutator("MutatorSettings_CamoIce", "mutator_camo_ice", &camo_ice, undefined);
 	register_mutator("MutatorSettings_CamoWeaponized115", "mutator_camo_weaponized_115", &camo_weaponized_115, undefined);
+	register_mutator("MutatorSettings_CamoGold", "mutator_camo_gold", &camo_gold, undefined);
 	register_mutator("MutatorSettings_CamoBlackOps", "mutator_camo_black_ops", &camo_black_ops, undefined); //don't create array if unneeded
 	register_mutator("MutatorSettings_GeorgeReward", "mutator_george_reward", undefined, &george_reward);
 	register_mutator("MutatorSettings_RoundMusic", "mutator_round_music", undefined, &round_music);
@@ -526,6 +527,20 @@ function camo_weaponized_115(dvar_value)
 		}
 		else
 			level.pack_a_punch_camo_list[level.pack_a_punch_camo_list.size] = 28;
+	}
+}
+
+function camo_gold(dvar_value)
+{
+	if(dvar_value == MUTATOR_OFFON_ON)
+	{
+		if(!isdefined(level.pack_a_punch_camo_list))
+		{
+			level.pack_a_punch_camo_list = [];
+			level.pack_a_punch_camo_list[0] = 15;
+		}
+		else
+			level.pack_a_punch_camo_list[level.pack_a_punch_camo_list.size] = 15;
 	}
 }
 
