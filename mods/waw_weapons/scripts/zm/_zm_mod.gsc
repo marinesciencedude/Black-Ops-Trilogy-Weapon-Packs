@@ -164,22 +164,22 @@ function apply_choices() {
 	if(GetDvarString("mapname") != "zm_stalingrad" && GetDvarInt("mutator_dp27") == MUTATOR_OFFON_ON)
 	{
 		zm_utility::include_weapon( "t4_dp28", true );
-		zm_utility::include_weapon( "t4_dp28_up", false );
-		zm_weapons::add_zombie_weapon( "t4_dp28", "t4_dp28_up", "", 2400, "lmg", "", undefined, "", false, "" );
+		zm_utility::include_weapon( "t4_dp28_camo_up", false );
+		zm_weapons::add_zombie_weapon( "t4_dp28", "t4_dp28_camo_up", "", 2400, "lmg", "", undefined, "", false, "" );
 	}
 	
 	if(GetDvarInt("mutator_svt40") == MUTATOR_OFFON_ON)
 	{
 		zm_utility::include_weapon( "t4_svt", true );
-		zm_utility::include_weapon( "t4_svt_up", false );
-		zm_weapons::add_zombie_weapon( "t4_svt", "t4_svt_up", "", 600, "rifle", "", undefined, "", false, "" );
+		zm_utility::include_weapon( "t4_svt_camo_up", false );
+		zm_weapons::add_zombie_weapon( "t4_svt", "t4_svt_camo_up", "", 600, "rifle", "", undefined, "", false, "" );
 	}
 	
 	if(GetDvarInt("mutator_type99") == MUTATOR_OFFON_ON)
 	{
 		zm_utility::include_weapon( "t4_type99", true );
-		zm_utility::include_weapon( "t4_type99_up", false );
-		zm_weapons::add_zombie_weapon( "t4_type99", "t4_type99_up", "", 2700, "lmg", "", undefined, "", false, "" );
+		zm_utility::include_weapon( "t4_type99_camo_up", false );
+		zm_weapons::add_zombie_weapon( "t4_type99", "t4_type99_camo_up", "", 2700, "lmg", "", undefined, "", false, "" );
 	}
 	
 	if(GetDvarInt("mutator_double_packapunch") == MUTATOR_ONOFF_OFF)
@@ -202,6 +202,13 @@ function apply_choices() {
 	{
 		level.zombie_weapons[GetWeapon("cymbal_monkey")].is_in_box = false;
 		zm_utility::include_weapon( "cymbal_monkey", false);
+	}
+	
+	aat::register_aat_exemption(getweapon("t4_ray_gun_camo_up"));
+	if(level.pack_a_punch_camo_index != 142 && GetDvarInt("mutator_camo_ingame_cycle") == 2)
+	{
+		ArrayRemoveIndex(level.zombie_weapons_upgraded, GetWeapon("t4_ray_gun_up"));
+		level.zombie_weapons[GetWeapon("t4_ray_gun")].upgrade = GetWeapon("t4_ray_gun_camo_up");
 	}
 	
 	if(GetDvarString("mapname") == "zm_giant")

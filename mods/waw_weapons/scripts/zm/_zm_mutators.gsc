@@ -99,7 +99,8 @@ function private register_mutators()
 	//register_mutator("MutatorSettings_Claymore", "mutator_claymore", undefined, &enable_claymore); //handled using GetDvarInt
 	register_mutator("MutatorSettings_SpaceMonkey", "mutator_spacemonkey", undefined, &spacemonkey);
 	register_mutator("MutatorSettings_Wunderfizz", "mutator_enable_wunderfizz", undefined, &enable_wunderfizz);
-	/*register_mutator("MutatorSettings_CamoDarkMatter", "mutator_camo_dark_matter", &camo_dark_matter, undefined);
+	register_mutator("MutatorSettings_CamoBlackOps", "mutator_camo_black_ops", &camo_black_ops, undefined);
+	register_mutator("MutatorSettings_CamoDarkMatter", "mutator_camo_dark_matter", &camo_dark_matter, undefined);
 	register_mutator("MutatorSettings_CamoRitual", "mutator_camo_ritual", undefined, &camo_ritual);
 	register_mutator("MutatorSettings_CamoEtching", "mutator_camo_etching", &camo_etching, undefined);
 	register_mutator("MutatorSettings_CamoDerEisendrache", "mutator_camo_der_eisendrache", &camo_der_eisendrache, undefined);
@@ -108,10 +109,11 @@ function private register_mutators()
 	register_mutator("MutatorSettings_CamoRevelations", "mutator_camo_revelations", &camo_revelations, undefined);
 	register_mutator("MutatorSettings_CamoOrigins", "mutator_camo_origins", &camo_origins, undefined);
 	register_mutator("MutatorSettings_CamoKino", "mutator_camo_kino", &camo_kino, undefined);
-	register_mutator("MutatorSettings_CamoWorldAtWar", "mutator_camo_world_at_war", &camo_waw, undefined);
 	register_mutator("MutatorSettings_CamoIce", "mutator_camo_ice", &camo_ice, undefined);
 	register_mutator("MutatorSettings_CamoWeaponized115", "mutator_camo_weaponized_115", &camo_weaponized_115, undefined);
-	register_mutator("MutatorSettings_CamoBlackOps", "mutator_camo_black_ops", &camo_black_ops, undefined);*/ //don't create array if unneeded
+	register_mutator("MutatorSettings_CamoGold", "mutator_camo_gold", &camo_gold, undefined);
+	register_mutator("MutatorSettings_CamoWorldAtWar", "mutator_camo_world_at_war", &camo_waw, undefined); //don't create array if unneeded
+	register_mutator("MutatorSettings_CamoWorldAtWarAdjusted", "mutator_camo_world_at_war_adjusted", &camo_waw_adjusted, undefined);
 	register_mutator("MutatorSettings_GeorgeReward", "mutator_george_reward", undefined, &george_reward);
 	register_mutator("MutatorSettings_RoundMusic", "mutator_round_music", undefined, &round_music);
 	register_mutator("MutatorSettings_WeaponRest", "mutator_weapon_rest", undefined, &weapon_rest);
@@ -228,8 +230,16 @@ function private enable_wunderfizz(dvar_value)
 
 function camo_black_ops(dvar_value)
 {
-	if(dvar_value == MUTATOR_ONOFF_ON && isdefined(level.pack_a_punch_camo_list))
-		level.pack_a_punch_camo_list[level.pack_a_punch_camo_list.size] = 132;
+	if(dvar_value == MUTATOR_OFFON_ON)
+	{
+		if(!isdefined(level.pack_a_punch_camo_list))
+		{
+			level.pack_a_punch_camo_list = [];
+			level.pack_a_punch_camo_list[0] = 132;
+		}
+		else
+			level.pack_a_punch_camo_list[level.pack_a_punch_camo_list.size] = 132;
+	}
 }
 
 function camo_dark_matter(dvar_value)
@@ -360,6 +370,8 @@ function camo_kino(dvar_value)
 
 function camo_waw(dvar_value)
 {
+	/*if(dvar_value == MUTATOR_ONOFF_ON && isdefined(level.pack_a_punch_camo_list))
+		level.pack_a_punch_camo_list[level.pack_a_punch_camo_list.size] = 141;*/
 	if(dvar_value == MUTATOR_OFFON_ON)
 	{
 		if(!isdefined(level.pack_a_punch_camo_list))
@@ -520,6 +532,36 @@ function camo_weaponized_115(dvar_value)
 		else
 			level.pack_a_punch_camo_list[level.pack_a_punch_camo_list.size] = 28;
 	}
+}
+
+function camo_gold(dvar_value)
+{
+	if(dvar_value == MUTATOR_OFFON_ON)
+	{
+		if(!isdefined(level.pack_a_punch_camo_list))
+		{
+			level.pack_a_punch_camo_list = [];
+			level.pack_a_punch_camo_list[0] = 15;
+		}
+		else
+			level.pack_a_punch_camo_list[level.pack_a_punch_camo_list.size] = 15;
+	}
+}
+
+function camo_waw_adjusted(dvar_value)
+{
+	/*if(dvar_value == MUTATOR_OFFON_ON)
+	{
+		if(!isdefined(level.pack_a_punch_camo_list))
+		{
+			level.pack_a_punch_camo_list = [];
+			level.pack_a_punch_camo_list[0] = 142;
+		}
+		else
+			level.pack_a_punch_camo_list[level.pack_a_punch_camo_list.size] = 142;
+	}*/
+	if(dvar_value == MUTATOR_ONOFF_ON && isdefined(level.pack_a_punch_camo_list))
+		level.pack_a_punch_camo_list[level.pack_a_punch_camo_list.size] = 142;
 }
 
 /*function character_voicelines(dvar_value)

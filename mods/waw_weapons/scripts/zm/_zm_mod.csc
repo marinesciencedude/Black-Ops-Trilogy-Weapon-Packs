@@ -157,6 +157,12 @@ function applyChoices() {
 	if(GetDvarInt("mutator_monkey_bomb") == MUTATOR_ONOFF_OFF)
 		RemoveZombieBoxWeapon(GetWeapon("cymbal_monkey"));
 	
+	if(level.pack_a_punch_camo_index != 142 && GetDvarInt("mutator_camo_ingame_cycle") == 2)
+	{
+		zm_weapons::include_upgraded_weapon( "t4_ray_gun", "t4_ray_gun_camo_up", false, 10000, 0 );
+		ArrayRemoveIndex(level.zombie_weapons_upgraded, GetWeapon("t4_ray_gun_up"));
+	}
+	
 	if(GetDvarString("mapname") == "zm_giant")
 		zm_weapons::include_weapon( "tesla_gun", true, 10000, 0 );
 }

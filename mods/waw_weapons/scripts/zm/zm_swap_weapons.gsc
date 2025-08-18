@@ -83,7 +83,24 @@ function starter_weapon()
 	if(GetDvarInt("mutator_revive_anim") == 1)
 		level.weaponrevivetool = getweapon("legacy_syrette");
 		
-	level.pack_a_punch_camo_index = 141;
+	if(isdefined(level.pack_a_punch_camo_list))
+	{	
+		pap_camo = array::random(level.pack_a_punch_camo_list);
+		switch(pap_camo)
+		{
+		case 75:
+		case 84:
+		case 121:
+			level.pack_a_punch_camo_index_number_variants = 5;
+			break;
+		}
+		level.pack_a_punch_camo_index = pap_camo;
+	}
+	else
+		level.pack_a_punch_camo_index = 142;
+	
+	if(GetDvarInt("mutator_camo_disable") == 2)
+		level.pack_a_punch_camo_index = 127; //blank camo, this is actually for Dempsey's Matryoshka Doll 
 	
 	//if(GetDvarString("mutator_startingweapon") != "Use Map")
 	if(!GetDvarInt("mutator_startingweapon") || GetDvarInt("mutator_startingweapon") != 3)

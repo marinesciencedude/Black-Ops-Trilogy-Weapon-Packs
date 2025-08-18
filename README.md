@@ -53,3 +53,4 @@ Then install all files from this repo into your Black Ops III installation apart
 * [Poyzee](https://steamcommunity.com/profiles/76561199105452001) and [Conn6orsuper117](https://steamcommunity.com/id/Conn6orsuper117) for contributing wallbuy layouts for Der Eisendrache (both) and Zetsubou no Shima (Connor)
 * [HzRetro](https://www.ugx-mods.com/forum/mlist/hzretro_764845) for contributing wallbuy layout for Origins
 * XcDylan93 for dive-to-prone and sprint/reload cancel script
+* TheSkyeLord for weaponcamo setup from [his own pack](https://www.ugx-mods.com/forum/full-weapons/84/skyes-waw-weapon-ports/24598/) used by me as a basis for WaW weapons

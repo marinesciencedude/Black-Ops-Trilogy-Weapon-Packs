@@ -35,6 +35,8 @@ scriptparsetree,scripts/zm/_zm_weap_quantum_bomb.gsc
 scriptparsetree,scripts/zm/_zm_powerup_random_weapon.gsc
 scriptparsetree,scripts/zm/_zm_powerup_random_weapon.csc
 
+scriptparsetree,scripts/zm/_zm_pack_a_punch.gsc
+
 scriptparsetree,scripts/zm/_zm_weap_shrink_ray.gsc
 
 //aitype,archetype_zm_factory_zombie
@@ -108,6 +110,23 @@ rawfile,ui/uieditor/widgets/hud/zm_perks/ZMPerksContainerFactory.lua
 rawfile,ui/uieditor/widgets/hud/zm_perks/ZMPerksContainer.lua
 rawfile,ui/uieditor/widgets/StartMenu/StartMenu_GameOptions_ZM.lua
 
+material,mc/mtl_t7_camo_zmbhd_bo1_pap
+image,i_t7_camo_zmbhd_bo1_pap_c
+image,i_t7_camo_zmbhd_bo1_pap_g
+image,i_t7_camo_zmbhd_bo1_pap_s
+
+material,mc/mtl_t7_camo_bo1_pap
+//that's from base_patch_tu21.xpak
+image,i_t7_camo_bo1_pap_c
+image,i_t7_camo_bo1_pap_g
+image,i_t7_camo_bo1_pap_s
+
+weaponcamo,camo_t7_zm_thundergun
+weaponcamo,camo_t7_zm_raygun_mk2
+weaponcamo,camo_t7_zm_shrink_ray
+weaponcamo,camo_t7_zm_wavegun
+weaponcamo,camo_t7_zm_tesla
+
 stringtable,gamedata/weapons/common/weaponoptions.csv
 
 //Smurphy's PPSh port
@@ -119,95 +138,121 @@ image,mtl_t4_etching_s
 
 weapon,t4_kar98k
 weapon,t4_kar98k_up
+weapon,t4_kar98k_camo_up
 xmodel,wallbuy_kar98k
 
 weapon,t4_kar98k_scope
 weapon,t4_kar98k_scope_up
+weapon,t4_kar98k_scope_camo_up
 xmodel,wallbuy_kar98k_scoped
 
 weapon,t4_spring
 weapon,t4_spring_up
+weapon,t4_spring_camo_up
 xmodel,wallbuy_springfield
 
 weapon,t4_type99r
 weapon,t4_type99r_up
+weapon,t4_type99r_camo_up
 xmodel,wallbuy_arisaka
 
 weapon,t4_g43
 weapon,t4_g43_up
+weapon,t4_g43_camo_up
 xmodel,wallbuy_gewehr43
 
 weapon,t4_mp44
 weapon,t4_mp44_up
+weapon,t4_mp44_camo_up
 xmodel,wallbuy_stg44
 
 weapon,t4_carbine
 weapon,t4_carbine_up
+weapon,t4_carbine_camo_up
 xmodel,wallbuy_m1carbine
 
 weapon,t4_m1
 weapon,t4_m1_up
+weapon,t4_m1_camo_up
 xmodel,wallbuy_m1garand
 
 weapon,t4_type100
 weapon,t4_type100_up
+weapon,t4_type100_camo_up
 xmodel,wallbuy_type100
 
 weapon,t4_thompson
 weapon,t4_thompson_up
+weapon,t4_thompson_camo_up
 xmodel,wallbuy_thompson
 
 weapon,t4_bar
 weapon,t4_bar_up
+weapon,t4_bar_camo_up
 xmodel,wallbuy_bar
 
 weapon,t4_bar_bipod
 weapon,t4_bar_bipod_up
+weapon,t4_bar_bipod_camo_up
 
 weapon,t4_fg42
 weapon,t4_fg42_up
+weapon,t4_fg42_camo_up
 xmodel,wallbuy_fg42
 
 weapon,t4_m1897
 weapon,t4_m1897_up
+weapon,t4_m1897_camo_up
 xmodel,wallbuy_trenchgun
 
 weapon,t4_db
 weapon,t4_db_up
+weapon,t4_db_camo_up
 xmodel,wallbuy_doublebarrel
 
 weapon,t4_db_saw
 weapon,t4_db_saw_up
+weapon,t4_db_saw_camo_up
 xmodel,wallbuy_sawedoff
 
 weapon,t4_m1919
 weapon,t4_m1919_up
+weapon,t4_m1919_camo_up
 weapon,t4_m1919_bipod
 weapon,t4_m1919_bipod_up
+weapon,t4_m1919_bipod_camo_up
 
 weapon,t4_mg42
 weapon,t4_mg42_up
+weapon,t4_mg42_camo_up
 weapon,t4_mg42_bipod
 weapon,t4_mg42_bipod_up
+weapon,t4_mg42_bipod_camo_up
 
 weapon,t4_ppsh
 weapon,t4_ppsh_up
+weapon,t4_ppsh_camo_up
 
 weapon,t4_mp40
 weapon,t4_mp40_up
+weapon,t4_mp40_camo_up
 xmodel,wallbuy_mp40_waw
 
 weapon,t4_ptrs
 weapon,t4_ptrs_up
+weapon,t4_ptrs_camo_up
 
 weapon,t4_357
 weapon,t4_357_up
+weapon,t4_357_camo_up
 
 weapon,t4_m1911
 weapon,t4_m1911_up
+weapon,t4_m1911_camo_up
 
 weapon,t4_ray_gun
 weapon,t4_ray_gun_up
+weapon,t4_ray_gun_camo_up
 //Improved Ray Gun
 weaponfull,ray_gun_zm
 weaponfull,ray_gun_upgraded_zm
@@ -240,13 +285,16 @@ weapon,t5_m1911_ldw_up_zm
 
 weapon,t4_dp28
 weapon,t4_dp28_up
+weapon,t4_dp28_camo_up
 xmodel,wallbuy_dp27
 
 weapon,t4_svt
 weapon,t4_svt_up
+weapon,t4_svt_camo_up
 
 weapon,t4_type99
 weapon,t4_type99_up
+weapon,t4_type99_camo_up
 
 sound,zm_mod
 

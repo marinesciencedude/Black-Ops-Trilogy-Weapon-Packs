@@ -106,37 +106,37 @@ ResetGameSettings = function(arg0, arg1, arg2, arg3)
 	--Engine.SetDvar("mutator_spacemonkey", 0)
 	Engine.SetDvar("mutator_enable_wunderfizz", 0)
 	--Engine.SetDvar("mutator_moon_random_char", 0)
-	--Engine.SetDvar("mutator_camo_disable", 0)
-	--Engine.SetDvar("mutuator_camo_black_ops", 0)
-	--Engine.SetDvar("mutator_camo_world_at_war", 0)
-	--Engine.SetDvar("mutator_camo_dark_matter", 0)
-	--Engine.SetDvar("mutuator_camo_ritual", 0)
-	--Engine.SetDvar("mutuator_camo_etching", 0)
-	--Engine.SetDvar("mutuator_camo_der_eisendrache", 0)
-	--Engine.SetDvar("mutuator_camo_overgrowth", 0)
-	--Engine.SetDvar("mutuator_camo_gorod_krovi", 0)
-	--Engine.SetDvar("mutuator_camo_revelations", 0)
-	--Engine.SetDvar("mutator_camo_kino", 0)
-	--Engine.SetDvar("mutuator_camo_origins", 0)
+	Engine.SetDvar("mutator_camo_disable", 0)
+	Engine.SetDvar("mutuator_camo_black_ops", 0)
+	Engine.SetDvar("mutator_camo_world_at_war", 0)
+	Engine.SetDvar("mutator_camo_dark_matter", 0)
+	Engine.SetDvar("mutuator_camo_ritual", 0)
+	Engine.SetDvar("mutuator_camo_etching", 0)
+	Engine.SetDvar("mutuator_camo_der_eisendrache", 0)
+	Engine.SetDvar("mutuator_camo_overgrowth", 0)
+	Engine.SetDvar("mutuator_camo_gorod_krovi", 0)
+	Engine.SetDvar("mutuator_camo_revelations", 0)
+	Engine.SetDvar("mutator_camo_kino", 0)
+	Engine.SetDvar("mutuator_camo_origins", 0)
 	--Engine.SetDvar("mutator_scopeads", 0)
-	--Engine.SetDvar("mutator_camo_ingame_cycle", 0)
+	Engine.SetDvar("mutator_camo_ingame_cycle", 1)
 	Engine.SetDvar("mutator_george_reward", 0)
 	Engine.SetDvar("mutator_round_music", 0)
-	--Engine.SetDvar("mutator_camo_ice", 0)
+	Engine.SetDvar("mutator_camo_ice", 0)
 	Engine.SetDvar("mutator_announcer", 0)
-	--Engine.SetDvar("mutator_mystery_box_fx", 0)
+	Engine.SetDvar("mutator_mystery_box_fx", 0)
 	Engine.SetDvar("mutator_weapon_rest", 0)
-	--Engine.SetDvar("mutator_redphone", 0)
+	Engine.SetDvar("mutator_redphone", 0)
 	Engine.SetDvar("mutator_doubletap", 0)
 	Engine.SetDvar("mutator_doubletap_existence", 0)
 	Engine.SetDvar("mutator_deadshot_existence", 0)
-	--Engine.SetDvar("mutator_eye_colour", 0)
-	--Engine.SetDvar("mutator_camo_weaponized_115", 0)
+	Engine.SetDvar("mutator_eye_colour", 0)
+	Engine.SetDvar("mutator_camo_weaponized_115", 0)
 	Engine.SetDvar("mutator_verruckt_springfield", 0)
 	--Engine.SetDvar("mutator_map_visionset", 0)
 	Engine.SetDvar("mutator_shinonuma_perk", 0)
 	--Engine.SetDvar("mutator_sidestep", 0)
-	--Engine.SetDvar("mutator_ascension_visionset", 0)
+	Engine.SetDvar("mutator_ascension_visionset", 0)
 	Engine.SetDvar("mutator_health_difficulty", 0)
 	Engine.SetDvar("mutator_startingweapon", 0)
 	Engine.SetDvar("mutator_revive_anim", 0)
@@ -145,6 +145,9 @@ ResetGameSettings = function(arg0, arg1, arg2, arg3)
 	Engine.SetDvar("mutator_health_difficulty", 0)
 	Engine.SetDvar("mutator_reload_cancel", 0)
 	Engine.SetDvar("mutator_sprint_cancel", 0)
+	Engine.SetDvar("mutator_wunderwaffe_camo", 0)
+	Engine.SetDvar("mutator_camo_gold", 0)
+	Engine.SetDvar("mutator_camo_world_at_war_adjusted", 0)
 
 	Engine.ForceNotifyModelSubscriptions(Engine.CreateModel(Engine.GetGlobalModel(), "GametypeSettings.Update"))
 end
@@ -178,10 +181,10 @@ function (arg0, arg1, arg2, arg3, arg4)
             models        = { tabName 	= "Mystery Box", 				    tabIcon = "" },
             properties    = { tabId 	= "MutatorSettingsMysteryBox", 		dataSourceName 	= "MutatorSettingsMysteryBox",	title =	"Mystery Box Settings" }
         },
-		--{
-		--	models		  = { tabName	= "PaP Camo",						tabIcon = "" },
-		--	properties	  = { tabId		= "MutatorSettingsPaPCamo",			dataSourceName	= "MutatorSettingsPaPCamo",		title = "Pack-a-Punch Camouflage Settings" }
-		--},
+		{
+			models		  = { tabName	= "PaP Camo",						tabIcon = "" },
+			properties	  = { tabId		= "MutatorSettingsPaPCamo",			dataSourceName	= "MutatorSettingsPaPCamo",		title = "Pack-a-Punch Camouflage Settings" }
+		},
 		{
 			models		  = { tabName	= "Custom Maps",						tabIcon = "" },
 			properties	  = { tabId		= "MutatorSettingsCustomMaps",			dataSourceName	= "MutatorSettingsCustomMaps",		title = "Custom Map Settings" }
@@ -574,117 +577,148 @@ function (arg0, arg1, arg2, arg3, arg4)
 	}
 end, nil, nil, Update)
 
---DataSources.MutatorSettingsPaPCamo = DataSourceHelpers.ListSetup("MutatorSettingsPaPCamo",
---function(arg0, arg1, arg2, arg3, arg4)
---	return
---	{
---		CoD.OptionsUtility.CreateDvarSettings(
---			arg0,
---			"Disable PaP Camo",
---			"Weapons do not receive camo upon PaP, OVERRIDES ALL SETTINGS BELOW.",
---			"MutatorSettings_CamoDisable",
---			"mutator_camo_disable",
---			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
---		CoD.OptionsUtility.CreateDvarSettings(
---			arg0,
---			"Cycle camos in-game",
---			"Cycle through all selected camos every time you pack-a-punch",
---			"MutatorSettings_CamoInGameCycle",
---			"mutator_camo_ingame_cycle",
---			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
---		CoD.OptionsUtility.CreateDvarSettings(
---			arg0,
---			"Black Ops",
---			"Add Black Ops PaP camo to be randomly selected for the game",
---			"MutatorSettings_CamoBlackOps",
---			"mutator_camo_black_ops",
---			BuildStringSettings({"On", "Off"}, "On"), nil, SetDvarSetting),
---		CoD.OptionsUtility.CreateDvarSettings(
---			arg0,
---			"World at War",
---			"Add World at War PaP camo to be randomly selected for the game",
---			"MutatorSettings_CamoWorldAtWar",
---			"mutator_camo_world_at_war",
---			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
---		CoD.OptionsUtility.CreateDvarSettings(
---			arg0,
---			"Dark Matter",
---			"Add Dark Matter to be randomly selected as PaP camo for the game",
---			"MutatorSettings_CamoDarkMatter",
---			"mutator_camo_dark_matter",
---			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
---		CoD.OptionsUtility.CreateDvarSettings(
---			arg0,
---			"Ice",
---			"Add Ice to be randomly selected as PaP camo for the game",
---			"MutatorSettings_CamoIce",
---			"mutator_camo_ice",
---			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
---		CoD.OptionsUtility.CreateDvarSettings(
---			arg0,
---			"Ritual",
---			"Add Ritual (Shadows of Evil) to be randomly selected as PaP camo for the game",
---			"MutatorSettings_CamoRitual",
---			"mutator_camo_ritual",
---			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
---		CoD.OptionsUtility.CreateDvarSettings(
---			arg0,
---			"Etching",
---			"Add Etching (The Giant/Nacht der Untoten/Verrückt/Shi No Numa) to be randomly selected as PaP camo for the game",
---			"MutatorSettings_CamoEtching",
---			"mutator_camo_etching",
---			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
---		CoD.OptionsUtility.CreateDvarSettings(
---			arg0,
---			"Der Eisendrache Camos",
---			"Add Topaz/Garnet/Sapphire/Emerald/Amethyst to be randomly selected as PaP camos for the game",
---			"MutatorSettings_CamoDerEisendrache",
---			"mutator_camo_der_eisendrache",
---			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
---		CoD.OptionsUtility.CreateDvarSettings(
---			arg0,
---			"Overgrowth",
---			"Add Overgrowth (Zetsubou No Shima) to be randomly selected as PaP camo for the game",
---			"MutatorSettings_CamoOvergrowth",
---			"mutator_camo_overgrowth",
---			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
---		CoD.OptionsUtility.CreateDvarSettings(
---			arg0,
---			"Gorod Krovi Camos",
---			"Add Dragon Fire/Glacies Fire (Blue Gorod Krovi)/Atomic Fire/Everlasting Fire/Arcane Fire to be randomly selected as PaP camos for the game",
---			"MutatorSettings_CamoGorodKrovi",
---			"mutator_camo_gorod_krovi",
---			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
---		CoD.OptionsUtility.CreateDvarSettings(
---			arg0,
---			"Revelations Camos",
---			"Add Cosmos/Cosmic/Infinitus/Into the Void/Universe to be randomly selected as PaP camos for the game",
---			"MutatorSettings_CamoRevelations",
---			"mutator_camo_revelations",
---			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
---		CoD.OptionsUtility.CreateDvarSettings(
---			arg0,
---			"Circuits",
---			"Add Circuits (BO III Kino der Toten) to be randomly selected as PaP camo for the game",
---			"MutatorSettings_CamoKino",
---			"mutator_camo_kino",
---			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
---		CoD.OptionsUtility.CreateDvarSettings(
---			arg0,
---			"Origins",
---			"Add Origins PaP camo to be randomly selected for the game",
---			"MutatorSettings_CamoOrigins",
---			"mutator_camo_origins",
---			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
---		CoD.OptionsUtility.CreateDvarSettings(
---			arg0,
---			"Weaponized 115",
---			"Add Weaponized 115 to be randomly selected as PaP camo for the game",
---			"MutatorSettings_Weaponized115",
---			"mutator_camo_weaponized_115",
---			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting)
---	}
---end, nil, nil, Update)
+DataSources.MutatorSettingsPaPCamo = DataSourceHelpers.ListSetup("MutatorSettingsPaPCamo",
+function(arg0, arg1, arg2, arg3, arg4)
+	return
+	{
+		--[[CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Disable PaP Camo",
+			"Weapons do not receive camo upon PaP, OVERRIDES ALL SETTINGS BELOW.",
+			"MutatorSettings_CamoDisable",
+			"mutator_camo_disable",
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),]]--
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Wunderwaffe",
+			"Whether the Wunderwaffe should have Gold camo or the same PaP camo as everything else.",
+			"MutatorSettings_WunderwaffeCamo",
+			"mutator_wunderwaffe_camo",
+			BuildStringSettings({"Gold Camo", "PaP Camo"}, "PaP Camo"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Cycle camos in-game",
+			"Cycle through all selected camos every time you pack-a-punch",
+			"MutatorSettings_CamoInGameCycle",
+			"mutator_camo_ingame_cycle",
+		--	BuildStringSettings({"On", "Off"}, "Off"), nil, SetDvarSetting),
+			BuildStringSettings({"On"}, "Off"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Black Ops",
+			"Add Black Ops PaP camo to be randomly selected for the game",
+			"MutatorSettings_CamoBlackOps",
+			"mutator_camo_black_ops",
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"World at War",
+			"Add World at War PaP camo to be randomly selected for the game",
+			"MutatorSettings_CamoWorldAtWar",
+			"mutator_camo_world_at_war",
+			--BuildStringSettings({"On", "Off"}, "On"), nil, SetDvarSetting),
+			BuildStringSettings({"Off", "On"}, "On"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"World at War (Adjusted)",
+			"Add World at War PaP camo from TheAllNightFall's ports to be randomly selected for the game",
+			"MutatorSettings_CamoWorldAtWarAdjusted",
+			"mutator_camo_world_at_war_adjusted",
+			--BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+			BuildStringSettings({"On", "Off"}, "Off"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Gold",
+			"Add Gold PaP camo to be randomly selected for the game",
+			"MutatorSettings_CamoGold",
+			"mutator_camo_gold",
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Dark Matter",
+			"Add Dark Matter to be randomly selected as PaP camo for the game",
+			"MutatorSettings_CamoDarkMatter",
+			"mutator_camo_dark_matter",
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Ice",
+			"Add Ice to be randomly selected as PaP camo for the game",
+			"MutatorSettings_CamoIce",
+			"mutator_camo_ice",
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Ritual",
+			"Add Ritual (Shadows of Evil) to be randomly selected as PaP camo for the game",
+			"MutatorSettings_CamoRitual",
+			"mutator_camo_ritual",
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Etching",
+			"Add Etching (The Giant/Nacht der Untoten/Verrückt/Shi No Numa) to be randomly selected as PaP camo for the game",
+			"MutatorSettings_CamoEtching",
+			"mutator_camo_etching",
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Der Eisendrache Camos",
+			"Add Topaz/Garnet/Sapphire/Emerald/Amethyst to be randomly selected as PaP camos for the game",
+			"MutatorSettings_CamoDerEisendrache",
+			"mutator_camo_der_eisendrache",
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Overgrowth",
+			"Add Overgrowth (Zetsubou No Shima) to be randomly selected as PaP camo for the game",
+			"MutatorSettings_CamoOvergrowth",
+			"mutator_camo_overgrowth",
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Gorod Krovi Camos",
+			"Add Dragon Fire/Glacies Fire (Blue Gorod Krovi)/Atomic Fire/Everlasting Fire/Arcane Fire to be randomly selected as PaP camos for the game",
+			"MutatorSettings_CamoGorodKrovi",
+			"mutator_camo_gorod_krovi",
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Revelations Camos",
+			"Add Cosmos/Cosmic/Infinitus/Into the Void/Universe to be randomly selected as PaP camos for the game",
+			"MutatorSettings_CamoRevelations",
+			"mutator_camo_revelations",
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"SCROLL TO SEE MORE CAMOS",
+			"",
+			"MutatorSettings_More_Camos",
+			"mutator_more_camos",
+			BuildStringSettings({""}, ""), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Circuits",
+			"Add Circuits (BO III Kino der Toten) to be randomly selected as PaP camo for the game",
+			"MutatorSettings_CamoKino",
+			"mutator_camo_kino",
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Origins",
+			"Add Origins PaP camo to be randomly selected for the game",
+			"MutatorSettings_CamoOrigins",
+			"mutator_camo_origins",
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Weaponized 115",
+			"Add Weaponized 115 to be randomly selected as PaP camo for the game",
+			"MutatorSettings_Weaponized115",
+			"mutator_camo_weaponized_115",
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting)
+	}
+end, nil, nil, Update)
 
 DataSources.MutatorSettingsCustomMaps = DataSourceHelpers.ListSetup("MutatorSettingsCustomMaps",
 function(arg0, arg1, arg2, arg3, arg4)

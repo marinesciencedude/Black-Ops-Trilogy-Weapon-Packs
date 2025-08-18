@@ -10453,7 +10453,7 @@
 		"material1_3_detail_normal_scale_x" "8"
 		"material1_3_detail_normal_scale_y" "8"
 		"material1_3_gloss_blend" "0"
-		"material1_3_material" ""
+		"material1_3_material" "mtl_t7_camo_etching"
 		"material1_3_normal_amount" "0"
 		"material1_3_numBaseMaterials" "1"
 		"material1_3_rotation" "0"
@@ -14558,7 +14558,7 @@
 		"material2_9_trans_y" "0"
 		"material2_9_useGlossMap" "0"
 		"material2_9_useNormalMap" "0"
-		"numCamos" "2"
+		"numCamos" "3"
 	}
 	"t4_camo_m1garand_dlc1_base76" ( "weaponcamo.gdf" )
 	{
