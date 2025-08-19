@@ -1,0 +1,27 @@
+{
+ "Name" : "zm_mod",
+ "Parent" : "",
+ "IsStandalone" : true,
+ "IsShipped" : true,
+ "NoStreamBank" : false,
+ "OptimizePoint" : false,
+ "MapFile" : "",
+ "Sources" : [
+{
+ "Type" : "ALIAS",
+ "Name" : "user_aliases",
+ "Filename" : "user_aliases.csv",
+ "Specs" : [
+  "bo_trilogy"
+ ]
+},
+{
+ "Type" : "ALIAS",
+ "Name" : "skye_t6_bo2",
+ "Filename" : "skye_t6_bo2.csv",
+ "Specs" : []
+}
+],
+ "Ducks" : [ ] ,
+ "MusicFiles" : [ "zm_mod.mus" ] 
+}

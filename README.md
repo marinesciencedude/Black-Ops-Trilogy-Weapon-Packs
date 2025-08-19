@@ -1,0 +1,18 @@
+# Black Ops II Weapon Pack
+
+## Installation instructions for building this mod:
+
+Install *all* of these assets first, since files from this repo are meant to override some of the assets. L3akMod and T7MTEnhancements are required additions to ensure Mod Tools can properly build the mod.
+
+It's advised to make a back-up of black_ops_3_fx.gdt, since this will be replaced with a version that doesn't produce duplicate asset errors
+
+* TheSkyeLord's BO2 Weapon Ports: https://www.ugx-mods.com/forum/full-weapons/84/skyes-bo2-weapon-ports/23141/
+* JBird632's Custom Claymores: https://youtu.be/iYP_CdMhwG4
+
+Then install all files from this repo into your Black Ops III installation apart from the folder chalk_drawing_models, which is for reference purposes only
+
+## Credits
+* TheSkyeLord for making this possible with the majority of the weapon ports in this mod
+* Scobalula's [Greyhound](https://github.com/Scobalula/Greyhound) for image extraction (circuits camo, chalk drawings)
+* Scobabula's [HydraX](https://github.com/Scobalula/HydraX) for general asset decompilation, especially map _weapons.csv files
+* [Birdman's XModel Tools For Blender](https://github.com/Wast-3/birdmans-xmodel-tools-for-blender)
