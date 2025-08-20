@@ -898,6 +898,9 @@ function swap_wall_weapon()
 					case "pistol_fullauto": //L-CAR 9
 					{
 						ent.zombie_weapon_upgrade = "t6_b23r";
+						ent.origin += (0, -2, 0);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, -2, 0);
 						break;
 					}
 					case "smg_versatile": //VMP
@@ -2205,6 +2208,34 @@ function swap_chalk()
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_olympia_bo2", spawn_loc.origin, spawn_loc.angles);
+					break;
+				}
+				break;
+			}
+			case "t6_b23r":
+			{
+				spawn_loc = struct::get(ent.target, "targetname");
+				switch( GetDvarString("mapname") )
+				{
+				case "zm_theater":
+					ent.var_47896610 = util::spawn_model("wallbuy_b23r", spawn_loc.origin + VectorScale((2, 0, 0), 1), spawn_loc.angles);
+					break;
+				default:
+					ent.var_47896610 = util::spawn_model("wallbuy_b23r", spawn_loc.origin, spawn_loc.angles);
+					break;
+				}
+				break;
+			}
+			case "t6_ak74u":
+			{
+				spawn_loc = struct::get(ent.target, "targetname");
+				switch( GetDvarString("mapname") )
+				{
+				case "zm_theater":
+					ent.var_47896610 = util::spawn_model("wallbuy_ak74u_bo2", spawn_loc.origin + VectorScale((-1, -1, 0), 1), spawn_loc.angles);
+					break;
+				default:
+					ent.var_47896610 = util::spawn_model("wallbuy_ak74u_bo2", spawn_loc.origin, spawn_loc.angles);
 					break;
 				}
 				break;

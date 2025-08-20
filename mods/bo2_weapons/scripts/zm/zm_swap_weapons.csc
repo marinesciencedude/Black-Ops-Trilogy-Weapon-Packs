@@ -757,6 +757,9 @@ function swap_wall_weapon()
 					case "pistol_fullauto": //L-CAR 9
 					{
 						ent.zombie_weapon_upgrade = "t6_b23r";
+						ent.origin += (0, -2, 0);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, -2, 0);
 						break;
 					}
 					case "smg_versatile": //VMP
