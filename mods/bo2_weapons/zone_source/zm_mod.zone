@@ -118,6 +118,7 @@ weapon,t6_mp5_up
 
 weapon,t6_mp40
 weapon,t6_mp40_up
+xmodel,wallbuy_mp40_bo2
 
 weapon,t6_mtar
 weapon,t6_mtar_up_zm
@@ -129,12 +130,14 @@ xmodel,wallbuy_olympia_bo2
 
 weapon,t6_pdw57
 weapon,t6_pdw57_up
+xmodel,wallbuy_pdw57
 
 weapon,t6_python
 weapon,t6_python_up
 
 weapon,t6_rem870mcs
 weapon,t6_rem870mcs_up
+xmodel,wallbuy_rem870mcs
 
 weapon,t6_remnewmodel
 weapon,t6_remnewmodel_up
