@@ -93,6 +93,7 @@ xmodel,wallbuy_m14_bo2
 weapon,t6_m16a1
 weapon,t6_m16a1_up_zm
 weapon,t6_m16a1_launcher_zm
+xmodel,wallbuy_m16a1_bo2
 
 weapon,t6_m27
 weapon,t6_m27_up
@@ -115,6 +116,7 @@ weapon,t6_mg0815_up
 
 weapon,t6_mp5
 weapon,t6_mp5_up
+xmodel,wallbuy_mp5
 
 weapon,t6_mp40
 weapon,t6_mp40_up
