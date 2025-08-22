@@ -37,6 +37,7 @@ scriptparsetree,scripts/zm/_zm_pack_a_punch.gsc
 scriptparsetree,scripts/zm/_zm_weap_shrink_ray.gsc
 
 aitype,archetype_zm_factory_zombie
+aitype,spawner_zm_factory_zombie
 aitype,spawner_zm_prototype_zombie
 aitype,spawner_zm_asylum_zombie
 aitype,spawner_zm_swamp_zombie
@@ -45,6 +46,7 @@ aitype,spawner_zm_moon_zombie_police
 aitype,spawner_zm_temple_zombie
 aitype,spawner_zm_zod_zombie
 aitype,archetype_zm_usermap_zombie
+aitype,spawner_zm_usermap_zombie
 aitype,spawner_zm_theater_zombie
 aitype,archetype_zm_tomb_zombie
 aitype,spawner_zm_castle_zombie

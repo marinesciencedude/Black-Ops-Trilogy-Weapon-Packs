@@ -695,7 +695,7 @@ function apply_choices() {
 	{
 		zm_utility::include_weapon( "freezegun", true );
 		zm_utility::include_weapon( "freezegun_upgraded", false );
-		zm_weapons::add_zombie_weapon( "freezegun", "freezegun_upgraded", "", 10000, "freezegun", "", 500, "", true, "" );
+		zm_weapons::add_zombie_weapon( "freezegun", "freezegun_upgraded", "", 10000, "freezegun", "", undefined, "", true, "" );
 		zm_weapons::add_limited_weapon("freezegun", 1);
 		aat::register_aat_exemption(getweapon("freezegun"));
 	}

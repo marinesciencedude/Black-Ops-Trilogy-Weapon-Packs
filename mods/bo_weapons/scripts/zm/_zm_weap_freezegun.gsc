@@ -61,10 +61,10 @@ function __init__()
 
 function __main__()
 {
-	if ( zm_weapons::is_weapon_included( "freezegun" ) )
+	/*if ( zm_weapons::is_weapon_included( "freezegun" ) )
 	{
 		return;
-	}        
+	}*/    
 
 	//level._ZOMBIE_ACTOR_FLAG_FREEZEGUN_EXTREMITY_DAMAGE_FX = 15;
 	//level._ZOMBIE_ACTOR_FLAG_FREEZEGUN_TORSO_DAMAGE_FX = 14; // Unused system
