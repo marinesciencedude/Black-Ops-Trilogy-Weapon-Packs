@@ -7,7 +7,6 @@
 #using scripts\shared\util_shared;
 #using scripts\shared\vehicle_shared;
 
-#using scripts\zm\_zm_weapons;
 #using scripts\zm\_zm_powerups;
 #using scripts\zm\_zm_powerup_random_weapon;
 
