@@ -40,6 +40,7 @@ aitype,archetype_zm_factory_zombie
 aitype,spawner_zm_factory_zombie
 aitype,spawner_zm_prototype_zombie
 aitype,spawner_zm_asylum_zombie
+aitype,spawner_zm_asylum_zombie_walltear
 aitype,spawner_zm_swamp_zombie
 aitype,spawner_zm_cosmodrome_zombie
 aitype,spawner_zm_moon_zombie_police
@@ -53,6 +54,8 @@ aitype,spawner_zm_castle_zombie
 //aitype,spawner_zm_tomb_crusader
 aitype,spawner_zm_tomb_zombie
 //aitype,spawner_zm_tomb_templar
+aitype,spawner_zm_island_zombie
+aitype,spawner_zm_island_zombie_2
 scriptparsetree,scripts/zm/_hb21_zm_behavior.gsc
 
 //scriptparsetree,scripts/zm/_zm_ai_dogs.gsc
