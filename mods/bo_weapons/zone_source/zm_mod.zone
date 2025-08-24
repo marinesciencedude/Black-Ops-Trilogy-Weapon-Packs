@@ -37,20 +37,25 @@ scriptparsetree,scripts/zm/_zm_pack_a_punch.gsc
 scriptparsetree,scripts/zm/_zm_weap_shrink_ray.gsc
 
 aitype,archetype_zm_factory_zombie
+aitype,spawner_zm_factory_zombie
 aitype,spawner_zm_prototype_zombie
 aitype,spawner_zm_asylum_zombie
+aitype,spawner_zm_asylum_zombie_walltear
 aitype,spawner_zm_swamp_zombie
 aitype,spawner_zm_cosmodrome_zombie
 aitype,spawner_zm_moon_zombie_police
 aitype,spawner_zm_temple_zombie
 aitype,spawner_zm_zod_zombie
 aitype,archetype_zm_usermap_zombie
+aitype,spawner_zm_usermap_zombie
 aitype,spawner_zm_theater_zombie
 aitype,archetype_zm_tomb_zombie
 aitype,spawner_zm_castle_zombie
 //aitype,spawner_zm_tomb_crusader
 aitype,spawner_zm_tomb_zombie
 //aitype,spawner_zm_tomb_templar
+aitype,spawner_zm_island_zombie
+aitype,spawner_zm_island_zombie_2
 scriptparsetree,scripts/zm/_hb21_zm_behavior.gsc
 
 //scriptparsetree,scripts/zm/_zm_ai_dogs.gsc
@@ -602,6 +607,29 @@ weapon,t5_thundergun_upgraded_zm
 //weapon,t9_ppsh41_drum_up
 
 weapon,legacy_syrette_zm
+
+weapon,freezegun_zm
+weapon,freezegun_upgraded_zm
+scriptparsetree,scripts/zm/_zm_weap_freezegun.gsh
+scriptparsetree,scripts/zm/_zm_weap_freezegun.csc
+scriptparsetree,scripts/zm/_zm_weap_freezegun.gsc
+xanim,ai_zm_dlc5_zombie_crawl_freeze_death_01
+xanim,ai_zm_dlc5_zombie_crawl_freeze_death_02
+xanim,ai_zm_dlc5_zombie_freeze_death_a
+xanim,ai_zm_dlc5_zombie_freeze_death_b
+xanim,ai_zm_dlc5_zombie_freeze_death_c
+xanim,ai_zm_dlc5_zombie_freeze_death_d
+xanim,ai_zm_dlc5_zombie_freeze_death_e
+fx,blood/fx_blood_decal_impact_ground
+fx,dlc2/island/fx_zombie_gib_trail
+fx,dlc5/zmb_weapon/fx_freezegun_crumple
+fx,dlc5/zmb_weapon/fx_freezegun_smoke_cloud
+fx,dlc5/zmb_weapon/fx_freezegun_freeze_md
+fx,dlc5/zmb_weapon/fx_freezegun_reload_smoke
+fx,dlc5/zmb_weapon/fx_freezegun_shatter
+fx,dlc5/zmb_weapon/fx_freezegun_shatter_upg
+fx,dlc5/zmb_weapon/fx_freezegun_freeze_torso
+material,mc/c_t8_freezegun_mtl
 
 sound,zm_mod
 

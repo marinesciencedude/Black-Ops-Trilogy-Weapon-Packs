@@ -7,7 +7,6 @@
 #using scripts\shared\util_shared;
 #using scripts\shared\vehicle_shared;
 
-#using scripts\zm\_zm_weapons;
 #using scripts\zm\_zm_powerups;
 #using scripts\zm\_zm_powerup_random_weapon;
 
@@ -466,6 +465,12 @@ function applyChoices() {
 			zm_weapons::include_weapon( "s2_mg42", true, 3000, 500 );
 			zm_weapons::include_upgraded_weapon( "s2_mg42", "s2_mg42_upgraded", false, 3000, 500 );
 		}
+	}
+	
+	if(GetDvarString("mapname") != "zm_asylum" && GetDvarInt("mutator_freezegun") == MUTATOR_OFFON_ON)
+	{
+		zm_weapons::include_weapon( "freezegun", true, 10000, 0 );
+		zm_weapons::include_upgraded_weapon( "freezegun", "freezegun_upgraded", false, 10000, 0 );
 	}
 	
 	if(GetDvarInt("mutator_bocw_1911") == MUTATOR_OFFON_ON)

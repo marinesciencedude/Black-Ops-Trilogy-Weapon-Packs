@@ -188,6 +188,11 @@ meleebehindboards@zombie
 _animation_alias,_animation_mocomp,
 ANIM_ZOMBIE_BEHIND_BOARDS_MELEE,MOCOMP_GENERIC_ANIMATION,
 ,
+freezegun_freeze_death@zombie
+_has_legs,_blend_in_time,_blend_out_time,_animation_alias,_animation_mocomp,
+HAS_LEGS_NO,0.2,0,ANIM_ZOMBIE_FREEZE_CRAWL_DEATH,MOCOMP_DEATH@EXPOSED,
+*,0.2,0,ANIM_ZOMBIE_FREEZE_DEATH,MOCOMP_DEATH@EXPOSED,
+,
 melee_jump@zombie
 _blend_in_time,_blend_out_time,_animation_alias,_animation_mocomp,
 0.2,0.1,ANIM_ZOMBIE_JUMP_UP_LOWG,MOCOMP_MELEE_JUMP@ZOMBIE,

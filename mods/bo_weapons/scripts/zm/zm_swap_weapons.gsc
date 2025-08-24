@@ -268,13 +268,13 @@ function swap_wall_weapon()
 			{
 				zm_utility::include_weapon( "t9_lw3_tundra_overlay", true );
 				zm_utility::include_weapon( "t9_lw3_tundra_up_overlay", false );
-				zm_weapons::add_zombie_weapon( "t9_lw3_tundra_overlay", "t9_lw3_tundra_up_overlay", "", 1900, "sniper", "", 500, "", false, "" );
+				zm_weapons::add_zombie_weapon( "t9_lw3_tundra_overlay", "t9_lw3_tundra_up_overlay", "", 1900, "sniper", "", undefined, undefined, false, "" );
 			}
 			else
 			{
 				zm_utility::include_weapon( "t5_l96a1_overlay", true );
 				zm_utility::include_weapon( "t5_l96a1_up_overlay", false );
-				zm_weapons::add_zombie_weapon( "t5_l96a1_overlay", "t5_l96a1_up_overlay", "", 1900, "sniper", "", 500, "", false, "" );
+				zm_weapons::add_zombie_weapon( "t5_l96a1_overlay", "t5_l96a1_up_overlay", "", 1900, "sniper", "", undefined, undefined, false, "" );
 			}
 			level.zombie_weapons[GetWeapon("t5_l96a1")].is_in_box = false;
 			zm_utility::include_weapon( "t5_l96a1", false);
@@ -287,7 +287,7 @@ function swap_wall_weapon()
 			{
 				zm_utility::include_weapon( "t9_lw3_tundra", true );
 				zm_utility::include_weapon( "t9_lw3_tundra_up", false );
-				zm_weapons::add_zombie_weapon( "t9_lw3_tundra", "t9_lw3_tundra_up", "", 1900, "sniper", "", 500, "", false, "" );
+				zm_weapons::add_zombie_weapon( "t9_lw3_tundra", "t9_lw3_tundra_up", "", 1900, "sniper", "", undefined, undefined, false, "" );
 				level.zombie_weapons[GetWeapon("t5_l96a1")].is_in_box = false;
 				zm_utility::include_weapon( "t5_l96a1", false);
 			}
@@ -300,13 +300,13 @@ function swap_wall_weapon()
 			{
 				zm_utility::include_weapon( "t9_lw3_tundra_switch", true );
 				zm_utility::include_weapon( "t9_lw3_tundra_up_switch", false );
-				zm_weapons::add_zombie_weapon( "t9_lw3_tundra_switch", "t9_lw3_tundra_up_switch", "", 1900, "sniper", "", 500, "", false, "" );
+				zm_weapons::add_zombie_weapon( "t9_lw3_tundra_switch", "t9_lw3_tundra_up_switch", "", 1900, "sniper", "", undefined, undefined, false, "" );
 			}
 			else
 			{
 				zm_utility::include_weapon( "t5_l96a1_switch", true );
 				zm_utility::include_weapon( "t5_l96a1_up_switch", false );
-				zm_weapons::add_zombie_weapon( "t5_l96a1_switch", "t5_l96a1_up_switch", "", 1900, "sniper", "", 500, "", false, "" );
+				zm_weapons::add_zombie_weapon( "t5_l96a1_switch", "t5_l96a1_up_switch", "", 1900, "sniper", "", undefined, undefined, false, "" );
 			}
 			level.zombie_weapons[GetWeapon("t5_l96a1")].is_in_box = false;
 			zm_utility::include_weapon( "t5_l96a1", false);

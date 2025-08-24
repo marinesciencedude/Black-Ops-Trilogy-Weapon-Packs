@@ -93,6 +93,10 @@
                     "cleanloop": true,
                     "loopsync": true
                 },
+				"freezegun_death": {
+                    "animation_selector": "freezegun_freeze_death@zombie",
+                    "terminal": true
+                },
                 "taunt": {
                     "animation_selector": "taunt@zombie"
                 },
