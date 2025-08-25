@@ -13,6 +13,7 @@ scriptparsetree,scripts/zm/_zm_weapons.gsc
 scriptparsetree,scripts/zm/_zm_weapons.csc
 
 stringtable,gamedata/weapons/zm/zm_theater_weapons.csv
+stringtable,gamedata/weapons/zm/zm_tomb_weapons.csv
 
 scriptparsetree,scripts/zm/zm_claymore.gsc
 weapon,claymore_zm
@@ -37,6 +38,7 @@ xmodel,wallbuy_b23r
 
 weapon,t6_ballista
 weapon,t6_ballista_up
+xmodel,wallbuy_ballista
 
 weapon,t6_m82a1
 weapon,t6_m82a1_up
@@ -165,6 +167,7 @@ weapon,t6_smr_up
 
 weapon,t6_stg44
 weapon,t6_stg44_up
+xmodel,wallbuy_stg44_bo2
 
 weapon,t6_svu_as
 weapon,t6_svu_as_up
