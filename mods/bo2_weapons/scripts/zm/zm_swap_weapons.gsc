@@ -2059,19 +2059,14 @@ function swap_wall_weapon()
 */
 function swap_chalk()
 {
-	pm63 = 0;
+	fiveseven = 0;
+	
 	ak74u = 0;
-	stakeout = 0;
 	m16 = 0;
 	m14 = 0;
 	olympia = 0;
-	sten = 0;
-	argus = 0;
 	mp40 = 0;
 	stg44 = 0;
-	doublebarrel = 0;
-	trenchgun = 0;
-	kar98k = 0;
 	foreach(ent in struct::get_array("weapon_upgrade", "targetname"))
 	{
 		VAL = ent.zombie_weapon_upgrade;
@@ -2231,6 +2226,27 @@ function swap_chalk()
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_ballista", spawn_loc.origin, spawn_loc.angles);
+					break;
+				}
+				break;
+			}
+			case "t6_fiveseven":
+			{
+				spawn_loc = struct::get(ent.target, "targetname");
+				switch( GetDvarString("mapname") )
+				{
+				case "zm_tomb":
+					{
+						if(fiveseven == 0) //Ice Tunnel
+							ent.var_47896610 = util::spawn_model("wallbuy_fiveseven", spawn_loc.origin + VectorScale((-4*cos(spawn_loc.angles[1]), -4*sin(spawn_loc.angles[1]), 0.25), 1), spawn_loc.angles);
+						else //Workshop
+							ent.var_47896610 = util::spawn_model("wallbuy_fiveseven", spawn_loc.origin + VectorScale((-4*cos(spawn_loc.angles[1]), -4*sin(spawn_loc.angles[1]), -0.25), 1), spawn_loc.angles);
+							
+						fiveseven++;
+						break;
+					}
+				default:
+					ent.var_47896610 = util::spawn_model("wallbuy_fiveseven", spawn_loc.origin, spawn_loc.angles);
 					break;
 				}
 				break;
