@@ -275,139 +275,45 @@ function swap_wall_weapon()
 		{
 		case "zm_prototype": //Nacht der Untoten
 			{
-				if(GetDvarInt("mutator_waw_wall_weapons") == 1 || !GetDvarInt("mutator_waw_wall_weapons"))
+				switch(VAL)
 				{
-					switch(VAL)
+				case "pistol_burst": //RK5
+					ent.zombie_weapon_upgrade = "t6_smr";
+					break;
+				case "ar_marksman": //Sheiva
+					ent.zombie_weapon_upgrade = "t6_ballista";
+					break;
+				case "smg_standard": //Kuda
+					ent.zombie_weapon_upgrade = "t6_m1927";
+					break;
+				case "shotgun_pump": //KRM-262
+					ent.zombie_weapon_upgrade = "t6_olympia";
+					break;
+				case "ar_standard": //KN-44
+					ent.zombie_weapon_upgrade = "t6_an94";
+					break;
+				case "shotgun_precision": //Argus
+					ent.zombie_weapon_upgrade = "t6_rem870mcs";
+					break;
+				case "smg_burst": //Pharo
+					ent.zombie_weapon_upgrade = "t6_executioner";
+					break;
+				case "sniper_fastbolt": //Locus
 					{
-					case "pistol_burst": //RK5
-						ent.zombie_weapon_upgrade = "t4_carbine";
-						break;
-					case "ar_marksman": //Sheiva
-						ent.zombie_weapon_upgrade = "t4_kar98k";
-						break;
-					case "smg_standard": //Kuda
-						ent.zombie_weapon_upgrade = "t4_thompson";
-						break;
-					case "shotgun_pump": //KRM-262
-						ent.zombie_weapon_upgrade = "t4_db";
-						break;
-					case "ar_standard": //KN-44
-						ent.zombie_weapon_upgrade = "t4_bar";
-						break;
-					case "shotgun_precision": //Argus
-						ent.zombie_weapon_upgrade = "t4_m1897";
-						break;
-					case "smg_burst": //Pharo
-						ent.zombie_weapon_upgrade = "t4_db_saw";
-						break;
-					case "sniper_fastbolt": //Locus
+						/*switch(GetDvarInt("mutator_scopeads"))
 						{
-							/*switch(GetDvarInt("mutator_scopeads"))
-							{
-							case 1:
-								ent.zombie_weapon_upgrade = "t4_kar98k_scope_overlay";
-								break;
-							case 3:
-								ent.zombie_weapon_upgrade = "t4_kar98k_scope_switch";
-								break;
-							default:*/
-								ent.zombie_weapon_upgrade = "t4_kar98k_scope"; //actually this is the overlay version
-								/*break;
-							}*/
-							
+						case 1:
+							ent.zombie_weapon_upgrade = "t6_dsr50_scope_overlay";
 							break;
-						}
-					}
-				}
-				else if(GetDvarInt("mutator_waw_wall_weapons") == 2)
-				{
-					switch(VAL)
-					{
-					case "pistol_burst": //RK5
-						{
-							if(GetDvarInt("mutator_bocw_m14") == 2)
-								ent.zombie_weapon_upgrade = "t9_m14classic";
-							else
-								ent.zombie_weapon_upgrade = "t5_m14";
-							
+						case 3:
+							ent.zombie_weapon_upgrade = "t6_dsr50_switch";
 							break;
-						}
-					case "ar_marksman": //Sheiva
-						ent.zombie_weapon_upgrade = "t5_olympia";
+						default:*/
+							ent.zombie_weapon_upgrade = "t6_dsr50";
+							/*break;
+						}*/
+						
 						break;
-					case "smg_standard": //Kuda
-						{
-							if(GetDvarInt("mutator_bocw_ak74u") == 2)
-								ent.zombie_weapon_upgrade = "t9_ak74u";
-							else
-								ent.zombie_weapon_upgrade = "t5_ak74u";
-							
-							break;
-						}
-					case "shotgun_pump": //KRM-262
-						ent.zombie_weapon_upgrade = "t5_mpl";
-						break;
-					case "ar_standard": //KN-44
-						{
-							if(GetDvarInt("mutator_bocw_m16") == 2)
-								ent.zombie_weapon_upgrade = "t9_m16";
-							else	
-								ent.zombie_weapon_upgrade = "t5_m16a1";
-							
-							break;
-						}
-					case "shotgun_precision": //Argus
-						{
-							if(GetDvarInt("mutator_bocw_pm63") == 2)
-								ent.zombie_weapon_upgrade = "t9_amp63";
-							else
-								ent.zombie_weapon_upgrade = "t5_pm63";
-							break;
-						}
-					case "smg_burst": //Pharo
-						{
-							if(GetDvarInt("mutator_bocw_hauer77") == 2)
-								ent.zombie_weapon_upgrade = "t9_hauer77";
-							else
-								ent.zombie_weapon_upgrade = "t5_stakeout";
-							
-							break;
-						}
-					case "sniper_fastbolt": //Locus
-						{
-							if(GetDvarInt("mutator_bocw_l96a1") == 2)
-							{
-								switch(GetDvarInt("mutator_scopeads"))
-								{
-								case 1:
-									ent.zombie_weapon_upgrade = "t9_lw3_tundra_overlay";
-									break;
-								case 2:
-									ent.zombie_weapon_upgrade = "t9_lw3_tundra";
-									break;
-								case 3:
-									ent.zombie_weapon_upgrade = "t9_lw3_tundra_switch";
-									break;
-								}
-							}
-							else
-							{
-								switch(GetDvarInt("mutator_scopeads"))
-								{
-								case 1:
-									ent.zombie_weapon_upgrade = "t5_l96a1_overlay";
-									break;
-								case 3:
-									ent.zombie_weapon_upgrade = "t5_l96a1_switch";
-									break;
-								default:
-									ent.zombie_weapon_upgrade = "t5_l96a1";
-									break;
-								}
-							}
-							
-							break;
-						}
 					}
 				}
 				break;
@@ -2247,6 +2153,48 @@ function swap_chalk()
 					}
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_fiveseven", spawn_loc.origin, spawn_loc.angles);
+					break;
+				}
+				break;
+			}
+			case "t6_m1927":
+			{
+				spawn_loc = struct::get(ent.target, "targetname");
+				switch( GetDvarString("mapname") )
+				{
+				case "zm_prototype":
+					ent.var_47896610 = util::spawn_model("wallbuy_m1927_bo2", spawn_loc.origin + VectorScale((8, 0, -1), 1), spawn_loc.angles);
+					break;
+				default:
+					ent.var_47896610 = util::spawn_model("wallbuy_m1927_bo2", spawn_loc.origin, spawn_loc.angles);
+					break;
+				}
+				break;
+			}
+			case "t6_an94":
+			{
+				spawn_loc = struct::get(ent.target, "targetname");
+				switch( GetDvarString("mapname") )
+				{
+				case "zm_prototype":
+					ent.var_47896610 = util::spawn_model("wallbuy_an94", spawn_loc.origin + VectorScale((0, 5, -1), 1), spawn_loc.angles);
+					break;
+				default:
+					ent.var_47896610 = util::spawn_model("wallbuy_an94", spawn_loc.origin, spawn_loc.angles);
+					break;
+				}
+				break;
+			}
+			case "t6_smr":
+			{
+				spawn_loc = struct::get(ent.target, "targetname");
+				switch( GetDvarString("mapname") )
+				{
+				case "zm_prototype":
+					ent.var_47896610 = util::spawn_model("wallbuy_smr", spawn_loc.origin + VectorScale((0, 12, 1), 1), spawn_loc.angles);
+					break;
+				default:
+					ent.var_47896610 = util::spawn_model("wallbuy_smr", spawn_loc.origin, spawn_loc.angles);
 					break;
 				}
 				break;

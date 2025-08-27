@@ -14,6 +14,7 @@ scriptparsetree,scripts/zm/_zm_weapons.csc
 
 stringtable,gamedata/weapons/zm/zm_theater_weapons.csv
 stringtable,gamedata/weapons/zm/zm_tomb_weapons.csv
+stringtable,gamedata/weapons/zm/zm_prototype_weapons.csv
 
 scriptparsetree,scripts/zm/zm_claymore.gsc
 weapon,claymore_zm
@@ -31,6 +32,7 @@ xmodel,wallbuy_ak74u_bo2
 
 weapon,t6_an94
 weapon,t6_an94_up
+xmodel,wallbuy_an94
 
 weapon,t6_b23r
 weapon,t6_b23r_up
@@ -56,8 +58,7 @@ weapon,t6_dsr50
 weapon,t6_dsr50_up
 
 weapon,t6_executioner
-weapon,t6_executioner_rdw_up_zm
-weapon,t6_executioner_ldw_up_zm
+weapon,t6_executioner_up
 
 weapon,t6_fal
 weapon,t6_fal_up
@@ -110,6 +111,7 @@ weapon,t6_m1911_ldw_up_zm
 
 weapon,t6_m1927
 weapon,t6_m1927_up
+xmodel,wallbuy_m1927_bo2
 
 weapon,t6_mauser_c96
 weapon,t6_mauser_c96_up
@@ -165,6 +167,7 @@ weapon,t6_skorpion_evo_up
 
 weapon,t6_smr
 weapon,t6_smr_up
+xmodel,wallbuy_smr
 
 weapon,t6_stg44
 weapon,t6_stg44_up
