@@ -102,7 +102,7 @@ function main_end()
 	for(i = 0; i < structs.size; i++)
 		level._zombie_sidequests["sq"].stages["StD"].assets[i].thread_func = &spikemore_plug_hole;
 	
-	if(GetDvarInt("mutator_slide_dive") == 2)
+	if(GetDvarInt("mutator_slide_dive") != 2)
 		array::thread_all(level.mazecells, &maze_cell_watch);
 }
 
