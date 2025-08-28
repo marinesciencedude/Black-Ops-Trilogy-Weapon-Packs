@@ -15,6 +15,7 @@ scriptparsetree,scripts/zm/_zm_weapons.csc
 stringtable,gamedata/weapons/zm/zm_theater_weapons.csv
 stringtable,gamedata/weapons/zm/zm_tomb_weapons.csv
 stringtable,gamedata/weapons/zm/zm_prototype_weapons.csv
+stringtable,gamedata/weapons/zm/zm_factory_weapons.csv
 
 scriptparsetree,scripts/zm/zm_claymore.gsc
 weapon,claymore_zm
@@ -62,6 +63,7 @@ weapon,t6_executioner_up
 
 weapon,t6_fal
 weapon,t6_fal_up
+xmodel,wallbuy_fal_bo2
 
 weapon,t6_fiveseven
 weapon,t6_fiveseven_up

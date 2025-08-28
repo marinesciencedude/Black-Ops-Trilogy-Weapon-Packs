@@ -622,143 +622,53 @@ function swap_wall_weapon()
 			}
 		case "zm_factory": //The Giant
 			{
-				if(GetDvarInt("mutator_waw_wall_weapons") == 1 || !GetDvarInt("mutator_waw_wall_weapons"))
+				switch(VAL)
 				{
-					switch(VAL)
+				case "pistol_burst": //RK5
+					ent.zombie_weapon_upgrade = "t6_ballista";
+					break;
+				case "ar_marksman": //Sheiva
+					ent.zombie_weapon_upgrade = "t6_fal";
+					break;
+				case "shotgun_pump": //KRM-262
+					ent.zombie_weapon_upgrade = "t6_olympia";
+					break;
+				case "smg_versatile": //VMP
 					{
-					case "pistol_burst": //RK5
-						ent.zombie_weapon_upgrade = "t4_kar98k";
-						break;
-					case "ar_marksman": //Sheiva
-						ent.zombie_weapon_upgrade = "t4_g43";
-						break;
-					case "shotgun_pump": //KRM-262
-						ent.zombie_weapon_upgrade = "t4_db";
-						break;
-					case "smg_versatile": //VMP
-						{
-							ent.zombie_weapon_upgrade = "t4_thompson";
-							
-							ent.origin += (20, 0, 0);
-							spawn_loc = struct::get(ent.target, "targetname");
-							spawn_loc.origin += (20, 0, 0);
-							break;
-						}
-					case "pistol_fullauto": //L-CAR 9
-						ent.zombie_weapon_upgrade = "t4_carbine";
-						break;
-					case "smg_fastfire": //Vesper
-						ent.zombie_weapon_upgrade = "t4_fg42";
-						break;
-					case "smg_standard": //Kuda
-						{
-							ent.zombie_weapon_upgrade = "t4_m1897";
-							
-							ent.origin += (0, 5, 5);
-							spawn_loc = struct::get(ent.target, "targetname");
-							spawn_loc.origin += (0, 5, 5);
-							break;
-						}
-					case "ar_longburst": //M8A7
-						{
-							ent.zombie_weapon_upgrade = "t5_mp40";
-							ent.origin += (1, 0, 0);
-							spawn_loc = struct::get(ent.target, "targetname");
-							spawn_loc.origin += (1, 0, 0);
-							break;
-						}
-					case "ar_cqb": //HVK-30
-						ent.zombie_weapon_upgrade = "t4_type100";
-						break;
-					case "ar_standard": //KN-44
-						ent.zombie_weapon_upgrade = "t4_mp44";
+						ent.zombie_weapon_upgrade = "t6_m1927";
+						
+						/*ent.origin += (20, 0, 0);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (20, 0, 0);*/
 						break;
 					}
-				}
-				else if(GetDvarInt("mutator_waw_wall_weapons") == 2)
-				{
-					switch(VAL)
+				case "pistol_fullauto": //L-CAR 9
+					ent.zombie_weapon_upgrade = "t6_smr";
+					break;
+				case "smg_fastfire": //Vesper
+				case "ar_cqb": //HVK-30
+					ent.zombie_weapon_upgrade = "t6_mp5";
+					break;
+				case "smg_standard": //Kuda
 					{
-					case "pistol_burst": //RK5
-						ent.zombie_weapon_upgrade = "t5_olympia";
+						ent.zombie_weapon_upgrade = "t6_rem870mcs";
+						
+						/*ent.origin += (0, 5, 5);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, 5, 5);*/
 						break;
-					case "ar_marksman": //Sheiva
-						{
-							if(GetDvarInt("mutator_bocw_m14") == 2)
-								ent.zombie_weapon_upgrade = "t9_m14classic";
-							else
-								ent.zombie_weapon_upgrade = "t5_m14";
-							
-							break;
-						}
-					case "shotgun_pump": //KRM-262
-						ent.zombie_weapon_upgrade = "t5_mpl";
-						break;
-					case "smg_versatile": //VMP
-						{
-							if(GetDvarInt("mutator_bocw_ak74u") == 2)
-								ent.zombie_weapon_upgrade = "t9_ak74u";
-							else
-								ent.zombie_weapon_upgrade = "t5_ak74u";
-							
-							break;
-						}
-					case "pistol_fullauto": //L-CAR 9
-						{
-							if(GetDvarInt("mutator_bocw_pm63") == 2)
-								ent.zombie_weapon_upgrade = "t9_amp63";
-							else
-								ent.zombie_weapon_upgrade = "t5_pm63";
-							break;
-						}
-					case "smg_fastfire": //Vesper
-						{
-							/*if(GetDvarInt("mutator_bocw_aug") == 2)
-								ent.zombie_weapon_upgrade = "t9_aug";
-							else*/
-								ent.zombie_weapon_upgrade = "t5_aug";
-							
-							break;
-						}
-					case "smg_standard": //Kuda
-						{
-							if(GetDvarInt("mutator_bocw_hauer77") == 2)
-								ent.zombie_weapon_upgrade = "t9_hauer77";
-							else
-								ent.zombie_weapon_upgrade = "t5_stakeout";
-							
-							ent.origin += (0, -7, 0);
-							spawn_loc = struct::get(ent.target, "targetname");
-							spawn_loc.origin += (0, -7, 0);
-							break;
-						}
-					case "ar_longburst": //M8A7
-						{
-							ent.zombie_weapon_upgrade = "t5_mp40";
-							ent.origin += (1, 0, 0);
-							spawn_loc = struct::get(ent.target, "targetname");
-							spawn_loc.origin += (1, 0, 0);
-							break;
-						}
-					case "ar_cqb": //HVK-30
-						{
-							if(GetDvarInt("mutator_bocw_mp5k") == 2)
-								ent.zombie_weapon_upgrade = "t9_mp5k";
-							else
-								ent.zombie_weapon_upgrade = "t5_mp5k";
-							
-							break;
-						}
-					case "ar_standard": //KN-44
-						{
-							if(GetDvarInt("mutator_bocw_m16") == 2)
-								ent.zombie_weapon_upgrade = "t9_m16";
-							else	
-								ent.zombie_weapon_upgrade = "t5_m16a1";
-							
-							break;
-						}
 					}
+				case "ar_longburst": //M8A7
+					{
+						ent.zombie_weapon_upgrade = "t6_mp40";
+						/*ent.origin += (1, 0, 0);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (1, 0, 0);*/
+						break;
+					}
+				case "ar_standard": //KN-44
+					ent.zombie_weapon_upgrade = "t6_stg44";
+					break;
 				}
 				break;
 			}
@@ -2195,6 +2105,20 @@ function swap_chalk()
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_smr", spawn_loc.origin, spawn_loc.angles);
+					break;
+				}
+				break;
+			}
+			case "t6_fal":
+			{
+				spawn_loc = struct::get(ent.target, "targetname");
+				switch( GetDvarString("mapname") )
+				{
+				case "zm_factory":
+					ent.var_47896610 = util::spawn_model("wallbuy_fal_bo2", spawn_loc.origin + VectorScale((1, 5, 0), 1), spawn_loc.angles);
+					break;
+				default:
+					ent.var_47896610 = util::spawn_model("wallbuy_fal_bo2", spawn_loc.origin, spawn_loc.angles);
 					break;
 				}
 				break;

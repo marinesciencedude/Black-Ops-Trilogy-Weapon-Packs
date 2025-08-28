@@ -17,3 +17,4 @@ Then install all files from this repo into your Black Ops III installation apart
 * Scobabula's [HydraX](https://github.com/Scobalula/HydraX) for general asset decompilation, especially map _weapons.csv files
 * [Birdman's XModel Tools For Blender](https://github.com/Wast-3/birdmans-xmodel-tools-for-blender)
 * chalk drawings for AN-94, B23R, Ballista, Five-Seven, LSAT, M1927, MP40, MSMC, PDW-57, Remington 870 MCS, SMR, StG-44, SVU-AS, SWAT-556, Uzi, Vector from https://github.com/Jbleezy/BO2-Reimagined
+* FAL chalk drawing from Black Ops port: https://www.ugx-mods.com/forum/full-weapons/84/skyes-bo1-weapon-ports/23143/
