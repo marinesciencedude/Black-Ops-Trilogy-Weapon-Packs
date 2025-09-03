@@ -398,7 +398,14 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"WaW Layout 1 is by poyzee, WaW Layout 2 is by Conn6orsuper117",
 			"MutatorSettings_WallbuysDerEisendrache",
 			"mutator_wallbuys_der_eisendrache",
-			BuildStringSettings({"WaW Layout 1", "WaW Layout 2"}, "WaW Layout 3"), nil, SetDvarSetting)
+			BuildStringSettings({"WaW Layout 1", "WaW Layout 2"}, "WaW Layout 3"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Gorod Krovi Wallbuys",
+			"WaW Layout 1 is by the author, WaW Layout 2 is by HzRetro",
+			"MutatorSettings_WallbuysGorodKrovi",
+			"mutator_wallbuys_gorod_krovi",
+			BuildStringSettings({"WaW Layout 1", "WaW Layout 2"}, "WaW Layout 1"), nil, SetDvarSetting)
 		--CoD.OptionsUtility.CreateDvarSettings(
 		--	arg0,
 		--	"Random Moon Solo Character",

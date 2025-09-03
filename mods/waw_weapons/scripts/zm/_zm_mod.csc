@@ -129,7 +129,7 @@ function applyChoices() {
 		//zm_weapons::load_weapon_spec_from_table("gamedata/weapons/zm/zm_factory_classic_mod.csv", 1);
 	}*/
 	
-	if(GetDvarString("mapname") != "zm_stalingrad" && GetDvarInt("mutator_dp27") == MUTATOR_OFFON_ON)
+	if((GetDvarString("mapname") != "zm_stalingrad" && GetDvarInt("mutator_wallbuys_gorod_krovi") != 2) && GetDvarInt("mutator_dp27") == MUTATOR_OFFON_ON)
 	{
 		zm_weapons::include_weapon( "t4_dp28", true, 2400, 0 );
 		zm_weapons::include_upgraded_weapon( "t4_dp28", "t4_dp28_up", false, 2400, 0 );

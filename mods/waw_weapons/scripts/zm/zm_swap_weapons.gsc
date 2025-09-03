@@ -1344,68 +1344,131 @@ function swap_wall_weapon()
 			}
 			case "zm_stalingrad": //Gorod Krovi
 			{
-				switch(VAL)
-				{
-				case "ar_marksman": //Sheiva
-					ent.zombie_weapon_upgrade = "t4_g43";
-					break;
-				case "pistol_burst": //RK5
-					ent.zombie_weapon_upgrade = "t4_kar98k";
-					break;
-				case "shotgun_pump": //KRM-262
-					ent.zombie_weapon_upgrade = "t4_db";
-					break;
-				case "pistol_fullauto": //L-CAR 9
-					ent.zombie_weapon_upgrade = "t4_carbine";
-					break;
-				case "smg_burst": //Pharo
-					ent.zombie_weapon_upgrade = "t4_m1";
-					break;
-				case "smg_standard": //Kuda
-					ent.zombie_weapon_upgrade = "t4_mp40";
-					break;
-				case "shotgun_precision": //Argus
+				if(!GetDvarInt("mutator_wallbuys_gorod_krovi") || GetDvarInt("mutator_wallbuys_gorod_krovi") == 1)
+				{ 
+					switch(VAL)
 					{
-						ent.zombie_weapon_upgrade = "t4_m1897";
-						
-						ent.origin += (-5, 0, 0);
-						spawn_loc = struct::get(ent.target, "targetname");
-						spawn_loc.origin += (-5, 0, 0);
-						
+					case "ar_marksman": //Sheiva
+						ent.zombie_weapon_upgrade = "t4_g43";
+						break;
+					case "pistol_burst": //RK5
+						ent.zombie_weapon_upgrade = "t4_kar98k";
+						break;
+					case "shotgun_pump": //KRM-262
+						ent.zombie_weapon_upgrade = "t4_db";
+						break;
+					case "pistol_fullauto": //L-CAR 9
+						ent.zombie_weapon_upgrade = "t4_carbine";
+						break;
+					case "smg_burst": //Pharo
+						ent.zombie_weapon_upgrade = "t4_m1";
+						break;
+					case "smg_standard": //Kuda
+						ent.zombie_weapon_upgrade = "t4_mp40";
+						break;
+					case "shotgun_precision": //Argus
+						{
+							ent.zombie_weapon_upgrade = "t4_m1897";
+							
+							ent.origin += (-5, 0, 0);
+							spawn_loc = struct::get(ent.target, "targetname");
+							spawn_loc.origin += (-5, 0, 0);
+							
+							break;
+						}
+					case "ar_standard": //KN-44
+						ent.zombie_weapon_upgrade = "t4_thompson";
+						break;
+					case "ar_cqb": //HVK-30
+						{
+							ent.zombie_weapon_upgrade = "t4_fg42";
+							
+							ent.origin += (5, 0, 0);
+							spawn_loc = struct::get(ent.target, "targetname");
+							spawn_loc.origin += (5, 0, 0);
+							
+							break;
+						}
+					case "ar_accurate": //ICR-1
+						{
+							ent.zombie_weapon_upgrade = "t4_type100";
+							
+							ent.origin += (20*cos(spawn_loc.angles[1]), 20*sin(spawn_loc.angles[1]), 0);
+							spawn_loc = struct::get(ent.target, "targetname");
+							spawn_loc.origin += (20*cos(spawn_loc.angles[1]), 20*sin(spawn_loc.angles[1]), 0);
+							
+							break;
+						}
+					case "smg_versatile": //VMP
+						ent.zombie_weapon_upgrade = "t4_bar";
+						break;
+					case "smg_fastfire": //Vesper
+						ent.zombie_weapon_upgrade = "t4_dp28";
+						break;
+					case "ar_longburst": //M8A7
+						ent.zombie_weapon_upgrade = "t4_mp44";
 						break;
 					}
-				case "ar_standard": //KN-44
-					ent.zombie_weapon_upgrade = "t4_thompson";
-					break;
-				case "ar_cqb": //HVK-30
+				}
+				else if(GetDvarInt("mutator_wallbuys_gorod_krovi") == 2) //HzRetro
+				{	
+					switch(VAL)
 					{
-						ent.zombie_weapon_upgrade = "t4_fg42";
-						
-						ent.origin += (5, 0, 0);
-						spawn_loc = struct::get(ent.target, "targetname");
-						spawn_loc.origin += (5, 0, 0);
-						
+					case "ar_marksman": //Sheiva
+						ent.zombie_weapon_upgrade = "t4_g43";
 						break;
-					}
-				case "ar_accurate": //ICR-1
-					{
+					case "pistol_burst": //RK5
+						ent.zombie_weapon_upgrade = "t4_kar98k";
+						break;
+					case "shotgun_pump": //KRM-262
+						ent.zombie_weapon_upgrade = "t4_db";
+						break;
+					case "pistol_fullauto": //L-CAR 9
+						ent.zombie_weapon_upgrade = "t4_carbine";
+						break;
+					case "smg_burst": //Pharo
+					case "ar_standard": //KN-44
+						ent struct::delete();
+						break;
+					case "smg_standard": //Kuda
+						ent.zombie_weapon_upgrade = "t4_thompson";
+						break;
+					case "shotgun_precision": //Argus
+						{
+							ent.zombie_weapon_upgrade = "t4_m1897";
+							
+							ent.origin += (-5, 0, 0);
+							spawn_loc = struct::get(ent.target, "targetname");
+							spawn_loc.origin += (-5, 0, 0);
+							
+							break;
+						}
+					case "ar_cqb": //HVK-30
+						{
+							ent.zombie_weapon_upgrade = "frag_grenade_potato_masher";
+							
+							/*ent.origin += (5, 0, 0);
+							spawn_loc = struct::get(ent.target, "targetname");
+							spawn_loc.origin += (5, 0, 0);*/
+							
+							break;
+						}
+					case "ar_accurate": //ICR-1
+						{
+							ent struct::delete();
+							//Implement Trip Mines/Bouncing Betties here later
+							break;
+						}
+					case "smg_versatile": //VMP
 						ent.zombie_weapon_upgrade = "t4_type100";
-						
-						ent.origin += (20*cos(spawn_loc.angles[1]), 20*sin(spawn_loc.angles[1]), 0);
-						spawn_loc = struct::get(ent.target, "targetname");
-						spawn_loc.origin += (20*cos(spawn_loc.angles[1]), 20*sin(spawn_loc.angles[1]), 0);
-						
+						break;
+					case "smg_fastfire": //Vesper
+						ent.zombie_weapon_upgrade = "t4_mp40";
+						break;
+					case "ar_longburst": //M8A7
+						ent.zombie_weapon_upgrade = "t4_mp44";
 						break;
 					}
-				case "smg_versatile": //VMP
-					ent.zombie_weapon_upgrade = "t4_bar";
-					break;
-				case "smg_fastfire": //Vesper
-					ent.zombie_weapon_upgrade = "t4_dp28";
-					break;
-				case "ar_longburst": //M8A7
-					ent.zombie_weapon_upgrade = "t4_mp44";
-					break;
 				}
 				break;
 			}			
@@ -1803,8 +1866,13 @@ function swap_chalk()
 					break;
 				case "zm_cosmodrome": //Ascension
 				case "zm_moon":
-				case "zm_stalingrad": //Gorod Krovi
 					ent.var_47896610 = util::spawn_model("wallbuy_thompson", spawn_loc.origin + VectorScale((0, -19, -4), 1), spawn_loc.angles);
+				case "zm_stalingrad": //Gorod Krovi
+					if(!GetDvarInt("mutator_wallbuys_gorod_krovi") || GetDvarInt("mutator_wallbuys_gorod_krovi") == 1)
+						ent.var_47896610 = util::spawn_model("wallbuy_thompson", spawn_loc.origin + VectorScale((0, -19, -4), 1), spawn_loc.angles);
+					else if(GetDvarInt("mutator_wallbuys_gorod_krovi") == 2)
+						ent.var_47896610 = util::spawn_model("wallbuy_thompson", spawn_loc.origin + VectorScale((-19*cos(spawn_loc.angles[1]), -19*sin(spawn_loc.angles[1]), -4), 1), spawn_loc.angles);
+					
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_thompson", spawn_loc.origin, spawn_loc.angles);
@@ -2186,6 +2254,8 @@ function swap_chalk()
 				case "zm_temple":
 					ent.var_47896610 = util::spawn_model("wallbuy_grenade_bag", spawn_loc.origin + VectorScale((-5*cos(spawn_loc.angles[1]), -5*sin(spawn_loc.angles[1]), 5), 1), spawn_loc.angles);
 					break;
+				case "zm_stalingrad": //Gorod Krovi
+					ent.var_47896610 = util::spawn_model("wallbuy_grenade_bag", spawn_loc.origin + VectorScale((-5, 0, 0), 1), spawn_loc.angles);
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_grenade_bag", spawn_loc.origin, spawn_loc.angles);
 					break;
