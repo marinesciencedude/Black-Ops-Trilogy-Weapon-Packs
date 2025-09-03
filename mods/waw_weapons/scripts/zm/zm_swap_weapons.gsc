@@ -1485,6 +1485,17 @@ function swap_wall_weapon()
 			struct::get(ent.target, "targetname").model = GetWeapon(ent.zombie_weapon_upgrade).worldmodel;
 		}
 	}
+	foreach(ent in struct::get_array("claymore_purchase", "targetname"))
+	{
+		ent.zombie_weapon_upgrade = "bo1_bouncingbetty";
+		
+		if(GetDvarString("mapname") == "zm_moon")
+		{
+			ent.origin += (0, 0, 3);
+			spawn_loc = struct::get(ent.target, "targetname");
+			spawn_loc.origin += (0, 0, 3);
+		}
+	}
 }
 
 /*
@@ -2263,6 +2274,11 @@ function swap_chalk()
 				break;
 			}
 		}
+	}
+	foreach(ent in struct::get_array("claymore_purchase", "targetname"))
+	{
+		spawn_loc = struct::get(ent.target, "targetname");
+		ent.var_47896610 = util::spawn_model("wallbuy_bouncingbetty", spawn_loc.origin + VectorScale((-7*cos(spawn_loc.angles[1]), -7*sin(spawn_loc.angles[1]), 0), 1), spawn_loc.angles);
 	}
 }
 
