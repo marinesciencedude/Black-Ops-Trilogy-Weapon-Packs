@@ -15,9 +15,9 @@
 
 #precache( "client_fx", "zombie/fx_perk_doubletap2_zmb" );
 
-#namespace zm_perk_doubletap2;
+#namespace doubletap2;
 
-REGISTER_SYSTEM( "zm_perk_doubletap2", &__init__, undefined )
+REGISTER_SYSTEM( "doubletap2", &__init__, undefined )
 
 // DOUBLETAP2 ( DOUBLE TAP II )
 	
@@ -44,7 +44,8 @@ function init_doubletap2()
 
 function doubletap2_client_field_func()
 {
-	clientfield::register( "clientuimodel", PERK_CLIENTFIELD_DOUBLETAP2, VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT ); 
+	if(GetDvarString("mapname") != "zm_factory_classic")
+		clientfield::register( "clientuimodel", PERK_CLIENTFIELD_DOUBLETAP2, VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT ); 
 	clientfield::register( "clientuimodel", "hudItems.perks.doubletap2_bo", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT ); 
 	clientfield::register( "clientuimodel", "hudItems.perks.doubletap2_recolour", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT ); 
 }

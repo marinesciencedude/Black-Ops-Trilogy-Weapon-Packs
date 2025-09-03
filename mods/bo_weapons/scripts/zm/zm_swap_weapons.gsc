@@ -2354,6 +2354,46 @@ function swap_wall_weapon()
 				}
 				break;
 			}
+			case "zm_stalingrad": //Gorod Krovi
+			{ //HzRetro
+				switch(VAL)
+				{
+				case "ar_marksman": //Sheiva
+					ent.zombie_weapon_upgrade = "t5_olympia";
+					break;
+				case "pistol_burst": //RK5
+					ent.zombie_weapon_upgrade = "t5_m14";
+					break;
+				case "shotgun_pump": //KRM-262
+					ent.zombie_weapon_upgrade = "t5_pm63";
+					break;
+				case "pistol_fullauto": //L-CAR 9
+					ent.zombie_weapon_upgrade = "t5_mpl";
+					break;
+				case "smg_burst": //Pharo
+				case "ar_standard": //KN-44
+					ent struct::delete();
+					break;
+				case "smg_standard": //Kuda
+					ent.zombie_weapon_upgrade = "t5_mp5k";
+					break;
+				case "shotgun_precision": //Argus
+					ent.zombie_weapon_upgrade = "t5_stakeout";
+					break;
+				case "ar_cqb": //HVK-30
+					ent.zombie_weapon_upgrade = "sticky_grenade_custom";
+					break;
+				case "smg_versatile": //VMP
+					ent.zombie_weapon_upgrade = "t5_ak74u";
+					break;
+				case "smg_fastfire": //Vesper
+					ent.zombie_weapon_upgrade = "t5_mp40";
+					break;
+				case "ar_longburst": //M8A7
+					ent.zombie_weapon_upgrade = "t5_m16a1";
+				}
+				break;
+			}
 		}
 		
 		if(ent.zombie_weapon_upgrade == "sticky_grenade_custom" && GetDvarInt("mutator_grenade_wallbuy") == 2)
@@ -2395,8 +2435,12 @@ function swap_wall_weapon()
 			{
 				continue;
 			}
-			if(GetDvarString("mapname") != "zm_asylum" || GetDvarString("mapname") != "zm_asylum" && count != 0) //Don't delete German side
+			if((GetDvarString("mapname") == "zm_asylum" && count == 0) || (GetDvarInt("mutator_waw_wall_weapons") != 2 && (GetDvarString("mapname") == "zm_asylum" || GetDvarString("mapname") == "zm_sumpf" || GetDvarString("mapname") == "zm_factory")))
+				ent.zombie_weapon_upgrade = "bo1_bouncingbetty";
+			else if(GetDvarString("mapname") != "zm_asylum" || (GetDvarString("mapname") == "zm_asylum" && count != 0)) //Don't delete German side
 				ent struct::delete();
+			
+			count = 1;
 		}
 	}
 }
@@ -3096,6 +3140,9 @@ function swap_chalk()
 						ent.var_47896610 = util::spawn_model("wallbuy_stakeout", spawn_loc.origin + VectorScale((4, 0, 1), 1), spawn_loc.angles);
 					
 					break;
+				case "zm_stalingrad": //Gorod Krovi
+					ent.var_47896610 = util::spawn_model("wallbuy_stakeout", spawn_loc.origin + VectorScale((-3, 0, 0), 1), spawn_loc.angles);
+					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_stakeout", spawn_loc.origin, spawn_loc.angles);
 					break;
@@ -3168,6 +3215,9 @@ function swap_chalk()
 						mp40++;
 						break;
 					}
+				case "zm_stalingrad":
+					ent.var_47896610 = util::spawn_model("wallbuy_mp40", spawn_loc.origin + VectorScale((1, 0, 0), 1), spawn_loc.angles);
+					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_mp40", spawn_loc.origin + VectorScale((0, 0, 0), 1), spawn_loc.angles);
 					break;
@@ -3198,6 +3248,9 @@ function swap_chalk()
 				case "zm_factory": //The Giant
 				case "zm_giant": // TrustInUma's DER RIESE
 					ent.var_47896610 = util::spawn_model("wallbuy_mpl", spawn_loc.origin + VectorScale((1, 1, 0), 1), spawn_loc.angles);
+					break;
+				case "zm_stalingrad": //Gorod Krovi
+					ent.var_47896610 = util::spawn_model("wallbuy_mpl", spawn_loc.origin + VectorScale((1*cos(spawn_loc.angles[1]), 1*sin(spawn_loc.angles[1]), 0), 1), spawn_loc.angles);
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_mpl", spawn_loc.origin, spawn_loc.angles);
@@ -3245,6 +3298,9 @@ function swap_chalk()
 				case "zm_sumpf": //Shi no Numa 
 				case "zm_prototype": //Nacht der Untoten
 					ent.var_47896610 = util::spawn_model("wallbuy_pm63", spawn_loc.origin + VectorScale((5, 0, 0), 1), spawn_loc.angles);
+					break;
+				case "zm_stalingrad": //Gorod Krovi
+					ent.var_47896610 = util::spawn_model("wallbuy_pm63", spawn_loc.origin + VectorScale((5*cos(spawn_loc.angles[0]), 5*cos(spawn_loc.angles[1]), 5*sin(spawn_loc.angles[0])), 1), spawn_loc.angles);
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_pm63", spawn_loc.origin, spawn_loc.angles);
@@ -3390,6 +3446,7 @@ function swap_chalk()
 					break;
 				case "zm_prototype": //Nacht der Untoten
 				case "zm_tomb": //Origins
+				case "zm_stalingrad": //Gorod Krovi
 					ent.var_47896610 = util::spawn_model("wallbuy_m16a1", spawn_loc.origin + VectorScale((0, 3, 1), 1), spawn_loc.angles);
 					break;
 				default:
@@ -3571,18 +3628,21 @@ function swap_claymores()
 		case "zm_sumpf": //Shi no Numa
 		case "zm_factory": //The Giant
 			{
-				/*if(GetDvarInt("mutator_waw_wall_weapons") == 2)
-				{*/
+				if(GetDvarInt("mutator_waw_wall_weapons") == 2)
+				{
 					claymore = Spawn("trigger_radius_use", spawn_loc.origin, 0, 84, 72);
 					claymore.targetname = "claymore_trigger";
 					claymore zm_unitrigger::create_unitrigger( "Hold ^3&&1^7 to buy Claymores [Cost: 1000]" , 20, &visibility_and_update_prompt);
-				//}
+				}
+				else
+					betty = ent;
+				
 				break;
 			}
 		case "zm_asylum": //Verrückt
 			{
-				/*if(GetDvarInt("mutator_waw_wall_weapons") == 2)
-				{*/
+				if(GetDvarInt("mutator_waw_wall_weapons") == 2)
+				{
 					if(count == 1) //American side
 					{
 						claymore = Spawn("trigger_radius_use", spawn_loc.origin, 0, 84, 72);
@@ -3590,24 +3650,36 @@ function swap_claymores()
 						claymore zm_unitrigger::create_unitrigger( "Hold ^3&&1^7 to buy Claymores [Cost: 1000]" , 20, &visibility_and_update_prompt);
 					}
 					else
-						claymore = ent;
-				//}
+						betty = ent;
+					
+					count = 1;
+				}
+				else
+					betty = ent;
+				
 				break;
 			}
 		}
 		if(isdefined(claymore))
+			claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin + VectorScale((0, -0.5, 0), 1), spawn_loc.angles);
+		else if(isdefined(betty))
+			betty.var_47896610 = util::spawn_model("wallbuy_bouncingbetty", spawn_loc.origin + VectorScale((-7*cos(spawn_loc.angles[1]), -7*sin(spawn_loc.angles[1]), 0), 1), spawn_loc.angles);
+	}
+	if(GetDvarString("mapname") == "zm_stalingrad")
+	{
+		foreach(ent in struct::get_array("weapon_upgrade", "targetname"))
 		{
-			if(GetDvarString("mapname") == "zm_asylum")
-			{
-				if(count == 0) //German side
-					claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin + VectorScale((0, 1, 0), 1), spawn_loc.angles);
-				else
-					claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin + VectorScale((0, -0.5, 0), 1), spawn_loc.angles);
+			if(ent.zombie_weapon_upgrade != "ar_accurate")
+				continue;
 				
-				count = 1;
-			}
-			else
-				claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin + VectorScale((0, -0.5, 0), 1), spawn_loc.angles);
+			claymore = Spawn("trigger_radius_use", ent.origin + VectorScale((-30, -30, 0), 1), 0, 84, 72);
+			claymore.targetname = "claymore_trigger";
+			claymore zm_unitrigger::create_unitrigger( "Hold ^3&&1^7 to buy Claymores [Cost: 1000]" , 20, &visibility_and_update_prompt);
+			
+			claymore.var_47896610 = util::spawn_model("wallbuy_claymore", ent.origin, ent.angles);
+						
+			ent struct::delete();
+			break;
 		}
 	}
 	thread zm_claymore::init();

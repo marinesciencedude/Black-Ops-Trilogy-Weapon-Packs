@@ -17,6 +17,7 @@ It's advised to make a back-up of wpn_t7_zmb_weapons.gdt, black_ops_3_fx.gdt, si
   * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-snipers%2Fbolt-action
   * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-raygun
   * https://www.devraw.net/approved-assets/theallnightfall/black-ops-1-thundergun
+* Lamy619's [url=https://www.devraw.net/approved-assets/lamy619/waw-bouncing-betties-port]WaW Bouncing Betties Port[/url]
 * Carrabella & WetEgg's Black ops 1 and 2 crossbow: https://drive.google.com/file/d/1QpNYEj8BWTOKtFTKXWFSnD-k1scunuZJ/view
 * L3akMod: https://wiki.modme.co/wiki/black_ops_3/lua_(lui)/Installation.html
 * Scobalula's T7MTEnhancements: https://github.com/Scobalula/T7MTEnhancements

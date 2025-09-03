@@ -31,6 +31,7 @@
 
 #using scripts\zm\perks\_zm_perk_phdflopper;
 #using scripts\zm\_zm_perk_doubletap;
+#using scripts\zm\doubletap2;
 
 #insert scripts\zm\_zm_perks.gsh;
 #insert scripts\zm\_zm_utility.gsh;

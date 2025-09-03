@@ -25,9 +25,9 @@
 #precache( "string", "ZOMBIE_PERK_DOUBLETAP" );
 #precache( "fx", "zombie/fx_perk_doubletap2_zmb" );
 
-#namespace zm_perk_doubletap2;
+#namespace doubletap2;
 
-REGISTER_SYSTEM( "zm_perk_doubletap2", &__init__, undefined )
+REGISTER_SYSTEM( "doubletap2", &__init__, undefined )
 
 // DOUBLETAP2 ( DOUBLE TAP II )
 
@@ -46,7 +46,10 @@ function enable_doubletap2_perk_for_level()
 	zm_perks::register_perk_precache_func( PERK_DOUBLETAP2, &doubletap2_precache );
 	zm_perks::register_perk_clientfields( PERK_DOUBLETAP2, &doubletap2_register_clientfield, &doubletap2_set_clientfield );
 	zm_perks::register_perk_machine( PERK_DOUBLETAP2, &doubletap2_perk_machine_setup );
-	zm_perks::register_perk_host_migration_params( PERK_DOUBLETAP2, DOUBLETAP2_RADIANT_MACHINE_NAME, DOUBLETAP2_MACHINE_LIGHT_FX );
+	targetname = DOUBLETAP2_RADIANT_MACHINE_NAME;
+	if(GetDvarString("mapname") == "zm_factory_classic")
+		targetname = "vending_doubletap2";
+	zm_perks::register_perk_host_migration_params( PERK_DOUBLETAP2, targetname, DOUBLETAP2_MACHINE_LIGHT_FX );
 }
 
 function doubletap2_precache()
@@ -67,7 +70,8 @@ function doubletap2_precache()
 
 function doubletap2_register_clientfield()
 {
-	clientfield::register( "clientuimodel", PERK_CLIENTFIELD_DOUBLETAP2, VERSION_SHIP, 2, "int" );
+	if(GetDvarString("mapname") != "zm_factory_classic")
+		clientfield::register( "clientuimodel", PERK_CLIENTFIELD_DOUBLETAP2, VERSION_SHIP, 2, "int" );
 	clientfield::register( "clientuimodel", "hudItems.perks.doubletap2_bo", VERSION_SHIP, 2, "int" );
 	clientfield::register( "clientuimodel", "hudItems.perks.doubletap2_recolour", VERSION_SHIP, 2, "int" );
 }
@@ -96,6 +100,12 @@ function doubletap2_perk_machine_setup( use_trigger, perk_machine, bump_trigger,
 	use_trigger.target = DOUBLETAP2_RADIANT_MACHINE_NAME;
 	perk_machine.script_string = "tap_perk";
 	perk_machine.targetname = DOUBLETAP2_RADIANT_MACHINE_NAME;
+	if(GetDvarString("mapname") == "zm_factory_classic")
+	{
+		use_trigger.target = "vending_doubletap2";
+		perk_machine.targetname = "vending_doubletap2";
+	}
+	
 	if( IsDefined( bump_trigger ) )
 	{
 		bump_trigger.script_string = "tap_perk";

@@ -117,6 +117,12 @@
  "Name" : "freezegun_sounds",
  "Filename" : "freezegun_sounds.csv",
  "Specs" : [ ] 
+},
+{
+ "Type" : "ALIAS",
+ "Name" : "t4_betty_sounds",
+ "Filename" : "t4_betty_sounds.csv",
+ "Specs" : [ ] 
 }
 ],
  "Ducks" : [ ] ,

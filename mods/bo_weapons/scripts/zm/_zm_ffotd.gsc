@@ -6,12 +6,17 @@
 
 #using scripts\shared\spawner_shared;
 #using scripts\zm\_hb21_zm_behavior;
+#using scripts\shared\clientfield_shared;
 
 #using scripts\zm\crossbow_bolt;
 #using scripts\zm\zm_weap_crossbow;
 #using scripts\zm\dive;
 #using scripts\zm\_zm_t5;
 #using scripts\zm\_zm_weap_freezegun;
+#using scripts\zm\_zm_weap_bo1bouncingbetty;
+
+#insert scripts\zm\_zm_perks.gsh;
+#insert scripts\shared\version.gsh;
 
 #precache( "fx", "custom/magic_box_og/fx_weapon_box_marker_fl_og" );
 #precache( "fx", "custom/magic_box_og/fx_weapon_box_marker_og" );
@@ -80,6 +85,57 @@ function main_end()
 		level.exert_sounds[4]["burp"][2] = "evt_belch";
 	}
 	
+	if(GetDvarInt("mutator_bo_perk_icons") == 1)
+	{
+		clientfield::register( "clientuimodel", "hudItems.perks.quick_revive_bo", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.additional_primary_weapon_bo", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.dead_shot_bo", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.electric_cherry_bo", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.juggernaut_bo", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.sleight_of_hand_bo", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.marathon_bo", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.widows_wine_bo", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.doubletap_bo", 1, 2, "int");
+	}
+	else if(GetDvarInt("mutator_bo_perk_icons") == 2)
+	{
+		clientfield::register( "clientuimodel", "hudItems.perks.quick_revive_recolour", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.additional_primary_weapon_recolour", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.dead_shot_recolour", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.electric_cherry_recolour", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.juggernaut_recolour", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.sleight_of_hand_recolour", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.marathon_recolour", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.widows_wine_recolour", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.doubletap_recolour", 1, 2, "int");
+	}
+	else if(GetDvarString("mapname") != "zm_factory_classic")
+		clientfield::register( "clientuimodel", "hudItems.perks.doubletap", 1, 2, "int");
+	
+	if(GetDvarInt("mutator_bo_perk_icons") != 3 && GetDvarString("mapname") != "zm_factory_classic")
+	{
+		if(isdefined(level._custom_perks[ PERK_QUICK_REVIVE ]))
+			level._custom_perks[ PERK_QUICK_REVIVE ].clientfield_set = &quick_revive_set_clientfield;
+		if(isdefined(level._custom_perks[ PERK_ADDITIONAL_PRIMARY_WEAPON ]))
+			level._custom_perks[ PERK_ADDITIONAL_PRIMARY_WEAPON ].clientfield_set = &additional_primary_weapon_set_clientfield;
+		if(isdefined(level._custom_perks[ PERK_DEAD_SHOT ]))
+			level._custom_perks[ PERK_DEAD_SHOT ].clientfield_set = &deadshot_set_clientfield;
+		if(isdefined(level._custom_perks[ PERK_ELECTRIC_CHERRY ]))
+			level._custom_perks[ PERK_ELECTRIC_CHERRY ].clientfield_set = &electric_cherry_set_clientfield;
+		if(isdefined(level._custom_perks[ PERK_JUGGERNOG ]))
+			level._custom_perks[ PERK_JUGGERNOG ].clientfield_set = &juggernaut_set_clientfield;
+		if(isdefined(level._custom_perks[ PERK_SLEIGHT_OF_HAND ]))
+			level._custom_perks[ PERK_SLEIGHT_OF_HAND ].clientfield_set = &sleight_of_hand_set_clientfield;
+		if(isdefined(level._custom_perks[ PERK_STAMINUP ]))
+			level._custom_perks[ PERK_STAMINUP ].clientfield_set = &staminup_set_clientfield;
+		if(isdefined(level._custom_perks[ PERK_WIDOWS_WINE ]))
+			level._custom_perks[ PERK_WIDOWS_WINE ].clientfield_set = &widows_wine_set_clientfield;
+		if(isdefined(level._custom_perks[ "specialty_rof" ]))
+			level._custom_perks[ "specialty_rof" ].clientfield_set = &doubletap_set_clientfield;
+	}
+	else if(GetDvarInt("mutator_doubletap") == 2 && GetDvarString("mapname") == "zm_factory_classic")
+		level._custom_perks[ PERK_DOUBLETAP2 ].clientfield_set = level._custom_perks[ "specialty_rof" ].clientfield_set;
+	
 	if(GetDvarInt("mutator_falldamage") == 2)
 	{
 		//as per https://www.thetechgame.com/Archives/t=2401729/all-black-ops-patch-gpd-codes-dvar-list-l-updated-l.html
@@ -87,6 +143,150 @@ function main_end()
 		setdvar("bg_fallDamageMaxHeight", 300); //whatever this sets the max to, certainly receive more damage when you fall further than this
 												//closest height in testing is 136 (1 damage) and farthest height before death is 563 (98 damage)
 												//136-564 range giving a difference of 428 being equal to 128+300 is probably a coincidence
+	}
+}
+
+function quick_revive_set_clientfield( state )
+{
+	if(GetDvarInt("mutator_bo_perk_icons") == 1 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
+	{
+		self clientfield::set_player_uimodel( "hudItems.perks.quick_revive_bo", state );
+	}
+	else if(GetDvarInt("mutator_bo_perk_icons") == 2)
+	{
+		self clientfield::set_player_uimodel( "hudItems.perks.quick_revive_recolour", state );
+	}
+	else
+	{
+		self clientfield::set_player_uimodel( PERK_CLIENTFIELD_QUICK_REVIVE, state );
+	}
+}
+
+function additional_primary_weapon_set_clientfield( state )
+{
+	if(GetDvarInt("mutator_bo_perk_icons") == 1 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
+	{
+		self clientfield::set_player_uimodel( "hudItems.perks.additional_primary_weapon_bo", state );
+	}
+	else if(GetDvarInt("mutator_bo_perk_icons") == 2)
+	{
+		self clientfield::set_player_uimodel( "hudItems.perks.additional_primary_weapon_recolour", state );
+	}
+	else
+	{
+		self clientfield::set_player_uimodel( PERK_CLIENTFIELD_ADDITIONAL_PRIMARY_WEAPON, state );
+	}
+}
+
+function deadshot_set_clientfield( state )
+{
+	if(GetDvarInt("mutator_bo_perk_icons") == 1 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
+	{
+		self clientfield::set_player_uimodel( "hudItems.perks.dead_shot_bo", state );
+	}
+	else if(GetDvarInt("mutator_bo_perk_icons") == 2)
+	{
+		self clientfield::set_player_uimodel( "hudItems.perks.dead_shot_recolour", state );
+	}
+	else
+	{
+		self clientfield::set_player_uimodel( PERK_CLIENTFIELD_DEAD_SHOT, state );
+	}
+}
+
+function electric_cherry_set_clientfield( state )
+{
+	if(GetDvarInt("mutator_bo_perk_icons") == 1 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
+	{
+		self clientfield::set_player_uimodel( "hudItems.perks.electric_cherry_bo", state );
+	}
+	else if(GetDvarInt("mutator_bo_perk_icons") == 2)
+	{
+		self clientfield::set_player_uimodel( "hudItems.perks.electric_cherry_recolour", state );
+	}
+	else
+	{
+		self clientfield::set_player_uimodel( PERK_CLIENTFIELD_ELECTRIC_CHERRY, state );
+	}
+}
+
+function juggernaut_set_clientfield( state )
+{
+	if(GetDvarInt("mutator_bo_perk_icons") == 1 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
+	{
+		self clientfield::set_player_uimodel( "hudItems.perks.juggernaut_bo", state );
+	}
+	else if(GetDvarInt("mutator_bo_perk_icons") == 2)
+	{
+		self clientfield::set_player_uimodel( "hudItems.perks.juggernaut_recolour", state );
+	}
+	else
+	{
+		self clientfield::set_player_uimodel( PERK_CLIENTFIELD_JUGGERNAUT, state );
+	}
+}
+
+function sleight_of_hand_set_clientfield( state )
+{
+	if(GetDvarInt("mutator_bo_perk_icons") == 1 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
+	{
+		self clientfield::set_player_uimodel( "hudItems.perks.sleight_of_hand_bo", state );
+	}
+	else if(GetDvarInt("mutator_bo_perk_icons") == 2)
+	{
+		self clientfield::set_player_uimodel( "hudItems.perks.sleight_of_hand_recolour", state );
+	}
+	else
+	{
+		self clientfield::set_player_uimodel( PERK_CLIENTFIELD_SLEIGHT_OF_HAND, state );
+	}
+}
+
+function staminup_set_clientfield( state )
+{
+	if(GetDvarInt("mutator_bo_perk_icons") == 1 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
+	{
+		self clientfield::set_player_uimodel( "hudItems.perks.marathon_bo", state );
+	}
+	else if(GetDvarInt("mutator_bo_perk_icons") == 2)
+	{
+		self clientfield::set_player_uimodel( "hudItems.perks.marathon_recolour", state );
+	}
+	else
+	{
+		self clientfield::set_player_uimodel( PERK_CLIENTFIELD_STAMINUP, state );
+	}
+}
+
+function widows_wine_set_clientfield( state )
+{
+	if(GetDvarInt("mutator_bo_perk_icons") == 1 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
+	{
+		self clientfield::set_player_uimodel( "hudItems.perks.widows_wine_bo", state );
+	}
+	else if(GetDvarInt("mutator_bo_perk_icons") == 2)
+	{
+		self clientfield::set_player_uimodel( "hudItems.perks.widows_wine_recolour", state );
+	}
+	else
+	{
+		self clientfield::set_player_uimodel( PERK_CLIENTFIELD_WIDOWS_WINE, state );
+	}
+}
+
+function doubletap_set_clientfield(state)
+{
+	if(GetDvarInt("mutator_bo_perk_icons") == 1 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
+	{
+		self clientfield::set_player_uimodel( "hudItems.perks.doubletap_bo", state );
+	}
+	else if(GetDvarInt("mutator_bo_perk_icons") == 2)
+	{
+		self clientfield::set_player_uimodel( "hudItems.perks.doubletap_recolour", state );
+	}
+	else
+	{
+		self clientfield::set_player_uimodel("hudItems.perks.doubletap", state);
 	}
 }
 

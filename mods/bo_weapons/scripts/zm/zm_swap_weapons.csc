@@ -2189,6 +2189,49 @@ function swap_wall_weapon()
 				}
 				break;
 			}
+			case "zm_stalingrad": //Gorod Krovi
+			{ //HzRetro
+				switch(VAL)
+				{
+				case "ar_marksman": //Sheiva
+					ent.zombie_weapon_upgrade = "t5_olympia";
+					break;
+				case "pistol_burst": //RK5
+					ent.zombie_weapon_upgrade = "t5_m14";
+					break;
+				case "shotgun_pump": //KRM-262
+					ent.zombie_weapon_upgrade = "t5_pm63";
+					break;
+				case "pistol_fullauto": //L-CAR 9
+					ent.zombie_weapon_upgrade = "t5_mpl";
+					break;
+				case "smg_burst": //Pharo
+				case "ar_standard": //KN-44
+					ent struct::delete();
+					break;
+				case "smg_standard": //Kuda
+					ent.zombie_weapon_upgrade = "t5_mp5k";
+					break;
+				case "shotgun_precision": //Argus
+					ent.zombie_weapon_upgrade = "t5_stakeout";
+					break;
+				case "ar_cqb": //HVK-30
+					ent.zombie_weapon_upgrade = "sticky_grenade_custom";
+					break;
+				case "ar_accurate": //ICR-1
+					ent struct::delete();
+					break;
+				case "smg_versatile": //VMP
+					ent.zombie_weapon_upgrade = "t5_ak74u";
+					break;
+				case "smg_fastfire": //Vesper
+					ent.zombie_weapon_upgrade = "t5_mp40";
+					break;
+				case "ar_longburst": //M8A7
+					ent.zombie_weapon_upgrade = "t5_m16a1";
+				}
+				break;
+			}
 		}
 		
 		if(ent.zombie_weapon_upgrade == "sticky_grenade_custom" && GetDvarInt("mutator_grenade_wallbuy") == 2)
@@ -2227,8 +2270,12 @@ function swap_wall_weapon()
 			{
 				continue;
 			}
-			if(GetDvarString("mapname") != "zm_asylum" || GetDvarString("mapname") != "zm_asylum" && count != 0) //Don't delete German side
+			if((GetDvarString("mapname") == "zm_asylum" && count == 0) || (GetDvarInt("mutator_waw_wall_weapons") != 2 && (GetDvarString("mapname") == "zm_asylum" || GetDvarString("mapname") == "zm_sumpf" || GetDvarString("mapname") == "zm_factory")))
+				ent.zombie_weapon_upgrade = "bo1_bouncingbetty";
+			else if(GetDvarString("mapname") != "zm_asylum" || (GetDvarString("mapname") == "zm_asylum" && count != 0)) //Don't delete German side
 				ent struct::delete();
+			
+			count = 1;
 		}
 	}
 }
