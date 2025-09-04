@@ -17,6 +17,8 @@ scriptparsetree,scripts/zm/_zm_perks.csc
 scriptparsetree,scripts/zm/_zm_perk_random.gsc
 scriptparsetree,scripts/zm/_zm_perk_random.csc
 
+scriptparsetree,scripts/shared/xmodelalias_shared.gscc
+scriptparsetree,scripts/zm/_zm_xmodelalias.gscc
 scriptparsetree,scripts/zm/gametypes/_clientids.gsc
 scriptparsetree,scripts/zm/_zm_ffotd.csc
 scriptparsetree,scripts/zm/_zm_ffotd.gsc

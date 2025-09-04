@@ -46,6 +46,7 @@ Then install all files from this repo into your Black Ops III installation apart
 ## Credits
 
 * TheAllNightFall for making this possible with the majority of the weapon ports in this mod
+* Scobalula's [Cereberus](https://github.com/Scobalula/Cerberus-Repo/releases/tag/CustomMapsGoVroom) to extract script files for reference purposes from Deadshot.mp4's [COTD Chronicles Conversion Mod](http://steamcommunity.com/sharedfiles/filedetails/?id=2911456494)
 * Scobalula's [Greyhound](https://github.com/Scobalula/Greyhound) for image extraction (circuits camo, chalk drawings)
 * Scobabula's [HydraX](https://github.com/Scobalula/HydraX) for general asset decompilation, especially map _weapons.csv files
 * [Birdman's XModel Tools For Blender](https://github.com/Wast-3/birdmans-xmodel-tools-for-blender)
@@ -54,3 +55,4 @@ Then install all files from this repo into your Black Ops III installation apart
 * [HzRetro](https://www.ugx-mods.com/forum/mlist/hzretro_764845) for contributing wallbuy layout for Origins
 * XcDylan93 for dive-to-prone and sprint/reload cancel script
 * TheSkyeLord for weaponcamo setup from [his own pack](https://www.ugx-mods.com/forum/full-weapons/84/skyes-waw-weapon-ports/24598/) used by me as a basis for WaW weapons
+* Apex for xmodelalias fix ([originally here](https://steamcommunity.com/sharedfiles/filedetails/?id=1833845566), one file extracted with Cerberus and other files downloaded [from here](https://github.com/clixmods/zm_nuked/blob/main/scripts/shared))
