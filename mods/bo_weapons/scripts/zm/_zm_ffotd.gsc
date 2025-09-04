@@ -14,6 +14,7 @@
 #using scripts\zm\_zm_t5;
 #using scripts\zm\_zm_weap_freezegun;
 #using scripts\zm\_zm_weap_bo1bouncingbetty;
+#using scripts\zm\_zm_xmodelalias;
 
 #insert scripts\zm\_zm_perks.gsh;
 #insert scripts\shared\version.gsh;

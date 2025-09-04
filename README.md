@@ -17,7 +17,7 @@ It's advised to make a back-up of wpn_t7_zmb_weapons.gdt, black_ops_3_fx.gdt, si
   * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-snipers%2Fbolt-action
   * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-raygun
   * https://www.devraw.net/approved-assets/theallnightfall/black-ops-1-thundergun
-* Lamy619's [url=https://www.devraw.net/approved-assets/lamy619/waw-bouncing-betties-port]WaW Bouncing Betties Port[/url]
+* Lamy619's [WaW Bouncing Betties Port](https://www.devraw.net/approved-assets/lamy619/waw-bouncing-betties-port)
 * Carrabella & WetEgg's Black ops 1 and 2 crossbow: https://drive.google.com/file/d/1QpNYEj8BWTOKtFTKXWFSnD-k1scunuZJ/view
 * L3akMod: https://wiki.modme.co/wiki/black_ops_3/lua_(lui)/Installation.html
 * Scobalula's T7MTEnhancements: https://github.com/Scobalula/T7MTEnhancements
@@ -57,6 +57,7 @@ Then install all files from this repo into your Black Ops III installation apart
 * TheAllNightFall for making the WaW weapon part of the mod possible
 * [Beandon](https://steamcommunity.com/id/Beandon11) for providing Death Machine announcer voicelines
 * [N7aster](https://steamcommunity.com/profiles/76561199467224180) for providing Black Ops explosion sounds (weapons, PhD Flopper) and "FIVE" quotes from Ascension's Red Telephones
+* Scobalula's [Cereberus](https://github.com/Scobalula/Cerberus-Repo/releases/tag/CustomMapsGoVroom) to extract script files for reference purposes from Deadshot.mp4's [COTD Chronicles Conversion Mod](http://steamcommunity.com/sharedfiles/filedetails/?id=2911456494)
 * Scobalula's [Greyhound](https://github.com/Scobalula/Greyhound) for image extraction (circuits camo, chalk drawings)
 * Scobabula's [HydraX](https://github.com/Scobalula/HydraX) for general asset decompilation, especially map _weapons.csv files
 * [Birdman's XModel Tools For Blender](https://github.com/Wast-3/birdmans-xmodel-tools-for-blender)
@@ -66,3 +67,4 @@ Then install all files from this repo into your Black Ops III installation apart
 * Harrybo21 for crossbow bolt FX and PaP 'monkey bomb' set-up from Blundergat Weapon Pack: https://www.devraw.net/releases/blundergat-weapon-pack
 * XcDylan93 for dive-to-prone and sprint/reload cancel script
 * [hb21_black_ops_3_fx_library_v2.1.0](https://mega.nz/file/6WYARBxB#-NUWhmjzCySBXx9FCBpTy_wvjhe5FsyBec7nPKYwOl0) for fx_muz_thundergun_1p.efx, fx_muz_thundergun_3p.efx, fx_trail_thundergun.efx, fx_muz_thundergun_1p_ug.efx, fx_muz_thundergun_3p_ug.efx, fx_trail_thundergun_ug.efx, fx_muz_thundergun_1p_ug_child.efx, fx_trail_thundergun_tread.efx, fx_trail_thundergun_tread_ug.efx, fx_muz_thundergun_1p_ug_child.efx and pre-requisites gfx_ring_thin_nocull, gfx_fog_slow_md_anim_em_nocull, gfx_decal_blast_white_01
+* Apex for xmodelalias fix ([originally here](https://steamcommunity.com/sharedfiles/filedetails/?id=1833845566), one file extracted with Cerberus and other files downloaded [from here](https://github.com/clixmods/zm_nuked/blob/main/scripts/shared))
