@@ -1996,7 +1996,7 @@ function swap_chalk()
 				switch( GetDvarString("mapname") )
 				{
 				case "zm_theater":
-					ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin + VectorScale((0, 5.5, 1), 1), spawn_loc.angles);
+					ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin + VectorScale((0, 8.5, 1), 1), spawn_loc.angles);
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin, spawn_loc.angles);
@@ -2010,7 +2010,7 @@ function swap_chalk()
 				switch( GetDvarString("mapname") )
 				{
 				case "zm_theater":
-					ent.var_47896610 = util::spawn_model("wallbuy_m16a1_bo2", spawn_loc.origin + VectorScale((-5, -1, 1), 1), spawn_loc.angles);
+					ent.var_47896610 = util::spawn_model("wallbuy_m16a1_bo2", spawn_loc.origin + VectorScale((-6, -1, 0), 1), spawn_loc.angles);
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_m16a1_bo2", spawn_loc.origin, spawn_loc.angles);

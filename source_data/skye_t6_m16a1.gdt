@@ -3986,7 +3986,7 @@
 	"i_t6_wpn_ar_m16_chalk_c" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\skye_ports\\t6_m16a1\\images\\mtl_t6_wpn_ar_m16a2_chalk.tiff"
+		"baseImage" "model_export\\skye_ports\\t6_m16a1\\images\\fxt_zmb_wep_wallbuy_01_m16a1.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -37696,7 +37696,7 @@
 		"physicsConstraints" ""
 		"physicsPreset" ""
 		"preserveOriginalUVs" "0"
-		"scale" "0.4"
+		"scale" "0.437301"
 		"scaleCollMap" "0"
 		"ShadowLOD" "Auto"
 		"skinOverride" "mtl_t6_wpn_ar_m16_wall_chalk mtl_t6_wpn_ar_m16_chalk\r\n"
