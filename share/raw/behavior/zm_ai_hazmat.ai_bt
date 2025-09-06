@@ -1,5 +1,5 @@
 {
-    "id": "zombie",
+    "id": "hazmat",
     "type": "selector",
     "children": [
         {
@@ -11,10 +11,30 @@
                     "type": "condition_script",
                     "interruptName": "death"
                 },
-				{
+                {
                     "id": "selector",
                     "type": "selector",
                     "children": [
+                        {
+                            "id": "zombietesladeathbehavior",
+                            "type": "sequence",
+                            "children": [
+                                {
+                                    "id": "waskilledbytesla",
+                                    "type": "condition_script",
+                                    "scriptFunction": "waskilledbytesla"
+                                },
+                                {
+                                    "id": "tesladeathaction",
+                                    "type": "action",
+                                    "ActionName": "defaultaction",
+                                    "ASMStateName": "death_tesla@hazmat",
+                                    "actionNotify": "death",
+                                    "StartFunction": "zombiedeathaction",
+                                    "TerminateFunction": "startragdoll"
+                                }
+                            ]
+                        },
 						{
 							"id": "freezegundeath",
 							"type": "sequence",
@@ -35,17 +55,17 @@
 								}
 							]
 						},
-						{
-							"id": "deathaction",
-							"type": "action",
-							"ActionName": "defaultaction",
-							"ASMStateName": "death@zombie",
-							"actionNotify": "death",
-							"StartFunction": "zombiedeathaction",
-							"TerminateFunction": "startragdoll"
-						}
-					]
-				}
+                        {
+                            "id": "deathaction",
+                            "type": "action",
+                            "ActionName": "defaultaction",
+                            "ASMStateName": "death@hazmat",
+                            "actionNotify": "death",
+                            "StartFunction": "zombiedeathaction",
+                            "TerminateFunction": "startragdoll"
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -67,7 +87,7 @@
                     "id": "traverseaction",
                     "type": "action",
                     "ActionName": "zombietraverseaction",
-                    "ASMStateName": "traverse@zombie"
+                    "ASMStateName": "traverse@hazmat"
                 }
             ]
         },
@@ -90,7 +110,7 @@
                     "id": "traverseaction",
                     "type": "action",
                     "ActionName": "zombietraverseaction",
-                    "ASMStateName": "traverse_crawler@zombie"
+                    "ASMStateName": "traverse_crawler@hazmat"
                 }
             ]
         },
@@ -107,7 +127,7 @@
                     "id": "idleaction",
                     "type": "action",
                     "ActionName": "zombieidleaction",
-                    "ASMStateName": "idle@zombie",
+                    "ASMStateName": "idle@hazmat",
                     "loopingAction": 1
                 }
             ]
@@ -120,6 +140,11 @@
                     "id": "inplayablearea",
                     "type": "condition_script_negate",
                     "scriptFunction": "inplayablearea"
+                },
+                {
+                    "id": "customarchetypeservice",
+                    "type": "condition_service_script",
+                    "scriptFunction": "zombiecustomarchetypeservice"
                 },
                 {
                     "id": "nonplayableareaselector",
@@ -159,7 +184,7 @@
                                             "id": "moveaction",
                                             "type": "action",
                                             "ActionName": "zombiemoveaction",
-                                            "ASMStateName": "move@zombie",
+                                            "ASMStateName": "move@hazmat",
                                             "loopingAction": 1
                                         }
                                     ]
@@ -197,7 +222,7 @@
                                                     "id": "movetoentranceaction",
                                                     "type": "action",
                                                     "ActionName": "zombiemovetoentranceaction",
-                                                    "ASMStateName": "move@zombie",
+                                                    "ASMStateName": "move@hazmat",
                                                     "loopingAction": 1
                                                 }
                                             ]
@@ -251,7 +276,7 @@
                                                             "id": "movetoattackspotaction",
                                                             "type": "action",
                                                             "ActionName": "zombiemovetoattackspotaction",
-                                                            "ASMStateName": "move@zombie",
+                                                            "ASMStateName": "move@hazmat",
                                                             "loopingAction": 1
                                                         }
                                                     ]
@@ -276,7 +301,7 @@
                                                     "id": "tauntaction",
                                                     "type": "action",
                                                     "ActionName": "zombietauntaction",
-                                                    "ASMStateName": "taunt@zombie",
+                                                    "ASMStateName": "taunt@hazmat",
                                                     "actionNotify": "taunt"
                                                 }
                                             ]
@@ -294,7 +319,7 @@
                                                     "id": "idleaction",
                                                     "type": "action",
                                                     "ActionName": "zombieidleaction",
-                                                    "ASMStateName": "idle@zombie",
+                                                    "ASMStateName": "idle@hazmat",
                                                     "actionTimeMax": 500
                                                 }
                                             ]
@@ -335,14 +360,14 @@
                                             "id": "grabboardaction",
                                             "type": "action",
                                             "ActionName": "grabboardaction",
-                                            "ASMStateName": "grab@zombie",
+                                            "ASMStateName": "grab@hazmat",
                                             "actionNotify": "teardown"
                                         },
                                         {
                                             "id": "pullboardaction",
                                             "type": "action",
                                             "ActionName": "pullboardaction",
-                                            "ASMStateName": "pull@zombie"
+                                            "ASMStateName": "pull@hazmat"
                                         },
                                         {
                                             "id": "selector",
@@ -361,7 +386,7 @@
                                                             "id": "attackthroughboardsaction",
                                                             "type": "action",
                                                             "ActionName": "zombieattackthroughboardsaction",
-                                                            "ASMStateName": "meleebehindboards@zombie",
+                                                            "ASMStateName": "meleebehindboards@hazmat",
                                                             "actionNotify": "attack_melee"
                                                         }
                                                     ]
@@ -379,7 +404,7 @@
                                                             "id": "tauntaction",
                                                             "type": "action",
                                                             "ActionName": "zombietauntaction",
-                                                            "ASMStateName": "taunt@zombie",
+                                                            "ASMStateName": "taunt@hazmat",
                                                             "actionNotify": "taunt"
                                                         }
                                                     ]
@@ -413,7 +438,7 @@
                                     "id": "idleaction",
                                     "type": "action",
                                     "ActionName": "zombieidleaction",
-                                    "ASMStateName": "idle@zombie"
+                                    "ASMStateName": "idle@hazmat"
                                 }
                             ]
                         },
@@ -430,7 +455,7 @@
                                     "id": "mantleaction",
                                     "type": "action",
                                     "ActionName": "zombiemantleaction",
-                                    "ASMStateName": "barricadeenter@zombie"
+                                    "ASMStateName": "barricadeenter@hazmat"
                                 }
                             ]
                         }
@@ -443,9 +468,16 @@
             "type": "parallel",
             "children": [
                 {
-                    "id": "zmislandattackableobjectservice",
+                    "id": "zombieattackableobjectservice",
                     "type": "condition_service_script",
-                    "scriptFunction": "zmislandattackableobjectservice",
+                    "scriptFunction": "zombieattackableobjectservice",
+                    "cooldownMin": 250,
+                    "cooldownMax": 500
+                },
+                {
+                    "id": "zombietraversalservice",
+                    "type": "condition_service_script",
+                    "scriptFunction": "zombietraversalservice",
                     "cooldownMin": 250,
                     "cooldownMax": 500
                 },
@@ -460,9 +492,30 @@
                     "scriptFunction": "inplayablearea"
                 },
                 {
-                    "id": "findfleshservice",
+                    "id": "customarchetypeservice",
                     "type": "condition_service_script",
-                    "scriptFunction": "zombiefindfleshservice"
+                    "scriptFunction": "zombiecustomarchetypeservice"
+                },
+                {
+                    "id": "hazmattargetservice",
+                    "type": "condition_service_script",
+                    "scriptFunction": "hazmattargetservice",
+                    "cooldownMax": 500
+                },
+                {
+                    "id": "shouddohazmatmeleeservice",
+                    "type": "condition_service_script",
+                    "scriptFunction": "shouddohazmatmeleeservice"
+                },
+                {
+                    "id": "shouddohazmatenrageservice",
+                    "type": "condition_service_script",
+                    "scriptFunction": "shouddohazmatenrageservice"
+                },
+                {
+                    "id": "shouddohazmatpainservice",
+                    "type": "condition_service_script",
+                    "scriptFunction": "shouddohazmatpainservice"
                 },
                 {
                     "id": "crawlercollisionservice",
@@ -476,67 +529,26 @@
                     "type": "selector",
                     "children": [
                         {
-                            "id": "zombieknockdownbehavior",
-                            "type": "sequence",
-                            "children": [
-                                {
-                                    "id": "zombieshouldknockdown",
-                                    "type": "condition_script",
-                                    "scriptFunction": "zombieshouldknockdown"
-                                },
-                                {
-                                    "id": "zombieknockdownaction",
-                                    "type": "action",
-                                    "ActionName": "defaultaction",
-                                    "ASMStateName": "knockdown@zombie",
-                                    "StartFunction": "zombieknockdownactionstart"
-                                },
-                                {
-                                    "id": "zombiegetupaction",
-                                    "type": "action",
-                                    "ActionName": "defaultaction",
-                                    "ASMStateName": "getup@zombie",
-                                    "TerminateFunction": "zombiegetupactionterminate"
-                                }
-                            ]
-                        },
-                        {
                             "id": "painbehavior",
                             "type": "sequence",
                             "children": [
                                 {
                                     "id": "shouldshowpain",
                                     "type": "condition_script",
-                                    "scriptFunction": "zombieshoulddisplaypain",
+                                    "scriptFunction": "iszombiewalking",
                                     "interruptName": "pain"
+                                },
+                                {
+                                    "id": "shouldbestunned",
+                                    "type": "condition_script_negate",
+                                    "scriptFunction": "zombieshouldstun"
                                 },
                                 {
                                     "id": "defaultaction",
                                     "type": "action",
                                     "ActionName": "defaultaction",
-                                    "ASMStateName": "pain@zombie",
+                                    "ASMStateName": "pain@hazmat",
                                     "actionTimeMax": 350
-                                }
-                            ]
-                        },
-                        {
-                            "id": "zombiestunbehavior",
-                            "type": "parallel",
-                            "children": [
-                                {
-                                    "id": "shouldbestunned",
-                                    "type": "condition_script",
-                                    "scriptFunction": "zombieshouldstun"
-                                },
-                                {
-                                    "id": "stunaction",
-                                    "type": "action",
-                                    "ActionName": "defaultaction",
-                                    "ASMStateName": "stun_tesla@zombie",
-                                    "StartFunction": "zombiestunactionstart",
-                                    "TerminateFunction": "zombiestunactionend",
-                                    "loopingAction": 1,
-                                    "actionTimeMax": 4000
                                 }
                             ]
                         },
@@ -563,7 +575,7 @@
                                     "id": "jukeaction",
                                     "type": "action",
                                     "ActionName": "defaultaction",
-                                    "ASMStateName": "juke@zombie",
+                                    "ASMStateName": "juke@hazmat",
                                     "StartFunction": "zombiejukeactionstart"
                                 }
                             ]
@@ -599,6 +611,27 @@
 							]
 						},
                         {
+                            "id": "zombiestunbehavior",
+                            "type": "parallel",
+                            "children": [
+                                {
+                                    "id": "shouldbestunned",
+                                    "type": "condition_script",
+                                    "scriptFunction": "zombieshouldstun"
+                                },
+                                {
+                                    "id": "stunaction",
+                                    "type": "action",
+                                    "ActionName": "defaultaction",
+                                    "ASMStateName": "stun_tesla@hazmat",
+                                    "StartFunction": "zombiestunactionstart",
+                                    "TerminateFunction": "zombiestunactionend",
+                                    "loopingAction": 1,
+                                    "actionTimeMax": 4000
+                                }
+                            ]
+                        },
+                        {
                             "id": "moveawaybehavior",
                             "type": "parallel",
                             "children": [
@@ -611,31 +644,8 @@
                                     "id": "moveawayaction",
                                     "type": "action",
                                     "ActionName": "zombiemoveaway",
-                                    "ASMStateName": "move@zombie",
+                                    "ASMStateName": "move@hazmat",
                                     "loopingAction": 1
-                                }
-                            ]
-                        },
-                        {
-                            "id": "meleejumpattackbehavior",
-                            "type": "sequence",
-                            "children": [
-                                {
-                                    "id": "shouldjumpunderwatermelee",
-                                    "type": "condition_script",
-                                    "scriptFunction": "zombieshouldjumpunderwatermelee"
-                                },
-                                {
-                                    "id": "shouldmoveaway",
-                                    "type": "condition_script_negate",
-                                    "scriptFunction": "zombieshouldmoveaway"
-                                },
-                                {
-                                    "id": "meleejumpattackaction",
-                                    "type": "action",
-                                    "ActionName": "defaultaction",
-                                    "ASMStateName": "melee_jump@zombie",
-                                    "actionNotify": "attack_melee"
                                 }
                             ]
                         },
@@ -661,7 +671,7 @@
                                             "id": "zombieattackobject",
                                             "type": "action",
                                             "ActionName": "defaultaction",
-                                            "ASMStateName": "attack_object@zombie",
+                                            "ASMStateName": "attack_object@hazmat",
                                             "actionNotify": "attack_melee",
                                             "StartFunction": "zombieattackobjectstart",
                                             "TerminateFunction": "zombieattackobjectterminate",
@@ -672,25 +682,56 @@
                             ]
                         },
                         {
-                            "id": "meleeattackbehavior",
+                            "id": "hazmatmeleebehavior",
+                            "type": "sequence",
+                            "children": [
+                                {
+                                    "id": "shoulddomelee",
+                                    "type": "condition_script",
+                                    "scriptFunction": "shoulddomelee"
+                                },
+                                {
+                                    "id": "dohazmatmelee",
+                                    "type": "action",
+                                    "ActionName": "dohazmatmelee",
+                                    "ASMStateName": "attack_object@hazmat",
+                                    "actionNotify": "dohazmatmelee"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "painbehavior",
                             "type": "parallel",
                             "children": [
                                 {
-                                    "id": "shouldmeleeattack",
+                                    "id": "shouldpain",
                                     "type": "condition_script",
-                                    "scriptFunction": "zombieshouldmelee"
+                                    "scriptFunction": "shouldpain"
                                 },
                                 {
-                                    "id": "shouldmoveaway",
-                                    "type": "condition_script_negate",
-                                    "scriptFunction": "zombieshouldmoveaway"
-                                },
-                                {
-                                    "id": "meleeattackaction",
+                                    "id": "pain",
                                     "type": "action",
-                                    "ActionName": "defaultaction",
-                                    "ASMStateName": "melee@zombie",
-                                    "actionNotify": "attack_melee"
+                                    "ActionName": "pain",
+                                    "ASMStateName": "affaible@hazmat",
+                                    "actionNotify": "pain"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "enragebehavior",
+                            "type": "parallel",
+                            "children": [
+                                {
+                                    "id": "shoudenrage",
+                                    "type": "condition_script",
+                                    "scriptFunction": "shoudenrage"
+                                },
+                                {
+                                    "id": "enrage",
+                                    "type": "action",
+                                    "ActionName": "enrage",
+                                    "ASMStateName": "enrage@hazmat",
+                                    "actionNotify": "enrage"
                                 }
                             ]
                         },
@@ -704,14 +745,14 @@
                                     "scriptFunction": "locomotionbehaviorcondition"
                                 },
                                 {
-                                    "id": "zombieshouldknockdown",
-                                    "type": "condition_script_negate",
-                                    "scriptFunction": "zombieshouldknockdown"
-                                },
-                                {
                                     "id": "shouldmoveaway",
                                     "type": "condition_script_negate",
                                     "scriptFunction": "zombieshouldmoveaway"
+                                },
+                                {
+                                    "id": "shouldbestunned",
+                                    "type": "condition_script_negate",
+                                    "scriptFunction": "zombieshouldstun"
                                 },
                                 {
                                     "id": "shouldjuke",
@@ -724,14 +765,19 @@
 									"scriptFunction": "zombieshouldsidestep"
 								},
                                 {
-                                    "id": "shouldmeleeattack",
+                                    "id": "shoulddomelee",
                                     "type": "condition_script_negate",
-                                    "scriptFunction": "zombieshouldmelee"
+                                    "scriptFunction": "shoulddomelee"
                                 },
                                 {
-                                    "id": "shouldjumpunderwatermelee",
+                                    "id": "shouldpain",
                                     "type": "condition_script_negate",
-                                    "scriptFunction": "zombieshouldjumpunderwatermelee"
+                                    "scriptFunction": "shouldpain"
+                                },
+                                {
+                                    "id": "shoudenrage",
+                                    "type": "condition_script_negate",
+                                    "scriptFunction": "shoudenrage"
                                 },
                                 {
                                     "id": "zombieisatattackobject",
@@ -742,7 +788,7 @@
                                     "id": "moveaction",
                                     "type": "action",
                                     "ActionName": "zombiemoveaction",
-                                    "ASMStateName": "move@zombie",
+                                    "ASMStateName": "move@hazmat",
                                     "loopingAction": 1
                                 }
                             ]
@@ -757,25 +803,30 @@
                                     "scriptFunction": "zombieshouldmoveaway"
                                 },
                                 {
-                                    "id": "shouldjumpunderwatermelee",
-                                    "type": "condition_script_negate",
-                                    "scriptFunction": "zombieshouldjumpunderwatermelee"
-                                },
-                                {
-                                    "id": "shouldmeleeattack",
-                                    "type": "condition_script_negate",
-                                    "scriptFunction": "zombieshouldmelee"
-                                },
-                                {
                                     "id": "shouldmove",
                                     "type": "condition_script_negate",
                                     "scriptFunction": "locomotionbehaviorcondition"
                                 },
                                 {
+                                    "id": "shoulddomelee",
+                                    "type": "condition_script_negate",
+                                    "scriptFunction": "shoulddomelee"
+                                },
+                                {
+                                    "id": "shouldpain",
+                                    "type": "condition_script_negate",
+                                    "scriptFunction": "shouldpain"
+                                },
+                                {
+                                    "id": "shoudenrage",
+                                    "type": "condition_script_negate",
+                                    "scriptFunction": "shoudenrage"
+                                },
+                                {
                                     "id": "idleaction",
                                     "type": "action",
                                     "ActionName": "zombieidleaction",
-                                    "ASMStateName": "idle@zombie",
+                                    "ASMStateName": "idle@hazmat",
                                     "loopingAction": 1
                                 }
                             ]

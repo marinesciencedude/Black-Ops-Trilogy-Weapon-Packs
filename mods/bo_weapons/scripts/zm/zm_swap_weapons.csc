@@ -2229,6 +2229,59 @@ function swap_wall_weapon()
 					break;
 				case "ar_longburst": //M8A7
 					ent.zombie_weapon_upgrade = "t5_m16a1";
+					break;
+				}
+				break;
+			}
+			case "zm_nuked": //Nuketown Zombies
+			{
+				switch(VAL)
+				{
+				case "ar_marksman": //Sheiva
+					{
+						ent.zombie_weapon_upgrade = "t5_olympia";
+						
+						ent.origin += (0, 8, 0);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, 8, 0);
+						
+						break;
+					}
+				case "pistol_burst": //RK5
+					{
+						ent.zombie_weapon_upgrade = "t5_m14";
+						
+						ent.origin += (0, -10, 0);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, -10, 0);
+						
+						break;
+					}
+				case "shotgun_pump": //KRM-262
+					ent.zombie_weapon_upgrade = "t5_stakeout";
+					break;
+				case "ar_longburst": //M8A7
+					ent.zombie_weapon_upgrade = "t5_m16a1";
+					break;
+				case "pistol_fullauto": //L-CAR 9
+					ent.zombie_weapon_upgrade = "t5_mpl";
+					break;
+				case "smg_standard": //Kuda
+					ent.zombie_weapon_upgrade = "t5_mp5k";
+					break;
+				case "smg_versatile": //VMP
+					{
+						ent.zombie_weapon_upgrade = "t5_ak74u";
+						
+						ent.origin += (10, 0, 0);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (10, 0, 0);
+						
+						break;
+					}
+				case "frag_grenade":
+					ent.zombie_weapon_upgrade = "sticky_grenade_custom";
+					break;
 				}
 				break;
 			}

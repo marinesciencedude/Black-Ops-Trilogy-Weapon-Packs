@@ -1,0 +1,86 @@
+{
+    "states": {
+        "debug": {
+            "substates": {
+                "void": {
+                    "animation_selector": "void@debug"
+                }
+            }
+        },
+        "traversal": {
+            "substates": {
+                "air": {
+                    "animation_selector": "air@traversal",
+                    "loopsync": true
+                },
+                "jump": {
+                    "animation_selector": "jump@traversal"
+                },
+                "land": {
+                    "animation_selector": "land@traversal"
+                }
+            }
+        },
+        "zombie_napalm": {
+            "substates": {
+                "barricadeenter": {
+                    "animation_selector": "barricadeenter@zombie_napalm"
+                },
+                "death": {
+                    "animation_selector": "death@zombie_napalm",
+                    "terminal": true,
+                    "requires_ragdoll_notetrack": true
+                },
+                "getup": {
+                    "animation_selector": "getup@zombie_napalm"
+                },
+				"side_step": 
+				{
+                    "animation_selector": "side_step@zombie"
+                },
+                "grab": {
+                    "animation_selector": "grab@zombie_napalm"
+                },
+                "hold": {
+                    "animation_selector": "hold@zombie_napalm"
+                },
+                "idle": {
+                    "animation_selector": "idle@zombie_napalm"
+                },
+                "knockdown": {
+                    "animation_selector": "knockdown@zombie_napalm"
+                },
+                "meleebehindboards": {
+                    "animation_selector": "meleebehindboards@zombie_napalm"
+                },
+                "move": {
+                    "animation_selector": "move@zombie_napalm",
+                    "loopsync": true,
+                    "cleanloop": true,
+                    "multipledelta": true
+                },
+                "napalm_zombie_explode": {
+                    "animation_selector": "napalm_zombie_explode@zombie_napalm"
+                },
+                "pull": {
+                    "animation_selector": "pull@zombie_napalm"
+                },
+                "stun_tesla": {
+                    "animation_selector": "stun_tesla@zombie_napalm",
+                    "loopsync": true,
+                    "cleanloop": true
+                },
+				"freezegun_death": {
+                    "animation_selector": "freezegun_freeze_death@zombie",
+                    "terminal": true
+                },
+                "taunt": {
+                    "animation_selector": "taunt@zombie_napalm"
+                },
+                "traverse": {
+                    "animation_selector": "traverse@zombie_napalm"
+                }
+            }
+        }
+    }
+}

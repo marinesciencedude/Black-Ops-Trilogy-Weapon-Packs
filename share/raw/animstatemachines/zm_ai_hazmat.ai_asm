@@ -1,0 +1,92 @@
+{
+    "states": {
+        "debug": {
+            "substates": {
+                "void": {
+                    "animation_selector": "void@debug"
+                }
+            }
+        },
+        "hazmat": {
+            "substates": {
+                "affaible": {
+                    "animation_selector": "affaible@hazmat"
+                },
+                "attack_object": {
+                    "animation_selector": "attack_object@hazmat"
+                },
+                "barricadeenter": {
+                    "animation_selector": "barricadeenter@hazmat"
+                },
+                "death": {
+                    "animation_selector": "death@hazmat",
+                    "terminal": true,
+                    "requires_ragdoll_notetrack": true
+                },
+                "death_tesla": {
+                    "animation_selector": "death_tesla@hazmat",
+                    "terminal": true,
+                    "requires_ragdoll_notetrack": true
+                },
+                "enrage": {
+                    "animation_selector": "enrage@hazmat"
+                },
+				"side_step": 
+				{
+                    "animation_selector": "side_step@zombie"
+                },
+                "grab": {
+                    "animation_selector": "grab@hazmat"
+                },
+                "hold": {
+                    "animation_selector": "hold@hazmat"
+                },
+                "idle": {
+                    "animation_selector": "idle@hazmat"
+                },
+                "juke": {
+                    "animation_selector": "juke@hazmat"
+                },
+                "melee": {
+                    "animation_selector": "melee@hazmat"
+                },
+                "meleebehindboards": {
+                    "animation_selector": "meleebehindboards@hazmat"
+                },
+                "move": {
+                    "animation_selector": "move@hazmat",
+                    "loopsync": true,
+                    "cleanloop": true,
+                    "multipledelta": true
+                },
+                "pain": {
+                    "animation_selector": "pain@hazmat",
+                    "loopsync": true,
+                    "cleanloop": true,
+                    "multipledelta": true
+                },
+                "pull": {
+                    "animation_selector": "pull@hazmat"
+                },
+                "stun_tesla": {
+                    "animation_selector": "stun_tesla@hazmat",
+                    "loopsync": true,
+                    "cleanloop": true
+                },
+				"freezegun_death": {
+                    "animation_selector": "freezegun_freeze_death@zombie",
+                    "terminal": true
+                },
+                "taunt": {
+                    "animation_selector": "taunt@hazmat"
+                },
+                "traverse": {
+                    "animation_selector": "traverse@hazmat"
+                },
+                "traverse_crawler": {
+                    "animation_selector": "traverse_crawler@hazmat"
+                }
+            }
+        }
+    }
+}

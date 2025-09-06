@@ -2391,6 +2391,59 @@ function swap_wall_weapon()
 					break;
 				case "ar_longburst": //M8A7
 					ent.zombie_weapon_upgrade = "t5_m16a1";
+					break;
+				}
+				break;
+			}
+			case "zm_nuked": //Nuketown Zombies
+			{
+				switch(VAL)
+				{
+				case "ar_marksman": //Sheiva
+					{
+						ent.zombie_weapon_upgrade = "t5_olympia";
+						
+						ent.origin += (0, 8, 0);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, 8, 0);
+						
+						break;
+					}
+				case "pistol_burst": //RK5
+					{
+						ent.zombie_weapon_upgrade = "t5_m14";
+						
+						ent.origin += (0, -10, 0);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, -10, 0);
+						
+						break;
+					}
+				case "shotgun_pump": //KRM-262
+					ent.zombie_weapon_upgrade = "t5_stakeout";
+					break;
+				case "ar_longburst": //M8A7
+					ent.zombie_weapon_upgrade = "t5_m16a1";
+					break;
+				case "pistol_fullauto": //L-CAR 9
+					ent.zombie_weapon_upgrade = "t5_mpl";
+					break;
+				case "smg_standard": //Kuda
+					ent.zombie_weapon_upgrade = "t5_mp5k";
+					break;
+				case "smg_versatile": //VMP
+					{
+						ent.zombie_weapon_upgrade = "t5_ak74u";
+						
+						ent.origin += (10, 0, 0);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (10, 0, 0);
+						
+						break;
+					}
+				case "frag_grenade":
+					ent.zombie_weapon_upgrade = "sticky_grenade_custom";
+					break;
 				}
 				break;
 			}
@@ -3084,6 +3137,9 @@ function swap_chalk()
 					olympia = 1;
 					break;
 				}
+				case "zm_nuked": //Nuketown Zombies
+					ent.var_47896610 = util::spawn_model("wallbuy_olympia", spawn_loc.origin + VectorScale((1, 0, -2), 1), spawn_loc.angles);
+					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_olympia", spawn_loc.origin, spawn_loc.angles);
 					break;
@@ -3099,6 +3155,7 @@ function swap_chalk()
 				case "zm_theater": //Kino der Toten
 				case "zm_cosmodrome": //Ascension
 				case "zm_moon":
+				case "zm_nuked": //Nuketown Zombies
 					ent.var_47896610 = util::spawn_model("wallbuy_stakeout", spawn_loc.origin + VectorScale((0, -4, 0), 1), spawn_loc.angles);
 					break;
 				case "zm_temple": //Shangri-La
@@ -3449,6 +3506,9 @@ function swap_chalk()
 				case "zm_stalingrad": //Gorod Krovi
 					ent.var_47896610 = util::spawn_model("wallbuy_m16a1", spawn_loc.origin + VectorScale((0, 3, 1), 1), spawn_loc.angles);
 					break;
+				case "zm_nuked": //Nuketown Zombies
+					ent.var_47896610 = util::spawn_model("wallbuy_m16a1", spawn_loc.origin + VectorScale((-2.5, 0, 1.2), 1), spawn_loc.angles);
+					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_m16a1", spawn_loc.origin, spawn_loc.angles);
 					break;
@@ -3619,6 +3679,10 @@ function swap_claymores()
 		case "zm_cosmodrome": //Ascension
 		case "zm_temple": //Shangri-La, need to replace with Spikemore
 		case "zm_moon":
+		case "zm_nuked":
+		case "zm_zod":
+		case "zm_castle":
+		case "zm_island":
 			{
 				claymore = Spawn("trigger_radius_use", spawn_loc.origin, 0, 84, 72);
 				claymore.targetname = "claymore_trigger";

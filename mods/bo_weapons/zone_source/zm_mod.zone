@@ -58,6 +58,10 @@ aitype,spawner_zm_tomb_zombie
 //aitype,spawner_zm_tomb_templar
 aitype,spawner_zm_island_zombie
 aitype,spawner_zm_island_zombie_2
+aitype,spawner_zm_nuketown_zombie
+aitype,spawner_zm_t7_napalm_zombie
+aitype,spawner_zm_nuketown_zombie_hazmat_elemental
+aitype,spawner_zm_hazmatzombie
 scriptparsetree,scripts/zm/_hb21_zm_behavior.gsc
 
 //scriptparsetree,scripts/zm/_zm_ai_dogs.gsc
@@ -75,6 +79,7 @@ stringtable,gamedata/weapons/zm/zm_levelcommon_weapons.csv
 stringtable,gamedata/weapons/zm/zm_castle_weapons.csv
 stringtable,gamedata/weapons/zm/zm_island_weapons.csv
 stringtable,gamedata/weapons/zm/zm_stalingrad_weapons.csv
+stringtable,gamedata/weapons/zm/zm_nuked_weapons.csv
 
 stringtable,gamedata/weapons/zm/zm_zod_weapons.csv
 stringtable,gamedata/tables/zm/zm_zod_pods.csv
