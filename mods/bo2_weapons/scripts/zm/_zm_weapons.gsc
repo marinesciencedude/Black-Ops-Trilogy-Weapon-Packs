@@ -2623,6 +2623,305 @@ function give_build_kit_weapon( weapon )
 	return weapon;
 }
 
+function give_pap_weapon( weapon )
+{
+	upgraded = false;
+	camo = undefined;
+	base_weapon = weapon;
+	if ( is_weapon_upgraded( weapon ) )
+	{
+		if( isdefined(weapon.pap_camo_to_use) )
+		{
+			camo = weapon.pap_camo_to_use;
+		}
+		else
+		{	
+			camo = get_pack_a_punch_camo_index( undefined );
+		}
+		upgraded = true;
+		base_weapon = get_base_weapon( weapon );
+	}
+
+	if ( is_weapon_included( base_weapon ) )
+	{
+		force_attachments = get_force_attachments( base_weapon.rootWeapon );
+	}
+
+	if ( IsDefined( force_attachments ) && force_attachments.size )
+	{
+		if ( upgraded )
+		{
+			packed_attachments = [];
+			packed_attachments[packed_attachments.size] = "extclip";
+			packed_attachments[packed_attachments.size] = "fmj";
+			force_attachments = ArrayCombine( force_attachments, packed_attachments, false, false );
+		}
+
+		weapon = GetWeapon( weapon.rootWeapon.name, force_attachments );
+
+		if ( !IsDefined( camo ) )
+		{
+			camo = 0;
+		}
+
+		weapon_options = self CalcWeaponOptions( camo, 0, 0 );
+
+		acvi = 0;
+	}
+	else if(weapon_supports_attachments(weapon) && zm_pap_util::can_swap_attachments())
+	{
+		if ( !IsDefined( camo ) )
+		{
+			camo = 0;
+		}
+
+		weapon_options = self CalcWeaponOptions( camo, 0, 0 );
+
+		acvi = 0;
+	}
+	else
+	{
+		weapon = self GetBuildKitWeapon( weapon, upgraded );
+
+		weapon_options = self GetBuildKitWeaponOptions( weapon, camo );
+
+		acvi = self GetBuildKitAttachmentCosmeticVariantIndexes( weapon, upgraded );
+	}
+
+	self GiveWeapon( weapon, weapon_options, acvi );
+
+	return weapon;
+}
+
+function weapon_give_pap( weapon, is_upgrade = false, magic_box = false, nosound = false, b_switch_weapon = true ) // is_upgrade and magic_box are ignored
+{
+	primaryWeapons = self GetWeaponsListPrimaries(); 
+	initial_current_weapon = self getCurrentWeapon();
+	current_weapon = self zm_weapons::switch_from_alt_weapon( initial_current_weapon );
+
+	assert( self player_can_use_content( weapon ) );
+
+	//if is not an upgraded perk purchase
+	if( !IsDefined( is_upgrade ) )
+	{
+		is_upgrade = false;
+	}
+
+	weapon_limit = zm_utility::get_player_weapon_limit( self );
+
+	if ( zm_equipment::is_equipment( weapon ) )
+	{
+		self zm_equipment::give( weapon );
+	}
+
+	if ( weapon.isriotshield )
+	{
+		if ( isdefined( self.player_shield_reset_health ) )
+		{
+			self [[self.player_shield_reset_health]]();
+		}
+	}
+
+	if ( self HasWeapon( weapon ) )
+	{
+		if ( weapon.isBallisticKnife )
+		{
+			self notify( "zmb_lost_knife" );
+		}
+
+		self GiveStartAmmo( weapon );
+		if ( !zm_utility::is_offhand_weapon( weapon ) )
+		{
+			self SwitchToWeapon( weapon );
+		}
+
+		self notify( "weapon_give", weapon );
+		return weapon;
+	}
+
+	// check for ray gun variation if already have a ray gun
+	if( weapon.name == "ray_gun" || weapon.name == "raygun_mark2" )
+	{
+		// if have mark2 and pulled mark1 just give ammo
+		if ( self has_weapon_or_upgrade( GetWeapon( "raygun_mark2" ) ) && weapon.name == "ray_gun" )
+		{
+			for( i = 0; i < primaryWeapons.size; i++ )
+			{
+				if( IsSubstr( primaryWeapons[i].name, "raygun_mark2" ) )
+				{	
+					self GiveStartAmmo( primaryWeapons[i] );
+					break;
+				}
+			}			
+
+			self notify( "weapon_give", weapon );
+			return weapon;
+		}
+		else if( self has_weapon_or_upgrade( GetWeapon( "ray_gun" ) ) && weapon.name == "raygun_mark2" )
+		{	
+			// change out ray gun for mark 2
+			for( i = 0; i < primaryWeapons.size; i++ )
+			{
+				if( IsSubstr( primaryWeapons[i].name, "ray_gun" ) )
+				{	
+					self weapon_take( primaryWeapons[i] ); 				
+					break;
+				}
+			}
+			
+			weapon = self give_build_kit_weapon( weapon );
+			self notify( "weapon_give", weapon );
+
+			self GiveStartAmmo( weapon );
+			
+			self SwitchToWeapon( weapon ); 									
+			return weapon;
+		}
+	}
+
+	if ( zm_utility::is_melee_weapon( weapon ) )
+	{
+		current_weapon=zm_melee_weapon::change_melee_weapon( weapon, current_weapon );
+	}
+	else if ( zm_utility::is_hero_weapon( weapon ) )
+	{
+		old_hero = self zm_utility::get_player_hero_weapon();
+		if ( old_hero != level.weaponNone )
+		{
+			self weapon_take( old_hero ); 
+		}
+
+		self zm_utility::set_player_hero_weapon( weapon );
+	}
+	else if ( zm_utility::is_lethal_grenade( weapon ) )
+	{
+		old_lethal = self zm_utility::get_player_lethal_grenade();
+		if ( old_lethal != level.weaponNone )
+		{
+			self weapon_take( old_lethal ); 
+		}
+
+		self zm_utility::set_player_lethal_grenade( weapon );
+	}
+	else if ( zm_utility::is_tactical_grenade( weapon ) )
+	{
+		old_tactical = self zm_utility::get_player_tactical_grenade();
+		if ( old_tactical != level.weaponNone )
+		{
+			self weapon_take( old_tactical ); 
+		}
+
+		self zm_utility::set_player_tactical_grenade( weapon );
+	} 
+	else if ( zm_utility::is_placeable_mine( weapon ) )
+	{
+		old_mine = self zm_utility::get_player_placeable_mine();
+		if ( old_mine != level.weaponNone )
+		{
+			self weapon_take( old_mine ); 
+		}
+
+		self zm_utility::set_player_placeable_mine( weapon );
+	} 
+
+	if ( !zm_utility::is_offhand_weapon( weapon ) )
+	{
+		self zm_weapons::take_fallback_weapon();
+	}
+
+	// This should never be true for the first time.
+	if ( primaryWeapons.size >= weapon_limit )
+	{
+
+		if ( zm_utility::is_placeable_mine( current_weapon ) || zm_equipment::is_equipment( current_weapon ) )
+		{
+			current_weapon = undefined;
+		}
+
+		if ( isdefined( current_weapon ) )
+		{
+			if ( !zm_utility::is_offhand_weapon( weapon ) )
+			{
+				if ( current_weapon.isBallisticKnife )
+				{
+					self notify( "zmb_lost_knife" );
+				}
+
+				self weapon_take( current_weapon ); 
+				
+				// If its a dualoptic weapon there are two weapons that need to be removed
+				if ( isdefined(initial_current_weapon) && IsSubStr(initial_current_weapon.name, "dualoptic") )
+				{
+					self weapon_take( initial_current_weapon ); 
+				}
+			}
+		} 
+	}
+
+	if ( IsDefined( level.zombiemode_offhand_weapon_give_override ) )
+	{
+		if ( self [[ level.zombiemode_offhand_weapon_give_override ]]( weapon ) )
+		{
+			self notify( "weapon_give", weapon );
+			self zm_utility::play_sound_on_ent( "purchase" );
+			return weapon;
+		}
+	}
+
+	if ( weapon.isBallisticKnife )
+	{
+		weapon = self zm_melee_weapon::give_ballistic_knife( weapon, is_weapon_upgraded( weapon ) );
+	}
+	else if( zm_utility::is_placeable_mine( weapon ) )
+	{
+		self thread zm_placeable_mine::setup_for_player(weapon);
+		self play_weapon_vo( weapon, magic_box );
+		self notify( "weapon_give", weapon );
+		return weapon;
+	}
+	
+	// run any custom weapon callbacks here
+	if ( IsDefined( level.zombie_weapons_callbacks ) && IsDefined( level.zombie_weapons_callbacks[ weapon ] ) )
+	{
+		self thread [[ level.zombie_weapons_callbacks[ weapon ] ]]();
+		play_weapon_vo( weapon, magic_box );
+		self notify( "weapon_give", weapon );
+		return weapon;
+	}
+
+	if ( !IS_TRUE( nosound ) )
+	{
+		self zm_utility::play_sound_on_ent( "purchase" );
+	}
+
+	if(weapon_supports_attachments(weapon) && zm_pap_util::can_swap_attachments())
+		weapon = self give_pap_weapon( weapon );
+	else
+		weapon = self give_build_kit_weapon( weapon );
+	self notify( "weapon_give", weapon );
+
+	self GiveStartAmmo( weapon );
+
+	if ( b_switch_weapon && !zm_utility::is_offhand_weapon( weapon ) )
+	{
+		if( !zm_utility::is_melee_weapon( weapon ) )
+		{
+			self SwitchToWeapon( weapon );
+		}
+		else
+		{
+			self SwitchToWeapon( current_weapon );
+		}
+	}
+	 
+	if ( !IS_TRUE( nosound ) )
+	{
+		self play_weapon_vo( weapon, magic_box );
+	}
+
+	return weapon;
+}
+
 // T8 TODO - get rid of is_upgrade and magic_box
 function weapon_give( weapon, is_upgrade = false, magic_box = false, nosound = false, b_switch_weapon = true ) // is_upgrade and magic_box are ignored
 {

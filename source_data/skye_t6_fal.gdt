@@ -3792,7 +3792,7 @@
 	}
 	"t6_camo_fal_custom_base140" ( "weaponcamo.gdf" )
 	{
-		"baseIndex" "136"
+		"baseIndex" "140"
 		"configstringFileType" "WEAPONCAMO"
 		"material1_10_base_material_1" "mtl_t6_wpn_ar_fal_camo1"
 		"material1_10_base_material_10" ""
@@ -4169,7 +4169,7 @@
 		"material1_1_detail_normal_scale_x" "8"
 		"material1_1_detail_normal_scale_y" "8"
 		"material1_1_gloss_blend" "0"
-		"material1_1_material" ""
+		"material1_1_material" "mtl_t7_camo_bo1_pap"
 		"material1_1_normal_amount" "0"
 		"material1_1_numBaseMaterials" "1"
 		"material1_1_rotation" "0"
@@ -4554,7 +4554,7 @@
 		"material1_2_detail_normal_scale_x" "8"
 		"material1_2_detail_normal_scale_y" "8"
 		"material1_2_gloss_blend" "0"
-		"material1_2_material" ""
+		"material1_2_material" "mtl_t7_camo_etching"
 		"material1_2_normal_amount" "0"
 		"material1_2_numBaseMaterials" "1"
 		"material1_2_rotation" "0"
@@ -4939,7 +4939,7 @@
 		"material1_3_detail_normal_scale_x" "8"
 		"material1_3_detail_normal_scale_y" "8"
 		"material1_3_gloss_blend" "0"
-		"material1_3_material" ""
+		"material1_3_material" "mtl_t7_camo_etching"
 		"material1_3_normal_amount" "0"
 		"material1_3_numBaseMaterials" "1"
 		"material1_3_rotation" "0"
@@ -9044,7 +9044,7 @@
 		"material2_9_trans_y" "0"
 		"material2_9_useGlossMap" "0"
 		"material2_9_useNormalMap" "0"
-		"numCamos" "1"
+		"numCamos" "3"
 	}
     "t6_camo_fal_dlc1_base76" ( "weaponcamo.gdf" )
 	{
@@ -19558,7 +19558,7 @@
 		"material2_9_useNormalMap" "0"
 		"numCamos" "7"
 	}
-    "t6_camo_fal_dlc5_base128" ( "weaponcamo.gdf" )
+	"t6_camo_fal_dlc5_base128" ( "weaponcamo.gdf" )
 	{
 		"baseIndex" "128"
 		"configstringFileType" "WEAPONCAMO"
@@ -21481,8 +21481,8 @@
 		"material1_5_normal_amount" "0"
 		"material1_5_numBaseMaterials" "1"
 		"material1_5_rotation" "0"
-		"material1_5_scale_x" "1.0"
-		"material1_5_scale_y" "1.0"
+		"material1_5_scale_x" "0.5"
+		"material1_5_scale_y" "0.5"
 		"material1_5_trans_x" "0.0"
 		"material1_5_trans_y" "0"
 		"material1_5_useGlossMap" "0"

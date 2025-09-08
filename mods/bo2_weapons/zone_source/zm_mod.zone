@@ -12,6 +12,10 @@ scriptparsetree,scripts/zm/zm_swap_weapons.csc
 scriptparsetree,scripts/zm/_zm_weapons.gsc
 scriptparsetree,scripts/zm/_zm_weapons.csc
 
+//note-to-self: weapons need to have _zm suffix to have the linker even add attachmentuniques
+attachment,grip_t6
+scriptparsetree,scripts/zm/_zm_pack_a_punch.gsc
+
 stringtable,gamedata/weapons/zm/zm_theater_weapons.csv
 stringtable,gamedata/weapons/zm/zm_tomb_weapons.csv
 stringtable,gamedata/weapons/zm/zm_prototype_weapons.csv
@@ -77,7 +81,7 @@ weapon,t6_galil
 weapon,t6_galil_up
 
 weapon,t6_hamr
-weapon,t6_hamr_up
+weaponfull,t6_hamr_up_zm
 
 weapon,t6_kap40
 weapon,t6_kap40_up
