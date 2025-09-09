@@ -602,7 +602,8 @@ function add_zombie_weapon( weapon_name, upgrade_name, hint, cost, weaponVO, wea
 
 	if ( zm_pap_util::can_swap_attachments() && isdefined( upgrade_name ) )
 	{
-		add_attachments( weapon_name, upgrade_name );
+								// bug
+		add_attachments( weapon/*_name*/, upgrade_name );
 	}
 	
 	if ( isDefined( create_vox ) )
@@ -623,15 +624,16 @@ function add_attachments( weapon, upgrade )
 	row = TableLookupRowNum( table, 0, upgrade );
 	if ( row > -1 )
 	{
-		level.zombie_weapons[weapon].default_attachment = TableLookUp( table, 0, upgrade.name, 1 );
+																						// bug
+		level.zombie_weapons[weapon].default_attachment = TableLookUp( table, 0, upgrade/*.name*/, 1 );
 		level.zombie_weapons[weapon].addon_attachments = [];
 		index = 2;
-		next_addon = TableLookUp( table, 0, upgrade.name, index );
+		next_addon = TableLookUp( table, 0, upgrade/*.name*/, index );
 		while ( isdefined( next_addon ) && next_addon.size > 0 )
 		{
 			level.zombie_weapons[weapon].addon_attachments[level.zombie_weapons[weapon].addon_attachments.size] = next_addon;
 			index++;
-			next_addon = TableLookUp( table, 0, upgrade.name, index );
+			next_addon = TableLookUp( table, 0, upgrade/*.name*/, index );
 		}
 	}
 }
@@ -1551,8 +1553,8 @@ function weapon_supports_attachments( weapon )
 {
 	weapon = get_base_weapon( weapon );
 	attachments = level.zombie_weapons[weapon].addon_attachments;
-
-	return (isdefined( attachments ) && attachments.size > 1);
+								//now what would changing from > break...
+	return (isdefined( attachments ) && attachments.size >= 1);
 }
 
 function random_attachment( weapon, exclude )

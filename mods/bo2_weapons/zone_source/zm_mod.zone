@@ -13,7 +13,9 @@ scriptparsetree,scripts/zm/_zm_weapons.gsc
 scriptparsetree,scripts/zm/_zm_weapons.csc
 
 //note-to-self: weapons need to have _zm suffix to have the linker even add attachmentuniques
-attachment,grip_t6
+attachment,grip_bo2
+attachment,dualclip_bo2
+attachment,sf_bo2
 scriptparsetree,scripts/zm/_zm_pack_a_punch.gsc
 
 stringtable,gamedata/weapons/zm/zm_theater_weapons.csv
@@ -40,7 +42,7 @@ weapon,t6_an94_up
 xmodel,wallbuy_an94
 
 weapon,t6_b23r
-weapon,t6_b23r_up
+weaponfull,t6_b23r_up_zm
 xmodel,wallbuy_b23r
 
 weapon,t6_ballista
@@ -54,7 +56,8 @@ weapon,t6_blundergat
 weapon,t6_blundergat_up
 
 weapon,t6_chicom_cqb
-weapon,t6_chicom_cqb_up
+weaponfull,t6_chicom_cqb_up_zm
+weapon,t6_chicom_cqb_up_sf_zm
 
 weapon,t6_death_machine
 weapon,t6_death_machine_up
@@ -63,14 +66,14 @@ weapon,t6_dsr50
 weapon,t6_dsr50_up
 
 weapon,t6_executioner
-weapon,t6_executioner_up
+weaponfull,t6_executioner_up_zm
 
 weapon,t6_fal
 weapon,t6_fal_up
 xmodel,wallbuy_fal_bo2
 
 weapon,t6_fiveseven
-weapon,t6_fiveseven_up
+weaponfull,t6_fiveseven_up_zm
 weapon,t6_fiveseven_rdw_zm
 weapon,t6_fiveseven_ldw_zm
 weapon,t6_fiveseven_rdw_up_zm
@@ -84,7 +87,7 @@ weapon,t6_hamr
 weaponfull,t6_hamr_up_zm
 
 weapon,t6_kap40
-weapon,t6_kap40_up
+weaponfull,t6_kap40_up_zm
 
 weapon,t6_ksg
 weapon,t6_ksg_up

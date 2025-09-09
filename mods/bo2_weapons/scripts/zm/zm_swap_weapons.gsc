@@ -166,8 +166,6 @@ function starter_weapon_extra()
 	{
 		player thread zm_equipment::show_hint_text("The mod should work fine in solo, hope you enjoy!", 5, 1.5, 150);
 	}*/
-	
-	level.zombie_weapons[getweapon("t6_hamr")].addon_attachments = array("reflex", "grip");
 }
 
 /*
