@@ -16,6 +16,8 @@ scriptparsetree,scripts/zm/_zm_weapons.csc
 attachment,grip_bo2
 attachment,dualclip_bo2
 attachment,sf_bo2
+attachment,gl_bo2
+attachment,longbreath_bo2 //EOTech (holo)
 scriptparsetree,scripts/zm/_zm_pack_a_punch.gsc
 
 stringtable,gamedata/weapons/zm/zm_theater_weapons.csv
@@ -93,10 +95,11 @@ weapon,t6_ksg
 weapon,t6_ksg_up
 
 weapon,t6_lsat
-weapon,t6_lsat_up
+weaponfull,t6_lsat_up_zm
 
 weapon,t6_m8a1
-weapon,t6_m8a1_up
+weaponfull,t6_m8a1_up_zm
+//weapon,t6_m8a1_up_gl_zm
 
 weapon,t6_m14
 weapon,t6_m14_up
@@ -108,10 +111,10 @@ weapon,t6_m16a1_launcher_zm
 xmodel,wallbuy_m16a1_bo2
 
 weapon,t6_m27
-weapon,t6_m27_up
+weaponfull,t6_m27_up_zm
 
 weapon,t6_m1216
-weapon,t6_m1216_up
+weaponfull,t6_m1216_up_zm
 
 weapon,t6_m1911
 weapon,t6_m1911_rdw_up_zm
@@ -151,7 +154,7 @@ weapon,t6_python
 weapon,t6_python_up
 
 weapon,t6_rem870mcs
-weapon,t6_rem870mcs_up
+weaponfull,t6_rem870mcs_up_zm
 xmodel,wallbuy_rem870mcs
 
 weapon,t6_remnewmodel
@@ -164,7 +167,7 @@ weapon,t6_rpg
 weapon,t6_rpg_up
 
 weapon,t6_s12
-weapon,t6_s12_up
+weaponfull,t6_s12_up_zm
 
 weapon,t6_scarh
 weapon,t6_scarh_up_zm
@@ -184,7 +187,8 @@ weapon,t6_svu_as
 weapon,t6_svu_as_up
 
 weapon,t6_type25
-weapon,t6_type25_up
+weaponfull,t6_type25_up_zm
+//weapon,t6_type25_up_gl_zm
 
 weapon,t6_uzi
 weapon,t6_uzi_up
