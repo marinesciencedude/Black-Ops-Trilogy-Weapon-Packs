@@ -13,3 +13,7 @@ t6_mtar_up,reflex longbreath_bo2 gl_bo2
 t6_hamr_up,reflex grip_bo2 acog
 t6_m27_up,reflex longbreath_bo2
 t6_lsat_up,reflex grip_bo2 acog
+t6_pdw57_up,reflex
+t6_ballista_up,acog is_bo2
+t6_skorpion_evo_up,reflex dualclip_bo2
+t6_scarh_up,reflex dualclip_bo2 acog

@@ -18,6 +18,7 @@ attachment,dualclip_bo2
 attachment,sf_bo2
 attachment,gl_bo2
 attachment,longbreath_bo2 //EOTech (holo)
+attachment,is_bo2
 scriptparsetree,scripts/zm/_zm_pack_a_punch.gsc
 
 stringtable,gamedata/weapons/zm/zm_theater_weapons.csv
@@ -48,7 +49,7 @@ weaponfull,t6_b23r_up_zm
 xmodel,wallbuy_b23r
 
 weapon,t6_ballista
-weapon,t6_ballista_up
+weaponfull,t6_ballista_up_zm
 xmodel,wallbuy_ballista
 
 weapon,t6_m82a1
@@ -139,7 +140,7 @@ weapon,t6_mp40_up
 xmodel,wallbuy_mp40_bo2
 
 weapon,t6_mtar
-weapon,t6_mtar_up_zm
+weaponfull,t6_mtar_up_zm
 weapon,t6_mtar_launcher_zm
 
 weapon,t6_olympia
@@ -147,7 +148,7 @@ weapon,t6_olympia_up
 xmodel,wallbuy_olympia_bo2
 
 weapon,t6_pdw57
-weapon,t6_pdw57_up
+weaponfull,t6_pdw57_up_zm
 xmodel,wallbuy_pdw57
 
 weapon,t6_python
@@ -170,10 +171,10 @@ weapon,t6_s12
 weaponfull,t6_s12_up_zm
 
 weapon,t6_scarh
-weapon,t6_scarh_up_zm
+weaponfull,t6_scarh_up_zm
 
 weapon,t6_skorpion_evo
-weapon,t6_skorpion_evo_up
+weaponfull,t6_skorpion_evo_up_zm
 
 weapon,t6_smr
 weapon,t6_smr_up
