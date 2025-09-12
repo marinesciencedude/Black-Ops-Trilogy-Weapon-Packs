@@ -37,6 +37,9 @@ scriptparsetree,scripts/zm/_zm_powerup_random_weapon.csc
 scriptparsetree,scripts/zm/_zm_pack_a_punch.gsc
 
 scriptparsetree,scripts/zm/_zm_weap_shrink_ray.gsc
+scriptparsetree,scripts/zm/nuked_utility.gsh
+scriptparsetree,scripts/zm/nuked_utility.gsc
+scriptparsetree,scripts/zm/zm_nuked_perks.gsc
 
 aitype,archetype_zm_factory_zombie
 aitype,spawner_zm_factory_zombie

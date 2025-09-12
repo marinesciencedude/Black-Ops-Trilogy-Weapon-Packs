@@ -6,7 +6,9 @@ As seen on the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetai
 
 Install *all* of these assets first, since files from this repo are meant to override some of the assets. L3akMod and T7MTEnhancements are required additions to ensure Mod Tools can properly build the mod.
 
-It's advised to make a back-up of wpn_t7_zmb_weapons.gdt, black_ops_3_fx.gdt, since this will be replaced with a version that doesn't produce duplicate asset errors with Smurphy's Improved BO3 Ray Gun
+It's advised to make a back-up of wpn_t7_zmb_weapons.gdt, black_ops_3_fx.gdt since this will be replaced with a version that doesn't produce duplicate asset errors with Smurphy's Improved BO3 Ray Gun
+some might want to make a back-up of core_patch.csv or skip copying the zone_source folder as it is only here to demonstrate that weaponoptions.csv must be commented out
+Note also that share\raw\sound\aliases\user_aliases.csv and share\raw\sound\globals\loadspec.csv are replaced if you need to make a back-up of them.
 
 * TheSkyeLord's BO1 Weapon Ports: https://www.ugx-mods.com/forum/full-weapons/84/skyes-bo1-weapon-ports/23143/
 * TheAllNightFall's Weapon Ports (don't forget [Weapon Common](https://drive.google.com/file/d/1pzasvTU0tIFtmKbepyGXPPpdEYNyMXmq):
@@ -65,6 +67,6 @@ Then install all files from this repo into your Black Ops III installation apart
 * Logical Edits for [Custom Perk Icons set-up](https://www.youtube.com/watch?v=m_HqGZy0afs&feature=youtu.be)
 * TescoFresco for [TF's Zombie Options](https://github.com/tescfresc/TFs-Zombie-Options)
 * Harrybo21 for crossbow bolt FX and PaP 'monkey bomb' set-up from Blundergat Weapon Pack: https://www.devraw.net/releases/blundergat-weapon-pack
-* XcDylan93 for dive-to-prone and sprint/reload cancel script
+* XcDylan93 for [dive-to-prone and sprint/reload cancel script]() and [improved Winter's](https://discord.com/channels/230615005194616834/230616047613378560/1416092794048483509) [Howl Scripts](https://discord.com/channels/230615005194616834/230616047613378560/1415799187668209719)
 * [hb21_black_ops_3_fx_library_v2.1.0](https://mega.nz/file/6WYARBxB#-NUWhmjzCySBXx9FCBpTy_wvjhe5FsyBec7nPKYwOl0) for fx_muz_thundergun_1p.efx, fx_muz_thundergun_3p.efx, fx_trail_thundergun.efx, fx_muz_thundergun_1p_ug.efx, fx_muz_thundergun_3p_ug.efx, fx_trail_thundergun_ug.efx, fx_muz_thundergun_1p_ug_child.efx, fx_trail_thundergun_tread.efx, fx_trail_thundergun_tread_ug.efx, fx_muz_thundergun_1p_ug_child.efx and pre-requisites gfx_ring_thin_nocull, gfx_fog_slow_md_anim_em_nocull, gfx_decal_blast_white_01
 * Apex for xmodelalias fix ([originally here](https://steamcommunity.com/sharedfiles/filedetails/?id=1833845566), one file extracted with Cerberus and other files downloaded [from here](https://github.com/clixmods/zm_nuked/blob/main/scripts/shared))

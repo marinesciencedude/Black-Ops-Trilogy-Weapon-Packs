@@ -1483,7 +1483,7 @@ function perk_machine_spawn_init()
 	{
 		perk = s_spawn_pos.script_noteworthy;
 		
-		if(GetDvarInt("mutator_phd_widows") == 1 && perk == PERK_WIDOWS_WINE)
+		if(GetDvarInt("mutator_phd_widows") == 1 && perk == PERK_WIDOWS_WINE && GetDvarString("mapname") != "zm_nuked")
 			perk = PERK_PHDFLOPPER;
 		
 		if(GetDvarInt("mutator_doubletap") == 1 && perk == PERK_DOUBLETAP2)
