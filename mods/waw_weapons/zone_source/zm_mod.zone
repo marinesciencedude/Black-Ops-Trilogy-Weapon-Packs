@@ -32,6 +32,7 @@ scriptparsetree,scripts/zm/dive.gsc
 
 scriptparsetree,scripts/zm/zm_temple_ffotd.gsc
 scriptparsetree,scripts/zm/zm_cosmodrome_ffotd.gsc
+scriptparsetree,scripts/zm/zm_island_ffotd.gsc
 
 scriptparsetree,scripts/zm/_zm_weap_quantum_bomb.gsc
 scriptparsetree,scripts/zm/_zm_powerup_random_weapon.gsc
