@@ -17,6 +17,7 @@
 #using scripts\zm\_zm_spawner;
 #using scripts\zm\_zm_utility;
 #using scripts\zm\_zm_weapons;
+#using scripts\zm\_zm_magicbox;
 
 #using scripts\shared\array_shared;
 
@@ -89,6 +90,9 @@ function setup_weapon( player )
 
 function grab_weapon( player )
 {
+	if(!(player zm_magicbox::can_buy_weapon())) //don't allow pickup
+		return true;
+	
 	weaps = player getweaponslistprimaries();
 	gun = self.weapon_to_give;
 	
