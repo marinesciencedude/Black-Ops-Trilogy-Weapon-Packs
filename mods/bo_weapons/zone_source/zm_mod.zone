@@ -92,6 +92,7 @@ stringtable,gamedata/weapons/zm/zm_der_riese_weapons.csv //Der Riese: Declassifi
 rawfile,vision/black_and_white.vision
 //scriptparsetree,scripts/zm/zm_theater_ffotd.csc
 scriptparsetree,scripts/zm/zm_cosmodrome_ffotd.csc
+scriptparsetree,scripts/zm/zm_island_ffotd.gsc
 
 scriptparsetree,scripts/zm/zm_tomb_dig.gsc
 scriptparsetree,scripts/zm/zm_tomb_challenges.gsc
