@@ -3251,7 +3251,14 @@ function ammo_give( weapon )
 	// Check to see if ammo belongs to a primary weapon
 	if ( !zm_utility::is_offhand_weapon( weapon ) )
 	{
-		weapon = self get_weapon_with_attachments( weapon );
+		weapons = self GetWeaponsList( true );
+		foreach ( w in weapons )
+		{
+			if ( get_nonalternate_weapon(weapon).rootWeapon == w.rootWeapon )
+			{
+				weapon = w;
+			}
+		}
 		
 		if ( isdefined( weapon ) )
 		{
