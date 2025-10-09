@@ -156,6 +156,11 @@ function starter_weapon_extra()
 			player zm_weapons::weapon_give(starting_weapon, 0, 0, 1, 1);
 		}
 	}
+	
+	level.zombie_weapons[GetWeapon("t6_b23r")].mysterybox_attachments = array("extclip");
+	/*level.zombie_weapons[GetWeapon("t6_ak74u")].mysterybox_attachments = array("extclip");
+	level.zombie_weapons[GetWeapon("t6_mp40")].mysterybox_attachments = array("stalker");*/
+	
 	/*level.pack_a_punch_camo_index = 136;
 	foreach(player in GetPlayers())
 	{

@@ -1674,15 +1674,23 @@ function get_upgrade_weapon( weapon, add_attachment )
 	{
 		newWeapon = level.zombie_weapons[rootWeapon].upgrade;
 	}
-
+	
+	att = [];
+	index = 0;
+	if(isdefined(level.zombie_weapons[rootWeapon].mysterybox_attachments))
+	{
+		att = ArrayInsert(att, level.zombie_weapons[rootWeapon].mysterybox_attachments, 0);
+		index = level.zombie_weapons[rootWeapon].mysterybox_attachments.size;
+	}
+	
 	if ( IS_TRUE( add_attachment ) && zm_pap_util::can_swap_attachments() )
 	{
 		oldatt = "none";
 		if ( weapon.attachments.size )
 		{
-			oldatt = weapon.attachments[0];
+			oldatt = weapon.attachments[index];
 		}
-		att = random_attachment( baseWeapon, oldatt );
+		att = ArrayInsert(att, random_attachment( baseWeapon, oldatt ), 1);
 		newWeapon = GetWeapon( newWeapon.name, att );
 	}
 	else

@@ -11,6 +11,7 @@ scriptparsetree,scripts/zm/zm_swap_weapons.gsc
 scriptparsetree,scripts/zm/zm_swap_weapons.csc
 scriptparsetree,scripts/zm/_zm_weapons.gsc
 scriptparsetree,scripts/zm/_zm_weapons.csc
+scriptparsetree,scripts/zm/_zm_magicbox.gsc
 
 //note-to-self: weapons need to have _zm suffix to have the linker even add attachmentuniques
 attachment,grip_bo2
@@ -19,6 +20,8 @@ attachment,sf_bo2
 attachment,gl_bo2
 attachment,longbreath_bo2 //EOTech (holo)
 attachment,is_bo2
+attachment,extclip_b23r
+attachment,extclip_b34r //decided I didn't want to clutter with more underscores
 scriptparsetree,scripts/zm/_zm_pack_a_punch.gsc
 
 stringtable,gamedata/weapons/zm/zm_theater_weapons.csv
@@ -44,7 +47,7 @@ weapon,t6_an94
 weapon,t6_an94_up
 xmodel,wallbuy_an94
 
-weapon,t6_b23r
+weaponfull,t6_b23r_zm
 weaponfull,t6_b23r_up_zm
 xmodel,wallbuy_b23r
 
