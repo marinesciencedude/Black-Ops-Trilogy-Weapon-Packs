@@ -1675,32 +1675,34 @@ function get_upgrade_weapon( weapon, add_attachment )
 		newWeapon = level.zombie_weapons[rootWeapon].upgrade;
 	}
 	
-	att = [];
-	index = 0;
-	if(isdefined(level.zombie_weapons[rootWeapon].mysterybox_attachments))
-	{
-		att = ArrayInsert(att, level.zombie_weapons[rootWeapon].mysterybox_attachments, 0);
-		index = level.zombie_weapons[rootWeapon].mysterybox_attachments.size;
-	}
-	
+	att = weapon.attachments;
+	startatt = att[0];
 	if ( IS_TRUE( add_attachment ) && zm_pap_util::can_swap_attachments() )
 	{
 		oldatt = "none";
-		if ( weapon.attachments.size )
+		if ( att.size )
 		{
-			oldatt = weapon.attachments[index];
+			randomintersect = ArrayIntersect(att, level.zombie_weapons[baseWeapon].addon_attachments);
+			foreach(attachment in randomintersect)
+				ArrayRemoveValue(att, attachment);
+			
+			oldatt = randomintersect[RandomIntRange(0, randomintersect.size)];
 		}
-		att = ArrayInsert(att, random_attachment( baseWeapon, oldatt ), 1);
-		newWeapon = GetWeapon( newWeapon.name, att );
+		
+		att = ArrayCombine( array( random_attachment( baseWeapon, oldatt ) ), att, false, false);
 	}
-	else
+	else if ( isdefined( level.zombie_weapons[rootWeapon] ) && isdefined( level.zombie_weapons[rootWeapon].default_attachment ) )
 	{
-		if ( isdefined( level.zombie_weapons[rootWeapon] ) && isdefined( level.zombie_weapons[rootWeapon].default_attachment ) )
-		{
+		if(att.size && level.zombie_weapons[rootWeapon].default_attachment != "none")
+			att = ArrayCombine(level.zombie_weapons[rootWeapon].default_attachment, att, false, false);
+		else if(!att.size)
 			att = level.zombie_weapons[rootWeapon].default_attachment;
-			newWeapon = GetWeapon( newWeapon.name, att );
-		}
 	}
+	
+	if(att.size == 1)
+		newWeapon = GetWeapon( newWeapon.name, att[0] );
+	else if(att.size)
+		newWeapon = GetWeapon( newWeapon.name, att );
 	
 	return newWeapon;
 }
@@ -1747,7 +1749,8 @@ function weapon_supports_aat( weapon )
 		return false;
 	}
 
-	if ( !aat::is_exempt_weapon( weaponToPack ) )
+	if ( !aat::is_exempt_weapon( weaponToPack ) 
+	|| (zm_pap_util::can_swap_attachments() && weapon_supports_attachments( rootWeapon ) ) )
 	{
 		return true;
 	}
@@ -2652,51 +2655,14 @@ function give_pap_weapon( weapon )
 		base_weapon = get_base_weapon( weapon );
 	}
 
-	if ( is_weapon_included( base_weapon ) )
+	if ( !IsDefined( camo ) )
 	{
-		force_attachments = get_force_attachments( base_weapon.rootWeapon );
+		camo = 0;
 	}
 
-	if ( IsDefined( force_attachments ) && force_attachments.size )
-	{
-		if ( upgraded )
-		{
-			packed_attachments = [];
-			packed_attachments[packed_attachments.size] = "extclip";
-			packed_attachments[packed_attachments.size] = "fmj";
-			force_attachments = ArrayCombine( force_attachments, packed_attachments, false, false );
-		}
+	weapon_options = self CalcWeaponOptions( camo, 0, 0 );
 
-		weapon = GetWeapon( weapon.rootWeapon.name, force_attachments );
-
-		if ( !IsDefined( camo ) )
-		{
-			camo = 0;
-		}
-
-		weapon_options = self CalcWeaponOptions( camo, 0, 0 );
-
-		acvi = 0;
-	}
-	else if(weapon_supports_attachments(weapon) && zm_pap_util::can_swap_attachments())
-	{
-		if ( !IsDefined( camo ) )
-		{
-			camo = 0;
-		}
-
-		weapon_options = self CalcWeaponOptions( camo, 0, 0 );
-
-		acvi = 0;
-	}
-	else
-	{
-		weapon = self GetBuildKitWeapon( weapon, upgraded );
-
-		weapon_options = self GetBuildKitWeaponOptions( weapon, camo );
-
-		acvi = self GetBuildKitAttachmentCosmeticVariantIndexes( weapon, upgraded );
-	}
+	acvi = 0;
 
 	self GiveWeapon( weapon, weapon_options, acvi );
 
@@ -2903,11 +2869,9 @@ function weapon_give_pap( weapon, is_upgrade = false, magic_box = false, nosound
 	{
 		self zm_utility::play_sound_on_ent( "purchase" );
 	}
-
-	if(weapon_supports_attachments(weapon) && zm_pap_util::can_swap_attachments())
-		weapon = self give_pap_weapon( weapon );
-	else
-		weapon = self give_build_kit_weapon( weapon );
+	
+	weapon = self give_pap_weapon( weapon );
+	
 	self notify( "weapon_give", weapon );
 
 	self GiveStartAmmo( weapon );

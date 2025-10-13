@@ -183,11 +183,8 @@ function private third_person_weapon_upgrade( current_weapon, upgrade_weapon, pa
 
 	trigger endon("pap_player_disconnected");
 
-	if(!zm_pap_util::can_swap_attachments())
-	{
-		current_weapon = self GetBuildKitWeapon( current_weapon, false );
-		upgrade_weapon = self GetBuildKitWeapon( upgrade_weapon, true );
-	}
+	/*current_weapon = self GetBuildKitWeapon( current_weapon, false );
+	upgrade_weapon = self GetBuildKitWeapon( upgrade_weapon, true );*/
 
 	trigger.current_weapon = current_weapon;
 	trigger.current_weapon_options = self GetBuildKitWeaponOptions( trigger.current_weapon );
@@ -441,7 +438,7 @@ function private vending_weapon_upgrade()
  		b_weapon_supports_aat = zm_weapons::weapon_supports_aat( current_weapon );
  		isRepack = false;
  		currentAATHashID = -1;
- 		if ( b_weapon_supports_aat || zm_weapons::weapon_supports_attachments( current_weapon ) )
+ 		if ( b_weapon_supports_aat )
  		{
 	 		current_cost = self.aat_cost;
 	 		currentAAT = player aat::getAATOnWeapon(current_weapon);

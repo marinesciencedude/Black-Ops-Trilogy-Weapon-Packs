@@ -1,7 +1,7 @@
 t6_executioner_up,none,extbarrel,,,
 t6_kap40_up,none,dualclip,,,
 t6_fiveseven_up,none,dualclip,,,
-t6_b23r_up,none,dualclip,,,
+t6_b23r_up,none,fastreload,,,
 t6_chicom_cqb_up,none,reflex,grip,dualclip,sf
 t6_rem870mcs_up,none,reflex,,,
 t6_s12_up,none,reflex,extbarrel,,

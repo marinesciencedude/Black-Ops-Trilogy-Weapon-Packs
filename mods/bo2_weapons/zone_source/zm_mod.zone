@@ -16,6 +16,7 @@ scriptparsetree,scripts/zm/_zm_magicbox.gsc
 //note-to-self: weapons need to have _zm suffix to have the linker even add attachmentuniques
 attachment,grip_bo2
 attachment,dualclip_bo2
+attachment,fastreload_bo2
 attachment,sf_bo2
 attachment,gl_bo2
 attachment,longbreath_bo2 //EOTech (holo)
@@ -138,8 +139,8 @@ weapon,t6_mp5
 weapon,t6_mp5_up
 xmodel,wallbuy_mp5
 
-weapon,t6_mp40
-weapon,t6_mp40_up
+weaponfull,t6_mp40_zm
+weaponfull,t6_mp40_up_zm
 xmodel,wallbuy_mp40_bo2
 
 weapon,t6_mtar

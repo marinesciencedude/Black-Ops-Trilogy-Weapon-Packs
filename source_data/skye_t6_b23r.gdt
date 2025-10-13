@@ -34999,19 +34999,13 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
-	"au_t6_b23r_dualclip_bo2" [ "au_t6_b23r_none" ]
-	{
-		"attachmenttype" "dualclip"
-		"reloadQuickAnim" "am_t6_b23r_reload"
-		"reloadQuickEmptyAnim" "am_t6_b23r_reload_empty"
-	}
 	"au_t6_b23r_extclip_b23r" [ "au_t6_b23r_none" ]
 	{
 		"attachmenttype" "extclip"
 	}
-	"au_t6_b23r_up_dualclip_bo2" [ "au_t6_b23r_up_none" ]
+	"au_t6_b23r_up_fastreload_bo2" [ "au_t6_b23r_up_none" ]
 	{
-		"attachmenttype" "dualclip"
+		"attachmenttype" "fastreload"
 		"reloadQuickAnim" "am_t6_b23r_reload"
 		"reloadQuickEmptyAnim" "am_t6_b23r_reload_empty"
 	}
