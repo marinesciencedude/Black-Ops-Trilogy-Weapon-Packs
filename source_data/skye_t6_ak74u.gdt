@@ -33988,4 +33988,16 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
+	"t6_ak74u_extmag" [ "t6_ak74u" ]
+	{
+		"clipSize" "30"
+		"maxAmmo" "6"
+		"startAmmo" "6"
+	}
+	"t6_ak74u_extmag_up" [ "t6_ak74u_up" ]
+	{
+		"clipSize" "50"
+		"maxAmmo" "6"
+		"startAmmo" "6"
+	}
 }

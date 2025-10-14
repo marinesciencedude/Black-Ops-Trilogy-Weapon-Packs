@@ -1821,18 +1821,18 @@ function has_weapon_or_attachments( weapon )
 		return true;
 	}
 	
-	if ( zm_pap_util::can_swap_attachments() )
+	/*if ( zm_pap_util::can_swap_attachments() )
 	{
 		rootWeapon = weapon.rootWeapon;
 		weapons = self GetWeaponsList( true );
 		foreach ( w in weapons )
 		{
-			if ( rootWeapon == w.rootWeapon )
+			if ( rootWeapon == w.rootWeapon || rootWeapon.parentweaponname == w.parentweaponname )
 			{
 				return true;
 			}
 		}
-	}
+	}*/
 	
 	return false;
 }
@@ -1856,6 +1856,15 @@ function has_upgrade( weapon )
 	if ( !has_upgrade && rootWeapon.isBallisticKnife )
 	{
 		has_weapon = self zm_melee_weapon::has_upgraded_ballistic_knife();
+	}
+	
+	weapons = self GetWeaponsList( true );
+	foreach ( w in weapons )
+	{
+		if ( rootWeapon.parentweaponname == w.parentweaponname )
+		{
+			has_upgrade = true;
+		}
 	}
 
 	return has_upgrade;
@@ -3226,7 +3235,7 @@ function ammo_give( weapon )
 		weapons = self GetWeaponsList( true );
 		foreach ( w in weapons )
 		{
-			if ( get_nonalternate_weapon(weapon).rootWeapon == w.rootWeapon )
+			if ( get_nonalternate_weapon(weapon).rootWeapon == w.rootWeapon || get_nonalternate_weapon(weapon).parentweaponname == w.parentweaponname)
 			{
 				weapon = w;
 			}
