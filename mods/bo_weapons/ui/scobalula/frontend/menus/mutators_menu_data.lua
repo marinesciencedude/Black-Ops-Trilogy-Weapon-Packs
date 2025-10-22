@@ -264,13 +264,6 @@ DataSources.MutatorSettingsBO = DataSourceHelpers.ListSetup("MutatorSettingsBO",
 function (arg0, arg1, arg2, arg3, arg4)
 	return
 	{
-		--CoD.OptionsUtility.CreateDvarSettings(
-		--	arg0,
-		--	"HUD",
-		--	"Set Heads-Up Display to that of previous games",
-		--	"MutatorSettings_HUD",
-		--	"mutator_hud",
-		--	BuildStringSettings({"Use Map", "BO"}, "BO"), nil, SetDvarSetting),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"HUD",
@@ -278,13 +271,20 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_HUD",
 			"mutator_hud",
 			BuildStringSettings({"Use Map", "BO"}, "BO"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Perk Machine",
 			"Which perk machine out of PhD Flopper/Widow's Wine will be spawned in the game.",
 			"MutatorSettings_PhDWidows",
-			"mutator_phd_widows",
-            BuildStringSettings({"PhD Flopper", "Widow's Wine"}, "PhD Flopper"), nil, SetDvarSetting),
+			"antiBoostDistance",
+			BuildStringSettings({"PhD Flopper", "Widow's Wine"}, "PhD Flopper") ),
+		--CoD.OptionsUtility.CreateDvarSettings(
+		--	arg0,
+		--	"Perk Machine",
+		--	"Which perk machine out of PhD Flopper/Widow's Wine will be spawned in the game.",
+		--	"MutatorSettings_PhDWidows",
+		--	"mutator_phd_widows",
+        --    BuildStringSettings({"PhD Flopper", "Widow's Wine"}, "PhD Flopper"), nil, SetDvarSetting),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Double Tap",

@@ -35,6 +35,7 @@
 
 #insert scripts\zm\_zm_perks.gsh;
 #insert scripts\zm\_zm_utility.gsh;
+#insert scripts\zm\_zm_mutators.gsh;
 
 #precache( "fx", "_t6/misc/fx_zombie_cola_dtap_on" );
 #precache( "fx", "_t6/misc/fx_zombie_cola_jugg_on" );
@@ -1483,7 +1484,7 @@ function perk_machine_spawn_init()
 	{
 		perk = s_spawn_pos.script_noteworthy;
 		
-		if(GetDvarInt("mutator_phd_widows") == 1 && perk == PERK_WIDOWS_WINE && GetDvarString("mapname") != "zm_nuked")
+		if(GetGametypeSetting(mutator_phd_widows) == 1 && perk == PERK_WIDOWS_WINE && GetDvarString("mapname") != "zm_nuked")
 			perk = PERK_PHDFLOPPER;
 		
 		if(GetDvarInt("mutator_doubletap") == 1 && perk == PERK_DOUBLETAP2)

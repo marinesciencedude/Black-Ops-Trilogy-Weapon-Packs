@@ -22,7 +22,7 @@
 #insert scripts\shared\version.gsh;
 #insert scripts\zm\_zm_utility.gsh;
 #insert scripts\shared\duplicaterender.gsh;
-
+#insert scripts\zm\_zm_mutators.gsh;
 
 #using scripts\zm\_util;
 #using scripts\zm\_load;
@@ -120,7 +120,7 @@ function __init__()
 	level.nuked_perks[ 6 ].script_noteworthy = "specialty_additionalprimaryweapon";
 	level.nuked_perks[ 6 ].turn_on_notify = "specialty_additionalprimaryweapon_power_on";
 	
-	if(GetDvarInt("mutator_phd_widows") == 1)
+	if(GetGametypeSetting(mutator_phd_widows) == 1)
 	{
 		level.nuked_perks[ 7 ] = SpawnStruct();
 		level.nuked_perks[ 7 ].model = "p7_zm_vending_phd";
