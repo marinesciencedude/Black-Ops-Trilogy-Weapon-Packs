@@ -18,6 +18,8 @@
 #using scripts\zm\zm_challenges_tomb;
 #using scripts\zm\zm_tomb_vo;
 
+#insert scripts\zm\_zm_mutators.gsh;
+
 #namespace zm_tomb_challenges;
 
 /*
@@ -420,14 +422,14 @@ function reward_double_tap(player, s_stat)
 	{
 		return false;
 	}
-	if( ( GetDvarInt("mutator_doubletap") == 2 && (player hasperk("specialty_doubletap2") || player zm_perks::has_perk_paused("specialty_doubletap2")) ) || ( GetDvarInt("mutator_doubletap") == 1 && (player hasperk("specialty_rof") || player zm_perks::has_perk_paused("specialty_rof")) ) )
+	if( ( GetGametypeSetting(mutator_doubletap) == 2 && (player hasperk("specialty_doubletap2") || player zm_perks::has_perk_paused("specialty_doubletap2")) ) || ( GetDvarInt("mutator_doubletap") == 1 && (player hasperk("specialty_rof") || player zm_perks::has_perk_paused("specialty_rof")) ) )
 	{
 		m_reward thread bottle_reject_sink(player);
 		return false;
 	}
 	m_reward stoploopsound(0.1);
 	player playsound("zmb_powerup_grabbed");
-	if(GetDvarInt("mutator_doubletap") == 1)
+	if(GetGametypeSetting(mutator_doubletap) == 1)
 		m_reward thread zm_perks::vending_trigger_post_think(player, "specialty_rof");
 	else
 		m_reward thread zm_perks::vending_trigger_post_think(player, "specialty_doubletap2");

@@ -278,41 +278,34 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_PhDWidows",
 			"antiBoostDistance",
 			BuildStringSettings({"PhD Flopper", "Widow's Wine"}, "PhD Flopper") ),
-		--CoD.OptionsUtility.CreateDvarSettings(
-		--	arg0,
-		--	"Perk Machine",
-		--	"Which perk machine out of PhD Flopper/Widow's Wine will be spawned in the game.",
-		--	"MutatorSettings_PhDWidows",
-		--	"mutator_phd_widows",
-        --    BuildStringSettings({"PhD Flopper", "Widow's Wine"}, "PhD Flopper"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Double Tap",
 			"Select between Double Tap I from WaW/BO and Double Tap II from BO II/III.",
 			"MutatorSettings_DoubleTap",
-			"mutator_doubletap",
-            BuildStringSettings({"I", "II"}, "I"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"autoDestroyTime",
+            BuildStringSettings({"I", "II"}, "I") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Double Tap Perk",
 			"If Double Tap (I or II) should exist through Der Wunderfizz, or at all in the map. Intended for maps like Ascension which didn't originally have it.",
 			"MutatorSettings_DoubleTapExistence",
-			"mutator_doubletap_existence",
+			"ballCount",
             BuildStringSettings({"Enabled", "Removed from Wunderfizz", "Removed from Map"}, "Enabled"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Deadshot Daiquiri Perk",
 			"If Deadshot Daiquiri should exist through Der Wunderfizz, or at all in the map. Intended for maps like Ascension which didn't originally have it.",
 			"MutatorSettings_DeadshotExistence",
-			"mutator_deadshot_existence",
-            BuildStringSettings({"Enabled", "Removed from Wunderfizz", "Removed from Map"}, "Enabled"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"bombTimer",
+            BuildStringSettings({"Enabled", "Removed from Wunderfizz", "Removed from Map"}, "Enabled") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Deadshot Daiquiri Price",
 			"1500 - Black Ops III price, 1000 - Black Ops I/II price.",
 			"MutatorSettings_Deadshot",
-			"mutator_deadshot_price",
-            BuildStringSettings({"1000", "1500"}, "1000"), nil, SetDvarSetting),
+			"bootTime",
+            BuildStringSettings({"1000", "1500"}, "1000") ),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Perk Icons",

@@ -44,6 +44,10 @@ function private __init__()
 		{
 			level thread [[mutator.prefunc]](GetDvarInt(mutator.dvar));
 		}
+		if(isdefined(mutator.prefunc_gametypesetting) && IsFunctionPtr(mutator.prefunc_gametypesetting))
+		{
+			level thread [[mutator.prefunc_gametypesetting]](GetGametypeSetting(mutator.dvar));
+		}
 	}
 }
 
@@ -54,6 +58,10 @@ function private __main__()
 		if(isdefined(mutator.postfunc) && IsFunctionPtr(mutator.postfunc))
 		{
 			level thread [[mutator.postfunc]](GetDvarInt(mutator.dvar));
+		}
+		if(isdefined(mutator.postfunc_gametypesetting) && IsFunctionPtr(mutator.postfunc_gametypesetting))
+		{
+			level thread [[mutator.postfunc_gametypesetting]](GetGametypeSetting(mutator.dvar));
 		}
 	}
 }
@@ -68,7 +76,7 @@ function private __main__()
 "Example: zm_mutators::register_mutator(MUTATOR_PERKS_NAME, MUTATOR_PERKS_DVAR, undefined, &disable_perks);"
 "SPMP: both"
 @/
-function register_mutator(mutator_name, dvar_name, pre_func, post_func)
+function register_mutator(mutator_name, dvar_name, pre_func, post_func, prefunc_gametypesetting, postfunc_gametypesetting)
 {
 	Assert(isdefined(mutator_name), 						"Mutator Name must be defined");
 	Assert(isdefined(dvar_name), 							"Mutator Dvar Name must be defined");
@@ -81,6 +89,8 @@ function register_mutator(mutator_name, dvar_name, pre_func, post_func)
 	level.zm_mutators[mutator_name].dvar 		= dvar_name;
 	level.zm_mutators[mutator_name].postfunc 	= post_func;
 	level.zm_mutators[mutator_name].prefunc 	= pre_func;
+	level.zm_mutators[mutator_name].postfunc_gametypesetting 	= postfunc_gametypesetting;
+	level.zm_mutators[mutator_name].prefunc_gametypesetting 	= prefunc_gametypesetting;
 }
 
 function private register_mutators()
@@ -122,9 +132,9 @@ function private register_mutators()
 	register_mutator("MutatorSettings_GeorgeReward", "mutator_george_reward", undefined, &george_reward);
 	register_mutator("MutatorSettings_RoundMusic", "mutator_round_music", undefined, &round_music);
 	register_mutator("MutatorSettings_WeaponRest", "mutator_weapon_rest", undefined, &weapon_rest);
-	register_mutator("MutatorSettings_DoubleTap", "mutator_doubletap", undefined, &doubletap);
-	register_mutator("MutatorSettings_DoubleTapExistence", "mutator_doubletap_existence", undefined, &doubletap_existence);
-	register_mutator("MutatorSettings_DeadshotExistence", "mutator_deadshot_existence", undefined, &deadshot_existence);
+	register_mutator("MutatorSettings_DoubleTap", mutator_doubletap, undefined, undefined, undefined, &doubletap);
+	register_mutator("MutatorSettings_DoubleTapExistence", mutator_doubletap_existence, undefined, undefined, undefined, &doubletap_existence);
+	register_mutator("MutatorSettings_DeadshotExistence", mutator_deadshot_existence, undefined, undefined, undefined, &deadshot_existence);
 	//register_mutator("MutatorSettings_CharacterVoicelines", "mutator_character_voicelines", undefined, &character_voicelines);
 }
 

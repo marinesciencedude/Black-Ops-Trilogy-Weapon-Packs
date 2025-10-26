@@ -1487,7 +1487,7 @@ function perk_machine_spawn_init()
 		if(GetGametypeSetting(mutator_phd_widows) == 1 && perk == PERK_WIDOWS_WINE && GetDvarString("mapname") != "zm_nuked")
 			perk = PERK_PHDFLOPPER;
 		
-		if(GetDvarInt("mutator_doubletap") == 1 && perk == PERK_DOUBLETAP2)
+		if(GetGametypeSetting(mutator_doubletap) == 1 && perk == PERK_DOUBLETAP2)
 			perk = "specialty_rof";
 		
 		if(GetDvarString("mapname") == "zm_giant")

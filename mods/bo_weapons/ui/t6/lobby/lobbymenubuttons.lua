@@ -19,3 +19,10 @@ CoD.LobbyButtons.ZM_OPTIONS_BUTTON =
 	customId = "btnMutators",
 	starterPack = CoD.LobbyButtons.STARTERPACK_UPGRADE
 }
+CoD.LobbyButtons.ZM_SOLO_GAME = {
+	stringRef = "MENU_SOLO_GAME_CAPS",
+	action = NavigateToLobby_SelectionList,
+	param = "ZMLobbySoloCustomGame",
+	customId = "btnSoloMatch",
+	starterPack = CoD.LobbyButtons.STARTERPACK_UPGRADE
+}

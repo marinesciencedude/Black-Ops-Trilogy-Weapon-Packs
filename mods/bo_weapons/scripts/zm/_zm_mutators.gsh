@@ -11,12 +11,12 @@
 // Uncomment to enable debug printing.
 #define MUTATOR_DEBUG_PRINT(msg) 	// IPrintLnBold(msg)
 
-#define mutator_phd_widows	"antiBoostDistance"
-/*#define autoDestroyTime
-#define ballCount
-#define bombTimer
-#define bootTime
-#define carrierArmor
+#define mutator_phd_widows				"antiBoostDistance"
+#define mutator_doubletap				"autoDestroyTime"
+#define mutator_doubletap_existence		"ballCount"
+#define mutator_deadshot_existence		"bombTimer"
+#define mutator_deadshot_price 			"bootTime"
+/*#define carrierArmor
 #define crateCaptureTime
 #define defuseTime
 #define delayPlayer
