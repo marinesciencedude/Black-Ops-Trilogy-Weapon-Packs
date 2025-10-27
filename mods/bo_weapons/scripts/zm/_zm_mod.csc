@@ -366,7 +366,7 @@ function applyChoices() {
 		zm_weapons::include_upgraded_weapon( "t5_m60e3", "t5_m60e3_up", false, 2750, 500);
 	}
 	
-	if(GetDvarInt("mutator_wa2000") == MUTATOR_OFFON_ON && GetDvarInt("mutator_scopeads") == 2)
+	if(GetDvarInt("mutator_wa2000") == MUTATOR_OFFON_ON && GetGametypeSetting(mutator_scopeads) == 2)
 	{
 		zm_weapons::include_weapon( "t5_wa2000", true, 1600, 500 );
 		zm_weapons::include_upgraded_weapon( "t5_wa2000", "t5_wa2000_up", false, 1600, 500 );
@@ -374,13 +374,13 @@ function applyChoices() {
 		AddZombieBoxWeapon(weapon, weapon.worldmodel, false);
 	}
 	
-	if(GetDvarInt("mutator_psg1") == MUTATOR_OFFON_ON && GetDvarInt("mutator_scopeads") == 2)
+	if(GetDvarInt("mutator_psg1") == MUTATOR_OFFON_ON && GetGametypeSetting(mutator_scopeads) == 2)
 	{
 		zm_weapons::include_weapon( "t5_psg1", true, 2000, 500 );
 		zm_weapons::include_upgraded_weapon( "t5_psg1", "t5_psg1_up", false, 2000, 500 );
 	}
 	
-	switch(GetDvarInt("mutator_scopeads"))
+	switch(GetGametypeSetting(mutator_scopeads))
 	{
 		case 1:
 		{

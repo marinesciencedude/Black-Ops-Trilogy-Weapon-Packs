@@ -442,21 +442,21 @@ function apply_choices() {
 		zm_weapons::add_zombie_weapon( "t5_m60e3", "t5_m60e3_up", "", 2750, "lmg", "", undefined, undefined, false, "" );
 	}
 	
-	if(GetDvarInt("mutator_wa2000") == MUTATOR_OFFON_ON && GetDvarInt("mutator_scopeads") == MUTATOR_OFFON_ON)
+	if(GetDvarInt("mutator_wa2000") == MUTATOR_OFFON_ON && GetGametypeSetting(mutator_scopeads) == MUTATOR_OFFON_ON)
 	{
 		zm_utility::include_weapon( "t5_wa2000", true );
 		zm_utility::include_weapon( "t5_wa2000_up", false );
 		zm_weapons::add_zombie_weapon( "t5_wa2000", "t5_wa2000_up", "", 1600, "sniper", "", undefined, undefined, false, "" );
 	}
 	
-	if(GetDvarInt("mutator_psg1") == MUTATOR_OFFON_ON && GetDvarInt("mutator_scopeads") == MUTATOR_OFFON_ON)
+	if(GetDvarInt("mutator_psg1") == MUTATOR_OFFON_ON && GetGametypeSetting(mutator_scopeads) == MUTATOR_OFFON_ON)
 	{
 		zm_utility::include_weapon( "t5_psg1", true );
 		zm_utility::include_weapon( "t5_psg1_up", true );
 		zm_weapons::add_zombie_weapon( "t5_psg1", "t5_psg1_up", "", 2000, "sniper", "", undefined, undefined, false, "" );
 	}
 	
-	switch(GetDvarInt("mutator_scopeads"))
+	switch(GetGametypeSetting(mutator_scopeads))
 	{
 		case 1:
 		{
@@ -750,7 +750,7 @@ function apply_choices() {
 	//this doesn't work??? I don't like repeating the maxhealth code
 	//if(GetDvarInt("mutator_health_difficulty" != 1))
 	//{
-		switch(GetDvarInt("mutator_health_difficulty"))
+		switch(GetGametypeSetting(mutator_health_difficulty))
 		{	
 			case 2: //Recruit
 			{

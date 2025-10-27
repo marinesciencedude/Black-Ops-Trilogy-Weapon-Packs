@@ -313,13 +313,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_BOPerkIcons",
 			"mutator_bo_perk_icons",
             BuildStringSettings({"Black Ops", "Recoloured BO III", "Use Map"}, "Black Ops"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Scope ADS",
 			"If aiming down scope should be a 2D overlay, 3D viewmodel or changeable mid-game",
 			"MutatorSettings_ScopeADS",
-			"mutator_scopeads",
-			BuildStringSettings({"2D Overlay", "3D Model", "Changeable"}, "Image Overlay"), nil, SetDvarSetting),
+			"carrierArmor",
+			BuildStringSettings({"2D Overlay", "3D Model", "Changeable"}, "Image Overlay") ),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Round Change Music",
@@ -334,21 +334,21 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_MysteryBoxFX",
 			"mutator_mystery_box_fx",
 			BuildStringSettings({"BO III", "Classic"}, "BO III"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Zombie Dodging",
 			"If zombies should side-step and roll like in Ascension.",
 			"MutatorSettings_SideStep",
-			"mutator_sidestep",
-			BuildStringSettings({"Off", "On"}, "On"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"crateCaptureTime",
+			BuildStringSettings({"Off", "On"}, "On") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Health Difficulty",
 			"BO III has 3-hit-down system, All other settings are 2-hit-down.\nRecruit has the longest delay before health regeneration, Hardened/Veteran has the shortest delay\nVeteran shows the critically injured overlay at 50% health (i.e. after a single hit pre-Juggernog)",
 			"MutatorSettings_HealthDifficulty",
-			"mutator_health_difficulty",
-			--BuildStringSettings({"BO III", "Recruit", "Regular", "Hardened", "Veteran"}, "BO III"), nil, SetDvarSetting)
-			BuildStringSettings({"BO III", "Recruit", "Regular", "Veteran"}, "BO III"), nil, SetDvarSetting),
+			"flagDecayTime",
+			--BuildStringSettings({"BO III", "Recruit", "Regular", "Hardened", "Veteran"}, "BO III") ),
+			BuildStringSettings({"BO III", "Recruit", "Regular", "Veteran"}, "BO III") ),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Revive Animation",

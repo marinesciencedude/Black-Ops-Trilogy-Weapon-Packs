@@ -16,13 +16,13 @@
 #define mutator_doubletap_existence		"ballCount"
 #define mutator_deadshot_existence		"bombTimer"
 #define mutator_deadshot_price 			"bootTime"
-/*#define carrierArmor
-#define crateCaptureTime
-#define defuseTime
-#define delayPlayer
-#define destroyTime
-#define disableClassSelection
-#define disableContracts
+#define mutator_scopeads				"carrierArmor"
+#define mutator_sidestep				"crateCaptureTime"
+//#define 								"defuseTime"
+//#define 								"delayPlayer"
+//#define 								"destroyTime"
+//#define 								"disableClassSelection"
+/*#define disableContracts
 #define disableTacInsert
 #define disableThirdPersonSpectating
 #define disableVehicleSpawners
@@ -30,9 +30,9 @@
 #define enemyCarrierVisible
 #define flagCanBeNeutralized
 #define flagCaptureCondition
-#define flagCaptureGracePeriod
-#define flagDecayTime
-#define flagRespawnTime
+#define flagCaptureGracePeriod*/
+#define mutator_health_difficulty 		"flagDecayTime"
+/*#define flagRespawnTime
 #define gameAdvertisementRuleScorePercent
 #define gameAdvertisementRuleTimeLeft
 #define gameAdvertisementRuleRound

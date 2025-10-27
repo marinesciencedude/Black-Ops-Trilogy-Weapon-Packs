@@ -329,6 +329,6 @@ function optimize_for_splitscreen()
 
 function test()
 {
-	if(GetDvarInt("mutator_sidestep") == 2)
+	if(GetGametypeSetting(mutator_sidestep) == MUTATOR_OFFON_ON)
 		self hb21_zm_behavior::enable_side_step();
 }

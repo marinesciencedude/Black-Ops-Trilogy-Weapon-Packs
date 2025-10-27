@@ -7,6 +7,8 @@
 #using scripts\zm\_zm_utility;
 #using scripts\zm\_zm_weapons;
 
+#insert scripts\zm\_zm_mutators.gsh;
+
 #namespace zm_swap_weapons;
 
 /*
@@ -103,7 +105,7 @@ function swap_wall_weapon()
 		RemoveZombieBoxWeapon(GetWeapon("t5_aug"));
 	}*/
 	
-	switch(GetDvarInt("mutator_scopeads"))
+	switch(GetGametypeSetting(mutator_scopeads))
 	{
 		case 1:
 		{
@@ -204,7 +206,7 @@ function swap_wall_weapon()
 						break;
 					case "sniper_fastbolt": //Locus
 						{
-							/*switch(GetDvarInt("mutator_scopeads"))
+							/*switch(GetGametypeSetting(mutator_scopeads))
 							{
 							case 1:
 								ent.zombie_weapon_upgrade = "t4_kar98k_scope_overlay";
@@ -279,7 +281,7 @@ function swap_wall_weapon()
 						{
 							if(GetDvarInt("mutator_bocw_l96a1") == 2)
 							{
-								switch(GetDvarInt("mutator_scopeads"))
+								switch(GetGametypeSetting(mutator_scopeads))
 								{
 								case 1:
 									ent.zombie_weapon_upgrade = "t9_lw3_tundra_overlay";
@@ -294,7 +296,7 @@ function swap_wall_weapon()
 							}
 							else
 							{
-								switch(GetDvarInt("mutator_scopeads"))
+								switch(GetGametypeSetting(mutator_scopeads))
 								{
 								case 1:
 									ent.zombie_weapon_upgrade = "t5_l96a1_overlay";
@@ -1979,7 +1981,7 @@ function swap_wall_weapon()
 								}
 								else //Right from spawn
 								{
-									/*switch(GetDvarInt("mutator_scopeads"))
+									/*switch(GetGametypeSetting(mutator_scopeads))
 									{
 									case 1:
 										ent.zombie_weapon_upgrade = "t4_kar98k_scope_overlay";
