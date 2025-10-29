@@ -349,20 +349,20 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"flagDecayTime",
 			--BuildStringSettings({"BO III", "Recruit", "Regular", "Hardened", "Veteran"}, "BO III") ),
 			BuildStringSettings({"BO III", "Recruit", "Regular", "Veteran"}, "BO III") ),
-		CoD.OptionsUtility.CreateDvarSettings(
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Revive Animation",
 			"Change between the classic revive animation and the Black Ops III one.",
 			"MutatorSettings_ReviveAnimation",
-			"mutator_revive_anim",
-			BuildStringSettings({"Classic", "BO III"}, "Classic"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"defuseTime",
+			BuildStringSettings({"Classic", "BO III"}, "Classic") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Death Machine",
 			"Enable or disable the Death Machine powerup.",
 			"MutatorSettings_DeathMachine",
-			"mutator_deathmachine",
-			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting)
+			"destroyTime",
+			BuildStringSettings({"Off", "On"}, "Off") )
 	}
 end, nil, nil, Update)
 

@@ -825,7 +825,7 @@ function apply_choices() {
 		}
 	//}
 	
-	if(GetDvarInt("mutator_deathmachine") == MUTATOR_OFFON_OFF)
+	if(GetGametypeSetting(mutator_deathmachine) == MUTATOR_OFFON_OFF)
 		zm_powerups::powerup_remove_from_regular_drops("minigun");
 	
     //notify csc for client side scripts

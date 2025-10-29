@@ -18,9 +18,9 @@
 #define mutator_deadshot_price 			"bootTime"
 #define mutator_scopeads				"carrierArmor"
 #define mutator_sidestep				"crateCaptureTime"
-//#define 								"defuseTime"
-//#define 								"delayPlayer"
-//#define 								"destroyTime"
+#define mutator_health_difficulty 		"flagDecayTime"
+#define mutator_revive_anim				"defuseTime"
+#define mutator_deathmachine			"destroyTime"
 //#define 								"disableClassSelection"
 /*#define disableContracts
 #define disableTacInsert
@@ -30,9 +30,8 @@
 #define enemyCarrierVisible
 #define flagCanBeNeutralized
 #define flagCaptureCondition
-#define flagCaptureGracePeriod*/
-#define mutator_health_difficulty 		"flagDecayTime"
-/*#define flagRespawnTime
+#define flagCaptureGracePeriod
+#define flagRespawnTime
 #define gameAdvertisementRuleScorePercent
 #define gameAdvertisementRuleTimeLeft
 #define gameAdvertisementRuleRound
