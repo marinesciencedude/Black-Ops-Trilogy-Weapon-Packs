@@ -21,17 +21,9 @@
 #define mutator_health_difficulty 		"flagDecayTime"
 #define mutator_revive_anim				"defuseTime"
 #define mutator_deathmachine			"destroyTime"
-//#define 								"disableClassSelection"
-/*#define disableContracts
-#define disableTacInsert
-#define disableThirdPersonSpectating
-#define disableVehicleSpawners
-#define droppedTagRespawn
-#define enemyCarrierVisible
-#define flagCanBeNeutralized
-#define flagCaptureCondition
-#define flagCaptureGracePeriod
-#define flagRespawnTime
+#define mutator_aug						"enemyCarrierVisible"
+#define mutator_claymore				"flagCaptureGracePeriod"
+/*#define flagRespawnTime
 #define gameAdvertisementRuleScorePercent
 #define gameAdvertisementRuleTimeLeft
 #define gameAdvertisementRuleRound

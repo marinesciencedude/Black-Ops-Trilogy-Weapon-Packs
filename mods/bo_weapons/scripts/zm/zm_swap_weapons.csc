@@ -764,7 +764,7 @@ function swap_wall_weapon()
 			{
 				if(VAL == "smg_fastfire") //Vesper
 				{
-					if(GetDvarInt("mutator_aug") == 1 && (!GetDvarInt("mutator_wallbuys_kino_der_toten") || GetDvarInt("mutator_wallbuys_kino_der_toten") == 5))
+					if(GetGametypeSetting(mutator_aug) == 1 && (!GetDvarInt("mutator_wallbuys_kino_der_toten") || GetDvarInt("mutator_wallbuys_kino_der_toten") == 5))
 					{
 						/*if(GetDvarInt("mutator_bocw_aug") == 2)
 							ent.zombie_weapon_upgrade = "t9_aug";
@@ -2315,7 +2315,7 @@ function swap_wall_weapon()
 		}
 	}
 	
-	if(GetDvarInt("mutator_claymore") == 1)
+	if(GetGametypeSetting(mutator_claymore) == 1)
 	{
 		count = 0;
 		foreach(ent in struct::get_array("claymore_purchase", "targetname"))

@@ -32,6 +32,7 @@
 #insert scripts\zm\_zm_perks.gsh;
 #insert scripts\zm\_zm_utility.gsh;
 #insert scripts\zm\_zm_weapons.gsh;
+#insert scripts\zm\_zm_mutators.gsh;
 
 #precache( "material", "minimap_icon_mystery_box" );
 #precache( "material", "specialty_instakill_zombies" );
@@ -837,7 +838,7 @@ function player_can_use_content( weapon )
 
 function init_spawnable_weapon_upgrade()
 {
-	if((GetDvarInt("mutator_claymore") == 1 && GetDvarString("mapname") != "zm_prototype") || GetDvarString("mapname") == "zm_stalingrad")
+	if((GetGametypeSetting(mutator_claymore) == 1 && GetDvarString("mapname") != "zm_prototype") || GetDvarString("mapname") == "zm_stalingrad")
 		zm_swap_weapons::swap_claymores();
 	else if(GetDvarString("mapname") != "zm_prototype") //is there an actual way to figure out trip mine wallbuys exist?
 	{

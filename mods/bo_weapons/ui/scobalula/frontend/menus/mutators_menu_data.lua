@@ -370,20 +370,20 @@ DataSources.MutatorSettingsBOMaps = DataSourceHelpers.ListSetup("MutatorSettings
 function (arg0, arg1, arg2, arg3, arg4)
 	return
 	{
-		CoD.OptionsUtility.CreateDvarSettings(
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"AUG Wallbuy",
 			"If the Wii AUG wallbuy should exist on Kino der Toten.",
 			"MutatorSettings_AUG",
-			"mutator_aug",
-            BuildStringSettings({"On", "Off"}, "Off"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"enemyCarrierVisible",
+            BuildStringSettings({"On", "Off"}, "Off") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Mine Wallbuy",
 			"If the wallbuy should be Claymores instead of Trip Mines.",
 			"MutatorSettings_Claymore",
-			"mutator_claymore",
-            BuildStringSettings({"Claymore", "Trip Mines"}, "Claymore"), nil, SetDvarSetting),
+			"flagCaptureGracePeriod",
+            BuildStringSettings({"Claymore", "Trip Mines"}, "Claymore") ),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Ascension Red Telephone Quotes",
