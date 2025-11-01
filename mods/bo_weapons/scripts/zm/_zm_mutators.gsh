@@ -23,10 +23,10 @@
 #define mutator_deathmachine			"destroyTime"
 #define mutator_aug						"enemyCarrierVisible"
 #define mutator_claymore				"flagCaptureGracePeriod"
-/*#define flagRespawnTime
-#define gameAdvertisementRuleScorePercent
-#define gameAdvertisementRuleTimeLeft
-#define gameAdvertisementRuleRound
+#define mutator_shinonuma_perk			"flagRespawnTime"
+#define mutator_startingweapon			"gameAdvertisementRuleScorePercent"
+#define mutator_waw_wall_weapons		"gameAdvertisementRuleTimeLeft"
+/*#define gameAdvertisementRuleRound
 #define gameAdvertisementRuleRoundsWon
 #define idleFlagDecay
 #define idleFlagResetTime

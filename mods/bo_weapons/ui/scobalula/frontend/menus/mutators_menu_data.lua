@@ -391,13 +391,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_RedTelephone",
 			"mutator_redphone",
 			BuildStringSettings({"Call of the Dead", "FIVE"}, "Call of the Dead"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Shi no Numa Starting Room Perk",
 			"Which perk out of Mule Kick/Quick Revive will be spawned in Shi no Numa's starting room.",
 			"MutatorSettings_ShiNoNumaPerk",
-			"mutator_shinonuma_perk",
-			BuildStringSettings({"Mule Kick", "Quick Revive"}, "Mule Kick"), nil, SetDvarSetting),
+			"flagRespawnTime",
+			BuildStringSettings({"Mule Kick", "Quick Revive"}, "Mule Kick") ),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Ascension Black-and-White Vision",
@@ -405,20 +405,20 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_AscensionVisionset",
 			"mutator_ascension_visionset",
 			BuildStringSettings({"BO III", "BO"}, "BO III"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Starting Weapon",
 			"If the starting weapon should be the BO M1911 or leave it at the map's default. For maps like Origins which have unique starting weapons.",
 			"MutatorSettings_StartingWeapon",
-			"mutator_startingweapon",
-			BuildStringSettings({"M1911", "Use Map"}, "M1911"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"gameAdvertisementRuleScorePercent",
+			BuildStringSettings({"M1911", "Use Map"}, "M1911") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"WaW Wallbuys",
 			"Whether WaW map wallbuys should use the original World at War weapons, Black Ops weapons or for Der Riese: Declassified to remain unchanged.",
 			"MutatorSettings_WaWWallWeapons",
-			"mutator_waw_wall_weapons",
-			BuildStringSettings({"World at War Weapons", "Black Ops Weapons", "Use Custom Map"}, "World at War Weapons"), nil, SetDvarSetting),
+			"gameAdvertisementRuleTimeLeft",
+			BuildStringSettings({"World at War Weapons", "Black Ops Weapons", "Use Custom Map"}, "World at War Weapons") ),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Verrückt Bolt Action Wallbuy",

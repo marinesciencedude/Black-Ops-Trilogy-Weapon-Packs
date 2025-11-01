@@ -172,14 +172,14 @@ function swap_wall_weapon()
 			continue;
 		}
 		
-		if(VAL == "smg_mp40_1940" || (GetDvarInt("mutator_waw_wall_weapons") != 3 && VAL == "s2_mp40") )
+		if(VAL == "smg_mp40_1940" || (GetGametypeSetting(mutator_waw_wall_weapons) != 3 && VAL == "s2_mp40") )
 			ent.zombie_weapon_upgrade = "t5_mp40";
 		
 		switch( GetDvarString("mapname") )
 		{
 		case "zm_prototype": //Nacht der Untoten
 			{
-				if(GetDvarInt("mutator_waw_wall_weapons") == 1 || !GetDvarInt("mutator_waw_wall_weapons"))
+				if(GetGametypeSetting(mutator_waw_wall_weapons) == 1 || !GetGametypeSetting(mutator_waw_wall_weapons))
 				{
 					switch(VAL)
 					{
@@ -223,7 +223,7 @@ function swap_wall_weapon()
 						}
 					}
 				}
-				else if(GetDvarInt("mutator_waw_wall_weapons") == 2)
+				else if(GetGametypeSetting(mutator_waw_wall_weapons) == 2)
 				{
 					switch(VAL)
 					{
@@ -318,7 +318,7 @@ function swap_wall_weapon()
 			}
 		case "zm_asylum": //Verrückt
 			{
-				if(GetDvarInt("mutator_waw_wall_weapons") == 1 || !GetDvarInt("mutator_waw_wall_weapons"))
+				if(GetGametypeSetting(mutator_waw_wall_weapons) == 1 || !GetGametypeSetting(mutator_waw_wall_weapons))
 				{
 					switch(VAL)
 					{
@@ -376,7 +376,7 @@ function swap_wall_weapon()
 						break;
 					}
 				}
-				else if(GetDvarInt("mutator_waw_wall_weapons") == 2)
+				else if(GetGametypeSetting(mutator_waw_wall_weapons) == 2)
 				{
 					switch(VAL)
 					{
@@ -460,7 +460,7 @@ function swap_wall_weapon()
 			}
 		case "zm_sumpf": //Shi no Numa
 			{
-				if(GetDvarInt("mutator_waw_wall_weapons") == 1 || !GetDvarInt("mutator_waw_wall_weapons"))
+				if(GetGametypeSetting(mutator_waw_wall_weapons) == 1 || !GetGametypeSetting(mutator_waw_wall_weapons))
 				{
 					switch(VAL)
 					{
@@ -532,7 +532,7 @@ function swap_wall_weapon()
 						break;
 					}
 				}
-				else if(GetDvarInt("mutator_waw_wall_weapons") == 2)
+				else if(GetGametypeSetting(mutator_waw_wall_weapons) == 2)
 				{
 					switch(VAL)
 					{
@@ -620,7 +620,7 @@ function swap_wall_weapon()
 			}
 		case "zm_factory": //The Giant
 			{
-				if(GetDvarInt("mutator_waw_wall_weapons") == 1 || !GetDvarInt("mutator_waw_wall_weapons"))
+				if(GetGametypeSetting(mutator_waw_wall_weapons) == 1 || !GetGametypeSetting(mutator_waw_wall_weapons))
 				{
 					switch(VAL)
 					{
@@ -673,7 +673,7 @@ function swap_wall_weapon()
 						break;
 					}
 				}
-				else if(GetDvarInt("mutator_waw_wall_weapons") == 2)
+				else if(GetGametypeSetting(mutator_waw_wall_weapons) == 2)
 				{
 					switch(VAL)
 					{
@@ -1392,7 +1392,7 @@ function swap_wall_weapon()
 			}
 		case "zm_giant": //TrustInUma's DER RIESE
 			{
-				if(GetDvarInt("mutator_waw_wall_weapons") != 2 || !GetDvarInt("mutator_waw_wall_weapons"))
+				if(GetGametypeSetting(mutator_waw_wall_weapons) != 2 || !GetGametypeSetting(mutator_waw_wall_weapons))
 				{
 					switch(VAL)
 					{
@@ -1432,7 +1432,7 @@ function swap_wall_weapon()
 						break;
 					}
 				}
-				else if(GetDvarInt("mutator_waw_wall_weapons") == 2)
+				else if(GetGametypeSetting(mutator_waw_wall_weapons) == 2)
 				{
 					switch(VAL)
 					{
@@ -1518,7 +1518,7 @@ function swap_wall_weapon()
 			}
 		case "zm_der_riese": //Der Riese: Declassified
 			{
-				if(GetDvarInt("mutator_waw_wall_weapons") == 1 || !GetDvarInt("mutator_waw_wall_weapons"))
+				if(GetGametypeSetting(mutator_waw_wall_weapons) == 1 || !GetGametypeSetting(mutator_waw_wall_weapons))
 				{
 					switch(VAL)
 					{
@@ -1556,7 +1556,7 @@ function swap_wall_weapon()
 						break;
 					}
 				}
-				else if(GetDvarInt("mutator_waw_wall_weapons") == 2)
+				else if(GetGametypeSetting(mutator_waw_wall_weapons) == 2)
 				{
 					switch(VAL)
 					{
@@ -2325,7 +2325,7 @@ function swap_wall_weapon()
 			{
 				continue;
 			}
-			if((GetDvarString("mapname") == "zm_asylum" && count == 0) || (GetDvarInt("mutator_waw_wall_weapons") != 2 && (GetDvarString("mapname") == "zm_asylum" || GetDvarString("mapname") == "zm_sumpf" || GetDvarString("mapname") == "zm_factory")))
+			if((GetDvarString("mapname") == "zm_asylum" && count == 0) || (GetGametypeSetting(mutator_waw_wall_weapons) != 2 && (GetDvarString("mapname") == "zm_asylum" || GetDvarString("mapname") == "zm_sumpf" || GetDvarString("mapname") == "zm_factory")))
 				ent.zombie_weapon_upgrade = "bo1_bouncingbetty";
 			else if(GetDvarString("mapname") != "zm_asylum" || (GetDvarString("mapname") == "zm_asylum" && count != 0)) //Don't delete German side
 				ent struct::delete();
