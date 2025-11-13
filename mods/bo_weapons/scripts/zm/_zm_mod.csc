@@ -29,7 +29,7 @@ function main () {
 
 function applyChoices() {
 	
-	switch(GetDvarInt("mutator_ak47"))
+	switch(GetGametypeSetting(mutator_ak47))
 	{
 	/*case 2:
 		{
@@ -59,7 +59,7 @@ function applyChoices() {
 		}
 	}
 	
-	switch(GetDvarInt("mutator_uzi"))
+	switch(GetGametypeSetting(mutator_uzi))
 	{
 	case 2:
 		{

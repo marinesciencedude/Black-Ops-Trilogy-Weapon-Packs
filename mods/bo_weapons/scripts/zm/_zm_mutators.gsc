@@ -99,22 +99,22 @@ function private register_mutators()
 	//zm_spawner::register_zombie_death_event_callback(&zombie_mutators_on_death);
 	//zm::register_vehicle_damage_callback(&vehicle_mutators_on_death);
 
-	register_mutator("MutatorSettings_DoublePackaPunch", "mutator_double_packapunch", undefined, &double_packapunch);
+	register_mutator("MutatorSettings_DoublePackaPunch", mutator_double_packapunch, undefined, undefined, undefined, &double_packapunch);
 	//register_mutator("MutatorSettings_PhDWidows", "mutator_phd_widows", undefined, &phd_widows); //handled using GetDvarInt
-	register_mutator("MutatorSettings_WidowsWine", "mutator_widowswine_existence", undefined, &widowswine_existence);
+	register_mutator("MutatorSettings_WidowsWine", mutator_widowswine_existence, undefined, undefined, undefined, &widowswine_existence);
 	//register_mutator("MutatorSettings_BOPerkIcons", "mutator_bo_perk_icons", undefined, &bo_perk_icons); //handled using GetDvarInt
 	//register_mutator("MutatorSettings_Deadshot", "mutator_deadshot_price", undefined, &deadshot_price); //handled using GetDvarInt
-	register_mutator("MutatorSettings_Gobblegum", "mutator_enable_gobblegum", undefined, &enable_gobblegum);
+	register_mutator("MutatorSettings_Gobblegum", mutator_enable_gobblegum, undefined, undefined, undefined, &enable_gobblegum);
 	//register_mutator("MutatorSettings_AUG", "mutator_aug", undefined, &enable_aug); //handled using GetDvarInt
 	//register_mutator("MutatorSettings_Claymore", "mutator_claymore", undefined, &enable_claymore); //handled using GetDvarInt
-	register_mutator("MutatorSettings_SpaceMonkey", "mutator_spacemonkey", undefined, &spacemonkey);
+	register_mutator("MutatorSettings_SpaceMonkey", mutator_spacemonkey, undefined, undefined, undefined, &spacemonkey);
 	//handle weapons using GetDvarInt
 	//register_mutator("MutatorSettings_AK47", "mutator_ak47", undefined, &enable_ak47);
 	//register_mutator("MutatorSettings_Uzi", "mutator_uzi", undefined, &enable_uzi);
 	//register_mutator("MutatorSettings_Skorpion", "mutator_skorpion", undefined, &enable_skorpion);
 	//register_mutator("MutatorSettings_Stoner63", "mutator_stoner63", undefined, &enable_stoner63);
 	//register_mutator("MutatorSettings_RayGunMkII", "mutator_raygunmkii", undefined, &enable_raygunmkii);
-	register_mutator("MutatorSettings_Wunderfizz", "mutator_enable_wunderfizz", undefined, &enable_wunderfizz);
+	register_mutator("MutatorSettings_Wunderfizz", mutator_enable_wunderfizz, undefined, undefined, undefined, &enable_wunderfizz);
 	register_mutator("MutatorSettings_CamoDarkMatter", "mutator_camo_dark_matter", &camo_dark_matter, undefined);
 	register_mutator("MutatorSettings_CamoRitual", "mutator_camo_ritual", undefined, &camo_ritual);
 	register_mutator("MutatorSettings_CamoEtching", "mutator_camo_etching", &camo_etching, undefined);

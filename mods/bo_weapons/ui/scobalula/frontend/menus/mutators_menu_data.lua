@@ -419,34 +419,34 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_WaWWallWeapons",
 			"gameAdvertisementRuleTimeLeft",
 			BuildStringSettings({"World at War Weapons", "Black Ops Weapons", "Use Custom Map"}, "World at War Weapons") ),
-		CoD.OptionsUtility.CreateDvarSettings(
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Verrückt Bolt Action Wallbuy",
 			"Whether it should be a Springfield on the American starting room or a Kar98k",
 			"MutatorSettings_VerrucktSpringfield",
-			"mutator_verruckt_springfield",
-			BuildStringSettings({"Kar98k", "Springfield"}, "Kar98k"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"gameAdvertisementRuleRound",
+			BuildStringSettings({"Kar98k", "Springfield"}, "Kar98k") ),		CoD.OptionsUtility.CreateNamedSettings(
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Kino der Toten Wallbuys",
 			"WaW Layout 1 is roughly based on Der Riese, WaW Layout 2 is by Conn6orsuper117, WaW Layout 3 is based on rough counterparts to BO weapons with an further option to swap the FG42/BAR (MPL/PM63)",
 			"MutatorSettings_WallbuysKinoderToten",
-			"mutator_wallbuys_kino_der_toten",
-			BuildStringSettings({"WaW Layout 1", "WaW Layout 2", "WaW Layout 3", "WaW Layout 3 (Swapped)", "Black Ops"}, "Black Ops"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"gameAdvertisementRuleRoundsWon",
+			BuildStringSettings({"WaW Layout 1", "WaW Layout 2", "WaW Layout 3", "WaW Layout 3 (Swapped)", "Black Ops"}, "Black Ops") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Origins Wallbuys",
 			"BO Layout 1 is by Conn6orsuper117, WaW Layout 1 is by HzRetro",
 			"MutatorSettings_WallbuysOrigins",
-			"mutator_wallbuys_origins",
-			BuildStringSettings({"BO Layout 1", "WaW Layout 1"}, "BO Layout 2"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"idleFlagResetTime",
+			BuildStringSettings({"BO Layout 1", "WaW Layout 1"}, "BO Layout 2") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Der Eisendrache Wallbuys",
 			"WaW Layout 1 is by poyzee, WaW Layout 2 is by Conn6orsuper117",
 			"MutatorSettings_WallbuysDerEisendrache",
-			"mutator_wallbuys_der_eisendrache",
-			BuildStringSettings({"WaW Layout 1", "WaW Layout 2"}, "WaW Layout 3"), nil, SetDvarSetting)
+			"incrementalSpawnDelay",
+			BuildStringSettings({"WaW Layout 1", "WaW Layout 2"}, "WaW Layout 3") )
 		--CoD.OptionsUtility.CreateDvarSettings(
 		--	arg0,
 		--	"Random Moon Solo Character",
@@ -461,41 +461,41 @@ DataSources.MutatorSettingsGeneral = DataSourceHelpers.ListSetup("MutatorSetting
 function (arg0, arg1, arg2, arg3, arg4)
 	return
 	{
-		CoD.OptionsUtility.CreateDvarSettings(
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Double Pack-a-Punch",
 			"Whether weapons can be pack-a-punched multiple times or not.",
 			"MutatorSettings_DoublePackaPunch",
-			"mutator_double_packapunch",
-            BuildStringSettings({"On", "Off"}, "On"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"infectionMode",
+            BuildStringSettings({"On", "Off"}, "On") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Gobblegum Machines",
 			"If Gobblegum Machines should be usable.",
 			"MutatorSettings_Gobblegum",
-			"mutator_enable_gobblegum",
-            BuildStringSettings({"Enabled", "Disabled", "Replaced"}, "Enabled"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"leaderBonus",
+            BuildStringSettings({"Enabled", "Disabled", "Replaced"}, "Enabled") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Der Wunderfizz",
 			"If Der Wunderfizz should be usable.",
 			"MutatorSettings_Wunderfizz",
-			"mutator_enable_wunderfizz",
-            BuildStringSettings({"Enabled", "Disabled", "Replaced"}, "Enabled"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"maxAllocation",
+            BuildStringSettings({"Enabled", "Disabled", "Replaced"}, "Enabled") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Widow's Wine Perk",
 			"If Widow's Wine should exist through Der Wunderfizz, or at all in the map.",
 			"MutatorSettings_WidowsWine",
-			"mutator_widowswine_existence",
-            BuildStringSettings({"Enabled", "Removed from Wunderfizz", "Removed from Map"}, "Enabled"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"maxObjectiveEventsPerMinute",
+            BuildStringSettings({"Enabled", "Removed from Wunderfizz", "Removed from Map"}, "Enabled") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Space Monkeys",
 			"Enable Monkey Rounds on Ascension.",
 			"MutatorSettings_SpaceMonkey",
-			"mutator_spacemonkey",
-            BuildStringSettings({"On", "Off"}, "On"), nil, SetDvarSetting),
+			"maxPlayerDefensive",
+            BuildStringSettings({"On", "Off"}, "On") ),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Demonic Announcer",
@@ -510,20 +510,20 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_WeaponRest",
 			"mutator_weapon_rest",
 			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Fall Damage",
 			"Set height values for fall damage to previous games' values",
 			"MutatorSetings_FallDamage",
-			"mutator_falldamage",
-			BuildStringSettings({"BO III", "Classic"}, "Classic"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"maxPlayerEventsPerMinute",
+			BuildStringSettings({"BO III", "Classic"}, "Classic") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Sprinting movement mechanic",
 			"Whether you should dive-to-prone, slide, or do nothing at all when pressing crouch/prone while sprinting",
 			"MutatorSettings_SlideDive",
-			"mutator_slide_dive",
-			BuildStringSettings({"Dive to Prone", "Sliding", "None"}, "None"), nil, SetDvarSetting),
+			"maxPlayerOffensive",
+			BuildStringSettings({"Dive to Prone", "Sliding", "None"}, "None") ),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Sprinting cancels reloads",
@@ -538,13 +538,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_SprintCancel",
 			"mutator_sprint_cancel",
 			BuildStringSettings({"Off", "On"}, "On"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Grenade Wallbuy",
 			"Set all grenade wallbuys to be frags, semtexes, or leave it at the map's default. For maps like Kino der Toten and Ascension which didn't originally have semtexes.",
 			"MutatorSettings_GrenadeWallbuy",
-			"mutator_grenade_wallbuy",
-			BuildStringSettings({"Default", "Frag", "Semtex"}, "Default"), nil, SetDvarSetting),
+			"objectivePingTime",
+			BuildStringSettings({"Default", "Frag", "Semtex"}, "Default") ),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Zombie Eye Colour",
@@ -552,13 +552,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_EyeColour",
 			"mutator_eye_colour",
 			BuildStringSettings({"Use Map", "Orange", "Blue", "Red", "White", "Green", "Purple", "Pink", "No Glow FX"}, "Use Map"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Random Perk Machine Locations",
 			"Whether perk machine locations are randomised or not for Shadows of Evil, The Giant and Zetsubou no Shima.",
 			"MutatorSettings_RandomPerkMachines",
-			"mutator_random_perk_machines",
-			BuildStringSettings({"On", "Off"}, "On"), nil, SetDvarSetting),
+			"objectiveSpawnTime",
+			BuildStringSettings({"On", "Off"}, "On") ),
 		--CoD.OptionsUtility.CreateDvarSettings(
 		--	arg0,
 		--	"Remove Map Visionsets",
@@ -573,20 +573,20 @@ DataSources.MutatorSettingsMysteryBox = DataSourceHelpers.ListSetup("MutatorSett
 function (arg0, arg1, arg2, arg3, arg4)
 	return
 	{
-		CoD.OptionsUtility.CreateDvarSettings(
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"AK47",
 			"Add AK47 to the mystery box and Reznov's Revenge as its PaP version.",
 			"MutatorSettings_AK47",
-			"mutator_ak47",
-            BuildStringSettings({"Disabled", "Reznov's Revenge"}, "Disabled"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"pointsForSurvivalBonus",
+            BuildStringSettings({"Disabled", "Reznov's Revenge"}, "Disabled") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Uzi",
 			"Add Uzi to the mystery box. SP/MP has a 32+192/64+448 base/PaP ammo capacity, ZM (based on BO II but mostly matching the cut version from BO) has a 25+275/25+300 base/PaP ammo capacity.",
 			"MutatorSettings_Uzi",
-			"mutator_uzi",
-            BuildStringSettings({"Disabled", "SP/MP", "ZM"}, "Disabled"), nil, SetDvarSetting),
+			"pointsPerMeleeKill",
+            BuildStringSettings({"Disabled", "SP/MP", "ZM"}, "Disabled") ),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Skorpion",

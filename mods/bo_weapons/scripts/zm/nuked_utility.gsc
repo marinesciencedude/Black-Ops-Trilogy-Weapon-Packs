@@ -23,6 +23,8 @@
 
 #insert scripts\zm\nuked_utility.gsh;
 
+#insert scripts\zm\_zm_mutators.gsh;
+
 #namespace nuked_utility;
 
 
@@ -289,6 +291,6 @@ function keep_perk_after_ee()
         if(level.perk_purchase_limit >= 8)
             self zm_perks::give_perk( PERK_PHDFLOPPER );
 		wait 0.1;
-        if(level.perk_purchase_limit >= 9 && GetDvarInt("mutator_widowswine_existence") != 3)
+        if(level.perk_purchase_limit >= 9 && GetGametypeSetting(mutator_widowswine_existence) != 3)
             self zm_perks::give_perk( PERK_WIDOWS_WINE );
 }

@@ -70,7 +70,7 @@ function load_tf_options(){
 
 function apply_choices() {
 	
-	switch(GetDvarInt("mutator_ak47"))
+	switch(GetGametypeSetting(mutator_ak47))
 	{
 	/*case 2:
 		{
@@ -105,7 +105,7 @@ function apply_choices() {
 		}
 	}
 
-	switch(GetDvarInt("mutator_uzi"))
+	switch(GetGametypeSetting(mutator_uzi))
 	{
 	case 2:
 		{
@@ -607,14 +607,14 @@ function apply_choices() {
 		zm_weapons::add_zombie_weapon( "t9_rpk", "t9_rpk_up", "", 2500, "lmg", "", undefined, undefined, false, "" );
 	}
 	
-	if(GetDvarInt("mutator_double_packapunch") == MUTATOR_ONOFF_OFF)
+	if(GetGametypeSetting(mutator_double_packapunch) == MUTATOR_ONOFF_OFF)
 	{
 		keys = GetArrayKeys(level.zombie_weapons_upgraded);
 		for ( i = 0; i < keys.size; i++ )
 			aat::register_aat_exemption(keys[i]);
 	}
 	
-	if(GetDvarInt("mutator_enable_gobblegum") == MUTATOR_OFFON_ON)
+	if(GetGametypeSetting(mutator_enable_gobblegum) == MUTATOR_OFFON_ON)
 	{
 		foreach(bgb_machine in level.bgb_machines)
 		{
@@ -700,7 +700,7 @@ function apply_choices() {
 		aat::register_aat_exemption(getweapon("freezegun_upgraded"));
 	}
 	
-	if(GetDvarInt("mutator_enable_wunderfizz") == 2)
+	if(GetGametypeSetting(mutator_enable_wunderfizz) == 2)
 	{
 		foreach(perk_random_machine in level.perk_random_machines)
 		{
