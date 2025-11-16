@@ -41,21 +41,17 @@
 #define mutator_random_perk_machines		"objectiveSpawnTime"
 #define mutator_ak47						"pointsForSurvivalBonus"
 #define mutator_uzi							"pointsPerMeleeKill"
-/*#define pointsPerPrimaryGrenadeKill
-#define pointsPerPrimaryKill
-#define pointsPerSecondaryKill
-#define pointsPerWeaponKill
-#define pregameAlwaysShowStreakEdit
-#define pregameDraftEnabled
-#define pregameDraftRoundTime
-#define pregameDraftType
-#define pregameItemMaxVotes
-#define pregameItemVoteEnabled
-#define pregameItemVoteRoundTime
-#define pregamePositionShuffleMethod
-#define pregamePositionSortType
-#define pregamePostRoundTime
-#define pregamePostStageTime
+#define mutator_skorpion					"pointsPerPrimaryGrenadeKill"
+#define mutator_mac11						"pointsPerPrimaryKill"
+#define mutator_m60 						"pointsPerSecondaryKill"
+#define mutator_stoner63					"pointsPerWeaponKill"
+#define mutator_enfield						"pregameDraftRoundTime"
+#define mutator_wa2000						"pregameItemVoteRoundTime"
+#define mutator_psg1						"pregameItemMaxVotes"
+#define mutator_ppsh						"pregamePositionShuffleMethod"
+#define mutator_freezegun					"pregamePositionSortType"
+#define mutator_raygunmkii					"pregamePostRoundTime"
+/*#define pregamePostStageTime
 #define pregamePreStageTime
 #define pregameScorestreakModifyTime
 #define prematchrequirement

@@ -8,6 +8,7 @@ Install *all* of these assets first, since files from this repo are meant to ove
 
 It's advised to make a back-up of wpn_t7_zmb_weapons.gdt, black_ops_3_fx.gdt since this will be replaced with a version that doesn't produce duplicate asset errors with Smurphy's Improved BO3 Ray Gun
 some might want to make a back-up of core_patch.csv or skip copying the zone_source folder as it is only here to demonstrate that weaponoptions.csv must be commented out
+you can skip copying the bin folder as it is only here to demonstrate that \_custom is to be added to converter_gdt_dirs_0.txt
 Note also that share\raw\sound\aliases\user_aliases.csv and share\raw\sound\globals\loadspec.csv are replaced if you need to make a back-up of them.
 
 * TheSkyeLord's BO1 Weapon Ports: https://www.ugx-mods.com/forum/full-weapons/84/skyes-bo1-weapon-ports/23143/

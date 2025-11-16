@@ -123,7 +123,7 @@ function apply_choices() {
 		}
 	}
 	
-	switch(GetDvarInt("mutator_skorpion"))
+	switch(GetGametypeSetting(mutator_skorpion))
 	{
 	case 2:
 		{
@@ -141,7 +141,7 @@ function apply_choices() {
 		}
 	}
 	
-	if(GetDvarInt("mutator_stoner63") == MUTATOR_OFFON_ON)
+	if(GetGametypeSetting(mutator_stoner63) == MUTATOR_OFFON_ON)
 	{
 		if(GetDvarInt("mutator_bocw_stoner63") == MUTATOR_OFFON_ON)
 		{
@@ -399,7 +399,7 @@ function apply_choices() {
 		zm_weapons::add_zombie_weapon( "shotgun_energy", "shotgun_energy_upgraded", "", 5000, "shotgun", "", undefined, undefined, false, "quickdraw stalker holo" );
 	}*/
 	
-	switch(GetDvarInt("mutator_enfield"))
+	switch(GetGametypeSetting(mutator_enfield))
 	{
 	case 2:
 		{
@@ -417,7 +417,7 @@ function apply_choices() {
 		}
 	}
 	
-	switch(GetDvarInt("mutator_mac11"))
+	switch(GetGametypeSetting(mutator_mac11))
 	{
 	case 2:
 		{
@@ -435,21 +435,21 @@ function apply_choices() {
 		}
 	}
 	
-	if(GetDvarInt("mutator_m60") == MUTATOR_OFFON_ON)
+	if(GetGametypeSetting(mutator_m60) == MUTATOR_OFFON_ON)
 	{
 		zm_utility::include_weapon( "t5_m60e3", true );
 		zm_utility::include_weapon( "t5_m60e3_up", false );
 		zm_weapons::add_zombie_weapon( "t5_m60e3", "t5_m60e3_up", "", 2750, "lmg", "", undefined, undefined, false, "" );
 	}
 	
-	if(GetDvarInt("mutator_wa2000") == MUTATOR_OFFON_ON && GetGametypeSetting(mutator_scopeads) == MUTATOR_OFFON_ON)
+	if(GetGametypeSetting(mutator_wa2000) == MUTATOR_OFFON_ON && (GetGametypeSetting(mutator_scopeads) == 2 || !GetGametypeSetting(mutator_scopeads)))
 	{
 		zm_utility::include_weapon( "t5_wa2000", true );
 		zm_utility::include_weapon( "t5_wa2000_up", false );
 		zm_weapons::add_zombie_weapon( "t5_wa2000", "t5_wa2000_up", "", 1600, "sniper", "", undefined, undefined, false, "" );
 	}
 	
-	if(GetDvarInt("mutator_psg1") == MUTATOR_OFFON_ON && GetGametypeSetting(mutator_scopeads) == MUTATOR_OFFON_ON)
+	if(GetGametypeSetting(mutator_psg1) == MUTATOR_OFFON_ON && (GetGametypeSetting(mutator_scopeads) == 2 || !GetGametypeSetting(mutator_scopeads)))
 	{
 		zm_utility::include_weapon( "t5_psg1", true );
 		zm_utility::include_weapon( "t5_psg1_up", true );
@@ -472,14 +472,14 @@ function apply_choices() {
 			level.zombie_weapons[GetWeapon("t5_g11")].is_in_box = false;
 			zm_utility::include_weapon( "t5_g11", false);
 			
-			if(GetDvarInt("mutator_wa2000") == MUTATOR_OFFON_ON)
+			if(GetGametypeSetting(mutator_wa2000) == MUTATOR_OFFON_ON)
 			{
 				zm_utility::include_weapon( "t5_wa2000_overlay", true );
 				zm_utility::include_weapon( "t5_wa2000_up_overlay", false );
 				zm_weapons::add_zombie_weapon( "t5_wa2000_overlay", "t5_wa2000_up_overlay", "", 1600, "sniper", "", undefined, undefined, false, "" );
 			}
 			
-			if(GetDvarInt("mutator_psg1") == MUTATOR_OFFON_ON)
+			if(GetGametypeSetting(mutator_psg1) == MUTATOR_OFFON_ON)
 			{
 				zm_utility::include_weapon( "t5_psg1_overlay", true );
 				zm_utility::include_weapon( "t5_psg1_up_overlay", false );
@@ -502,14 +502,14 @@ function apply_choices() {
 			level.zombie_weapons[GetWeapon("t5_g11")].is_in_box = false;
 			zm_utility::include_weapon( "t5_g11", false);
 			
-			if(GetDvarInt("mutator_wa2000") == MUTATOR_OFFON_ON)
+			if(GetGametypeSetting(mutator_wa2000) == MUTATOR_OFFON_ON)
 			{
 				zm_utility::include_weapon( "t5_wa2000_switch", true );
 				zm_utility::include_weapon( "t5_wa2000_up_switch", false );
 				zm_weapons::add_zombie_weapon( "t5_wa2000_switch", "t5_wa2000_up_switch", "", 1600, "sniper", "", undefined, undefined, false, "" );
 			}
 			
-			if(GetDvarInt("mutator_psg1") == MUTATOR_OFFON_ON)
+			if(GetGametypeSetting(mutator_psg1) == MUTATOR_OFFON_ON)
 			{
 				zm_utility::include_weapon( "t5_psg1_switch", true);
 				zm_utility::include_weapon( "t5_psg1_up_switch", false);
@@ -520,7 +520,7 @@ function apply_choices() {
 		}
 	}
 	
-	if(GetDvarInt("mutator_ppsh") == MUTATOR_OFFON_ON)
+	if(GetGametypeSetting(mutator_ppsh) == MUTATOR_OFFON_ON)
 	{
 		if(GetDvarInt("mutator_bocw_ppsh") == MUTATOR_OFFON_ON)
 		{
@@ -649,7 +649,7 @@ function apply_choices() {
 	level.weaponzmthundergun = getweapon("t5_thundergun");
 	level.weaponzmthundergunupgraded = getweapon("t5_thundergun_upgraded");
 	
-	if(GetDvarInt("mutator_raygunmkii") == MUTATOR_ONOFF_OFF)
+	if(GetGametypeSetting(mutator_raygunmkii) == MUTATOR_ONOFF_OFF)
 		level.zombie_weapons[GetWeapon("raygun_mark2")].is_in_box = false;
 	else
 	{
@@ -691,7 +691,7 @@ function apply_choices() {
 		zm_utility::include_weapon( "t9_ballistic_knife", false);
 	}
 	
-	if(GetDvarString("mapname") != "zm_asylum" && GetDvarInt("mutator_freezegun") == MUTATOR_OFFON_ON)
+	if(GetDvarString("mapname") != "zm_asylum" && GetGametypeSetting(mutator_freezegun) == MUTATOR_OFFON_ON)
 	{
 		zm_utility::include_weapon( "freezegun", true );
 		zm_utility::include_weapon( "freezegun_upgraded", false );

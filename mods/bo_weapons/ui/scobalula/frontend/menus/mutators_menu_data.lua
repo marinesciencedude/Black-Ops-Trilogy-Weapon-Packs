@@ -587,62 +587,62 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_Uzi",
 			"pointsPerMeleeKill",
             BuildStringSettings({"Disabled", "SP/MP", "ZM"}, "Disabled") ),
-		CoD.OptionsUtility.CreateDvarSettings(
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Skorpion",
 			"Add Skorpion to the mystery box. SP/MP has 20/30 round mags while ZM has 10/40 round mags, among other differences from the cut version.",
 			"MutatorSettings_Skorpion",
-			"mutator_skorpion",
-            BuildStringSettings({"Disabled", "SP/MP", "ZM"}, "Disabled"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"pointsPerPrimaryGrenadeKill",
+            BuildStringSettings({"Disabled", "SP/MP", "ZM"}, "Disabled") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"MAC11",
 			"Add MAC11 to the mystery box. SP/MP has 20/30 round mags while ZM has 10/20 round mags",
 			"MutatorSettings_MAC11",
-			"mutator_mac11",
-			BuildStringSettings({"Disabled", "SP/MP", "ZM"}, "Disabled"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"pointsPerPrimaryKill",
+			BuildStringSettings({"Disabled", "SP/MP", "ZM"}, "Disabled") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"M60",
 			"Add M60 to the mystery box.",
 			"MutatorSettings_M60",
-			"mutator_m60",
-			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"pointsPerSecondaryKill",
+			BuildStringSettings({"Off", "On"}, "Off") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Stoner 63",
 			"Add Stoner 63 to the mystery box.",
 			"MutatorSettings_Stoner63",
-			"mutator_stoner63",
-            BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"pointsPerWeaponKill",
+            BuildStringSettings({"Off", "On"}, "Off") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Enfield",
 			"Add Enfield to the mystery box. ZM is based on the cut version from BO with increased mag capacity with PaP while Alternate is balanced differently with higher PaP damage, RoF and Masterkey",
 			"MutatorSettings_Enfield",
-			"mutator_enfield",
-            BuildStringSettings({"Disabled", "ZM", "Alternate"}, "Disabled"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"pregameDraftRoundTime",
+            BuildStringSettings({"Disabled", "ZM", "Alternate"}, "Disabled") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"WA2000",
 			"Enable WA2000 in the mystery box.",
 			"MutatorSettings_WA2000",
-			"mutator_wa2000",
-			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"pregameItemVoteRoundTime",
+			BuildStringSettings({"Off", "On"}, "Off") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"PSG1",
 			"Enable PSG1 in the mystery box.",
 			"MutatorSettings_PSG1",
-			"mutator_psg1",
-			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"pregameItemMaxVotes",
+			BuildStringSettings({"Off", "On"}, "Off") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"PPSh-41",
 			"Enable PPSh-41 in the mystery box.",
 			"MutatorSettings_PPSh",
-			"mutator_ppsh",
-			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+			"pregamePositionShuffleMethod",
+			BuildStringSettings({"Off", "On"}, "Off") ),
 		--CoD.OptionsUtility.CreateDvarSettings(
 		--	arg0,
 		--	"Ray Gun",
@@ -650,20 +650,20 @@ function (arg0, arg1, arg2, arg3, arg4)
 		--	"MutatorSettings_RayGun",
 		--	"mutator_ray_gun",
 		--	BuildStringSettings({"WaW", "BO III"}, "WaW"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Winter's Howl",
 			"Add Winter's Howl to all maps' mystery boxes.",
 			"MutatorSettings_FreezeGun",
-			"mutator_freezegun",
-			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"pregamePositionSortType",
+			BuildStringSettings({"Off", "On"}, "Off") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Ray Gun Mark II",
 			"Enable Ray Gun Mark II in the mystery box.",
 			"MutatorSettings_RayGunMkII",
-			"mutator_raygunmkii",
-            BuildStringSettings({"On", "Off"}, "On"), nil, SetDvarSetting),
+			"pregamePostRoundTime",
+            BuildStringSettings({"On", "Off"}, "On") ),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Crossbow",
