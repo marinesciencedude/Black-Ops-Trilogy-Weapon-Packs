@@ -51,23 +51,15 @@
 #define mutator_ppsh						"pregamePositionShuffleMethod"
 #define mutator_freezegun					"pregamePositionSortType"
 #define mutator_raygunmkii					"pregamePostRoundTime"
-/*#define pregamePostStageTime
-#define pregamePreStageTime
-#define pregameScorestreakModifyTime
-#define prematchrequirement
-#define prematchrequirementtime
-#define randomObjectiveLocations
-#define rebootPlayers
-#define rebootTime
-#define robotSpeed
-#define robotShield
-#define setbacks
-#define shutdownDamage
-#define silentPlant
-#define cleanDepositOnlineTime
-#define cleanDepositRotation
-#define timePausesWhenInZone
-#define vehiclesEnabled
-#define vehiclesTimed
-#define voipDeadHearKiller
-#define voipKillersHearVictim*/
+#define mutator_crossbow					"pregamePostStageTime"
+#define mutator_ballistic_knife				"pregamePreStageTime"
+#define mutator_camo_disable				"pregameScorestreakModifyTime"
+#define mutator_wunderwaffe_camo			"prematchrequirement"
+#define mutator_camo_ingame_cycle			"prematchrequirementtime"
+#define mutator_camo_black_ops				"randomObjectiveLocations"
+#define mutator_camo_world_at_war			"rebootTime"
+#define mutator_camo_gold					"robotSpeed"
+#define mutator_camo_dark_matter			"setbacks"
+#define mutator_camo_ice					"shutdownDamage"
+#define mutator_camo_ritual					"cleanDepositOnlineTime"
+#define mutator_camo_etching				"cleanDepositRotation"

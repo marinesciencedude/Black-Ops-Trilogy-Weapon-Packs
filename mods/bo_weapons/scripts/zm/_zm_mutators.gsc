@@ -115,20 +115,20 @@ function private register_mutators()
 	//register_mutator("MutatorSettings_Stoner63", "mutator_stoner63", undefined, &enable_stoner63);
 	//register_mutator("MutatorSettings_RayGunMkII", "mutator_raygunmkii", undefined, &enable_raygunmkii);
 	register_mutator("MutatorSettings_Wunderfizz", mutator_enable_wunderfizz, undefined, undefined, undefined, &enable_wunderfizz);
-	register_mutator("MutatorSettings_CamoDarkMatter", "mutator_camo_dark_matter", &camo_dark_matter, undefined);
-	register_mutator("MutatorSettings_CamoRitual", "mutator_camo_ritual", undefined, &camo_ritual);
-	register_mutator("MutatorSettings_CamoEtching", "mutator_camo_etching", &camo_etching, undefined);
-	register_mutator("MutatorSettings_CamoDerEisendrache", "mutator_camo_der_eisendrache", &camo_der_eisendrache, undefined);
+	register_mutator("MutatorSettings_CamoDarkMatter", mutator_camo_dark_matter, undefined, undefined, &camo_dark_matter, undefined);
+	register_mutator("MutatorSettings_CamoRitual", mutator_camo_ritual, undefined, undefined, undefined, &camo_ritual);
+	register_mutator("MutatorSettings_CamoEtching", mutator_camo_etching, undefined, undefined, &camo_etching, undefined);
+	register_mutator("MutatorSettings_CamoDerEisendrache", mutator_camo_der_eisendrache, undefined, undefined, &camo_der_eisendrache, undefined);
 	register_mutator("MutatorSettings_CamoOvergrowth", "mutator_camo_overgrowth", &camo_overgrowth, undefined);
 	register_mutator("MutatorSettings_CamoGorodKrovi", "mutator_camo_gorod_krovi", &camo_gorod_krovi, undefined);
 	register_mutator("MutatorSettings_CamoRevelations", "mutator_camo_revelations", &camo_revelations, undefined);
 	register_mutator("MutatorSettings_CamoOrigins", "mutator_camo_origins", &camo_origins, undefined);
 	register_mutator("MutatorSettings_CamoKino", "mutator_camo_kino", &camo_kino, undefined);
-	register_mutator("MutatorSettings_CamoWorldAtWar", "mutator_camo_world_at_war", &camo_waw, undefined);
-	register_mutator("MutatorSettings_CamoIce", "mutator_camo_ice", &camo_ice, undefined);
+	register_mutator("MutatorSettings_CamoWorldAtWar", mutator_camo_world_at_war, undefined, undefined, &camo_waw, undefined);
+	register_mutator("MutatorSettings_CamoIce", mutator_camo_ice, undefined, undefined, &camo_ice, undefined);
 	register_mutator("MutatorSettings_CamoWeaponized115", "mutator_camo_weaponized_115", &camo_weaponized_115, undefined);
-	register_mutator("MutatorSettings_CamoGold", "mutator_camo_gold", &camo_gold, undefined);
-	register_mutator("MutatorSettings_CamoBlackOps", "mutator_camo_black_ops", &camo_black_ops, undefined); //don't create array if unneeded
+	register_mutator("MutatorSettings_CamoGold", mutator_camo_gold, undefined, undefined, &camo_gold, undefined);
+	register_mutator("MutatorSettings_CamoBlackOps", mutator_camo_black_ops, undefined, undefined, &camo_black_ops, undefined); //don't create array if unneeded
 	register_mutator("MutatorSettings_GeorgeReward", "mutator_george_reward", undefined, &george_reward);
 	register_mutator("MutatorSettings_RoundMusic", "mutator_round_music", undefined, &round_music);
 	register_mutator("MutatorSettings_WeaponRest", "mutator_weapon_rest", undefined, &weapon_rest);

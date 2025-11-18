@@ -633,7 +633,7 @@ function apply_choices() {
 		aat::register_aat_exemption(getweapon("ray_gun_upgraded"));
 	}*/
 	
-	if(level.pack_a_punch_camo_index == 141 && GetDvarInt("mutator_camo_ingame_cycle") != 2)
+	if(level.pack_a_punch_camo_index == 141 && GetGametypeSetting(mutator_camo_ingame_cycle) != MUTATOR_OFFON_ON)
 	{
 		ArrayRemoveIndex(level.zombie_weapons_upgraded, GetWeapon("t4_ray_gun_camo_up"));
 		level.zombie_weapons[GetWeapon("t4_ray_gun")].upgrade = GetWeapon("t4_ray_gun_up");
@@ -671,7 +671,7 @@ function apply_choices() {
 		}
 	}
 	
-	if(GetDvarInt("mutator_crossbow") == MUTATOR_ONOFF_OFF)
+	if(GetGametypeSetting(mutator_crossbow) == MUTATOR_ONOFF_OFF)
 	{
 		/*if(GetDvarInt("mutator_bocw_crossbow") == MUTATOR_OFFON_ON
 		{
@@ -685,7 +685,7 @@ function apply_choices() {
 		}
 	}
 	
-	if(GetDvarInt("mutator_ballistic_knife") == MUTATOR_ONOFF_OFF)
+	if(GetGametypeSetting(mutator_ballistic_knife) == MUTATOR_ONOFF_OFF)
 	{
 		level.zombie_weapons[GetWeapon("t9_ballistic_knife")].is_in_box = false;
 		zm_utility::include_weapon( "t9_ballistic_knife", false);

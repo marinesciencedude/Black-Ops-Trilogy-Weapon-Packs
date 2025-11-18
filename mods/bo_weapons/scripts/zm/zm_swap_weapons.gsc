@@ -111,7 +111,7 @@ function starter_weapon()
 	else
 		level.pack_a_punch_camo_index = 132;
 	
-	if(GetDvarInt("mutator_camo_disable") == 2)
+	if(GetGametypeSetting(mutator_camo_disable) == MUTATOR_OFFON_ON)
 		level.pack_a_punch_camo_index = 127; //blank camo, this is actually for Dempsey's Matryoshka Doll 
 	
 	//level.pack_a_punch_camo_index_number_variants = 1;
