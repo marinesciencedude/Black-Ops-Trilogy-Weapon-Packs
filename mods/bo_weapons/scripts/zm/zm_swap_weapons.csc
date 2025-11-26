@@ -2315,7 +2315,7 @@ function swap_wall_weapon()
 		}
 	}
 	
-	if(GetGametypeSetting(mutator_claymore) == 1)
+	if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON)
 	{
 		count = 0;
 		foreach(ent in struct::get_array("claymore_purchase", "targetname"))

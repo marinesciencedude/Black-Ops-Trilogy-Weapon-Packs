@@ -7,22 +7,27 @@
 // For Off/On Mutators
 #define MUTATOR_OFFON_OFF			1
 #define MUTATOR_OFFON_ON			2
+// For Boolean GameTypeSettings
+#define BOOLMUTATOR_OFFON_ON 		1
+#define BOOLMUTATOR_OFFON_OFF 		0
+#define BOOLMUTATOR_ONOFF_ON 		0
+#define BOOLMUTATOR_ONOFF_OFF 		1
 
 // Uncomment to enable debug printing.
 #define MUTATOR_DEBUG_PRINT(msg) 	// IPrintLnBold(msg)
 
-#define mutator_phd_widows					"antiBoostDistance"
+#define mutator_phd_widows					"delayPlayer"
 #define mutator_doubletap					"autoDestroyTime"
 #define mutator_doubletap_existence			"ballCount"
 #define mutator_deadshot_existence			"bombTimer"
-#define mutator_deadshot_price 				"bootTime"
+#define mutator_deadshot_price 				"disableClassSelection"
 #define mutator_scopeads					"carrierArmor"
-#define mutator_sidestep					"crateCaptureTime"
+#define mutator_sidestep					"disableContracts"
 #define mutator_health_difficulty 			"flagDecayTime"
-#define mutator_revive_anim					"defuseTime"
-#define mutator_deathmachine				"destroyTime"
+#define mutator_revive_anim					"disableTacInsert"
+#define mutator_deathmachine				"disableThirdPersonSpectating"
 #define mutator_aug							"enemyCarrierVisible"
-#define mutator_claymore					"flagCaptureGracePeriod"
+#define mutator_claymore					"disableVehicleSpawners"
 #define mutator_shinonuma_perk				"flagRespawnTime"
 #define mutator_startingweapon				"gameAdvertisementRuleScorePercent"
 #define mutator_waw_wall_weapons			"gameAdvertisementRuleTimeLeft"
@@ -30,7 +35,7 @@
 #define mutator_wallbuys_kino_der_toten		"gameAdvertisementRuleRoundsWon"
 #define mutator_wallbuys_origins			"idleFlagResetTime"
 #define mutator_wallbuys_der_eisendrache	"incrementalSpawnDelay"
-#define mutator_double_packapunch			"infectionMode"
+#define mutator_double_packapunch			"droppedTagRespawn"
 #define mutator_enable_gobblegum			"leaderBonus"
 #define mutator_enable_wunderfizz			"maxAllocation"
 #define mutator_widowswine_existence		"maxObjectiveEventsPerMinute"
@@ -63,3 +68,43 @@
 #define mutator_camo_ice					"shutdownDamage"
 #define mutator_camo_ritual					"cleanDepositOnlineTime"
 #define mutator_camo_etching				"cleanDepositRotation"
+
+//ints or int-compatible
+/*#define mutator_						"antiBoostDistance"
+#define mutator_						"bootTime"
+#define mutator_						"crateCaptureTime"
+#define mutator_						"defuseTime"
+#define mutator_						"destroyTime"
+#define mutator_						"flagCaptureGracePeriod"
+#define mutator_						"infectionMode"*/
+
+//bools
+/*#define "droppedTagRespawn"
+#define "enemyCarrierVisible"
+#define "flagCanBeNeutralized"
+#define "flagCaptureCondition"
+#define "idleFlagDecay"
+#define "kothMode"
+#define "loadoutKillstreaksEnabled"
+#define "multiBomb"
+#define "OvertimetimeLimit"
+#define "pregameAlwaysShowStreakEdit"
+#define "pregameDraftEnabled"
+#define "pregameDraftType"
+#define "pregameItemVoteEnabled"
+#define "pregameItemVoteRoundTime"
+#define "rebootPlayers"
+#define "robotShield"
+#define "setbacks"
+#define "silentPlant"
+#define "timePausesWhenInZone"
+#define "vehiclesEnabled"
+#define "vehiclesTimed"
+#define "voipDeadHearKiller"
+#define "voipKillersHearVictim"*/
+
+//floats
+/*#define "defuseTime							
+#define "destroyTime							
+#define "plantTime
+#define "playerObjectiveHeldRespawnDelay*/

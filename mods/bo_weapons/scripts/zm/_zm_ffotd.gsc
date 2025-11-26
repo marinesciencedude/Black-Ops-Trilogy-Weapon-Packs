@@ -152,7 +152,7 @@ function main_end()
 
 function deadshot_cost()
 {
-	if(GetGametypeSetting(mutator_deadshot_price) == 1)
+	if(GetGametypeSetting(mutator_deadshot_price) == BOOLMUTATOR_ONOFF_ON)
 		return 1000;
 	else
 		return 1500;
@@ -329,6 +329,6 @@ function optimize_for_splitscreen()
 
 function test()
 {
-	if(GetGametypeSetting(mutator_sidestep) == MUTATOR_OFFON_ON)
+	if(GetGametypeSetting(mutator_sidestep) == BOOLMUTATOR_OFFON_ON)
 		self hb21_zm_behavior::enable_side_step();
 }

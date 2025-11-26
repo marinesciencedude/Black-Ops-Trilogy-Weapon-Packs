@@ -607,7 +607,7 @@ function apply_choices() {
 		zm_weapons::add_zombie_weapon( "t9_rpk", "t9_rpk_up", "", 2500, "lmg", "", undefined, undefined, false, "" );
 	}
 	
-	if(GetGametypeSetting(mutator_double_packapunch) == MUTATOR_ONOFF_OFF)
+	if(GetGametypeSetting(mutator_double_packapunch) == BOOLMUTATOR_ONOFF_OFF)
 	{
 		keys = GetArrayKeys(level.zombie_weapons_upgraded);
 		for ( i = 0; i < keys.size; i++ )
@@ -825,7 +825,7 @@ function apply_choices() {
 		}
 	//}
 	
-	if(GetGametypeSetting(mutator_deathmachine) == MUTATOR_OFFON_OFF)
+	if(GetGametypeSetting(mutator_deathmachine) == BOOLMUTATOR_OFFON_OFF)
 		zm_powerups::powerup_remove_from_regular_drops("minigun");
 	
     //notify csc for client side scripts

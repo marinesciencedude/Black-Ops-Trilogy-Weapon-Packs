@@ -66,6 +66,27 @@ local function BuildStringSettings(Values, Default)
 	return Results
 end
 
+local function BuildBoolSettings(Values, Default)
+    local Results = {}
+	
+	table.insert(
+			Results,
+			{
+				option = Values[1],
+				value = 0,
+				default = Values[1] == Default
+			})
+	table.insert(
+			Results,
+			{
+				option = Values[2],
+				value = 1,
+				default = Values[2] == Default
+			})
+
+	return Results
+end
+
 -- Updates the Model
 local function Update(arg0, arg1, arg2)
 	if arg1.updateSubscription then
@@ -276,8 +297,8 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"Perk Machine",
 			"Which perk machine out of PhD Flopper/Widow's Wine will be spawned in the game.",
 			"MutatorSettings_PhDWidows",
-			"antiBoostDistance",
-			BuildStringSettings({"PhD Flopper", "Widow's Wine"}, "PhD Flopper") ),
+			"delayPlayer",
+			BuildBoolSettings({"PhD Flopper", "Widow's Wine"}, "PhD Flopper") ),
 		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Double Tap",
@@ -304,7 +325,7 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"Deadshot Daiquiri Price",
 			"1500 - Black Ops III price, 1000 - Black Ops I/II price.",
 			"MutatorSettings_Deadshot",
-			"bootTime",
+			"disableClassSelection",
             BuildStringSettings({"1000", "1500"}, "1000") ),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
@@ -339,8 +360,8 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"Zombie Dodging",
 			"If zombies should side-step and roll like in Ascension.",
 			"MutatorSettings_SideStep",
-			"crateCaptureTime",
-			BuildStringSettings({"Off", "On"}, "On") ),
+			"disableContracts",
+			BuildBoolSettings({"Off", "On"}, "On") ),
 		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Health Difficulty",
@@ -354,15 +375,15 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"Revive Animation",
 			"Change between the classic revive animation and the Black Ops III one.",
 			"MutatorSettings_ReviveAnimation",
-			"defuseTime",
-			BuildStringSettings({"Classic", "BO III"}, "Classic") ),
+			"disableTacInsert",
+			BuildBoolSettings({"Classic", "BO III"}, "Classic") ),
 		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Death Machine",
 			"Enable or disable the Death Machine powerup.",
 			"MutatorSettings_DeathMachine",
-			"destroyTime",
-			BuildStringSettings({"Off", "On"}, "Off") )
+			"disableThirdPersonSpectating",
+			BuildBoolSettings({"Off", "On"}, "Off") )
 	}
 end, nil, nil, Update)
 
@@ -382,8 +403,8 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"Mine Wallbuy",
 			"If the wallbuy should be Claymores instead of Trip Mines.",
 			"MutatorSettings_Claymore",
-			"flagCaptureGracePeriod",
-            BuildStringSettings({"Claymore", "Trip Mines"}, "Claymore") ),
+			"disableVehicleSpawners",
+            BuildBoolSettings({"Claymore", "Trip Mines"}, "Claymore") ),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Ascension Red Telephone Quotes",
@@ -425,7 +446,7 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"Whether it should be a Springfield on the American starting room or a Kar98k",
 			"MutatorSettings_VerrucktSpringfield",
 			"gameAdvertisementRuleRound",
-			BuildStringSettings({"Kar98k", "Springfield"}, "Kar98k") ),		CoD.OptionsUtility.CreateNamedSettings(
+			BuildStringSettings({"Kar98k", "Springfield"}, "Kar98k") ),
 		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Kino der Toten Wallbuys",
@@ -466,8 +487,8 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"Double Pack-a-Punch",
 			"Whether weapons can be pack-a-punched multiple times or not.",
 			"MutatorSettings_DoublePackaPunch",
-			"infectionMode",
-            BuildStringSettings({"On", "Off"}, "On") ),
+			"droppedTagRespawn",
+            BuildBoolSettings({"On", "Off"}, "On") ),
 		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Gobblegum Machines",

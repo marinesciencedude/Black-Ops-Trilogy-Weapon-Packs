@@ -1484,7 +1484,7 @@ function perk_machine_spawn_init()
 	{
 		perk = s_spawn_pos.script_noteworthy;
 		
-		if(GetGametypeSetting(mutator_phd_widows) == 1 && perk == PERK_WIDOWS_WINE && GetDvarString("mapname") != "zm_nuked")
+		if(GetGametypeSetting(mutator_phd_widows) == BOOLMUTATOR_ONOFF_ON && perk == PERK_WIDOWS_WINE && GetDvarString("mapname") != "zm_nuked")
 			perk = PERK_PHDFLOPPER;
 		
 		if(GetGametypeSetting(mutator_doubletap) == 1 && perk == PERK_DOUBLETAP2)

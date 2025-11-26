@@ -838,7 +838,7 @@ function player_can_use_content( weapon )
 
 function init_spawnable_weapon_upgrade()
 {
-	if((GetGametypeSetting(mutator_claymore) == 1 && GetDvarString("mapname") != "zm_prototype") || GetDvarString("mapname") == "zm_stalingrad")
+	if((GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON && GetDvarString("mapname") != "zm_prototype") || GetDvarString("mapname") == "zm_stalingrad")
 		zm_swap_weapons::swap_claymores();
 	else if(GetDvarString("mapname") != "zm_prototype") //is there an actual way to figure out trip mine wallbuys exist?
 	{

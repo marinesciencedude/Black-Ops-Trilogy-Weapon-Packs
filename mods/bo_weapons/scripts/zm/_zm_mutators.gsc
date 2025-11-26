@@ -118,7 +118,7 @@ function private register_mutators()
 	register_mutator("MutatorSettings_CamoDarkMatter", mutator_camo_dark_matter, undefined, undefined, &camo_dark_matter, undefined);
 	register_mutator("MutatorSettings_CamoRitual", mutator_camo_ritual, undefined, undefined, undefined, &camo_ritual);
 	register_mutator("MutatorSettings_CamoEtching", mutator_camo_etching, undefined, undefined, &camo_etching, undefined);
-	register_mutator("MutatorSettings_CamoDerEisendrache", mutator_camo_der_eisendrache, undefined, undefined, &camo_der_eisendrache, undefined);
+	register_mutator("MutatorSettings_CamoDerEisendrache", "mutator_camo_der_eisendrache", &camo_der_eisendrache, undefined);
 	register_mutator("MutatorSettings_CamoOvergrowth", "mutator_camo_overgrowth", &camo_overgrowth, undefined);
 	register_mutator("MutatorSettings_CamoGorodKrovi", "mutator_camo_gorod_krovi", &camo_gorod_krovi, undefined);
 	register_mutator("MutatorSettings_CamoRevelations", "mutator_camo_revelations", &camo_revelations, undefined);
@@ -140,7 +140,7 @@ function private register_mutators()
 
 function private double_packapunch(dvar_value)
 {
-	if(dvar_value == MUTATOR_ONOFF_OFF)
+	if(dvar_value == BOOLMUTATOR_ONOFF_OFF)
 		level.double_packapunch = false;
 }
 
