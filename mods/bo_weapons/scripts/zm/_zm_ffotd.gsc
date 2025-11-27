@@ -50,7 +50,7 @@ function main_start()
 		level._effect["lght_marker_flare"] = "custom/magic_box_og/fx_weapon_box_marker_fl_og";
 	}
 	
-	if(GetGametypeSetting(mutator_random_perk_machines) == 2)
+	if(GetGametypeSetting(mutator_random_perk_machines) == BOOLMUTATOR_ONOFF_OFF)
 		level.randomize_perk_machine_location = 0;
 }
 
@@ -138,7 +138,7 @@ function main_end()
 	else if(GetGametypeSetting(mutator_doubletap ) == 2 && GetDvarString("mapname") == "zm_factory_classic")
 		level._custom_perks[ PERK_DOUBLETAP2 ].clientfield_set = level._custom_perks[ "specialty_rof" ].clientfield_set;
 	
-	if(GetGametypeSetting(mutator_falldamage) == 2)
+	if(GetGametypeSetting(mutator_falldamage) == BOOLMUTATOR_OFFON_ON)
 	{
 		//as per https://www.thetechgame.com/Archives/t=2401729/all-black-ops-patch-gpd-codes-dvar-list-l-updated-l.html
 		setdvar("bg_fallDamageMinHeight", 128);

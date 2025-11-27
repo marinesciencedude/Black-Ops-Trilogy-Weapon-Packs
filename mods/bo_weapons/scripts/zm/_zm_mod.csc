@@ -105,7 +105,7 @@ function applyChoices() {
 		}
 	}
 	
-	if(GetGametypeSetting(mutator_stoner63) == MUTATOR_OFFON_ON)
+	if(GetGametypeSetting(mutator_stoner63) == BOOLMUTATOR_OFFON_ON)
 	{
 		if(GetDvarInt("mutator_bocw_stoner63") == MUTATOR_OFFON_ON)
 		{
@@ -360,13 +360,13 @@ function applyChoices() {
 		}
 	}
 	
-	if(GetGametypeSetting(mutator_m60) == MUTATOR_OFFON_ON)
+	if(GetGametypeSetting(mutator_m60) == BOOLMUTATOR_OFFON_ON)
 	{
 		zm_weapons::include_weapon( "t5_m60e3", true, 2750, 500 );
 		zm_weapons::include_upgraded_weapon( "t5_m60e3", "t5_m60e3_up", false, 2750, 500);
 	}
 	
-	if(GetGametypeSetting(mutator_wa2000) == MUTATOR_OFFON_ON && (GetGametypeSetting(mutator_scopeads) == 2 || !GetGametypeSetting(mutator_scopeads)))
+	if(GetGametypeSetting(mutator_wa2000) == BOOLMUTATOR_OFFON_ON && (GetGametypeSetting(mutator_scopeads) == 2 || !GetGametypeSetting(mutator_scopeads)))
 	{
 		zm_weapons::include_weapon( "t5_wa2000", true, 1600, 500 );
 		zm_weapons::include_upgraded_weapon( "t5_wa2000", "t5_wa2000_up", false, 1600, 500 );
@@ -392,7 +392,7 @@ function applyChoices() {
 			zm_weapons::include_upgraded_weapon( "t5_g11_overlay", "t5_g11_up_overlay", false, 1700, 500 );
 			RemoveZombieBoxWeapon(GetWeapon("t5_g11"));
 			
-			if(GetGametypeSetting(mutator_wa2000) == MUTATOR_OFFON_ON)
+			if(GetGametypeSetting(mutator_wa2000) == BOOLMUTATOR_OFFON_ON)
 			{
 				zm_weapons::include_weapon( "t5_wa2000_overlay", true, 1600, 500 );
 				zm_weapons::include_upgraded_weapon( "t5_wa2000_overlay", "t5_wa2000_up_overlay", false, 1600, 500 );
@@ -419,7 +419,7 @@ function applyChoices() {
 			zm_weapons::include_upgraded_weapon( "t5_g11_switch", "t5_g11_up_switch", false, 1700, 500 );
 			RemoveZombieBoxWeapon(GetWeapon("t5_g11"));
 			
-			if(GetGametypeSetting(mutator_wa2000) == MUTATOR_OFFON_ON)
+			if(GetGametypeSetting(mutator_wa2000) == BOOLMUTATOR_OFFON_ON)
 			{
 				zm_weapons::include_weapon( "t5_wa2000_switch", true, 1600, 500 );
 				zm_weapons::include_upgraded_weapon( "t5_wa2000_switch", "t5_wa2000_up_switch", false, 1600, 500 );

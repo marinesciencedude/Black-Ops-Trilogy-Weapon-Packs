@@ -185,7 +185,7 @@ function private enable_gobblegum(dvar_value)
 
 function private spacemonkey(dvar_value)
 {
-	if(dvar_value == MUTATOR_ONOFF_OFF && GetDvarString("mapname") == "zm_cosmodrome")
+	if(dvar_value == BOOLMUTATOR_ONOFF_OFF && GetDvarString("mapname") == "zm_cosmodrome")
 	{
 		level.nextMonkeyStealRound = 0;
 		level.next_monkey_round = 0;
