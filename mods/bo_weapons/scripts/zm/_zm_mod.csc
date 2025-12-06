@@ -374,7 +374,7 @@ function applyChoices() {
 		AddZombieBoxWeapon(weapon, weapon.worldmodel, false);
 	}
 	
-	if(GetGametypeSetting(mutator_psg1) == MUTATOR_OFFON_ON && (GetGametypeSetting(mutator_scopeads) == 2 || !GetGametypeSetting(mutator_scopeads)))
+	if(GetGametypeSetting(mutator_psg1) == BOOLMUTATOR_OFFON_ON && (GetGametypeSetting(mutator_scopeads) == 2 || !GetGametypeSetting(mutator_scopeads)))
 	{
 		zm_weapons::include_weapon( "t5_psg1", true, 2000, 500 );
 		zm_weapons::include_upgraded_weapon( "t5_psg1", "t5_psg1_up", false, 2000, 500 );
@@ -401,7 +401,7 @@ function applyChoices() {
 				AddZombieBoxWeapon(weapon, weapon.worldmodel, false);
 			}
 			
-			if(GetGametypeSetting(mutator_psg1) == MUTATOR_OFFON_ON)
+			if(GetGametypeSetting(mutator_psg1) == BOOLMUTATOR_OFFON_ON)
 			{
 				zm_weapons::include_weapon( "t5_psg1_overlay", true, 2000, 500 );
 				zm_weapons::include_upgraded_weapon( "t5_psg1_overlay", "t5_psg1_up_overlay", false, 2000, 500 );
@@ -428,7 +428,7 @@ function applyChoices() {
 				AddZombieBoxWeapon(weapon, weapon.worldmodel, false);
 			}
 			
-			if(GetGametypeSetting(mutator_psg1) == MUTATOR_OFFON_ON)
+			if(GetGametypeSetting(mutator_psg1) == BOOLMUTATOR_OFFON_ON)
 			{
 				zm_weapons::include_weapon( "t5_psg1_switch", true, 2000, 500);
 				zm_weapons::include_upgraded_weapon( "t5_psg1_switch", "t5_psg1_up_switch", false, 2000, 500);
@@ -438,7 +438,7 @@ function applyChoices() {
 		}
 	}
 	
-	if(GetGametypeSetting(mutator_ppsh) == MUTATOR_OFFON_ON)
+	if(GetGametypeSetting(mutator_ppsh) == BOOLMUTATOR_OFFON_ON)
 	{
 		if(GetDvarInt("mutator_bocw_ppsh") == MUTATOR_OFFON_ON)
 		{
@@ -467,7 +467,7 @@ function applyChoices() {
 		}
 	}
 	
-	if(GetDvarString("mapname") != "zm_asylum" && GetGametypeSetting(mutator_freezegun) == MUTATOR_OFFON_ON)
+	if(GetDvarString("mapname") != "zm_asylum" && GetGametypeSetting(mutator_freezegun) == BOOLMUTATOR_OFFON_ON)
 	{
 		zm_weapons::include_weapon( "freezegun", true, 10000, 0 );
 		zm_weapons::include_upgraded_weapon( "freezegun", "freezegun_upgraded", false, 10000, 0 );

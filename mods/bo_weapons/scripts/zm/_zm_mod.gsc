@@ -449,7 +449,7 @@ function apply_choices() {
 		zm_weapons::add_zombie_weapon( "t5_wa2000", "t5_wa2000_up", "", 1600, "sniper", "", undefined, undefined, false, "" );
 	}
 	
-	if(GetGametypeSetting(mutator_psg1) == MUTATOR_OFFON_ON && (GetGametypeSetting(mutator_scopeads) == 2 || !GetGametypeSetting(mutator_scopeads)))
+	if(GetGametypeSetting(mutator_psg1) == BOOLMUTATOR_OFFON_ON && (GetGametypeSetting(mutator_scopeads) == 2 || !GetGametypeSetting(mutator_scopeads)))
 	{
 		zm_utility::include_weapon( "t5_psg1", true );
 		zm_utility::include_weapon( "t5_psg1_up", true );
@@ -479,7 +479,7 @@ function apply_choices() {
 				zm_weapons::add_zombie_weapon( "t5_wa2000_overlay", "t5_wa2000_up_overlay", "", 1600, "sniper", "", undefined, undefined, false, "" );
 			}
 			
-			if(GetGametypeSetting(mutator_psg1) == MUTATOR_OFFON_ON)
+			if(GetGametypeSetting(mutator_psg1) == BOOLMUTATOR_OFFON_ON)
 			{
 				zm_utility::include_weapon( "t5_psg1_overlay", true );
 				zm_utility::include_weapon( "t5_psg1_up_overlay", false );
@@ -509,7 +509,7 @@ function apply_choices() {
 				zm_weapons::add_zombie_weapon( "t5_wa2000_switch", "t5_wa2000_up_switch", "", 1600, "sniper", "", undefined, undefined, false, "" );
 			}
 			
-			if(GetGametypeSetting(mutator_psg1) == MUTATOR_OFFON_ON)
+			if(GetGametypeSetting(mutator_psg1) == BOOLMUTATOR_OFFON_ON)
 			{
 				zm_utility::include_weapon( "t5_psg1_switch", true);
 				zm_utility::include_weapon( "t5_psg1_up_switch", false);
@@ -520,7 +520,7 @@ function apply_choices() {
 		}
 	}
 	
-	if(GetGametypeSetting(mutator_ppsh) == MUTATOR_OFFON_ON)
+	if(GetGametypeSetting(mutator_ppsh) == BOOLMUTATOR_OFFON_ON)
 	{
 		if(GetDvarInt("mutator_bocw_ppsh") == MUTATOR_OFFON_ON)
 		{
@@ -691,7 +691,7 @@ function apply_choices() {
 		zm_utility::include_weapon( "t9_ballistic_knife", false);
 	}
 	
-	if(GetDvarString("mapname") != "zm_asylum" && GetGametypeSetting(mutator_freezegun) == MUTATOR_OFFON_ON)
+	if(GetDvarString("mapname") != "zm_asylum" && GetGametypeSetting(mutator_freezegun) == BOOLMUTATOR_OFFON_ON)
 	{
 		zm_utility::include_weapon( "freezegun", true );
 		zm_utility::include_weapon( "freezegun_upgraded", false );

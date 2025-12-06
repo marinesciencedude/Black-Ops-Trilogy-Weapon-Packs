@@ -52,9 +52,9 @@
 #define mutator_stoner63					"multiBomb"
 #define mutator_enfield						"pregameDraftRoundTime"
 #define mutator_wa2000						"pregameAlwaysShowStreakEdit"
-#define mutator_psg1						"pregameItemMaxVotes"
-#define mutator_ppsh						"pregamePositionShuffleMethod"
-#define mutator_freezegun					"pregamePositionSortType"
+#define mutator_psg1						"pregameDraftType"
+#define mutator_ppsh						"pregameItemVoteRoundTime"
+#define mutator_freezegun					"rebootPlayers"
 #define mutator_raygunmkii					"pregamePostRoundTime"
 #define mutator_crossbow					"pregamePostStageTime"
 #define mutator_ballistic_knife				"pregamePreStageTime"
@@ -82,17 +82,17 @@
 #define mutator_						"objectiveSpawnTime"
 #define mutator_						"pointsPerSecondaryKill"
 #define mutator_						"pointsPerWeaponKill"
-#define mutator_						"pregameItemVoteRoundTime"*/
+#define mutator_						"pregameItemVoteRoundTime"
+#define mutator_						"pregameItemMaxVotes"
+#define mutator_						"pregamePositionShuffleMethod"
+#define mutator_						"pregamePositionSortType"*/
 
 //bools
 /*#define "kothMode"
 #define "OvertimetimeLimit"*/
-/*#define "pregameDraftEnabled"
-#define "pregameDraftType"
-#define "pregameItemVoteEnabled"
-#define "pregameItemVoteRoundTime"
-#define "rebootPlayers"
-#define "robotShield"
+//#define "pregameDraftEnabled"	//game stuck loading
+//#define "pregameItemVoteEnabled"	//game stuck loading
+/*#define "robotShield"
 #define "setbacks"
 #define "silentPlant"
 #define "timePausesWhenInZone"
