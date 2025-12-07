@@ -633,7 +633,7 @@ function apply_choices() {
 		aat::register_aat_exemption(getweapon("ray_gun_upgraded"));
 	}*/
 	
-	if(level.pack_a_punch_camo_index == 141 && GetGametypeSetting(mutator_camo_ingame_cycle) != MUTATOR_OFFON_ON)
+	if(level.pack_a_punch_camo_index == 141 && GetGametypeSetting(mutator_camo_ingame_cycle) != BOOLMUTATOR_OFFON_ON)
 	{
 		ArrayRemoveIndex(level.zombie_weapons_upgraded, GetWeapon("t4_ray_gun_camo_up"));
 		level.zombie_weapons[GetWeapon("t4_ray_gun")].upgrade = GetWeapon("t4_ray_gun_up");
@@ -649,7 +649,7 @@ function apply_choices() {
 	level.weaponzmthundergun = getweapon("t5_thundergun");
 	level.weaponzmthundergunupgraded = getweapon("t5_thundergun_upgraded");
 	
-	if(GetGametypeSetting(mutator_raygunmkii) == MUTATOR_ONOFF_OFF)
+	if(GetGametypeSetting(mutator_raygunmkii) == BOOLMUTATOR_ONOFF_OFF)
 		level.zombie_weapons[GetWeapon("raygun_mark2")].is_in_box = false;
 	else
 	{
@@ -671,7 +671,7 @@ function apply_choices() {
 		}
 	}
 	
-	if(GetGametypeSetting(mutator_crossbow) == MUTATOR_ONOFF_OFF)
+	if(GetGametypeSetting(mutator_crossbow) == BOOLMUTATOR_ONOFF_OFF)
 	{
 		/*if(GetDvarInt("mutator_bocw_crossbow") == MUTATOR_OFFON_ON
 		{
@@ -685,7 +685,7 @@ function apply_choices() {
 		}
 	}
 	
-	if(GetGametypeSetting(mutator_ballistic_knife) == MUTATOR_ONOFF_OFF)
+	if(GetGametypeSetting(mutator_ballistic_knife) == BOOLMUTATOR_ONOFF_OFF)
 	{
 		level.zombie_weapons[GetWeapon("t9_ballistic_knife")].is_in_box = false;
 		zm_utility::include_weapon( "t9_ballistic_knife", false);

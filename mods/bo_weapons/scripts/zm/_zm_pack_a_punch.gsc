@@ -191,7 +191,7 @@ function private third_person_weapon_upgrade( current_weapon, upgrade_weapon, pa
 	trigger.current_weapon_acvi = self GetBuildKitAttachmentCosmeticVariantIndexes( trigger.current_weapon, false );
 
 	trigger.upgrade_weapon = upgrade_weapon;
-	if (current_weapon == GetWeapon("tesla_gun") && GetGametypeSetting(mutator_wunderwaffe_camo) == MUTATOR_ONOFF_ON && GetGametypeSetting(mutator_camo_disable) != MUTATOR_OFFON_ON)
+	if (current_weapon == GetWeapon("tesla_gun") && GetGametypeSetting(mutator_wunderwaffe_camo) == BOOLMUTATOR_ONOFF_ON && GetGametypeSetting(mutator_camo_disable) != BOOLMUTATOR_OFFON_ON)
 		upgrade_weapon.pap_camo_to_use = 15;
 	else
 		upgrade_weapon.pap_camo_to_use = zm_weapons::get_pack_a_punch_camo_index( upgrade_weapon.pap_camo_to_use );
@@ -521,7 +521,7 @@ function private vending_weapon_upgrade()
 		// Remember what weapon we have.  This is needed to check unique weapon counts.
 		self.current_weapon = current_weapon;
 		
-		if(GetGametypeSetting(mutator_camo_ingame_cycle) == MUTATOR_OFFON_ON && GetGametypeSetting(mutator_camo_disable) != MUTATOR_OFFON_ON && isdefined(level.pack_a_punch_camo_list))
+		if(GetGametypeSetting(mutator_camo_ingame_cycle) == BOOLMUTATOR_OFFON_ON && GetGametypeSetting(mutator_camo_disable) != BOOLMUTATOR_OFFON_ON && isdefined(level.pack_a_punch_camo_list))
 		{
 			pap_camo = array::random(level.pack_a_punch_camo_list);
 			switch(pap_camo)

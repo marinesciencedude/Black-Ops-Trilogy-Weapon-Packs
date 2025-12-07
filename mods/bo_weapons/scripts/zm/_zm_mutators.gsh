@@ -55,14 +55,14 @@
 #define mutator_psg1						"pregameDraftType"
 #define mutator_ppsh						"pregameItemVoteRoundTime"
 #define mutator_freezegun					"rebootPlayers"
-#define mutator_raygunmkii					"pregamePostRoundTime"
-#define mutator_crossbow					"pregamePostStageTime"
-#define mutator_ballistic_knife				"pregamePreStageTime"
-#define mutator_camo_disable				"pregameScorestreakModifyTime"
-#define mutator_wunderwaffe_camo			"prematchrequirement"
-#define mutator_camo_ingame_cycle			"prematchrequirementtime"
-#define mutator_camo_black_ops				"randomObjectiveLocations"
-#define mutator_camo_world_at_war			"rebootTime"
+#define mutator_raygunmkii					"robotShield"
+#define mutator_crossbow					"setbacks"
+#define mutator_ballistic_knife				"silentPlant"
+#define mutator_camo_disable				"timePausesWhenInZone"
+#define mutator_wunderwaffe_camo			"vehiclesEnabled"
+#define mutator_camo_ingame_cycle			"vehiclesTimed"
+#define mutator_camo_black_ops				"voipDeadHearKiller"
+#define mutator_camo_world_at_war			"voipKillersHearVictim"
 #define mutator_camo_gold					"robotSpeed"
 #define mutator_camo_dark_matter			"setbacks"
 #define mutator_camo_ice					"shutdownDamage"
@@ -85,21 +85,21 @@
 #define mutator_						"pregameItemVoteRoundTime"
 #define mutator_						"pregameItemMaxVotes"
 #define mutator_						"pregamePositionShuffleMethod"
-#define mutator_						"pregamePositionSortType"*/
+#define mutator_						"pregamePositionSortType"
+#define mutator_						"pregamePostRoundTime"
+#define mutator_						"pregamePostStageTime"
+#define mutator_						"pregamePreStageTime"
+#define mutator_						"pregameScorestreakModifyTime"
+#define mutator_						"prematchrequirement"
+#define mutator_						"prematchrequirementtime"
+#define mutator_						"randomObjectiveLocations"
+#define mutator_						"rebootTime"*/
 
 //bools
 /*#define "kothMode"
 #define "OvertimetimeLimit"*/
 //#define "pregameDraftEnabled"	//game stuck loading
 //#define "pregameItemVoteEnabled"	//game stuck loading
-/*#define "robotShield"
-#define "setbacks"
-#define "silentPlant"
-#define "timePausesWhenInZone"
-#define "vehiclesEnabled"
-#define "vehiclesTimed"
-#define "voipDeadHearKiller"
-#define "voipKillersHearVictim"*/
 
 //floats
 /*#define "defuseTime							

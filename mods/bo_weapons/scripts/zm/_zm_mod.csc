@@ -75,7 +75,7 @@ function applyChoices() {
 		}
 	}
 	
-	if(GetGametypeSetting(mutator_raygunmkii) == MUTATOR_ONOFF_ON)
+	if(GetGametypeSetting(mutator_raygunmkii) == BOOLMUTATOR_ONOFF_ON)
 	{
 		if(isdefined(GetWeapon("raygun_mark2").worldmodel)) //stock maps
 		{
@@ -315,7 +315,7 @@ function applyChoices() {
 		zm_weapons::include_upgraded_weapon( "shotgun_energy", "shotgun_energy_upgraded", false, 5000, 500);
 	}*/
 	
-	if(GetGametypeSetting(mutator_crossbow) == MUTATOR_ONOFF_OFF)
+	if(GetGametypeSetting(mutator_crossbow) == BOOLMUTATOR_ONOFF_OFF)
 	{
 		/*if(GetDvarInt("mutator_bocw_crossbow") == MUTATOR_OFFON_ON
 			RemoveZombieBoxWeapon(GetWeapon("t9_crossbow"));
@@ -323,7 +323,7 @@ function applyChoices() {
 			RemoveZombieBoxWeapon(GetWeapon("t5_crossbow"));
 	}
 	
-	if(GetGametypeSetting(mutator_ballistic_knife) == MUTATOR_ONOFF_OFF)
+	if(GetGametypeSetting(mutator_ballistic_knife) == BOOLMUTATOR_ONOFF_OFF)
 	{
 		RemoveZombieBoxWeapon(GetWeapon("t9_ballistic_knife"));
 	}
@@ -529,7 +529,7 @@ function applyChoices() {
 		RemoveZombieBoxWeapon(GetWeapon("t4_ray_gun"));
 	}*/
 	
-	if(level.pack_a_punch_camo_index == 141 && GetGametypeSetting(mutator_camo_ingame_cycle) != MUTATOR_OFFON_ON)
+	if(level.pack_a_punch_camo_index == 141 && GetGametypeSetting(mutator_camo_ingame_cycle) != BOOLMUTATOR_OFFON_ON)
 	{
 		zm_weapons::include_upgraded_weapon( "t4_ray_gun", "t4_ray_gun_up", false, 10000, 0 );
 		ArrayRemoveIndex(level.zombie_weapons_upgraded, GetWeapon("t4_ray_gun_camo_up"));

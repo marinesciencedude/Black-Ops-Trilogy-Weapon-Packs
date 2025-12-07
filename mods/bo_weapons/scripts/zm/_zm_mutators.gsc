@@ -245,7 +245,7 @@ function private enable_wunderfizz(dvar_value)
 
 function camo_black_ops(dvar_value)
 {
-	if(dvar_value == MUTATOR_ONOFF_ON && isdefined(level.pack_a_punch_camo_list))
+	if(dvar_value == BOOLMUTATOR_ONOFF_ON && isdefined(level.pack_a_punch_camo_list))
 		level.pack_a_punch_camo_list[level.pack_a_punch_camo_list.size] = 132;
 }
 
@@ -377,7 +377,7 @@ function camo_kino(dvar_value)
 
 function camo_waw(dvar_value)
 {
-	if(dvar_value == MUTATOR_OFFON_ON)
+	if(dvar_value == BOOLMUTATOR_OFFON_ON)
 	{
 		if(!isdefined(level.pack_a_punch_camo_list))
 		{
