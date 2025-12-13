@@ -7,6 +7,8 @@
 #using scripts\zm\_zm_utility;
 #using scripts\zm\_zm_weapons;
 
+#insert scripts\zm\_zm_mutators.gsh;
+
 #namespace zm_swap_weapons;
 
 /*
@@ -103,7 +105,7 @@ function swap_wall_weapon()
 		RemoveZombieBoxWeapon(GetWeapon("t5_aug"));
 	}*/
 	
-	switch(GetDvarInt("mutator_scopeads"))
+	switch(GetGametypeSetting(mutator_scopeads))
 	{
 		case 1:
 		{
@@ -170,14 +172,14 @@ function swap_wall_weapon()
 			continue;
 		}
 		
-		if(VAL == "smg_mp40_1940" || (GetDvarInt("mutator_waw_wall_weapons") != 3 && VAL == "s2_mp40") )
+		if(VAL == "smg_mp40_1940" || (GetGametypeSetting(mutator_waw_wall_weapons) != 3 && VAL == "s2_mp40") )
 			ent.zombie_weapon_upgrade = "t5_mp40";
 		
 		switch( GetDvarString("mapname") )
 		{
 		case "zm_prototype": //Nacht der Untoten
 			{
-				if(GetDvarInt("mutator_waw_wall_weapons") == 1 || !GetDvarInt("mutator_waw_wall_weapons"))
+				if(GetGametypeSetting(mutator_waw_wall_weapons) == 1 || !GetGametypeSetting(mutator_waw_wall_weapons))
 				{
 					switch(VAL)
 					{
@@ -204,7 +206,7 @@ function swap_wall_weapon()
 						break;
 					case "sniper_fastbolt": //Locus
 						{
-							/*switch(GetDvarInt("mutator_scopeads"))
+							/*switch(GetGametypeSetting(mutator_scopeads))
 							{
 							case 1:
 								ent.zombie_weapon_upgrade = "t4_kar98k_scope_overlay";
@@ -221,7 +223,7 @@ function swap_wall_weapon()
 						}
 					}
 				}
-				else if(GetDvarInt("mutator_waw_wall_weapons") == 2)
+				else if(GetGametypeSetting(mutator_waw_wall_weapons) == 2)
 				{
 					switch(VAL)
 					{
@@ -279,7 +281,7 @@ function swap_wall_weapon()
 						{
 							if(GetDvarInt("mutator_bocw_l96a1") == 2)
 							{
-								switch(GetDvarInt("mutator_scopeads"))
+								switch(GetGametypeSetting(mutator_scopeads))
 								{
 								case 1:
 									ent.zombie_weapon_upgrade = "t9_lw3_tundra_overlay";
@@ -294,7 +296,7 @@ function swap_wall_weapon()
 							}
 							else
 							{
-								switch(GetDvarInt("mutator_scopeads"))
+								switch(GetGametypeSetting(mutator_scopeads))
 								{
 								case 1:
 									ent.zombie_weapon_upgrade = "t5_l96a1_overlay";
@@ -316,13 +318,13 @@ function swap_wall_weapon()
 			}
 		case "zm_asylum": //Verrückt
 			{
-				if(GetDvarInt("mutator_waw_wall_weapons") == 1 || !GetDvarInt("mutator_waw_wall_weapons"))
+				if(GetGametypeSetting(mutator_waw_wall_weapons) == 1 || !GetGametypeSetting(mutator_waw_wall_weapons))
 				{
 					switch(VAL)
 					{
 					case "ar_marksman": //Sheiva
 						{
-							if(sheiva == 0 && GetDvarInt("mutator_verruckt_springfield") == 2)
+							if(sheiva == 0 && GetGametypeSetting(mutator_verruckt_springfield) == 2)
 								ent.zombie_weapon_upgrade = "t4_spring";
 							else
 								ent.zombie_weapon_upgrade = "t4_kar98k";
@@ -374,7 +376,7 @@ function swap_wall_weapon()
 						break;
 					}
 				}
-				else if(GetDvarInt("mutator_waw_wall_weapons") == 2)
+				else if(GetGametypeSetting(mutator_waw_wall_weapons) == 2)
 				{
 					switch(VAL)
 					{
@@ -458,7 +460,7 @@ function swap_wall_weapon()
 			}
 		case "zm_sumpf": //Shi no Numa
 			{
-				if(GetDvarInt("mutator_waw_wall_weapons") == 1 || !GetDvarInt("mutator_waw_wall_weapons"))
+				if(GetGametypeSetting(mutator_waw_wall_weapons) == 1 || !GetGametypeSetting(mutator_waw_wall_weapons))
 				{
 					switch(VAL)
 					{
@@ -530,7 +532,7 @@ function swap_wall_weapon()
 						break;
 					}
 				}
-				else if(GetDvarInt("mutator_waw_wall_weapons") == 2)
+				else if(GetGametypeSetting(mutator_waw_wall_weapons) == 2)
 				{
 					switch(VAL)
 					{
@@ -618,7 +620,7 @@ function swap_wall_weapon()
 			}
 		case "zm_factory": //The Giant
 			{
-				if(GetDvarInt("mutator_waw_wall_weapons") == 1 || !GetDvarInt("mutator_waw_wall_weapons"))
+				if(GetGametypeSetting(mutator_waw_wall_weapons) == 1 || !GetGametypeSetting(mutator_waw_wall_weapons))
 				{
 					switch(VAL)
 					{
@@ -671,7 +673,7 @@ function swap_wall_weapon()
 						break;
 					}
 				}
-				else if(GetDvarInt("mutator_waw_wall_weapons") == 2)
+				else if(GetGametypeSetting(mutator_waw_wall_weapons) == 2)
 				{
 					switch(VAL)
 					{
@@ -762,7 +764,7 @@ function swap_wall_weapon()
 			{
 				if(VAL == "smg_fastfire") //Vesper
 				{
-					if(GetDvarInt("mutator_aug") == 1 && (!GetDvarInt("mutator_wallbuys_kino_der_toten") || GetDvarInt("mutator_wallbuys_kino_der_toten") == 5))
+					if(GetGametypeSetting(mutator_aug) == 1 && (!GetGametypeSetting(mutator_wallbuys_kino_der_toten) || GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 5))
 					{
 						/*if(GetDvarInt("mutator_bocw_aug") == 2)
 							ent.zombie_weapon_upgrade = "t9_aug";
@@ -779,7 +781,7 @@ function swap_wall_weapon()
 						ent struct::delete();
 				}
 				
-				if(!GetDvarInt("mutator_wallbuys_kino_der_toten") || GetDvarInt("mutator_wallbuys_kino_der_toten") == 5) //Black Ops
+				if(!GetGametypeSetting(mutator_wallbuys_kino_der_toten) || GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 5) //Black Ops
 				{
 					switch(VAL)
 					{
@@ -858,7 +860,7 @@ function swap_wall_weapon()
 						}
 					}
 				}
-				else if(GetDvarInt("mutator_wallbuys_kino_der_toten") == 1) //Der Riese
+				else if(GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 1) //Der Riese
 				{
 					switch(VAL)
 					{
@@ -900,7 +902,7 @@ function swap_wall_weapon()
 						}
 					}
 				}
-				else if(GetDvarInt("mutator_wallbuys_kino_der_toten") == 3 || GetDvarInt("mutator_wallbuys_kino_der_toten") == 4) //WaW - Black Ops-style
+				else if(GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 3 || GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 4) //WaW - Black Ops-style
 				{
 					switch(VAL)
 					{
@@ -912,7 +914,7 @@ function swap_wall_weapon()
 							break;
 						case "smg_burst": //Pharo
 							{
-								if(GetDvarInt("mutator_wallbuys_kino_der_toten") == 3)
+								if(GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 3)
 									ent.zombie_weapon_upgrade = "t4_bar";
 								else
 									ent.zombie_weapon_upgrade = "t4_fg42";
@@ -930,7 +932,7 @@ function swap_wall_weapon()
 							break;
 						case "pistol_fullauto": //L-CAR 9
 							{
-								if(GetDvarInt("mutator_wallbuys_kino_der_toten") == 3)
+								if(GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 3)
 									ent.zombie_weapon_upgrade = "t4_fg42";
 								else
 									ent.zombie_weapon_upgrade = "t4_bar";
@@ -952,7 +954,7 @@ function swap_wall_weapon()
 						}
 					}
 				}
-				else if(GetDvarInt("mutator_wallbuys_kino_der_toten") == 2) //Conn6orsuper117
+				else if(GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 2) //Conn6orsuper117
 				{
 					switch(VAL)
 					{
@@ -1390,7 +1392,7 @@ function swap_wall_weapon()
 			}
 		case "zm_giant": //TrustInUma's DER RIESE
 			{
-				if(GetDvarInt("mutator_waw_wall_weapons") != 2 || !GetDvarInt("mutator_waw_wall_weapons"))
+				if(GetGametypeSetting(mutator_waw_wall_weapons) != 2 || !GetGametypeSetting(mutator_waw_wall_weapons))
 				{
 					switch(VAL)
 					{
@@ -1430,7 +1432,7 @@ function swap_wall_weapon()
 						break;
 					}
 				}
-				else if(GetDvarInt("mutator_waw_wall_weapons") == 2)
+				else if(GetGametypeSetting(mutator_waw_wall_weapons) == 2)
 				{
 					switch(VAL)
 					{
@@ -1516,7 +1518,7 @@ function swap_wall_weapon()
 			}
 		case "zm_der_riese": //Der Riese: Declassified
 			{
-				if(GetDvarInt("mutator_waw_wall_weapons") == 1 || !GetDvarInt("mutator_waw_wall_weapons"))
+				if(GetGametypeSetting(mutator_waw_wall_weapons) == 1 || !GetGametypeSetting(mutator_waw_wall_weapons))
 				{
 					switch(VAL)
 					{
@@ -1554,7 +1556,7 @@ function swap_wall_weapon()
 						break;
 					}
 				}
-				else if(GetDvarInt("mutator_waw_wall_weapons") == 2)
+				else if(GetGametypeSetting(mutator_waw_wall_weapons) == 2)
 				{
 					switch(VAL)
 					{
@@ -1633,7 +1635,7 @@ function swap_wall_weapon()
 			}
 			case "zm_tomb": //Origins
 			{
-				if(!GetDvarInt("mutator_wallbuys_origins") || GetDvarInt("mutator_wallbuys_origins") == 1)
+				if(!GetGametypeSetting(mutator_wallbuys_origins) || GetGametypeSetting(mutator_wallbuys_origins) == 1)
 				{
 					switch(VAL)
 					{
@@ -1745,7 +1747,7 @@ function swap_wall_weapon()
 						}
 					}
 				}
-				else if(GetDvarInt("mutator_wallbuys_origins") == 2)
+				else if(GetGametypeSetting(mutator_wallbuys_origins) == 2)
 				{
 					switch(VAL)
 					{
@@ -1817,7 +1819,7 @@ function swap_wall_weapon()
 			}
 		case "zm_coast":
 			{
-				if(GetDvarInt("mutator_wallbuys_callofthedead") == 2)
+				if(GetGametypeSetting("mutator_wallbuys_callofthedead") == MUTATOR_OFFON_ON)
 				{
 					switch(VAL)
 					{
@@ -1875,7 +1877,7 @@ function swap_wall_weapon()
 			}
 		case "zm_castle": //Der Eisendrache
 			{
-				if(!GetDvarInt("mutator_wallbuys_der_eisendrache") || GetDvarInt("mutator_wallbuys_der_eisendrache") == 1) //poyzee
+				if(!GetGametypeSetting(mutator_wallbuys_der_eisendrache) || GetGametypeSetting(mutator_wallbuys_der_eisendrache) == 1) //poyzee
 				{
 					switch(VAL)
 					{
@@ -1950,7 +1952,7 @@ function swap_wall_weapon()
 							break;
 					}
 				}
-				else if(GetDvarInt("mutator_wallbuys_der_eisendrache") == 2) //Conn6orsuper117	
+				else if(GetGametypeSetting(mutator_wallbuys_der_eisendrache) == 2) //Conn6orsuper117	
 				{
 					switch(VAL)
 					{
@@ -1979,7 +1981,7 @@ function swap_wall_weapon()
 								}
 								else //Right from spawn
 								{
-									/*switch(GetDvarInt("mutator_scopeads"))
+									/*switch(GetGametypeSetting(mutator_scopeads))
 									{
 									case 1:
 										ent.zombie_weapon_upgrade = "t4_kar98k_scope_overlay";
@@ -2287,9 +2289,9 @@ function swap_wall_weapon()
 			}
 		}
 		
-		if(ent.zombie_weapon_upgrade == "sticky_grenade_custom" && GetDvarInt("mutator_grenade_wallbuy") == 2)
+		if(ent.zombie_weapon_upgrade == "sticky_grenade_custom" && GetGametypeSetting(mutator_grenade_wallbuy) == 2)
 			ent.zombie_weapon_upgrade = "frag_grenade";
-		else if(ent.zombie_weapon_upgrade == "frag_grenade" && GetDvarInt("mutator_grenade_wallbuy") == 3)
+		else if(ent.zombie_weapon_upgrade == "frag_grenade" && GetGametypeSetting(mutator_grenade_wallbuy) == 3)
 		{
 			if(!isdefined(level._included_weapons[GetWeapon("sticky_grenade_custom")]))
 				zm_weapons::include_weapon( "sticky_grenade_custom", false, 250, 250);
@@ -2313,7 +2315,7 @@ function swap_wall_weapon()
 		}
 	}
 	
-	if(GetDvarInt("mutator_claymore") == 1)
+	if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON)
 	{
 		count = 0;
 		foreach(ent in struct::get_array("claymore_purchase", "targetname"))
@@ -2323,7 +2325,7 @@ function swap_wall_weapon()
 			{
 				continue;
 			}
-			if((GetDvarString("mapname") == "zm_asylum" && count == 0) || (GetDvarInt("mutator_waw_wall_weapons") != 2 && (GetDvarString("mapname") == "zm_asylum" || GetDvarString("mapname") == "zm_sumpf" || GetDvarString("mapname") == "zm_factory")))
+			if((GetDvarString("mapname") == "zm_asylum" && count == 0) || (GetGametypeSetting(mutator_waw_wall_weapons) != 2 && (GetDvarString("mapname") == "zm_asylum" || GetDvarString("mapname") == "zm_sumpf" || GetDvarString("mapname") == "zm_factory")))
 				ent.zombie_weapon_upgrade = "bo1_bouncingbetty";
 			else if(GetDvarString("mapname") != "zm_asylum" || (GetDvarString("mapname") == "zm_asylum" && count != 0)) //Don't delete German side
 				ent struct::delete();

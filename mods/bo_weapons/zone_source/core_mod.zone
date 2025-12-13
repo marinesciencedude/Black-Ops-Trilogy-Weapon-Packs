@@ -17,3 +17,10 @@ rawfile,ui/t6/lobby/lobbymenubuttons_og.luac
 rawfile,ui/t6/lobby/lobbymenus.lua
 rawfile,ui/scobalula/frontend/menus/mutators_menu.lua
 rawfile,ui/scobalula/frontend/menus/mutators_menu_data.lua
+
+rawfile,gamedata/gamesettings/zm/gamesettings_zclassic.cfg
+rawfile,lua/Shared/LobbyData.lua
+rawfile,ui/t6/lobby/lobbybase.lua
+rawfile,ui/t6/lobby/lobbybase_og.luac
+rawfile,lua/Lobby/Process/Nav/LobbyProcessNavZM.lua
+rawfile,lua/Lobby/Process/Nav/lobbyprocessnavzm_og.luac

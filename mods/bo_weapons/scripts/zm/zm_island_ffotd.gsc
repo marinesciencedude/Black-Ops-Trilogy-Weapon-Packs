@@ -11,6 +11,8 @@
 #using scripts\zm\_zm;
 #using scripts\zm\_zm_utility;
 
+#insert scripts\zm\_zm_mutators.gsh;
+
 #namespace zm_island_ffotd;
 
 /*
@@ -39,7 +41,7 @@ function main_end()
 {
 	level.var_3f5e92d = level.start_weapon;
 	
-	switch(GetDvarInt("mutator_scopeads"))
+	switch(GetGametypeSetting(mutator_scopeads))
 	{
 	case 1:
 		level.var_f3798849 = getweapon("t5_l96a1_overlay");

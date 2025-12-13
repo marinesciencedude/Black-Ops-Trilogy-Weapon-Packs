@@ -18,6 +18,7 @@
 
 #insert scripts\zm\_zm_perks.gsh;
 #insert scripts\shared\version.gsh;
+#insert scripts\zm\_zm_mutators.gsh;
 
 #precache( "fx", "custom/magic_box_og/fx_weapon_box_marker_fl_og" );
 #precache( "fx", "custom/magic_box_og/fx_weapon_box_marker_og" );
@@ -49,7 +50,7 @@ function main_start()
 		level._effect["lght_marker_flare"] = "custom/magic_box_og/fx_weapon_box_marker_fl_og";
 	}
 	
-	if(GetDvarInt("mutator_random_perk_machines") == 2)
+	if(GetGametypeSetting(mutator_random_perk_machines) == BOOLMUTATOR_ONOFF_OFF)
 		level.randomize_perk_machine_location = 0;
 }
 
@@ -134,10 +135,10 @@ function main_end()
 		if(isdefined(level._custom_perks[ "specialty_rof" ]))
 			level._custom_perks[ "specialty_rof" ].clientfield_set = &doubletap_set_clientfield;
 	}
-	else if(GetDvarInt("mutator_doubletap") == 2 && GetDvarString("mapname") == "zm_factory_classic")
+	else if(GetGametypeSetting(mutator_doubletap ) == 2 && GetDvarString("mapname") == "zm_factory_classic")
 		level._custom_perks[ PERK_DOUBLETAP2 ].clientfield_set = level._custom_perks[ "specialty_rof" ].clientfield_set;
 	
-	if(GetDvarInt("mutator_falldamage") == 2)
+	if(GetGametypeSetting(mutator_falldamage) == BOOLMUTATOR_OFFON_ON)
 	{
 		//as per https://www.thetechgame.com/Archives/t=2401729/all-black-ops-patch-gpd-codes-dvar-list-l-updated-l.html
 		setdvar("bg_fallDamageMinHeight", 128);
@@ -145,6 +146,16 @@ function main_end()
 												//closest height in testing is 136 (1 damage) and farthest height before death is 563 (98 damage)
 												//136-564 range giving a difference of 428 being equal to 128+300 is probably a coincidence
 	}
+	
+	level._custom_perks[ PERK_DEAD_SHOT ].cost = &deadshot_cost;
+}
+
+function deadshot_cost()
+{
+	if(GetGametypeSetting(mutator_deadshot_price) == BOOLMUTATOR_ONOFF_ON)
+		return 1000;
+	else
+		return 1500;
 }
 
 function quick_revive_set_clientfield( state )
@@ -318,6 +329,6 @@ function optimize_for_splitscreen()
 
 function test()
 {
-	if(GetDvarInt("mutator_sidestep") == 2)
+	if(GetGametypeSetting(mutator_sidestep) == BOOLMUTATOR_OFFON_ON)
 		self hb21_zm_behavior::enable_side_step();
 }

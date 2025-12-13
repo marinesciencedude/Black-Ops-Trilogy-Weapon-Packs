@@ -9,6 +9,7 @@
 #using scripts\shared\laststand_shared;
 
 #insert scripts\shared\shared.gsh;
+#insert scripts\zm\_zm_mutators.gsh;
 
 #using scripts\zm\_zm_magicbox;
 
@@ -48,7 +49,7 @@ function on_player_connect()
 		level.clientid++;	// Is this safe? What if a server runs for a long time and many people join/leave
 	}
 	
-	if(GetDvarInt("mutator_slide_dive") != 2)
+	if(GetGametypeSetting(mutator_slide_dive) != 2)
 		self thread disableSlide();
 }
 

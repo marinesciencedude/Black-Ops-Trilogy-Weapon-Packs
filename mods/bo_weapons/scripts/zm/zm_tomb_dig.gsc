@@ -21,6 +21,8 @@
 #using scripts\zm\zm_tomb_main_quest;
 #using scripts\zm\zm_tomb_utility;
 
+#insert scripts\zm\_zm_mutators.gsh;
+
 #namespace zm_tomb_dig;
 
 /*
@@ -715,14 +717,14 @@ function dig_up_grenade(player)
 function dig_up_weapon(digger)
 {
 	starting_weapon = getweapon("t5_m1911");
-	//starting_weapon = GetDvarString("mutator_startingweapon");
-	if(GetDvarInt("mutator_startingweapon") == 2)
+	//starting_weapon = GetGametypeSetting(mutator_startingweapon);
+	if(GetGametypeSetting(mutator_startingweapon) == 2)
 		starting_weapon = level.start_weapon;
 	var_43f586fe = array(starting_weapon, getweapon("t5_olympia"), getweapon("t5_stakeout"));
 	var_63eba41d = array(getweapon("t5_l96a1"), getweapon("t5_hs10"));
 	if(digger.dig_vars["has_upgraded_shovel"])
 	{
-		if(GetDvarInt("mutator_claymore") == 1)
+		if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON)
 			var_63eba41d = arraycombine(var_63eba41d, array(getweapon("claymore"), getweapon("ar_stg44"), getweapon("t5_ak74u"), getweapon("t5_mp40"), getweapon("t5_spas12")), 0, 0);
 		else
 			var_63eba41d = arraycombine(var_63eba41d, array(getweapon("bouncingbetty"), getweapon("ar_stg44"), getweapon("t5_ak74u"), getweapon("t5_mp40"), getweapon("t5_spas12")), 0, 0);
