@@ -1063,34 +1063,34 @@ function(arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_CamoEtching",
 			"cleanDepositRotation",
 			BuildStringSettings({"Off", "On"}, "Off") ),
-		CoD.OptionsUtility.CreateDvarSettings(
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Der Eisendrache Camos",
 			"Add Topaz/Garnet/Sapphire/Emerald/Amethyst to be randomly selected as PaP camos for the game",
 			"MutatorSettings_CamoDerEisendrache",
-			"mutator_camo_der_eisendrache",
-			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"antiBoostDistance",
+			BuildStringSettings({"Off", "On"}, "Off") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Overgrowth",
 			"Add Overgrowth (Zetsubou No Shima) to be randomly selected as PaP camo for the game",
 			"MutatorSettings_CamoOvergrowth",
-			"mutator_camo_overgrowth",
-			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"bootTime",
+			BuildStringSettings({"Off", "On"}, "Off") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Gorod Krovi Camos",
 			"Add Dragon Fire/Glacies Fire (Blue Gorod Krovi)/Atomic Fire/Everlasting Fire/Arcane Fire to be randomly selected as PaP camos for the game",
 			"MutatorSettings_CamoGorodKrovi",
-			"mutator_camo_gorod_krovi",
-			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"crateCaptureTime",
+			BuildStringSettings({"Off", "On"}, "Off") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Revelations Camos",
 			"Add Cosmos/Cosmic/Infinitus/Into the Void/Universe to be randomly selected as PaP camos for the game",
 			"MutatorSettings_CamoRevelations",
-			"mutator_camo_revelations",
-			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
+			"defuseTime",
+			BuildStringSettings({"Off", "On"}, "Off") ),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"SCROLL TO SEE MORE CAMOS",
@@ -1098,27 +1098,27 @@ function(arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_More_Camos",
 			"mutator_more_camos",
 			BuildStringSettings({""}, ""), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Circuits",
 			"Add Circuits (BO III Kino der Toten) to be randomly selected as PaP camo for the game",
 			"MutatorSettings_CamoKino",
-			"mutator_camo_kino",
-			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"destroyTime",
+			BuildStringSettings({"Off", "On"}, "Off") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Origins",
 			"Add Origins PaP camo to be randomly selected for the game",
 			"MutatorSettings_CamoOrigins",
-			"mutator_camo_origins",
-			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"flagCaptureGracePeriod",
+			BuildStringSettings({"Off", "On"}, "Off") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Weaponized 115",
 			"Add Weaponized 115 to be randomly selected as PaP camo for the game",
 			"MutatorSettings_Weaponized115",
-			"mutator_camo_weaponized_115",
-			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting)
+			"infectionMode",
+			BuildStringSettings({"Off", "On"}, "Off") )
 	}
 end, nil, nil, Update)
 
@@ -1126,33 +1126,33 @@ DataSources.MutatorSettingsCustomMaps = DataSourceHelpers.ListSetup("MutatorSett
 function(arg0, arg1, arg2, arg3, arg4)
 	return
 	{
-		CoD.OptionsUtility.CreateDvarSettings(
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Der Riese: Declassified PPSh-41",
 			"Adds back Black Ops III PPSh-41 to Der Riese: Declassified",
 			"MutatorSettings_DeclassifiedPPSh",
-			"mutator_declassified_ppsh",
-			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"maxPlayerDefensive",
+			BuildStringSettings({"Off", "On"}, "Off") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Der Riese: Declassified MG 42",
 			"Adds back CoD: WWII MG 42 to Der Riese: Declassified",
 			"MutatorSettings_DeclassifiedMG42",
-			"mutator_declassified_mg42",
-			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"maxPlayerEventsPerMinute",
+			BuildStringSettings({"Off", "On"}, "Off") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Call of the Dead Easter Egg Reward",
 			"Force spawns Lightning Bolt powerup (Wunderwaffe DG-2) in place of Death Machine when defeating George A. Romero",
 			"MutatorSettings_GeorgeReward",
-			"mutator_george_reward",
-			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+			"objectiveSpawnTime",
+			BuildStringSettings({"Off", "On"}, "Off") ),
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Call of the Dead Wallbuys",
 			"Whether Call of the Dead wallbuys should use the original Black Ops or World at War weapons.",
 			"MutatorSettings_CalloftheDead",
-			"mutator_wallbuys_callofthedead",
-			BuildStringSettings({"Black Ops", "World at War"}, "Black Ops"), nil, SetDvarSetting)
+			"pointsPerSecondaryKill",
+			BuildStringSettings({"Black Ops", "World at War"}, "Black Ops") )
 	}
 end, nil, nil, Update)

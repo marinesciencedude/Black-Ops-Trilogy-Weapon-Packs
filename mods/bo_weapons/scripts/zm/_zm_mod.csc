@@ -454,13 +454,13 @@ function applyChoices() {
 	
 	if(GetDvarString("mapname") == "zm_der_riese")
 	{
-		if(GetDvarInt("mutator_declassified_ppsh") == 2)
+		if(GetGametypeSetting(mutator_declassified_ppsh) == MUTATOR_OFFON_ON)
 		{
 			zm_weapons::include_weapon( "smg_ppsh", true, 5000, 500 );
 			zm_weapons::include_upgraded_weapon( "smg_ppsh", "smg_ppsh_upgraded", false, 5000, 500 );
 		}
 		
-		if(GetDvarInt("mutator_declassified_mg42") == 2)
+		if(GetGametypeSetting(mutator_declassified_mg42) == MUTATOR_OFFON_ON)
 		{
 			zm_weapons::include_weapon( "s2_mg42", true, 3000, 500 );
 			zm_weapons::include_upgraded_weapon( "s2_mg42", "s2_mg42_upgraded", false, 3000, 500 );

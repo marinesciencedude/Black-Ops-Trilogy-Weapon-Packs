@@ -1984,7 +1984,7 @@ function swap_wall_weapon()
 			}
 		case "zm_coast":
 			{
-				if(GetDvarInt("mutator_wallbuys_callofthedead") == 2)
+				if(GetGametypeSetting("mutator_wallbuys_callofthedead") == MUTATOR_OFFON_ON)
 				{
 					switch(VAL)
 					{
