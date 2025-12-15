@@ -544,7 +544,7 @@ function CoD.LobbyMenus.ZMButtonsOnline(InstanceRef, ButtonList, IsHost)
 		return
 	end
 	if IsHost == 1.000000 then
-		AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_SOLO_GAME)
+		--AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_SOLO_GAME)
 		AddLargeButton(InstanceRef, ButtonList, CoD.LobbyButtons.ZM_CUSTOM_GAMES)
 		SetLastButtonInGroup(ButtonList)
 	end
