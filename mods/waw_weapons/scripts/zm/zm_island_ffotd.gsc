@@ -11,6 +11,8 @@
 #using scripts\zm\_zm;
 #using scripts\zm\_zm_utility;
 
+#insert scripts\zm\_zm_mutators.gsh;
+
 #namespace zm_island_ffotd;
 
 /*

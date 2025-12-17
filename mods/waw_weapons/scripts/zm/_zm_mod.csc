@@ -30,7 +30,7 @@ function main () {
 
 function applyChoices() {
 	
-	/*if(GetDvarInt("mutator_raygunmkii") == MUTATOR_ONOFF_ON)
+	/*if(GetGametypeSetting(mutator_raygunmkii) == BOOLMUTATOR_ONOFF_ON)
 	{
 		if(isdefined(GetWeapon("raygun_mark2").worldmodel)) //stock maps
 		{
@@ -44,7 +44,7 @@ function applyChoices() {
 		}
 	}*/
 	
-	/*switch(GetDvarInt("mutator_scopeads"))
+	/*switch(GetGametypeSetting(mutator_scopeads))
 	{
 		case 1:
 		{
@@ -56,7 +56,7 @@ function applyChoices() {
 			zm_weapons::include_upgraded_weapon( "t5_g11_overlay", "t5_g11_up_overlay", false, 1700, 500 );
 			RemoveZombieBoxWeapon(GetWeapon("t5_g11"));
 			
-			if(GetDvarInt("mutator_wa2000") == MUTATOR_OFFON_ON)
+			if(GetGametypeSetting(mutator_wa2000) == BOOLMUTATOR_OFFON_ON)
 			{
 				zm_weapons::include_weapon( "t5_wa2000_overlay", true, 1600, 500 );
 				zm_weapons::include_upgraded_weapon( "t5_wa2000_overlay", "t5_wa2000_up_overlay", false, 1600, 500 );
@@ -65,7 +65,7 @@ function applyChoices() {
 				AddZombieBoxWeapon(weapon, weapon.worldmodel, false);
 			}
 			
-			if(GetDvarInt("mutator_psg1") == MUTATOR_OFFON_ON)
+			if(GetGametypeSetting(mutator_psg1) == BOOLMUTATOR_OFFON_ON)
 			{
 				zm_weapons::include_weapon( "t5_psg1_overlay", true, 2000, 500 );
 				zm_weapons::include_upgraded_weapon( "t5_psg1_overlay", "t5_psg1_up_overlay", false, 2000, 500 );
@@ -83,7 +83,7 @@ function applyChoices() {
 			zm_weapons::include_upgraded_weapon( "t5_g11_switch", "t5_g11_up_switch", false, 1700, 500 );
 			RemoveZombieBoxWeapon(GetWeapon("t5_g11"));
 			
-			if(GetDvarInt("mutator_wa2000") == MUTATOR_OFFON_ON)
+			if(GetGametypeSetting(mutator_wa2000) == BOOLMUTATOR_OFFON_ON)
 			{
 				zm_weapons::include_weapon( "t5_wa2000_switch", true, 1600, 500 );
 				zm_weapons::include_upgraded_weapon( "t5_wa2000_switch", "t5_wa2000_up_switch", false, 1600, 500 );
@@ -92,7 +92,7 @@ function applyChoices() {
 				AddZombieBoxWeapon(weapon, weapon.worldmodel, false);
 			}
 			
-			if(GetDvarInt("mutator_psg1") == MUTATOR_OFFON_ON)
+			if(GetGametypeSetting(mutator_psg1) == BOOLMUTATOR_OFFON_ON)
 			{
 				zm_weapons::include_weapon( "t5_psg1_switch", true, 2000, 500);
 				zm_weapons::include_upgraded_weapon( "t5_psg1_switch", "t5_psg1_up_switch", false, 2000, 500);
@@ -129,18 +129,18 @@ function applyChoices() {
 		//zm_weapons::load_weapon_spec_from_table("gamedata/weapons/zm/zm_factory_classic_mod.csv", 1);
 	}*/
 	
-	if((GetDvarString("mapname") != "zm_stalingrad" && GetDvarInt("mutator_wallbuys_gorod_krovi") != 2) && GetDvarInt("mutator_dp27") == MUTATOR_OFFON_ON)
+	if((GetDvarString("mapname") != "zm_stalingrad" && GetGametypeSetting(mutator_wallbuys_gorod_krovi) != 2) && GetGametypeSetting(mutator_dp27) == BOOLMUTATOR_OFFON_ON)
 	{
 		zm_weapons::include_weapon( "t4_dp28", true, 2400, 0 );
 		zm_weapons::include_upgraded_weapon( "t4_dp28", "t4_dp28_up", false, 2400, 0 );
 	}
 	
-	if(GetDvarInt("mutator_svt40") == MUTATOR_OFFON_ON)
+	if(GetGametypeSetting(mutator_svt40) == BOOLMUTATOR_OFFON_ON)
 	{
 		zm_weapons::include_weapon( "t4_svt", true, 600, 0 );
 		zm_weapons::include_upgraded_weapon( "t4_svt", "t4_svt_up", false );	}
 	
-	if(GetDvarInt("mutator_type99") == MUTATOR_OFFON_ON)
+	if(GetGametypeSetting(mutator_type99) == BOOLMUTATOR_OFFON_ON)
 	{
 		zm_weapons::include_weapon( "t4_type99", true, 2700, 0 );
 		zm_weapons::include_upgraded_weapon( "t4_type99", "t4_type99_up", false );
@@ -154,10 +154,10 @@ function applyChoices() {
 		RemoveZombieBoxWeapon(GetWeapon("t4_ray_gun"));
 	}
 	
-	if(GetDvarInt("mutator_monkey_bomb") == MUTATOR_ONOFF_OFF)
+	if(GetGametypeSetting(mutator_monkey_bomb) == BOOLMUTATOR_ONOFF_OFF)
 		RemoveZombieBoxWeapon(GetWeapon("cymbal_monkey"));
 	
-	if(level.pack_a_punch_camo_index != 142 && GetDvarInt("mutator_camo_ingame_cycle") == 2)
+	if(level.pack_a_punch_camo_index != 142 && GetGametypeSetting(mutator_camo_ingame_cycle) != BOOLMUTATOR_OFFON_ON)
 	{
 		zm_weapons::include_upgraded_weapon( "t4_ray_gun", "t4_ray_gun_camo_up", false, 10000, 0 );
 		ArrayRemoveIndex(level.zombie_weapons_upgraded, GetWeapon("t4_ray_gun_up"));

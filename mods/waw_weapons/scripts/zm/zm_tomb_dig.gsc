@@ -21,6 +21,8 @@
 #using scripts\zm\zm_tomb_main_quest;
 #using scripts\zm\zm_tomb_utility;
 
+#insert scripts\zm\_zm_mutators.gsh;
+
 #namespace zm_tomb_dig;
 
 /*
@@ -716,7 +718,7 @@ function dig_up_weapon(digger)
 {
 	starting_weapon = "t4_m1911";
 	//starting_weapon = GetDvarString("mutator_startingweapon");
-	switch(GetDvarInt("mutator_startingweapon"))
+	switch(GetGametypeSetting(mutator_startingweapon))
 	{
 	case 2:
 		starting_weapon = "t5_m1911";

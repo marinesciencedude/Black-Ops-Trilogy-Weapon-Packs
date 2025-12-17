@@ -44,6 +44,10 @@ function private __init__()
 		{
 			level thread [[mutator.prefunc]](GetDvarInt(mutator.dvar));
 		}
+		if(isdefined(mutator.prefunc_gametypesetting) && IsFunctionPtr(mutator.prefunc_gametypesetting))
+		{
+			level thread [[mutator.prefunc_gametypesetting]](GetGametypeSetting(mutator.dvar));
+		}
 	}
 }
 
@@ -54,6 +58,10 @@ function private __main__()
 		if(isdefined(mutator.postfunc) && IsFunctionPtr(mutator.postfunc))
 		{
 			level thread [[mutator.postfunc]](GetDvarInt(mutator.dvar));
+		}
+		if(isdefined(mutator.postfunc_gametypesetting) && IsFunctionPtr(mutator.postfunc_gametypesetting))
+		{
+			level thread [[mutator.postfunc_gametypesetting]](GetGametypeSetting(mutator.dvar));
 		}
 	}
 }
@@ -68,7 +76,7 @@ function private __main__()
 "Example: zm_mutators::register_mutator(MUTATOR_PERKS_NAME, MUTATOR_PERKS_DVAR, undefined, &disable_perks);"
 "SPMP: both"
 @/
-function register_mutator(mutator_name, dvar_name, pre_func, post_func)
+function register_mutator(mutator_name, dvar_name, pre_func, post_func, prefunc_gametypesetting, postfunc_gametypesetting)
 {
 	Assert(isdefined(mutator_name), 						"Mutator Name must be defined");
 	Assert(isdefined(dvar_name), 							"Mutator Dvar Name must be defined");
@@ -81,6 +89,8 @@ function register_mutator(mutator_name, dvar_name, pre_func, post_func)
 	level.zm_mutators[mutator_name].dvar 		= dvar_name;
 	level.zm_mutators[mutator_name].postfunc 	= post_func;
 	level.zm_mutators[mutator_name].prefunc 	= pre_func;
+	level.zm_mutators[mutator_name].postfunc_gametypesetting 	= postfunc_gametypesetting;
+	level.zm_mutators[mutator_name].prefunc_gametypesetting 	= prefunc_gametypesetting;
 }
 
 function private register_mutators()
@@ -89,43 +99,43 @@ function private register_mutators()
 	//zm_spawner::register_zombie_death_event_callback(&zombie_mutators_on_death);
 	//zm::register_vehicle_damage_callback(&vehicle_mutators_on_death);
 
-	register_mutator("MutatorSettings_DoublePackaPunch", "mutator_double_packapunch", undefined, &double_packapunch);
+	register_mutator("MutatorSettings_DoublePackaPunch", mutator_double_packapunch, undefined, undefined, undefined, &double_packapunch);
 	//register_mutator("MutatorSettings_PhDWidows", "mutator_phd_widows", undefined, &phd_widows); //handled using GetDvarInt
-	register_mutator("MutatorSettings_WidowsWine", "mutator_widowswine_existence", undefined, &widowswine_existence);
+	register_mutator("MutatorSettings_WidowsWine", mutator_widowswine_existence, undefined, undefined, undefined, &widowswine_existence);
 	//register_mutator("MutatorSettings_BOPerkIcons", "mutator_bo_perk_icons", undefined, &bo_perk_icons); //handled using GetDvarInt
 	//register_mutator("MutatorSettings_Deadshot", "mutator_deadshot_price", undefined, &deadshot_price); //handled using GetDvarInt
-	register_mutator("MutatorSettings_Gobblegum", "mutator_enable_gobblegum", undefined, &enable_gobblegum);
+	register_mutator("MutatorSettings_Gobblegum", mutator_enable_gobblegum, undefined, undefined, undefined, &enable_gobblegum);
 	//register_mutator("MutatorSettings_AUG", "mutator_aug", undefined, &enable_aug); //handled using GetDvarInt
 	//register_mutator("MutatorSettings_Claymore", "mutator_claymore", undefined, &enable_claymore); //handled using GetDvarInt
-	register_mutator("MutatorSettings_SpaceMonkey", "mutator_spacemonkey", undefined, &spacemonkey);
-	register_mutator("MutatorSettings_Wunderfizz", "mutator_enable_wunderfizz", undefined, &enable_wunderfizz);
-	register_mutator("MutatorSettings_CamoBlackOps", "mutator_camo_black_ops", &camo_black_ops, undefined);
-	register_mutator("MutatorSettings_CamoDarkMatter", "mutator_camo_dark_matter", &camo_dark_matter, undefined);
-	register_mutator("MutatorSettings_CamoRitual", "mutator_camo_ritual", undefined, &camo_ritual);
-	register_mutator("MutatorSettings_CamoEtching", "mutator_camo_etching", &camo_etching, undefined);
-	register_mutator("MutatorSettings_CamoDerEisendrache", "mutator_camo_der_eisendrache", &camo_der_eisendrache, undefined);
-	register_mutator("MutatorSettings_CamoOvergrowth", "mutator_camo_overgrowth", &camo_overgrowth, undefined);
-	register_mutator("MutatorSettings_CamoGorodKrovi", "mutator_camo_gorod_krovi", &camo_gorod_krovi, undefined);
-	register_mutator("MutatorSettings_CamoRevelations", "mutator_camo_revelations", &camo_revelations, undefined);
-	register_mutator("MutatorSettings_CamoOrigins", "mutator_camo_origins", &camo_origins, undefined);
-	register_mutator("MutatorSettings_CamoKino", "mutator_camo_kino", &camo_kino, undefined);
-	register_mutator("MutatorSettings_CamoIce", "mutator_camo_ice", &camo_ice, undefined);
-	register_mutator("MutatorSettings_CamoWeaponized115", "mutator_camo_weaponized_115", &camo_weaponized_115, undefined);
-	register_mutator("MutatorSettings_CamoGold", "mutator_camo_gold", &camo_gold, undefined);
-	register_mutator("MutatorSettings_CamoWorldAtWar", "mutator_camo_world_at_war", &camo_waw, undefined); //don't create array if unneeded
-	register_mutator("MutatorSettings_CamoWorldAtWarAdjusted", "mutator_camo_world_at_war_adjusted", &camo_waw_adjusted, undefined);
-	register_mutator("MutatorSettings_GeorgeReward", "mutator_george_reward", undefined, &george_reward);
+	register_mutator("MutatorSettings_SpaceMonkey", mutator_spacemonkey, undefined, undefined, undefined, &spacemonkey);
+	register_mutator("MutatorSettings_Wunderfizz", mutator_enable_wunderfizz, undefined, undefined, undefined, &enable_wunderfizz);
+	register_mutator("MutatorSettings_CamoBlackOps", mutator_camo_black_ops, undefined, undefined, &camo_black_ops, undefined);
+	register_mutator("MutatorSettings_CamoDarkMatter", mutator_camo_dark_matter, undefined, undefined, &camo_dark_matter, undefined);
+	register_mutator("MutatorSettings_CamoRitual", mutator_camo_ritual, undefined, undefined, undefined, &camo_ritual);
+	register_mutator("MutatorSettings_CamoEtching", mutator_camo_etching, undefined, undefined, &camo_etching, undefined);
+	register_mutator("MutatorSettings_CamoDerEisendrache", mutator_camo_der_eisendrache, undefined, undefined, &camo_der_eisendrache, undefined);
+	register_mutator("MutatorSettings_CamoOvergrowth", mutator_camo_overgrowth, undefined, undefined, &camo_overgrowth, undefined);
+	register_mutator("MutatorSettings_CamoGorodKrovi", mutator_camo_gorod_krovi, undefined, undefined, &camo_gorod_krovi, undefined);
+	register_mutator("MutatorSettings_CamoRevelations", mutator_camo_revelations, undefined, undefined, &camo_revelations, undefined);
+	register_mutator("MutatorSettings_CamoOrigins", mutator_camo_origins, undefined, undefined, &camo_origins, undefined);
+	register_mutator("MutatorSettings_CamoKino", mutator_camo_kino, undefined, undefined, &camo_kino, undefined);
+	register_mutator("MutatorSettings_CamoIce", mutator_camo_ice, undefined, undefined, &camo_ice, undefined);
+	register_mutator("MutatorSettings_CamoWeaponized115", mutator_camo_weaponized_115, undefined, undefined, &camo_weaponized_115, undefined);
+	register_mutator("MutatorSettings_CamoGold", mutator_camo_gold, undefined, undefined, &camo_gold, undefined);
+	register_mutator("MutatorSettings_CamoWorldAtWar", mutator_camo_world_at_war, undefined, undefined, &camo_waw, undefined);
+	register_mutator("MutatorSettings_CamoWorldAtWarAdjusted", mutator_camo_world_at_war_adjusted, undefined, undefined, &camo_waw_adjusted, undefined);
+	register_mutator("MutatorSettings_GeorgeReward", mutator_george_reward, undefined, undefined, undefined, &george_reward);
 	register_mutator("MutatorSettings_RoundMusic", "mutator_round_music", undefined, &round_music);
 	register_mutator("MutatorSettings_WeaponRest", "mutator_weapon_rest", undefined, &weapon_rest);
-	register_mutator("MutatorSettings_DoubleTap", "mutator_doubletap", undefined, &doubletap);
-	register_mutator("MutatorSettings_DoubleTapExistence", "mutator_doubletap_existence", undefined, &doubletap_existence);
-	register_mutator("MutatorSettings_DeadshotExistence", "mutator_deadshot_existence", undefined, &deadshot_existence);
+	register_mutator("MutatorSettings_DoubleTap", mutator_doubletap, undefined, undefined, undefined, &doubletap);
+	register_mutator("MutatorSettings_DoubleTapExistence", mutator_doubletap_existence, undefined, undefined, undefined, &doubletap_existence);
+	register_mutator("MutatorSettings_DeadshotExistence", mutator_deadshot_existence, undefined, undefined, undefined, &deadshot_existence);
 	//register_mutator("MutatorSettings_CharacterVoicelines", "mutator_character_voicelines", undefined, &character_voicelines);
 }
 
 function private double_packapunch(dvar_value)
 {
-	if(dvar_value == MUTATOR_ONOFF_OFF)
+	if(dvar_value == BOOLMUTATOR_ONOFF_OFF)
 		level.double_packapunch = false;
 }
 
@@ -170,7 +180,7 @@ function private enable_gobblegum(dvar_value)
 
 function private spacemonkey(dvar_value)
 {
-	if(dvar_value == MUTATOR_ONOFF_OFF && GetDvarString("mapname") == "zm_cosmodrome")
+	if(dvar_value == BOOLMUTATOR_ONOFF_OFF && GetDvarString("mapname") == "zm_cosmodrome")
 	{
 		level.nextMonkeyStealRound = 0;
 		level.next_monkey_round = 0;
@@ -187,31 +197,6 @@ function Sand() //I wonder why when decompiling from Cypress' Monkey Exterminiat
 		level.next_monkey_round = 0;
 	}
 }
-
-/*function private enable_ak47(dvar_value)
-{
-	level.ak47 = dvar_value;
-}
-
-function private enable_uzi(dvar_value)
-{
-	level.uzi = dvar_value;
-}
-
-function private enable_skorpion(dvar_value)
-{
-	level.skorpion = dvar_value;
-}
-
-function private enable_stoner63(dvar_value)
-{
-	level.stoner63 = dvar_value;
-}
-
-function private enable_raygunmkii(dvar_value)
-{
-	level.raygunmkii = dvar_value;
-}*/
 
 function private enable_wunderfizz(dvar_value)
 {
@@ -230,7 +215,7 @@ function private enable_wunderfizz(dvar_value)
 
 function camo_black_ops(dvar_value)
 {
-	if(dvar_value == MUTATOR_OFFON_ON)
+	if(dvar_value == BOOLMUTATOR_ONOFF_ON)
 	{
 		if(!isdefined(level.pack_a_punch_camo_list))
 		{
@@ -370,9 +355,9 @@ function camo_kino(dvar_value)
 
 function camo_waw(dvar_value)
 {
-	/*if(dvar_value == MUTATOR_ONOFF_ON && isdefined(level.pack_a_punch_camo_list))
+	/*if(dvar_value == BOOLMUTATOR_OFFON_ON && isdefined(level.pack_a_punch_camo_list))
 		level.pack_a_punch_camo_list[level.pack_a_punch_camo_list.size] = 141;*/
-	if(dvar_value == MUTATOR_OFFON_ON)
+	if(dvar_value == BOOLMUTATOR_OFFON_ON)
 	{
 		if(!isdefined(level.pack_a_punch_camo_list))
 		{

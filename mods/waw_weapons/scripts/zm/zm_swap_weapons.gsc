@@ -21,6 +21,8 @@
 #using scripts\zm\_zm_weapons;
 #using scripts\zm\_zm_unitrigger;
 
+#insert scripts\zm\_zm_mutators.gsh;
+
 #namespace zm_swap_weapons;
 
 /*
@@ -99,11 +101,11 @@ function starter_weapon()
 	else
 		level.pack_a_punch_camo_index = 142;
 	
-	if(GetDvarInt("mutator_camo_disable") == 2)
+	if(GetGametypeSetting(mutator_camo_disable) == BOOLMUTATOR_OFFON_ON)
 		level.pack_a_punch_camo_index = 127; //blank camo, this is actually for Dempsey's Matryoshka Doll 
 	
 	//if(GetDvarString("mutator_startingweapon") != "Use Map")
-	if(!GetDvarInt("mutator_startingweapon") || GetDvarInt("mutator_startingweapon") != 3)
+	if(!GetGametypeSetting(mutator_startingweapon) || GetGametypeSetting(mutator_startingweapon) != 3)
 		starter_weapon_extra();
 }
 
@@ -122,10 +124,10 @@ function starter_weapon_extra()
 	starting_weapon = GetWeapon(wpnname);
 	wpnname_pap = wpnname;*/
 	wpnname = "";
-	if(!GetDvarInt("mutator_startingweapon"))
+	if(!GetGametypeSetting(mutator_startingweapon))
 		wpnname = "t4_m1911";
 	wpnname_pap = "";
-	switch(GetDvarInt("mutator_startingweapon"))
+	switch(GetGametypeSetting(mutator_startingweapon))
 	//switch(wpnname)
 	{
 	case 1:
@@ -251,7 +253,7 @@ function swap_wall_weapon()
 					break;
 				case "sniper_fastbolt": //Locus
 					{
-						/*switch(GetDvarInt("mutator_scopeads"))
+						/*switch(GetGametypeSetting(mutator_scopeads))
 						{
 						case 1:
 							ent.zombie_weapon_upgrade = "t4_kar98k_scope_overlay";
@@ -275,7 +277,7 @@ function swap_wall_weapon()
 				{
 				case "ar_marksman": //Sheiva
 					{
-						if(sheiva == 0 && GetDvarInt("mutator_verruckt_springfield") == 2)
+						if(sheiva == 0 && GetGametypeSetting(mutator_verruckt_springfield) == 2)
 							ent.zombie_weapon_upgrade = "t4_spring";
 						else
 							ent.zombie_weapon_upgrade = "t4_kar98k";
@@ -639,7 +641,7 @@ function swap_wall_weapon()
 					else*/
 						ent struct::delete();
 				}
-				if(!GetDvarInt("mutator_wallbuys_kino_der_toten") || GetDvarInt("mutator_wallbuys_kino_der_toten") == 1) //Der Riese
+				if(!GetGametypeSetting(mutator_wallbuys_kino_der_toten) || GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 1) //Der Riese
 				{
 					switch(VAL)
 					{
@@ -681,7 +683,7 @@ function swap_wall_weapon()
 						}
 					}
 				}
-				if(GetDvarInt("mutator_wallbuys_kino_der_toten") == 3 || GetDvarInt("mutator_wallbuys_kino_der_toten") == 4) //Black Ops
+				if(GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 3 || GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 4) //WaW - Black Ops-style
 				{
 					switch(VAL)
 					{
@@ -693,7 +695,7 @@ function swap_wall_weapon()
 							break;
 						case "smg_burst": //Pharo
 							{
-								if(GetDvarInt("mutator_wallbuys_kino_der_toten") == 3)
+								if(GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 3)
 									ent.zombie_weapon_upgrade = "t4_bar";
 								else
 									ent.zombie_weapon_upgrade = "t4_fg42";
@@ -711,7 +713,7 @@ function swap_wall_weapon()
 							break;
 						case "pistol_fullauto": //L-CAR 9
 							{
-								if(GetDvarInt("mutator_wallbuys_kino_der_toten") == 3)
+								if(GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 3)
 									ent.zombie_weapon_upgrade = "t4_fg42";
 								else
 									ent.zombie_weapon_upgrade = "t4_bar";
@@ -733,7 +735,7 @@ function swap_wall_weapon()
 						}
 					}
 				}
-				else if(GetDvarInt("mutator_wallbuys_kino_der_toten") == 2) //Conn6orsuper117
+				else if(GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 2) //Conn6orsuper117
 				{
 					switch(VAL)
 					{
@@ -1028,7 +1030,7 @@ function swap_wall_weapon()
 		}
 		case "zm_castle": //Der Eisendrache
 			{
-				if(!GetDvarInt("mutator_wallbuys_der_eisendrache") || GetDvarInt("mutator_wallbuys_der_eisendrache") == 1) //poyzee
+				if(!GetGametypeSetting(mutator_wallbuys_der_eisendrache) || GetGametypeSetting(mutator_wallbuys_der_eisendrache) == 1) //poyzee
 				{
 					switch(VAL)
 					{
@@ -1103,7 +1105,7 @@ function swap_wall_weapon()
 							break;
 					}
 				}
-				else if(GetDvarInt("mutator_wallbuys_der_eisendrache") == 2) //Conn6orsuper117	
+				else if(GetGametypeSetting(mutator_wallbuys_der_eisendrache) == 2) //Conn6orsuper117	
 				{
 					switch(VAL)
 					{
@@ -1132,7 +1134,7 @@ function swap_wall_weapon()
 								}
 								else //Right from spawn
 								{
-									/*switch(GetDvarInt("mutator_scopeads"))
+									/*switch(GetGametypeSetting(mutator_scopeads))
 									{
 									case 1:
 										ent.zombie_weapon_upgrade = "t4_kar98k_scope_overlay";
@@ -1344,7 +1346,7 @@ function swap_wall_weapon()
 			}
 			case "zm_stalingrad": //Gorod Krovi
 			{
-				if(!GetDvarInt("mutator_wallbuys_gorod_krovi") || GetDvarInt("mutator_wallbuys_gorod_krovi") == 1)
+				if(!GetGametypeSetting(mutator_wallbuys_gorod_krovi) || GetGametypeSetting(mutator_wallbuys_gorod_krovi) == 1)
 				{ 
 					switch(VAL)
 					{
@@ -1410,7 +1412,7 @@ function swap_wall_weapon()
 						break;
 					}
 				}
-				else if(GetDvarInt("mutator_wallbuys_gorod_krovi") == 2) //HzRetro
+				else if(GetGametypeSetting(mutator_wallbuys_gorod_krovi) == 2) //HzRetro
 				{	
 					switch(VAL)
 					{
@@ -1474,7 +1476,7 @@ function swap_wall_weapon()
 			}			
 		}
 		
-		if(GetDvarInt("mutator_wallbuybox") == 2)
+		if(GetGametypeSetting(mutator_wallbuybox) == BOOLMUTATOR_ONOFF_OFF)
 		{
 			level.zombie_weapons[GetWeapon(ent.zombie_weapon_upgrade)].is_in_box = false;
 			zm_utility::include_weapon( ent.zombie_weapon_upgrade, false);
@@ -1536,7 +1538,7 @@ function swap_chalk()
 					break;
 				case "zm_asylum":
 					{
-						if((GetDvarInt("mutator_verruckt_springfield") == 1 || !GetDvarInt("mutator_verruckt_springfield")) && kar98k == 0)
+						if((GetGametypeSetting(mutator_verruckt_springfield) == 1 || !GetGametypeSetting(mutator_verruckt_springfield)) && kar98k == 0)
 							ent.var_47896610 = util::spawn_model("wallbuy_kar98k", spawn_loc.origin + VectorScale((-14, 0, -4), 1), spawn_loc.angles);
 						else
 							ent.var_47896610 = util::spawn_model("wallbuy_kar98k", spawn_loc.origin + VectorScale((1, 14, -4), 1), spawn_loc.angles);
@@ -1677,7 +1679,7 @@ function swap_chalk()
 					break;
 				case "zm_theater":
 					{
-						if(GetDvarInt("mutator_wallbuys_kino_der_toten") == 2) //Conn6orsuper117
+						if(GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 2) //Conn6orsuper117
 							ent.var_47896610 = util::spawn_model("wallbuy_stg44", spawn_loc.origin + VectorScale((0, 20, -4), 1), spawn_loc.angles);
 						else
 							ent.var_47896610 = util::spawn_model("wallbuy_stg44", spawn_loc.origin + VectorScale((-20, 0, -4), 1), spawn_loc.angles);
@@ -1689,9 +1691,9 @@ function swap_chalk()
 					break;
 				case "zm_castle": //Der Eisendrache
 					{
-						if(!GetDvarInt("mutator_wallbuys_der_eisendrache") || GetDvarInt("mutator_wallbuys_der_eisendrache") == 1) //poyzee
+						if(!GetGametypeSetting(mutator_wallbuys_der_eisendrache) || GetGametypeSetting(mutator_wallbuys_der_eisendrache) == 1) //poyzee
 							ent.var_47896610 = util::spawn_model("wallbuy_stg44", spawn_loc.origin + VectorScale((-20, 0, -4), 1), spawn_loc.angles);
-						else if(GetDvarInt("mutator_wallbuys_der_eisendrache") == 2) //Conn6orsuper117
+						else if(GetGametypeSetting(mutator_wallbuys_der_eisendrache) == 2) //Conn6orsuper117
 						{
 							if(stg44 == 0) //Mission Control
 								ent.var_47896610 = util::spawn_model("wallbuy_stg44", spawn_loc.origin + VectorScale((0, -20, -4), 1), spawn_loc.angles);
@@ -1813,9 +1815,9 @@ function swap_chalk()
 					break;
 				case "zm_castle": //Der Eisendrache
 					{
-						if(!GetDvarInt("mutator_wallbuys_der_eisendrache") || GetDvarInt("mutator_wallbuys_der_eisendrache") == 1) //poyzee
+						if(!GetGametypeSetting(mutator_wallbuys_der_eisendrache) || GetGametypeSetting(mutator_wallbuys_der_eisendrache) == 1) //poyzee
 							ent.var_47896610 = util::spawn_model("wallbuy_type100", spawn_loc.origin + VectorScale((-5, 14, -4), 1), spawn_loc.angles);
-						else if(GetDvarInt("mutator_wallbuys_der_eisendrache") == 2) //Conn6orsuper117
+						else if(GetGametypeSetting(mutator_wallbuys_der_eisendrache) == 2) //Conn6orsuper117
 							ent.var_47896610 = util::spawn_model("wallbuy_type100", spawn_loc.origin + VectorScale((-14*cos(spawn_loc.angles[1]), -14*sin(spawn_loc.angles[1]), -4), 1), spawn_loc.angles);
 						
 						break;
@@ -1868,9 +1870,9 @@ function swap_chalk()
 				case "zm_moon":
 					ent.var_47896610 = util::spawn_model("wallbuy_thompson", spawn_loc.origin + VectorScale((0, -19, -4), 1), spawn_loc.angles);
 				case "zm_stalingrad": //Gorod Krovi
-					if(!GetDvarInt("mutator_wallbuys_gorod_krovi") || GetDvarInt("mutator_wallbuys_gorod_krovi") == 1)
+					if(!GetGametypeSetting(mutator_wallbuys_gorod_krovi) || GetGametypeSetting(mutator_wallbuys_gorod_krovi) == 1)
 						ent.var_47896610 = util::spawn_model("wallbuy_thompson", spawn_loc.origin + VectorScale((0, -19, -4), 1), spawn_loc.angles);
-					else if(GetDvarInt("mutator_wallbuys_gorod_krovi") == 2)
+					else if(GetGametypeSetting(mutator_wallbuys_gorod_krovi) == 2)
 						ent.var_47896610 = util::spawn_model("wallbuy_thompson", spawn_loc.origin + VectorScale((-19*cos(spawn_loc.angles[1]), -19*sin(spawn_loc.angles[1]), -4), 1), spawn_loc.angles);
 					
 					break;
@@ -1898,9 +1900,9 @@ function swap_chalk()
 					break;
 				case "zm_theater":
 					{
-						if(GetDvarInt("mutator_wallbuys_kino_der_toten") == 3 || GetDvarInt("mutator_wallbuys_kino_der_toten") == 4) //Black Ops
+						if(GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 3 || GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 4) //Black Ops
 							ent.var_47896610 = util::spawn_model("wallbuy_bar", spawn_loc.origin + VectorScale((10, 0, -3), 1), spawn_loc.angles);
-						else if(GetDvarInt("mutator_wallbuys_kino_der_toten") == 2) //Conn6orsuper117
+						else if(GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 2) //Conn6orsuper117
 							ent.var_47896610 = util::spawn_model("wallbuy_bar", spawn_loc.origin + VectorScale((-10, 0, -3), 1), spawn_loc.angles);
 
 						break;
@@ -1947,9 +1949,9 @@ function swap_chalk()
 					break;
 				case "zm_castle": //Der Eisendrache
 					{
-						if(!GetDvarInt("mutator_wallbuys_der_eisendrache") || GetDvarInt("mutator_wallbuys_der_eisendrache") == 1) //poyzee
+						if(!GetGametypeSetting(mutator_wallbuys_der_eisendrache) || GetGametypeSetting(mutator_wallbuys_der_eisendrache) == 1) //poyzee
 							ent.var_47896610 = util::spawn_model("wallbuy_fg42", spawn_loc.origin + VectorScale((0, -16, -2), 1), spawn_loc.angles);
-						else if(GetDvarInt("mutator_wallbuys_der_eisendrache") == 2) //Conn6orsuper117
+						else if(GetGametypeSetting(mutator_wallbuys_der_eisendrache) == 2) //Conn6orsuper117
 							ent.var_47896610 = util::spawn_model("wallbuy_fg42", spawn_loc.origin + VectorScale((16, 0, -2), 1), spawn_loc.angles);
 						
 						break;
@@ -2009,7 +2011,7 @@ function swap_chalk()
 					break;
 				case "zm_castle": //Der Eisendrache
 					{
-						if(!GetDvarInt("mutator_wallbuys_der_eisendrache") || GetDvarInt("mutator_wallbuys_der_eisendrache") == 1) //poyzee
+						if(!GetGametypeSetting(mutator_wallbuys_der_eisendrache) || GetGametypeSetting(mutator_wallbuys_der_eisendrache) == 1) //poyzee
 						{
 							if(trenchgun == 0) //Right from spawn 
 								ent.var_47896610 = util::spawn_model("wallbuy_trenchgun", spawn_loc.origin + VectorScale((14, 2, -3), 1), spawn_loc.angles);
@@ -2018,7 +2020,7 @@ function swap_chalk()
 								
 							trenchgun++;
 						}
-						else if(GetDvarInt("mutator_wallbuys_der_eisendrache") == 2) //Conn6orsuper117
+						else if(GetGametypeSetting(mutator_wallbuys_der_eisendrache) == 2) //Conn6orsuper117
 							ent.var_47896610 = util::spawn_model("wallbuy_trenchgun", spawn_loc.origin + VectorScale((-14, 0, -3), 1), spawn_loc.angles);
 						
 						break;
@@ -2064,9 +2066,9 @@ function swap_chalk()
 					break;
 				case "zm_theater":
 					{
-						if(!GetDvarInt("mutator_wallbuys_kino_der_toten") || GetDvarInt("mutator_wallbuys_kino_der_toten") == 1) //Der Riese
+						if(!GetGametypeSetting(mutator_wallbuys_kino_der_toten) || GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 1) //Der Riese
 							ent.var_47896610 = util::spawn_model("wallbuy_doublebarrel", spawn_loc.origin + VectorScale((12, 1, -4), 1), spawn_loc.angles);
-						else if(GetDvarInt("mutator_wallbuys_kino_der_toten") == 3 || GetDvarInt("mutator_wallbuys_kino_der_toten") == 4) //Black Ops
+						else if(GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 3 || GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 4) //Black Ops
 							ent.var_47896610 = util::spawn_model("wallbuy_doublebarrel", spawn_loc.origin + VectorScale((0, 12, -4), 1), spawn_loc.angles);
 						
 						break;
@@ -2089,7 +2091,7 @@ function swap_chalk()
 					}
 				case "zm_castle": //Der Eisendrache
 					{
-						if(!GetDvarInt("mutator_wallbuys_der_eisendrache") || GetDvarInt("mutator_wallbuys_der_eisendrache") == 1) //poyzee
+						if(!GetGametypeSetting(mutator_wallbuys_der_eisendrache) || GetGametypeSetting(mutator_wallbuys_der_eisendrache) == 1) //poyzee
 						{
 							if(doublebarrel == 0) //Right from Spawn
 								ent.var_47896610 = util::spawn_model("wallbuy_doublebarrel", spawn_loc.origin + VectorScale((0, -13, -4), 1), spawn_loc.angles);
@@ -2098,7 +2100,7 @@ function swap_chalk()
 							
 							doublebarrel++;
 						}
-						else if(GetDvarInt("mutator_wallbuys_der_eisendrache") == 2) //Conn6orsuper117
+						else if(GetGametypeSetting(mutator_wallbuys_der_eisendrache) == 2) //Conn6orsuper117
 							ent.var_47896610 = util::spawn_model("wallbuy_doublebarrel", spawn_loc.origin + VectorScale((-1, -12, -4), 1), spawn_loc.angles);
 						
 						break;

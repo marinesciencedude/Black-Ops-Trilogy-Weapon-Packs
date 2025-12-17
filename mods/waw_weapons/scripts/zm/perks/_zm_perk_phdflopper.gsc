@@ -34,6 +34,7 @@
 #insert scripts\zm\perks\_zm_perk_phdflopper.gsh;
 #insert scripts\zm\_zm_perks.gsh;
 #insert scripts\zm\_zm_utility.gsh;
+#insert scripts\zm\_zm_mutators.gsh;
 
 #using scripts\zm\_zm_perk_random;
 #using scripts\shared\callbacks_shared;
@@ -196,14 +197,14 @@ function phd_flopper_explosive_fall()
 
     for(;;)
     {
-		if(GetDvarInt("mutator_slide_dive") == 1)
+		if(GetGametypeSetting(mutator_slide_dive) == 1)
 			self waittill( "dive_begin" );
 		else
 			self util::waittill_any_return("jump_begin", "slide_begin");
 		
         startPos = self.origin[2];
 		
-		if(GetDvarInt("mutator_slide_dive") == 1)
+		if(GetGametypeSetting(mutator_slide_dive) == 1)
 			self waittill( "dive_end" );
 		else
 		{

@@ -5,6 +5,8 @@
 #using scripts\zm\_zm_perks;
 #using scripts\zm\_zm_utility;
 
+#insert scripts\zm\_zm_mutators.gsh;
+
 #namespace zm_sumpf_perks;
 
 /*
@@ -37,7 +39,7 @@ function randomize_vending_machines()
 	for(i = 0; i < vending_machines.size; i++)
 	{
 		//treat the starting room perk as Mule Kick if it is to be disabled in zm_perks
-		if((GetDvarInt("mutator_shinonuma_perk") == 2 && vending_machines[i].script_noteworthy == "specialty_quickrevive") || (GetDvarInt("mutator_shinonuma_perk") != 2 && vending_machines[i].script_noteworthy == "specialty_additionalprimaryweapon"))
+		if((GetGametypeSetting(mutator_shinonuma_perk) != 1 && vending_machines[i].script_noteworthy == "specialty_quickrevive") || (GetGametypeSetting(mutator_shinonuma_perk) == 1 && vending_machines[i].script_noteworthy == "specialty_additionalprimaryweapon"))
 		{
 			t_temp = vending_machines[i];
 			vending_machines[i] = vending_machines[4];
@@ -49,7 +51,7 @@ function randomize_vending_machines()
 		origin = start_locations[i].origin;
 		angles = start_locations[i].angles;
 		machine = vending_machines[i] get_vending_machine(start_locations[i]);
-		if((GetDvarInt("mutator_shinonuma_perk") == 2 && vending_machines[i].script_noteworthy != "specialty_quickrevive") || (GetDvarInt("mutator_shinonuma_perk") == 1 && vending_machines[i].script_noteworthy != "specialty_additionalprimaryweapon") || GetDvarInt("mutator_shinonuma_perk") == 3)
+		if((GetGametypeSetting(mutator_shinonuma_perk) != 1 && vending_machines[i].script_noteworthy != "specialty_quickrevive") || (GetGametypeSetting(mutator_shinonuma_perk) == 1 && vending_machines[i].script_noteworthy != "specialty_additionalprimaryweapon"))
 		{
 			vending_machines[i] triggerenable(0);
 		}
@@ -57,16 +59,16 @@ function randomize_vending_machines()
 		start_locations[i].angles = angles;
 		machine.origin = origin;
 		machine.angles = angles;
-		if((GetDvarInt("mutator_shinonuma_perk") == 2 && machine.script_string != "revive_perk") || (GetDvarInt("mutator_shinonuma_perk") == 1 && machine.script_string != "mulekick_perk") || GetDvarInt("mutator_shinonuma_perk") == 3)
+		if((GetGametypeSetting(mutator_shinonuma_perk) != 1 && machine.script_string != "revive_perk") || (GetGametypeSetting(mutator_shinonuma_perk) == 1 && machine.script_string != "mulekick_perk"))
 		{
 			machine ghost();
 			vending_machines[i] thread function_bede3562(machine);
 		}
-		if(GetDvarInt("mutator_shinonuma_perk") == 1 && machine.script_string != "revive_perk" && level flag::get("solo_game"))
+		if(GetGametypeSetting(mutator_shinonuma_perk) == 1 && machine.script_string != "revive_perk" && level flag::get("solo_game"))
 			vending_machines[i] thread solo_disable_quickrevive();
 	}
 	level.sndperksacolajingleoverride = &function_25413096;
-	if(GetDvarInt("mutator_shinonuma_perk") == 2)
+	if(GetGametypeSetting(mutator_shinonuma_perk) != 1)
 		level notify("revive_on");
 	else
 		level notify("additionalprimaryweapon_on");
@@ -120,7 +122,7 @@ function function_1b58b796(str_trigger)
 				vending_machines = array(vending_machines);
 			}
 			vending_machines[vending_machines.size] = var_560b7d8d[i];
-			if((GetDvarInt("mutator_shinonuma_perk") == 2 && var_560b7d8d[i].script_noteworthy != "specialty_quickrevive") || (GetDvarInt("mutator_shinonuma_perk") == 1 && var_560b7d8d[i].script_noteworthy != "specialty_additionalprimaryweapon") || GetDvarInt("mutator_shinonuma_perk") == 3)
+			if((GetGametypeSetting(mutator_shinonuma_perk) != 1 && var_560b7d8d[i].script_noteworthy != "specialty_quickrevive") || (GetGametypeSetting(mutator_shinonuma_perk) == 1 && var_560b7d8d[i].script_noteworthy != "specialty_additionalprimaryweapon"))
 			{
 				var_560b7d8d[i].var_6ecf729b = 1;
 				var_560b7d8d[i] thread function_17db950e();
@@ -298,7 +300,7 @@ function activate_vending_machine(machine, origin, entity)
 		e_trigger = getent(var_da5a8677, "script_label");
 		e_trigger triggerenable(1);
 	}
-	if(GetDvarInt("mutator_shinonuma_perk") == 2)
+	if(GetGametypeSetting(mutator_shinonuma_perk) != 1)
 		level notify("revive_on");
 	play_vending_vo(machine, origin);
 }

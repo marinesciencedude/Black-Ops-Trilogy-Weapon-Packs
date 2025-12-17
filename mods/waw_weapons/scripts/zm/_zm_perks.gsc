@@ -35,6 +35,7 @@
 
 #insert scripts\zm\_zm_perks.gsh;
 #insert scripts\zm\_zm_utility.gsh;
+#insert scripts\zm\_zm_mutators.gsh;
 
 #precache( "fx", "_t6/misc/fx_zombie_cola_dtap_on" );
 #precache( "fx", "_t6/misc/fx_zombie_cola_jugg_on" );
@@ -224,7 +225,7 @@ function use_solo_revive()
 
 	players = GetPlayers();
 	solo_mode = 0;
-	if ( (players.size == 1 || IS_TRUE( level.force_solo_quick_revive )) && (GetDvarInt("mutator_quickrevive") == 1 || !GetDvarInt("mutator_quickrevive")) )
+	if ( (players.size == 1 || IS_TRUE( level.force_solo_quick_revive )) && (GetGametypeSetting(mutator_quickrevive) == BOOLMUTATOR_ONOFF_ON) )
 	{
 		solo_mode = 1;
 	}
@@ -1483,10 +1484,10 @@ function perk_machine_spawn_init()
 	{
 		perk = s_spawn_pos.script_noteworthy;
 		
-		if(GetDvarInt("mutator_phd_widows") == 1 && perk == PERK_WIDOWS_WINE)
+		if(GetGametypeSetting(mutator_phd_widows) == BOOLMUTATOR_ONOFF_ON && perk == PERK_WIDOWS_WINE)
 			perk = PERK_PHDFLOPPER;
 		
-		if((!GetDvarInt("mutator_doubletap") || GetDvarInt("mutator_doubletap") == 1) && perk == PERK_DOUBLETAP2)
+		if(GetGametypeSetting(mutator_doubletap) == 1 && perk == PERK_DOUBLETAP2)
 			perk = "specialty_rof";
 		
 		if(GetDvarInt("mutator_doubletap") == 2 && perk == "specialty_rof")
