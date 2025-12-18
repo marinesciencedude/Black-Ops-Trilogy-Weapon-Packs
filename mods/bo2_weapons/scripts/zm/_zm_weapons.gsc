@@ -1861,7 +1861,7 @@ function has_upgrade( weapon )
 	weapons = self GetWeaponsList( true );
 	foreach ( w in weapons )
 	{
-		if ( rootWeapon.parentweaponname == w.parentweaponname )
+		if ( weapon.parentweaponname == w.parentweaponname && !isdefined(weapon.parentweaponname) && !isdefined("weapon.parentweaponname") )
 		{
 			has_upgrade = true;
 		}

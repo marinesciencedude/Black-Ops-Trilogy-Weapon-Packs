@@ -8,6 +8,7 @@ It's advised to make a back-up of black_ops_3_fx.gdt, since this will be replace
 
 * TheSkyeLord's BO2 Weapon Ports: https://www.ugx-mods.com/forum/full-weapons/84/skyes-bo2-weapon-ports/23141/
 * JBird632's Custom Claymores: https://youtu.be/iYP_CdMhwG4
+* Scobalula's T7MTEnhancements: https://github.com/Scobalula/T7MTEnhancements
 
 Then install all files from this repo into your Black Ops III installation apart from the folder chalk_drawing_models, which is for reference purposes only
 

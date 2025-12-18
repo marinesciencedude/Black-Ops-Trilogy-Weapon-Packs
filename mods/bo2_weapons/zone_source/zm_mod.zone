@@ -29,6 +29,14 @@ stringtable,gamedata/weapons/zm/zm_theater_weapons.csv
 stringtable,gamedata/weapons/zm/zm_tomb_weapons.csv
 stringtable,gamedata/weapons/zm/zm_prototype_weapons.csv
 stringtable,gamedata/weapons/zm/zm_factory_weapons.csv
+stringtable,gamedata/weapons/zm/zm_asylum_weapons.csv
+stringtable,gamedata/weapons/zm/zm_sumpf_weapons.csv
+stringtable,gamedata/weapons/zm/zm_cosmodrome_weapons.csv
+stringtable,gamedata/weapons/zm/zm_moon_weapons.csv
+
+stringtable,gamedata/weapons/zm/zm_nuked_weapons.csv
+stringtable,gamedata/weapons/zm/zm_motd_weapons.csv
+stringtable,gamedata/weapons/zm/zm_t6_weapons.csv
 
 scriptparsetree,scripts/zm/zm_claymore.gsc
 weapon,claymore_zm
