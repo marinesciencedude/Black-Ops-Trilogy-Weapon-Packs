@@ -55,14 +55,35 @@ REGISTER_SYSTEM_EX( "zm_magicbox", &__init__, &__main__, undefined )
 
 function __init__()
 {
+	if(GetDvarString("mapname") == "zm_cellblock")
+	{
+		zm_utility::add_sound("motd_open_chest", "zmb_motd_magicbox_open");
+		zm_utility::add_sound("motd_music_chest", "zmb_motd_magicbox_jingle");
+		zm_utility::add_sound("motd_close_chest", "zmb_motd_magicbox_close");
+		zm_utility::add_sound("origins_open_chest", "zmb_origins_magicbox_open");
+		zm_utility::add_sound("origins_music_chest", "zmb_origins_magicbox_jingle");
+		zm_utility::add_sound("origins_close_chest", "zmb_origins_magicbox_close");
+		zm_utility::add_sound("soe_open_chest", "zmb_soe_magicbox_open");
+		zm_utility::add_sound("soe_music_chest", "zmb_soe_magicbox_jingle");
+		zm_utility::add_sound("soe_close_chest", "zmb_soe_magicbox_close");
+		level.random_pandora_box_start = 1;
+	}
 	level.start_chest_name = "start_chest";
 
 	level._effect["lght_marker"] 										= "zombie/fx_weapon_box_marker_zmb";
 	level._effect["lght_marker_flare"] 							= "zombie/fx_weapon_box_marker_fl_zmb";
 	level._effect["poltergeist"]										= "zombie/fx_barrier_buy_zmb";
 
-	clientfield::register( "zbarrier", "magicbox_open_glow", VERSION_SHIP, 1, "int" );
-	clientfield::register( "zbarrier", "magicbox_closed_glow", VERSION_SHIP, 1, "int" );
+	if(GetDvarString("mapname") == "zm_cellblock")
+	{
+		clientfield::register("zbarrier", "magicbox_open_glow", 1, 3, "int");
+		clientfield::register("zbarrier", "magicbox_closed_glow", 1, 3, "int");
+	}
+	else
+	{
+		clientfield::register( "zbarrier", "magicbox_open_glow", VERSION_SHIP, 1, "int" );
+		clientfield::register( "zbarrier", "magicbox_closed_glow", VERSION_SHIP, 1, "int" );
+	}
 	
 	clientfield::register( "zbarrier", "zbarrier_show_sounds", VERSION_SHIP, 1, "counter");
 	clientfield::register( "zbarrier", "zbarrier_leave_sounds", VERSION_SHIP, 1, "counter");	
@@ -70,6 +91,53 @@ function __init__()
 	clientfield::register( "scriptmover", "force_stream", VERSION_TU7, 1, "int" );
 	
 	level thread magicbox_host_migration();
+}
+
+function magicbox_show_sounds_callback(script_string)
+{
+	self notify("magicbox_show_sounds_callback");
+	self endon("magicbox_show_sounds_callback");
+	if(isdefined(script_string) && script_string == "t6_motd")
+	{
+		self playlocalsound("zmb_motd_magicbox_arrive");
+	}
+	else if(isdefined(script_string) && (script_string == "t6_origins" || script_string == "t7_origins"))
+	{
+		self playlocalsound("zmb_origins_magicbox_arrive");
+	}
+	else if(isdefined(script_string) && script_string == "t7_soe")
+	{
+		self playlocalsound("zmb_soe_magicbox_arrive");
+	}
+	else
+	{
+		self playlocalsound("zmb_box_poof_land");
+		self playlocalsound("zmb_couch_slam");
+		self playlocalsound("zmb_box_poof");
+	}
+}
+
+function magicbox_leave_sounds_callback(script_string)
+{
+	self notify("magicbox_leave_sounds_callback");
+	self endon("magicbox_leave_sounds_callback");
+	if(isdefined(script_string) && script_string == "t6_motd")
+	{
+		self playlocalsound("zmb_motd_magicbox_slam_shake");
+	}
+	else if(isdefined(script_string) && (script_string == "t6_origins" || script_string == "t7_origins"))
+	{
+		self playlocalsound("zmb_origins_magicbox_leave");
+	}
+	else if(isdefined(script_string) && script_string == "t7_soe")
+	{
+		self playlocalsound("zmb_soe_magicbox_leave");
+	}
+	else
+	{
+		self playlocalsound("zmb_box_move");
+		self playlocalsound("zmb_whoosh");
+	}
 }
 
 function __main__()
@@ -179,6 +247,17 @@ function init_starting_chest_location( start_chest_name )
 {
 	level.chest_index = 0;
 	start_chest_found = false;
+	
+	if(GetDvarString("mapname") == "zm_cellblock")
+	{
+		for(i = 0; i < level.chests.size; i++)
+		{
+			if(isdefined(level.chests[i].zbarrier) && isdefined(level.chests[i].zbarrier.script_string) && level.chests[i].zbarrier.script_string == "t7_origins")
+			{
+				level.chests[i].zbarrier.light = util::spawn_model("p7_zm_ori_magic_box_base_light_on_red", level.chests[i].zbarrier.origin, level.chests[i].zbarrier.angles);
+			}
+		}
+	}
 	
 	if( level.chests.size==1 )
 	{
@@ -406,9 +485,24 @@ function magicbox_unitrigger_think()
 	}
 }
 
-function play_crazi_sound()
+function play_crazi_sound(script_string)
 {
-	self playlocalsound( level.zmb_laugh_alias );
+	if(isdefined(script_string) && script_string == "t6_motd")
+	{
+		self playlocalsound("zmb_motd_magicbox_bear");
+	}
+	else if(isdefined(script_string) && (script_string == "t6_origins" || script_string == "t7_origins"))
+	{
+		self playlocalsound("zmb_origins_magicbox_bear");
+	}
+	else if(isdefined(script_string) && script_string == "t7_soe")
+	{
+		self playlocalsound("zmb_soe_magicbox_bear");
+	}
+	else
+	{
+		self playlocalsound(level.zmb_laugh_alias);
+	}
 }
 
 //
@@ -418,16 +512,34 @@ function play_crazi_sound()
 function show_chest()
 {
 	self.zbarrier set_magic_box_zbarrier_state("arriving");
+	if(GetDvarString("mapname") == "zm_cellblock")
+	{
+		players = GetPlayers();
+		for(i = 0; i < players.size; i++)
+		{
+			players[i] thread magicbox_show_sounds_callback(self.zbarrier.script_string);
+		}
+	}
 	self.zbarrier util::waittill_any_timeout( 5, "arrived");
 	
 	self thread [[ level.pandora_show_func ]]();
 
-	self.zbarrier clientfield::set( "magicbox_closed_glow", true );
+	index = 1;
+	if(isdefined(self.zbarrier.script_string) && self.zbarrier.script_string == "t6_motd")
+	{
+		index = 2;
+	}
+	else if(isdefined(self.script_string) && self.script_string == "t7_soe")
+	{
+		index = 3;
+	}
+	self.zbarrier clientfield::set("magicbox_closed_glow", index);
 
 	//self TriggerEnable( true );
 	thread zm_unitrigger::register_static_unitrigger(self.unitrigger_stub, &magicbox_unitrigger_think);
 
-	self.zbarrier clientfield::increment("zbarrier_show_sounds" );
+	if(GetDvarString("mapname") != "zm_cellblock")
+		self.zbarrier clientfield::increment("zbarrier_show_sounds" );
 
 	self.hidden = false;
 
@@ -463,7 +575,16 @@ function hide_chest(doBoxLeave)
 	{
 		if(IS_TRUE(doBoxLeave))
 		{
-			self.zbarrier clientfield::increment("zbarrier_leave_sounds" );
+			if(GetDvarString("mapname") == "zm_cellblock")
+			{
+				players = GetPlayers();
+				for(i = 0; i < players.size; i++)
+				{
+					players[i] thread magicbox_leave_sounds_callback(self.zbarrier.script_string);
+				}
+			}
+			else
+				self.zbarrier clientfield::increment("zbarrier_leave_sounds" );
 			
 			level thread zm_audio::sndAnnouncerPlayVox("boxmove");
 
@@ -472,8 +593,10 @@ function hide_chest(doBoxLeave)
 			
 			playfx( level._effect["poltergeist"], self.zbarrier.origin, AnglesToUp( self.zbarrier.angles ), AnglesToForward( self.zbarrier.angles ) );  // effect has X facing up, Z facing forward
 	
-			//TUEY - Play the 'disappear' sound
-			playsoundatposition ("zmb_box_poof", self.zbarrier.origin);
+			if(!isdefined(self.zbarrier.script_string))
+			{
+				playsoundatposition("zmb_box_poof", self.zbarrier.origin);
+			}
 		}
 		else
 		{
@@ -510,6 +633,125 @@ function default_pandora_fx_func( )
 
 }
 
+function cellblock_pandora_fx_func()
+{
+	self endon("death");
+	if(isdefined(self.zbarrier.script_string) && self.zbarrier.script_string == "t6_motd")
+	{
+		self.pandora_light = util::spawn_model("tag_origin", self.origin, self.zbarrier.angles);
+		self.var_c745a958 = util::spawn_model("tag_origin", self.zbarrier.origin, self.zbarrier.angles);
+		self.var_c745a958 PlayLoopSound("zmb_motd_magicbox_loop_high", 1);
+		if(!(isdefined(level._box_initialized) && level._box_initialized))
+		{
+			level flag::wait_till("start_zombie_round_logic");
+			level._box_initialized = 1;
+		}
+		wait(1);
+		if(isdefined(self) && isdefined(self.pandora_light))
+		{
+			PlayFXOnTag("harry/motd_mysterybox/fx_motd_mystery_box_pandora", self.pandora_light, "tag_origin");
+		}
+		if(isdefined(self) && isdefined(self.var_c745a958))
+		{
+			PlayFXOnTag("harry/motd_mysterybox/fx_motd_mystery_box_loop", self.var_c745a958, "tag_origin");
+		}
+		while(isdefined(self.pandora_light))
+		{
+			wait(0.05);
+		}
+		self.var_c745a958 StopLoopSound(0.5);
+		wait(0.5);
+		if(isdefined(self) && isdefined(self.var_c745a958))
+		{
+			self.var_c745a958 delete();
+		}
+	}
+	else if(isdefined(self.zbarrier.script_string) && self.zbarrier.script_string == "t7_soe")
+	{
+		self.pandora_light = util::spawn_model("tag_origin", self.origin, self.zbarrier.angles + VectorScale((-1, 0, -1), 90));
+		self.var_c745a958 = util::spawn_model("tag_origin", self.zbarrier.origin, self.zbarrier.angles);
+		self.var_c745a958 PlayLoopSound("zmb_soe_magicbox_looper", 1);
+		if(!(isdefined(level._box_initialized) && level._box_initialized))
+		{
+			level flag::wait_till("start_zombie_round_logic");
+			level._box_initialized = 1;
+		}
+		wait(1);
+		if(isdefined(self) && isdefined(self.pandora_light))
+		{
+			PlayFXOnTag(level._effect["lght_marker"], self.pandora_light, "tag_origin");
+		}
+		if(isdefined(self) && isdefined(self.var_c745a958))
+		{
+			PlayFXOnTag("harry/soe_box/fx_soe_mystery_box_loop", self.var_c745a958, "tag_origin");
+		}
+		while(isdefined(self.pandora_light))
+		{
+			wait(0.05);
+		}
+		self.var_c745a958 StopLoopSound(0.5);
+		wait(0.5);
+		if(isdefined(self) && isdefined(self.var_c745a958))
+		{
+			self.var_c745a958 delete();
+		}
+	}
+	else if(isdefined(self.zbarrier.script_string) && (self.zbarrier.script_string == "t6_origins" || self.zbarrier.script_string == "t7_origins"))
+	{
+		self.pandora_light = util::spawn_model("tag_origin", self.origin, self.zbarrier.angles + VectorScale((-1, 0, -1), 90));
+		self.var_c745a958 = util::spawn_model("tag_origin", self.zbarrier.origin, self.zbarrier.angles);
+		self.var_c745a958 PlayLoopSound("zmb_origins_magicbox_idle_high", 1);
+		if(!(isdefined(level._box_initialized) && level._box_initialized))
+		{
+			level flag::wait_till("start_zombie_round_logic");
+			level._box_initialized = 1;
+		}
+		wait(1);
+		if(isdefined(self) && isdefined(self.pandora_light))
+		{
+			PlayFXOnTag(level._effect["lght_marker"], self.pandora_light, "tag_origin");
+		}
+		if(isdefined(self.zbarrier.light))
+		{
+			self.zbarrier.light SetModel("p7_zm_ori_magic_box_base_light_on_green");
+		}
+		if(isdefined(self) && isdefined(self.var_c745a958))
+		{
+			PlayFXOnTag("harry/origins_mystery_box/fx_origins_mystery_box_loop", self.var_c745a958, "tag_origin");
+		}
+		while(isdefined(self.pandora_light))
+		{
+			wait(0.05);
+		}
+		if(isdefined(self.zbarrier.light))
+		{
+			self.zbarrier.light SetModel("p7_zm_ori_magic_box_base_light_on_red");
+		}
+		self.var_c745a958 StopLoopSound(0.5);
+		wait(0.5);
+		if(isdefined(self) && isdefined(self.var_c745a958))
+		{
+			self.var_c745a958 delete();
+		}
+	}
+	else
+	{
+		self.pandora_light = spawn("script_model", self.origin);
+		self.pandora_light.angles = self.zbarrier.angles + VectorScale((-1, 0, -1), 90);
+		self.pandora_light SetModel("tag_origin");
+		if(!(isdefined(level._box_initialized) && level._box_initialized))
+		{
+			level flag::wait_till("start_zombie_round_logic");
+			level._box_initialized = 1;
+		}
+		wait(1);
+		if(isdefined(self) && isdefined(self.pandora_light))
+		{
+			PlayFXOnTag(level._effect["lght_marker"], self.pandora_light, "tag_origin");
+		}
+	}
+}
+
 
 //
 //	Show a column of light
@@ -522,12 +764,17 @@ function default_pandora_show_func( anchor, anchorTarget, pieces )
 		// Show the column light effect on the box
 		if( !IsDefined( level.pandora_fx_func ) )
 		{
-			level.pandora_fx_func = &default_pandora_fx_func;
+			if(GetDvarString("mapname") == "zm_cellblock")
+				level.pandora_fx_func = &cellblock_pandora_fx_func;
+			else
+				level.pandora_fx_func = &default_pandora_fx_func;
+			
 		}
 		self thread [[ level.pandora_fx_func ]]();
 	}
 
-	playfx( level._effect["lght_marker_flare"],self.pandora_light.origin );
+	if(GetDvarString("mapname") != "zm_cellblock")
+		playfx( level._effect["lght_marker_flare"],self.pandora_light.origin );
 	
 	//Add this location to the map
 	//Objective_Add( 0, "active", "Mystery Box", self.chest_lid.origin, "minimap_icon_mystery_box" );
@@ -674,8 +921,26 @@ function treasure_chest_think()
 
 	if(isdefined(self.zbarrier))
 	{
-		zm_utility::play_sound_at_pos( "open_chest", self.origin );
-		zm_utility::play_sound_at_pos( "music_chest", self.origin );
+		if(isdefined(self.zbarrier.script_string) && self.zbarrier.script_string == "t6_motd")
+		{
+			zm_utility::play_sound_at_pos("motd_open_chest", self.zbarrier.origin);
+			zm_utility::play_sound_at_pos("motd_music_chest", self.zbarrier.origin);
+		}
+		else if(isdefined(self.zbarrier.script_string) && (self.zbarrier.script_string == "t6_origins" || self.zbarrier.script_string == "t7_origins"))
+		{
+			zm_utility::play_sound_at_pos("origins_open_chest", self.zbarrier.origin);
+			zm_utility::play_sound_at_pos("origins_music_chest", self.zbarrier.origin);
+		}
+		else if(isdefined(self.zbarrier.script_string) && self.zbarrier.script_string == "t7_soe")
+		{
+			zm_utility::play_sound_at_pos("soe_open_chest", self.zbarrier.origin);
+			zm_utility::play_sound_at_pos("soe_music_chest", self.zbarrier.origin);
+		}
+		else
+		{
+			zm_utility::play_sound_at_pos("open_chest", self.origin);
+			zm_utility::play_sound_at_pos("music_chest", self.origin);
+		}
 		self.zbarrier set_magic_box_zbarrier_state("open");
 	}
 	
@@ -859,7 +1124,22 @@ function treasure_chest_think()
 		if(isdefined(self.zbarrier))
 		{
 			self.zbarrier set_magic_box_zbarrier_state("close");
-			zm_utility::play_sound_at_pos( "close_chest", self.origin );
+			if(isdefined(self.zbarrier.script_string) && self.zbarrier.script_string == "t6_motd")
+			{
+				zm_utility::play_sound_at_pos("motd_close_chest", self.zbarrier.origin);
+			}
+			else if(isdefined(self.zbarrier.script_string) && (self.zbarrier.script_string == "t6_origins" || self.zbarrier.script_string == "t7_origins"))					   
+			{
+				zm_utility::play_sound_at_pos("origins_close_chest", self.origin);
+			}
+			else if(isdefined(self.zbarrier.script_string) && self.zbarrier.script_string == "t7_soe")					  
+			{
+				zm_utility::play_sound_at_pos("soe_close_chest", self.origin);  
+			}
+			else
+			{
+				zm_utility::play_sound_at_pos("close_chest", self.origin);
+			}
 			self.zbarrier waittill("closed");
 			
 			wait 1;
@@ -1021,7 +1301,7 @@ function treasure_chest_move( player_vox )
 
 	players = GetPlayers();
 	
-	array::thread_all(players, &play_crazi_sound);
+	array::thread_all(players, &play_crazi_sound, self.zbarrier.script_string);
 	
 	//Delaying the Player Vox
 	if( IsDefined( player_vox ) )
@@ -1545,7 +1825,18 @@ function treasure_chest_weapon_locking( player, weapon, onOff )
 	{
 		if ( weapon == level.weaponNone )
 		{
-			self.locked_model = spawn_joker_weapon_model( player, level.chest_joker_model, self.origin, (0,0,0) );
+			if(isdefined(self.zbarrier.script_string) && self.zbarrier.script_string == "t6_motd")
+			{
+				self.locked_model = spawn_joker_weapon_model(player, "p6_anim_zm_al_magic_box_lock_red", self.origin, (0, 0, 0));
+			}
+			else if(isdefined(self.zbarrier.script_string) && self.zbarrier.script_string == "t7_soe")
+			{
+				self.locked_model = spawn_joker_weapon_model(player, "p7_zm_zod_magic_box_tentacle_teddy", self.origin, (0, 0, 0));
+			}
+			else
+			{
+				self.locked_model = spawn_joker_weapon_model(player, level.chest_joker_model, self.origin, (0, 0, 0));
+			}
 		}
 		else
 		{
@@ -1704,7 +1995,18 @@ function treasure_chest_weapon_spawn( chest, player, respin )
 
 	if ( move_the_box && !(level.zombie_vars["zombie_powerup_fire_sale_on"] && self [[level._zombiemode_check_firesale_loc_valid_func]]()) )
 	{
-		self.weapon_model SetModel(level.chest_joker_model);
+		if(isdefined(Chest.zbarrier.script_string) && Chest.zbarrier.script_string == "t6_motd")
+		{
+			self.weapon_model SetModel("p6_anim_zm_al_magic_box_lock_red");
+		}
+		else if(isdefined(Chest.zbarrier.script_string) && Chest.zbarrier.script_string == "t7_soe")
+		{
+			self.weapon_model SetModel("p7_zm_zod_magic_box_tentacle_teddy");
+		}
+		else
+		{
+			self.weapon_model SetModel(level.chest_joker_model);
+		}
 
 		if(IsDefined(self.weapon_model_dw))
 		{
@@ -1740,12 +2042,27 @@ function treasure_chest_weapon_spawn( chest, player, respin )
 			//record the weapon model origin and delete it, it could have parts hidden based on what weapon spawned
 			v_origin = self.weapon_model.origin;
 			self.weapon_model Delete();
-
-			//spawn a fresh new model with everything correct
-			self.weapon_model = Spawn( "script_model", v_origin );
-			self.weapon_model SetModel( level.chest_joker_model );
-			self.weapon_model.angles = self.angles + ( 0, 180, 0 );
-
+			self.weapon_model = spawn("script_model", v_origin);
+			if(isdefined(Chest.zbarrier.script_string) && Chest.zbarrier.script_string == "t6_motd")
+			{
+				self.weapon_model SetModel("p6_anim_zm_al_magic_box_lock_red");
+			}
+			else if(isdefined(Chest.zbarrier.script_string) && Chest.zbarrier.script_string == "t7_soe")
+			{
+				self.weapon_model SetModel("p7_zm_zod_magic_box_tentacle_teddy");
+			}
+			else
+			{
+				self.weapon_model SetModel(level.chest_joker_model);
+			}
+			if(isdefined(Chest.zbarrier) && isdefined(Chest.zbarrier.script_string) && (Chest.zbarrier.script_string == "t6_origins" || Chest.zbarrier.script_string == "t7_origins"))
+			{
+				self.weapon_model.angles = Chest.zbarrier.angles;
+			}
+			else
+			{
+				self.weapon_model.angles = self.angles + VectorScale((0, 1, 0), 180);
+			}
 			wait .5;	// we need a wait here before this notify
 			level notify("weapon_fly_away_start");
 			wait 2;
@@ -1913,7 +2230,32 @@ function timer_til_despawn( v_float )
 
 function treasure_chest_glowfx()
 {
-	self clientfield::set( "magicbox_open_glow", true );
+	index = 1;
+	if(isdefined(self.script_string) && self.script_string == "t6_motd")
+	{
+		index = 2;
+		fx_obj = util::spawn_model("tag_origin", self.origin, self.angles, 1);
+		wait(0.05);
+		fx_obj PlayLoopSound("zmb_motd_magicbox_loop_low", 1);
+		PlayFXOnTag("harry/motd_mysterybox/fx_motd_mystery_box_use", fx_obj, "tag_origin");
+	}
+	else if(isdefined(self.script_string) && self.script_string == "t7_soe")
+	{
+		index = 3;
+		fx_obj = util::spawn_model("tag_origin", self.origin, self.angles, 1);
+		wait(0.05);
+		PlayFXOnTag("harry/soe_box/fx_soe_mystery_box_use", fx_obj, "tag_origin");
+	}
+	else if(isdefined(self.script_string) && (self.script_string == "t6_origins" || self.script_string == "t7_origins"))
+	{
+		fx_obj = util::spawn_model("tag_origin", self.origin, self.angles, 1);
+		wait(0.05);
+		fx_obj PlayLoopSound("zmb_origins_magicbox_amb_low", 1);
+		self PlayLoopSound("zmb_origins_magicbox_elec_loop", 1);
+		PlayFXOnTag("harry/origins_mystery_box/fx_origins_mystery_box_use", fx_obj, "tag_origin");
+		fx_obj thread function_18ea47b3();
+	}
+	self clientfield::set("magicbox_open_glow", index);
 	self clientfield::set( "magicbox_closed_glow", false );
 
 	ret_val = self util::waittill_any_return( "weapon_grabbed", "box_moving" ); 
@@ -1923,6 +2265,18 @@ function treasure_chest_glowfx()
 	if ( "box_moving" != ret_val )
 	{
 		self clientfield::set( "magicbox_closed_glow", true );
+	}
+}
+
+//zm_cellblock
+function function_18ea47b3()
+{
+	self endon("hash_3e8868a6");
+	wait(1);
+	while(1)
+	{
+		PlayFXOnTag("harry/origins_mystery_box/fx_origins_mystery_box_lightning", self, "tag_origin");
+		wait(RandomFloat(0.8));
 	}
 }
 
@@ -2172,7 +2526,47 @@ function magicbox_host_migration()
 			{
 				if ( IsDefined( chest ) && IsDefined( chest.pandora_light ) )
 				{
-					playfxontag(level._effect["lght_marker"], chest.pandora_light, "tag_origin");
+					if(isdefined(self.zbarrier.script_string) && self.zbarrier.script_string == "t6_motd")
+					{
+						if(isdefined(self) && isdefined(self.pandora_light))
+						{
+							PlayFXOnTag("harry/motd_mysterybox/fx_motd_mystery_box_pandora", self.pandora_light, "tag_origin");
+						}
+						if(isdefined(self) && isdefined(self.var_c745a958))
+						{
+							PlayFXOnTag("harry/motd_mysterybox/fx_motd_mystery_box_loop", self.var_c745a958, "tag_origin");
+						}
+					}
+					else if(isdefined(self.zbarrier.script_string) && self.zbarrier.script_string == "t7_soe")
+					{
+						if(isdefined(self) && isdefined(self.pandora_light))
+						{
+							PlayFXOnTag(level._effect["lght_marker"], self.pandora_light, "tag_origin");
+						}
+						if(isdefined(self) && isdefined(self.var_c745a958))
+						{
+							PlayFXOnTag("harry/soe_box/fx_soe_mystery_box_loop", self.var_c745a958, "tag_origin");
+						}
+					}
+					else if(isdefined(self.zbarrier.script_string) && (self.zbarrier.script_string == "t6_origins" || self.zbarrier.script_string == "t7_origins"))
+					{
+						if(isdefined(self) && isdefined(self.pandora_light))
+						{
+							PlayFXOnTag(level._effect["lght_marker"], self.pandora_light, "tag_origin");
+						}
+						if(isdefined(self.zbarrier.light))
+						{
+							self.zbarrier.light SetModel("p7_zm_ori_magic_box_base_light_on_green");
+						}
+						if(isdefined(self) && isdefined(self.var_c745a958))
+						{
+							PlayFXOnTag("harry/origins_mystery_box/fx_origins_mystery_box_loop", self.var_c745a958, "tag_origin");
+						}
+					}
+					else
+					{
+						PlayFXOnTag(level._effect["lght_marker"], Chest.pandora_light, "tag_origin");
+					}
 				}
 			}
 			util::wait_network_frame();

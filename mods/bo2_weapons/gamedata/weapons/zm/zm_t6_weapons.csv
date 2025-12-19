@@ -1,4 +1,5 @@
 weapon_name,upgrade_name,hint,cost,weaponVO,weaponVOresp,ammo_cost,create_vox,obsolete_false,in_box,upgrade_in_box,is_limited,limit,upgrade_limit,obsolete2_false,wallbuy_autospawn,class,is_aat_exempt,is_wonder_weapon,force_attachments,
+#Mob of the Dead Remastered
 tazer_knuckles,,,6000,wpck_bowie,,,,,FALSE,FALSE,,,,FALSE,FALSE,special,,,,
 zombie_tomahawk,zombie_tomahawk_upgraded,,1000,grenade,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,,
 raygun_mark2,raygun_mark2_upgraded,,10000,wpck_ray,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,special,TRUE,TRUE,,
@@ -15,3 +16,9 @@ t6_dsr50,t6_dsr50_up,,2000,sniper,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,sniper,,,
 t6_lsat,t6_lsat_up,,2750,lmg,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,lmg,,,
 t6_death_machine,t6_death_machine_up,,5000,lmg,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,lmg,,,
 t6_rpg,t6_rpg_up,,3000,launcher,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,launcher,TRUE,,
+#Town Reimagined
+t6_tazer_knuckles,t6_tazer_knuckles,,6000,wpck_bowie,,,,,FALSE,FALSE,FALSE,,,FALSE,FALSE,special,TRUE,,,
+t6_shotgun_blundergat,t6_shotgun_blundergat_upgraded,,5000,shotgun,,,,,FALSE,FALSE,FALSE,,,FALSE,FALSE,shotgun,,,,
+t6_shotgun_acidgat,t6_shotgun_acidgat_upgraded,,5000,shotgun,,,,,FALSE,FALSE,FALSE,,,FALSE,FALSE,shotgun,TRUE,,,
+t6_zombie_tomahawk,t6_zombie_tomahawk_upgraded,,1000,grenade,,,,,FALSE,FALSE,FALSE,,,FALSE,FALSE,grenade,,,,
+t6_slipgun,t6_slipgun_upgraded,,10000,wpck_ray,,,,,FALSE,FALSE,FALSE,,,FALSE,FALSE,special,TRUE,,,
