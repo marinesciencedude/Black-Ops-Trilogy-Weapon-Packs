@@ -1211,6 +1211,39 @@ function swap_wall_weapon()
 				break;
 			}
 		}
+		case "zm_die": //Die Rise
+		{
+			switch(VAL)
+			{
+			case "t6_ar_m14":
+				ent.zombie_weapon_upgrade = "t6_m14";
+				break;
+			case "t6_shotgun_olympia":
+				ent.zombie_weapon_upgrade = "t6_olympia";
+				break;
+			case "t6_pistol_b23r":
+				ent.zombie_weapon_upgrade = "t6_b23r";
+				break;
+			case "t6_smg_mp5":
+				ent.zombie_weapon_upgrade = "t6_mp5";
+				break;
+			case "t6_smg_ak74u":
+				ent.zombie_weapon_upgrade = "t6_ak74u";
+				break;
+			case "t6_ar_m16":
+				ent.zombie_weapon_upgrade = "t6_m16a1";
+				break;
+			case "t6_ar_an94":
+				ent.zombie_weapon_upgrade = "t6_an94";
+				break;
+			case "t6_shotgun_rem870":
+				ent.zombie_weapon_upgrade = "t6_rem870mcs";
+				break;
+			case "t6_sniper_svu":
+				ent.zombie_weapon_upgrade = "t6_svu_as";
+				break;
+			}
+		}
 		/*case "zm_coast":
 			{
 				if(GetDvarInt("mutator_wallbuys_callofthedead") == 2)
@@ -1602,6 +1635,24 @@ function swap_wall_weapon()
 				}
 				break;
 			}*/
+		}
+		
+		//what is this???
+		foreach(ent in struct::get_array("weapon_upgrade_chalk_set_t6", "targetname"))
+		{
+			VAL = ent.zombie_weapon_upgrade;
+			switch(GetDvarString("mapname"))
+			{
+				case "zm_die": //Die Rise
+				{
+					switch(VAL)
+					{
+					case "t6_smg_pdw57_pq":
+						ent.zombie_weapon_upgrade = "t6_pdw57";
+						break;
+					}
+				}
+			}
 		}
 		
 		if(ent.zombie_weapon_upgrade == "sticky_grenade_custom" && GetDvarInt("mutator_grenade_wallbuy") == 2)

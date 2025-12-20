@@ -995,6 +995,39 @@ function swap_wall_weapon()
 				break;
 			}
 		}
+		case "zm_die": //Die Rise
+		{
+			switch(VAL)
+			{
+			case "t6_ar_m14":
+				ent.zombie_weapon_upgrade = "t6_m14";
+				break;
+			case "t6_shotgun_olympia":
+				ent.zombie_weapon_upgrade = "t6_olympia";
+				break;
+			case "t6_pistol_b23r":
+				ent.zombie_weapon_upgrade = "t6_b23r";
+				break;
+			case "t6_smg_mp5":
+				ent.zombie_weapon_upgrade = "t6_mp5";
+				break;
+			case "t6_smg_ak74u":
+				ent.zombie_weapon_upgrade = "t6_ak74u";
+				break;
+			case "t6_ar_m16":
+				ent.zombie_weapon_upgrade = "t6_m16a1";
+				break;
+			case "t6_ar_an94":
+				ent.zombie_weapon_upgrade = "t6_an94";
+				break;
+			case "t6_shotgun_rem870":
+				ent.zombie_weapon_upgrade = "t6_rem870mcs";
+				break;
+			case "t6_sniper_svu":
+				ent.zombie_weapon_upgrade = "t6_svu_as";
+				break;
+			}
+		}
 		/*case "zm_coast":
 			{
 				if(GetDvarInt("mutator_wallbuys_callofthedead") == 2)
