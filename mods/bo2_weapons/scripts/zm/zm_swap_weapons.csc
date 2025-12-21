@@ -54,8 +54,13 @@ function starter_weapon()
 {
 	wait(1);
 	
+	//Treyarch Troll
+	if(GetDvarString("mapname") == "zm_alcatraz_island" || GetDvarString("mapname") == "zm_prison")
+		AddZombieBoxWeapon(GetWeapon("t6_m1911"), GetWeapon("t6_m1911").worldModel, false);
+	
 	if(GetDvarString("mapname") == "zm_town"
-		 || GetDvarString("mapname") == "zm_farm_hd")
+		 || GetDvarString("mapname") == "zm_farm_hd"
+		 || GetDvarString("mapname") == "zm_town_hd")
 	{
 		if(GetDvarString("mapname") == "zm_town")
 		{
@@ -134,7 +139,7 @@ function starter_weapon()
 	else if(GetDvarString("mapname") == "zm_cellblock")
 	{
 		zm_weapons::include_weapon( "t6_m1911", true, 300 );
-		zm_weapons::include_upgraded_weapon( "t6_m1911", "t6_m1911_rdw_up", false, 300 );
+		//zm_weapons::include_upgraded_weapon( "t6_m1911", "t6_m1911_rdw_up", false, 300 );
 		
 		zm_weapons::include_weapon( "t6_fiveseven_rdw", true, 1100 );
 		zm_weapons::include_upgraded_weapon( "t6_fiveseven_rdw", "t6_fiveseven_rdw_up", false, 1100 );
@@ -183,6 +188,56 @@ function starter_weapon()
 		
 		zm_weapons::include_weapon( "t8_shotgun_blundergat", true, 5000 );
 		zm_weapons::include_upgraded_weapon( "t8_shotgun_blundergat", "t8_shotgun_blundergat_upgraded", false, 5000 );
+	}
+	else if(GetDvarString("mapname") == "zm_prison") //copforthat's Mob of the Dead
+	{
+		zm_weapons::include_weapon( "t6_fiveseven_rdw", true, 1100 );
+		zm_weapons::include_upgraded_weapon( "t6_fiveseven_rdw", "t6_fiveseven_rdw_up", false, 1100 );
+		
+		zm_weapons::include_weapon( "t6_executioner", true, 600 );
+		zm_weapons::include_upgraded_weapon( "t6_executioner", "t6_executioner_up", false, 600 );
+		
+		zm_weapons::include_weapon( "t6_pdw57", true, 1000 );
+		zm_weapons::include_upgraded_weapon( "t6_pdw57", "t6_pdw57_up", false, 1000 );
+		
+		zm_weapons::include_weapon( "t6_fal", true, 600 );
+		zm_weapons::include_upgraded_weapon( "t6_fal", "t6_fal_up", false, 600 );
+			
+		zm_weapons::include_weapon( "t6_mtar", true, 1300 );
+		zm_weapons::include_upgraded_weapon( "t6_mtar", "t6_mtar_up", false, 1300 );
+		
+		zm_weapons::include_weapon( "t6_ak47", true, 1400 );
+		zm_weapons::include_upgraded_weapon( "t6_ak47", "t6_ak47_up", false, 1400 );
+		
+		zm_weapons::include_weapon( "t6_galil", true, 1400 );
+		zm_weapons::include_upgraded_weapon( "t6_galil", "t6_galil_up", false, 1400 );
+		
+		zm_weapons::include_weapon( "t6_s12", true, 1250 );
+		zm_weapons::include_upgraded_weapon( "t6_s12", "t6_s12_up", false, 1250 );
+		
+		zm_weapons::include_weapon( "t6_m82a1", true, 2000 );
+		zm_weapons::include_upgraded_weapon( "t6_m82a1", "t6_m82a1_up", false, 2000 );
+			
+		zm_weapons::include_weapon( "t6_dsr50", true, 2000 );
+		zm_weapons::include_upgraded_weapon( "t6_dsr50", "t6_dsr50_up", false, 2000 );
+		
+		zm_weapons::include_weapon( "t6_lsat", true, 2000 );
+		zm_weapons::include_upgraded_weapon( "t6_lsat","t6_lsat_up", false, 2000 );
+		
+		zm_weapons::include_weapon( "t6_death_machine", true, 5000 );
+		zm_weapons::include_upgraded_weapon( "t6_death_machine","t6_death_machine_up", false, 5000 );
+		
+		zm_weapons::include_weapon( "t6_rpg", true, 3000 );
+		zm_weapons::include_upgraded_weapon( "t6_rpg", "t6_rpg_up", false, 3000 );
+		
+		zm_weapons::include_weapon( "t6_xl_ray_gun", true, 10000 );
+		zm_weapons::include_upgraded_weapon( "t6_xl_ray_gun", "t6_xl_ray_gun_up", false, 10000 );
+		
+		zm_weapons::include_weapon( "t6_xl_raygun_mark2", true, 10000 );
+		zm_weapons::include_upgraded_weapon( "t6_xl_raygun_mark2", "t6_xl_raygun_mark2_up", false, 10000 );
+		
+		zm_weapons::include_weapon( "t8_blundergat", true, 10000 );
+		zm_weapons::include_upgraded_weapon( "t8_blundergat", "t8_blundergat_upgraded", false, 10000 );
 	}
 }
 
@@ -939,95 +994,146 @@ function swap_wall_weapon()
 				break;
 			}
 		case "zm_alcatraz_island": //Mob Of The Dead Remastered
-		{
-			switch(VAL)
 			{
-			case "bo2_m14":
-				ent.zombie_weapon_upgrade = "t6_m14";
-				break;
-			case "bo2_olympia":
-				ent.zombie_weapon_upgrade = "t6_olympia";
-				break;
-			case "pistol_beretta93r":
-				ent.zombie_weapon_upgrade = "t6_b23r";
-				break;
-			case "mwr_mp5":
-				ent.zombie_weapon_upgrade = "t6_mp5";
-				break;
-			case "bo2_uzi":
-				ent.zombie_weapon_upgrade = "t6_uzi";
-				break;
-			case "bo2_m1927":
-				ent.zombie_weapon_upgrade = "t6_m1927";
-				break;
-			case "shotgun_870mcs":
-				ent.zombie_weapon_upgrade = "t6_rem870mcs";
+				switch(VAL)
+				{
+				case "bo2_m14":
+					ent.zombie_weapon_upgrade = "t6_m14";
+					break;
+				case "bo2_olympia":
+					ent.zombie_weapon_upgrade = "t6_olympia";
+					break;
+				case "pistol_beretta93r":
+					ent.zombie_weapon_upgrade = "t6_b23r";
+					break;
+				case "mwr_mp5":
+					ent.zombie_weapon_upgrade = "t6_mp5";
+					break;
+				case "bo2_uzi":
+					ent.zombie_weapon_upgrade = "t6_uzi";
+					break;
+				case "bo2_m1927":
+					ent.zombie_weapon_upgrade = "t6_m1927";
+					break;
+				case "shotgun_870mcs":
+					ent.zombie_weapon_upgrade = "t6_rem870mcs";
+					break;
+				}
 				break;
 			}
-		}
 		case "zm_town": //Town Reimagined
-		{
-			switch(VAL)
 			{
-			case "t6_ar_m14":
-				ent.zombie_weapon_upgrade = "t6_m14";
-				break;
-			case "t7_shotgun_rottweil72":
-				ent.zombie_weapon_upgrade = "t6_olympia";
-				break;
-			case "t6_sniper_ballista":
-				ent struct::delete();
-				break;
-			case "t6_smg_mp5":
-				ent.zombie_weapon_upgrade = "t6_mp5";
+				switch(VAL)
+				{
+				case "t6_ar_m14":
+					ent.zombie_weapon_upgrade = "t6_m14";
+					break;
+				case "t7_shotgun_rottweil72":
+					ent.zombie_weapon_upgrade = "t6_olympia";
+					break;
+				case "t6_sniper_ballista":
+					ent struct::delete();
+					break;
+				case "t6_smg_mp5":
+					ent.zombie_weapon_upgrade = "t6_mp5";
+					break;
+				}
 				break;
 			}
-		}
 		case "zm_farm_hd":
-		{
-			switch(VAL)
 			{
-			case "ar_marksman": //Sheiva
-				ent.zombie_weapon_upgrade = "t6_olympia";
-				break;
-			case "smg_standard": //Kuda
-				ent.zombie_weapon_upgrade = "t6_mp5";
+				switch(VAL)
+				{
+				case "ar_marksman": //Sheiva
+					ent.zombie_weapon_upgrade = "t6_olympia";
+					break;
+				case "smg_standard": //Kuda
+					ent.zombie_weapon_upgrade = "t6_mp5";
+					break;
+				}
 				break;
 			}
-		}
+		case "zm_town_hd":
+			{
+				switch(VAL)
+				{
+				case "town_ar_m14":
+					ent.zombie_weapon_upgrade = "t6_m14";
+					break;
+				case "shotgun_olympia":
+					ent.zombie_weapon_upgrade = "t6_olympia";
+					break;
+				case "town_smg_mp5":
+					ent.zombie_weapon_upgrade = "t6_mp5";
+					break;
+				}
+				break;
+			}
+		case "zm_prison":
+			{
+				switch(VAL)
+				{
+				case "t6_xl_m14":
+					ent.zombie_weapon_upgrade = "t6_m14";
+					break;
+				case "t6_xl_olympia":
+					ent.zombie_weapon_upgrade = "t6_olympia";
+					break;
+				case "t6_xl_b23r":
+					ent.zombie_weapon_upgrade = "t6_b23r";
+					break;
+				case "t6_xl_mp5":
+					ent.zombie_weapon_upgrade = "t6_mp5";
+					break;
+				case "t6_xl_uzi":
+					ent.zombie_weapon_upgrade = "t6_uzi";
+					break;
+				case "t6_xl_m1927":
+					ent.zombie_weapon_upgrade = "t6_m1927";
+					break;
+				case "t6_xl_rem870":
+					ent.zombie_weapon_upgrade = "t6_rem870mcs";
+					break;
+				}
+				break;
+			}
 		case "zm_die": //Die Rise
-		{
-			switch(VAL)
 			{
-			case "t6_ar_m14":
-				ent.zombie_weapon_upgrade = "t6_m14";
-				break;
-			case "t6_shotgun_olympia":
-				ent.zombie_weapon_upgrade = "t6_olympia";
-				break;
-			case "t6_pistol_b23r":
-				ent.zombie_weapon_upgrade = "t6_b23r";
-				break;
-			case "t6_smg_mp5":
-				ent.zombie_weapon_upgrade = "t6_mp5";
-				break;
-			case "t6_smg_ak74u":
-				ent.zombie_weapon_upgrade = "t6_ak74u";
-				break;
-			case "t6_ar_m16":
-				ent.zombie_weapon_upgrade = "t6_m16a1";
-				break;
-			case "t6_ar_an94":
-				ent.zombie_weapon_upgrade = "t6_an94";
-				break;
-			case "t6_shotgun_rem870":
-				ent.zombie_weapon_upgrade = "t6_rem870mcs";
-				break;
-			case "t6_sniper_svu":
-				ent.zombie_weapon_upgrade = "t6_svu_as";
+				switch(VAL)
+				{
+				case "t6_ar_m14":
+					ent.zombie_weapon_upgrade = "t6_m14";
+					break;
+				case "t6_shotgun_olympia":
+					ent.zombie_weapon_upgrade = "t6_olympia";
+					break;
+				case "t6_pistol_b23r":
+					ent.zombie_weapon_upgrade = "t6_b23r";
+					break;
+				case "t6_smg_mp5":
+					ent.zombie_weapon_upgrade = "t6_mp5";
+					break;
+				case "t6_smg_ak74u":
+					ent.zombie_weapon_upgrade = "t6_ak74u";
+					break;
+				case "t6_smg_pdw57":
+					ent.zombie_weapon_upgrade = "t6_pdw57";
+					break;
+				case "t6_ar_m16":
+					ent.zombie_weapon_upgrade = "t6_m16a1";
+					break;
+				case "t6_ar_an94":
+					ent.zombie_weapon_upgrade = "t6_an94";
+					break;
+				case "t6_shotgun_rem870":
+					ent.zombie_weapon_upgrade = "t6_rem870mcs";
+					break;
+				case "t6_sniper_svu":
+					ent.zombie_weapon_upgrade = "t6_svu_as";
+					break;
+				}
 				break;
 			}
-		}
 		/*case "zm_coast":
 			{
 				if(GetDvarInt("mutator_wallbuys_callofthedead") == 2)
