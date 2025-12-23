@@ -11,7 +11,7 @@ pistol_burst,pistol_burst_upgraded,,500,pistol,,,,,FALSE,FALSE,FALSE,,,FALSE,TRU
 pistol_c96,pistol_c96_upgraded,,5000,pistol,,,,,FALSE,FALSE,TRUE,,,FALSE,TRUE,pistol,,,,
 t6_mauser_c96,t6_mauser_c96_up,,300,pistol,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,pistol,,,
 t6_m14,t6_m14_up,,500,rifle,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,rifle,,,
-t6_ballista,t6_ballista_up,,1800,sniper,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,sniper,,,
+t6_ballista,t6_ballista_up,,500,sniper,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,sniper,,,
 t6_b23r,t6_b23r_up,,1000,pistol,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,pistol,,,
 t6_ak74u,t6_ak74u_up,,1200,smg,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,smg,,,
 t6_ak74u_extmag,t6_ak74u_extmag_up,,1200,smg,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,smg,,,

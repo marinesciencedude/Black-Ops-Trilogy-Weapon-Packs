@@ -17,6 +17,11 @@ t6_mauser_c96,t6_mauser_c96_up,,300,pistol,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,pi
 t6_m14,t6_m14_up,,500,rifle,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,rifle,,,
 t6_ak74u,t6_ak74u_up,,1200,smg,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,smg,,,
 t6_m1911,t6_m1911_rdw_up,,300,pistol,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,pistol,,,
+#Town Remastered
+sticky_grenade,,,250,grenade,,250,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,,
+t6_tazer_knuckles,t6_tazer_knuckles,,6000,wpck_bowie,,,,,FALSE,FALSE,FALSE,,,FALSE,FALSE,special,TRUE,,,
+#Farm
+bo3_mark2,bo3_mark2_upgraded,,10000,raygun,,,,,TRUE,FALSE,TRUE,1,,FALSE,FALSE,special,TRUE,TRUE,,
 #Cell Block
 t8_shotgun_acidgat,t8_shotgun_acidgat_upgraded,,5000,shotgun,,,,,FALSE,FALSE,FALSE,,,FALSE,FALSE,shotgun,TRUE,,,
 t8_shotgun_magmagat,t8_shotgun_magmagat_upgraded,,5000,shotgun,,,,,FALSE,FALSE,FALSE,,,FALSE,FALSE,shotgun,TRUE,,,
@@ -25,6 +30,9 @@ t8_blundersplat,t8_blundersplat_upgraded,,10000,wpck_ray,,,,,false,false,true,1,
 t8_magmagat,t8_magmagat_upgraded,,10000,wpck_ray,,,,,false,false,true,1,,false,true,special,true,true,,
 prison_shield,,,500,,,,,,false,false,false,,,false,true,special,true,,,
 claymore,,,1000,claymore,,,,,false,false,false,,,false,true,special,,,,
+#Diner
+spx_zombie_shield,spx_zombie_shield_upgraded,,500,,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,special,TRUE,,,
+t6_taser_knuckles,,,5000,,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,special,,,,
 #other stuff
 t6_olympia,t6_olympia_up,,500,shotgun,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,shotgun,,,
 t6_mp5,t6_mp5_up,,1000,smg,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,smg,,,
@@ -32,3 +40,6 @@ t6_b23r,t6_b23r_up,,900,pistol,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,pistol,,,,
 t6_uzi,t6_uzi_up,,1500,smg,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,smg,,,
 t6_m1927,t6_m1927_up,,1500,smg,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,smg,,,
 t6_rem870mcs,t6_rem870mcs_up,,1200,shotgun,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,shotgun,,,
+t6_ksg,t6_ksg_up,,1500,shotgun,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,shotgun,,,
+t6_ballista,t6_ballista_up,,500,sniper,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,sniper,,,
+t6_m16a1,t6_m16a1_up,,1200,rifle,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,rifle,,,

@@ -98,7 +98,8 @@ function starter_weapon()
 	
 	if(GetDvarString("mapname") == "zm_town"
 		 || GetDvarString("mapname") == "zm_farm_hd"
-		 || GetDvarString("mapname") == "zm_town_hd")
+		 || GetDvarString("mapname") == "zm_town_hd"
+		 || GetDvarString("mapname") == "zm_diner")
 	{
 		if(GetDvarString("mapname") == "zm_town")
 		{
@@ -350,6 +351,30 @@ function starter_weapon()
 		zm_weapons::add_limited_weapon( "t8_blundergat", 1 );
 	}
 	
+	if(GetDvarString("mapname") == "zm_town_hd")
+	{
+		zm_utility::include_weapon( "raygun_mark2", true );
+		zm_utility::include_weapon( "raygun_mark2_upgraded", false );
+		zm_weapons::add_zombie_weapon( "raygun_mark2", "raygun_mark2_upgraded", "", 5000, "raygun", "", undefined, "", true, "" );
+		aat::register_aat_exemption(getweapon("raygun_mark2_upgraded"));
+		
+		zm_utility::include_weapon( "knife_ballistic", true );
+		zm_utility::include_weapon( "knife_ballistic_upgraded", false );
+		zm_weapons::add_zombie_weapon( "knife_ballistic", "knife_ballistic_upgraded", "", 1000, "", "", undefined, "", true, "" );
+		aat::register_aat_exemption(getweapon("knife_ballistic_upgraded"));
+	}
+	else if(GetDvarString("mapname") == "zm_diner")
+	{
+		zm_utility::include_weapon( "otg_bo4_ray_gun", true );
+		zm_utility::include_weapon( "otg_bo4_ray_gun_up", false );
+		zm_weapons::add_zombie_weapon( "otg_bo4_ray_gun", "otg_bo4_ray_gun_up", "", 10000, "pistol", "", undefined, "", true, "" );
+		aat::register_aat_exemption(getweapon("otg_bo4_ray_gun_up"));
+		
+		zm_utility::include_weapon( "t7_raygun_mark2", true );
+		zm_utility::include_weapon( "t7_raygun_mark2_upgraded", false );
+		zm_weapons::add_zombie_weapon( "t7_raygun_mark2", "t7_raygun_mark2_upgraded", "", 10000, "wpck_ray", "", undefined, "", true, "" );
+		aat::register_aat_exemption(getweapon("t7_raygun_mark2_upgraded"));
+	}
 	
 	/*if(GetDvarInt("mutator_bocw_1911") == 2)
 	{
@@ -417,13 +442,7 @@ function starter_weapon_extra()
 	if(GetDvarString("mapname") != "zm_alcatraz_island" && GetDvarString("mapname") != "zm_prison") //don't add weapon at the start of the game while in Afterlife mode
 	{
 		foreach(player in GetPlayers())
-		{
-			if(player GetCurrentWeapon() != starting_weapon)
-			{
-				player TakeWeapon(player GetCurrentWeapon());
-				player zm_weapons::weapon_give(starting_weapon, 0, 0, 1, 1);
-			}
-		}
+			player thread give_starting_weapon(starting_weapon);
 	}
 	
 	//DO NOT use any attachments here in pap_attach.csv
@@ -443,6 +462,22 @@ function starter_weapon_extra()
 	{
 		player thread zm_equipment::show_hint_text("The mod should work fine in solo, hope you enjoy!", 5, 1.5, 150);
 	}*/
+}
+
+function give_starting_weapon(starting_weapon)
+{
+	if(GetDvarString("mapname") == "zm_town_hd")
+	{
+		while(!level.var_ee71e4d)
+			wait(0.1);
+		wait(1);
+	}
+	
+	if(self GetCurrentWeapon() != starting_weapon || GetDvarString("mapname") == "zm_town_hd")
+	{
+		self TakeWeapon(self GetCurrentWeapon());
+		self zm_weapons::weapon_give(starting_weapon, 0, 0, 1, 1);
+	}
 }
 
 /*function callback_search(func)
@@ -696,19 +731,19 @@ function swap_wall_weapon()
 					{
 						ent.zombie_weapon_upgrade = "t6_stg44";
 					
-						ent.origin += (10*cos(spawn_loc.angles[1]), 10*sin(spawn_loc.angles[1]), 0);
 						spawn_loc = struct::get(ent.target, "targetname");
+						ent.origin += (10*cos(spawn_loc.angles[1]), 10*sin(spawn_loc.angles[1]), 0);
 						spawn_loc.origin += (10*cos(spawn_loc.angles[1]), 10*sin(spawn_loc.angles[1]), 0);
 						break;
 					}
 				case "ar_longburst": //M8A7
 					{
-					ent.zombie_weapon_upgrade = "t6_mp5";
-				
-					ent.origin += (9*cos(spawn_loc.angles[1]), 9*sin(spawn_loc.angles[1]), 4);
-					spawn_loc = struct::get(ent.target, "targetname");
-					spawn_loc.origin += (9*cos(spawn_loc.angles[1]), 9*sin(spawn_loc.angles[1]), 4);
-					break;
+						ent.zombie_weapon_upgrade = "t6_mp5";
+					
+						spawn_loc = struct::get(ent.target, "targetname");
+						ent.origin += (9*cos(spawn_loc.angles[1]), 9*sin(spawn_loc.angles[1]), 4);
+						spawn_loc.origin += (9*cos(spawn_loc.angles[1]), 9*sin(spawn_loc.angles[1]), 4);
+						break;
 					}
 				case "ar_standard": //KN-44
 					ent.zombie_weapon_upgrade = "t6_ak74u";
@@ -1294,7 +1329,7 @@ function swap_wall_weapon()
 				}
 				break;
 			}
-		case "zm_town_hd":
+		case "zm_town_hd": //Town Remastered
 			{
 				switch(VAL)
 				{
@@ -1371,6 +1406,50 @@ function swap_wall_weapon()
 					break;
 				case "t6_sniper_svu":
 					ent.zombie_weapon_upgrade = "t6_svu_as";
+					break;
+				}
+				break;
+			}
+		case "zm_diner":
+			{
+				switch(VAL)
+				{
+				case "ar_m14":
+					ent.zombie_weapon_upgrade = "t6_m14";
+					break;
+				case "t8_m1897":
+					ent.zombie_weapon_upgrade = "t6_rem870mcs";
+					break;
+				case "shotgun_olympia":
+					ent.zombie_weapon_upgrade = "t6_olympia";
+					break;
+				case "t8_essex_m07":
+					{
+						ent.zombie_weapon_upgrade = "t6_ballista";
+						
+						spawn_loc = struct::get(ent.target, "targetname");
+						ent.origin += (-1*cos(spawn_loc.angles[1]), -1*sin(spawn_loc.angles[1]), -2);
+						spawn_loc.origin += (-1*cos(spawn_loc.angles[1]), -1*sin(spawn_loc.angles[1]), -2);
+						
+						break;
+					}
+				case "t8_mog12":
+					ent.zombie_weapon_upgrade = "t6_ksg";
+					break;
+				case "t8_mx9":
+					ent.zombie_weapon_upgrade = "t6_mp5";
+					break;
+				case "t8_rk7":
+					ent.zombie_weapon_upgrade = "t6_b23r";
+					break;
+				case "t8_saug9mm":
+					ent.zombie_weapon_upgrade = "t6_uzi";
+					break;
+				case "ar_m16":
+					ent.zombie_weapon_upgrade = "t6_m16a1";
+					break;
+				case "t8_kn57":
+					ent.zombie_weapon_upgrade = "t6_ak74u";
 					break;
 				}
 				break;
@@ -1849,6 +1928,9 @@ function swap_chalk()
 				//case "":																				 // ↔   ↔  ↕
 				//	ent.var_47896610 = util::spawn_model("wallbuy_m14_bo2", spawn_loc.origin + VectorScale((0, 13, -3), 1), spawn_loc.angles);
 				//	break;
+				case "zm_diner":
+					ent.var_47896610 = util::spawn_model("wallbuy_m14_bo2", spawn_loc.origin + VectorScale((1*cos(spawn_loc.angles[1]), 1*sin(spawn_loc.angles[1]), 0), 1), spawn_loc.angles);
+					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_m14_bo2", spawn_loc.origin, spawn_loc.angles);
 					break;
@@ -1864,7 +1946,7 @@ function swap_chalk()
 					ent.var_47896610 = util::spawn_model("wallbuy_olympia_bo2", spawn_loc.origin + VectorScale((0, 2, -3), 1), spawn_loc.angles);
 					break;
 				default:
-					ent.var_47896610 = util::spawn_model("wallbuy_olympia_bo2", spawn_loc.origin, spawn_loc.angles);
+					ent.var_47896610 = util::spawn_model("wallbuy_olympia_bo2", spawn_loc.origin + VectorScale((-1*cos(spawn_loc.angles[1]), -1*sin(spawn_loc.angles[1]), -3), 1), spawn_loc.angles);
 					break;
 				}
 				break;
@@ -1876,6 +1958,9 @@ function swap_chalk()
 				{
 				case "zm_theater":
 					ent.var_47896610 = util::spawn_model("wallbuy_b23r", spawn_loc.origin + VectorScale((2, 0, 0), 1), spawn_loc.angles);
+					break;
+				case "zm_diner":
+					ent.var_47896610 = util::spawn_model("wallbuy_b23r", spawn_loc.origin + VectorScale((-2*cos(spawn_loc.angles[1]), -2*sin(spawn_loc.angles[1]), 0), 1), spawn_loc.angles);
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_b23r", spawn_loc.origin, spawn_loc.angles);
@@ -1906,7 +1991,7 @@ function swap_chalk()
 					ent.var_47896610 = util::spawn_model("wallbuy_pdw57", spawn_loc.origin + VectorScale((0, 7, 2), 1), spawn_loc.angles);
 					break;
 				default:
-					ent.var_47896610 = util::spawn_model("wallbuy_pdw57", spawn_loc.origin, spawn_loc.angles);
+					ent.var_47896610 = util::spawn_model("wallbuy_pdw57", spawn_loc.origin + VectorScale((7*cos(spawn_loc.angles[1]), 7*sin(spawn_loc.angles[1]), 2), 1), spawn_loc.angles);
 					break;
 				}
 				break;
@@ -1947,6 +2032,9 @@ function swap_chalk()
 				case "zm_theater":
 					ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin + VectorScale((0, 8.5, 1), 1), spawn_loc.angles);
 					break;
+				case "zm_diner":
+					ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin + VectorScale((-8.5, 0, 2), 1), spawn_loc.angles);
+					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin, spawn_loc.angles);
 					break;
@@ -1962,7 +2050,7 @@ function swap_chalk()
 					ent.var_47896610 = util::spawn_model("wallbuy_m16a1_bo2", spawn_loc.origin + VectorScale((-6, -1, 0), 1), spawn_loc.angles);
 					break;
 				default:
-					ent.var_47896610 = util::spawn_model("wallbuy_m16a1_bo2", spawn_loc.origin, spawn_loc.angles);
+					ent.var_47896610 = util::spawn_model("wallbuy_m16a1_bo2", spawn_loc.origin + VectorScale((-6*cos(spawn_loc.angles[1]), -6*sin(spawn_loc.angles[1]), 0), 1), spawn_loc.angles);
 					break;
 				}
 				break;
@@ -1976,7 +2064,7 @@ function swap_chalk()
 					ent.var_47896610 = util::spawn_model("wallbuy_stg44_bo2", spawn_loc.origin + VectorScale((-8.5*cos(spawn_loc.angles[1]), -8.5*sin(spawn_loc.angles[1]), -1), 1), spawn_loc.angles);
 					break;
 				default:
-					ent.var_47896610 = util::spawn_model("wallbuy_stg44_bo2", spawn_loc.origin, spawn_loc.angles);
+					ent.var_47896610 = util::spawn_model("wallbuy_stg44_bo2", spawn_loc.origin + VectorScale((-8.5*cos(spawn_loc.angles[1]), -8.5*sin(spawn_loc.angles[1]), -1), 1), spawn_loc.angles);
 					break;
 				}
 				break;
@@ -1990,7 +2078,7 @@ function swap_chalk()
 					ent.var_47896610 = util::spawn_model("wallbuy_ballista", spawn_loc.origin + VectorScale((-3, 0, 1), 1), spawn_loc.angles);
 					break;
 				default:
-					ent.var_47896610 = util::spawn_model("wallbuy_ballista", spawn_loc.origin, spawn_loc.angles);
+					ent.var_47896610 = util::spawn_model("wallbuy_ballista", spawn_loc.origin + VectorScale((-3*cos(spawn_loc.angles[1]), -3*sin(spawn_loc.angles[1]), 1), 1), spawn_loc.angles);
 					break;
 				}
 				break;
@@ -2025,7 +2113,7 @@ function swap_chalk()
 					ent.var_47896610 = util::spawn_model("wallbuy_m1927_bo2", spawn_loc.origin + VectorScale((8, 0, -1), 1), spawn_loc.angles);
 					break;
 				default:
-					ent.var_47896610 = util::spawn_model("wallbuy_m1927_bo2", spawn_loc.origin, spawn_loc.angles);
+					ent.var_47896610 = util::spawn_model("wallbuy_m1927_bo2", spawn_loc.origin + VectorScale((8*cos(spawn_loc.angles[1]), 8*sin(spawn_loc.angles[1]), -1), 1), spawn_loc.angles);
 					break;
 				}
 				break;
@@ -2039,7 +2127,7 @@ function swap_chalk()
 					ent.var_47896610 = util::spawn_model("wallbuy_an94", spawn_loc.origin + VectorScale((0, 5, -1), 1), spawn_loc.angles);
 					break;
 				default:
-					ent.var_47896610 = util::spawn_model("wallbuy_an94", spawn_loc.origin, spawn_loc.angles);
+					ent.var_47896610 = util::spawn_model("wallbuy_an94", spawn_loc.origin + VectorScale((5*cos(spawn_loc.angles[1]), 5*sin(spawn_loc.angles[1]), -1), 1), spawn_loc.angles);
 					break;
 				}
 				break;
@@ -2053,7 +2141,7 @@ function swap_chalk()
 					ent.var_47896610 = util::spawn_model("wallbuy_smr", spawn_loc.origin + VectorScale((0, 12, 1), 1), spawn_loc.angles);
 					break;
 				default:
-					ent.var_47896610 = util::spawn_model("wallbuy_smr", spawn_loc.origin, spawn_loc.angles);
+					ent.var_47896610 = util::spawn_model("wallbuy_smr", spawn_loc.origin + VectorScale((12*cos(spawn_loc.angles[1]), 12*sin(spawn_loc.angles[1]), 1), 1), spawn_loc.angles);
 					break;
 				}
 				break;

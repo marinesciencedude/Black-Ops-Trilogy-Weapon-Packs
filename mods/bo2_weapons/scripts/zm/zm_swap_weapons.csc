@@ -60,7 +60,8 @@ function starter_weapon()
 	
 	if(GetDvarString("mapname") == "zm_town"
 		 || GetDvarString("mapname") == "zm_farm_hd"
-		 || GetDvarString("mapname") == "zm_town_hd")
+		 || GetDvarString("mapname") == "zm_town_hd"
+		 || GetDvarString("mapname") == "zm_diner")
 	{
 		if(GetDvarString("mapname") == "zm_town")
 		{
@@ -238,6 +239,23 @@ function starter_weapon()
 		
 		zm_weapons::include_weapon( "t8_blundergat", true, 10000 );
 		zm_weapons::include_upgraded_weapon( "t8_blundergat", "t8_blundergat_upgraded", false, 10000 );
+	}
+	
+	if(GetDvarString("mapname") == "zm_town_hd")
+	{
+		zm_weapons::include_weapon( "raygun_mark2", true, 5000 );
+		zm_weapons::include_upgraded_weapon( "raygun_mark2", "raygun_mark2_upgraded", false, 5000 );
+		
+		zm_weapons::include_weapon( "knife_ballistic", true, 1000 );
+		zm_weapons::include_upgraded_weapon( "knife_ballistic", "knife_ballistic_upgraded", false, 1000 );
+	}
+	else if(GetDvarString("mapname") == "zm_diner")
+	{
+		zm_weapons::include_weapon( "otg_bo4_ray_gun", true, 10000 );
+		zm_weapons::include_upgraded_weapon( "otg_bo4_ray_gun", "otg_bo4_ray_gun_up", false, 10000 );
+		
+		zm_weapons::include_weapon( "t7_raygun_mark2", true, 10000 );
+		zm_weapons::include_upgraded_weapon( "t7_raygun_mark2", "t7_raygun_mark2_upgraded", false, 10000 );
 	}
 }
 
@@ -455,19 +473,19 @@ function swap_wall_weapon()
 					{
 						ent.zombie_weapon_upgrade = "t6_stg44";
 					
-						ent.origin += (10*cos(spawn_loc.angles[1]), 10*sin(spawn_loc.angles[1]), 0);
 						spawn_loc = struct::get(ent.target, "targetname");
+						ent.origin += (10*cos(spawn_loc.angles[1]), 10*sin(spawn_loc.angles[1]), 0);
 						spawn_loc.origin += (10*cos(spawn_loc.angles[1]), 10*sin(spawn_loc.angles[1]), 0);
 						break;
 					}
 				case "ar_longburst": //M8A7
 					{
-					ent.zombie_weapon_upgrade = "t6_mp5";
-				
-					ent.origin += (9*cos(spawn_loc.angles[1]), 9*sin(spawn_loc.angles[1]), 4);
-					spawn_loc = struct::get(ent.target, "targetname");
-					spawn_loc.origin += (9*cos(spawn_loc.angles[1]), 9*sin(spawn_loc.angles[1]), 4);
-					break;
+						ent.zombie_weapon_upgrade = "t6_mp5";
+					
+						spawn_loc = struct::get(ent.target, "targetname");
+						ent.origin += (9*cos(spawn_loc.angles[1]), 9*sin(spawn_loc.angles[1]), 4);
+						spawn_loc.origin += (9*cos(spawn_loc.angles[1]), 9*sin(spawn_loc.angles[1]), 4);
+						break;
 					}
 				case "ar_standard": //KN-44
 					ent.zombie_weapon_upgrade = "t6_ak74u";
@@ -1053,7 +1071,7 @@ function swap_wall_weapon()
 				}
 				break;
 			}
-		case "zm_town_hd":
+		case "zm_town_hd": //Town Remastered
 			{
 				switch(VAL)
 				{
@@ -1130,6 +1148,50 @@ function swap_wall_weapon()
 					break;
 				case "t6_sniper_svu":
 					ent.zombie_weapon_upgrade = "t6_svu_as";
+					break;
+				}
+				break;
+			}
+		case "zm_diner":
+			{
+				switch(VAL)
+				{
+				case "ar_m14":
+					ent.zombie_weapon_upgrade = "t6_m14";
+					break;
+				case "t8_m1897":
+					ent.zombie_weapon_upgrade = "t6_rem870mcs";
+					break;
+				case "shotgun_olympia":
+					ent.zombie_weapon_upgrade = "t6_olympia";
+					break;
+				case "t8_essex_m07":
+					{
+						ent.zombie_weapon_upgrade = "t6_ballista";
+						
+						spawn_loc = struct::get(ent.target, "targetname");
+						ent.origin += (-1*cos(spawn_loc.angles[1]), -1*sin(spawn_loc.angles[1]), -2);
+						spawn_loc.origin += (-1*cos(spawn_loc.angles[1]), -1*sin(spawn_loc.angles[1]), -2);
+						
+						break;
+					}
+				case "t8_mog12":
+					ent.zombie_weapon_upgrade = "t6_ksg";
+					break;
+				case "t8_mx9":
+					ent.zombie_weapon_upgrade = "t6_mp5";
+					break;
+				case "t8_rk7":
+					ent.zombie_weapon_upgrade = "t6_b23r";
+					break;
+				case "t8_saug9mm":
+					ent.zombie_weapon_upgrade = "t6_uzi";
+					break;
+				case "ar_m16":
+					ent.zombie_weapon_upgrade = "t6_m16a1";
+					break;
+				case "t8_kn57":
+					ent.zombie_weapon_upgrade = "t6_ak74u";
 					break;
 				}
 				break;
