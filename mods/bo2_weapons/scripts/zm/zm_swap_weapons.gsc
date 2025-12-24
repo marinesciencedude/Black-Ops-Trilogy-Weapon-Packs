@@ -1434,8 +1434,15 @@ function swap_wall_weapon()
 						break;
 					}
 				case "t8_mog12":
-					ent.zombie_weapon_upgrade = "t6_ksg";
-					break;
+					{
+						ent.zombie_weapon_upgrade = "t6_ksg";
+						
+						ent.origin += (0, 5, -2);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, 5, -2);
+						
+						break;
+					}
 				case "t8_mx9":
 					ent.zombie_weapon_upgrade = "t6_mp5";
 					break;
@@ -1931,6 +1938,9 @@ function swap_chalk()
 				case "zm_diner":
 					ent.var_47896610 = util::spawn_model("wallbuy_m14_bo2", spawn_loc.origin + VectorScale((1*cos(spawn_loc.angles[1]), 1*sin(spawn_loc.angles[1]), 0), 1), spawn_loc.angles);
 					break;
+				case "zm_cellblock":
+					ent.var_47896610 = util::spawn_model("wallbuy_m14_bo2", spawn_loc.origin + VectorScale((-1, -1, 0), 1), spawn_loc.angles);
+					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_m14_bo2", spawn_loc.origin, spawn_loc.angles);
 					break;
@@ -1944,6 +1954,9 @@ function swap_chalk()
 				{
 				case "zm_theater":
 					ent.var_47896610 = util::spawn_model("wallbuy_olympia_bo2", spawn_loc.origin + VectorScale((0, 2, -3), 1), spawn_loc.angles);
+					break;
+				case "zm_cellblock":
+					ent.var_47896610 = util::spawn_model("wallbuy_olympia_bo2", spawn_loc.origin + VectorScale((1, 1, -3), 1), spawn_loc.angles);
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_olympia_bo2", spawn_loc.origin + VectorScale((-1*cos(spawn_loc.angles[1]), -1*sin(spawn_loc.angles[1]), -3), 1), spawn_loc.angles);
@@ -1961,6 +1974,9 @@ function swap_chalk()
 					break;
 				case "zm_diner":
 					ent.var_47896610 = util::spawn_model("wallbuy_b23r", spawn_loc.origin + VectorScale((-2*cos(spawn_loc.angles[1]), -2*sin(spawn_loc.angles[1]), 0), 1), spawn_loc.angles);
+					break;
+				case "zm_cellblock":
+					ent.var_47896610 = util::spawn_model("wallbuy_b23r", spawn_loc.origin + VectorScale((1, 2, 0), 1), spawn_loc.angles);
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_b23r", spawn_loc.origin, spawn_loc.angles);
@@ -2032,8 +2048,14 @@ function swap_chalk()
 				case "zm_theater":
 					ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin + VectorScale((0, 8.5, 1), 1), spawn_loc.angles);
 					break;
+				case "zm_cellblock":
+					ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin + VectorScale((0, 8.5, 2), 1), spawn_loc.angles);
+					break;
 				case "zm_diner":
 					ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin + VectorScale((-8.5, 0, 2), 1), spawn_loc.angles);
+					break;
+				case "zm_town_hd":
+					ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin + (-1, -8.5, 2), spawn_loc.angles);
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin, spawn_loc.angles);
@@ -2156,6 +2178,37 @@ function swap_chalk()
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_fal_bo2", spawn_loc.origin, spawn_loc.angles);
+					break;
+				}
+				break;
+			}
+			case "t6_uzi":
+			{
+				spawn_loc = struct::get(ent.target, "targetname");
+				switch( GetDvarString("mapname") )
+				{
+				case "zm_diner":
+					ent.var_47896610 = util::spawn_model("wallbuy_uzi_bo2", spawn_loc.origin + (1, 8, 0), spawn_loc.angles);
+					break;
+				case "zm_cellblock":
+					ent.var_47896610 = util::spawn_model("wallbuy_uzi_bo2", spawn_loc.origin + (0, 8, 0), spawn_loc.angles);
+					break;
+				default:
+					ent.var_47896610 = util::spawn_model("wallbuy_uzi_bo2", spawn_loc.origin, spawn_loc.angles);
+					break;
+				}
+				break;
+			}
+			case "t6_ksg":
+			{
+				spawn_loc = struct::get(ent.target, "targetname");
+				switch( GetDvarString("mapname") )
+				{
+				case "zm_diner":
+					ent.var_47896610 = util::spawn_model("wallbuy_ksg", spawn_loc.origin + (0, -11, 2), spawn_loc.angles);
+					break;
+				default:
+					ent.var_47896610 = util::spawn_model("wallbuy_ksg", spawn_loc.origin, spawn_loc.angles);
 					break;
 				}
 				break;

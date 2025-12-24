@@ -112,6 +112,7 @@ weaponfull,t6_kap40_up_zm
 
 weapon,t6_ksg
 weapon,t6_ksg_up
+xmodel,wallbuy_ksg
 
 weapon,t6_lsat
 weaponfull,t6_lsat_up_zm
@@ -211,6 +212,7 @@ weaponfull,t6_type25_up_zm
 
 weapon,t6_uzi
 weapon,t6_uzi_up
+xmodel,wallbuy_uzi_bo2
 
 weapon,t6_war_machine
 weapon,t6_war_machine_up
@@ -247,3 +249,9 @@ image,i_t6_wpn_ar_m14_wall_chalk_c
 image,i_t6_wpn_ar_m16_wall_chalk_c
 image,i_t6_wpn_shotty_olympia_wall_chalk_c
 image,i_t8_wpn_shotty_m1897_wall_chalk_c
+image,i_t6_wpn_pistol_b2023r_wall_chalk_c
+image,i_t6_wpn_smg_uzi_wall_chalk_c
+image,i_t6_wpn_smg_mp5_wall_chalk_c
+image,i_smg_mp5_chalk_c
+image,i_ar_m14_btw_chalk_c
+image,i_shotgun_olympia_chalk_c

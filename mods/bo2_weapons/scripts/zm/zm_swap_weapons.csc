@@ -1176,8 +1176,15 @@ function swap_wall_weapon()
 						break;
 					}
 				case "t8_mog12":
-					ent.zombie_weapon_upgrade = "t6_ksg";
-					break;
+					{
+						ent.zombie_weapon_upgrade = "t6_ksg";
+						
+						ent.origin += (0, 5, -2);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, 5, -2);
+						
+						break;
+					}
 				case "t8_mx9":
 					ent.zombie_weapon_upgrade = "t6_mp5";
 					break;
