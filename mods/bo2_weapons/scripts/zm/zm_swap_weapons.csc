@@ -438,18 +438,20 @@ function swap_wall_weapon()
 					{
 						ent.zombie_weapon_upgrade = "t6_ballista";
 						
-						ent.origin += (0, 10, 0);
+						ent.origin += (0, 2, 0);
 						spawn_loc = struct::get(ent.target, "targetname");
-						spawn_loc.origin += (0, 10, 0);
+						spawn_loc.origin += (0, 2, 0);
+						
 						break;
 					}
 				case "pistol_fullauto": //L-CAR 9
 					{
 						ent.zombie_weapon_upgrade = "t6_m1927";
 						
-						ent.origin += (0, 10, 4);
+						ent.origin += (0, -1, 0);
 						spawn_loc = struct::get(ent.target, "targetname");
-						spawn_loc.origin += (0, 10, 4);
+						spawn_loc.origin += (0, -1, 0);
+						
 						break;
 					}
 				case "smg_fastfire": //Vesper
@@ -985,11 +987,25 @@ function swap_wall_weapon()
 				switch(VAL)
 				{
 				case "ar_marksman": //Sheiva
-					ent.zombie_weapon_upgrade = "t6_olympia";
-					break;
+					{
+						ent.zombie_weapon_upgrade = "t6_olympia";
+						
+						ent.origin += (0, 5, 0);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, 5, 0);
+						
+						break;
+					}
 				case "pistol_burst": //RK5
-					ent.zombie_weapon_upgrade = "t6_m14";
-					break;
+					{
+						ent.zombie_weapon_upgrade = "t6_m14";
+						
+						ent.origin += (0, -10, 0);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, -10, 0);
+						
+						break;
+					}
 				case "shotgun_pump": //KRM-262
 					ent.zombie_weapon_upgrade = "t6_rem870mcs";
 					break;
@@ -1047,8 +1063,15 @@ function swap_wall_weapon()
 					ent.zombie_weapon_upgrade = "t6_m14";
 					break;
 				case "t7_shotgun_rottweil72":
-					ent.zombie_weapon_upgrade = "t6_olympia";
-					break;
+					{
+						ent.zombie_weapon_upgrade = "t6_olympia";
+						
+						ent.origin += (0, 0, 1);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, 0, 1);
+						
+						break;
+					}
 				case "t6_sniper_ballista":
 					ent struct::delete();
 					break;
@@ -1063,8 +1086,15 @@ function swap_wall_weapon()
 				switch(VAL)
 				{
 				case "ar_marksman": //Sheiva
-					ent.zombie_weapon_upgrade = "t6_olympia";
-					break;
+					{
+						ent.zombie_weapon_upgrade = "t6_olympia";
+						
+						ent.origin += (2, 0, -4);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (2, 0, -4);
+						
+						break;
+					}
 				case "smg_standard": //Kuda
 					ent.zombie_weapon_upgrade = "t6_mp5";
 					break;
