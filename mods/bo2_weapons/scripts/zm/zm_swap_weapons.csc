@@ -1035,8 +1035,15 @@ function swap_wall_weapon()
 					ent.zombie_weapon_upgrade = "t6_m14";
 					break;
 				case "bo2_olympia":
-					ent.zombie_weapon_upgrade = "t6_olympia";
-					break;
+					{	
+						ent.zombie_weapon_upgrade = "t6_olympia";
+						
+						ent.origin += (0, 12, 0);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, 12, 0);
+						
+						break;
+					}
 				case "pistol_beretta93r":
 					ent.zombie_weapon_upgrade = "t6_b23r";
 					break;
@@ -1044,11 +1051,25 @@ function swap_wall_weapon()
 					ent.zombie_weapon_upgrade = "t6_mp5";
 					break;
 				case "bo2_uzi":
-					ent.zombie_weapon_upgrade = "t6_uzi";
-					break;
+					{
+						ent.zombie_weapon_upgrade = "t6_uzi";
+						
+						spawn_loc = struct::get(ent.target, "targetname");
+						ent.origin += (-11*cos(spawn_loc.angles[1]), -11*sin(spawn_loc.angles[1]), -4);
+						spawn_loc.origin += (-11*cos(spawn_loc.angles[1]), -11*sin(spawn_loc.angles[1]), -4);
+						
+						break;
+					}
 				case "bo2_m1927":
-					ent.zombie_weapon_upgrade = "t6_m1927";
-					break;
+					{
+						ent.zombie_weapon_upgrade = "t6_m1927";
+						
+						ent.origin += (0, 1, -1);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, 1, -1);
+						
+						break;
+					}
 				case "shotgun_870mcs":
 					ent.zombie_weapon_upgrade = "t6_rem870mcs";
 					break;
@@ -1117,7 +1138,7 @@ function swap_wall_weapon()
 				}
 				break;
 			}
-		case "zm_prison":
+		case "zm_prison": //copforthat's Mob of the Dead
 			{
 				switch(VAL)
 				{
