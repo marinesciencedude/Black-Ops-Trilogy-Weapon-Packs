@@ -88,6 +88,7 @@ weapon,t6_dsr50_up
 
 weapon,t6_executioner
 weaponfull,t6_executioner_up_zm
+xmodel,wallbuy_executioner
 
 weapon,t6_fal
 weapon,t6_fal_up
@@ -238,6 +239,7 @@ image,i_t7_zm_chalk_buy_trip_mine_c
 image,i_t7_zm_chalk_buy_stg44_c
 image,i_t7_zm_chalk_buy_locus_c
 image,i_t7_zm_chalk_buy_thomp_c
+image,i_t7_zm_chalk_buy_sten_c
 
 image,i_t8_wpn_tacrifle_essex_model_07_wall_chalk_c
 image,i_t8_wpn_smg_mx9_wall_chalk_c

@@ -20,3 +20,4 @@ Then install all files from this repo into your Black Ops III installation apart
 * chalk drawings for AN-94, B23R, Ballista, Five-Seven, LSAT, M1927, MP40, MSMC, PDW-57, Remington 870 MCS, SMR, StG-44, SVU-AS, SWAT-556, Uzi, Vector from https://github.com/Jbleezy/BO2-Reimagined
 * FAL chalk drawing from Black Ops port: https://www.ugx-mods.com/forum/full-weapons/84/skyes-bo1-weapon-ports/23143/
 * M14, Olympia, M16, MP5, AK74u chalk drawings from https://forum.plutonium.pw/topic/18568/release-zombies-all-bo2-zombies-xmodels-obj-ma-xe-smd-files-images-dds-tga
+* .357 Magnum chalk drawing used as placeholder for Executioner from TheAllNightFall's World at War Pistols: https://www.devraw.net/approved-assets/theallnightfall/world-at-war-pistols

@@ -1073,8 +1073,15 @@ function swap_wall_weapon()
 					ent.zombie_weapon_upgrade = "t6_m14";
 					break;
 				case "pistol_burst": //RK5
-					ent.zombie_weapon_upgrade = "t6_olympia";
-					break;
+					{
+						ent.zombie_weapon_upgrade = "t6_olympia";
+						
+						ent.origin += (0, 10, 0);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, 10, 0);
+						
+						break;
+					}
 				case "ar_standard": //KN-44
 					ent.zombie_weapon_upgrade = "t6_ak74u";
 					break;
@@ -1998,6 +2005,12 @@ function swap_chalk()
 				case "zm_prison": //copforthat's Mob of the Dead
 					ent.var_47896610 = util::spawn_model("wallbuy_m14_bo2", spawn_loc.origin + (-1, 0, 0), spawn_loc.angles);
 					break;
+				case "zm_cosmodrome":
+					ent.var_47896610 = util::spawn_model("wallbuy_m14_bo2", spawn_loc.origin + (0, -1, 0), spawn_loc.angles);
+					break;
+				case "zm_asylum":
+					ent.var_47896610 = util::spawn_model("wallbuy_m14_bo2", spawn_loc.origin + (1, 0, 0), spawn_loc.angles);
+					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_m14_bo2", spawn_loc.origin, spawn_loc.angles);
 					break;
@@ -2020,6 +2033,9 @@ function swap_chalk()
 				case "zm_prison": //copforthat's Mob of the Dead
 					ent.var_47896610 = util::spawn_model("wallbuy_olympia_bo2", spawn_loc.origin + (1, 0, -3), spawn_loc.angles);
 					break;
+				case "zm_asylum":
+					ent.var_47896610 = util::spawn_model("wallbuy_olympia_bo2", spawn_loc.origin + (0, -1, -3), spawn_loc.angles);
+					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_olympia_bo2", spawn_loc.origin + VectorScale((-1*cos(spawn_loc.angles[1]), -1*sin(spawn_loc.angles[1]), -3), 1), spawn_loc.angles);
 					break;
@@ -2032,9 +2048,11 @@ function swap_chalk()
 				switch( GetDvarString("mapname") )
 				{
 				case "zm_theater":
+				case "zm_cosmodrome":
 					ent.var_47896610 = util::spawn_model("wallbuy_b23r", spawn_loc.origin + VectorScale((2, 0, 0), 1), spawn_loc.angles);
 					break;
 				case "zm_diner":
+				case "zm_tomb":
 					ent.var_47896610 = util::spawn_model("wallbuy_b23r", spawn_loc.origin + VectorScale((-2*cos(spawn_loc.angles[1]), -2*sin(spawn_loc.angles[1]), 0), 1), spawn_loc.angles);
 					break;
 				case "zm_cellblock":
@@ -2048,6 +2066,9 @@ function swap_chalk()
 					break;
 				case "zm_alcatraz_island": //Mob of the Dead Remastered
 					ent.var_47896610 = util::spawn_model("wallbuy_b23r", spawn_loc.origin + (0, 2, 0), spawn_loc.angles);
+					break;
+				case "zm_moon":
+					ent.var_47896610 = util::spawn_model("wallbuy_b23r", spawn_loc.origin + (0, -2, 0), spawn_loc.angles);
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_b23r", spawn_loc.origin, spawn_loc.angles);
@@ -2077,6 +2098,12 @@ function swap_chalk()
 				case "zm_theater":
 					ent.var_47896610 = util::spawn_model("wallbuy_pdw57", spawn_loc.origin + VectorScale((0, 7, 2), 1), spawn_loc.angles);
 					break;
+				case "zm_cosmodrome":
+					ent.var_47896610 = util::spawn_model("wallbuy_pdw57", spawn_loc.origin + (-7, 1, 2), spawn_loc.angles);
+					break;
+				case "zm_moon":
+					ent.var_47896610 = util::spawn_model("wallbuy_pdw57", spawn_loc.origin + (7, 0, 2), spawn_loc.angles);
+					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_pdw57", spawn_loc.origin + VectorScale((7*cos(spawn_loc.angles[1]), 7*sin(spawn_loc.angles[1]), 2), 1), spawn_loc.angles);
 					break;
@@ -2105,9 +2132,9 @@ function swap_chalk()
 				spawn_loc = struct::get(ent.target, "targetname");
 				switch( GetDvarString("mapname") )
 				{
-				//case "zm_theater":
-				//	ent.var_47896610 = util::spawn_model("wallbuy_mp40_bo2", spawn_loc.origin + VectorScale((0, 0, 0), 1), spawn_loc.angles);
-				//	break;
+				case "zm_asylum":
+					ent.var_47896610 = util::spawn_model("wallbuy_mp40_bo2", spawn_loc.origin + (0, 1, 0), spawn_loc.angles);
+					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_mp40_bo2", spawn_loc.origin, spawn_loc.angles);
 					break;
@@ -2120,6 +2147,7 @@ function swap_chalk()
 				switch( GetDvarString("mapname") )
 				{
 				case "zm_theater":
+				case "zm_moon":
 					ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin + VectorScale((0, 8.5, 1), 1), spawn_loc.angles);
 					break;
 				case "zm_cellblock":
@@ -2144,6 +2172,9 @@ function swap_chalk()
 				case "zm_prison": //copforthat's Mob of the Dead
 					ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin + (1, 8.5, 0), spawn_loc.angles);
 					break;
+				case "zm_cosmodrome":
+					ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin + (0, -8.5, 1), spawn_loc.angles);
+					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin, spawn_loc.angles);
 					break;
@@ -2161,6 +2192,12 @@ function swap_chalk()
 					break;
 				case "zm_diner":
 					ent.var_47896610 = util::spawn_model("wallbuy_m16a1_bo2", spawn_loc.origin + VectorScale((-6*cos(spawn_loc.angles[1]), -6*sin(spawn_loc.angles[1]), 0), 1), spawn_loc.angles);
+					break;
+				case "zm_cosmodrome":
+					ent.var_47896610 = util::spawn_model("wallbuy_m16a1_bo2", spawn_loc.origin + (1, 6, 0), spawn_loc.angles);
+					break;
+				case "zm_moon":
+					ent.var_47896610 = util::spawn_model("wallbuy_m16a1_bo2", spawn_loc.origin + (0, -6, 0), spawn_loc.angles);
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_m16a1_bo2", spawn_loc.origin, spawn_loc.angles);
@@ -2189,6 +2226,9 @@ function swap_chalk()
 				{
 				case "zm_tomb":
 					ent.var_47896610 = util::spawn_model("wallbuy_ballista", spawn_loc.origin + VectorScale((-3, 0, 1), 1), spawn_loc.angles);
+					break;
+				case "zm_asylum":
+					ent.var_47896610 = util::spawn_model("wallbuy_ballista", spawn_loc.origin + (-3*cos(spawn_loc.angles[1])+1, -3*sin(spawn_loc.angles[1]), 1), spawn_loc.angles);
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_ballista", spawn_loc.origin + VectorScale((-3*cos(spawn_loc.angles[1]), -3*sin(spawn_loc.angles[1]), 1), 1), spawn_loc.angles);
@@ -2233,6 +2273,9 @@ function swap_chalk()
 					break;
 				case "zm_alcatraz_island": //Mob of the Dead Remastered already has this
 					break;
+				case "zm_asylum":
+					ent.var_47896610 = util::spawn_model("wallbuy_m1927_bo2", spawn_loc.origin + (8, -1, -1), spawn_loc.angles);
+					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_m1927_bo2", spawn_loc.origin, spawn_loc.angles);
 					break;
@@ -2245,10 +2288,11 @@ function swap_chalk()
 				switch( GetDvarString("mapname") )
 				{
 				case "zm_prototype":
+				case "zm_asylum":
 					ent.var_47896610 = util::spawn_model("wallbuy_an94", spawn_loc.origin + VectorScale((0, 5, -1), 1), spawn_loc.angles);
 					break;
 				default:
-					ent.var_47896610 = util::spawn_model("wallbuy_an94", spawn_loc.origin + VectorScale((5*cos(spawn_loc.angles[1]), 5*sin(spawn_loc.angles[1]), -1), 1), spawn_loc.angles);
+					ent.var_47896610 = util::spawn_model("wallbuy_an94", spawn_loc.origin, spawn_loc.angles);
 					break;
 				}
 				break;
@@ -2279,6 +2323,7 @@ function swap_chalk()
 					ent.var_47896610 = util::spawn_model("wallbuy_fal_bo2", spawn_loc.origin + VectorScale((1, 5, 0), 1), spawn_loc.angles);
 					break;
 				case "zm_sumpf":
+				case "zm_asylum":
 					ent.var_47896610 = util::spawn_model("wallbuy_fal_bo2", spawn_loc.origin + VectorScale((0, 4, 0), 1), spawn_loc.angles);
 					break;
 				default:
@@ -2327,6 +2372,23 @@ function swap_chalk()
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_ksg", spawn_loc.origin, spawn_loc.angles);
+					break;
+				}
+				break;
+			}
+			case "t6_executioner":
+			{
+				spawn_loc = struct::get(ent.target, "targetname");
+				switch( GetDvarString("mapname") )
+				{
+				case "zm_prototype":
+					ent.var_47896610 = util::spawn_model("wallbuy_executioner", spawn_loc.origin + (0, -9, -2), spawn_loc.angles);
+					break;
+				case "zm_asylum":
+					ent.var_47896610 = util::spawn_model("wallbuy_executioner", spawn_loc.origin + (9, 0, -2), spawn_loc.angles);
+					break;
+				default:
+					ent.var_47896610 = util::spawn_model("wallbuy_executioner", spawn_loc.origin, spawn_loc.angles);
 					break;
 				}
 				break;
