@@ -1,0 +1,28 @@
+require("lua.Shared.LobbyData")
+require("ui_mp.T6.Menus.CACUtility")
+require("ui.uieditor.actions_helper")
+require("ui.t6.lobby.lobbymenubuttons_og")
+require("ui.scobalula.frontend.menus.mutators_menu_data")
+require("ui.scobalula.frontend.menus.mutators_menu")
+
+CoD.LobbyButtons.ZM_OPTIONS_BUTTON =
+{
+	stringRef = "MOD OPTIONS",
+	action =
+	function(arg0, arg1, arg2, arg3, arg4)
+		CoD.LobbyBase.SetLeaderActivity(arg2, CoD.LobbyBase.LeaderActivity.EDITING_GAME_RULES)
+		LUI.OverrideFunction_CallOriginalFirst(OpenOverlay(arg0, "Mutators_Menu", arg2), "close",
+		function()
+			CoD.LobbyBase.ResetLeaderActivity(arg2)
+		end)
+	end,
+	customId = "btnMutators",
+	starterPack = CoD.LobbyButtons.STARTERPACK_UPGRADE
+}
+CoD.LobbyButtons.ZM_SOLO_GAME = {
+	stringRef = "MENU_SOLO_GAME_CAPS",
+	action = NavigateToLobby_SelectionList,
+	param = "ZMLobbySoloCustomGame",
+	customId = "btnSoloMatch",
+	starterPack = CoD.LobbyButtons.STARTERPACK_UPGRADE
+}

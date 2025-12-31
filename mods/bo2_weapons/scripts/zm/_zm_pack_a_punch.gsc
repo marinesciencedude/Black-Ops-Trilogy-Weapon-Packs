@@ -30,6 +30,7 @@
 
 #insert scripts\zm\_zm_perks.gsh;
 #insert scripts\zm\_zm_utility.gsh;
+#insert scripts\zm\_zm_mutators.gsh;
 
 #precache( "string", "ZOMBIE_PERK_PACKAPUNCH" );
 #precache( "string", "ZOMBIE_PERK_PACKAPUNCH_AAT" );
@@ -49,7 +50,8 @@ REGISTER_SYSTEM_EX( "zm_pack_a_punch", &__init__, &__main__, undefined )
 function __init__()
 {
 	zm_pap_util::init_parameters();
-	level.pack_a_punch.swap_attachments_on_reuse = true;
+	if(GetGametypeSetting(mutator_double_packapunch_bo2) == 1 || GetGametypeSetting(mutator_double_packapunch_bo2) == 3)
+		level.pack_a_punch.swap_attachments_on_reuse = true;
 	clientfield::register( "zbarrier",	 	"pap_working_FX", 		VERSION_DLC1, 1, "int" );
 }
 
@@ -435,23 +437,36 @@ function private vending_weapon_upgrade()
 		player_restore_clip_size = undefined;
  		player.restore_max = undefined; 
  		
+		isRepack = false;
  		b_weapon_supports_aat = zm_weapons::weapon_supports_aat( current_weapon );
- 		isRepack = false;
  		currentAATHashID = -1;
- 		if ( b_weapon_supports_aat )
+		if(b_weapon_supports_aat || ( zm_pap_util::can_swap_attachments() && zm_weapons::weapon_supports_attachments( current_weapon ) ) )
+		{
+			if( zm_weapons::is_weapon_upgraded(current_weapon) )
+			{
+				isRepack = true;
+				if( zm_pap_util::can_swap_attachments() && zm_weapons::weapon_supports_attachments( current_weapon ) )
+					add_attachment = true;
+			}
+			if(GetGametypeSetting(mutator_double_packapunch_bo2) == 1) //because for some reason aat::register_aat_exemption isn't working for this in particular
+				b_weapon_supports_aat = false;
+		}
+ 		if ( isRepack)
  		{
 	 		current_cost = self.aat_cost;
-	 		currentAAT = player aat::getAATOnWeapon(current_weapon);
-	 		if (isDefined(currentAAT))
-	 		{
-	 			currentAATHashID = currentAAT.hash_id;		
-	 		}
+			if ( b_weapon_supports_aat )
+			{
+				currentAAT = player aat::getAATOnWeapon(current_weapon);
+				if (isDefined(currentAAT))
+				{
+					currentAATHashID = currentAAT.hash_id;		
+				}
+			}
 	 		player.restore_ammo = true;
 	 		player.restore_clip = player GetWeaponAmmoClip( current_weapon );
 	 		player.restore_clip_size = current_weapon.clipSize;
 	 		player.restore_stock = player Getweaponammostock( current_weapon );
 	 		player.restore_max = current_weapon.maxAmmo;
-	 		isRepack = true;
  		}
 
 		// If the persistent upgrade "double_points" is active, the cost is halved
@@ -518,7 +533,7 @@ function private vending_weapon_upgrade()
 		// Remember what weapon we have.  This is needed to check unique weapon counts.
 		self.current_weapon = current_weapon;
 		
-		upgrade_weapon = zm_weapons::get_upgrade_weapon( current_weapon, b_weapon_supports_aat );
+		upgrade_weapon = zm_weapons::get_upgrade_weapon( current_weapon, add_attachment );
 											
 		player third_person_weapon_upgrade( current_weapon, upgrade_weapon, packa_rollers, pap_machine, self );
 		
@@ -582,7 +597,10 @@ function private vending_weapon_upgrade_cost()
 	while ( 1 )
 	{
 		self.cost = 5000;
-		self.aat_cost = 2500;
+		if(GetGametypeSetting(mutator_double_packapunch_bo2) == 1)
+			self.aat_cost = 2000;
+		else
+			self.aat_cost = 2500;
 		level waittill( "powerup bonfire sale" );
 
 		self.cost = 1000;

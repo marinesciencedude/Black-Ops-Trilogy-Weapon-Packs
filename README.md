@@ -9,6 +9,18 @@ It's advised to make a back-up of black_ops_3_fx.gdt, since this will be replace
 * TheSkyeLord's BO2 Weapon Ports: https://www.ugx-mods.com/forum/full-weapons/84/skyes-bo2-weapon-ports/23141/
 * JBird632's Custom Claymores: https://youtu.be/iYP_CdMhwG4
 * Scobalula's T7MTEnhancements: https://github.com/Scobalula/T7MTEnhancements
+* L3akMod: https://wiki.modme.co/wiki/black_ops_3/lua_(lui)/Installation.html
+* Kingslayer Kyle's Black Ops 2 HUD: https://drive.google.com/file/d/1V0ichbG3IkWSM1tCRxQFVDEozExTfNs6/view
+* MikeyRay's Customizable PHD Flopper: https://forum.modme.co/wiki/threads/3537.html
+* Pmr360's Black Ops 1/4 - Revive animation: https://www.devraw.net/approved-assets/pmr360/black-ops-1%2F4---revive-animation
+* Hogarth935's Black Ops 1 Style PaP Camo: https://www.devraw.net/approved-assets/hogarth/black-ops-1-pap-camo
+* Booris's Shadow Man Announcer: https://mega.nz/file/UdFzBAIa#oMbcLFIkdNNbcNzIEcfSuXbrpQZtKMsadJCmMHaxupI (NOTE: shadowman_transition.wav and shadowman_die.wav are located at sound_assets\zmb\level\zm_zod\ee in the download but need to be moved to sound_assets\zmb\level\zm_zod\ee\shadowman due to an oversight in the sound aliases file)
+* Booris's Dr Monty Announcer: https://mega.nz/file/pZUnXSgI#ep8q0VdDrK2CpwyIaX1072dOC977KqPQW9MStBgg3D4
+* J.G's Origins Samantha Announcer: https://drive.google.com/file/d/1Se-dNLd88-Vm-oWGsr2mpA4qfKvng5bP/view?usp=sharing
+* Westchief596's BO1 Moon Richtofen Announcer: https://www.devraw.net/approved-assets/westchief596/moon-richtofen-announcer
+* VoiceOfJared's Richtofen Announcer: https://drive.google.com/file/d/1q_kTWCKhjMoyHShXDacOMtS_3V7v1IAW/view
+* Rayjiun's black-and-white visionset: https://discord.com/channels/230615005194616834/230616047613378560/1128724861666218046
+* Ronan's Black Ops 2 Perk & Power Up Shaders: https://drive.google.com/file/d/1FigmILU0b80qfCbkE8LRvMvBsU7T8cbg (install in texture_assets\Ronans_BO2_Shaders)
 
 Then install all files from this repo into your Black Ops III installation apart from the folder chalk_drawing_models, which is for reference purposes only
 

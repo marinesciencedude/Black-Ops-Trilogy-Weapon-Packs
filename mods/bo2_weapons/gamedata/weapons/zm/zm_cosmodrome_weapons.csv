@@ -1,5 +1,5 @@
 weapon_name,upgrade_name,hint,cost,weaponVO,weaponVOresp,ammo_cost,create_vox,is_zcleansed,in_box,upgrade_in_box,is_limited,limit,upgrade_limit,content_restrict,wallbuy_autospawn,class,is_aat_exempt,is_wonder_weapon,force_attachments,
-t6_m1911,t6_m1911_rdw_up,,300,pistol,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,pistol,,,
+t6_m1911,t6_m1911_rdw_up,,300,pistol,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,pistol,,,
 bouncingbetty,,,1000,betty,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,,
 frag_grenade,,,250,grenade,,250,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,,
 black_hole_bomb,,,2000,gersh_device,,,,,TRUE,FALSE,FALSE,,,FALSE,FALSE,grenade,,,,

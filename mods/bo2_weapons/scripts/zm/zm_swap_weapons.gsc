@@ -24,6 +24,8 @@
 
 //#using scripts\zm\zm_alcatraz_island;
 
+#insert scripts\zm\_zm_mutators.gsh;
+
 #namespace zm_swap_weapons;
 
 /*
@@ -89,11 +91,11 @@ function starter_weapon()
 	
 	
 	
-	if(GetDvarString("mapname") == "zm_alcatraz_island" || GetDvarString("mapname") == "zm_prison")
+	if(GetDvarString("mapname") == "zm_alcatraz_island")
 	{
 		//stop shank being added in MOTD Remastered
 		//callback::remove_on_spawned(&zm_alcatraz_island::give_shank);
-		arrayremoveindex(level._callbacks[#"on_player_spawned"], 23);
+		arrayremoveindex(level._callbacks[#"on_player_spawned"], 24);
 	}
 	
 	if(GetDvarString("mapname") == "zm_town"
@@ -410,6 +412,12 @@ function starter_weapon()
 		starting_weapon = GetWeapon("t6_m1911");
 		starting_weapon_pap = GetWeapon("t6_m1911_rdw_up");
 		
+		if(GetDvarString("mapname") == "zm_tomb")
+		{
+			starting_weapon = GetWeapon("t6_mauser_c96");
+			starting_weapon_pap = GetWeapon("t6_mauser_c96_up");
+		}
+		
 		level.start_weapon = starting_weapon;
 		level.default_laststandpistol = starting_weapon;
 		level.default_solo_laststandpistol = starting_weapon_pap;
@@ -436,6 +444,12 @@ function starter_weapon_extra()
 	starting_weapon = GetWeapon("t6_m1911");
 	starting_weapon_pap = GetWeapon("t6_m1911_rdw_up");
 	
+	if(GetDvarString("mapname") == "zm_tomb")
+	{
+		starting_weapon = GetWeapon("t6_mauser_c96");
+		starting_weapon_pap = GetWeapon("t6_mauser_c96_up");
+	}
+	
 	level.start_weapon = starting_weapon;
 	level.default_laststandpistol = starting_weapon;
 	level.default_solo_laststandpistol = starting_weapon_pap;
@@ -449,6 +463,14 @@ function starter_weapon_extra()
 	level.zombie_weapons[GetWeapon("t6_b23r")].mysterybox_attachments = array("extclip");
 	//level.zombie_weapons[GetWeapon("t6_ak74u")].mysterybox_attachments = array("extclip");
 	level.zombie_weapons[GetWeapon("t6_mp40")].mysterybox_attachments = array("stalker");
+	
+	//parentweaponname check isn't working
+	if(GetDvarString("mapname") == "zm_tomb")
+	{
+		level.weapons_using_ammo_sharing = true;
+		zm_weapons::add_shared_ammo_weapon(GetWeapon("t6_ak74u_extmag"), GetWeapon("t6_ak74u"));
+		zm_weapons::add_shared_ammo_weapon(GetWeapon("t6_ak74u_extmag_up"), GetWeapon("t6_ak74u_up"));
+	}
 	
 	//callback_search(&zm_alcatraz_island::give_shank);
 	
@@ -506,7 +528,7 @@ function give_starting_weapon(starting_weapon)
 */
 function change_minigun()
 {
-	level.zombie_powerup_weapon["minigun"] = GetWeapon("t6_minigun");
+	level.zombie_powerup_weapon["minigun"] = GetWeapon("t6_death_machine");
 }
 
 /*
@@ -1912,9 +1934,9 @@ function swap_wall_weapon()
 			}*/
 		}
 		
-		if(ent.zombie_weapon_upgrade == "sticky_grenade_custom" && GetDvarInt("mutator_grenade_wallbuy") == 2)
+		if(ent.zombie_weapon_upgrade == "sticky_grenade_custom" && GetGametypeSetting(mutator_grenade_wallbuy) == 2)
 			ent.zombie_weapon_upgrade = "frag_grenade";
-		else if(ent.zombie_weapon_upgrade == "frag_grenade" && GetDvarInt("mutator_grenade_wallbuy") == 3)
+		else if(ent.zombie_weapon_upgrade == "frag_grenade" && GetGametypeSetting(mutator_grenade_wallbuy) == 3)
 		{
 			if(!isdefined(level.zombie_weapons[GetWeapon("sticky_grenade_custom")]))
 			{
@@ -1941,7 +1963,7 @@ function swap_wall_weapon()
 		}
 	}*/
 
-	if(GetDvarInt("mutator_claymore") == 1)
+	if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON)
 	{
 		count = 0;
 		foreach(ent in struct::get_array("claymore_purchase", "targetname"))
@@ -1951,8 +1973,12 @@ function swap_wall_weapon()
 			{
 				continue;
 			}
-			if(GetDvarString("mapname") != "zm_asylum" || GetDvarString("mapname") != "zm_asylum" && count != 0) //Don't delete German side
+			if(GetDvarString("mapname") != "zm_asylum" || GetDvarString("mapname") == "zm_asylum" && count != 0) //Don't delete German side
 				ent struct::delete();
+			if(GetDvarString("mapname") != "zm_tomb" || GetDvarString("mapname") == "zm_tomb" && count == 1) //Delete trip mine under church
+				ent struct::delete();
+			
+			count++;
 		}
 	}
 }
@@ -2432,6 +2458,7 @@ function swap_claymores()
 				break;
 			}
 		case "zm_asylum": //Verrückt
+		case "zm_tomb":
 			{
 				/*if(GetDvarInt("mutator_waw_wall_weapons") == 2)
 				{*/
@@ -2459,7 +2486,12 @@ function swap_claymores()
 				count = 1;
 			}
 			else if(GetDvarString("mapname") != "zm_prison")
-				claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin + VectorScale((0, -0.5, 0), 1), spawn_loc.angles);
+			{
+				if(count == 1)
+					claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin + VectorScale((0, -0.5, 0), 1), spawn_loc.angles);
+				if(GetDvarString("mapname") == "zm_tomb")
+					count++;
+			}
 		}
 	}
 	thread zm_claymore::init();

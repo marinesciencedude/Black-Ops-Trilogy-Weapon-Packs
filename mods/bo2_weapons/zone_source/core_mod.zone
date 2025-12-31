@@ -14,3 +14,11 @@ rawfile,zm_mod.cfg
 
 stringtable,gamedata/weapons/common/attachmentmappingstable.csv
 stringtable,gamedata/weapons/zm/pap_attach.csv
+
+rawfile,ui/t6/lobby/lobbymenubuttons.lua
+rawfile,ui/t6/lobby/lobbymenubuttons_og.luac
+rawfile,ui/t6/lobby/lobbymenus.lua
+rawfile,ui/scobalula/frontend/menus/mutators_menu.lua
+rawfile,ui/scobalula/frontend/menus/mutators_menu_data.lua
+
+rawfile,gamedata/gamesettings/zm/gamesettings_zclassic.cfg

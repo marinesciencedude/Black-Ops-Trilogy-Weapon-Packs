@@ -11,7 +11,23 @@ scriptparsetree,scripts/zm/zm_swap_weapons.gsc
 scriptparsetree,scripts/zm/zm_swap_weapons.csc
 scriptparsetree,scripts/zm/_zm_weapons.gsc
 scriptparsetree,scripts/zm/_zm_weapons.csc
+
+scriptparsetree,scripts/zm/_zm_perks.gsc
+scriptparsetree,scripts/zm/_zm_perks.csc
+scriptparsetree,scripts/zm/_zm_perk_random.gsc
+scriptparsetree,scripts/zm/_zm_perk_random.csc
+
+scriptparsetree,scripts/shared/xmodelalias_shared.gscc
+scriptparsetree,scripts/zm/_zm_xmodelalias.gscc
+scriptparsetree,scripts/zm/gametypes/_clientids.gsc
+scriptparsetree,scripts/zm/_zm_ffotd.csc
+scriptparsetree,scripts/zm/_zm_ffotd.gsc
+scriptparsetree,scripts/zm/_zm_mod.gsc
+scriptparsetree,scripts/zm/_zm_mod.csc
+scriptparsetree,scripts/zm/_zm_mutators.gsc
+scriptparsetree,scripts/zm/_zm_mutators.gsh
 scriptparsetree,scripts/zm/_zm_magicbox.gsc
+scriptparsetree,scripts/zm/dive.gsc
 
 //note-to-self: weapons need to have _zm suffix to have the linker even add attachmentuniques
 attachment,grip_bo2
@@ -42,12 +58,79 @@ stringtable,gamedata/weapons/zm/zm_t7_weapons.csv
 stringtable,gamedata/weapons/zm/zm_t4_weapons.csv
 stringtable,gamedata/weapons/zm/zm_die_weapons.csv
 
+rawfile,vision/black_and_white.vision
+//scriptparsetree,scripts/zm/zm_theater_ffotd.csc
+scriptparsetree,scripts/zm/zm_cosmodrome_ffotd.csc
+
+scriptparsetree,scripts/zm/zm_tomb_dig.gsc
+scriptparsetree,scripts/zm/zm_tomb_challenges.gsc
+
+scriptparsetree,scripts/zm/perks/_zm_perk_phdflopper.gsc
+scriptparsetree,scripts/zm/perks/_zm_perk_phdflopper.csc
+scriptparsetree,scripts/zm/perks/_zm_perk_phdflopper.gsh
+xmodel,p7_zm_vending_phd
+xmodel,p7_zm_vending_phd_active
+xmodel,wpn_t7_zmb_perk_bottle_phd_view
+xmodel,wpn_t7_zmb_perk_bottle_phd_world
+weapon,zombie_perk_bottle_phd
+fx,_mikeyray/perks/phd/fx_perk_phd
+image,specialty_phdflopper_zombies
+
+scriptparsetree,scripts/zm/nuked_utility.gsh
+scriptparsetree,scripts/zm/nuked_utility.gsc
+scriptparsetree,scripts/zm/zm_nuked_perks.gsc
+											 
+include,t6_hud
+
+scriptparsetree,scripts/zm/_zm_perk_doubletap.gsc
+scriptparsetree,scripts/zm/_zm_perk_doubletap.csc
+//still needed due to gcp345's Der Riese
+scriptparsetree,scripts/zm/doubletap2.gsc
+scriptparsetree,scripts/zm/doubletap2.csc
+
+scriptparsetree,scripts/zm/zm_sumpf_perks.gsc
+
+rawfile,ui/uieditor/menus/hud/hud_zm_mapname.lua
+rawfile,ui/uieditor/widgets/hud/zm_perks/ZMPerksContainerFactory.lua
+rawfile,ui/uieditor/widgets/hud/zm_perks/ZMPerksContainer.lua
+//rawfile,ui/uieditor/widgets/StartMenu/CustomGameOptions.lua
+rawfile,ui/uieditor/widgets/StartMenu/StartMenu_GameOptions_ZM.lua
+
+material,mc/mtl_t7_camo_zmbhd_bo1_pap
+image,i_t7_camo_zmbhd_bo1_pap_c
+image,i_t7_camo_zmbhd_bo1_pap_g
+image,i_t7_camo_zmbhd_bo1_pap_s
+
+material,mc/mtl_t7_camo_bo1_pap
+//that's from base_patch_tu21.xpak
+image,i_t7_camo_bo1_pap_c
+image,i_t7_camo_bo1_pap_g
+image,i_t7_camo_bo1_pap_s
+
+//that's from iw_26.iwd
+material,mc/mtl_t7_camo_etching
+image,mtl_t4_etching_c
+image,mtl_t4_etching_n
+image,mtl_t4_etching_o
+image,mtl_t4_etching_s
+
+weaponcamo,camo_t7_zm_thundergun
+weaponcamo,camo_t7_zm_raygun_mk2
+weaponcamo,camo_t7_zm_shrink_ray
+weaponcamo,camo_t7_zm_wavegun
+weaponcamo,camo_t7_zm_tesla
+
+stringtable,gamedata/weapons/common/weaponoptions.csv
+
 scriptparsetree,scripts/zm/zm_claymore.gsc
 weapon,claymore_zm
 material,claymore_hud
 material,claymore_hud_inactive
 fx,custom/weapon/fx_claymore_laser
 xmodel,wallbuy_claymore
+
+//scriptparsetree,scripts/zm/zm_temple_ffotd.gsc
+scriptparsetree,scripts/zm/zm_cosmodrome_ffotd.gsc
 
 weapon,t6_ak47
 weapon,t6_ak47_up
@@ -220,6 +303,8 @@ weapon,t6_war_machine_up
 
 weapon,legacy_syrette_zm
 
+weapon,sticky_grenade_custom
+
 sound,zm_mod
 
 image,i_t7_zm_chalk_buy_arak_c
@@ -266,3 +351,5 @@ image,i_t7_zm_chalk_buy_m14_c
 image,i_t7_zm_chalk_buy_olympia_c
 image,i_t7_zm_chalk_buy_b23r_c
 image,i_t7_zm_chalk_buy_rem_c
+
+image,charred_flopper

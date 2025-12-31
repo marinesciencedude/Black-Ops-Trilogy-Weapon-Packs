@@ -35287,7 +35287,7 @@
 		"maxAmmo" "12"
 		"minDamage" "140"
 		"startAmmo" "12"
-		"viewFlashEffect" "fx\\zombie\\fx_muz_sm_pistol_1p_ug_zmb.efx"
+		"viewFlashEffect" "fx\\zombie\\fx_muz_md_rifle_1p_ugw_zmb.efx"
 		"worldFlashEffect" "fx\\zombie\\fx_muz_sm_pistol_3p_ug_zmb.efx"
 	}
 	"au_t6_kap40_dualclip_bo2" [ "au_t6_kap40_none" ]

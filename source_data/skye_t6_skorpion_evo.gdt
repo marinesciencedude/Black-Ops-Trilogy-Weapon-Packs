@@ -33010,7 +33010,7 @@
 		"viewDamagedModel2" ""
 		"viewDamagedModel3" ""
 		"viewFireDelayStartEffect" ""
-		"viewFlashEffect" "fx\\zombie\\fx_muz_sm_pistol_1p_ug_zmb.efx"
+		"viewFlashEffect" "fx\\zombie\\fx_muz_md_rifle_1p_ugw_zmb.efx"
 		"viewFlashOffsetF" "0"
 		"viewFlashOffsetR" "0"
 		"viewFlashOffsetU" "0"

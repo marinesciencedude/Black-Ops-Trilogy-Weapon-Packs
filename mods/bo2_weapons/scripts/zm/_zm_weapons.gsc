@@ -32,6 +32,7 @@
 #insert scripts\zm\_zm_perks.gsh;
 #insert scripts\zm\_zm_utility.gsh;
 #insert scripts\zm\_zm_weapons.gsh;
+#insert scripts\zm\_zm_mutators.gsh;
 
 #precache( "material", "minimap_icon_mystery_box" );
 #precache( "material", "specialty_instakill_zombies" );
@@ -839,7 +840,7 @@ function player_can_use_content( weapon )
 
 function init_spawnable_weapon_upgrade()
 {
-	if(GetDvarInt("mutator_claymore") == 1 && GetDvarString("mapname") != "zm_prototype")
+	if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON && GetDvarString("mapname") != "zm_prototype")
 		zm_swap_weapons::swap_claymores();
 	else if(GetDvarString("mapname") != "zm_prototype") //is there an actual way to figure out trip mine wallbuys exist?
 	{
@@ -1749,8 +1750,7 @@ function weapon_supports_aat( weapon )
 		return false;
 	}
 
-	if ( !aat::is_exempt_weapon( weaponToPack ) 
-	|| (zm_pap_util::can_swap_attachments() && weapon_supports_attachments( rootWeapon ) ) )
+	if ( !aat::is_exempt_weapon( weaponToPack ) )
 	{
 		return true;
 	}
@@ -1821,18 +1821,15 @@ function has_weapon_or_attachments( weapon )
 		return true;
 	}
 	
-	/*if ( zm_pap_util::can_swap_attachments() )
+	rootWeapon = weapon.rootWeapon;
+	weapons = self GetWeaponsList( true );
+	foreach ( w in weapons )
 	{
-		rootWeapon = weapon.rootWeapon;
-		weapons = self GetWeaponsList( true );
-		foreach ( w in weapons )
+		if ( rootWeapon == w.rootWeapon || ( rootWeapon.parentweaponname == w.parentweaponname && isdefined(rootWeapon.parentweaponname) && isdefined(w.parentweaponname) ) )
 		{
-			if ( rootWeapon == w.rootWeapon || rootWeapon.parentweaponname == w.parentweaponname )
-			{
-				return true;
-			}
+			return true;
 		}
-	}*/
+	}
 	
 	return false;
 }
@@ -1858,14 +1855,14 @@ function has_upgrade( weapon )
 		has_weapon = self zm_melee_weapon::has_upgraded_ballistic_knife();
 	}
 	
-	weapons = self GetWeaponsList( true );
+	/*weapons = self GetWeaponsList( true );
 	foreach ( w in weapons )
 	{
-		if ( weapon.parentweaponname == w.parentweaponname && !isdefined(weapon.parentweaponname) && !isdefined("weapon.parentweaponname") )
+		if ( weapon.parentweaponname == w.parentweaponname && !isdefined(weapon.parentweaponname) && !isdefined(w.parentweaponname) )
 		{
 			has_upgrade = true;
 		}
-	}
+	}*/
 
 	return has_upgrade;
 }
@@ -3235,7 +3232,7 @@ function ammo_give( weapon )
 		weapons = self GetWeaponsList( true );
 		foreach ( w in weapons )
 		{
-			if ( get_nonalternate_weapon(weapon).rootWeapon == w.rootWeapon || get_nonalternate_weapon(weapon).parentweaponname == w.parentweaponname)
+			if ( get_nonalternate_weapon(weapon).rootWeapon == w.rootWeapon || ( get_nonalternate_weapon(weapon).parentweaponname == w.parentweaponname && isdefined(weapon.parentweaponname) && isdefined(w.parentweaponname) ) )
 			{
 				weapon = w;
 			}

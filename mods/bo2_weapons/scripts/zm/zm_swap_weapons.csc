@@ -7,6 +7,8 @@
 #using scripts\zm\_zm_utility;
 #using scripts\zm\_zm_weapons;
 
+#insert scripts\zm\_zm_mutators.gsh;
+
 #namespace zm_swap_weapons;
 
 /*
@@ -815,8 +817,15 @@ function swap_wall_weapon()
 					ent.zombie_weapon_upgrade = "t6_m14";
 					break;
 				case "pistol_burst": //RK5
-					ent.zombie_weapon_upgrade = "t6_olympia";
-					break;
+					{
+						ent.zombie_weapon_upgrade = "t6_olympia";
+						
+						ent.origin += (0, 10, 0);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, 10, 0);
+						
+						break;
+					}
 				case "ar_standard": //KN-44
 					ent.zombie_weapon_upgrade = "t6_ak74u";
 					break;
@@ -1647,9 +1656,9 @@ function swap_wall_weapon()
 			}*/
 		}
 		
-		if(ent.zombie_weapon_upgrade == "sticky_grenade_custom" && GetDvarInt("mutator_grenade_wallbuy") == 2)
+		if(ent.zombie_weapon_upgrade == "sticky_grenade_custom" && GetGametypeSetting(mutator_grenade_wallbuy) == 2)
 			ent.zombie_weapon_upgrade = "frag_grenade";
-		else if(ent.zombie_weapon_upgrade == "frag_grenade" && GetDvarInt("mutator_grenade_wallbuy") == 3)
+		else if(ent.zombie_weapon_upgrade == "frag_grenade" && GetGametypeSetting(mutator_grenade_wallbuy) == 3)
 		{
 			if(!isdefined(level._included_weapons[GetWeapon("sticky_grenade_custom")]))
 				zm_weapons::include_weapon( "sticky_grenade_custom", false, 250, 250);
@@ -1673,7 +1682,7 @@ function swap_wall_weapon()
 		}
 	}
 	
-	if(GetDvarInt("mutator_claymore") == 1)
+	if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON)
 	{
 		count = 0;
 		foreach(ent in struct::get_array("claymore_purchase", "targetname"))

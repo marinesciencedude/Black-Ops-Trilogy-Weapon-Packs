@@ -37754,7 +37754,7 @@
 		"parentWeaponName" "t6_executioner_up"
 		"shotCount" "12"
 		"startAmmo" "20"
-		"viewFlashEffect" "fx\\zombie\\fx_muz_sm_pistol_1p_ug_zmb.efx"
+		"viewFlashEffect" "fx\\zombie\\fx_muz_md_rifle_1p_ugw_zmb.efx"
 		"worldFlashEffect" "fx\\zombie\\fx_muz_sm_pistol_3p_ug_zmb.efx"
 	}
 	"au_t6_executioner_extbarrel" [ "au_t6_executioner_none" ]
