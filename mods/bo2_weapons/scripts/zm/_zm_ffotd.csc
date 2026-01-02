@@ -65,9 +65,33 @@ function main_end()
 		case 9:
 			level._override_eye_fx = "wetegg/iwperks/emptyFXIW";
 			break;
-	}
+	}*/
 	
-	if(GetDvarInt("mutator_bo_perk_icons") == 1)
+	if(GetDvarInt("mutator_bo2_perk_icons") == 1)
+	{
+		clientfield::register( "clientuimodel", "hudItems.perks.quick_revive_bo2", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT );
+		clientfield::register( "clientuimodel", "hudItems.perks.additional_primary_weapon_bo2", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT );
+		clientfield::register( "clientuimodel", "hudItems.perks.dead_shot_bo2", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT ); 
+		clientfield::register( "clientuimodel", "hudItems.perks.electric_cherry_bo2", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT ); 
+		clientfield::register( "clientuimodel", "hudItems.perks.juggernaut_bo2", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT );
+		clientfield::register( "clientuimodel", "hudItems.perks.sleight_of_hand_bo2", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT );
+		clientfield::register( "clientuimodel", "hudItems.perks.marathon_bo2", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT ); 
+		clientfield::register( "clientuimodel", "hudItems.perks.widows_wine_bo2", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT ); 
+		clientfield::register( "clientuimodel", "hudItems.perks.doubletap_bo2", 1, 2, "int", undefined, 0, 1); 
+	}
+	else if(GetDvarInt("mutator_bo2_perk_icons") == 2)
+	{
+		clientfield::register( "clientuimodel", "hudItems.perks.quick_revive_bo2_alt", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT );
+		clientfield::register( "clientuimodel", "hudItems.perks.additional_primary_weapon_bo2", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT );
+		clientfield::register( "clientuimodel", "hudItems.perks.dead_shot_bo2", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT ); 
+		clientfield::register( "clientuimodel", "hudItems.perks.electric_cherry_bo2", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT ); 
+		clientfield::register( "clientuimodel", "hudItems.perks.juggernaut_bo2_alt", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT );
+		clientfield::register( "clientuimodel", "hudItems.perks.sleight_of_hand_bo2_alt", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT );
+		clientfield::register( "clientuimodel", "hudItems.perks.marathon_bo2_alt", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT ); 
+		clientfield::register( "clientuimodel", "hudItems.perks.widows_wine_bo2_alt", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT ); 
+		clientfield::register( "clientuimodel", "hudItems.perks.doubletap_bo2", 1, 2, "int", undefined, 0, 1); 
+	}
+	/*else if(GetDvarInt("mutator_bo2_perk_icons") == 3)
 	{
 		clientfield::register( "clientuimodel", "hudItems.perks.quick_revive_bo", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT );
 		clientfield::register( "clientuimodel", "hudItems.perks.additional_primary_weapon_bo", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT );
@@ -79,7 +103,7 @@ function main_end()
 		clientfield::register( "clientuimodel", "hudItems.perks.widows_wine_bo", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT ); 
 		clientfield::register( "clientuimodel", "hudItems.perks.doubletap_bo", 1, 2, "int", undefined, 0, 1); 
 	}
-	else if(GetDvarInt("mutator_bo_perk_icons") == 2)
+	else if(GetDvarInt("mutator_bo2_perk_icons") == 4)
 	{
 		clientfield::register( "clientuimodel", "hudItems.perks.quick_revive_recolour", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT );
 		clientfield::register( "clientuimodel", "hudItems.perks.additional_primary_weapon_recolour", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT );
@@ -90,7 +114,7 @@ function main_end()
 		clientfield::register( "clientuimodel", "hudItems.perks.marathon_recolour", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT ); 
 		clientfield::register( "clientuimodel", "hudItems.perks.widows_wine_recolour", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT ); 
 		clientfield::register( "clientuimodel", "hudItems.perks.doubletap_recolour", 1, 2, "int", undefined, 0, 1); 
-	}
+	}*/
 	else if(GetDvarString("mapname") != "zm_factory_classic")
-		clientfield::register( "clientuimodel", "hudItems.perks.doubletap", 1, 2, "int", undefined, 0, 1); */
+		clientfield::register( "clientuimodel", "hudItems.perks.doubletap", 1, 2, "int", undefined, 0, 1);
 }

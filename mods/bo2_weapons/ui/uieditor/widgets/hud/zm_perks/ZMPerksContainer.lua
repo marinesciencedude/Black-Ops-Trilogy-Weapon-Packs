@@ -11,12 +11,10 @@ local perkListBase = {
 	sleight_of_hand = "zod_specialty_speedcola",
 	tombstone = "specialty_tombstone_zombies",
 	widows_wine = "zod_specialty_widows",
-	--phdflopper = "zod_specialty_flopper",
-	phdflopper = "charred_flopper",
+	phdflopper = "zod_specialty_flopper",
 	doubletap = "specialty_giant_doubletap1_zombies",
 	
-	--phdflopper_bo = "classic_clean_flopper",
-	phdflopper_bo = "charred_flopper",
+	phdflopper_bo = "classic_clean_flopper",
 	additional_primary_weapon_bo = "classic_clean_mulekick",
 	quick_revive_bo = "classic_clean_revive",
 	juggernaut_bo = "classic_clean_juggernog",
@@ -28,8 +26,7 @@ local perkListBase = {
 	doubletap2_bo = "classic_clean_doubletap_alt",
 	doubletap_bo = "classic_clean_doubletap",
 	
-	--phdflopper_recolour = "madkixs_specialty_phdflopper",
-	phdflopper_recolour = "charred_flopper",
+	phdflopper_recolour = "madkixs_specialty_phdflopper",
 	additional_primary_weapon_recolour = "madkixs_specialty_mulekick",
 	quick_revive_recolour = "madkixs_specialty_quickrevive",
 	juggernaut_recolour = "madkixs_specialty_juggernog",
@@ -39,7 +36,25 @@ local perkListBase = {
 	electric_cherry_recolour = "madkixs_specialty_electriccherry",
 	dead_shot_recolour = "madkixs_specialty_deadshot",
 	doubletap2_recolour = "madkixs_specialty_doubletap2",
-	doubletap_recolour = "madkixs_specialty_doubletap"
+	doubletap_recolour = "madkixs_specialty_doubletap",
+	
+	phdflopper_bo2 = "charred_flopper",
+	additional_primary_weapon_bo2 = "charred_mulekick",
+	quick_revive_bo2 = "charred_revive",
+	quick_revive_bo2_alt = "charred_revive_alt",
+	juggernaut_bo2 = "charred_juggernog",
+	juggernaut_bo2_alt = "charred_juggernog_alt",
+	sleight_of_hand_bo2 = "charred_speed",
+	sleight_of_hand_bo2_alt = "charred_speed_alt",
+	marathon_bo2 = "charred_staminup",
+	marathon_bo2_alt = "charred_staminup_alt",
+	widows_wine_bo2 = "charred_widows",
+	widows_wine_bo2_alt = "charred_widows_alt",
+	electric_cherry_bo2 = "charred_cherry",
+	dead_shot_bo2 = "charred_deadshot",
+	doubletap2_bo2 = "charred_doubletap",
+	doubletap2_bo2_alt = "charred_doubletap_alt",
+	doubletap_bo2 = "specialty_giant_doubletap1_zombies"
 }
 
 local function CheckExistantCF(PerkList, perkListBaseCF)

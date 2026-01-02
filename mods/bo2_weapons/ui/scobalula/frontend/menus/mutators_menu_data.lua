@@ -323,13 +323,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_Deadshot",
 			"disableClassSelection",
             BuildBoolSettings({"1000", "1500"}, "1000") ),
-		--[[CoD.OptionsUtility.CreateDvarSettings(
+		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Perk Icons",
-			"If the perk icons should be set to the Original Black Ops, BO III with Black Ops colouring, or leave it at the map's icons. MAY NOT WORK ON CUSTOM MAPS",
+			"If the perk icons should be set to Black Ops II, Green Run/Nuketown/Die Rise, WaW/BO, BO III with Black Ops colouring, or leave it at the map's icons. MAY NOT WORK ON CUSTOM MAPS",
 			"MutatorSettings_BOPerkIcons",
-			"mutator_bo_perk_icons",
-            BuildStringSettings({"Black Ops", "Recoloured BO III", "Use Map"}, "Black Ops"), nil, SetDvarSetting),]]
+			"mutator_bo2_perk_icons",
+            BuildStringSettings({"Black Ops II", "Green Run", --[["Black Ops", "Recoloured BO III",]] "Use Map"}, "Black Ops II"), nil, SetDvarSetting),
 		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Scope ADS",

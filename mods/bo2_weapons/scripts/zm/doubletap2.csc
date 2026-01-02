@@ -46,6 +46,8 @@ function doubletap2_client_field_func()
 {
 	if(GetDvarString("mapname") != "zm_factory_classic")
 		clientfield::register( "clientuimodel", PERK_CLIENTFIELD_DOUBLETAP2, VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT ); 
+	clientfield::register( "clientuimodel", "hudItems.perks.doubletap2_bo2", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT ); 
+	clientfield::register( "clientuimodel", "hudItems.perks.doubletap2_bo2_alt", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT ); 
 	clientfield::register( "clientuimodel", "hudItems.perks.doubletap2_bo", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT ); 
 	clientfield::register( "clientuimodel", "hudItems.perks.doubletap2_recolour", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT ); 
 }

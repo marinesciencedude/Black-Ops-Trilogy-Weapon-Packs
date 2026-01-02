@@ -52,6 +52,7 @@ function private init_phd_flopper()
 function private phd_flopper_client_field_func()
 {
 	clientfield::register( "clientuimodel", "hudItems.perks.phdflopper", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT );
+	clientfield::register( "clientuimodel", "hudItems.perks.phdflopper_bo2", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT );
 	clientfield::register( "clientuimodel", "hudItems.perks.phdflopper_bo", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT );
 	clientfield::register( "clientuimodel", "hudItems.perks.phdflopper_recolour", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT );
 	clientfield::register( "clientuimodel", "hudItems.perks.phd_flopper", VERSION_SHIP, 2, "int", undefined, !CF_HOST_ONLY, CF_CALLBACK_ZERO_ON_NEW_ENT );

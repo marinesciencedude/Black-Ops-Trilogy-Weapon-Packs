@@ -28,6 +28,22 @@ CoD.ZMPerks = {
 		clientFieldName = "additional_primary_weapon"
 	},
 	{
+		name = "^2MULE KICK",
+		cost = 4000,
+		description = "Gain an additional primary weapon slot",
+		image = "classic_clean_mulekick",
+		specialty = "specialty_additionalprimaryweapon",
+		clientFieldName = "additional_primary_weapon_bo"
+	},
+	{
+		name = "^2MULE KICK",
+		cost = 4000,
+		description = "Gain an additional primary weapon slot",
+		image = "madkixs_specialty_mulekick",
+		specialty = "specialty_additionalprimaryweapon",
+		clientFieldName = "additional_primary_weapon_recolour"
+	},
+	{
 		name = "^8DEAD SHOT",
 		cost = 1500,
 		description = "Auto-target the head on ADS",
@@ -36,12 +52,76 @@ CoD.ZMPerks = {
 		clientFieldName = "dead_shot"
 	},
 	{
-		name = "^3DOUBLE TAP",
+		name = "^8DEAD SHOT",
+		cost = 1500,
+		description = "Auto-target the head on ADS",
+		image = "classic_clean_deadshot",
+		specialty = "specialty_deadshot",
+		clientFieldName = "dead_shot_bo"
+	},
+	{
+		name = "^8DEAD SHOT",
+		cost = 1500,
+		description = "Auto-target the head on ADS",
+		image = "madkixs_specialty_deadshot",
+		specialty = "specialty_deadshot",
+		clientFieldName = "dead_shot_recolour"
+	},
+	{
+		name = "^3DOUBLE TAP II",
 		cost = 2000,
-		description = "Increase bullet damage",
+		description = "Increase bullet damage and fire rate",
 		image = "t6_specialty_doubletap_zombies",
 		specialty = "specialty_doubletap2",
 		clientFieldName = "doubletap2"
+	},
+	{
+		name = "^3DOUBLE TAP II",
+		cost = 2000,
+		description = "Increase bullet damage and fire rate",
+		image = "charred_doubletap_alt",
+		specialty = "specialty_doubletap2",
+		clientFieldName = "doubletap2_bo2_alt"
+	},
+	{
+		name = "^3DOUBLE TAP II",
+		cost = 2000,
+		description = "Increase bullet damage and fire rate",
+		image = "classic_clean_doubletap_alt",
+		specialty = "specialty_doubletap2",
+		clientFieldName = "doubletap2_bo"
+	},
+	{
+		name = "^3DOUBLE TAP II",
+		cost = 2000,
+		description = "Increase bullet damage and fire rate",
+		image = "madkixs_specialty_doubletap2",
+		specialty = "specialty_doubletap2",
+		clientFieldName = "doubletap2_recolour"
+	},
+	{
+		name = "^3DOUBLE TAP",
+		cost = 2000,
+		description = "Increase fire rate",
+		image = "specialty_giant_doubletap1_zombies",
+		specialty = "specialty_rof",
+		clientFieldName = "doubletap"
+	},
+	{
+		name = "^3DOUBLE TAP",
+		cost = 2000,
+		description = "Increase fire rate",
+		image = "classic_clean_doubletap",
+		specialty = "specialty_rof",
+		clientFieldName = "doubletap_bo"
+	},
+	{
+		name = "^3DOUBLE TAP",
+		cost = 2000,
+		description = "Increase fire rate",
+		image = "madkixs_specialty_doubletap",
+		specialty = "specialty_rof",
+		clientFieldName = "doubletap_recolour"
 	},
 	{
 		name = "^9JUGGERNOG",
@@ -52,12 +132,60 @@ CoD.ZMPerks = {
 		clientFieldName = "juggernaut"
 	},
 	{
+		name = "^9JUGGERNOG",
+		cost = 2500,
+		description = "Increase health",
+		image = "charred_juggernog_alt",
+		specialty = "specialty_armorvest",
+		clientFieldName = "juggernaut_bo2_alt"
+	},
+	{
+		name = "^9JUGGERNOG",
+		cost = 2500,
+		description = "Increase health",
+		image = "classic_clean_juggernog",
+		specialty = "specialty_armorvest",
+		clientFieldName = "juggernaut_bo"
+	},
+	{
+		name = "^9JUGGERNOG",
+		cost = 2500,
+		description = "Increase health",
+		image = "madkixs_specialty_juggernog",
+		specialty = "specialty_armorvest",
+		clientFieldName = "juggernaut_recolour"
+	},
+	{
 		name = "^3STAMINUP",
 		cost = 2000,
 		description = "Increase sprint speed",
 		image = "t6_specialty_marathon_zombies",
 		specialty = "specialty_staminup",
 		clientFieldName = "marathon"
+	},
+	{
+		name = "^3STAMINUP",
+		cost = 2000,
+		description = "Increase sprint speed",
+		image = "charred_staminup_alt",
+		specialty = "specialty_staminup",
+		clientFieldName = "marathon_bo2_alt"
+	},
+	{
+		name = "^3STAMINUP",
+		cost = 2000,
+		description = "Increase sprint speed",
+		image = "classic_clean_staminup",
+		specialty = "specialty_staminup",
+		clientFieldName = "marathon_bo"
+	},
+	{
+		name = "^3STAMINUP",
+		cost = 2000,
+		description = "Increase sprint speed",
+		image = "madkixs_specialty_staminup",
+		specialty = "specialty_staminup",
+		clientFieldName = "marathon_recolour"
 	},
 	{
 		name = "^5QUICK REVIVE",
@@ -68,12 +196,60 @@ CoD.ZMPerks = {
 		clientFieldName = "quick_revive"
 	},
 	{
+		name = "^5QUICK REVIVE",
+		cost = 1500,
+		description = "Revive yourself (solo) / Revive others faster (co-op)",
+		image = "charred_revive_alt",
+		specialty = "specialty_quickrevive",
+		clientFieldName = "quick_revive_bo2_alt"
+	},
+	{
+		name = "^5QUICK REVIVE",
+		cost = 1500,
+		description = "Revive yourself (solo) / Revive others faster (co-op)",
+		image = "classic_clean_revive",
+		specialty = "specialty_quickrevive",
+		clientFieldName = "quick_revive_bo"
+	},
+	{
+		name = "^5QUICK REVIVE",
+		cost = 1500,
+		description = "Revive yourself (solo) / Revive others faster (co-op)",
+		image = "madkixs_specialty_quickrevive",
+		specialty = "specialty_quickrevive",
+		clientFieldName = "quick_revive_recolour"
+	},
+	{
 		name = "^2SPEED COLA",
 		cost = 3000,
 		description = "Reload faster",
 		image = "t6_specialty_fastreload_zombies",
 		specialty = "specialty_fastreload",
 		clientFieldName = "sleight_of_hand"
+	},
+	{
+		name = "^2SPEED COLA",
+		cost = 3000,
+		description = "Reload faster",
+		image = "charred_speed_alt",
+		specialty = "specialty_fastreload",
+		clientFieldName = "sleight_of_hand_bo2_alt"
+	},
+	{
+		name = "^2SPEED COLA",
+		cost = 3000,
+		description = "Reload faster",
+		image = "classic_clean_speed",
+		specialty = "specialty_fastreload",
+		clientFieldName = "sleight_of_hand_bo"
+	},
+	{
+		name = "^2SPEED COLA",
+		cost = 3000,
+		description = "Reload faster",
+		image = "madkixs_specialty_speedcola",
+		specialty = "specialty_fastreload",
+		clientFieldName = "sleight_of_hand_recolour"
 	},
 	{
 		name = "^9WIDOWS WINE",
@@ -84,6 +260,30 @@ CoD.ZMPerks = {
 		clientFieldName = "widows_wine"
 	},
 	{
+		name = "^9WIDOWS WINE",
+		cost = 4000,
+		description = "Zombies are slowed when they attack you",
+		image = "charred_widows_alt",
+		specialty = "specialty_widowswine",
+		clientFieldName = "widows_wine_bo2_alt"
+	},
+	{
+		name = "^9WIDOWS WINE",
+		cost = 4000,
+		description = "Zombies are slowed when they attack you",
+		image = "classic_clean_widows",
+		specialty = "specialty_widowswine",
+		clientFieldName = "widows_wine_bo"
+	},
+	{
+		name = "^9WIDOWS WINE",
+		cost = 4000,
+		description = "Zombies are slowed when they attack you",
+		image = "madkixs_specialty_widowswine",
+		specialty = "specialty_widowswine",
+		clientFieldName = "widows_wine_recolour"
+	},
+	{
 		name = "^5ELECTRIC CHERRY",
 		cost = 2000,
 		description = "Electrical discharge on reload",
@@ -92,12 +292,44 @@ CoD.ZMPerks = {
 		clientFieldName = "electric_cherry"
 	},
 	{
+		name = "^5ELECTRIC CHERRY",
+		cost = 2000,
+		description = "Electrical discharge on reload",
+		image = "classic_clean_cherry",
+		specialty = "specialty_electriccherry",
+		clientFieldName = "electric_cherry_bo"
+	},
+	{
+		name = "^5ELECTRIC CHERRY",
+		cost = 2000,
+		description = "Electrical discharge on reload",
+		image = "madkixs_specialty_electriccherry",
+		specialty = "specialty_electriccherry",
+		clientFieldName = "electric_cherry_recolour"
+	},
+	{
 		name = "^5PHD FLOPPER",
 		cost = 2000,
 		description = "Explosive/fall damage immunity, explosion from diving",
 		image = "charred_flopper",
 		specialty = "specialty_phdflopper",
-		clientFieldName = "phdflopper"
+		clientFieldName = "phdflopper",
+	},
+	{
+		name = "^5PHD FLOPPER",
+		cost = 2000,
+		description = "Explosive/fall damage immunity, explosion from diving",
+		image = "classic_clean_flopper",
+		specialty = "specialty_phdflopper",
+		clientFieldName = "phdflopper_bo"
+	},
+	{
+		name = "^5PHD FLOPPER",
+		cost = 2000,
+		description = "Explosive/fall damage immunity, explosion from diving",
+		image = "madkixs_specialty_phdflopper",
+		specialty = "specialty_phdflopper",
+		clientFieldName = "phdflopper_recolour"
 	}
 }
 

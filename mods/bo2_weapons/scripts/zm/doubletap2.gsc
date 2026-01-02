@@ -20,6 +20,7 @@
 #insert scripts\zm\_zm_perk_doubletap2.gsh;
 #insert scripts\zm\_zm_perks.gsh;
 #insert scripts\zm\_zm_utility.gsh;
+#insert scripts\zm\_zm_mutators.gsh;
 
 #precache( "material", DOUBLETAP2_SHADER );
 #precache( "string", "ZOMBIE_PERK_DOUBLETAP" );
@@ -72,24 +73,24 @@ function doubletap2_register_clientfield()
 {
 	if(GetDvarString("mapname") != "zm_factory_classic")
 		clientfield::register( "clientuimodel", PERK_CLIENTFIELD_DOUBLETAP2, VERSION_SHIP, 2, "int" );
+	clientfield::register( "clientuimodel", "hudItems.perks.doubletap2_bo2", VERSION_SHIP, 2, "int" );
+	clientfield::register( "clientuimodel", "hudItems.perks.doubletap2_bo2_alt", VERSION_SHIP, 2, "int" );
 	clientfield::register( "clientuimodel", "hudItems.perks.doubletap2_bo", VERSION_SHIP, 2, "int" );
 	clientfield::register( "clientuimodel", "hudItems.perks.doubletap2_recolour", VERSION_SHIP, 2, "int" );
 }
 
 function doubletap2_set_clientfield( state )
 {
-	if(GetDvarInt("mutator_bo_perk_icons") == 1 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
-	{
+	if(GetDvarInt("mutator_bo2_perk_icons") == 1 && GetDvarInt("mutator_hud") != MUTATOR_OFFON_ON)
+		self clientfield::set_player_uimodel( "hudItems.perks.doubletap2_bo2", state );
+	else if(GetDvarInt("mutator_bo2_perk_icons") == 2)
+		self clientfield::set_player_uimodel( "hudItems.perks.doubletap2_bo2_alt", state );
+	/*else if(GetDvarInt("mutator_bo2_perk_icons") == 3 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
 		self clientfield::set_player_uimodel( "hudItems.perks.doubletap2_bo", state );
-	}
-	else if(GetDvarInt("mutator_bo_perk_icons") == 2)
-	{
-		self clientfield::set_player_uimodel( "hudItems.perks.doubletap2_recolour", state );
-	}
+	else if(GetDvarInt("mutator_bo2_perk_icons") == 4)
+		self clientfield::set_player_uimodel( "hudItems.perks.doubletap2_recolour", state );*/
 	else
-	{
 		self clientfield::set_player_uimodel( PERK_CLIENTFIELD_DOUBLETAP2, state );
-	}
 }
 
 function doubletap2_perk_machine_setup( use_trigger, perk_machine, bump_trigger, collision )

@@ -21,6 +21,10 @@ It's advised to make a back-up of black_ops_3_fx.gdt, since this will be replace
 * VoiceOfJared's Richtofen Announcer: https://drive.google.com/file/d/1q_kTWCKhjMoyHShXDacOMtS_3V7v1IAW/view
 * Rayjiun's black-and-white visionset: https://discord.com/channels/230615005194616834/230616047613378560/1128724861666218046
 * Ronan's Black Ops 2 Perk & Power Up Shaders: https://drive.google.com/file/d/1FigmILU0b80qfCbkE8LRvMvBsU7T8cbg (install in texture_assets\Ronans_BO2_Shaders)
+* Ronan's Custom Perk & Powerup Shaders: https://forum.modme.co/wiki/threads/3206.html (install in texture_assets\Ronans_Classic_Shaders)
+* Humphrey's Shadows of Evil Perk Shaders: https://drive.google.com/file/d/1IroyZV3U7ZDfXGrGMML6we821YXEDlYC/view (install images from 'BO3' folder and PhD Flopper from 'BO2' folder into a single directory: texture_assets\Humphreys_Shadows_of_Evil)
+* MadKixs' Perks Shaders in BO3 style: https://forum.modme.co/wiki/threads/2836.html (install images from 'Black Ops 3 Perks' folder, [Perk] phd.tiff and [Perk] double_tap_2.0.tiff from 'Black Ops 2 Perks' folder into a single directory: texture_assets\Custom_Perk_Shaders), this is also what specialty_giant_alt_doubletap_zombies.tiff is taken from, this is also what specialty_giant_alt_doubletap_zombies.tiff is taken from
+
 
 Then install all files from this repo into your Black Ops III installation apart from the folder chalk_drawing_models, which is for reference purposes only
 

@@ -79,7 +79,31 @@ function main_end()
 		level.exert_sounds[4]["burp"][2] = "evt_belch";
 	}
 	
-	/*if(GetDvarInt("mutator_bo_perk_icons") == 1)
+	if(GetDvarInt("mutator_bo2_perk_icons") == 1)
+	{
+		clientfield::register( "clientuimodel", "hudItems.perks.quick_revive_bo2", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.additional_primary_weapon_bo2", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.dead_shot_bo2", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.electric_cherry_bo2", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.juggernaut_bo2", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.sleight_of_hand_bo2", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.marathon_bo2", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.widows_wine_bo2", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.doubletap_bo2", 1, 2, "int");
+	}
+	else if(GetDvarInt("mutator_bo2_perk_icons") == 2)
+	{
+		clientfield::register( "clientuimodel", "hudItems.perks.quick_revive_bo2_alt", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.additional_primary_weapon_bo2", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.dead_shot_bo2", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.electric_cherry_bo2", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.juggernaut_bo2_alt", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.sleight_of_hand_bo2_alt", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.marathon_bo2_alt", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.widows_wine_bo2_alt", VERSION_SHIP, 2, "int" );
+		clientfield::register( "clientuimodel", "hudItems.perks.doubletap_bo2", 1, 2, "int");
+	}
+	/*else if(GetDvarInt("mutator_bo2_perk_icons") == 3)
 	{
 		clientfield::register( "clientuimodel", "hudItems.perks.quick_revive_bo", VERSION_SHIP, 2, "int" );
 		clientfield::register( "clientuimodel", "hudItems.perks.additional_primary_weapon_bo", VERSION_SHIP, 2, "int" );
@@ -91,7 +115,7 @@ function main_end()
 		clientfield::register( "clientuimodel", "hudItems.perks.widows_wine_bo", VERSION_SHIP, 2, "int" );
 		clientfield::register( "clientuimodel", "hudItems.perks.doubletap_bo", 1, 2, "int");
 	}
-	else if(GetDvarInt("mutator_bo_perk_icons") == 2)
+	else if(GetDvarInt("mutator_bo2_perk_icons") == 4)
 	{
 		clientfield::register( "clientuimodel", "hudItems.perks.quick_revive_recolour", VERSION_SHIP, 2, "int" );
 		clientfield::register( "clientuimodel", "hudItems.perks.additional_primary_weapon_recolour", VERSION_SHIP, 2, "int" );
@@ -102,11 +126,11 @@ function main_end()
 		clientfield::register( "clientuimodel", "hudItems.perks.marathon_recolour", VERSION_SHIP, 2, "int" );
 		clientfield::register( "clientuimodel", "hudItems.perks.widows_wine_recolour", VERSION_SHIP, 2, "int" );
 		clientfield::register( "clientuimodel", "hudItems.perks.doubletap_recolour", 1, 2, "int");
-	}
+	}*/
 	else if(GetDvarString("mapname") != "zm_factory_classic")
 		clientfield::register( "clientuimodel", "hudItems.perks.doubletap", 1, 2, "int");
 	
-	if(GetDvarInt("mutator_bo_perk_icons") != 3 && GetDvarString("mapname") != "zm_factory_classic")
+	if(GetDvarInt("mutator_bo2_perk_icons") != 3 && GetDvarString("mapname") != "zm_factory_classic")
 	{
 		if(isdefined(level._custom_perks[ PERK_QUICK_REVIVE ]))
 			level._custom_perks[ PERK_QUICK_REVIVE ].clientfield_set = &quick_revive_set_clientfield;
@@ -128,7 +152,7 @@ function main_end()
 			level._custom_perks[ "specialty_rof" ].clientfield_set = &doubletap_set_clientfield;
 	}
 	else if(GetGametypeSetting(mutator_doubletap ) == 2 && GetDvarString("mapname") == "zm_factory_classic")
-		level._custom_perks[ PERK_DOUBLETAP2 ].clientfield_set = level._custom_perks[ "specialty_rof" ].clientfield_set;*/
+		level._custom_perks[ PERK_DOUBLETAP2 ].clientfield_set = level._custom_perks[ "specialty_rof" ].clientfield_set;
 	
 	if(GetGametypeSetting(mutator_falldamage) == BOOLMUTATOR_OFFON_ON)
 	{
@@ -152,146 +176,120 @@ function deadshot_cost()
 
 function quick_revive_set_clientfield( state )
 {
-	if(GetDvarInt("mutator_bo_perk_icons") == 1 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
-	{
+	if(GetDvarInt("mutator_bo2_perk_icons") == 1 && GetDvarInt("mutator_hud") != MUTATOR_OFFON_ON)
+		self clientfield::set_player_uimodel( "hudItems.perks.quick_revive_bo2", state );
+	else if(GetDvarInt("mutator_bo2_perk_icons") == 2)
+		self clientfield::set_player_uimodel( "hudItems.perks.quick_revive_bo2_alt", state );
+	/*else if(GetDvarInt("mutator_bo2_perk_icons") == 3 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
 		self clientfield::set_player_uimodel( "hudItems.perks.quick_revive_bo", state );
-	}
-	else if(GetDvarInt("mutator_bo_perk_icons") == 2)
-	{
-		self clientfield::set_player_uimodel( "hudItems.perks.quick_revive_recolour", state );
-	}
+	else if(GetDvarInt("mutator_bo2_perk_icons") == 4)
+		self clientfield::set_player_uimodel( "hudItems.perks.quick_revive_recolour", state );*/
 	else
-	{
 		self clientfield::set_player_uimodel( PERK_CLIENTFIELD_QUICK_REVIVE, state );
-	}
 }
 
 function additional_primary_weapon_set_clientfield( state )
 {
-	if(GetDvarInt("mutator_bo_perk_icons") == 1 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
-	{
+	if((GetDvarInt("mutator_bo2_perk_icons") == 1 || GetDvarInt("mutator_bo2_perk_icons") == 2) && GetDvarInt("mutator_hud") != MUTATOR_OFFON_ON)
+		self clientfield::set_player_uimodel( "hudItems.perks.additional_primary_weapon_bo2", state );
+	/*else if(GetDvarInt("mutator_bo2_perk_icons") == 3 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
 		self clientfield::set_player_uimodel( "hudItems.perks.additional_primary_weapon_bo", state );
-	}
-	else if(GetDvarInt("mutator_bo_perk_icons") == 2)
-	{
-		self clientfield::set_player_uimodel( "hudItems.perks.additional_primary_weapon_recolour", state );
-	}
+	else if(GetDvarInt("mutator_bo2_perk_icons") == 4)
+		self clientfield::set_player_uimodel( "hudItems.perks.additional_primary_weapon_recolour", state );*/
 	else
-	{
 		self clientfield::set_player_uimodel( PERK_CLIENTFIELD_ADDITIONAL_PRIMARY_WEAPON, state );
-	}
 }
 
 function deadshot_set_clientfield( state )
 {
-	if(GetDvarInt("mutator_bo_perk_icons") == 1 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
-	{
+	if((GetDvarInt("mutator_bo2_perk_icons") == 1 || GetDvarInt("mutator_bo2_perk_icons") == 2) && GetDvarInt("mutator_hud") != MUTATOR_OFFON_ON)
+		self clientfield::set_player_uimodel( "hudItems.perks.dead_shot_bo2", state );
+	/*else if(GetDvarInt("mutator_bo2_perk_icons") == 3 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
 		self clientfield::set_player_uimodel( "hudItems.perks.dead_shot_bo", state );
-	}
-	else if(GetDvarInt("mutator_bo_perk_icons") == 2)
-	{
-		self clientfield::set_player_uimodel( "hudItems.perks.dead_shot_recolour", state );
-	}
+	else if(GetDvarInt("mutator_bo2_perk_icons") == 4)
+		self clientfield::set_player_uimodel( "hudItems.perks.dead_shot_recolour", state );*/
 	else
-	{
 		self clientfield::set_player_uimodel( PERK_CLIENTFIELD_DEAD_SHOT, state );
-	}
 }
 
 function electric_cherry_set_clientfield( state )
 {
-	if(GetDvarInt("mutator_bo_perk_icons") == 1 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
-	{
+	if((GetDvarInt("mutator_bo2_perk_icons") == 1 || GetDvarInt("mutator_bo2_perk_icons") == 2) && GetDvarInt("mutator_hud") != MUTATOR_OFFON_ON)
+		self clientfield::set_player_uimodel( "hudItems.perks.electric_cherry_bo2", state );
+	/*else if(GetDvarInt("mutator_bo2_perk_icons") == 3 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
 		self clientfield::set_player_uimodel( "hudItems.perks.electric_cherry_bo", state );
-	}
-	else if(GetDvarInt("mutator_bo_perk_icons") == 2)
-	{
-		self clientfield::set_player_uimodel( "hudItems.perks.electric_cherry_recolour", state );
-	}
+	else if(GetDvarInt("mutator_bo2_perk_icons") == 4)
+		self clientfield::set_player_uimodel( "hudItems.perks.electric_cherry_recolour", state );*/
 	else
-	{
 		self clientfield::set_player_uimodel( PERK_CLIENTFIELD_ELECTRIC_CHERRY, state );
-	}
 }
 
 function juggernaut_set_clientfield( state )
 {
-	if(GetDvarInt("mutator_bo_perk_icons") == 1 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
-	{
+	if(GetDvarInt("mutator_bo2_perk_icons") == 1 && GetDvarInt("mutator_hud") != MUTATOR_OFFON_ON)
+		self clientfield::set_player_uimodel( "hudItems.perks.juggernaut_bo2", state );
+	else if(GetDvarInt("mutator_bo2_perk_icons") == 2)
+		self clientfield::set_player_uimodel( "hudItems.perks.juggernaut_bo2_alt", state );
+	/*else if(GetDvarInt("mutator_bo2_perk_icons") == 3 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
 		self clientfield::set_player_uimodel( "hudItems.perks.juggernaut_bo", state );
-	}
-	else if(GetDvarInt("mutator_bo_perk_icons") == 2)
-	{
-		self clientfield::set_player_uimodel( "hudItems.perks.juggernaut_recolour", state );
-	}
+	else if(GetDvarInt("mutator_bo2_perk_icons") == 4)
+		self clientfield::set_player_uimodel( "hudItems.perks.juggernaut_recolour", state );*/
 	else
-	{
 		self clientfield::set_player_uimodel( PERK_CLIENTFIELD_JUGGERNAUT, state );
-	}
 }
 
 function sleight_of_hand_set_clientfield( state )
 {
-	if(GetDvarInt("mutator_bo_perk_icons") == 1 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
-	{
+	if(GetDvarInt("mutator_bo2_perk_icons") == 1 && GetDvarInt("mutator_hud") != MUTATOR_OFFON_ON)
+		self clientfield::set_player_uimodel( "hudItems.perks.sleight_of_hand_bo2", state );
+	else if(GetDvarInt("mutator_bo2_perk_icons") == 2)
+		self clientfield::set_player_uimodel( "hudItems.perks.sleight_of_hand_bo2_alt", state );
+	/*else if(GetDvarInt("mutator_bo2_perk_icons") == 3 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
 		self clientfield::set_player_uimodel( "hudItems.perks.sleight_of_hand_bo", state );
-	}
-	else if(GetDvarInt("mutator_bo_perk_icons") == 2)
-	{
-		self clientfield::set_player_uimodel( "hudItems.perks.sleight_of_hand_recolour", state );
-	}
+	else if(GetDvarInt("mutator_bo2_perk_icons") == 4)
+		self clientfield::set_player_uimodel( "hudItems.perks.sleight_of_hand_recolour", state );*/
 	else
-	{
 		self clientfield::set_player_uimodel( PERK_CLIENTFIELD_SLEIGHT_OF_HAND, state );
-	}
 }
 
 function staminup_set_clientfield( state )
 {
-	if(GetDvarInt("mutator_bo_perk_icons") == 1 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
-	{
+	if(GetDvarInt("mutator_bo2_perk_icons") == 1 && GetDvarInt("mutator_hud") != MUTATOR_OFFON_ON)
+		self clientfield::set_player_uimodel( "hudItems.perks.marathon_bo2", state );
+	else if(GetDvarInt("mutator_bo2_perk_icons") == 2)
+		self clientfield::set_player_uimodel( "hudItems.perks.marathon_bo2_alt", state );
+	/*else if(GetDvarInt("mutator_bo2_perk_icons") == 3 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
 		self clientfield::set_player_uimodel( "hudItems.perks.marathon_bo", state );
-	}
-	else if(GetDvarInt("mutator_bo_perk_icons") == 2)
-	{
-		self clientfield::set_player_uimodel( "hudItems.perks.marathon_recolour", state );
-	}
+	else if(GetDvarInt("mutator_bo2_perk_icons") == 4)
+		self clientfield::set_player_uimodel( "hudItems.perks.marathon_recolour", state );*/
 	else
-	{
 		self clientfield::set_player_uimodel( PERK_CLIENTFIELD_STAMINUP, state );
-	}
 }
 
 function widows_wine_set_clientfield( state )
 {
-	if(GetDvarInt("mutator_bo_perk_icons") == 1 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
-	{
+	if(GetDvarInt("mutator_bo2_perk_icons") == 1 && GetDvarInt("mutator_hud") != MUTATOR_OFFON_ON)
 		self clientfield::set_player_uimodel( "hudItems.perks.widows_wine_bo", state );
-	}
-	else if(GetDvarInt("mutator_bo_perk_icons") == 2)
-	{
-		self clientfield::set_player_uimodel( "hudItems.perks.widows_wine_recolour", state );
-	}
+	else if(GetDvarInt("mutator_bo2_perk_icons") == 2)
+		self clientfield::set_player_uimodel( "hudItems.perks.widows_wine_bo2_alt", state );
+	/*else if(GetDvarInt("mutator_bo2_perk_icons") == 3 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
+		self clientfield::set_player_uimodel( "hudItems.perks.widows_wine_bo", state );
+	else if(GetDvarInt("mutator_bo2_perk_icons") == 4)
+		self clientfield::set_player_uimodel( "hudItems.perks.widows_wine_recolour", state );*/
 	else
-	{
 		self clientfield::set_player_uimodel( PERK_CLIENTFIELD_WIDOWS_WINE, state );
-	}
 }
 
 function doubletap_set_clientfield(state)
 {
-	if(GetDvarInt("mutator_bo_perk_icons") == 1 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
-	{
+	if((GetDvarInt("mutator_bo2_perk_icons") == 1 || GetDvarInt("mutator_bo2_perk_icons") == 2) && GetDvarInt("mutator_hud") != MUTATOR_OFFON_ON)
+		self clientfield::set_player_uimodel( "hudItems.perks.doubletap_bo2", state );
+	/*else if(GetDvarInt("mutator_bo2_perk_icons") == 3 && GetDvarString("mapname") != "zm_der_riese") //doesn't need to be done on Der Riese: Declassified
 		self clientfield::set_player_uimodel( "hudItems.perks.doubletap_bo", state );
-	}
-	else if(GetDvarInt("mutator_bo_perk_icons") == 2)
-	{
-		self clientfield::set_player_uimodel( "hudItems.perks.doubletap_recolour", state );
-	}
+	else if(GetDvarInt("mutator_bo2_perk_icons") == 4)
+		self clientfield::set_player_uimodel( "hudItems.perks.doubletap_recolour", state );*/
 	else
-	{
 		self clientfield::set_player_uimodel("hudItems.perks.doubletap", state);
-	}
 }
 
 /*

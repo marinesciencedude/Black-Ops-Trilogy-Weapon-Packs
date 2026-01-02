@@ -89,6 +89,7 @@ function private phd_flopper_precache()
 function private phd_flopper_register_clientfield()
 {
 	clientfield::register( "clientuimodel", "hudItems.perks.phdflopper", VERSION_SHIP, 2, "int" );
+	clientfield::register( "clientuimodel", "hudItems.perks.phdflopper_bo2", VERSION_SHIP, 2, "int" );
 	clientfield::register( "clientuimodel", "hudItems.perks.phdflopper_bo", VERSION_SHIP, 2, "int" );
 	clientfield::register( "clientuimodel", "hudItems.perks.phdflopper_recolour", VERSION_SHIP, 2, "int" );
 	clientfield::register( "clientuimodel", "hudItems.perks.phd_flopper", VERSION_SHIP, 2, "int" );
@@ -102,18 +103,14 @@ function private phd_flopper_set_clientfield( state )
 	}
 	else
 	{
-		if(GetDvarInt("mutator_bo_perk_icons") == 1)
-		{
+		if((GetDvarInt("mutator_bo2_perk_icons") == 1 || GetDvarInt("mutator_bo2_perk_icons") == 2) && GetDvarInt("mutator_hud") != MUTATOR_OFFON_ON)
+			self clientfield::set_player_uimodel( "hudItems.perks.phdflopper_bo2", state );
+		/*else if(GetDvarInt("mutator_bo2_perk_icons") == 3)
 			self clientfield::set_player_uimodel( "hudItems.perks.phdflopper_bo", state );
-		}
-		else if(GetDvarInt("mutator_bo_perk_icons") == 2)
-		{
-			self clientfield::set_player_uimodel( "hudItems.perks.phdflopper_recolour", state );
-		}
+		else if(GetDvarInt("mutator_bo2_perk_icons") == 4)
+			self clientfield::set_player_uimodel( "hudItems.perks.phdflopper_recolour", state );*/
 		else
-		{
 			self clientfield::set_player_uimodel( "hudItems.perks.phdflopper", state );
-		}
 	}
 }
 
