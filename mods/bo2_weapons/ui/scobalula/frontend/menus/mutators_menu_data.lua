@@ -327,9 +327,16 @@ function (arg0, arg1, arg2, arg3, arg4)
 			arg0,
 			"Perk Icons",
 			"If the perk icons should be set to Black Ops II, Green Run/Nuketown/Die Rise, WaW/BO, BO III with Black Ops colouring, or leave it at the map's icons. MAY NOT WORK ON CUSTOM MAPS",
-			"MutatorSettings_BOPerkIcons",
+			"MutatorSettings_BO2PerkIcons",
 			"mutator_bo2_perk_icons",
             BuildStringSettings({"Black Ops II", "Green Run", --[["Black Ops", "Recoloured BO III",]] "Use Map"}, "Black Ops II"), nil, SetDvarSetting),
+		--[[CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Power-Up Icons",
+			"If the perk icons should be set to Black Ops II or leave it at the map's icons. MAY NOT WORK ON CUSTOM MAPS",
+			"MutatorSettings_BO2PowerupIcons",
+			"mutator_bo2_powerup_icons",
+			BuildStringSettings({"Black Ops II", "Use Map"}, "Black Ops II"), nil, SetDvarSetting),]]
 		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Scope ADS",
@@ -569,6 +576,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_RandomPerkMachines",
 			"idleFlagDecay",
 			BuildBoolSettings({"On", "Off"}, "On") ),
+		CoD.OptionsUtility.CreateNamedSettings(
+			arg0,
+			"Delayed Power-Ups",
+			"Whether the ability to pick up power-up drops should be delayed after spawn-in like Black Ops IIII or should remain instantly collectable like in previous games.",
+			"MutatorSettings_DelayedPowerup",
+			"cumulativeroundscores",
+			BuildBoolSettings({"Off", "On"}, "Off") ),
 		--CoD.OptionsUtility.CreateDvarSettings(
 		--	arg0,
 		--	"Remove Map Visionsets",

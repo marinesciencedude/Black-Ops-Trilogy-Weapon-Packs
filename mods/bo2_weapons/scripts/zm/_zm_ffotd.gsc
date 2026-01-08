@@ -164,6 +164,15 @@ function main_end()
 	}
 	
 	level._custom_perks[ PERK_DEAD_SHOT ].cost = &deadshot_cost;
+	
+	/*if(GetDvarInt("mutator_bo2_powerup_icons") == MUTATOR_ONOFF_ON && GetDvarInt("mutator_hud") != MUTATOR_OFFON_ON)
+	{
+		level.zombie_powerups["insta_kill"].client_field_name = "powerup_instant_kill_bo2";
+		level.zombie_powerups["double_points"].client_field_name = "powerup_double_points_bo2";
+		level.zombie_powerups["fire_sale"].client_field_name = "powerup_fire_sale_bo2";
+		level.zombie_powerups["double_points"].client_field_name = "powerup_mini_gun_bo2";
+		level.zombie_powerups["zombie_blood"].client_field_name = "powerup_zombie_blood_bo2";
+	}*/
 }
 
 function deadshot_cost()

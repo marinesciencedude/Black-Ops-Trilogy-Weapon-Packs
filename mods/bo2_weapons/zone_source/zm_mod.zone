@@ -29,6 +29,14 @@ scriptparsetree,scripts/zm/_zm_mutators.gsh
 scriptparsetree,scripts/zm/_zm_magicbox.gsc
 scriptparsetree,scripts/zm/dive.gsc
 
+//eMoX Timed Drop Powerups
+scriptparsetree,scripts/zm/_zm_powerups.gsc 
+scriptparsetree,scripts/zm/_zm_powerups.gsh 
+fx,_mori2/t8_powerup_pre_drop
+fx,_mori2/t8_powerup_pre_drop_solo
+fx,_mori2/t8_powerup_pre_drop_pop_solo
+fx,_mori2/t8_powerup_pre_drop_pop
+
 //note-to-self: weapons need to have _zm suffix to have the linker even add attachmentuniques
 attachment,grip_bo2
 attachment,dualclip_bo2
@@ -425,3 +433,9 @@ material,madkixs_specialty_doubletap2
 image,madkixs_specialty_doubletap
 material,madkixs_specialty_doubletap
 image,specialty_giant_doubletap1_zombies
+
+image,charred_powerup_2x
+image,charred_powerup_instakill
+image,charred_powerup_sale
+image,charred_powerup_deathmachine
+image,charred_powerup_blood
