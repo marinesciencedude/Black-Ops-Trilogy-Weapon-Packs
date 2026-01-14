@@ -91,69 +91,53 @@ function apply_choices() {
 		}
 	}*/
 	
-	/*switch(GetGametypeSetting(mutator_scopeads))
+	switch(GetGametypeSetting(mutator_scopeads))
 	{
 		case 1:
 		{
-			zm_utility::include_weapon( "t5_dragunov_overlay", true );
-			zm_utility::include_weapon( "t5_dragunov_up_overlay", false );
-			zm_weapons::add_zombie_weapon( "t5_dragunov_overlay", "t5_dragunov_up_overlay", "", 1750, "sniper", "", undefined, undefined, false, "" );
-			level.zombie_weapons[GetWeapon("t5_dragunov")].is_in_box = false;
-			zm_utility::include_weapon( "t5_dragunov", false);
-			
-			zm_utility::include_weapon( "t5_g11_overlay", true );
-			zm_utility::include_weapon( "t5_g11_up_overlay", false );
-			zm_weapons::add_zombie_weapon( "t5_g11_overlay", "t5_g11_up_overlay", "", 1700, "rifle", "", undefined, undefined, false, "" );
-			level.zombie_weapons[GetWeapon("t5_g11")].is_in_box = false;
-			zm_utility::include_weapon( "t5_g11", false);
-			
-			if(GetGametypeSetting(mutator_wa2000) == BOOLMUTATOR_OFFON_ON)
+			if(GetDvarString("mapname") != "zm_origins")
 			{
-				zm_utility::include_weapon( "t5_wa2000_overlay", true );
-				zm_utility::include_weapon( "t5_wa2000_up_overlay", false );
-				zm_weapons::add_zombie_weapon( "t5_wa2000_overlay", "t5_wa2000_up_overlay", "", 1600, "sniper", "", undefined, undefined, false, "" );
+				zm_utility::include_weapon( "t6_m82a1_overlay", true );
+				zm_utility::include_weapon( "t6_m82a1_up_overlay", false );
+				zm_weapons::add_zombie_weapon( "t6_m82a1_overlay", "t6_m82a1_up_overlay", "", 2000, "sniper", "", undefined, undefined, false, "" );
+				level.zombie_weapons[GetWeapon("t6_m82a1")].is_in_box = false;
+				zm_utility::include_weapon( "t6_m82a1", false);
 			}
 			
-			if(GetGametypeSetting(mutator_psg1) == BOOLMUTATOR_OFFON_ON)
+			if(GetDvarString("mapname") != "zm_prototype")
 			{
-				zm_utility::include_weapon( "t5_psg1_overlay", true );
-				zm_utility::include_weapon( "t5_psg1_up_overlay", false );
-				zm_weapons::add_zombie_weapon( "t5_psg1_overlay", "t5_psg1_up_overlay", "", 2000, "sniper", "", undefined, undefined, false, "" );
+				zm_utility::include_weapon( "t6_dsr50_overlay", true );
+				zm_utility::include_weapon( "t6_dsr50_up_overlay", false );
+				zm_weapons::add_zombie_weapon( "t6_dsr50_overlay", "t6_dsr50_up_overlay", "", 1500, "sniper", "", undefined, undefined, false, "" );
+				level.zombie_weapons[GetWeapon("t6_dsr50")].is_in_box = false;
+				zm_utility::include_weapon( "t6_dsr50", false);
 			}
 			
 			break;
 		}
 		case 3:
 		{
-			zm_utility::include_weapon( "t5_dragunov_switch", true );
-			zm_utility::include_weapon( "t5_dragunov_up_switch", false );
-			zm_weapons::add_zombie_weapon( "t5_dragunov_switch", "t5_dragunov_up_switch", "", 1750, "sniper", "", undefined, undefined, false, "" );
-			level.zombie_weapons[GetWeapon("t5_dragunov")].is_in_box = false;
-			zm_utility::include_weapon( "t5_dragunov", false);
-			
-			zm_utility::include_weapon( "t5_g11_switch", true );
-			zm_utility::include_weapon( "t5_g11_up_switch", false );
-			zm_weapons::add_zombie_weapon( "t5_g11_switch", "t5_g11_up_switch", "", 1700, "rifle", "", undefined, undefined, false, "" );
-			level.zombie_weapons[GetWeapon("t5_g11")].is_in_box = false;
-			zm_utility::include_weapon( "t5_g11", false);
-			
-			if(GetGametypeSetting(mutator_wa2000) == MUTATOR_OFFON_ON)
+			if(GetDvarString("mapname") != "zm_origins")
 			{
-				zm_utility::include_weapon( "t5_wa2000_switch", true );
-				zm_utility::include_weapon( "t5_wa2000_up_switch", false );
-				zm_weapons::add_zombie_weapon( "t5_wa2000_switch", "t5_wa2000_up_switch", "", 1600, "sniper", "", undefined, undefined, false, "" );
+				zm_utility::include_weapon( "t6_m82a1_switch", true );
+				zm_utility::include_weapon( "t6_m82a1_up_switch", false );
+				zm_weapons::add_zombie_weapon( "t6_m82a1_switch", "t6_m82a1_up_switch", "", 2000, "sniper", "", undefined, undefined, false, "" );
+				level.zombie_weapons[GetWeapon("t6_m82a1")].is_in_box = false;
+				zm_utility::include_weapon( "t6_m82a1", false);
 			}
 			
-			if(GetGametypeSetting(mutator_psg1) == BOOLMUTATOR_OFFON_ON)
+			if(GetDvarString("mapname") != "zm_prototype")
 			{
-				zm_utility::include_weapon( "t5_psg1_switch", true);
-				zm_utility::include_weapon( "t5_psg1_up_switch", false);
-				zm_weapons::add_zombie_weapon( "t5_psg1_switch", "t5_psg1_up_switch", "", 2000, "sniper", "", undefined, undefined, false, "" );
+				zm_utility::include_weapon( "t6_dsr50_switch", true );
+				zm_utility::include_weapon( "t6_dsr50_up_switch", false );
+				zm_weapons::add_zombie_weapon( "t6_dsr50_switch", "t6_dsr50_up_switch", "", 1500, "sniper", "", undefined, undefined, false, "" );
+				level.zombie_weapons[GetWeapon("t6_dsr50")].is_in_box = false;
+				zm_utility::include_weapon( "t6_dsr50", false);
 			}
 			
 			break;
 		}
-	}*/
+	}
 	
 	if(GetDvarString("mapname") == "zm_der_riese")
 	{

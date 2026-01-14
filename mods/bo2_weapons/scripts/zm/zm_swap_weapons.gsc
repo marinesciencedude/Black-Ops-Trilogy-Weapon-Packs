@@ -542,60 +542,46 @@ function change_minigun()
 */
 function swap_wall_weapon()
 {
-	/*switch(GetDvarInt("mutator_scopeads"))
+	if(GetDvarString("mapname") == "zm_prototype")
 	{
-		case 1:
+		switch(GetGametypeSetting(mutator_scopeads))
 		{
-			if(GetDvarInt("mutator_bocw_l96a1") == 2)
+			case 1:
 			{
-				zm_utility::include_weapon( "t9_lw3_tundra_overlay", true );
-				zm_utility::include_weapon( "t9_lw3_tundra_up_overlay", false );
-				zm_weapons::add_zombie_weapon( "t9_lw3_tundra_overlay", "t9_lw3_tundra_up_overlay", "", 1900, "sniper", "", 500, "", false, "" );
+				zm_utility::include_weapon( "t6_dsr50_overlay", false );
+				zm_utility::include_weapon( "t6_dsr50_up_overlay", false );
+				zm_weapons::add_zombie_weapon( "t6_dsr50_overlay", "t6_dsr50_up_overlay", "", 1500, "sniper", "", undefined, "", false, "" );
+				break;
 			}
-			else
+			case 3:
 			{
-				zm_utility::include_weapon( "t5_l96a1_overlay", true );
-				zm_utility::include_weapon( "t5_l96a1_up_overlay", false );
-				zm_weapons::add_zombie_weapon( "t5_l96a1_overlay", "t5_l96a1_up_overlay", "", 1900, "sniper", "", 500, "", false, "" );
+				zm_utility::include_weapon( "t6_dsr50_switch", false );
+				zm_utility::include_weapon( "t6_dsr50_up_switch", false );
+				zm_weapons::add_zombie_weapon( "t6_dsr50_switch", "t6_dsr50_up_switch", "", 1500, "sniper", "", undefined, "", false, "" );
+				break;
 			}
-			level.zombie_weapons[GetWeapon("t5_l96a1")].is_in_box = false;
-			zm_utility::include_weapon( "t5_l96a1", false);
-			
-			break;
 		}
-		case 2:
+	}
+	else if(GetDvarString("mapname") == "zm_die")
+	{
+		switch(GetGametypeSetting(mutator_scopeads))
 		{
-			if(GetDvarInt("mutator_bocw_l96a1") == 2)
+			case 1:
 			{
-				zm_utility::include_weapon( "t9_lw3_tundra", true );
-				zm_utility::include_weapon( "t9_lw3_tundra_up", false );
-				zm_weapons::add_zombie_weapon( "t9_lw3_tundra", "t9_lw3_tundra_up", "", 1900, "sniper", "", 500, "", false, "" );
-				level.zombie_weapons[GetWeapon("t5_l96a1")].is_in_box = false;
-				zm_utility::include_weapon( "t5_l96a1", false);
+				zm_utility::include_weapon( "t6_svu_as_overlay", false );
+				zm_utility::include_weapon( "t6_svu_as_up_overlay", false );
+				zm_weapons::add_zombie_weapon( "t6_svu_as_overlay", "t6_svu_as_up_overlay", "", 1000, "sniper", "", undefined, "", false, "" );
+				break;
 			}
-			
-			break;
+			case 3:
+			{
+				zm_utility::include_weapon( "t6_svu_as_switch", false );
+				zm_utility::include_weapon( "t6_svu_as_up_switch", false );
+				zm_weapons::add_zombie_weapon( "t6_svu_as_switch", "t6_svu_as_up_switch", "", 1000, "sniper", "", undefined, "", false, "" );
+				break;
+			}
 		}
-		case 3:
-		{
-			if(GetDvarInt("mutator_bocw_l96a1") == 2)
-			{
-				zm_utility::include_weapon( "t9_lw3_tundra_switch", true );
-				zm_utility::include_weapon( "t9_lw3_tundra_up_switch", false );
-				zm_weapons::add_zombie_weapon( "t9_lw3_tundra_switch", "t9_lw3_tundra_up_switch", "", 1900, "sniper", "", 500, "", false, "" );
-			}
-			else
-			{
-				zm_utility::include_weapon( "t5_l96a1_switch", true );
-				zm_utility::include_weapon( "t5_l96a1_up_switch", false );
-				zm_weapons::add_zombie_weapon( "t5_l96a1_switch", "t5_l96a1_up_switch", "", 1900, "sniper", "", 500, "", false, "" );
-			}
-			level.zombie_weapons[GetWeapon("t5_l96a1")].is_in_box = false;
-			zm_utility::include_weapon( "t5_l96a1", false);
-			
-			break;
-		}
-	}*/
+	}
 	
 	rk5 = 0;
 	vesper = 0;
@@ -649,18 +635,18 @@ function swap_wall_weapon()
 					break;
 				case "sniper_fastbolt": //Locus
 					{
-						/*switch(GetDvarInt("mutator_scopeads"))
+						switch(GetGametypeSetting(mutator_scopeads))
 						{
 						case 1:
-							ent.zombie_weapon_upgrade = "t6_dsr50_scope_overlay";
+							ent.zombie_weapon_upgrade = "t6_dsr50_overlay";
 							break;
 						case 3:
 							ent.zombie_weapon_upgrade = "t6_dsr50_switch";
 							break;
-						default:*/
+						default:
 							ent.zombie_weapon_upgrade = "t6_dsr50";
-							/*break;
-						}*/
+							break;
+						}
 						
 						break;
 					}
@@ -1485,8 +1471,22 @@ function swap_wall_weapon()
 					ent.zombie_weapon_upgrade = "t6_rem870mcs";
 					break;
 				case "t6_sniper_svu":
-					ent.zombie_weapon_upgrade = "t6_svu_as";
-					break;
+					{
+						switch(GetGametypeSetting(mutator_scopeads))
+						{
+						case 1:
+							ent.zombie_weapon_upgrade = "t6_svu_as_overlay";
+							break;
+						case 3:
+							ent.zombie_weapon_upgrade = "t6_svu_as_switch";
+							break;
+						default:
+							ent.zombie_weapon_upgrade = "t6_svu_as";
+							break;
+						}
+						
+						break;
+					}
 				}
 				break;
 			}

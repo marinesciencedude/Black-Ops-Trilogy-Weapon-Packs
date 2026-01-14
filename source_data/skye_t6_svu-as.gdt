@@ -34489,9 +34489,9 @@
 		"adsRecoilReductionRate" "0"
 		"adsRecoilReturnRate" "1"
 		"adsReloadTransTime" "0.6"
-		"adsScopeBlurAmount" "0.0"
+		"adsScopeBlurAmount" "1.0"
 		"adsScopeBlurRadius" "0"
-		"adsScopeBlurStart" "0.0"
+		"adsScopeBlurStart" "1.0"
 		"adsSpread" "0.0"
 		"adsSwayHorizScale" "0.0"
 		"adsSwayLerpSpeed" "4.0"
@@ -34519,11 +34519,11 @@
 		"adsViewKickYawMax" "40"
 		"adsViewKickYawMin" "-40.0"
 		"adsWallRunBobScalar" "1"
-		"adsZoom1_focalLength" "32.0"
+		"adsZoom1_focalLength" "60.0"
 		"adsZoom1_fStop" "24.0"
-		"adsZoom2_focalLength" "32.0"
+		"adsZoom2_focalLength" "60.0"
 		"adsZoom2_fStop" "24.0"
-		"adsZoom3_focalLength" "32.0"
+		"adsZoom3_focalLength" "60.0"
 		"adsZoom3_fStop" "4.5"
 		"adsZoomInFrac" "0.0"
 		"adsZoomOutFrac" "0.05"
@@ -36969,5 +36969,63 @@
 		"usage_weapon" "0"
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
+	}
+	"t6_svu_as_overlay" [ "t6_svu_as" ]
+	{
+		"adsOverlayShader" "i_t6_wpn_sniper_svu_scope_reticle_c"
+		"adsScopeBlurAmount" "0.0"
+		"adsScopeBlurStart" "0.0"
+		"attachViewModel2" ""
+		"attachViewModelTag2" ""
+	}
+	"t6_svu_as_switch_zm" [ "t6_svu_as" ]
+	{
+		"altRaiseAnim" "am_t6_svu_as_pullout"
+		"altWeapon" "t6_svu_as_switch_overlay"
+		"altWeaponDisableSwitching" "1"
+		"ammoName" "svu"
+		"clipName" "svu"
+		"sharedAmmo" "1"
+		"startAmmo" "9"
+	}
+	"t6_svu_as_switch_overlay_zm" [ "t6_svu_as_switch_zm" ]
+	{
+		"adsOverlayShader" "i_t6_wpn_sniper_svu_scope_reticle_c"
+		"adsScopeBlurAmount" "0.0"
+		"adsScopeBlurStart" "0.0"
+		"altWeapon" "t6_svu_as_switch"
+		"attachViewModel2" ""
+		"attachViewModelTag2" ""
+		"inventoryType" "altmode"
+	}
+	"t6_svu_as_up_overlay" [ "t6_svu_as_up" ]
+	{
+		"adsOverlayShader" "i_t6_wpn_sniper_svu_scope_reticle_c"
+		"adsScopeBlurAmount" "0.0"
+		"adsScopeBlurStart" "0.0"
+		"attachViewModel2" ""
+		"attachViewModelTag2" ""
+	}
+	"t6_svu_as_up_switch_zm" [ "t6_svu_as_up" ]
+	{
+		"altRaiseAnim" "am_t6_svu_as_pullout"
+		"altWeapon" "t6_svu_as_up_switch_overlay"
+		"altWeaponDisableSwitching" "1"
+		"ammoName" "svu_up"
+		"clipName" "svu_up"
+		"sharedAmmo" "1"
+		"startAmmo" "17"
+	}
+	"t6_svu_as_up_switch_overlay_zm" [ "t6_svu_as_up_switch_zm" ]
+	{
+		"adsOverlayShader" "i_t6_wpn_sniper_svu_scope_reticle_c"
+		"adsScopeBlurAmount" "0.0"
+		"adsScopeBlurStart" "0.0"
+		"altWeapon" "t6_svu_as_up_switch"
+		"attachViewModel2" ""
+		"attachViewModelTag2" ""
+		"inventoryType" "altmode"
+		"maxAmmo" "0"
+		"startAmmo" "0"
 	}
 }

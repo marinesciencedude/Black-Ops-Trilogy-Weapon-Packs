@@ -721,7 +721,19 @@ function dig_up_weapon(digger)
 	if(GetGametypeSetting(mutator_startingweapon) == 2)
 		starting_weapon = level.start_weapon;
 	var_43f586fe = array(starting_weapon, getweapon("t6_rem870mcs"), getweapon("t6_ballista"));
-	var_63eba41d = array(getweapon("t6_dsr50"), getweapon("t6_m1216"));
+	switch(GetGametypeSetting(mutator_scopeads))
+	{
+	case 1:
+		dsr = getweapon("t6_dsr50_overlay");
+		break;
+	case 3:
+		dsr = getweapon("t6_dsr50_switch");
+		break;
+	default:
+		dsr = getweapon("t6_dsr50");
+		break;
+	}
+	var_63eba41d = array(dsr, getweapon("t6_m1216"));
 	if(digger.dig_vars["has_upgraded_shovel"])
 	{
 		if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON)

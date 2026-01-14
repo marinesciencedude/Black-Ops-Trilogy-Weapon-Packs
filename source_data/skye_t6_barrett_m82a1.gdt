@@ -34638,4 +34638,62 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
+	"t6_m82a1_overlay" [ "t6_m82a1" ]
+	{
+		"adsOverlayShader" "i_t6_wpn_sniper_m82_scope_reticle_c"
+		"adsScopeBlurAmount" "0.0"
+		"adsScopeBlurStart" "0.0"
+		"attachViewModel2" ""
+		"attachViewModelTag2" ""
+	}
+	"t6_m82a1_switch_zm" [ "t6_m82a1" ]
+	{
+		"altRaiseAnim" "am_t6_m82a1_first_raise"
+		"altWeapon" "t6_m82a1_switch_overlay"
+		"altWeaponDisableSwitching" "1"
+		"ammoName" "m82a1"
+		"clipName" "m82a1"
+		"sharedAmmo" "1"
+		"startAmmo" "7"
+	}
+	"t6_m82a1_switch_overlay_zm" [ "t6_m82a1_switch_zm" ]
+	{
+		"adsOverlayShader" "i_t6_wpn_sniper_m82_scope_reticle_c"
+		"adsScopeBlurAmount" "0.0"
+		"adsScopeBlurStart" "0.0"
+		"altWeapon" "t6_m82a1_switch"
+		"attachViewModel2" ""
+		"attachViewModelTag2" ""
+		"inventoryType" "altmode"
+		"maxAmmo" "0"
+		"startAmmo" "0"
+	}
+	"t6_m82a1_up_overlay" [ "t6_m82a1_up" ]
+	{
+		"adsOverlayShader" "i_t6_wpn_sniper_m82_scope_reticle_c"
+		"adsScopeBlurAmount" "0.0"
+		"adsScopeBlurStart" "0.0"
+	}
+	"t6_m82a1_up_switch_zm" [ "t6_m82a1_up" ]
+	{
+		"altRaiseAnim" "am_t6_m82a1_first_raise"
+		"altWeapon" "t6_m82a1_up_switch_overlay"
+		"altWeaponDisableSwitching" "1"
+		"ammoName" "m82a1_up"
+		"clipName" "m82a1_up"
+		"sharedAmmo" "1"
+		"startAmmo" "7"
+	}
+	"t6_m82a1_up_switch_overlay_zm" [ "t6_m82a1_up_switch_zm" ]
+	{
+		"adsOverlayShader" "i_t6_wpn_sniper_m82_scope_reticle_c"
+		"adsScopeBlurAmount" "0.0"
+		"adsScopeBlurStart" "0.0"
+		"altWeapon" "t6_m82a1_up_switch"
+		"attachViewModel2" ""
+		"attachViewModelTag2" ""
+		"inventoryType" "altmode"
+		"maxAmmo" "0"
+		"startAmmo" "0"
+	}
 }

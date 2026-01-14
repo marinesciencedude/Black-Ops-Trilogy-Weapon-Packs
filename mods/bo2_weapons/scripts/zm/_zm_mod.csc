@@ -71,7 +71,7 @@ function applyChoices() {
 			zm_weapons::include_upgraded_weapon( "t5_uzi_alt", "t5_uzi_up_alt", false, 1500, 500);
 			break;
 		}
-	}/*
+	}*/
 	
 	if(GetGametypeSetting(mutator_raygunmkii) == BOOLMUTATOR_ONOFF_ON)
 	{
@@ -92,63 +92,45 @@ function applyChoices() {
 		RemoveZombieBoxWeapon(GetWeapon("t9_ballistic_knife"));
 	}
 	
-	/*switch(GetGametypeSetting(mutator_scopeads))
+	switch(GetGametypeSetting(mutator_scopeads))
 	{
 		case 1:
 		{
-			zm_weapons::include_weapon( "t5_dragunov_overlay", true, 1750, 500 );
-			zm_weapons::include_upgraded_weapon( "t5_dragunov_overlay", "t5_dragunov_up_overlay", false, 1750, 500 );
-			RemoveZombieBoxWeapon(GetWeapon("t5_dragunov"));
-			
-			zm_weapons::include_weapon( "t5_g11_overlay", true, 1700, 500 );
-			zm_weapons::include_upgraded_weapon( "t5_g11_overlay", "t5_g11_up_overlay", false, 1700, 500 );
-			RemoveZombieBoxWeapon(GetWeapon("t5_g11"));
-			
-			if(GetGametypeSetting(mutator_wa2000) == BOOLMUTATOR_OFFON_ON)
+			if(GetDvarString("mapname") != "zm_origins")
 			{
-				zm_weapons::include_weapon( "t5_wa2000_overlay", true, 1600, 500 );
-				zm_weapons::include_upgraded_weapon( "t5_wa2000_overlay", "t5_wa2000_up_overlay", false, 1600, 500 );
-				RemoveZombieBoxWeapon(GetWeapon("t5_wa2000"));
-				weapon = GetWeapon("t5_wa2000_overlay");
-				AddZombieBoxWeapon(weapon, weapon.worldmodel, false);
+				zm_weapons::include_weapon( "t6_m82a1_overlay", true, 2000, undefined );
+				zm_weapons::include_upgraded_weapon( "t6_m82a1_overlay", "t6_m82a1_up_overlay", false, 2000, undefined );
+				RemoveZombieBoxWeapon(GetWeapon("t6_m82a1"));
 			}
 			
-			if(GetGametypeSetting(mutator_psg1) == BOOLMUTATOR_OFFON_ON)
+			if(GetDvarString("mapname") != "zm_prototype")
 			{
-				zm_weapons::include_weapon( "t5_psg1_overlay", true, 2000, 500 );
-				zm_weapons::include_upgraded_weapon( "t5_psg1_overlay", "t5_psg1_up_overlay", false, 2000, 500 );
+				zm_weapons::include_weapon( "t6_dsr50_overlay", true, 1500, undefined );
+				zm_weapons::include_upgraded_weapon( "t6_dsr50_overlay", "t6_dsr50_up_overlay", false, 1500, undefined );
+				RemoveZombieBoxWeapon(GetWeapon("t6_dsr50"));
 			}
 			
 			break;
 		}
 		case 3:
 		{
-			zm_weapons::include_weapon( "t5_dragunov_switch", true, 1750, 500 );
-			zm_weapons::include_upgraded_weapon( "t5_dragunov_switch", "t5_dragunov_up_switch", false, 1750, 500 );
-			RemoveZombieBoxWeapon(GetWeapon("t5_dragunov"));
-			
-			zm_weapons::include_weapon( "t5_g11_switch", true, 1700, 500 );
-			zm_weapons::include_upgraded_weapon( "t5_g11_switch", "t5_g11_up_switch", false, 1700, 500 );
-			RemoveZombieBoxWeapon(GetWeapon("t5_g11"));
-			
-			if(GetGametypeSetting(mutator_wa2000) == BOOLMUTATOR_OFFON_ON)
+			if(GetDvarString("mapname") != "zm_origins")
 			{
-				zm_weapons::include_weapon( "t5_wa2000_switch", true, 1600, 500 );
-				zm_weapons::include_upgraded_weapon( "t5_wa2000_switch", "t5_wa2000_up_switch", false, 1600, 500 );
-				RemoveZombieBoxWeapon(GetWeapon("t5_wa2000"));
-				weapon = GetWeapon("t5_wa2000_switch");
-				AddZombieBoxWeapon(weapon, weapon.worldmodel, false);
+				zm_weapons::include_weapon( "t6_m82a1_switch", true, 2000, undefined );
+				zm_weapons::include_upgraded_weapon( "t6_m82a1_switch", "t6_m82a1_up_switch", false, 2000, undefined );
+				RemoveZombieBoxWeapon(GetWeapon("t6_m82a1"));
 			}
 			
-			if(GetGametypeSetting(mutator_psg1) == BOOLMUTATOR_OFFON_ON)
+			if(GetDvarString("mapname") != "zm_prototype")
 			{
-				zm_weapons::include_weapon( "t5_psg1_switch", true, 2000, 500);
-				zm_weapons::include_upgraded_weapon( "t5_psg1_switch", "t5_psg1_up_switch", false, 2000, 500);
+				zm_weapons::include_weapon( "t6_dsr50_switch", true, 1500, undefined );
+				zm_weapons::include_upgraded_weapon( "t6_dsr50_switch", "t6_dsr50_up_switch", false, 1500, undefined );
+				RemoveZombieBoxWeapon(GetWeapon("t6_dsr50"));
 			}
 			
 			break;
 		}
-	}*/
+	}
 	
 	if(GetDvarString("mapname") == "zm_der_riese")
 	{

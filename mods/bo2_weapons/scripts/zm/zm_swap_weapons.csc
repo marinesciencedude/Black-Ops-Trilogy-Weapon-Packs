@@ -272,52 +272,42 @@ function starter_weapon()
 */
 function swap_wall_weapon()
 {
-	/*switch(GetDvarInt("mutator_scopeads"))
+	if(GetDvarString("mapname") == "zm_prototype")
 	{
-		case 1:
+		switch(GetGametypeSetting(mutator_scopeads))
 		{
-			if(GetDvarInt("mutator_bocw_l96a1") == 2)
+			case 1:
 			{
-				zm_weapons::include_weapon( "t9_lw3_tundra_overlay", true, 1900, 500 );
-				zm_weapons::include_upgraded_weapon( "t9_lw3_tundra_overlay", "t9_lw3_tundra_up_overlay", false, 1900, 500 );
+				zm_weapons::include_weapon( "t6_dsr50_overlay", false, 1500, undefined );
+				zm_weapons::include_upgraded_weapon( "t6_dsr50_overlay", "t6_dsr50_up_overlay", false, 1500, undefined );
+				break;
 			}
-			else
+			case 3:
 			{
-				zm_weapons::include_weapon( "t5_l96a1_overlay", true, 1900, 500 );
-				zm_weapons::include_upgraded_weapon( "t5_l96a1_overlay", "t5_l96a1_up_overlay", false, 1900, 500 );
+				zm_weapons::include_weapon( "t6_dsr50_switch", false, 1500, undefined );
+				zm_weapons::include_upgraded_weapon( "t6_dsr50_switch", "t6_dsr50_up_switch", false, 1500, undefined );
+				break;
 			}
-			RemoveZombieBoxWeapon(GetWeapon("t5_l96a1"));
-			
-			break;
 		}
-		case 2:
+	}
+	else if(GetDvarString("mapname") == "zm_die")
+	{
+		switch(GetGametypeSetting(mutator_scopeads))
 		{
-			if(GetDvarInt("mutator_bocw_l96a1") == 2)
+			case 1:
 			{
-				zm_weapons::include_weapon( "t9_lw3_tundra", true, 1900, 500 );
-				zm_weapons::include_upgraded_weapon( "t9_lw3_tundra", "t9_lw3_tundra_up", false, 1900, 500 );
-				RemoveZombieBoxWeapon(GetWeapon("t5_l96a1"));
+				zm_weapons::include_weapon( "t6_svu_as_overlay", false, 1000, undefined );
+				zm_weapons::include_upgraded_weapon( "t6_svu_as_overlay", "t6_svu_as_up_overlay", false, 1000, undefined );
+				break;
 			}
-			
-			break;
-		}
-		case 3:
-		{
-			if(GetDvarInt("mutator_bocw_l96a1") == 2)
-			{	
-				zm_weapons::include_weapon( "t9_lw3_tundra_switch", true, 1900, 500 );
-				zm_weapons::include_upgraded_weapon( "t9_lw3_tundra_switch", "t9_lw3_tundra_up_switch", false, 1900, 500 );
-			}
-			else
+			case 3:
 			{
-				zm_weapons::include_weapon( "t5_l96a1_switch", true, 1900, 500 );
-				zm_weapons::include_upgraded_weapon( "t5_l96a1_switch", "t5_l96a1_up_switch", false, 1900, 500 );
+				zm_weapons::include_weapon( "t6_dsr50_switch", false, 1000, undefined );
+				zm_weapons::include_upgraded_weapon( "t6_svu_as_switch", "t6_svu_as_up_switch", false, 1000, undefined );
+				break;
 			}
-			RemoveZombieBoxWeapon(GetWeapon("t5_l96a1"));
-			
-			break;
 		}
-	}*/
+	}
 	
 	rk5 = 0;
 	vesper = 0;
@@ -371,18 +361,18 @@ function swap_wall_weapon()
 					break;
 				case "sniper_fastbolt": //Locus
 					{
-						/*switch(GetDvarInt("mutator_scopeads"))
+						switch(GetGametypeSetting(mutator_scopeads))
 						{
 						case 1:
-							ent.zombie_weapon_upgrade = "t6_dsr50_scope_overlay";
+							ent.zombie_weapon_upgrade = "t6_dsr50_overlay";
 							break;
 						case 3:
 							ent.zombie_weapon_upgrade = "t6_dsr50_switch";
 							break;
-						default:*/
+						default:
 							ent.zombie_weapon_upgrade = "t6_dsr50";
-							/*break;
-						}*/
+							break;
+						}
 						
 						break;
 					}
@@ -1207,8 +1197,22 @@ function swap_wall_weapon()
 					ent.zombie_weapon_upgrade = "t6_rem870mcs";
 					break;
 				case "t6_sniper_svu":
-					ent.zombie_weapon_upgrade = "t6_svu_as";
-					break;
+					{
+						switch(GetGametypeSetting(mutator_scopeads))
+						{
+						case 1:
+							ent.zombie_weapon_upgrade = "t6_svu_as_overlay";
+							break;
+						case 3:
+							ent.zombie_weapon_upgrade = "t6_svu_as_switch";
+							break;
+						default:
+							ent.zombie_weapon_upgrade = "t6_svu_as";
+							break;
+						}
+						
+						break;
+					}
 				}
 				break;
 			}

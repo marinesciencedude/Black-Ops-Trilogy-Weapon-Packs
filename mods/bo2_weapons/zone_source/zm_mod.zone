@@ -29,6 +29,10 @@ scriptparsetree,scripts/zm/_zm_mutators.gsh
 scriptparsetree,scripts/zm/_zm_magicbox.gsc
 scriptparsetree,scripts/zm/dive.gsc
 
+scriptparsetree,scripts/zm/_zm_weap_quantum_bomb.gsc
+scriptparsetree,scripts/zm/_zm_powerup_random_weapon.gsc
+scriptparsetree,scripts/zm/_zm_powerup_random_weapon.csc
+
 //eMoX Timed Drop Powerups
 scriptparsetree,scripts/zm/_zm_powerups.gsc 
 scriptparsetree,scripts/zm/_zm_powerups.gsh 
@@ -162,7 +166,13 @@ weaponfull,t6_ballista_up_zm
 xmodel,wallbuy_ballista
 
 weapon,t6_m82a1
+weapon,t6_m82a1_overlay
+weapon,t6_m82a1_switch_zm
+weapon,t6_m82a1_switch_overlay_zm
 weapon,t6_m82a1_up
+weapon,t6_m82a1_up_overlay
+weapon,t6_m82a1_up_switch_zm
+weapon,t6_m82a1_up_switch_overlay_zm
 
 weapon,t6_blundergat
 weapon,t6_blundergat_up
@@ -175,7 +185,13 @@ weapon,t6_death_machine
 weapon,t6_death_machine_up
 
 weapon,t6_dsr50
+weapon,t6_dsr50_overlay
+weapon,t6_dsr50_switch_zm
+weapon,t6_dsr50_switch_overlay_zm
 weapon,t6_dsr50_up
+weapon,t6_dsr50_up_overlay
+weapon,t6_dsr50_up_switch_zm
+weapon,t6_dsr50_up_switch_overlay_zm
 
 weapon,t6_executioner
 weaponfull,t6_executioner_up_zm
@@ -296,7 +312,13 @@ weapon,t6_stg44_up
 xmodel,wallbuy_stg44_bo2
 
 weapon,t6_svu_as
+weapon,t6_svu_as_overlay
+weapon,t6_svu_as_switch_zm
+weapon,t6_svu_as_switch_overlay_zm
 weapon,t6_svu_as_up
+weapon,t6_svu_as_up_overlay
+weapon,t6_svu_as_up_switch_zm
+weapon,t6_svu_as_up_switch_overlay_zm
 
 weapon,t6_type25
 weaponfull,t6_type25_up_zm
