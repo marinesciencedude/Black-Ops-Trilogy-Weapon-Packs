@@ -820,8 +820,6 @@ function powerup_setup( powerup_override,powerup_team, powerup_location, powerup
 	{
 		self.can_pick_up_in_last_stand = struct.can_pick_up_in_last_stand;
 	}
-
-	self PlayLoopSound("zmb_spawn_powerup_loop");
 	
     demo::bookmark( "zm_powerup_dropped", gettime(), undefined, undefined, 1 );
 
@@ -864,6 +862,8 @@ function powerup_setup( powerup_override,powerup_team, powerup_location, powerup
 			}
 		}
   	}
+
+	self PlayLoopSound("zmb_spawn_powerup_loop");
 
 	if ( IsDefined( level._custom_powerups ) && IsDefined( level._custom_powerups[ powerup ] ) && IsDefined( level._custom_powerups[ powerup ].setup_powerup ) )
 	{

@@ -43,6 +43,7 @@
 
 //eMoX EDIT Update 14/12/2025
 #define POWERUP_TIMED_DROP					true
+#define POWERUP_DELAY_TIME					1.5
 
 #define POWERUP_PRE_DROP_SOLO_FX "_mori2/t8_powerup_pre_drop_solo"
 #define POWERUP_PRE_DROP_POP_SOLO_FX "_mori2/t8_powerup_pre_drop_pop_solo"
