@@ -49,6 +49,7 @@ Note also that share\raw\sound\aliases\user_aliases.csv and share\raw\sound\glob
 * Pmr360's Black Ops 1/4 - Revive animation: https://www.devraw.net/approved-assets/pmr360/black-ops-1%2F4---revive-animation
 * GCP, Kingslayer, Kyle, Lilrifa, Jarik, Scobalula, DTZxPorter T5_HUD: https://discord.com/channels/230615005194616834/233220803439755264/1380942431784145010
 * GCPeinhardt's Winter's Howl: https://discord.com/channels/230615005194616834/233220803439755264/1328900707969142798
+* eMoX's T8 Powerup Delayed Drop: https://www.devraw.net/approved-assets/emox/emox---t8-powerup-delayed-drop
 
 Then install all files from this repo into your Black Ops III installation apart from the folder chalk_drawing_models, which is for reference purposes only
 

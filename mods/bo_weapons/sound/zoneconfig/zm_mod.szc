@@ -123,7 +123,13 @@
  "Name" : "t4_betty_sounds",
  "Filename" : "t4_betty_sounds.csv",
  "Specs" : [ ] 
-}
+},
+{
+ "Type" : "ALIAS",
+ "Name" : "emox_t8_powerups_delayed_drop",
+ "Filename" : "emox_t8_powerups_delayed_drop.csv",
+ "Specs" : [ ] 
+},
 ],
  "Ducks" : [ ] ,
  "MusicFiles" : [ "zm_mod.mus" ] 

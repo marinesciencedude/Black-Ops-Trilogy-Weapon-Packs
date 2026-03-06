@@ -79,6 +79,7 @@
 #define mutator_declassified_mg42			"maxPlayerEventsPerMinute"
 #define mutator_george_reward				"objectiveSpawnTime"
 #define mutator_wallbuys_callofthedead		"pointsPerSecondaryKill"
+#define	mutator_delayed_powerup				"cumulativeroundscores"
 
 //ints or int-compatible
 /*#define mutator_						"pointsPerWeaponKill"
