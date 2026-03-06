@@ -538,6 +538,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_RandomPerkMachines",
 			"idleFlagDecay",
 			BuildBoolSettings({"On", "Off"}, "On") ),
+		CoD.OptionsUtility.CreateNamedSettings(
+			arg0,
+			"Delayed Power-Ups",
+			"Whether the ability to pick up power-up drops should be delayed after spawn-in like Black Ops IIII or should remain instantly collectable like in previous games.",
+			"MutatorSettings_DelayedPowerup",
+			"cumulativeroundscores",
+			BuildBoolSettings({"Off", "On"}, "Off") ),
 		--CoD.OptionsUtility.CreateDvarSettings(
 		--	arg0,
 		--	"Remove Map Visionsets",

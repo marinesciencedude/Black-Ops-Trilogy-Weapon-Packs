@@ -99,7 +99,13 @@
 	"Name" : "custom_hellhound",
 	"Filename" : "custom_hellhound.csv",
 	"Specs" : [ ]
-}
+},
+{
+ "Type" : "ALIAS",
+ "Name" : "emox_t8_powerups_delayed_drop",
+ "Filename" : "emox_t8_powerups_delayed_drop.csv",
+ "Specs" : [ ] 
+},
 ],
  "Ducks" : [ ] ,
  "MusicFiles" : [ "zm_mod.mus" ] 

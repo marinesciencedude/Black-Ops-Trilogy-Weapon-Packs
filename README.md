@@ -42,6 +42,7 @@ Note also that share\raw\sound\aliases\user_aliases.csv and share\raw\sound\glob
 * Kingslayer Kyle's World at War HUD: https://drive.google.com/file/d/1TwEbNNcF1H59AsKANSvK-MC_09aAbouk/view (including [BlackOps3Shaders](https://github.com/LG-RZ/BlackOps3Shaders/releases))
 * natesmithzombies's Custom Random Weapon Powerup: https://forum.modme.co/wiki/threads/706.html
 * Rayjiun's black-and-white visionset: https://discord.com/channels/230615005194616834/230616047613378560/1128724861666218046
+* eMoX's T8 Powerup Delayed Drop: https://www.devraw.net/approved-assets/emox/emox---t8-powerup-delayed-drop
 
 Then install all files from this repo into your Black Ops III installation apart from the folder chalk_drawing_models, which is for reference purposes only
 

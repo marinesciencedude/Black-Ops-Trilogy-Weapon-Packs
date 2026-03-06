@@ -79,6 +79,7 @@
 #define mutator_declassified_mg42			"maxPlayerEventsPerMinute"
 #define mutator_george_reward				"objectiveSpawnTime"
 #define mutator_wallbuys_callofthedead		"pointsPerSecondaryKill"
+#define	mutator_delayed_powerup				"cumulativeroundscores"
 
 #define mutator_wallbuys_gorod_krovi		"rebootTime"
 #define mutator_quickrevive					"teamkillpointloss"
@@ -111,8 +112,7 @@
 #define "OvertimetimeLimit"*/
 //#define "pregameDraftEnabled"	//game stuck loading
 //#define "pregameItemVoteEnabled"	//game stuck loading
-/*#define	mutator_		"cumulativeroundscores"
-#define	mutator_		"playerforcerespawn"*/
+/*#define	mutator_		"playerforcerespawn"*/
 
 //floats
 /*#define "defuseTime							

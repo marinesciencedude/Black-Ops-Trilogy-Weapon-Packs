@@ -30,6 +30,14 @@ scriptparsetree,scripts/zm/_zm_mutators.gsh
 scriptparsetree,scripts/zm/_zm_magicbox.gsc
 scriptparsetree,scripts/zm/dive.gsc
 
+//eMoX Timed Drop Powerups
+scriptparsetree,scripts/zm/_zm_powerups.gsc 
+scriptparsetree,scripts/zm/_zm_powerups.gsh 
+fx,_mori2/t8_powerup_pre_drop
+fx,_mori2/t8_powerup_pre_drop_solo
+fx,_mori2/t8_powerup_pre_drop_pop_solo
+fx,_mori2/t8_powerup_pre_drop_pop
+
 scriptparsetree,scripts/zm/zm_temple_ffotd.gsc
 scriptparsetree,scripts/zm/zm_cosmodrome_ffotd.gsc
 scriptparsetree,scripts/zm/zm_island_ffotd.gsc
