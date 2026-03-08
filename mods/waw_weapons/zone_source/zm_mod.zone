@@ -33,10 +33,10 @@ scriptparsetree,scripts/zm/dive.gsc
 //eMoX Timed Drop Powerups
 scriptparsetree,scripts/zm/_zm_powerups.gsc 
 scriptparsetree,scripts/zm/_zm_powerups.gsh 
-fx,_mori2/t8_powerup_pre_drop
-fx,_mori2/t8_powerup_pre_drop_solo
-fx,_mori2/t8_powerup_pre_drop_pop_solo
-fx,_mori2/t8_powerup_pre_drop_pop
+//fx,_mori2/t8_powerup_pre_drop
+//fx,_mori2/t8_powerup_pre_drop_solo
+//fx,_mori2/t8_powerup_pre_drop_pop_solo
+//fx,_mori2/t8_powerup_pre_drop_pop
 
 scriptparsetree,scripts/zm/zm_temple_ffotd.gsc
 scriptparsetree,scripts/zm/zm_cosmodrome_ffotd.gsc
@@ -100,7 +100,7 @@ xmodel,p7_zm_vending_phd_active
 xmodel,wpn_t7_zmb_perk_bottle_phd_view
 xmodel,wpn_t7_zmb_perk_bottle_phd_world
 weapon,zombie_perk_bottle_phd
-fx,_mikeyray/perks/phd/fx_perk_phd
+//fx,_mikeyray/perks/phd/fx_perk_phd
 image,specialty_phdflopper_zombies
 
 include,t4_hud

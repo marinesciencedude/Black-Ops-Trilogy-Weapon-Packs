@@ -1,6 +1,9 @@
 # World at War Weapon Pack
 
 As seen on the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3450780956) and [UGX](https://www.ugx-mods.com/forum/mod-releases/75/world-at-war-zombies-weapon-pack/24597/)
+This version removes some FX so that Call of the Dead is able to load:
+* PhD Flopper Machine light-up FX (should only affect other maps)
+* eMoX Timed Drop Powerups (delay still works but you won't see where it drops beforehand)
 
 ## Installation instructions for building this mod:
 
