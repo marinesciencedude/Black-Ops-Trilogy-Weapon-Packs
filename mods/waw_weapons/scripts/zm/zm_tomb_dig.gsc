@@ -731,11 +731,7 @@ function dig_up_weapon(digger)
 	var_63eba41d = array(getweapon("t4_kar98k_scope"), getweapon("t4_g43"), getweapon("t4_m1")/*, getweapon("t5_hs10")*/);
 	if(digger.dig_vars["has_upgraded_shovel"])
 	{
-		/*if(GetDvarInt("mutator_claymore") == 1)
-			var_63eba41d = arraycombine(var_63eba41d, array(getweapon("claymore"), getweapon("ar_stg44"), getweapon("t5_ak74u"), getweapon("t5_mp40"), getweapon("t5_spas12")), 0, 0);
-		else*/
-			var_63eba41d = arraycombine(var_63eba41d, array(getweapon("bouncingbetty"), getweapon("t4_mp44"), getweapon("t4_thompson"), getweapon("t4_mp40")/*, getweapon("shotgun_precision")*/), 0, 0);
-	}
+		var_63eba41d = arraycombine(var_63eba41d, array(getweapon("bo1_bouncingbetty"), getweapon("t4_mp44"), getweapon("t4_thompson"), getweapon("t4_mp40")/*, getweapon("shotgun_precision")*/), 0, 0);	}
 	var_59d5868d = undefined;
 	if(randomint(100) < 90)
 	{

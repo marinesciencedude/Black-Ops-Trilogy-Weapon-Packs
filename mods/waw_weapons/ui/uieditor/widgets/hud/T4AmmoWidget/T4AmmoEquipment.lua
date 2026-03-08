@@ -143,7 +143,7 @@ CoD.T4AmmoEquipment.new = function ( menu, controller )
 
 		if actionSlot3ammo then
 			if actionSlot3ammo > 0 then
-				self.Mine:setImage( RegisterImage( "t7_hud_icon_menu_bouncebetty" ) )
+				self.Mine:setImage( RegisterImage( "betty_256" ) )
 			else
 				self.Mine:setImage( RegisterImage( "blacktransparent" ) )
 			end

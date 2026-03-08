@@ -2,6 +2,7 @@ weapon_name,upgrade_name,hint,cost,weaponVO,weaponVOresp,ammo_cost,create_vox,is
 pistol_m1911,pistol_m1911_upgraded,,50,pistol,,0,,,FALSE,FALSE,TRUE,0,,FALSE,FALSE,pistol,TRUE,,
 t4_m1911,t4_m1911_camo_up,,100,pistol,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,pistol,TRUE,,
 t5_m1911,t5_m1911_rdw_up,,300,pistol,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,pistol,TRUE,,
+bo1_bouncingbetty,,,1000,betty,,5194303,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,
 bouncingbetty,,,1000,betty,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,
 quantum_bomb,,,2000,quantum,,,,,TRUE,FALSE,FALSE,,,FALSE,FALSE,grenade,,,
 black_hole_bomb,,,2000,gersh_device,,,,,TRUE,FALSE,FALSE,,,FALSE,FALSE,grenade,,,

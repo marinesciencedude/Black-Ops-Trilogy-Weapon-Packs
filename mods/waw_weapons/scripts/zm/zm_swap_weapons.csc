@@ -1370,5 +1370,7 @@ function swap_wall_weapon()
 			struct::get(ent.target, "targetname").model = GetWeapon(ent.zombie_weapon_upgrade).worldmodel;
 		}
 	}
+	foreach(ent in struct::get_array("claymore_purchase", "targetname"))
+		ent.zombie_weapon_upgrade = "bo1_bouncingbetty";
 }
 

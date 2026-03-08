@@ -19,6 +19,7 @@ Note also that share\raw\sound\aliases\user_aliases.csv and share\raw\sound\glob
   * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-snipers%2Fbolt-action
   * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-pistols
   * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-raygun
+* Lamy619's WaW Bouncing Betties Port: https://www.devraw.net/approved-assets/lamy619/waw-bouncing-betties-port
 * TheSkyeLord's [M1 Garand Rifle Grenade and Panzerschreck ports](https://www.ugx-mods.com/forum/full-weapons/84/skyes-waw-weapon-ports/24598/) (don't forget [Weapon Common](https://www.icloud.com/iclouddrive/04bF59Ei7A2KzlUMau4i3KBRg#Skye%5FWaW%5FWeapon%5FCommon))
 * ZeRoY's Flamethrower: https://drive.google.com/file/d/1k4FVM1TKrOxHhzy53g34k7Hc4W8Jxm6X
 * Smurphy's Improved BO3 Ray Gun: https://forum.modme.co/wiki/threads/3714.html

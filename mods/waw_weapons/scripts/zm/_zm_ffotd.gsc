@@ -14,6 +14,7 @@
 #using scripts\zm\zm_flamethrower;
 #using scripts\zm\dive;
 #using scripts\zm\_zm_t4_hud;
+#using scripts\zm\_zm_weap_bo1bouncingbetty;
 #using scripts\zm\_zm_xmodelalias;
 
 #insert scripts\zm\_zm_perks.gsh;
