@@ -7,6 +7,8 @@ As seen on the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetai
 Install *all* of these assets first, since files from this repo are meant to override some of the assets.
 
 It's advised to make a back-up of wpn_t7_zmb_weapons.gdt, since this will be replaced with a version that doesn't produce duplicate asset errors with Smurphy's Improved BO3 Ray Gun
+some might want to make a back-up of core_patch.csv or skip copying the zone_source folder as it is only here to demonstrate that weaponoptions.csv must be commented out
+you can skip copying the bin folder as it is only here to demonstrate that \_custom is to be added to converter_gdt_dirs_0.txt
 Note also that share\raw\sound\aliases\user_aliases.csv and share\raw\sound\globals\loadspec.csv are replaced if you need to make a back-up of them.
 
 * TheAllNightFall's WaW Weapon Ports (don't forget [Weapon Common](https://drive.google.com/file/d/1pzasvTU0tIFtmKbepyGXPPpdEYNyMXmq)):
@@ -41,12 +43,14 @@ Note also that share\raw\sound\aliases\user_aliases.csv and share\raw\sound\glob
 * Kingslayer Kyle's World at War HUD: https://drive.google.com/file/d/1TwEbNNcF1H59AsKANSvK-MC_09aAbouk/view (including [BlackOps3Shaders](https://github.com/LG-RZ/BlackOps3Shaders/releases))
 * natesmithzombies's Custom Random Weapon Powerup: https://forum.modme.co/wiki/threads/706.html
 * Rayjiun's black-and-white visionset: https://discord.com/channels/230615005194616834/230616047613378560/1128724861666218046
+* eMoX's T8 Powerup Delayed Drop: https://www.devraw.net/approved-assets/emox/emox---t8-powerup-delayed-drop
 
 Then install all files from this repo into your Black Ops III installation apart from the folder chalk_drawing_models, which is for reference purposes only
 
 ## Credits
 
 * TheAllNightFall for making this possible with the majority of the weapon ports in this mod
+* Scobalula's [Cereberus](https://github.com/Scobalula/Cerberus-Repo/releases/tag/CustomMapsGoVroom) to extract script files for reference purposes from Deadshot.mp4's [COTD Chronicles Conversion Mod](http://steamcommunity.com/sharedfiles/filedetails/?id=2911456494)
 * Scobalula's [Greyhound](https://github.com/Scobalula/Greyhound) for image extraction (circuits camo, chalk drawings)
 * Scobabula's [HydraX](https://github.com/Scobalula/HydraX) for general asset decompilation, especially map _weapons.csv files
 * [Birdman's XModel Tools For Blender](https://github.com/Wast-3/birdmans-xmodel-tools-for-blender)
@@ -55,3 +59,4 @@ Then install all files from this repo into your Black Ops III installation apart
 * [HzRetro](https://www.ugx-mods.com/forum/mlist/hzretro_764845) for contributing wallbuy layout for Origins
 * XcDylan93 for dive-to-prone and sprint/reload cancel script
 * TheSkyeLord for weaponcamo setup from [his own pack](https://www.ugx-mods.com/forum/full-weapons/84/skyes-waw-weapon-ports/24598/) used by me as a basis for WaW weapons
+* Apex for xmodelalias fix ([originally here](https://steamcommunity.com/sharedfiles/filedetails/?id=1833845566), one file extracted with Cerberus and other files downloaded [from here](https://github.com/clixmods/zm_nuked/blob/main/scripts/shared))

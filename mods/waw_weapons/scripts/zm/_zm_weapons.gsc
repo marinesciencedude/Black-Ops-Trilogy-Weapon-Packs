@@ -32,6 +32,7 @@
 #insert scripts\zm\_zm_perks.gsh;
 #insert scripts\zm\_zm_utility.gsh;
 #insert scripts\zm\_zm_weapons.gsh;
+#insert scripts\zm\_zm_mutators.gsh;
 
 #precache( "material", "minimap_icon_mystery_box" );
 #precache( "material", "specialty_instakill_zombies" );

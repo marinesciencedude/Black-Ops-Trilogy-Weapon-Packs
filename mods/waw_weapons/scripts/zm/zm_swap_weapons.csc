@@ -7,6 +7,8 @@
 #using scripts\zm\_zm_utility;
 #using scripts\zm\_zm_weapons;
 
+#insert scripts\zm\_zm_mutators.gsh;
+
 #namespace zm_swap_weapons;
 
 /*
@@ -137,7 +139,7 @@ function swap_wall_weapon()
 					break;
 				case "sniper_fastbolt": //Locus
 					{
-						/*switch(GetDvarInt("mutator_scopeads"))
+						/*switch(GetGametypeSetting(mutator_scopeads))
 						{
 						case 1:
 							ent.zombie_weapon_upgrade = "t4_kar98k_scope_overlay";
@@ -161,7 +163,7 @@ function swap_wall_weapon()
 				{
 				case "ar_marksman": //Sheiva
 					{
-						if(sheiva == 0 && GetDvarInt("mutator_verruckt_springfield") == 2)
+						if(sheiva == 0 && GetGametypeSetting(mutator_verruckt_springfield) == 2)
 							ent.zombie_weapon_upgrade = "t4_spring";
 						else
 							ent.zombie_weapon_upgrade = "t4_kar98k";
@@ -525,7 +527,7 @@ function swap_wall_weapon()
 					else*/
 						ent struct::delete();
 				}
-				if(!GetDvarInt("mutator_wallbuys_kino_der_toten") || GetDvarInt("mutator_wallbuys_kino_der_toten") == 1) //Der Riese
+				if(!GetGametypeSetting(mutator_wallbuys_kino_der_toten) || GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 1) //Der Riese
 				{
 					switch(VAL)
 					{
@@ -567,7 +569,7 @@ function swap_wall_weapon()
 						}
 					}
 				}
-				if(GetDvarInt("mutator_wallbuys_kino_der_toten") == 3 || GetDvarInt("mutator_wallbuys_kino_der_toten") == 4) //Black Ops
+				if(GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 3 || GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 4) //WaW - Black Ops-style
 				{
 					switch(VAL)
 					{
@@ -579,7 +581,7 @@ function swap_wall_weapon()
 							break;
 						case "smg_burst": //Pharo
 							{
-								if(GetDvarInt("mutator_wallbuys_kino_der_toten") == 3)
+								if(GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 3)
 									ent.zombie_weapon_upgrade = "t4_bar";
 								else
 									ent.zombie_weapon_upgrade = "t4_fg42";
@@ -597,7 +599,7 @@ function swap_wall_weapon()
 							break;
 						case "pistol_fullauto": //L-CAR 9
 							{
-								if(GetDvarInt("mutator_wallbuys_kino_der_toten") == 3)
+								if(GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 3)
 									ent.zombie_weapon_upgrade = "t4_fg42";
 								else
 									ent.zombie_weapon_upgrade = "t4_bar";
@@ -619,7 +621,7 @@ function swap_wall_weapon()
 						}
 					}
 				}
-				else if(GetDvarInt("mutator_wallbuys_kino_der_toten") == 2) //Conn6orsuper117
+				else if(GetGametypeSetting(mutator_wallbuys_kino_der_toten) == 2) //Conn6orsuper117
 				{
 					switch(VAL)
 					{
@@ -914,7 +916,7 @@ function swap_wall_weapon()
 		}
 		case "zm_castle": //Der Eisendrache
 			{
-				if(!GetDvarInt("mutator_wallbuys_der_eisendrache") || GetDvarInt("mutator_wallbuys_der_eisendrache") == 1) //poyzee
+				if(!GetGametypeSetting(mutator_wallbuys_der_eisendrache) || GetGametypeSetting(mutator_wallbuys_der_eisendrache) == 1) //poyzee
 				{
 					switch(VAL)
 					{
@@ -989,7 +991,7 @@ function swap_wall_weapon()
 							break;
 					}
 				}
-				else if(GetDvarInt("mutator_wallbuys_der_eisendrache") == 2) //Conn6orsuper117	
+				else if(GetGametypeSetting(mutator_wallbuys_der_eisendrache) == 2) //Conn6orsuper117	
 				{
 					switch(VAL)
 					{
@@ -1018,7 +1020,7 @@ function swap_wall_weapon()
 								}
 								else //Right from spawn
 								{
-									/*switch(GetDvarInt("mutator_scopeads"))
+									/*switch(GetGametypeSetting(mutator_scopeads))
 									{
 									case 1:
 										ent.zombie_weapon_upgrade = "t4_kar98k_scope_overlay";
@@ -1230,7 +1232,7 @@ function swap_wall_weapon()
 			}
 			case "zm_stalingrad": //Gorod Krovi
 			{
-				if(!GetDvarInt("mutator_wallbuys_gorod_krovi") || GetDvarInt("mutator_wallbuys_gorod_krovi") == 1)
+				if(!GetGametypeSetting(mutator_wallbuys_gorod_krovi) || GetGametypeSetting(mutator_wallbuys_gorod_krovi) == 1)
 				{ 
 					switch(VAL)
 					{
@@ -1296,7 +1298,7 @@ function swap_wall_weapon()
 						break;
 					}
 				}
-				else if(GetDvarInt("mutator_wallbuys_gorod_krovi") == 2) //HzRetro
+				else if(GetGametypeSetting(mutator_wallbuys_gorod_krovi) == 2) //HzRetro
 				{	
 					switch(VAL)
 					{
@@ -1360,7 +1362,7 @@ function swap_wall_weapon()
 			}	
 		}
 		
-		if(GetDvarInt("mutator_wallbuybox") == 2)
+		if(GetGametypeSetting(mutator_wallbuybox) == BOOLMUTATOR_ONOFF_OFF)
 			RemoveZombieBoxWeapon(GetWeapon(ent.zombie_weapon_upgrade));
 		
 		if(isdefined(ent.target) && isdefined(VAL))

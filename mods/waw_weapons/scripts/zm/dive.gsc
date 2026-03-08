@@ -7,6 +7,7 @@
 
 #insert scripts\shared\shared.gsh;
 #insert scripts\shared\version.gsh;
+#insert scripts\zm\_zm_mutators.gsh;
 
 #namespace dive;
 
@@ -26,7 +27,7 @@ function autoexec __init__system__()
 function __init__()
 {
 	callback::on_connect( &on_player_connect );
-	if(GetDvarInt("mutator_slide_dive") == 1)
+	if(GetGametypeSetting(mutator_slide_dive) == 1)
 		zm::register_player_damage_callback(&divetoprone_falldamage);
 }
 
@@ -37,7 +38,7 @@ function private divetoprone_falldamage(inflictor, attacker, damage, flags, mod,
 	offset = (/*128*/131.385052707463-65) * gradient; 	//it should start at 128 but as mentioned in zm_ffotd.gsc only start getting damage at 136 so this is what LINEST produces
 														//also good question as to whether 65-200 produces the same ramp-up as 128-300
 	//also to-do: verify default BO III fall damage values to check gradient
-	if(GetDvarInt("mutator_falldamage") == 1)
+	if(GetGametypeSetting(mutator_falldamage) == BOOLMUTATOR_OFFON_OFF)
 		return -1;
 	
     if(IsPlayer(self) && mod == "MOD_FALLING" && self.divetoprone && !(self HasPerk("specialty_phdflopper")) )
@@ -57,7 +58,7 @@ function on_player_connect()
 	if(GetDvarInt("mutator_sprint_cancel") == 2)
 		self thread reload_cancels_sprint();
 	
-	if(GetDvarInt("mutator_slide_dive") == 1)
+	if(GetGametypeSetting(mutator_slide_dive) == 1)
 		self thread monitor_stance_response();
 }
 
@@ -224,7 +225,7 @@ function dive()
 	
 	endPos = self.origin[2];
     heightDiff = startPos - endPos;
-	if(GetDvarInt("mutator_falldamage") == 2 && heightDiff < GetDvarInt("bg_fallDamageMinHeight") && heightDiff >= 65)
+	if(GetGametypeSetting(mutator_falldamage) == BOOLMUTATOR_OFFON_ON && heightDiff < GetDvarInt("bg_fallDamageMinHeight") && heightDiff >= 65)
 		self DoDamage(int(0.228506360820769*(heightDiff - 65)), self.origin, undefined, undefined, undefined, "MOD_FALLING");
 	
     if( DIVE_COOLDOWN )
