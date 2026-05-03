@@ -11,8 +11,8 @@
 #insert scripts\shared\version.gsh;
 #insert scripts\zm\_zm_weap_freezegun.gsh;
 
-#precache( "client_fx", FX_FREEZEGUN_SHATTER );
-#precache( "client_fx", FX_FREEZEGUN_CRUMPLE );
+/*#precache( "client_fx", FX_FREEZEGUN_SHATTER );
+#precache( "client_fx", FX_FREEZEGUN_CRUMPLE );*/
 
 #namespace zm_weap_freezegun;
 
@@ -23,11 +23,14 @@ function autoexec init_system()
 
 function __init__()
 {
-	clientfield::register( "actor", "toggle_freezegun_crumple", VERSION_DLC5, 1, "int", &freezegun_do_crumple_fx, 0, 0 );
+	if(GetDvarString("mapname") != "zm_coast")
+	{
+		clientfield::register( "actor", "toggle_freezegun_crumple", VERSION_DLC5, 1, "int", &freezegun_do_crumple_fx, 0, 0 );
+		clientfield::register( "actor", "toggle_freezegun_iceover", VERSION_DLC5, 1, "int", &freezegun_iceover, 0, 0 );
+	}
 	clientfield::register( "actor", "toggle_freezegun_shatter", VERSION_DLC5, 1, "int", &freezegun_do_shatter_fx, 0, 0 );
-	clientfield::register( "actor", "toggle_freezegun_iceover", VERSION_DLC5, 1, "int", &freezegun_iceover, 0, 0 );
 	duplicate_render::set_dr_filter_framebuffer( "dissolve", 9, "dissolve_on", undefined, DR_TYPE_FRAMEBUFFER, "mc/c_t8_freezegun_mtl", DR_CULL_ALWAYS );
-	level._effect[ "freezegun_shatter" ] = FX_FREEZEGUN_SHATTER;
+	level._effect[ "freezegun_shatter" ] = "dlc5/tomb/fx_tomb_puzzle_ice_pipe_burst";
 	level._effect[ "freezegun_crumple" ] = FX_FREEZEGUN_CRUMPLE;
 }
 

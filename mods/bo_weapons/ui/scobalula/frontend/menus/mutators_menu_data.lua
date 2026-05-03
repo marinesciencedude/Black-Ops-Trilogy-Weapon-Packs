@@ -285,7 +285,7 @@ DataSources.MutatorSettingsBO = DataSourceHelpers.ListSetup("MutatorSettingsBO",
 function (arg0, arg1, arg2, arg3, arg4)
 	return
 	{
-		CoD.OptionsUtility.CreateDvarSettings(
+		--[[CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"HUD",
 			"Set Heads-Up Display to that of previous games",
@@ -298,7 +298,7 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"Which perk machine out of PhD Flopper/Widow's Wine will be spawned in the game.",
 			"MutatorSettings_PhDWidows",
 			"delayPlayer",
-			BuildBoolSettings({"PhD Flopper", "Widow's Wine"}, "PhD Flopper") ),
+			BuildBoolSettings({"PhD Flopper", "Widow's Wine"}, "PhD Flopper") ),]]
 		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Double Tap",
@@ -327,13 +327,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_Deadshot",
 			"disableClassSelection",
             BuildStringSettings({"1000", "1500"}, "1000") ),
-		CoD.OptionsUtility.CreateDvarSettings(
+		--[[CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Perk Icons",
 			"If the perk icons should be set to the Original Black Ops, BO III with Black Ops colouring, or leave it at the map or custom HUD's icons. MAY NOT WORK ON CUSTOM MAPS",
 			"MutatorSettings_BOPerkIcons",
 			"mutator_bo_perk_icons",
-            BuildStringSettings({"Black Ops", "Recoloured BO III", "Use Map/HUD"}, "Black Ops"), nil, SetDvarSetting),
+            BuildStringSettings({"Black Ops", "Recoloured BO III", "Use Map/HUD"}, "Black Ops"), nil, SetDvarSetting),]]
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Powerup Icons",
@@ -355,7 +355,7 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_RoundMusic",
 			"mutator_round_music",
 			BuildStringSettings({"BO", "BO III"}, "BO"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateDvarSettings(
+		--[[CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Mystery Box FX",
 			"Change between BO III Mystery Box FX and previous games' FX",
@@ -368,7 +368,7 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"If zombies should side-step and roll like in Ascension.",
 			"MutatorSettings_SideStep",
 			"disableContracts",
-			BuildBoolSettings({"Off", "On"}, "On") ),
+			BuildBoolSettings({"Off", "On"}, "On") ),]]
 		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Health Difficulty",
@@ -515,7 +515,7 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"If Gobblegum Machines should be usable.",
 			"MutatorSettings_Gobblegum",
 			"leaderBonus",
-            BuildStringSettings({"Enabled", "Disabled", "Replaced"}, "Enabled") ),
+            BuildStringSettings({"Enabled", "Disabled"--[[, "Replaced"]]}, "Enabled") ),
 		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Der Wunderfizz",
@@ -698,7 +698,7 @@ function (arg0, arg1, arg2, arg3, arg4)
 		--	"MutatorSettings_RayGun",
 		--	"mutator_ray_gun",
 		--	BuildStringSettings({"WaW", "BO III"}, "WaW"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateNamedSettings(
+		--[[CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Winter's Howl",
 			"Add Winter's Howl to all maps' mystery boxes.",
@@ -711,7 +711,7 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"Enable Ray Gun Mark II in the mystery box.",
 			"MutatorSettings_RayGunMkII",
 			"robotShield",
-            BuildBoolSettings({"On", "Off"}, "On") ),
+            BuildBoolSettings({"On", "Off"}, "On") ),]]
 		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Crossbow",
@@ -1167,14 +1167,14 @@ function(arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_DeclassifiedMG42",
 			"maxPlayerEventsPerMinute",
 			BuildStringSettings({"Off", "On"}, "Off") ),
-		--[[CoD.OptionsUtility.CreateNamedSettings(
+		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Call of the Dead Easter Egg Reward",
 			"Force spawns Lightning Bolt powerup (Wunderwaffe DG-2) in place of Death Machine when defeating George A. Romero",
 			"MutatorSettings_GeorgeReward",
 			"objectiveSpawnTime",
 			BuildStringSettings({"Off", "On"}, "Off") ),
-		CoD.OptionsUtility.CreateNamedSettings(
+		--[[CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Call of the Dead Wallbuys",
 			"Whether Call of the Dead wallbuys should use the original Black Ops or World at War weapons.",

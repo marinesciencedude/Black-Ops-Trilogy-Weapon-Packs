@@ -52,10 +52,10 @@
 #precache( "fx", "zombie/fx_powerup_grab_caution_zmb" ); 
 
 // eMoX EDIT : 18/04/2020 - Code updated 14/12/2025
-#precache( "fx", POWERUP_PRE_DROP_SOLO_FX );
+/*#precache( "fx", POWERUP_PRE_DROP_SOLO_FX );
 #precache( "fx", POWERUP_PRE_DROP_POP_SOLO_FX ); 
 #precache( "fx", POWERUP_PRE_DROP_FX );
-#precache( "fx", POWERUP_PRE_DROP_POP_FX );
+#precache( "fx", POWERUP_PRE_DROP_POP_FX );*/
 
 #namespace zm_powerups;
 
@@ -832,7 +832,7 @@ function powerup_setup( powerup_override,powerup_team, powerup_location, powerup
 	{
 	 	if(!is_monk_cycling)
 	 	{
-			if(struct.only_affects_grabber == true)
+			/*if(struct.only_affects_grabber == true)
 			{
 				powerup_pre_drop_fx = POWERUP_PRE_DROP_SOLO_FX;
 				powerup_pre_drop_pop_fx = POWERUP_PRE_DROP_POP_SOLO_FX;
@@ -844,22 +844,22 @@ function powerup_setup( powerup_override,powerup_team, powerup_location, powerup
 			if(isdefined(powerup_pre_drop_fx) && isdefined(powerup_pre_drop_pop_fx))
 			{
 				fx_m = Spawn("script_model",self.origin);
-				fx_m SetModel("tag_origin");
+				fx_m SetModel("tag_origin");*/
 				wait(0.05);
-				PlayFXOnTag(powerup_pre_drop_fx, fx_m,"tag_origin");
+				//PlayFXOnTag(powerup_pre_drop_fx, fx_m,"tag_origin");
 				self PlayLoopSound(POWERUP_PRE_DROP_LOOP_SOUND);
 				
 				wait(1.5);
 				self StopLoopSound(1);
-				fx_m Delete();
+				//fx_m Delete();
 				
 				fx2_m = Spawn("script_model",self.origin);
 				fx2_m SetModel("tag_origin");
 				wait(0.05);
-				PlayFXOnTag(powerup_pre_drop_pop_fx, fx2_m,"tag_origin");
+				//PlayFXOnTag(powerup_pre_drop_pop_fx, fx2_m,"tag_origin");
 				PlaySoundAtPosition(POWERUP_PRE_DROP_POP_SOUND, fx2_m.origin);
 				fx2_m thread fx_pop_delete(2);
-			}
+			//}
 		}
   	}
 

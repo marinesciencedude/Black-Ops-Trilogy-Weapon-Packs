@@ -40,9 +40,12 @@ function __init__()
 	level.weaponZMFreezeGun = GetWeapon( "freezegun" );
 	level.weaponZMFreezeGunUpgraded = GetWeapon( "freezegun_upgraded" );
 
-	clientfield::register( "actor", "toggle_freezegun_crumple", VERSION_DLC5, 1, "int" );
+	if(GetDvarString("mapname") != "zm_coast")
+	{
+		clientfield::register( "actor", "toggle_freezegun_crumple", VERSION_DLC5, 1, "int" );
+		clientfield::register( "actor", "toggle_freezegun_iceover", VERSION_DLC5, 1, "int" );
+	}
 	clientfield::register( "actor", "toggle_freezegun_shatter", VERSION_DLC5, 1, "int" );
-	clientfield::register( "actor", "toggle_freezegun_iceover", VERSION_DLC5, 1, "int" );
 }
 
 function __main__()
