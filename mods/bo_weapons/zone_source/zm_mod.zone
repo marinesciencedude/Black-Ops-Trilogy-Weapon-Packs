@@ -33,10 +33,10 @@ scriptparsetree,scripts/zm/dive.gsc
 //eMoX Timed Drop Powerups
 scriptparsetree,scripts/zm/_zm_powerups.gsc 
 scriptparsetree,scripts/zm/_zm_powerups.gsh 
-fx,_mori2/t8_powerup_pre_drop
-fx,_mori2/t8_powerup_pre_drop_solo
-fx,_mori2/t8_powerup_pre_drop_pop_solo
-fx,_mori2/t8_powerup_pre_drop_pop
+//fx,_mori2/t8_powerup_pre_drop
+//fx,_mori2/t8_powerup_pre_drop_solo
+//fx,_mori2/t8_powerup_pre_drop_pop_solo
+//fx,_mori2/t8_powerup_pre_drop_pop
 
 scriptparsetree,scripts/zm/_zm_weap_quantum_bomb.gsc
 scriptparsetree,scripts/zm/_zm_powerup_random_weapon.gsc
@@ -64,31 +64,31 @@ stringtable,gamedata/weapons/zm/hud_weapons.csv
 //image,t4_weaponwidget_ammopip_smallb
 //image,t4_ammo_counter_tesla
 
-aitype,archetype_zm_factory_zombie
-aitype,spawner_zm_factory_zombie
-aitype,spawner_zm_prototype_zombie
-aitype,spawner_zm_asylum_zombie
-aitype,spawner_zm_asylum_zombie_walltear
-aitype,spawner_zm_swamp_zombie
-aitype,spawner_zm_cosmodrome_zombie
-aitype,spawner_zm_moon_zombie_police
-aitype,spawner_zm_temple_zombie
-aitype,spawner_zm_zod_zombie
-aitype,archetype_zm_usermap_zombie
-aitype,spawner_zm_usermap_zombie
-aitype,spawner_zm_theater_zombie
-aitype,archetype_zm_tomb_zombie
-aitype,spawner_zm_castle_zombie
+//aitype,archetype_zm_factory_zombie
+//aitype,spawner_zm_factory_zombie
+//aitype,spawner_zm_prototype_zombie
+//aitype,spawner_zm_asylum_zombie
+//aitype,spawner_zm_asylum_zombie_walltear
+//aitype,spawner_zm_swamp_zombie
+//aitype,spawner_zm_cosmodrome_zombie
+//aitype,spawner_zm_moon_zombie_police
+//aitype,spawner_zm_temple_zombie
+//aitype,spawner_zm_zod_zombie
+//aitype,archetype_zm_usermap_zombie
+//aitype,spawner_zm_usermap_zombie
+//aitype,spawner_zm_theater_zombie
+//aitype,archetype_zm_tomb_zombie
+//aitype,spawner_zm_castle_zombie
 //aitype,spawner_zm_tomb_crusader
-aitype,spawner_zm_tomb_zombie
+//aitype,spawner_zm_tomb_zombie
 //aitype,spawner_zm_tomb_templar
-aitype,spawner_zm_island_zombie
-aitype,spawner_zm_island_zombie_2
-aitype,spawner_zm_nuketown_zombie
-aitype,spawner_zm_t7_napalm_zombie
-aitype,spawner_zm_nuketown_zombie_hazmat_elemental
-aitype,spawner_zm_hazmatzombie
-scriptparsetree,scripts/zm/_hb21_zm_behavior.gsc
+//aitype,spawner_zm_island_zombie
+//aitype,spawner_zm_island_zombie_2
+//aitype,spawner_zm_nuketown_zombie
+//aitype,spawner_zm_t7_napalm_zombie
+//aitype,spawner_zm_nuketown_zombie_hazmat_elemental
+//aitype,spawner_zm_hazmatzombie
+//scriptparsetree,scripts/zm/_hb21_zm_behavior.gsc
 
 //scriptparsetree,scripts/zm/_zm_ai_dogs.gsc
 
@@ -123,15 +123,15 @@ scriptparsetree,scripts/zm/zm_tomb_challenges.gsc
 scriptparsetree,scripts/zm/perks/_zm_perk_phdflopper.gsc
 scriptparsetree,scripts/zm/perks/_zm_perk_phdflopper.csc
 scriptparsetree,scripts/zm/perks/_zm_perk_phdflopper.gsh
-xmodel,p7_zm_vending_phd
-xmodel,p7_zm_vending_phd_active
-xmodel,wpn_t7_zmb_perk_bottle_phd_view
-xmodel,wpn_t7_zmb_perk_bottle_phd_world
-weapon,zombie_perk_bottle_phd
-fx,_mikeyray/perks/phd/fx_perk_phd
-image,specialty_phdflopper_zombies
+//xmodel,p7_zm_vending_phd
+//xmodel,p7_zm_vending_phd_active
+//xmodel,wpn_t7_zmb_perk_bottle_phd_view
+//xmodel,wpn_t7_zmb_perk_bottle_phd_world
+//weapon,zombie_perk_bottle_phd
+//fx,_mikeyray/perks/phd/fx_perk_phd
+//image,specialty_phdflopper_zombies
 
-include,t5_hud
+//include,t5_hud
 
 scriptparsetree,scripts/zm/_zm_perk_doubletap.gsc
 scriptparsetree,scripts/zm/_zm_perk_doubletap.csc
@@ -275,67 +275,67 @@ weaponcamo,camo_t7_smg_standard
 
 stringtable,gamedata/weapons/common/weaponoptions.csv
 
-weapon,t4_kar98k
-weapon,t4_kar98k_up
-xmodel,wallbuy_kar98k
+//weapon,t4_kar98k
+//weapon,t4_kar98k_up
+//xmodel,wallbuy_kar98k
 
-weapon,t4_kar98k_scope
-weapon,t4_kar98k_scope_up
+//weapon,t4_kar98k_scope
+//weapon,t4_kar98k_scope_up
 
-weapon,t4_spring
-weapon,t4_spring_up
-xmodel,wallbuy_springfield
+//weapon,t4_spring
+//weapon,t4_spring_up
+//xmodel,wallbuy_springfield
 
-weapon,t4_type99r
-weapon,t4_type99r_up
-xmodel,wallbuy_arisaka
+//weapon,t4_type99r
+//weapon,t4_type99r_up
+//xmodel,wallbuy_arisaka
 
-weapon,t4_g43
-weapon,t4_g43_up
-xmodel,wallbuy_gewehr43
+//weapon,t4_g43
+//weapon,t4_g43_up
+//xmodel,wallbuy_gewehr43
 
-weapon,t4_mp44
-weapon,t4_mp44_up
-xmodel,wallbuy_stg44
+//weapon,t4_mp44
+//weapon,t4_mp44_up
+//xmodel,wallbuy_stg44
 
-weapon,t4_carbine
-weapon,t4_carbine_up
-xmodel,wallbuy_m1carbine
+//weapon,t4_carbine
+//weapon,t4_carbine_up
+//xmodel,wallbuy_m1carbine
 
-weapon,t4_m1
-weapon,t4_m1_up
-xmodel,wallbuy_m1garand
+//weapon,t4_m1
+//weapon,t4_m1_up
+//xmodel,wallbuy_m1garand
 
-weapon,t4_type100
-weapon,t4_type100_up
-xmodel,wallbuy_type100
+//weapon,t4_type100
+//weapon,t4_type100_up
+//xmodel,wallbuy_type100
 
-weapon,t4_thompson
-weapon,t4_thompson_up
-xmodel,wallbuy_thompson
+//weapon,t4_thompson
+//weapon,t4_thompson_up
+//xmodel,wallbuy_thompson
 
-weapon,t4_bar
-weapon,t4_bar_up
-xmodel,wallbuy_bar
+//weapon,t4_bar
+//weapon,t4_bar_up
+//xmodel,wallbuy_bar
 
-weapon,t4_bar_bipod
-weapon,t4_bar_bipod_up
+//weapon,t4_bar_bipod
+//weapon,t4_bar_bipod_up
 
-weapon,t4_fg42
-weapon,t4_fg42_up
-xmodel,wallbuy_fg42
+//weapon,t4_fg42
+//weapon,t4_fg42_up
+//xmodel,wallbuy_fg42
 
-weapon,t4_m1897
-weapon,t4_m1897_up
-xmodel,wallbuy_trenchgun
+//weapon,t4_m1897
+//weapon,t4_m1897_up
+//xmodel,wallbuy_trenchgun
 
-weapon,t4_db
-weapon,t4_db_up
-xmodel,wallbuy_doublebarrel
+//weapon,t4_db
+//weapon,t4_db_up
+//xmodel,wallbuy_doublebarrel
 
-weapon,t4_db_saw
-weapon,t4_db_saw_up
-xmodel,wallbuy_sawedoff
+//weapon,t4_db_saw
+//weapon,t4_db_saw_up
+//xmodel,wallbuy_sawedoff
 
 weapon,t4_ray_gun
 weapon,t4_ray_gun_up
@@ -343,13 +343,12 @@ weapon,t4_ray_gun_camo_up
 
 weapon,t5_ak74u
 weapon,t5_ak74u_up_zm
-weapon,t5_ak74u_launcher_zm
-xmodel,wallbuy_ak74u
+//xmodel,wallbuy_ak74u
 
 weapon,t5_aug
 weapon,t5_aug_up_zm
 weapon,t5_aug_shotty_zm
-xmodel,wallbuy_aug
+//xmodel,wallbuy_aug
 
 weapon,t5_china_lake
 weapon,t5_china_lake_up
@@ -378,7 +377,6 @@ weapon,t5_famas_up
 
 weapon,t5_fal
 weapon,t5_fal_up_zm
-weapon,t5_fal_launcher_zm
 //image,i_t5_weapon_fal_r
 //material,mc/mtl_t5_weapon_fal
 
@@ -409,16 +407,16 @@ weapon,t5_l96a1_up
 weapon,t5_l96a1_up_overlay
 weapon,t5_l96a1_up_switch_zm
 weapon,t5_l96a1_up_switch_overlay_zm
-xmodel,wallbuy_l115
+//xmodel,wallbuy_l115
 
 weapon,t5_m14
 weapon,t5_m14_up
-xmodel,wallbuy_m14
+//xmodel,wallbuy_m14
 
 weapon,t5_m16a1
 weapon,t5_m16a1_up_zm
 weapon,t5_m16a1_launcher_zm
-xmodel,wallbuy_m16a1
+//xmodel,wallbuy_m16a1
 
 weapon,t5_m72
 weapon,t5_m72_up
@@ -432,24 +430,24 @@ weapon,t5_minigun_up
 
 weapon,t5_mp5k
 weapon,t5_mp5k_up
-xmodel,wallbuy_mp5k
+//xmodel,wallbuy_mp5k
 
 weapon,t5_mp40
 weapon,t5_mp40_up
-xmodel,wallbuy_mp40
+//xmodel,wallbuy_mp40
 
 weapon,t5_mpl
 weapon,t5_mpl_up
-xmodel,wallbuy_mpl
+//xmodel,wallbuy_mpl
 
 weapon,t5_olympia
 weapon,t5_olympia_up
-xmodel,wallbuy_olympia
+//xmodel,wallbuy_olympia
 
 weapon,t5_pm63
 weapon,t5_pm63_rdw_up_zm
 weapon,t5_pm63_ldw_up_zm
-xmodel,wallbuy_pm63
+//xmodel,wallbuy_pm63
 
 weapon,t5_python
 weapon,t5_python_rdw_up_zm
@@ -466,28 +464,28 @@ weapon,t5_spectre_up
 
 weapon,t5_stakeout
 weapon,t5_stakeout_up
-xmodel,wallbuy_stakeout
+//xmodel,wallbuy_stakeout
 
 //Improved Ray Gun
-weaponfull,ray_gun_zm
-weaponfull,ray_gun_upgraded_zm
+//weaponfull,ray_gun_zm
+//weaponfull,ray_gun_upgraded_zm
 
-scriptparsetree,scripts/zm/zm_claymore.gsc
-weapon,claymore_custom_zm
-material,claymore_hud
-material,claymore_hud_inactive
-fx,custom/weapon/fx_claymore_laser
-xmodel,wallbuy_claymore
+//scriptparsetree,scripts/zm/zm_claymore.gsc
+//weapon,claymore_custom_zm
+//material,claymore_hud
+//material,claymore_hud_inactive
+//fx,custom/weapon/fx_claymore_laser
+//xmodel,wallbuy_claymore
 
-weapon,bo1_bouncingbetty
-xmodel,projectile_bbetty_mine
-xmodel,viewmodel_bbetty_mine
-xmodel,weapon_bbetty_mine
-image,betty_256
-image,betty_144
-image,betty_128
+//weapon,bo1_bouncingbetty
+//xmodel,projectile_bbetty_mine
+//xmodel,viewmodel_bbetty_mine
+//xmodel,weapon_bbetty_mine
+//image,betty_256
+//image,betty_144
+//image,betty_128
 scriptparsetree,scripts/zm/_zm_weap_bo1bouncingbetty.gsc
-xmodel,wallbuy_bouncingbetty
+//xmodel,wallbuy_bouncingbetty
 
 scriptparsetree,scripts/zm/zm_temple_ffotd.gsc
 scriptparsetree,scripts/zm/zm_cosmodrome_ffotd.gsc
@@ -547,11 +545,11 @@ weapon,t5_enfield_alt_up
 
 weapon,sticky_grenade_custom
 
-weapon,raygun_mark_ii_zm
-weapon,raygun_mark_ii_upgraded_zm
+//weapon,raygun_mark_ii_zm
+//weapon,raygun_mark_ii_upgraded_zm
 
-weapon,s2_sten
-weapon,s2_sten_up
+//weapon,s2_sten
+//weapon,s2_sten_up
 
 weapon,t5_wa2000
 weapon,t5_wa2000_up
@@ -582,8 +580,8 @@ weaponfull,t5_mac11_alt_up
 weaponfull,t5_m60e3
 weaponfull,t5_m60e3_up
 
-weapon,t5_thundergun_zm
-weapon,t5_thundergun_upgraded_zm
+//weapon,t5_thundergun_zm
+//weapon,t5_thundergun_upgraded_zm
 
 //weapon,t9_xm4
 //weapon,t9_xm4_up
@@ -650,106 +648,106 @@ weapon,t5_thundergun_upgraded_zm
 
 weapon,legacy_syrette_zm
 
-weapon,freezegun_custom_zm
-weapon,freezegun_custom_upgraded_zm
-scriptparsetree,scripts/zm/_zm_weap_freezegun_custom.gsh
-scriptparsetree,scripts/zm/_zm_weap_freezegun_custom.csc
-scriptparsetree,scripts/zm/_zm_weap_freezegun_custom.gsc
-xanim,ai_zm_dlc5_zombie_crawl_freeze_death_01
-xanim,ai_zm_dlc5_zombie_crawl_freeze_death_02
-xanim,ai_zm_dlc5_zombie_freeze_death_a
-xanim,ai_zm_dlc5_zombie_freeze_death_b
-xanim,ai_zm_dlc5_zombie_freeze_death_c
-xanim,ai_zm_dlc5_zombie_freeze_death_d
-xanim,ai_zm_dlc5_zombie_freeze_death_e
-fx,blood/fx_blood_decal_impact_ground
-fx,dlc2/island/fx_zombie_gib_trail
-fx,dlc5/zmb_weapon/fx_freezegun_crumple
-fx,dlc5/zmb_weapon/fx_freezegun_smoke_cloud
-fx,dlc5/zmb_weapon/fx_freezegun_freeze_md
-fx,dlc5/zmb_weapon/fx_freezegun_reload_smoke
-fx,dlc5/zmb_weapon/fx_freezegun_shatter
-fx,dlc5/zmb_weapon/fx_freezegun_shatter_upg
-fx,dlc5/zmb_weapon/fx_freezegun_freeze_torso
-material,mc/c_t8_freezegun_mtl
+//weapon,freezegun_cutdown_zm
+//weapon,freezegun_upgraded_cutdown_zm
+//scriptparsetree,scripts/zm/_zm_weap_freezegun.gsh
+//scriptparsetree,scripts/zm/_zm_weap_freezegun.csc
+//scriptparsetree,scripts/zm/_zm_weap_freezegun.gsc
+//xanim,ai_zm_dlc5_zombie_crawl_freeze_death_01
+//xanim,ai_zm_dlc5_zombie_crawl_freeze_death_02
+//xanim,ai_zm_dlc5_zombie_freeze_death_a
+//xanim,ai_zm_dlc5_zombie_freeze_death_b
+//xanim,ai_zm_dlc5_zombie_freeze_death_c
+//xanim,ai_zm_dlc5_zombie_freeze_death_d
+//xanim,ai_zm_dlc5_zombie_freeze_death_e
+//fx,blood/fx_blood_decal_impact_ground
+//fx,dlc2/island/fx_zombie_gib_trail
+//fx,dlc5/zmb_weapon/fx_freezegun_crumple
+//fx,dlc5/zmb_weapon/fx_freezegun_smoke_cloud
+//fx,dlc5/zmb_weapon/fx_freezegun_freeze_md
+//fx,dlc5/zmb_weapon/fx_freezegun_reload_smoke
+//fx,dlc5/zmb_weapon/fx_freezegun_shatter
+//fx,dlc5/zmb_weapon/fx_freezegun_shatter_upg
+//fx,dlc5/zmb_weapon/fx_freezegun_freeze_torso
+//material,mc/c_t8_freezegun_mtl
 
 //chalk drawing image from iw_03.iwd
 xmodel,wallbuy_grenade_bag
 
 sound,zm_mod
 
-image,i_t7_zm_chalk_buy_arak_c
-image,i_t7_zm_chalk_buy_cqw_c
-image,i_t7_zm_chalk_buy_krm_c
-image,i_t7_zm_chalk_buy_kuda_c
-image,i_t7_zm_chalk_buy_m8a4_c
-image,i_t7_zm_chalk_buy_shiva_c
-image,i_t7_zm_chalk_buy_spyder_c
-image,i_t7_zm_chalk_buy_triton_c
-image,i_t7_zm_chalk_buy_vmp_c
-image,i_t7_zm_chalk_buy_argus_c
-image,i_t7_zm_chalk_buy_pharaoh_c
-image,i_t7_zm_chalk_buy_mp40_c
-image,i_t7_zm_chalk_buy_hvk30_c
-image,i_t7_zm_chalk_buy_trip_mine_c
-image,i_t7_zm_chalk_buy_stg44_c
-image,i_t7_zm_chalk_buy_locus_c
-image,i_t7_zm_chalk_buy_thomp_c
-xmodel,wallbuy_t7_m1927
+//image,i_t7_zm_chalk_buy_arak_c
+//image,i_t7_zm_chalk_buy_cqw_c
+//image,i_t7_zm_chalk_buy_krm_c
+//image,i_t7_zm_chalk_buy_kuda_c
+//image,i_t7_zm_chalk_buy_m8a4_c
+//image,i_t7_zm_chalk_buy_shiva_c
+//image,i_t7_zm_chalk_buy_spyder_c
+//image,i_t7_zm_chalk_buy_triton_c
+//image,i_t7_zm_chalk_buy_vmp_c
+//image,i_t7_zm_chalk_buy_argus_c
+//image,i_t7_zm_chalk_buy_pharaoh_c
+//image,i_t7_zm_chalk_buy_mp40_c
+//image,i_t7_zm_chalk_buy_hvk30_c
+//image,i_t7_zm_chalk_buy_trip_mine_c
+//image,i_t7_zm_chalk_buy_stg44_c
+//image,i_t7_zm_chalk_buy_locus_c
+//image,i_t7_zm_chalk_buy_thomp_c
+//xmodel,wallbuy_t7_m1927
 
-image,i_ger_gewehr43_wall_chalk_c
-image,i_usa_m1carbine_wall_chalk_c
-image,i_usa_m1carbine_wall_chalk_c
-image,i_ger_stg44_wall_chalk_c
-image,i_ger_mp40s2_wall_chalk_c
-image,i_ger_k98_irons_wall_chalk_c
-image,i_usa_thompson_wall_chalk_c
-image,i_jpn_type100_wall_chalk_c
-image,i_ger_fg42_wall_chalk_c
-image,i_ger_m30_wall_chalk_c
-image,i_t8_wpn_shotty_m1897_wall_chalk_c
+//image,i_ger_gewehr43_wall_chalk_c
+//image,i_usa_m1carbine_wall_chalk_c
+//image,i_usa_m1carbine_wall_chalk_c
+//image,i_ger_stg44_wall_chalk_c
+//image,i_ger_mp40s2_wall_chalk_c
+//image,i_ger_k98_irons_wall_chalk_c
+//image,i_usa_thompson_wall_chalk_c
+//image,i_jpn_type100_wall_chalk_c
+//image,i_ger_fg42_wall_chalk_c
+//image,i_ger_m30_wall_chalk_c
+//image,i_t8_wpn_shotty_m1897_wall_chalk_c
 image,i_t7_zm_chalk_buy_betty
 
-xmodel,wallbuy_s2_fg42
-xmodel,wallbuy_s2_gewehr43
-xmodel,wallbuy_s2_kar98k
-xmodel,wallbuy_s2_m1a1carbine
-xmodel,wallbuy_s2_m30
-xmodel,wallbuy_s2_type100
-xmodel,wallbuy_t8_m1897
-xmodel,wallbuy_s2_mp40
-xmodel,wallbuy_s2_stg44
-xmodel,wallbuy_s2_m1a1thompson
-xmodel,wallbuy_t7_sten
+//xmodel,wallbuy_s2_fg42
+//xmodel,wallbuy_s2_gewehr43
+//xmodel,wallbuy_s2_kar98k
+//xmodel,wallbuy_s2_m1a1carbine
+//xmodel,wallbuy_s2_m30
+//xmodel,wallbuy_s2_type100
+//xmodel,wallbuy_t8_m1897
+//xmodel,wallbuy_s2_mp40
+//xmodel,wallbuy_s2_stg44
+//xmodel,wallbuy_s2_m1a1thompson
+//xmodel,wallbuy_t7_sten
 
 //TrustInUma's DER RIESE
-image,i_t7_zm_chalk_buy_pharo_c
-image,bo3_mp40_chalk_c
-image,bo3_stg44_chalk_c
-image,i_smg_sten_wallbuy_c
+//image,i_t7_zm_chalk_buy_pharo_c
+//image,bo3_mp40_chalk_c
+//image,bo3_stg44_chalk_c
+//image,i_smg_sten_wallbuy_c
 
-image,classic_clean_cherry
-material,classic_clean_cherry
-image,classic_clean_deadshot
-material,classic_clean_deadshot
-image,classic_clean_doubletap_alt
-material,classic_clean_doubletap_alt
-image,classic_clean_flopper
-material,classic_clean_flopper
-image,classic_clean_juggernog
-material,classic_clean_juggernog
-image,classic_clean_mulekick
-material,classic_clean_mulekick
-image,classic_clean_revive
-material,classic_clean_revive
-image,classic_clean_speed
-material,classic_clean_speed
-image,classic_clean_staminup
-material,classic_clean_staminup
-image,classic_clean_widows
-material,classic_clean_widows
-image,classic_clean_doubletap
-material,classic_clean_doubletap
+//image,classic_clean_cherry
+//material,classic_clean_cherry
+//image,classic_clean_deadshot
+//material,classic_clean_deadshot
+//image,classic_clean_doubletap_alt
+//material,classic_clean_doubletap_alt
+//image,classic_clean_flopper
+//material,classic_clean_flopper
+//image,classic_clean_juggernog
+//material,classic_clean_juggernog
+//image,classic_clean_mulekick
+//material,classic_clean_mulekick
+//image,classic_clean_revive
+//material,classic_clean_revive
+//image,classic_clean_speed
+//material,classic_clean_speed
+//image,classic_clean_staminup
+//material,classic_clean_staminup
+//image,classic_clean_widows
+//material,classic_clean_widows
+//image,classic_clean_doubletap
+//material,classic_clean_doubletap
 image,classic_clean_powerup_instakill
 material,classic_clean_powerup_instakill
 image,classic_clean_powerup_double
@@ -761,44 +759,44 @@ material,classic_clean_powerup_deathmachine
 image,classic_clean_powerup_blood
 material,classic_clean_powerup_blood
 
-image,zod_specialty_flopper
-image,zod_specialty_mule
-image,zod_specialty_deadshot
-image,zod_specialty_doubletap
-image,zod_specialty_jugg
-image,zod_specialty_staminup
-image,zod_specialty_quickrevive
-image,zod_specialty_speedcola
-image,zod_specialty_widows
+//image,zod_specialty_flopper
+//image,zod_specialty_mule
+//image,zod_specialty_deadshot
+//image,zod_specialty_doubletap
+//image,zod_specialty_jugg
+//image,zod_specialty_staminup
+//image,zod_specialty_quickrevive
+//image,zod_specialty_speedcola
+//image,zod_specialty_widows
 
-image,madkixs_specialty_phdflopper
-material,madkixs_specialty_phdflopper
-image,madkixs_specialty_mulekick
-material,madkixs_specialty_mulekick
-image,madkixs_specialty_quickrevive
-material,madkixs_specialty_quickrevive
-image,madkixs_specialty_juggernog
-material,madkixs_specialty_juggernog
-image,madkixs_specialty_speedcola
-material,madkixs_specialty_speedcola
-image,madkixs_specialty_staminup
-material,madkixs_specialty_widowswine
-image,madkixs_specialty_staminup
-material,madkixs_specialty_staminup
-image,madkixs_specialty_electriccherry
-material,madkixs_specialty_electriccherry
-image,madkixs_specialty_deadshot
-material,madkixs_specialty_deadshot
-image,madkixs_specialty_doubletap2
-material,madkixs_specialty_doubletap2
-image,madkixs_specialty_doubletap
-material,madkixs_specialty_doubletap
-image,specialty_giant_doubletap1_zombies
+//image,madkixs_specialty_phdflopper
+//material,madkixs_specialty_phdflopper
+//image,madkixs_specialty_mulekick
+//material,madkixs_specialty_mulekick
+//image,madkixs_specialty_quickrevive
+//material,madkixs_specialty_quickrevive
+//image,madkixs_specialty_juggernog
+//material,madkixs_specialty_juggernog
+//image,madkixs_specialty_speedcola
+//material,madkixs_specialty_speedcola
+//image,madkixs_specialty_staminup
+//material,madkixs_specialty_widowswine
+//image,madkixs_specialty_staminup
+//material,madkixs_specialty_staminup
+//image,madkixs_specialty_electriccherry
+//material,madkixs_specialty_electriccherry
+//image,madkixs_specialty_deadshot
+//material,madkixs_specialty_deadshot
+//image,madkixs_specialty_doubletap2
+//material,madkixs_specialty_doubletap2
+//image,madkixs_specialty_doubletap
+//material,madkixs_specialty_doubletap
+//image,specialty_giant_doubletap1_zombies
 
-fx,custom/magic_box_og/fx_weapon_box_open_glow_og
-fx,custom/magic_box_og/fx_weapon_box_idle_glow_og
-fx,custom/magic_box_og/fx_weapon_box_marker_og
-fx,custom/magic_box_og/fx_weapon_box_marker_fl_og
+//fx,custom/magic_box_og/fx_weapon_box_open_glow_og
+//fx,custom/magic_box_og/fx_weapon_box_idle_glow_og
+//fx,custom/magic_box_og/fx_weapon_box_marker_og
+//fx,custom/magic_box_og/fx_weapon_box_marker_fl_og
 fx,wetegg/iwperks/emptyFXIW
 
 //Frost Iceforge's custom eye color

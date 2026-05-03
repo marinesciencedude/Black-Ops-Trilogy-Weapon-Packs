@@ -2350,7 +2350,7 @@ function swap_wall_weapon()
 			}
 		}
 	}
-	else if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON)
+	/*else if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON)
 	{
 		foreach(ent in struct::get_array("claymore_purchase", "targetname"))
 		{
@@ -2367,6 +2367,6 @@ function swap_wall_weapon()
 				spawn_loc.script_vector = (0, -90, 0);
 			}
 		}
-	}
+	}*/
 }
 

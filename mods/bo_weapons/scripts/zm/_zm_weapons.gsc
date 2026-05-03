@@ -838,7 +838,7 @@ function player_can_use_content( weapon )
 
 function init_spawnable_weapon_upgrade()
 {
-	if((GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON && GetDvarString("mapname") != "zm_prototype") || GetDvarString("mapname") == "zm_stalingrad")
+	/*if((GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON && GetDvarString("mapname") != "zm_prototype") || GetDvarString("mapname") == "zm_stalingrad")
 		zm_swap_weapons::swap_claymores();
 	else if(GetDvarString("mapname") != "zm_prototype") //is there an actual way to figure out trip mine wallbuys exist?
 	{
@@ -858,7 +858,7 @@ function init_spawnable_weapon_upgrade()
 			else
 				ent.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin + VectorScale((0, -0.5, 0), 1), spawn_loc.angles);
 		}
-	}
+	}*/
 	zm_swap_weapons::swap_wall_weapon();
 	
 	// spawn_list construction must be matched in _zm_weapons.csc function init() or your level will not load.

@@ -19,7 +19,7 @@
 #using scripts\zm\_zm_spawner;
 #using scripts\zm\_zm_utility;
 #using scripts\zm\_zm_weapons;
-#using scripts\zm\zm_claymore;
+//#using scripts\zm\zm_claymore;
 #using scripts\zm\_zm_unitrigger;
 
 #insert scripts\zm\_zm_mutators.gsh;
@@ -2493,7 +2493,6 @@ function swap_wall_weapon()
 		}
 	}
 	
-	
 	if(GetDvarString("mapname") == "zm_nacht")
 	{
 		if(GetGametypeSetting(mutator_ukiyo_waw) && GetGametypeSetting(mutator_ukiyo_waw) != 1)
@@ -2517,7 +2516,7 @@ function swap_wall_weapon()
 			}
 		}
 	}
-	else if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON)
+	/*else if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON)
 	{
 		foreach(ent in struct::get_array("claymore_purchase", "targetname"))
 		{
@@ -2534,7 +2533,7 @@ function swap_wall_weapon()
 				spawn_loc.script_vector = (0, -90, 0);
 			}
 		}
-	}
+	}*/
 }
 
 /*
@@ -3701,7 +3700,7 @@ function swap_chalk()
 	} }
 }
 
-function swap_claymores()
+/*function swap_claymores()
 {
 	count = 0;
 	foreach(ent in struct::get_array("claymore_purchase", "targetname"))
@@ -3761,7 +3760,7 @@ function swap_claymores()
 	}
 	if(GetDvarString("mapname") != "zm_pentagon")
 		thread zm_claymore::init();
-}
+}*/
 
 function visibility_and_update_prompt( player )
 {

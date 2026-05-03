@@ -3,8 +3,9 @@
 #using scripts\shared\clientfield_shared;
 #using scripts\zm\_zm_powerups;
 #using scripts\zm\crossbow_bolt;
-#using scripts\zm\_zm_t5_custom_hud;
-#using scripts\zm\_zm_weap_freezegun_custom;
+
+//#using scripts\zm\_zm_t5_custom_hud;
+//#using scripts\zm\_zm_weap_freezegun_custom;
 
 //ukiyo's Nacht der Untoten
 #using scripts\zm\_zm_t4_hud;

@@ -621,6 +621,8 @@ function apply_choices() {
 			bgb_machine thread hide_bgb_machine();
 			bgb_machine thread fire_sale_disable();
 		}
+		
+		level.var_5a072535 = &function_b2f238aa;
 	}
 	
 	//still crashes when opening the box, not sure why it doesn't happen in WaW mod
@@ -907,6 +909,29 @@ function fire_sale_disable()
 	level waittill("fire_sale_on");
 	self hide_bgb_machine();
 	self fire_sale_disable();
+}
+
+function function_b2f238aa(State)
+{
+	self notify("away");
+	self.State = "away";
+	self ShowZBarrierPiece(0);
+	self ShowZBarrierPiece(5);
+	self thread function_af73d05f();
+}
+
+function function_af73d05f()
+{
+	self endon("zbarrier_state_change");
+	self clientfield::set("bgb_machine_state", 4);
+	self SetZBarrierPieceState(5, "closed");
+	for(;;)
+	{
+		wait(RandomFloatRange(180, 1800));
+		self SetZBarrierPieceState(0, "opening");
+		wait(RandomFloatRange(180, 1800));
+		self SetZBarrierPieceState(0, "closing");
+	}
 }
 
 function Sand() //I wonder why when decompiling from Cypress' Monkey Exterminiation Mod

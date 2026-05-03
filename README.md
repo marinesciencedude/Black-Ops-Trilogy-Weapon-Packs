@@ -1,7 +1,17 @@
 # Black Ops 1 Weapon Pack
 
-As seen on the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=2987931258) and [UGX](https://www.ugx-mods.com/forum/mod-releases/75/black-ops-1-zombies-weapon-pack/23821/)
-
+As seen on the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=2987931258) and [UGX](https://www.ugx-mods.com/forum/mod-releases/75/black-ops-1-zombies-weapon-pack/23821/)  
+This version is cut down to meet asset limits so that Call of the Dead is able to load, will not work on other maps:
+* Removed duplicate PhD Flopper Machine assets
+* Removed FX from eMoX Timed Drop Powerups (delay still works but you won't see where it drops beforehand)
+* Removed zombie side-step/rolling option
+* Removed HUD, Powerup Icon options (never worked on COTD)
+* Removed WaW weapon assets
+* Removed duplicate claymore assets
+* Removed Ray Gun Mark II option
+* Removed Winter's Howl option
+* Removed Mystery Box FX option
+ 
 ## Installation instructions for building this mod:
 
 Install *all* of these assets first, since files from this repo are meant to override some of the assets. L3akMod and T7MTEnhancements are required additions to ensure Mod Tools can properly build the mod.

@@ -5,14 +5,14 @@
 #using scripts\zm\_zm_utility;
 
 #using scripts\shared\spawner_shared;
-#using scripts\zm\_hb21_zm_behavior;
+//#using scripts\zm\_hb21_zm_behavior;
 #using scripts\shared\clientfield_shared;
 
 #using scripts\zm\crossbow_bolt;
 #using scripts\zm\_zm_weap_crossbow;
 #using scripts\zm\dive;
-#using scripts\zm\_zm_t5_custom_hud;
-#using scripts\zm\_zm_weap_freezegun_custom;
+//#using scripts\zm\_zm_t5_custom_hud;
+//#using scripts\zm\_zm_weap_freezegun_custom;
 #using scripts\zm\_zm_weap_bo1bouncingbetty;
 #using scripts\zm\zm_weap_t5_ballistic_knife;
 
