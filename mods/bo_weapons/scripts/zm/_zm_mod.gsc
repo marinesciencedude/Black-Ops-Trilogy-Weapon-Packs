@@ -671,7 +671,18 @@ function apply_choices() {
 		}
 	}
 	
-	if(GetGametypeSetting(mutator_crossbow) == BOOLMUTATOR_ONOFF_OFF)
+	if(GetDvarString("mapname") == "zm_moon")
+	{
+		if(GetGametypeSetting(mutator_crossbow) == 2)
+		{
+			zm_utility::include_weapon( "t5_crossbow", true );
+			zm_utility::include_weapon( "t5_crossbow_up", false );
+			zm_weapons::add_zombie_weapon( "t5_crossbow", "t5_crossbow_up", "special", 5000, "", "", undefined, undefined, false, "" );
+			zm_weapons::add_limited_weapon("t5_crossbow", 1);
+			aat::register_aat_exemption(getweapon("t5_crossbow_up"));
+		}
+	}
+	else if(GetGametypeSetting(mutator_crossbow) == 3)
 	{
 		/*if(GetDvarInt("mutator_bocw_crossbow") == MUTATOR_OFFON_ON
 		{

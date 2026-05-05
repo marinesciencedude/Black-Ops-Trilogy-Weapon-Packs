@@ -487,7 +487,15 @@ weapon,t5_uzi_up
 weapon,t5_uzi_alt
 weapon,t5_uzi_up_alt
 
-include,carrabella_wetegg_crossbow
+//include,carrabella_wetegg_crossbow
+//T5 Crossbow
+weapon,t5_crossbow_zm
+weapon,t5_crossbow_up_zm
+scriptparsetree,scripts/zm/_zm_weap_crossbow.gsc
+fx,carrabella/wpn_crossbow/exp/crossbow_impact_fx
+fx,carrabella/wpn_crossbow/impact_blink/crossbow_blink_2ms_red
+fx,carrabella/wpn_crossbow/impact_blink/crossbow_blink_2ms_green
+
 //weapon,t9_crossbow
 //weapon,t9_crossbow_up
 scriptparsetree,scripts/zm/crossbow_bolt.csc

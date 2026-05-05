@@ -21,7 +21,7 @@ Note also that share\raw\sound\aliases\user_aliases.csv and share\raw\sound\glob
   * https://www.devraw.net/approved-assets/theallnightfall/world-at-war-raygun
   * https://www.devraw.net/approved-assets/theallnightfall/black-ops-1-thundergun
 * Lamy619's [WaW Bouncing Betties Port](https://www.devraw.net/approved-assets/lamy619/waw-bouncing-betties-port)
-* Carrabella & WetEgg's Black ops 1 and 2 crossbow: https://drive.google.com/file/d/1QpNYEj8BWTOKtFTKXWFSnD-k1scunuZJ/view
+* Carrabella & WetEgg's Black ops 1 and 2 crossbow, as modified by Nebmajin with script by XcDylan93: https://www.mediafire.com/file/pdzafk5dg9t05tg/Bo1_Bo2_Crossbows_fixed.zip/file
 * L3akMod: https://wiki.modme.co/wiki/black_ops_3/lua_(lui)/Installation.html
 * Scobalula's T7MTEnhancements: https://github.com/Scobalula/T7MTEnhancements
 * Smurphy's Improved BO3 Ray Gun: https://forum.modme.co/wiki/threads/3714.html

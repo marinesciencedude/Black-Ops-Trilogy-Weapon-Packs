@@ -254,10 +254,10 @@ function (arg0, arg1, arg2, arg3, arg4)
             models        = { tabName 	= "Mystery Box", 				    tabIcon = "" },
             properties    = { tabId 	= "MutatorSettingsMysteryBox", 		dataSourceName 	= "MutatorSettingsMysteryBox",	title =	"Mystery Box Settings" }
         },
-		{
+		--[[{
             models        = { tabName 	= "BOCW Models", 				tabIcon = "" },
             properties    = { tabId 	= "MutatorSettingsBOCWModels", 		dataSourceName 	= "MutatorSettingsBOCWModels",	title =	"Black Ops Cold War Models" }
-        },
+        },]]
 		{
 			models		  = { tabName	= "PaP Camo",						tabIcon = "" },
 			properties	  = { tabId		= "MutatorSettingsPaPCamo",			dataSourceName	= "MutatorSettingsPaPCamo",		title = "Pack-a-Punch Camouflage Settings" }
@@ -695,10 +695,10 @@ function (arg0, arg1, arg2, arg3, arg4)
 		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Crossbow",
-			"Enable Crossbow in the mystery box.",
+			"Enable or disable Crossbow in the mystery box, or leave it at the map's default availability.",
 			"MutatorSettings_Crossbow",
-			"setbacks",
-            BuildBoolSettings({"On", "Off"}, "On") ),
+			"pointsPerWeaponKill",
+            BuildStringSettings({"Map Default", "On", "Off"}, "Map Default") ),
 		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Ballistic Knife",
@@ -1147,7 +1147,7 @@ function(arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_DeclassifiedMG42",
 			"maxPlayerEventsPerMinute",
 			BuildStringSettings({"Off", "On"}, "Off") ),
-		CoD.OptionsUtility.CreateNamedSettings(
+		--[[CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Call of the Dead Easter Egg Reward",
 			"Force spawns Lightning Bolt powerup (Wunderwaffe DG-2) in place of Death Machine when defeating George A. Romero",
@@ -1160,6 +1160,6 @@ function(arg0, arg1, arg2, arg3, arg4)
 			"Whether Call of the Dead wallbuys should use the original Black Ops or World at War weapons.",
 			"MutatorSettings_CalloftheDead",
 			"pointsPerSecondaryKill",
-			BuildStringSettings({"Black Ops", "World at War"}, "Black Ops") )
+			BuildStringSettings({"Black Ops", "World at War"}, "Black Ops") )]]
 	}
 end, nil, nil, Update)

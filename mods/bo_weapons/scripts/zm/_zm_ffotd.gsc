@@ -9,7 +9,7 @@
 #using scripts\shared\clientfield_shared;
 
 #using scripts\zm\crossbow_bolt;
-#using scripts\zm\zm_weap_crossbow;
+#using scripts\zm\_zm_weap_crossbow;
 #using scripts\zm\dive;
 #using scripts\zm\_zm_t5;
 #using scripts\zm\_zm_weap_freezegun;

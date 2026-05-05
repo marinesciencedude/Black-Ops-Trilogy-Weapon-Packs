@@ -315,7 +315,15 @@ function applyChoices() {
 		zm_weapons::include_upgraded_weapon( "shotgun_energy", "shotgun_energy_upgraded", false, 5000, 500);
 	}*/
 	
-	if(GetGametypeSetting(mutator_crossbow) == BOOLMUTATOR_ONOFF_OFF)
+	if(GetDvarString("mapname") == "zm_moon")
+	{
+		if(GetGametypeSetting(mutator_crossbow) == 2)
+		{
+			zm_weapons::include_weapon( "t5_crossbow", true, 5000, 0);
+			zm_weapons::include_upgraded_weapon( "t5_crossbow", "t5_crossbow_up", false, 5000, 0);
+		}
+	}
+	else if(GetGametypeSetting(mutator_crossbow) == 3)
 	{
 		/*if(GetDvarInt("mutator_bocw_crossbow") == MUTATOR_OFFON_ON
 			RemoveZombieBoxWeapon(GetWeapon("t9_crossbow"));
