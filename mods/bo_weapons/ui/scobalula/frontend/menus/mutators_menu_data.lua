@@ -330,10 +330,17 @@ function (arg0, arg1, arg2, arg3, arg4)
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Perk Icons",
-			"If the perk icons should be set to the Original Black Ops, BO III with Black Ops colouring, or leave it at the map's icons. MAY NOT WORK ON CUSTOM MAPS",
+			"If the perk icons should be set to the Original Black Ops, BO III with Black Ops colouring, or leave it at the map or custom HUD's icons. MAY NOT WORK ON CUSTOM MAPS",
 			"MutatorSettings_BOPerkIcons",
 			"mutator_bo_perk_icons",
-            BuildStringSettings({"Black Ops", "Recoloured BO III", "Use Map"}, "Black Ops"), nil, SetDvarSetting),
+            BuildStringSettings({"Black Ops", "Recoloured BO III", "Use Map/HUD"}, "Black Ops"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Powerup Icons",
+			"If the powerup icons should be set to the Original Black Ops or leave it at the map or custom HUD's icons.",
+			"MutatorSettings_BOPowerupIcons",
+			"mutator_bo_powerup_icons",
+            BuildStringSettings({"Black Ops", "Use Map/HUD"}, "Black Ops"), nil, SetDvarSetting),
 		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Scope ADS",

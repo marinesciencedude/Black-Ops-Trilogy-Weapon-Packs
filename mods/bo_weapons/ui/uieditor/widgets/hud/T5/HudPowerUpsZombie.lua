@@ -44,7 +44,27 @@ CoD.PowerUps.ClientFieldNames = {
     {
         clientFieldName = "powerup_zombie_blood",
         material = RegisterMaterial("t5specialty_zomblood_zombies")
-    }
+    },
+	{
+		clientFieldName = "powerup_instant_kill_bo",
+		material = RegisterMaterial( "classic_clean_powerup_instakill" )
+	},
+	{
+		clientFieldName = "powerup_double_points_bo",
+		material = RegisterMaterial( "classic_clean_powerup_double" )
+	},
+	{
+		clientFieldName = "powerup_fire_sale_bo",
+		material = RegisterMaterial( "classic_clean_powerup_sale" )
+	},
+	{
+		clientFieldName = "powerup_mini_gun_bo",
+		material = RegisterMaterial( "classic_clean_powerup_deathmachine" )
+	},
+	{
+		clientFieldName = "powerup_zombie_blood_bo",
+		material = RegisterMaterial( "classic_clean_powerup_blood" )
+	}
 }
 
 CoD.PowerUps.UpgradeClientFieldNames = {
