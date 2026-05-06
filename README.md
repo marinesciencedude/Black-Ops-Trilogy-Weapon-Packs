@@ -11,6 +11,7 @@ This version is cut down to meet asset limits so that Call of the Dead is able t
 * Removed Ray Gun Mark II option
 * Removed Winter's Howl option
 * Removed Mystery Box FX option
+* Changed crossbow explosion FX
  
 ## Installation instructions for building this mod:
 

@@ -492,7 +492,7 @@ weapon,t5_uzi_up_alt
 weapon,t5_crossbow_zm
 weapon,t5_crossbow_up_zm
 scriptparsetree,scripts/zm/_zm_weap_crossbow.gsc
-fx,carrabella/wpn_crossbow/exp/crossbow_impact_fx
+//fx,carrabella/wpn_crossbow/exp/crossbow_impact_fx
 fx,carrabella/wpn_crossbow/impact_blink/crossbow_blink_2ms_red
 fx,carrabella/wpn_crossbow/impact_blink/crossbow_blink_2ms_green
 

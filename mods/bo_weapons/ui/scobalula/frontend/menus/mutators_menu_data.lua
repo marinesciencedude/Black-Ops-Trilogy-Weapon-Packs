@@ -1174,6 +1174,13 @@ function(arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_GeorgeReward",
 			"objectiveSpawnTime",
 			BuildStringSettings({"Off", "On"}, "Off") ),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Scavenger Infinite Damage",
+			"Disable infinite damage against zombies for Call of the Dead's Hyena Infra-Dead",
+			"MutatorSettings_ScavengerDamage",
+			"mutator_scavenger_damage",
+			BuildStringSettings({"Off", "On"}, "Off"), nil, SetDvarSetting),
 		--[[CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Call of the Dead Wallbuys",
