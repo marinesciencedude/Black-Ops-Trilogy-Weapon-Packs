@@ -83,7 +83,7 @@ function main_end()
 	column = int(difficulty) + 1;
 	zombie_utility::set_zombie_var("zombie_move_speed_multiplier", 4, 0, column);
 	
-	spawner::add_archetype_spawn_function( "zombie", &test );
+	//spawner::add_archetype_spawn_function( "zombie", &test );
 	
 	if(!IsInArray(getarraykeys(level.exert_sounds[1]), "burp"))
 	{
@@ -428,8 +428,8 @@ function optimize_for_splitscreen()
 	return false;
 }
 
-function test()
+/*function test()
 {
 	if(GetGametypeSetting(mutator_sidestep) == BOOLMUTATOR_OFFON_ON)
 		self hb21_zm_behavior::enable_side_step();
-}
+}*/
