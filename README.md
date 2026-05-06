@@ -5,7 +5,7 @@ This version is cut down to meet asset limits so that Call of the Dead is able t
 * Removed duplicate PhD Flopper Machine assets
 * Removed FX from eMoX Timed Drop Powerups (delay still works but you won't see where it drops beforehand)
 * Removed zombie side-step/rolling option
-* Removed HUD, Powerup Icon options (never worked on COTD)
+* Removed HUD options (never worked on COTD)
 * Removed WaW weapon assets
 * Removed duplicate claymore assets
 * Removed Ray Gun Mark II option

@@ -181,6 +181,9 @@ function main_end()
 		level.zombie_powerups["minigun"].client_field_name = "powerup_mini_gun_bo";
 		clientfield::register("toplayer", "powerup_zombie_blood_bo", 1, 2, "int");
 		level.zombie_powerups["zombie_blood"].client_field_name = "powerup_zombie_blood_bo";
+		clientfield::register("toplayer", "powerup_zombie_tesla_bo", 1, 2, "int");
+		level.zombie_powerups["tesla"].client_field_name = "powerup_zombie_tesla_bo";
+		level._custom_powerups["tesla"].weapon_countdown = &function_43e4e656;
 	}
 	
 	if(GetGametypeSetting(mutator_runtobarrier) && GetGametypeSetting(mutator_runtobarrier) != 1)
@@ -233,6 +236,72 @@ function zombieIsAtEntrance( behaviorTreeEntity )
 	isAtEntrance = IsDefined( behaviorTreeEntity.first_node ) && isAtScriptGoal;
 
 	return isAtEntrance;
+}
+
+function function_43e4e656(e_player, str_weapon_time)
+{
+	e_player endon("death");
+	e_player endon("player_downed");
+	e_player endon("replace_weapon_powerup");
+	e_player thread function_85b020b8("tesla");
+	while(e_player.zombie_vars["tesla"] > 0)
+	{
+		var_f8142bf2 = e_player GetWeaponAmmoStock(level.zombie_powerup_weapon["tesla"]);
+		var_d14161fa = e_player GetWeaponAmmoClip(level.zombie_powerup_weapon["tesla"]);
+		n_total = var_f8142bf2 + var_d14161fa;
+		if(n_total == 0)
+		{
+			break;
+		}
+		if(n_total <= 10 && n_total > 5)
+		{
+			e_player.zombie_vars["tesla"] = 0.2;
+		}
+		else if(n_total <= 5)
+		{
+			e_player.zombie_vars["tesla"] = 0.1;
+		}
+		else
+		{
+			e_player.zombie_vars["tesla"] = 1;
+		}
+		wait(0.05);
+	}
+}
+
+function function_85b020b8(str_powerup)
+{
+	self endon("disconnect");
+	if(!isdefined(self.zombie_vars))
+	{
+		self.zombie_vars = [];
+	}
+	self.zombie_vars[str_powerup] = 1;
+	self clientfield::set_to_player(level.zombie_powerups[str_powerup].client_field_name, 1);
+	self thread function_67b2fe10(str_powerup);
+	while(isdefined(self.zombie_vars[str_powerup]) && self.zombie_vars[str_powerup] > 0)
+	{
+		if(self.zombie_vars[str_powerup] == 1)
+		{
+			self clientfield::set_to_player(level.zombie_powerups[str_powerup].client_field_name, 1);
+			wait(0.05);
+			continue;
+		}
+		self clientfield::set_to_player(level.zombie_powerups[str_powerup].client_field_name, 2);
+		wait(self.zombie_vars[str_powerup]);
+		self clientfield::set_to_player(level.zombie_powerups[str_powerup].client_field_name, 3);
+		wait(self.zombie_vars[str_powerup]);
+	}
+	self clientfield::set_to_player(level.zombie_powerups[str_powerup].client_field_name, 0);
+}
+
+function function_67b2fe10(str_powerup)
+{
+	self endon("disconnect");
+	str_weapon_time_over = str_powerup + "_time_over";
+	self waittill(str_weapon_time_over);
+	self._show_solo_hud = 1;
+	self.zombie_vars[str_powerup] = undefined;
 }
 
 function deadshot_cost()

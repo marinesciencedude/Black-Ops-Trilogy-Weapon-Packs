@@ -124,5 +124,7 @@ function main_end()
 		level.zombie_powerups["minigun"].client_field_name = "powerup_mini_gun_bo";
 		clientfield::register("toplayer", "powerup_zombie_blood_bo", 1, 2, "int", &zm_powerups::powerup_state_callback, 0, 1);
 		level.zombie_powerups["zombie_blood"].client_field_name = "powerup_zombie_blood_bo";
+		clientfield::register("toplayer", "powerup_zombie_tesla_bo", 1, 2, "int", undefined, 0, 1);
+		level.zombie_powerups["tesla"].client_field_name = "powerup_zombie_tesla_bo";
 	}
 }
