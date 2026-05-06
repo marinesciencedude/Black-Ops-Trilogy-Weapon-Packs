@@ -39,23 +39,31 @@ CoD.PowerUps.ClientFieldNames[6] = {
 	clientFieldName = "powerup_zombie_blood",
 	material = RegisterMaterial( "t7_zm_hd_specialty_zmblood" )
 }
-CoD.PowerUps.ClientFieldNames[7] = {
+CoD.PowerUps.ClientFieldNames[7] = { --gets overridden by hud_zm_coast.lua
+	clientFieldName = "powerup_zombie_tesla",
+	material = RegisterMaterial( "waffe_hud_icon" )
+}
+CoD.PowerUps.ClientFieldNames[8] = {
+	clientFieldName = "powerup_zombie_tesla_bo",
+	material = RegisterMaterial( "classic_clean_powerup_deathmachine" )
+}
+CoD.PowerUps.ClientFieldNames[9] = {
 	clientFieldName = "powerup_instant_kill_bo",
 	material = RegisterMaterial( "classic_clean_powerup_instakill" )
 }
-CoD.PowerUps.ClientFieldNames[8] = {
+CoD.PowerUps.ClientFieldNames[10] = {
 	clientFieldName = "powerup_double_points_bo",
 	material = RegisterMaterial( "classic_clean_powerup_double" )
 }
-CoD.PowerUps.ClientFieldNames[9] = {
+CoD.PowerUps.ClientFieldNames[11] = {
 	clientFieldName = "powerup_fire_sale_bo",
 	material = RegisterMaterial( "classic_clean_powerup_sale" )
 }
-CoD.PowerUps.ClientFieldNames[10] = {
+CoD.PowerUps.ClientFieldNames[12] = {
 	clientFieldName = "powerup_mini_gun_bo",
 	material = RegisterMaterial( "classic_clean_powerup_deathmachine" )
 }
-CoD.PowerUps.ClientFieldNames[11] = {
+CoD.PowerUps.ClientFieldNames[13] = {
 	clientFieldName = "powerup_zombie_blood_bo",
 	material = RegisterMaterial( "classic_clean_powerup_blood" )
 }
