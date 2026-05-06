@@ -36,7 +36,7 @@
 #insert scripts\zm\_zm_mutators.gsh;
 
 
-
+#using scripts\zm\_zm_weap_scavenger;
 
 #namespace zm_mod;
 
@@ -410,7 +410,17 @@ function apply_choices() {
         player util::clientNotify("choices_applied");
     }
 	
-
+	if(GetDvarInt("mutator_scavenger_damage") == 1)
+	{
+		foreach ( index, func in level.actor_damage_callbacks )
+		{
+			if ( func == &zm_weap_scavenger::scavenger_inf_dmg )
+			{
+				ArrayRemoveIndex( level.actor_damage_callbacks, index, false );
+				break;
+			}
+		}
+	}
    
 }
 
