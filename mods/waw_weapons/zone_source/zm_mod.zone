@@ -119,6 +119,7 @@ scriptparsetree,scripts/zm/zm_sumpf_perks.gsc
 rawfile,ui/uieditor/menus/hud/hud_zm_mapname.lua
 rawfile,ui/uieditor/widgets/hud/zm_perks/ZMPerksContainerFactory.lua
 rawfile,ui/uieditor/widgets/hud/zm_perks/ZMPerksContainer.lua
+rawfile,ui_mp/T6/Zombie/HudPowerUpsZombie.lua
 rawfile,ui/uieditor/widgets/StartMenu/StartMenu_GameOptions_ZM.lua
 
 material,mc/mtl_t7_camo_zmbhd_bo1_pap
@@ -380,6 +381,16 @@ image,classic_clean_speed
 image,classic_clean_staminup
 image,classic_clean_widows
 image,classic_clean_doubletap
+image,classic_clean_powerup_instakill
+material,classic_clean_powerup_instakill
+image,classic_clean_powerup_double
+material,classic_clean_powerup_double
+image,classic_clean_powerup_sale
+material,classic_clean_powerup_sale
+image,classic_clean_powerup_deathmachine
+material,classic_clean_powerup_deathmachine
+image,classic_clean_powerup_blood
+material,classic_clean_powerup_blood
 
 image,zod_specialty_flopper
 image,zod_specialty_mule
@@ -403,16 +414,6 @@ image,madkixs_specialty_deadshot
 image,madkixs_specialty_doubletap2
 image,madkixs_specialty_doubletap
 image,specialty_giant_doubletap1_zombies
-
-image,specialty_giant_2x_zombies
-image,specialty_giant_firesale_zombies
-image,specialty_giant_killjoy_zombies
-image,t7_hud_zm_powerup_giant_deathmachine
-
-image,specialty_firesale_zombies
-image,specialty_instakill_zombies
-image,specialty_2x_zombies
-image,t7_hud_zm_powerup_deathmachine
 
 fx,custom/magic_box_og/fx_weapon_box_open_glow_og
 fx,custom/magic_box_og/fx_weapon_box_idle_glow_og

@@ -1,6 +1,7 @@
 
 #using scripts\zm\_zm_mod;
 #using scripts\shared\clientfield_shared;
+#using scripts\zm\_zm_powerups;
 #using scripts\zm\_zm_t4_hud;
 
 #insert scripts\shared\version.gsh;
@@ -91,4 +92,18 @@ function main_end()
 	}
 	else if(GetDvarString("mapname") != "zm_factory_classic")
 		clientfield::register( "clientuimodel", "hudItems.perks.doubletap", 1, 2, "int", undefined, 0, 1); 
+	
+	if(GetDvarInt("mutator_bo_powerup_icons") == 1)
+	{
+		clientfield::register("toplayer", "powerup_instant_kill_bo", 1, 2, "int", &zm_powerups::powerup_state_callback, 0, 1);
+		level.zombie_powerups["insta_kill"].client_field_name = "powerup_instant_kill_bo";
+		clientfield::register("toplayer", "powerup_double_points_bo", 1, 2, "int", &zm_powerups::powerup_state_callback, 0, 1);
+		level.zombie_powerups["double_points"].client_field_name = "powerup_double_points_bo";
+		clientfield::register("toplayer", "powerup_fire_sale_bo", 1, 2, "int", &zm_powerups::powerup_state_callback, 0, 1);
+		level.zombie_powerups["fire_sale"].client_field_name = "powerup_fire_sale_bo";
+		clientfield::register("toplayer", "powerup_mini_gun_bo", 1, 2, "int", &zm_powerups::powerup_state_callback, 0, 1);
+		level.zombie_powerups["minigun"].client_field_name = "powerup_mini_gun_bo";
+		clientfield::register("toplayer", "powerup_zombie_blood_bo", 1, 2, "int", &zm_powerups::powerup_state_callback, 0, 1);
+		level.zombie_powerups["zombie_blood"].client_field_name = "powerup_zombie_blood_bo";
+	}
 }

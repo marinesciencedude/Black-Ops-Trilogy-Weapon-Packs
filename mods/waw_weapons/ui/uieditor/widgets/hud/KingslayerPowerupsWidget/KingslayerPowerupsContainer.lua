@@ -16,6 +16,31 @@ CoD.PowerUps.ClientFieldNames = {
 	{
 		clientFieldName = "powerup_mini_gun",
 		image = "t4_powerup_mini_gun"
+	},
+	{
+		clientFieldName = "powerup_zombie_blood",
+		--material = RegisterMaterial( "t7_zm_hd_specialty_zmblood" )
+		image = "classic_clean_powerup_blood"
+	},
+	{
+		clientFieldName = "powerup_instant_kill_bo",
+		image = "classic_clean_powerup_instakill"
+	},
+	{
+		clientFieldName = "powerup_double_points_bo",
+		image = "classic_clean_powerup_double"
+	},
+	{
+		clientFieldName = "powerup_fire_sale_bo",
+		image = "classic_clean_powerup_sale"
+	},
+	{
+		clientFieldName = "powerup_mini_gun_bo",
+		image = "classic_clean_powerup_deathmachine"
+	},
+	{
+		clientFieldName = "powerup_zombie_blood_bo",
+		image = "classic_clean_powerup_blood"
 	}
 }
 

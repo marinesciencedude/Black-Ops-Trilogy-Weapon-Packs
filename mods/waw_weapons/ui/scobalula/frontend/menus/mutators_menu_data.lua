@@ -281,10 +281,17 @@ function (arg0, arg1, arg2, arg3, arg4)
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Perk Icons",
-			"If the perk icons should be set to the Classic icons, BO III with Classic colouring, or leave it at the map's own icons. MAY NOT WORK ON CUSTOM MAPS",
+			"If the perk icons should be set to the Classic icons, BO III with Classic colouring, or leave it at the map or custom HUD's icons. MAY NOT WORK ON CUSTOM MAPS",
 			"MutatorSettings_BOPerkIcons",
 			"mutator_bo_perk_icons",
-            BuildStringSettings({"Classic", "Recoloured BO III", "Use Map"}, "Classic"), nil, SetDvarSetting),
+            BuildStringSettings({"Classic", "Recoloured BO III", "Use Map/HUD"}, "Classic"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Powerup Icons",
+			"If the powerup icons should be set to the Classic icons or leave it at the map or custom HUD's icons.",
+			"MutatorSettings_BOPowerupIcons",
+			"mutator_bo_powerup_icons",
+            BuildStringSettings({"Classic", "Use Map/HUD"}, "Classic"), nil, SetDvarSetting),
 		--CoD.OptionsUtility.CreateDvarSettings(
 		--	arg0,
 		--	"Mine Wallbuy",

@@ -56,7 +56,7 @@
 #define mutator_ppsh						"pregameItemVoteRoundTime"
 #define mutator_freezegun					"rebootPlayers"
 #define mutator_raygunmkii					"robotShield"
-#define mutator_crossbow					"setbacks"
+#define mutator_crossbow					"pointsPerWeaponKill"
 #define mutator_ballistic_knife				"silentPlant"
 #define mutator_camo_disable				"timePausesWhenInZone"
 #define mutator_wunderwaffe_camo			"vehiclesEnabled"
@@ -94,8 +94,7 @@
 #define	mutator_firesale					"playerqueuedrespawn"
 
 //ints or int-compatible
-/*#define mutator_						"pointsPerWeaponKill"
-#define mutator_						"pregameItemVoteRoundTime"
+/*#define mutator_						"pregameItemVoteRoundTime"
 #define mutator_						"pregameItemMaxVotes"
 #define mutator_						"pregamePositionShuffleMethod"
 #define mutator_						"pregamePositionSortType"

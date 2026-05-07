@@ -60,7 +60,7 @@ local PostLoadFunc = function ( self, controller )
 	end )
 
 	-- Subscribe to each of the powerup clientfields and append notification based on the powerup state
-	for index = 1, #CoD.PowerUps.ClientFieldNames do
+	--[[for index = 1, #CoD.PowerUps.ClientFieldNames do
 		local powerupState = Engine.GetModel( Engine.GetModelForController( controller ), CoD.PowerUps.ClientFieldNames[index].clientFieldName .. ".state" )
 
 		if powerupState then
@@ -75,7 +75,8 @@ local PostLoadFunc = function ( self, controller )
 				end
 			end )
 		end
-	end
+	end]]
+	--Only Max Ammo did this, at least by Der Riese
 
 	-- Max ammo has no clientfield so we'll use the scriptNotify since we already have access to it
 	self:subscribeToGlobalModel( controller, "PerController", "scriptNotify", function ( model )
@@ -83,7 +84,7 @@ local PostLoadFunc = function ( self, controller )
 			if Engine.Localize( Engine.GetIString( CoD.GetScriptNotifyData( model )[1], "CS_LOCALIZED_STRINGS" ) ):find( "Max Ammo" ) then
 				self:appendNotification( {
 					clip = "Powerup",
-					title = "Max Ammo"
+					title = "Max Ammo!"
 				} )
 			end
 		end
