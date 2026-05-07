@@ -16,6 +16,30 @@ CoD.PowerUps.ClientFieldNames = {
 	{
 		clientFieldName = "powerup_mini_gun",
 		image = "t6_specialty_deathmachine_zombies"
+	},
+	{
+		clientFieldName = "powerup_zombie_blood",
+		image = "t6_specialty_zomblood_zombies"
+	},
+	{
+		clientFieldName = "powerup_instant_kill_bo2",
+		image = "charred_powerup_instakill"
+	},
+	{
+		clientFieldName = "powerup_double_points_bo2",
+		image = "charred_powerup_2x"
+	},
+	{
+		clientFieldName = "powerup_fire_sale_bo2",
+		image = "charred_powerup_sale"
+	},
+	{
+		clientFieldName = "powerup_mini_gun_bo2",
+		image = "charred_powerup_deathmachine"
+	},
+	{
+		clientFieldName = "powerup_zombie_blood_bo2",
+		image = "charred_powerup_blood"
 	}
 }
 

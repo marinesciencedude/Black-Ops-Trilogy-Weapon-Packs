@@ -29,7 +29,7 @@ rawfile,ui/uieditor/widgets/Lobby/Common/T6ButtonListItem.lua
 
 // IMAGES
 image,grenadeicon
-image,hud_cymbal_monkey
+image,hud_cymbal_monkey_t6
 image,menu_vis_bracket_small_zm
 image,t6_specialty_2x_zombies
 image,t6_specialty_ads_zombies

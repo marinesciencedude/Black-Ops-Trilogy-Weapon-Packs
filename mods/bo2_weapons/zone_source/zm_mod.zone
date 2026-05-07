@@ -105,6 +105,7 @@ scriptparsetree,scripts/zm/zm_sumpf_perks.gsc
 rawfile,ui/uieditor/menus/hud/hud_zm_mapname.lua
 rawfile,ui/uieditor/widgets/hud/zm_perks/ZMPerksContainerFactory.lua
 rawfile,ui/uieditor/widgets/hud/zm_perks/ZMPerksContainer.lua
+rawfile,ui_mp/T6/Zombie/HudPowerUpsZombie.lua
 //rawfile,ui/uieditor/widgets/StartMenu/CustomGameOptions.lua
 rawfile,ui/uieditor/widgets/StartMenu/StartMenu_GameOptions_ZM.lua
 
@@ -398,6 +399,16 @@ image,charred_staminup
 image,charred_staminup_alt
 image,charred_widows
 image,charred_widows_alt
+image,charred_powerup_2x
+material,charred_powerup_2x
+image,charred_powerup_instakill
+material,charred_powerup_instakill
+image,charred_powerup_sale
+material,charred_powerup_sale
+image,charred_powerup_deathmachine
+material,charred_powerup_deathmachine
+material,charred_powerup_blood
+image,charred_powerup_blood
 
 image,classic_clean_cherry
 material,classic_clean_cherry
@@ -455,9 +466,3 @@ material,madkixs_specialty_doubletap2
 image,madkixs_specialty_doubletap
 material,madkixs_specialty_doubletap
 image,specialty_giant_doubletap1_zombies
-
-image,charred_powerup_2x
-image,charred_powerup_instakill
-image,charred_powerup_sale
-image,charred_powerup_deathmachine
-image,charred_powerup_blood

@@ -33,7 +33,7 @@ DataSources.T6AmmoEquipmentTacticals = DataSourceHelpers.ListSetup( "T6AmmoEquip
 	local secondaryOffhandCount = Engine.GetModelValue( Engine.GetModel( Engine.GetModelForController( controller ), "currentSecondaryOffhand.secondaryOffhandCount" ) )
 
 	if secondaryOffhand == "hud_cymbal_monkey_bo3" then
-		secondaryOffhand = "hud_cymbal_monkey"
+		secondaryOffhand = "hud_cymbal_monkey_t6"
 	end
 
 	local tacticals = {}
