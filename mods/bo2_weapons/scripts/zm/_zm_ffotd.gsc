@@ -11,7 +11,7 @@
 /*#using scripts\zm\crossbow_bolt;
 #using scripts\zm\zm_weap_crossbow;*/
 #using scripts\zm\dive;
-#using scripts\zm\_zm_t6_hud;
+#using scripts\zm\_zm_t6_custom_hud;
 /*#using scripts\zm\_zm_weap_freezegun;
 #using scripts\zm\_zm_weap_bo1bouncingbetty;*/
 #using scripts\zm\_zm_xmodelalias;

@@ -13,7 +13,7 @@
 #insert scripts\shared\shared.gsh;
 #insert scripts\shared\version.gsh;
 
-REGISTER_SYSTEM_EX( "zm_t6_hud", &__init__, &__main__, undefined )
+REGISTER_SYSTEM_EX( "zm_t6_custom_hud", &__init__, &__main__, undefined )
 
 function __init__()
 {
@@ -21,7 +21,7 @@ function __init__()
 	{
 		clientfield::register( "clientuimodel", "T6.MuleKick", VERSION_SHIP, 1, "int", undefined, !CF_HOST_ONLY, !CF_CALLBACK_ZERO_ON_NEW_ENT );
 
-		LuiLoad( "ui.uieditor.menus.hud.T6Hud_zm_factory" );
+		LuiLoad( "ui.uieditor.menus.hud.T6CustomHud_zm_factory" );
 	}
 }
 

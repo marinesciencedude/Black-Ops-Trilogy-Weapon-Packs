@@ -1,6 +1,6 @@
-require( "ui.uieditor.widgets.HUD.T6AmmoWidget.T6AmmoEquipmentListItem" )
+require( "ui.uieditor.widgets.HUD.T6AmmoWidget.T6CustomAmmoEquipmentListItem" )
 
-DataSources.T6AmmoEquipmentLethals = DataSourceHelpers.ListSetup( "T6AmmoEquipmentLethals", function ( controller, element )
+DataSources.T6CustomAmmoEquipmentLethals = DataSourceHelpers.ListSetup( "T6CustomAmmoEquipmentLethals", function ( controller, element )
 	local primaryOffhand = Engine.GetModelValue( Engine.GetModel( Engine.GetModelForController( controller ), "currentPrimaryOffhand.primaryOffhand" ) )
 	local primaryOffhandCount = Engine.GetModelValue( Engine.GetModel( Engine.GetModelForController( controller ), "currentPrimaryOffhand.primaryOffhandCount" ) )
 
@@ -28,7 +28,7 @@ DataSources.T6AmmoEquipmentLethals = DataSourceHelpers.ListSetup( "T6AmmoEquipme
 	return lethals
 end, true )
 
-DataSources.T6AmmoEquipmentTacticals = DataSourceHelpers.ListSetup( "T6AmmoEquipmentTacticals", function ( controller, element )
+DataSources.T6CustomAmmoEquipmentTacticals = DataSourceHelpers.ListSetup( "T6CustomAmmoEquipmentTacticals", function ( controller, element )
 	local secondaryOffhand = Engine.GetModelValue( Engine.GetModel( Engine.GetModelForController( controller ), "currentSecondaryOffhand.secondaryOffhand" ) )
 	local secondaryOffhandCount = Engine.GetModelValue( Engine.GetModel( Engine.GetModelForController( controller ), "currentSecondaryOffhand.secondaryOffhandCount" ) )
 
@@ -56,8 +56,8 @@ DataSources.T6AmmoEquipmentTacticals = DataSourceHelpers.ListSetup( "T6AmmoEquip
 	return tacticals
 end, true )
 
-CoD.T6AmmoEquipment = InheritFrom( LUI.UIElement )
-CoD.T6AmmoEquipment.new = function ( menu, controller )
+CoD.T6CustomAmmoEquipment = InheritFrom( LUI.UIElement )
+CoD.T6CustomAmmoEquipment.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
 
 	if PreLoadFunc then
@@ -65,8 +65,8 @@ CoD.T6AmmoEquipment.new = function ( menu, controller )
 	end
 
 	self:setUseStencil( false )
-	self:setClass( CoD.T6AmmoEquipment )
-	self.id = "T6AmmoEquipment"
+	self:setClass( CoD.T6CustomAmmoEquipment )
+	self.id = "T6CustomAmmoEquipment"
 	self.soundSet = "default"
 	self:setLeftRight( true, false, 0, 1280 )
 	self:setTopBottom( true, false, 0, 720 )
@@ -76,9 +76,9 @@ CoD.T6AmmoEquipment.new = function ( menu, controller )
 	self.LethalImage:makeFocusable()
 	self.LethalImage:setLeftRight( false, true, 0, 0 )
 	self.LethalImage:setTopBottom( false, true, 0, 0 )
-	self.LethalImage:setWidgetType( CoD.T6AmmoEquipmentListItem )
+	self.LethalImage:setWidgetType( CoD.T6CustomAmmoEquipmentListItem )
 	self.LethalImage:setHorizontalCount( 4 )
-	self.LethalImage:setDataSource( "T6AmmoEquipmentLethals" )
+	self.LethalImage:setDataSource( "T6CustomAmmoEquipmentLethals" )
 	self.LethalImage:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "currentPrimaryOffhand.primaryOffhand" ), function ( model )
 		self.LethalImage:updateDataSource()
 	end )
@@ -91,9 +91,9 @@ CoD.T6AmmoEquipment.new = function ( menu, controller )
 	self.TacticalImage:makeFocusable()
 	self.TacticalImage:setLeftRight( false, true, 0, -108.5 )
 	self.TacticalImage:setTopBottom( false, true, 0, 0 )
-	self.TacticalImage:setWidgetType( CoD.T6AmmoEquipmentListItem )
+	self.TacticalImage:setWidgetType( CoD.T6CustomAmmoEquipmentListItem )
 	self.TacticalImage:setHorizontalCount( 4 )
-	self.TacticalImage:setDataSource( "T6AmmoEquipmentTacticals" )
+	self.TacticalImage:setDataSource( "T6CustomAmmoEquipmentTacticals" )
 	self.TacticalImage:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "currentSecondaryOffhand.secondaryOffhand" ), function ( model )
 		self.TacticalImage:updateDataSource()
 	end )

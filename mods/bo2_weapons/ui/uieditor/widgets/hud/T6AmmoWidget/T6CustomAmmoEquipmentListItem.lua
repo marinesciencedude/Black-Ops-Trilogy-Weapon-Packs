@@ -1,5 +1,5 @@
-CoD.T6AmmoEquipmentListItem = InheritFrom( LUI.UIElement )
-CoD.T6AmmoEquipmentListItem.new = function ( menu, controller )
+CoD.T6CustomAmmoEquipmentListItem = InheritFrom( LUI.UIElement )
+CoD.T6CustomAmmoEquipmentListItem.new = function ( menu, controller )
     local self = LUI.UIElement.new()
 
 	if PreLoadFunc then
@@ -7,8 +7,8 @@ CoD.T6AmmoEquipmentListItem.new = function ( menu, controller )
 	end
 
 	self:setUseStencil( false )
-	self:setClass( CoD.T6AmmoEquipmentListItem )
-	self.id = "T6AmmoEquipmentListItem"
+	self:setClass( CoD.T6CustomAmmoEquipmentListItem )
+	self.id = "T6CustomAmmoEquipmentListItem"
 	self.soundSet = "default"
 	self:setLeftRight( true, false, 0, 25 )
 	self:setTopBottom( true, false, 0, 25 )

@@ -1,5 +1,5 @@
-CoD.T6ScoreboardListItem = InheritFrom( LUI.UIElement )
-CoD.T6ScoreboardListItem.new = function ( menu, controller )
+CoD.T6CustomScoreboardListItem = InheritFrom( LUI.UIElement )
+CoD.T6CustomScoreboardListItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
 
 	if PreLoadFunc then
@@ -7,8 +7,8 @@ CoD.T6ScoreboardListItem.new = function ( menu, controller )
 	end
 
 	self:setUseStencil( false )
-	self:setClass( CoD.T6ScoreboardListItem )
-	self.id = "T6ScoreboardListItem"
+	self:setClass( CoD.T6CustomScoreboardListItem )
+	self.id = "T6CustomScoreboardListItem"
 	self.soundSet = "default"
 	self:setLeftRight( true, false, 0, 676 )
 	self:setTopBottom( true, false, 0, 27 )

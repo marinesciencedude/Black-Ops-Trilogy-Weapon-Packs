@@ -2,30 +2,30 @@
 ttf,fonts/bigFont.ttf
 
 // SCRIPTS
-scriptparsetree,scripts/zm/_zm_t6_hud.gsc
-scriptparsetree,scripts/zm/_zm_t6_hud.csc
+scriptparsetree,scripts/zm/_zm_t6_custom_hud.gsc
+scriptparsetree,scripts/zm/_zm_t6_custom_hud.csc
 
 // LUA
-rawfile,ui/uieditor/menus/hud/T6Hud_zm_factory.lua
-rawfile,ui/uieditor/menus/StartMenu/T6StartMenu_GameOptions_ZM.lua
-rawfile,ui/uieditor/menus/StartMenu/T6StartMenu_Main.lua
-rawfile,ui/uieditor/menus/StartMenu/T6StartMenu_Options.lua
+rawfile,ui/uieditor/menus/hud/T6CustomHud_zm_factory.lua
+rawfile,ui/uieditor/menus/StartMenu/T6CustomStartMenu_GameOptions_ZM.lua
+rawfile,ui/uieditor/menus/StartMenu/T6CustomStartMenu_Main.lua
+rawfile,ui/uieditor/menus/StartMenu/T6CustomStartMenu_Options.lua
 rawfile,ui/uieditor/widgets/HUD/KingslayerPowerupsWidget/KingslayerPowerupsContainer.lua
 rawfile,ui/uieditor/widgets/HUD/KingslayerPowerupsWidget/KingslayerPowerupsListItem.lua
-rawfile,ui/uieditor/widgets/HUD/T6AmmoWidget/T6AmmoContainer.lua
-rawfile,ui/uieditor/widgets/HUD/T6AmmoWidget/T6AmmoEquipment.lua
-rawfile,ui/uieditor/widgets/HUD/T6AmmoWidget/T6AmmoEquipmentListItem.lua
-rawfile,ui/uieditor/widgets/HUD/T6AmmoWidget/T6AmmoInfo.lua
+rawfile,ui/uieditor/widgets/HUD/T6AmmoWidget/T6CustomAmmoContainer.lua
+rawfile,ui/uieditor/widgets/HUD/T6AmmoWidget/T6CustomAmmoEquipment.lua
+rawfile,ui/uieditor/widgets/HUD/T6AmmoWidget/T6CustomAmmoEquipmentListItem.lua
+rawfile,ui/uieditor/widgets/HUD/T6AmmoWidget/T6CustomAmmoInfo.lua
 rawfile,ui/uieditor/widgets/HUD/T6PerksWidget/T6PerksContainer.lua
-rawfile,ui/uieditor/widgets/HUD/T6RoundWidget/T6Round.lua
-rawfile,ui/uieditor/widgets/HUD/T6RoundWidget/T6RoundContainer.lua
-rawfile,ui/uieditor/widgets/HUD/T6ScoreWidget/T6ClientScore.lua
-rawfile,ui/uieditor/widgets/HUD/T6ScoreWidget/T6PlusPoints.lua
-rawfile,ui/uieditor/widgets/HUD/T6ScoreWidget/T6PlusPointsContainer.lua
-rawfile,ui/uieditor/widgets/HUD/T6ScoreWidget/T6ScoreContainer.lua
-rawfile,ui/uieditor/widgets/HUD/T6ScoreboardWidget/T6Scoreboard.lua
-rawfile,ui/uieditor/widgets/HUD/T6ScoreboardWidget/T6ScoreboardListItem.lua
-rawfile,ui/uieditor/widgets/Lobby/Common/T6ButtonListItem.lua
+rawfile,ui/uieditor/widgets/HUD/T6RoundWidget/T6CustomRound.lua
+rawfile,ui/uieditor/widgets/HUD/T6RoundWidget/T6CustomRoundContainer.lua
+rawfile,ui/uieditor/widgets/HUD/T6ScoreWidget/T6CustomClientScore.lua
+rawfile,ui/uieditor/widgets/HUD/T6ScoreWidget/T6CustomPlusPoints.lua
+rawfile,ui/uieditor/widgets/HUD/T6ScoreWidget/T6CustomPlusPointsContainer.lua
+rawfile,ui/uieditor/widgets/HUD/T6ScoreWidget/T6CustomScoreContainer.lua
+rawfile,ui/uieditor/widgets/HUD/T6ScoreboardWidget/T6CustomScoreboard.lua
+rawfile,ui/uieditor/widgets/HUD/T6ScoreboardWidget/T6CustomScoreboardListItem.lua
+rawfile,ui/uieditor/widgets/Lobby/Common/T6CustomButtonListItem.lua
 
 // IMAGES
 image,grenadeicon
@@ -46,3 +46,9 @@ image,t6_specialty_quickrevive_zombies
 image,t6_specialty_widows_wine_zombies
 image,t6_specialty_zomblood_zombies
 image,team_icon_transit
+image,team_icon_cdc
+image,team_icon_cia
+image,team_icon_guards
+image,team_icon_hellcatraz
+image,team_icon_inmates
+image,team_icon_tomb

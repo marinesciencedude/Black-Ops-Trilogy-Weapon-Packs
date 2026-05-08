@@ -15,7 +15,7 @@
 #insert scripts\shared\shared.gsh;
 #insert scripts\shared\version.gsh;
 
-REGISTER_SYSTEM_EX( "zm_t6_hud", &__init__, &__main__, undefined )
+REGISTER_SYSTEM_EX( "zm_t6_custom_hud", &__init__, &__main__, undefined )
 
 function __init__()
 {

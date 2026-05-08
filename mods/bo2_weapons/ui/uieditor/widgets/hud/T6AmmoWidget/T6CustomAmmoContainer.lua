@@ -1,5 +1,5 @@
-require( "ui.uieditor.widgets.HUD.T6AmmoWidget.T6AmmoEquipment" )
-require( "ui.uieditor.widgets.HUD.T6AmmoWidget.T6AmmoInfo" )
+require( "ui.uieditor.widgets.HUD.T6AmmoWidget.T6CustomAmmoEquipment" )
+require( "ui.uieditor.widgets.HUD.T6AmmoWidget.T6CustomAmmoInfo" )
 
 local SetBGBIcon = function ( controller, element )
 	local bgb_display = Engine.GetModelValue( Engine.GetModel( Engine.GetModelForController( controller ), "bgb_display" ) )
@@ -40,8 +40,8 @@ local SetWeaponName = function ( controller, element )
 	end
 end
 
-CoD.T6AmmoContainer = InheritFrom( LUI.UIElement )
-CoD.T6AmmoContainer.new = function ( menu, controller )
+CoD.T6CustomAmmoContainer = InheritFrom( LUI.UIElement )
+CoD.T6CustomAmmoContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
 
 	if PreLoadFunc then
@@ -49,8 +49,8 @@ CoD.T6AmmoContainer.new = function ( menu, controller )
 	end
 
 	self:setUseStencil( false )
-	self:setClass( CoD.T6AmmoContainer )
-	self.id = "T6AmmoContainer"
+	self:setClass( CoD.T6CustomAmmoContainer )
+	self.id = "T6CustomAmmoContainer"
 	self.soundSet = "default"
 	self:setLeftRight( true, false, 0, 1280 )
 	self:setTopBottom( true, false, 0, 720 )
@@ -308,12 +308,12 @@ CoD.T6AmmoContainer.new = function ( menu, controller )
 	end )
 	self:addElement( self.WeaponName )
 
-	self.AmmoEquipment = CoD.T6AmmoEquipment.new( menu, controller )
+	self.AmmoEquipment = CoD.T6CustomAmmoEquipment.new( menu, controller )
 	self.AmmoEquipment:setLeftRight( true, true, 0, 0 )
 	self.AmmoEquipment:setTopBottom( true, true, 0, 0 )
 	self:addElement( self.AmmoEquipment )
 
-	self.AmmoInfo = CoD.T6AmmoInfo.new( menu, controller )
+	self.AmmoInfo = CoD.T6CustomAmmoInfo.new( menu, controller )
 	self.AmmoInfo:setLeftRight( true, true, 0, 0 )
 	self.AmmoInfo:setTopBottom( true, true, 0, 0 )
 	self:addElement( self.AmmoInfo )

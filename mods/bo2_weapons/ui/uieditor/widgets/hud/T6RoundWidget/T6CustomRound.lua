@@ -1,5 +1,5 @@
-CoD.T6Round = InheritFrom( LUI.UIElement )
-CoD.T6Round.new = function ( menu, controller )
+CoD.T6CustomRound = InheritFrom( LUI.UIElement )
+CoD.T6CustomRound.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
 
 	if PreLoadFunc then
@@ -7,8 +7,8 @@ CoD.T6Round.new = function ( menu, controller )
 	end
 
 	self:setUseStencil( false )
-	self:setClass( CoD.T6Round )
-	self.id = "T6Round"
+	self:setClass( CoD.T6CustomRound )
+	self.id = "T6CustomRound"
 	self.soundSet = "default"
 	self:setLeftRight( true, false, 0, 1280 )
 	self:setTopBottom( true, false, 0, 720 )

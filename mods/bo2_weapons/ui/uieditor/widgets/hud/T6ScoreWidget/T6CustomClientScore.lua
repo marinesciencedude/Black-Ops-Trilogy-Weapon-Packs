@@ -1,5 +1,5 @@
-CoD.T6ClientScore = InheritFrom( LUI.UIElement )
-CoD.T6ClientScore.new = function ( menu, controller )
+CoD.T6CustomClientScore = InheritFrom( LUI.UIElement )
+CoD.T6CustomClientScore.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
 
 	if PreLoadFunc then
@@ -7,8 +7,8 @@ CoD.T6ClientScore.new = function ( menu, controller )
 	end
 
 	self:setUseStencil( false )
-	self:setClass( CoD.T6ClientScore )
-	self.id = "T6ClientScore"
+	self:setClass( CoD.T6CustomClientScore )
+	self.id = "T6CustomClientScore"
 	self.soundSet = "default"
 	self:setLeftRight( true, false, 0, 1280 )
 	self:setTopBottom( true, false, 0, 720 )

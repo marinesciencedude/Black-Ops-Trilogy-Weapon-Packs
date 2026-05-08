@@ -3,7 +3,7 @@
 #using scripts\shared\clientfield_shared;
 #using scripts\zm\_zm_powerups;
 //#using scripts\zm\crossbow_bolt;
-#using scripts\zm\_zm_t6_hud;
+#using scripts\zm\_zm_t6_custom_hud;
 //#using scripts\zm\_zm_weap_freezegun;
 
 #insert scripts\shared\version.gsh;

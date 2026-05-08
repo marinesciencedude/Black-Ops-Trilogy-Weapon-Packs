@@ -25,29 +25,71 @@ require( "ui.uieditor.widgets.BubbleGumBuffs.BubbleGumPackInGame" )
 require( "ui.uieditor.widgets.ZMInventoryStalingrad.GameTimeGroup" )
 
 -- T6 Widgets
-require( "ui.uieditor.menus.StartMenu.T6StartMenu_Main" )
+require( "ui.uieditor.menus.StartMenu.T6CustomStartMenu_Main" )
 require( "ui.uieditor.widgets.HUD.KingslayerPowerupsWidget.KingslayerPowerupsContainer" )
-require( "ui.uieditor.widgets.HUD.T6AmmoWidget.T6AmmoContainer" )
+require( "ui.uieditor.widgets.HUD.T6AmmoWidget.T6CustomAmmoContainer" )
 require( "ui.uieditor.widgets.HUD.T6PerksWidget.T6PerksContainer" )
-require( "ui.uieditor.widgets.HUD.T6RoundWidget.T6RoundContainer" )
-require( "ui.uieditor.widgets.HUD.T6ScoreWidget.T6ScoreContainer" )
-require( "ui.uieditor.widgets.HUD.T6ScoreboardWidget.T6Scoreboard" )
+require( "ui.uieditor.widgets.HUD.T6RoundWidget.T6CustomRoundContainer" )
+require( "ui.uieditor.widgets.HUD.T6ScoreWidget.T6CustomScoreContainer" )
+require( "ui.uieditor.widgets.HUD.T6ScoreboardWidget.T6CustomScoreboard" )
 
 CoD.Zombie.CommonHudRequire()
 
 local PreLoadFunc = function ( self, controller )
 	CoD.Zombie.CommonPreLoadHud( self, controller )
-
+	
+	local mapName = GetMapName( controller )
+	if tonumber(mapName) ~= nil then
+		local customMaps = Engine.Mods_Lists_GetInfoEntries( LuaEnums.USERMAP_BASE_PATH, 0, Engine.Mods_Lists_GetInfoEntriesCount( LuaEnums.USERMAP_BASE_PATH ) )
+		if customMaps then
+			for i = 0, #customMaps, 1 do
+				local mapInfo = customMaps[i]
+				if mapInfo.ugcName == mapName then
+					mapName = mapInfo.name
+				end
+			end
+		end
+		--[[for i=0, DataSources.ZMMapsList.getCount, 1 do
+			local mapInfo = DataSources.ZMMapsList[i]
+			if mapInfo.ugcName == mapName then
+				mapName = mapInfo.name
+			end
+		end]]
+	end
+	
 	-- Your maps name, this is used on the scoreboard.
-	CoD.UsermapName = ""
+	CoD.UsermapName = mapName
+	
+	local mapID = Dvar.ui_mapname:get()
+	mapTeamIcons = {
+		["zm_tomb"] = "team_icon_tomb",
+		["3558354570"] = "team_icon_cia", --Nuketown Zombies
+		["zm_nuked"] = "team_icon_cia",
+		["1128166280"] = "team_icon_hellcatraz", --Mob Of The Dead Remastered
+		["zm_alcatraz_island"] = "team_icon_hellcatraz",
+		--["1624257987"] = "", --TOWN REIMAGINED, randomly selected team
+		--["zm_town"] = "",
+		["1406022761"] = "team_icon_cia", --FARM
+		["zm_farm_hd"] = "team_icon_cia",
+		--["1680193042"] = "", --TOWN REMASTERED, randomly selected team
+		--["zm_town_hd"] = "",
+		["3373649394"] = "team_icon_hellcatraz", --MOB OF THE DEAD
+		["zm_prison"] = "team_icon_hellcatraz",
+		["2279537248"] = "team_icon_transit", --DINER
+		["zm_diner"] = "team_icon_transit",
+		["2553596961"] = "team_icon_inmates", --MOB OF THE DEAD: CELLBLOCK
+		["zm_cellblock"] = "team_icon_inmates"
+	}
+	CoD.UsermapTeamIcon = mapTeamIcons[mapID]
+	
 end
 
 local PostLoadFunc = function ( self, controller )
 	CoD.Zombie.CommonPostLoadHud( self, controller )
 end
 
-LUI.createMenu.T6Hud_zm_factory = function ( controller )
-	local self = CoD.Menu.NewForUIEditor( "T6Hud_zm_factory" )
+LUI.createMenu.T6CustomHud_zm_factory = function ( controller )
+	local self = CoD.Menu.NewForUIEditor( "T6CustomHud_zm_factory" )
 
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
@@ -78,17 +120,17 @@ LUI.createMenu.T6Hud_zm_factory = function ( controller )
 	self.ZMPerksContainerFactory:setTopBottom( true, true, 0, 0 )
 	self:addElement( self.ZMPerksContainerFactory )
 	
-	self.Rounds = CoD.T6RoundContainer.new( self, controller )
+	self.Rounds = CoD.T6CustomRoundContainer.new( self, controller )
 	self.Rounds:setLeftRight( true, true, 0, 0 )
 	self.Rounds:setTopBottom( true, true, 0, 0 )
 	self:addElement( self.Rounds )
 	
-	self.Ammo = CoD.T6AmmoContainer.new( self, controller )
+	self.Ammo = CoD.T6CustomAmmoContainer.new( self, controller )
 	self.Ammo:setLeftRight( true, true, 0, 0 )
 	self.Ammo:setTopBottom( true, true, 0, 0 )
 	self:addElement( self.Ammo )
 	
-	self.Score = CoD.T6ScoreContainer.new( self, controller )
+	self.Score = CoD.T6CustomScoreContainer.new( self, controller )
 	self.Score:setLeftRight( true, true, 0, 0 )
 	self.Score:setTopBottom( true, true, 0, 0 )
 	self:addElement( self.Score )
@@ -311,7 +353,7 @@ LUI.createMenu.T6Hud_zm_factory = function ( controller )
 	self.ZMPrematchCountdown0:setTopBottom( false, false, -360, 360 )
 	self:addElement( self.ZMPrematchCountdown0 )
 	
-	self.ScoreboardWidget = CoD.T6Scoreboard.new( self, controller )
+	self.ScoreboardWidget = CoD.T6CustomScoreboard.new( self, controller )
 	self.ScoreboardWidget:setLeftRight( true, true, 0, 0 )
 	self.ScoreboardWidget:setTopBottom( true, true, 0, 0 )
 	self:addElement( self.ScoreboardWidget )
@@ -493,11 +535,11 @@ LUI.createMenu.T6Hud_zm_factory = function ( controller )
 	return self
 end
 
-LUI.createMenu.T7Hud_ZM = LUI.createMenu.T6Hud_zm_factory
-LUI.createMenu.T7Hud_zm_factory = LUI.createMenu.T6Hud_zm_factory
-LUI.createMenu.T7Hud_zm_castle = LUI.createMenu.T6Hud_zm_factory
-LUI.createMenu.T7Hud_zm_island = LUI.createMenu.T6Hud_zm_factory
-LUI.createMenu.T7Hud_zm_stalingrad = LUI.createMenu.T6Hud_zm_factory
-LUI.createMenu.T7Hud_zm_genesis = LUI.createMenu.T6Hud_zm_factory
-LUI.createMenu.T7Hud_zm_dlc5 = LUI.createMenu.T6Hud_zm_factory
-LUI.createMenu.T7Hud_zm_tomb = LUI.createMenu.T6Hud_zm_factory
+LUI.createMenu.T7Hud_ZM = LUI.createMenu.T6CustomHud_zm_factory
+LUI.createMenu.T7Hud_zm_factory = LUI.createMenu.T6CustomHud_zm_factory
+LUI.createMenu.T7Hud_zm_castle = LUI.createMenu.T6CustomHud_zm_factory
+LUI.createMenu.T7Hud_zm_island = LUI.createMenu.T6CustomHud_zm_factory
+LUI.createMenu.T7Hud_zm_stalingrad = LUI.createMenu.T6CustomHud_zm_factory
+LUI.createMenu.T7Hud_zm_genesis = LUI.createMenu.T6CustomHud_zm_factory
+LUI.createMenu.T7Hud_zm_dlc5 = LUI.createMenu.T6CustomHud_zm_factory
+LUI.createMenu.T7Hud_zm_tomb = LUI.createMenu.T6CustomHud_zm_factory

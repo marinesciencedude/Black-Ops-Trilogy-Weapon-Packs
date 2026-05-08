@@ -1,5 +1,5 @@
-require( "ui.uieditor.widgets.HUD.T6ScoreWidget.T6ClientScore" )
-require( "ui.uieditor.widgets.HUD.T6ScoreWidget.T6PlusPointsContainer" )
+require( "ui.uieditor.widgets.HUD.T6ScoreWidget.T6CustomClientScore" )
+require( "ui.uieditor.widgets.HUD.T6ScoreWidget.T6CustomPlusPointsContainer" )
 
 DataSources.ZMPlayerList = {
 	getModel = function ( controller )
@@ -29,7 +29,7 @@ local CreateNewPlusPointsElement = function ( element, score, controller, menu, 
 		return
 	end
 
-	local newPlusPointsElement = CoD.T6PlusPointsContainer.new( menu, controller )
+	local newPlusPointsElement = CoD.T6CustomPlusPointsContainer.new( menu, controller )
 	newPlusPointsElement.scoreEmitterInfo = table
 
 	if score > 0 then
@@ -168,8 +168,8 @@ local PostLoadFunc = function ( self, controller, menu )
 	Engine.CreateModel( Engine.GetModelForController( controller ), "hudItems.doublePointsActive" )
 end
 
-CoD.T6ScoreContainer = InheritFrom( LUI.UIElement )
-CoD.T6ScoreContainer.new = function ( menu, controller )
+CoD.T6CustomScoreContainer = InheritFrom( LUI.UIElement )
+CoD.T6CustomScoreContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
 
 	if PreLoadFunc then
@@ -177,8 +177,8 @@ CoD.T6ScoreContainer.new = function ( menu, controller )
 	end
 
 	self:setUseStencil( false )
-	self:setClass( CoD.T6ScoreContainer )
-	self.id = "T6ScoreContainer"
+	self:setClass( CoD.T6CustomScoreContainer )
+	self.id = "T6CustomScoreContainer"
 	self.soundSet = "default"
 	self:setLeftRight( true, false, 0, 1280 )
 	self:setTopBottom( true, false, 0, 720 )
@@ -188,12 +188,12 @@ CoD.T6ScoreContainer.new = function ( menu, controller )
 	self.ListingUser:makeFocusable()
 	self.ListingUser:setLeftRight( true, true, 0, 0 )
 	self.ListingUser:setTopBottom( true, true, 0, 0 )
-	self.ListingUser:setWidgetType( CoD.T6ClientScore )
+	self.ListingUser:setWidgetType( CoD.T6CustomClientScore )
 	self.ListingUser:setDataSource( "PlayerListZM" )
 	self.ListingUser:setAlpha( 0 )
 	self:addElement( self.ListingUser )
 
-	self.Listing1 = CoD.T6ClientScore.new( menu, controller )
+	self.Listing1 = CoD.T6CustomClientScore.new( menu, controller )
 	self.Listing1:setLeftRight( true, true, 0, 0 )
 	self.Listing1:setTopBottom( true, true, 0, 0 )
 	self.Listing1:subscribeToGlobalModel( controller, "ZMPlayerList", "0", function ( model )
@@ -202,7 +202,7 @@ CoD.T6ScoreContainer.new = function ( menu, controller )
 	end )
 	self:addElement( self.Listing1 )
 	
-	self.Listing2 = CoD.T6ClientScore.new( menu, controller )
+	self.Listing2 = CoD.T6CustomClientScore.new( menu, controller )
 	self.Listing2:setLeftRight( true, true, 0, 0 )
 	self.Listing2:setTopBottom( true, true, 0, 0 )
 	self.Listing2:subscribeToGlobalModel( controller, "ZMPlayerList", "1", function ( model )
@@ -211,7 +211,7 @@ CoD.T6ScoreContainer.new = function ( menu, controller )
 	end )
 	self:addElement( self.Listing2 )
 	
-	self.Listing3 = CoD.T6ClientScore.new( menu, controller )
+	self.Listing3 = CoD.T6CustomClientScore.new( menu, controller )
 	self.Listing3:setLeftRight( true, true, 0, 0 )
 	self.Listing3:setTopBottom( true, true, 0, 0 )
 	self.Listing3:subscribeToGlobalModel( controller, "ZMPlayerList", "2", function ( model )
@@ -220,7 +220,7 @@ CoD.T6ScoreContainer.new = function ( menu, controller )
 	end )
 	self:addElement( self.Listing3 )
 	
-	self.Listing4 = CoD.T6ClientScore.new( menu, controller )
+	self.Listing4 = CoD.T6CustomClientScore.new( menu, controller )
 	self.Listing4:setLeftRight( true, true, 0, 0 )
 	self.Listing4:setTopBottom( true, true, 0, 0 )
 	self.Listing4:subscribeToGlobalModel( controller, "ZMPlayerList", "3", function ( model )
@@ -229,7 +229,7 @@ CoD.T6ScoreContainer.new = function ( menu, controller )
 	end )
 	self:addElement( self.Listing4 )
 
-	self.ZMScrPlusPoints0 = CoD.T6PlusPointsContainer.new( menu, controller )
+	self.ZMScrPlusPoints0 = CoD.T6CustomPlusPointsContainer.new( menu, controller )
 	self.ZMScrPlusPoints0:setLeftRight( true, true, 0, 0 )
 	self.ZMScrPlusPoints0:setTopBottom( true, true, 0, 0 )
 	self.ZMScrPlusPoints0:subscribeToGlobalModel( controller, "ZMPlayerList", "0", function ( model )
@@ -237,7 +237,7 @@ CoD.T6ScoreContainer.new = function ( menu, controller )
 	end )
 	self:addElement( self.ZMScrPlusPoints0 )
 
-	self.ZMScrPlusPoints1 = CoD.T6PlusPointsContainer.new( menu, controller )
+	self.ZMScrPlusPoints1 = CoD.T6CustomPlusPointsContainer.new( menu, controller )
 	self.ZMScrPlusPoints1:setLeftRight( true, true, 0, 0 )
 	self.ZMScrPlusPoints1:setTopBottom( true, true, 0, 0 )
 	self.ZMScrPlusPoints1:subscribeToGlobalModel( controller, "ZMPlayerList", "1", function ( model )
@@ -245,7 +245,7 @@ CoD.T6ScoreContainer.new = function ( menu, controller )
 	end )
 	self:addElement( self.ZMScrPlusPoints1 )
 	
-	self.ZMScrPlusPoints2 = CoD.T6PlusPointsContainer.new( menu, controller )
+	self.ZMScrPlusPoints2 = CoD.T6CustomPlusPointsContainer.new( menu, controller )
 	self.ZMScrPlusPoints2:setLeftRight( true, true, 0, 0 )
 	self.ZMScrPlusPoints2:setTopBottom( true, true, 0, 0 )
 	self.ZMScrPlusPoints2:subscribeToGlobalModel( controller, "ZMPlayerList", "2", function ( model )
@@ -253,7 +253,7 @@ CoD.T6ScoreContainer.new = function ( menu, controller )
 	end )
 	self:addElement( self.ZMScrPlusPoints2 )
 	
-	self.ZMScrPlusPoints3 = CoD.T6PlusPointsContainer.new( menu, controller )
+	self.ZMScrPlusPoints3 = CoD.T6CustomPlusPointsContainer.new( menu, controller )
 	self.ZMScrPlusPoints3:setLeftRight( true, true, 0, 0 )
 	self.ZMScrPlusPoints3:setTopBottom( true, true, 0, 0 )
 	self.ZMScrPlusPoints3:subscribeToGlobalModel( controller, "ZMPlayerList", "3", function ( model )

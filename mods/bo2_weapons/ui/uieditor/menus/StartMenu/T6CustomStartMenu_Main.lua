@@ -1,4 +1,6 @@
+require( "ui.uieditor.menus.StartMenu.T6CustomStartMenu_GameOptions_ZM" )
 require( "ui.uieditor.widgets.Lobby.Common.FE_TabBar" )
+require( "ui.uieditor.widgets.TabbedWidgets.basicTabList" )
 
 local PostLoadFunc = function ( self, controller )
 	self:registerEventHandler( "menu_opened", function ()
@@ -8,7 +10,7 @@ local PostLoadFunc = function ( self, controller )
 	self.disableLeaderChangePopupShutdown = true
 
 	if CoD.isCampaign then
-		self:setModel( Engine.CreateModel( Engine.GetModelForController( controller ), "T6StartMenu_Options" ) )
+		self:setModel( Engine.CreateModel( Engine.GetModelForController( controller ), "StartMenu_Main" ) )
 	end
 
 	if CoD.isZombie then
@@ -28,47 +30,29 @@ local PostLoadFunc = function ( self, controller )
 	SetControllerModelValue( controller, "forceScoreboard", 0 )
 end
 
-DataSources.StartMenuOptionsTabs = ListHelper_SetupDataSource( "StartMenuOptionsTabs", function ( controller )
+DataSources.StartMenuTabs = ListHelper_SetupDataSource( "StartMenuTabs", function ( controller )
 	local tabList = {}
-
-	table.insert( tabList, {
-		models = {
-			tabIcon = CoD.buttonStrings.shoulderl
-		},
-		properties = {
-			m_mouseDisabled = true
-		}
-	} )
 
     if Engine.IsInGame() then
         if Engine.IsZombiesGame() then
 			table.insert( tabList, {
 				models = {
-					tabName = "MENU_OPTIONS_CONTROLS_CAPS",
-					tabWidget = "CoD.StartMenu_Options",
+					tabName = "MENU_START_MENU_CAPS",
+					tabWidget = "CoD.T6CustomStartMenu_GameOptions_ZM",
 					tabIcon = ""
 				},
 				properties = {
-					tabId = "options"
+					tabId = "gameOptions"
 				}
 			} )
         end
     end
-    
-	table.insert( tabList, {
-		models = {
-			tabIcon = CoD.buttonStrings.shoulderr
-		},
-		properties = {
-			m_mouseDisabled = true
-		}
-	} )
 
 	return tabList
 end, true )
 
-LUI.createMenu.T6StartMenu_Options = function ( controller )
-	local self = CoD.Menu.NewForUIEditor( "T6StartMenu_Options" )
+LUI.createMenu.StartMenu_Main = function ( controller )
+	local self = CoD.Menu.NewForUIEditor( "StartMenu_Main" )
 
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
@@ -79,7 +63,7 @@ LUI.createMenu.T6StartMenu_Options = function ( controller )
 	self:setLeftRight( true, true, 0, 0 )
 	self:setTopBottom( true, true, 0, 0 )
 	self:playSound( "menu_open", controller )
-	self.buttonModel = Engine.CreateModel( Engine.GetModelForController( controller ), "T6StartMenu_Options.buttonPrompts" )
+	self.buttonModel = Engine.CreateModel( Engine.GetModelForController( controller ), "StartMenu_Main.buttonPrompts" )
 	self.anyChildUsesUpdateState = true
 
 	self.Background = LUI.UIImage.new()
@@ -89,18 +73,28 @@ LUI.createMenu.T6StartMenu_Options = function ( controller )
 	self.Background:setRGB( 0, 0, 0 )
 	self.Background:setAlpha( 0.9 )
 	self:addElement( self.Background )
+
+	self.Title = LUI.UIText.new()
+	self.Title:setLeftRight( true, false, 200, 360 )
+	self.Title:setTopBottom( true, false, 40, 85 )
+	self.Title:setText( Engine.Localize( "ZOMBIES" ) )
+	self.Title:setTTF( "fonts/bigFont.ttf" )
+	self.Title:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
+	self:addElement( self.Title )
 	
 	self.FETabBar = CoD.FE_TabBar.new( self, controller )
-	self.FETabBar:setLeftRight( true, true, 0, 1217 )
-	self.FETabBar:setTopBottom( true, false, 85, 126 )
+	self.FETabBar:setLeftRight( true, true, 0, 0 )
+	self.FETabBar:setTopBottom( true, true, 0, 0 )
+	self.FETabBar.FETabIdle00:setScale( 0 )
 	self.FETabBar.Tabs.grid:setHorizontalCount( 8 )
-	self.FETabBar.Tabs.grid:setDataSource( "StartMenuOptionsTabs" )
-	self.FETabBar.Tabs.grid:setWidgetType( CoD.paintshopTabWidget )
+	self.FETabBar.Tabs.grid:setDataSource( "StartMenuTabs" )
+	self.FETabBar.Tabs.grid:setWidgetType( CoD.basicTabList )
+	self.FETabBar.FETabIdle0:setScale( 0 )
 	self:addElement( self.FETabBar )
 
 	self.TabFrame = LUI.UIFrame.new( self, controller, 0, 0, false )
-	self.TabFrame:setLeftRight( false, false, -574, 576 )
-	self.TabFrame:setTopBottom( false, false, -221, 299 )
+	self.TabFrame:setLeftRight( true, true, 200, 0 )
+	self.TabFrame:setTopBottom( true, true, 85, 0 )
 	self.TabFrame:linkToElementModel( self.FETabBar.Tabs.grid, "tabWidget", true, function ( model )
 		local tabWidget = Engine.GetModelValue( model )
 
@@ -190,7 +184,8 @@ LUI.createMenu.T6StartMenu_Options = function ( controller )
 	end )
 
 	self:AddButtonCallbackFunction( self, controller, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, nil, function ( element, menu, controller, model )
-		GoBack( menu, controller )
+		RefreshLobbyRoom( menu, controller )
+		StartMenuGoBack( menu, controller )
 
 		return true
 	end, function ( element, menu, controller )
@@ -200,7 +195,8 @@ LUI.createMenu.T6StartMenu_Options = function ( controller )
 	end, false )
 	
 	self:AddButtonCallbackFunction( self, controller, Enum.LUIButton.LUI_KEY_START, "M", function ( element, menu, controller, model )
-		GoBack( menu, controller )
+		RefreshLobbyRoom( menu, controller )
+		StartMenuGoBack( menu, controller )
 
 		return true
 	end, function ( element, menu, controller )
@@ -238,7 +234,8 @@ LUI.createMenu.T6StartMenu_Options = function ( controller )
 	end, false )
 
 	self:AddButtonCallbackFunction( self, controller, Enum.LUIButton.LUI_KEY_NONE, "ESCAPE", function ( element, menu, controller, model )
-		GoBack( menu, controller )
+		RefreshLobbyRoom( menu, controller )
+		StartMenuGoBack( menu, controller )
 
 		return true
 	end, function ( element, menu, controller )
@@ -268,10 +265,11 @@ LUI.createMenu.T6StartMenu_Options = function ( controller )
 
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Background:close()
+		element.Title:close()
 		element.FETabBar:close()
 		element.TabFrame:close()
 
-		Engine.UnsubscribeAndFreeModel( Engine.GetModel( Engine.GetModelForController( controller ), "T6StartMenu_Options.buttonPrompts" ) )
+		Engine.UnsubscribeAndFreeModel( Engine.GetModel( Engine.GetModelForController( controller ), "StartMenu_Main.buttonPrompts" ) )
 	end )
 
 	if PostLoadFunc then

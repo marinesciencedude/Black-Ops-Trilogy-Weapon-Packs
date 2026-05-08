@@ -1,5 +1,5 @@
-require( "ui.uieditor.menus.StartMenu.T6StartMenu_Options" )
-require( "ui.uieditor.widgets.Lobby.Common.T6ButtonListItem" )
+require( "ui.uieditor.menus.StartMenu.T6CustomStartMenu_Options" )
+require( "ui.uieditor.widgets.Lobby.Common.T6CustomButtonListItem" )
 
 DataSources.StartMenuGameOptions = ListHelper_SetupDataSource( "StartMenuGameOptions", function ( controller )
 	local options = {}
@@ -25,7 +25,7 @@ DataSources.StartMenuGameOptions = ListHelper_SetupDataSource( "StartMenuGameOpt
 			models = {
 				displayText = "MENU_OPTIONS_CAPS",
 				action = function ( self, element, controller, actionParam, menu )
-					NavigateToMenu( menu, "T6StartMenu_Options", true, controller )
+					NavigateToMenu( menu, "T6CustomStartMenu_Options", true, controller )
 				end
 			}
 		} )
@@ -50,8 +50,8 @@ DataSources.StartMenuGameOptions = ListHelper_SetupDataSource( "StartMenuGameOpt
 	return options
 end, true )
 
-CoD.T6StartMenu_GameOptions_ZM = InheritFrom( LUI.UIElement )
-CoD.T6StartMenu_GameOptions_ZM.new = function ( menu, controller )
+CoD.T6CustomStartMenu_GameOptions_ZM = InheritFrom( LUI.UIElement )
+CoD.T6CustomStartMenu_GameOptions_ZM.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
 
 	if PreLoadFunc then
@@ -59,8 +59,8 @@ CoD.T6StartMenu_GameOptions_ZM.new = function ( menu, controller )
 	end
 
 	self:setUseStencil( false )
-	self:setClass( CoD.T6StartMenu_GameOptions_ZM )
-	self.id = "T6StartMenu_GameOptions_ZM"
+	self:setClass( CoD.T6CustomStartMenu_GameOptions_ZM )
+	self.id = "T6CustomStartMenu_GameOptions_ZM"
 	self.soundSet = "ChooseDecal"
 	self:setLeftRight( true, false, 0, 1280 )
 	self:setTopBottom( true, false, 0, 720 )
@@ -72,7 +72,7 @@ CoD.T6StartMenu_GameOptions_ZM.new = function ( menu, controller )
 	self.buttonList:makeFocusable()
 	self.buttonList:setLeftRight( true, false, 0, 0 )
 	self.buttonList:setTopBottom( true, false, 0, 0 )
-	self.buttonList:setWidgetType( CoD.T6ButtonListItem )
+	self.buttonList:setWidgetType( CoD.T6CustomButtonListItem )
 	self.buttonList:setVerticalCount( 5 )
 	self.buttonList:setDataSource( "StartMenuGameOptions" )
 	self.buttonList:registerEventHandler( "gain_focus", function ( element, event )

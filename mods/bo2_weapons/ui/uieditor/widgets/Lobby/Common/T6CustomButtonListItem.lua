@@ -1,5 +1,5 @@
-CoD.T6ButtonListItem = InheritFrom( LUI.UIElement )
-CoD.T6ButtonListItem.new = function ( menu, controller )
+CoD.T6CustomButtonListItem = InheritFrom( LUI.UIElement )
+CoD.T6CustomButtonListItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
 
 	if PreLoadFunc then
@@ -7,8 +7,8 @@ CoD.T6ButtonListItem.new = function ( menu, controller )
 	end
 
 	self:setUseStencil( false )
-	self:setClass( CoD.T6ButtonListItem )
-	self.id = "T6ButtonListItem"
+	self:setClass( CoD.T6CustomButtonListItem )
+	self.id = "T6CustomButtonListItem"
 	self.soundSet = "default"
 	self:setLeftRight( true, false, 0, 160 )
 	self:setTopBottom( true, false, 0, 31 )

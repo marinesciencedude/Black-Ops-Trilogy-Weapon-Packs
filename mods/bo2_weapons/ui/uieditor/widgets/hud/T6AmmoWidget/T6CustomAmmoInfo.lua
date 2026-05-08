@@ -28,8 +28,8 @@ local SetAmmoText = function ( controller, element )
 	end
 end
 
-CoD.T6AmmoInfo = InheritFrom( LUI.UIElement )
-CoD.T6AmmoInfo.new = function ( menu, controller )
+CoD.T6CustomAmmoInfo = InheritFrom( LUI.UIElement )
+CoD.T6CustomAmmoInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
 
 	if PreLoadFunc then
@@ -37,8 +37,8 @@ CoD.T6AmmoInfo.new = function ( menu, controller )
 	end
 
 	self:setUseStencil( false )
-	self:setClass( CoD.T6AmmoInfo )
-	self.id = "T6AmmoInfo"
+	self:setClass( CoD.T6CustomAmmoInfo )
+	self.id = "T6CustomAmmoInfo"
 	self.soundSet = "default"
 	self:setLeftRight( true, false, 0, 1280 )
 	self:setTopBottom( true, false, 0, 720 )
