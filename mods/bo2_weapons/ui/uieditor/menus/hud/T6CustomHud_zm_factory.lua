@@ -39,7 +39,7 @@ local PreLoadFunc = function ( self, controller )
 	CoD.Zombie.CommonPreLoadHud( self, controller )
 	
 	local mapName = GetMapName( controller )
-	if tonumber(mapName) ~= nil then
+	if tonumber(mapName) ~= nil or string.find(mapName, "zm_") ~= nil then
 		local customMaps = Engine.Mods_Lists_GetInfoEntries( LuaEnums.USERMAP_BASE_PATH, 0, Engine.Mods_Lists_GetInfoEntriesCount( LuaEnums.USERMAP_BASE_PATH ) )
 		if customMaps then
 			for i = 0, #customMaps, 1 do

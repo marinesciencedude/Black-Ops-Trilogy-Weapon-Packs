@@ -113,7 +113,13 @@ function starter_weapon()
 			level.zombie_weapons[GetWeapon("t6_lsat")].is_in_box = false;
 			zm_utility::include_weapon( "t6_lsat", false);
 			level.zombie_weapons[GetWeapon("t6_death_machine")].is_in_box = false;
-			zm_utility::include_weapon( "t6_death_machine", false);	
+			zm_utility::include_weapon( "t6_death_machine", false);
+			if(GetGametypeSetting(mutator_town_pdw57) == BOOLMUTATOR_OFFON_ON)
+			{
+				//zm_utility::include_weapon( "t6_pdw57", false );
+				zm_utility::include_weapon( "t6_pdw57_up", false );
+				zm_weapons::add_zombie_weapon( "t6_pdw57", "t6_pdw57_up", "", 1200, "smg", "", undefined, "", false, "" );
+			}
 		}
 		else
 		{
@@ -1367,8 +1373,17 @@ function swap_wall_weapon()
 						break;
 					}
 				case "t6_sniper_ballista":
-					ent struct::delete();
+					if(GetGametypeSetting(mutator_town_ballista) == BOOLMUTATOR_OFFON_OFF)
+						ent struct::delete();
+					else
+						ent.zombie_weapon_upgrade = "t6_ballista";
 					break;
+				case "t6_smg_pdw57":
+					if(GetGametypeSetting(mutator_town_pdw57) == BOOLMUTATOR_OFFON_OFF)
+						ent struct::delete();
+					else
+						ent.zombie_weapon_upgrade = "t6_pdw57";
+					break;	
 				case "t6_smg_mp5":
 					ent.zombie_weapon_upgrade = "t6_mp5";
 					break;
@@ -1981,6 +1996,12 @@ function swap_wall_weapon()
 			count++;
 		}
 	}
+	
+	if(GetDvarString("mapname") == "zm_die")
+	{
+		foreach(ent in GetEntArray("weapon_upgrade_chalk_set_t6", "targetname"))
+			ent delete();
+	}
 }
 
 /*
@@ -2003,6 +2024,7 @@ function swap_chalk()
 	mp40 = 0;
 	stg44 = 0;
 	uzi = 0;
+	mp5 = 0;
 	foreach(ent in struct::get_array("weapon_upgrade", "targetname"))
 	{
 		VAL = ent.zombie_weapon_upgrade;
@@ -2062,6 +2084,12 @@ function swap_chalk()
 				case "zm_asylum":
 					ent.var_47896610 = util::spawn_model("wallbuy_olympia_bo2", spawn_loc.origin + (0, -1, -3), spawn_loc.angles);
 					break;
+				case "zm_factory":
+					ent.var_47896610 = util::spawn_model("wallbuy_olympia_bo2", spawn_loc.origin + VectorScale((-1*cos(spawn_loc.angles[1]) + 1, -1*sin(spawn_loc.angles[1]), -3), 1), spawn_loc.angles);
+					break;
+				case "zm_die":
+					ent.var_47896610 = util::spawn_model("wallbuy_olympia_bo2", spawn_loc.origin + VectorScale((-1*cos(spawn_loc.angles[1]) -1, -1*sin(spawn_loc.angles[1]), -3), 1), spawn_loc.angles);
+					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_olympia_bo2", spawn_loc.origin + VectorScale((-1*cos(spawn_loc.angles[1]), -1*sin(spawn_loc.angles[1]), -3), 1), spawn_loc.angles);
 					break;
@@ -2095,6 +2123,9 @@ function swap_chalk()
 					break;
 				case "zm_moon":
 					ent.var_47896610 = util::spawn_model("wallbuy_b23r", spawn_loc.origin + (0, -2, 0), spawn_loc.angles);
+					break;
+				case "zm_die":
+					ent.var_47896610 = util::spawn_model("wallbuy_b23r", spawn_loc.origin + (-2, 1, 0), spawn_loc.angles);
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_b23r", spawn_loc.origin, spawn_loc.angles);
@@ -2130,6 +2161,8 @@ function swap_chalk()
 				case "zm_moon":
 					ent.var_47896610 = util::spawn_model("wallbuy_pdw57", spawn_loc.origin + (7, 0, 2), spawn_loc.angles);
 					break;
+				case "zm_town": //Town Reimagined already has this
+					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_pdw57", spawn_loc.origin + VectorScale((7*cos(spawn_loc.angles[1]), 7*sin(spawn_loc.angles[1]), 2), 1), spawn_loc.angles);
 					break;
@@ -2160,6 +2193,9 @@ function swap_chalk()
 				{
 				case "zm_asylum":
 					ent.var_47896610 = util::spawn_model("wallbuy_mp40_bo2", spawn_loc.origin + (0, 1, 0), spawn_loc.angles);
+					break;
+				case "zm_factory":
+					ent.var_47896610 = util::spawn_model("wallbuy_mp40_bo2", spawn_loc.origin + (1, 0, 0), spawn_loc.angles);
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_mp40_bo2", spawn_loc.origin, spawn_loc.angles);
@@ -2201,6 +2237,16 @@ function swap_chalk()
 				case "zm_cosmodrome":
 					ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin + (0, -8.5, 1), spawn_loc.angles);
 					break;
+				case "zm_factory":
+					{
+						if(mp5 == 0) //FG42
+							ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin + VectorScale((-8.5, 1, 1), 1), spawn_loc.angles);
+						else //Type 100
+							ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin + VectorScale((8.5, -1, 1), 1), spawn_loc.angles);
+						
+						mp5++;
+						break;
+					}
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin, spawn_loc.angles);
 					break;
@@ -2225,6 +2271,9 @@ function swap_chalk()
 				case "zm_moon":
 					ent.var_47896610 = util::spawn_model("wallbuy_m16a1_bo2", spawn_loc.origin + (0, -6, 0), spawn_loc.angles);
 					break;
+				case "zm_die":
+					ent.var_47896610 = util::spawn_model("wallbuy_m16a1_bo2", spawn_loc.origin + (0, 6, 1), spawn_loc.angles);
+					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_m16a1_bo2", spawn_loc.origin, spawn_loc.angles);
 					break;
@@ -2238,6 +2287,9 @@ function swap_chalk()
 				{
 				case "zm_tomb":
 					ent.var_47896610 = util::spawn_model("wallbuy_stg44_bo2", spawn_loc.origin + VectorScale((-8.5*cos(spawn_loc.angles[1]), -8.5*sin(spawn_loc.angles[1]), -1), 1), spawn_loc.angles);
+					break;
+				case "zm_factory":
+					ent.var_47896610 = util::spawn_model("wallbuy_stg44_bo2", spawn_loc.origin + VectorScale((-8.5*cos(spawn_loc.angles[1]) - 1, -8.5*sin(spawn_loc.angles[1]), -1), 1), spawn_loc.angles);
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_stg44_bo2", spawn_loc.origin + VectorScale((-8.5*cos(spawn_loc.angles[1]), -8.5*sin(spawn_loc.angles[1]), -1), 1), spawn_loc.angles);
@@ -2255,6 +2307,8 @@ function swap_chalk()
 					break;
 				case "zm_asylum":
 					ent.var_47896610 = util::spawn_model("wallbuy_ballista", spawn_loc.origin + (-3*cos(spawn_loc.angles[1])+1, -3*sin(spawn_loc.angles[1]), 1), spawn_loc.angles);
+					break;
+				case "zm_town": //Town Reimagined already has this
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_ballista", spawn_loc.origin + VectorScale((-3*cos(spawn_loc.angles[1]), -3*sin(spawn_loc.angles[1]), 1), 1), spawn_loc.angles);
@@ -2302,6 +2356,9 @@ function swap_chalk()
 				case "zm_asylum":
 					ent.var_47896610 = util::spawn_model("wallbuy_m1927_bo2", spawn_loc.origin + (8, -1, -1), spawn_loc.angles);
 					break;
+				case "zm_factory":
+					ent.var_47896610 = util::spawn_model("wallbuy_m1927_bo2", spawn_loc.origin + VectorScale((-8, 1, -1), 1), spawn_loc.angles);
+					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_m1927_bo2", spawn_loc.origin, spawn_loc.angles);
 					break;
@@ -2316,6 +2373,9 @@ function swap_chalk()
 				case "zm_prototype":
 				case "zm_asylum":
 					ent.var_47896610 = util::spawn_model("wallbuy_an94", spawn_loc.origin + VectorScale((0, 5, -1), 1), spawn_loc.angles);
+					break;
+				case "zm_die":
+					ent.var_47896610 = util::spawn_model("wallbuy_an94", spawn_loc.origin + VectorScale((0, -5, 1), 1), spawn_loc.angles);
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_an94", spawn_loc.origin, spawn_loc.angles);
@@ -2333,6 +2393,9 @@ function swap_chalk()
 					break;
 				case "zm_sumpf":
 					ent.var_47896610 = util::spawn_model("wallbuy_smr", spawn_loc.origin + (12, 0, 1), spawn_loc.angles);
+					break;
+				case "zm_factory":
+					ent.var_47896610 = util::spawn_model("wallbuy_smr", spawn_loc.origin + (-12, 1, 1), spawn_loc.angles);
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_smr", spawn_loc.origin, spawn_loc.angles);
@@ -2368,7 +2431,7 @@ function swap_chalk()
 					ent.var_47896610 = util::spawn_model("wallbuy_uzi_bo2", spawn_loc.origin + (1, 8, 0), spawn_loc.angles);
 					break;
 				case "zm_cellblock":
-					ent.var_47896610 = util::spawn_model("wallbuy_uzi_bo2", spawn_loc.origin + (8*cos(spawn_loc.angles[1]), 8*sin(spawn_loc.angles[1]), 0), spawn_loc.angles);
+					ent.var_47896610 = util::spawn_model("wallbuy_uzi_bo2", spawn_loc.origin + (-8*cos(spawn_loc.angles[1]), -8*sin(spawn_loc.angles[1]), 0), spawn_loc.angles);
 					break;
 				case "zm_prison": //copforthat's Mob of the Dead
 					{
@@ -2415,6 +2478,22 @@ function swap_chalk()
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_executioner", spawn_loc.origin, spawn_loc.angles);
+					break;
+				}
+				break;
+			}
+			case "t6_svu_as":
+			case "t6_svu_as_overlay":
+			case "t6_svu_as_switch":
+			{
+				spawn_loc = struct::get(ent.target, "targetname");
+				switch( GetDvarString("mapname") )
+				{
+				case "zm_die":
+					ent.var_47896610 = util::spawn_model("wallbuy_svu_as", spawn_loc.origin + (1, 9, 0), spawn_loc.angles);
+					break;
+				default:
+					ent.var_47896610 = util::spawn_model("wallbuy_svu_as", spawn_loc.origin, spawn_loc.angles);
 					break;
 				}
 				break;

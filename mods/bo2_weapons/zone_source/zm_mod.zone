@@ -320,6 +320,7 @@ weapon,t6_svu_as_up
 weapon,t6_svu_as_up_overlay
 weapon,t6_svu_as_up_switch_zm
 weapon,t6_svu_as_up_switch_overlay_zm
+xmodel,wallbuy_svu_as
 
 weapon,t6_type25
 weaponfull,t6_type25_up_zm
@@ -382,6 +383,9 @@ image,i_t7_zm_chalk_buy_m14_c
 image,i_t7_zm_chalk_buy_olympia_c
 image,i_t7_zm_chalk_buy_b23r_c
 image,i_t7_zm_chalk_buy_rem_c
+image,i_mtl_zm_wpn_t6_wall_chalk_olympia_c
+image,i_mtl_zm_wpn_t6_wall_chalk_m16_c
+image,i_mtl_zm_wpn_t6_wall_chalk_an94_c
 
 image,charred_cherry
 image,charred_deadshot

@@ -5,7 +5,7 @@ zombie_tomahawk,zombie_tomahawk_upgraded,,1000,grenade,,,,,TRUE,FALSE,FALSE,,,FA
 raygun_mark2,raygun_mark2_upgraded,,10000,wpck_ray,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,special,TRUE,TRUE,,
 t6_fiveseven_rdw,t6_fiveseven_rdw_up,,1100,pistol,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,pistol,,,
 t6_executioner,t6_executioner_up,,1400,pistol,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,pistol,,,
-t6_pdw57,t6_pdw57_up,,1300,smg,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,smg,,,
+t6_pdw57,t6_pdw57_up,,1200,smg,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,smg,,,
 t6_fal,t6_fal_up,,1250,rifle,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,rifle,,,
 t6_mtar,t6_mtar_up,,1300,rifle,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,rifle,,,
 t6_ak47,t6_ak47_up,,1400,rifle,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,rifle,,,

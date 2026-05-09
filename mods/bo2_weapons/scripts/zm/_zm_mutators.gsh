@@ -94,6 +94,8 @@
 #define	mutator_firesale					"playerqueuedrespawn"
 
 #define mutator_double_packapunch_bo2		"pointsPerWeaponKill"
+#define mutator_town_ballista				"kothMode"
+#define mutator_town_pdw57					"OvertimetimeLimit"
 
 //ints or int-compatible
 /*#define mutator_						"pregameItemVoteRoundTime"
@@ -109,8 +111,6 @@
 #define mutator_						"randomObjectiveLocations"*/
 
 //bools
-/*#define "kothMode"
-#define "OvertimetimeLimit"*/
 //#define "pregameDraftEnabled"	//game stuck loading
 //#define "pregameItemVoteEnabled"	//game stuck loading
 /*#define	mutator_		"playerforcerespawn"*/

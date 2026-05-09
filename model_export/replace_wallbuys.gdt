@@ -818,4 +818,28 @@
 		"compressionMethod" "compressed high color"
 		"semantic" "diffuseMap"
 	}
+	"i_mtl_zm_wpn_t6_wall_chalk_olympia_c" ( "image.gdf" )
+	{
+		"baseImage" "model_export\\wallbuy\\i_mtl_zm_wpn_t6_wall_chalk_olympia_c.png"
+		"compressionMethod" "compressed high color"
+		"imageType" "Texture"
+		"semantic" "diffuseMap"
+		"type" "image"
+	}
+	"i_mtl_zm_wpn_t6_wall_chalk_m16_c" ( "image.gdf" )
+	{
+		"baseImage" "model_export\\wallbuy\\i_mtl_zm_wpn_t6_wall_chalk_m16_c.png"
+		"compressionMethod" "compressed high color"
+		"imageType" "Texture"
+		"semantic" "diffuseMap"
+		"type" "image"
+	}
+	"i_mtl_zm_wpn_t6_wall_chalk_an94_c" ( "image.gdf" )
+	{
+		"baseImage" "model_export\\wallbuy\\i_mtl_zm_wpn_t6_wall_chalk_an94_c.png"
+		"compressionMethod" "compressed high color"
+		"imageType" "Texture"
+		"semantic" "diffuseMap"
+		"type" "image"
+	}
 }

@@ -72,6 +72,11 @@ function starter_weapon()
 			RemoveZombieBoxWeapon(GetWeapon("t6_ak47"));
 			RemoveZombieBoxWeapon(GetWeapon("t6_lsat"));
 			RemoveZombieBoxWeapon(GetWeapon("t6_death_machine"));
+			if(GetGametypeSetting(mutator_town_pdw57) == BOOLMUTATOR_OFFON_ON)
+			{
+				zm_weapons::include_weapon( "t6_pdw57", false, 1200 );
+				zm_weapons::include_upgraded_weapon( "t6_pdw57", "t6_pdw57_up", false, 1200 );
+			}
 		}
 		else
 		{
@@ -1093,8 +1098,17 @@ function swap_wall_weapon()
 						break;
 					}
 				case "t6_sniper_ballista":
-					ent struct::delete();
+					if(GetGametypeSetting(mutator_town_ballista) == BOOLMUTATOR_OFFON_OFF)
+						ent struct::delete();
+					else
+						ent.zombie_weapon_upgrade = "t6_ballista";
 					break;
+				case "t6_smg_pdw57":
+					if(GetGametypeSetting(mutator_town_pdw57) == BOOLMUTATOR_OFFON_OFF)
+						ent struct::delete();
+					else
+						ent.zombie_weapon_upgrade = "t6_pdw57";
+					break;	
 				case "t6_smg_mp5":
 					ent.zombie_weapon_upgrade = "t6_mp5";
 					break;
@@ -1676,7 +1690,7 @@ function swap_wall_weapon()
 		}
 	}
 	
-	switch(GetDvarString("mapname"))
+	/*switch(GetDvarString("mapname"))
 	{
 	case "zm_zod": //Shadows of Evil
 		{
@@ -1684,7 +1698,7 @@ function swap_wall_weapon()
 				ent.zombie_weapon_upgrade = "s2_sten";
 			break;
 		}
-	}
+	}*/
 	
 	if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON)
 	{
@@ -1696,9 +1710,19 @@ function swap_wall_weapon()
 			{
 				continue;
 			}
-			if(GetDvarString("mapname") != "zm_asylum" || GetDvarString("mapname") != "zm_asylum" && count != 0) //Don't delete German side
+			if(GetDvarString("mapname") != "zm_asylum" || GetDvarString("mapname") == "zm_asylum" && count != 0) //Don't delete German side
 				ent struct::delete();
+			if(GetDvarString("mapname") != "zm_tomb" || GetDvarString("mapname") == "zm_tomb" && count == 1) //Delete trip mine under church
+				ent struct::delete();
+			
+			count++;
 		}
+	}
+	
+	if(GetDvarString("mapname") == "zm_die")
+	{
+		foreach(ent in GetEntArray("weapon_upgrade_chalk_set_t6", "targetname"))
+			ent delete();
 	}
 }
 

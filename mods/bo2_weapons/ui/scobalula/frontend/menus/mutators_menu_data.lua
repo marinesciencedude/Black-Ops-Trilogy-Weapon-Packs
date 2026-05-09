@@ -807,5 +807,19 @@ function(arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_CalloftheDead",
 			"pointsPerSecondaryKill",
 			BuildStringSettings({"Black Ops", "World at War"}, "Black Ops") )]]
+		CoD.OptionsUtility.CreateNamedSettings(
+			arg0,
+			"Town Reimagined Ballista",
+			"Whether the Ballista can be bought off the wall in Town Reimagined",
+			"MutatorSettings_TownBallista",
+			"kothMode",
+			BuildBoolSettings({"Off", "On"}, "Off") ),
+		CoD.OptionsUtility.CreateNamedSettings(
+			arg0,
+			"Town Reimagined PDW-57",
+			"Whether the PDW-57 can be bought off the wall in Town Reimagined",
+			"MutatorSettings_TownPDW57",
+			"OvertimetimeLimit",
+			BuildBoolSettings({"Off", "On"}, "Off") )
 	}
 end, nil, nil, Update)

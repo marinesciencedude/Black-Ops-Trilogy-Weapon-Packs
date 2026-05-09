@@ -15,7 +15,7 @@ t6_olympia,t6_olympia_up,,500,shotgun,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,shotgun
 t6_b23r,t6_b23r_up,,1000,pistol,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,pistol,,,
 t6_mp5,t6_mp5_up,,1000,smg,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,smg,,,
 t6_ak74u,t6_ak74u_up,,1200,smg,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,smg,,,
-t6_pdw57,t6_pdw57_up,,1000,smg,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,smg,,,
+t6_pdw57,t6_pdw57_up,,1000,smg,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,smg,,,
 t6_m16a1,t6_m16a1_up,,1200,rifle,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,rifle,,,
 t6_an94,t6_an94_up,,1200,rifle,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,rifle,,,
 t6_rem870mcs,t6_rem870mcs_up,,1500,shotgun,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,shotgun,,,
