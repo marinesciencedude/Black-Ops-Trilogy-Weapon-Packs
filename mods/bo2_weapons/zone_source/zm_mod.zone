@@ -20,6 +20,8 @@ scriptparsetree,scripts/zm/_zm_perk_random.csc
 scriptparsetree,scripts/shared/xmodelalias_shared.gscc
 scriptparsetree,scripts/zm/_zm_xmodelalias.gscc
 scriptparsetree,scripts/zm/gametypes/_clientids.gsc
+scriptparsetree,scripts/zm/_load.gsc
+scriptparsetree,scripts/zm/_load.csc
 scriptparsetree,scripts/zm/_zm_ffotd.csc
 scriptparsetree,scripts/zm/_zm_ffotd.gsc
 scriptparsetree,scripts/zm/_zm_mod.gsc
@@ -386,6 +388,10 @@ image,i_t7_zm_chalk_buy_rem_c
 image,i_mtl_zm_wpn_t6_wall_chalk_olympia_c
 image,i_mtl_zm_wpn_t6_wall_chalk_m16_c
 image,i_mtl_zm_wpn_t6_wall_chalk_an94_c
+image,i_zm_wpn_wall_chalk_olympia_c
+image,i_zm_wpn_wall_chalk_mp5_c
+image,i_zm_wpn_wall_chalk_b23r_c
+image,i_t7_wpn_smg_m1926_wall_chalk_c_ronan
 
 image,charred_cherry
 image,charred_deadshot

@@ -20,7 +20,6 @@
 #using scripts\zm\_zm_utility;
 #using scripts\zm\_zm_weapons;
 #using scripts\zm\zm_claymore;
-#using scripts\zm\_zm_unitrigger;
 
 //#using scripts\zm\zm_alcatraz_island;
 
@@ -1556,6 +1555,25 @@ function swap_wall_weapon()
 				}
 				break;
 			}
+		case "zm_cellblock": //Hyb's Cell Block Survival
+			{
+				switch(VAL)
+				{
+				case "t6_xl_b23r":
+					ent.zombie_weapon_upgrade = "t6_b23r";
+					break;
+				case "t6_xl_olympia":
+					ent.zombie_weapon_upgrade = "t6_olympia";
+					break;
+				case "t6_xl_mp5":
+					ent.zombie_weapon_upgrade = "t6_mp5";
+					break;
+				case "smg_thompson":
+					ent.zombie_weapon_upgrade = "t6_uzi";
+					break;
+				}
+				break;
+			}
 		/*case "zm_coast":
 			{
 				if(GetDvarInt("mutator_wallbuys_callofthedead") == 2)
@@ -1967,7 +1985,55 @@ function swap_wall_weapon()
 			struct::get(ent.target, "targetname").model = GetWeapon(ent.zombie_weapon_upgrade).worldmodel;
 		}
 	}
-
+	
+	if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON && GetDvarString("mapname") != "zm_prison" && GetDvarString("mapname") != "zm_die")
+	{
+		foreach(ent in struct::get_array("claymore_purchase", "targetname"))
+		{
+			ent.zombie_weapon_upgrade = "claymore";
+			spawn_loc = struct::get(ent.target, "targetname");
+			spawn_loc.angles -= (0, -90, 0);
+			spawn_loc.script_vector = (0, -90, 0);
+		}
+	}
+	else if(GetDvarString("mapname") == "zm_prison")
+	{
+		foreach(ent in struct::get_array("claymore_purchase", "targetname"))
+			struct::get(ent.target, "targetname").script_vector = (0, -90, 0);
+	}
+	
+	//Add M14 to Hyb's Cell Block Survival but skip DanWj's Cell Block
+	if(GetDvarString("ui_mapname") == "3551452640" || GetDvarString("ui_mapname") == "zm_cellblock_hd")
+	{
+		wallbuy = spawnstruct();
+		wallbuy.targetname = "weapon_upgrade";
+		wallbuy.zombie_weapon_upgrade = "t6_m14";
+		wallbuy.angles = (0, 90, 0);
+		wallbuy.origin = (2111, 10504, 1390);
+		wallbuy struct::init();
+		
+		claymorebuy = spawnstruct();
+		claymorebuy.targetname = "claymore_purchase";
+		claymorebuy.zombie_weapon_upgrade = "claymore";
+		claymorebuy.angles = (0, 90, 0);
+		claymorebuy.origin = (3395, 9877, 1390);
+		claymorebuy struct::init();
+		
+		wallbuy.var_47896610 = util::spawn_model("wallbuy_m14_bo2", wallbuy.origin + VectorScale((-1, -1, 0), 1), wallbuy.angles);
+		claymorebuy.var_47896610 = util::spawn_model("wallbuy_claymore", claymorebuy.origin + VectorScale((0, -0.5, 0), 1), claymorebuy.angles);
+	}
+	else if(GetDvarString("ui_mapname") == "zm_cellblock" || GetDvarString("ui_mapname") == "2553596961")
+	{
+		claymorebuy = spawnstruct();
+		claymorebuy.targetname = "claymore_purchase";
+		claymorebuy.zombie_weapon_upgrade = "claymore";
+		claymorebuy.angles = (0, 90, 0);
+		claymorebuy.origin = (3675, 570, 60);
+		claymorebuy struct::init();
+		
+		claymorebuy.var_47896610 = util::spawn_model("wallbuy_claymore", claymorebuy.origin + VectorScale((0, -0.5, 0), 1), claymorebuy.angles);
+	}
+	
 	/*switch(GetDvarString("mapname"))
 	{
 	case "zm_zod": //Shadows of Evil
@@ -1977,25 +2043,6 @@ function swap_wall_weapon()
 			break;
 		}
 	}*/
-
-	if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON)
-	{
-		count = 0;
-		foreach(ent in struct::get_array("claymore_purchase", "targetname"))
-		{
-			VAL = ent.zombie_weapon_upgrade;
-			if(!isdefined(VAL))
-			{
-				continue;
-			}
-			if(GetDvarString("mapname") != "zm_asylum" || GetDvarString("mapname") == "zm_asylum" && count != 0) //Don't delete German side
-				ent struct::delete();
-			if(GetDvarString("mapname") != "zm_tomb" || GetDvarString("mapname") == "zm_tomb" && count == 1) //Delete trip mine under church
-				ent struct::delete();
-			
-			count++;
-		}
-	}
 	
 	if(GetDvarString("mapname") == "zm_die")
 	{
@@ -2213,8 +2260,13 @@ function swap_chalk()
 					ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin + VectorScale((0, 8.5, 1), 1), spawn_loc.angles);
 					break;
 				case "zm_cellblock":
-					ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin + VectorScale((0, 8.5, 2), 1), spawn_loc.angles);
-					break;
+					{
+						if(GetDvarString("ui_mapname") == "3551452640" || GetDvarString("ui_mapname") == "zm_cellblock_hd")
+							ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin + VectorScale((1, 8.5, 2), 1), spawn_loc.angles);
+						else
+							ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin + VectorScale((0, 8.5, 2), 1), spawn_loc.angles);
+						break;
+					}
 				case "zm_diner":
 				case "zm_farm_hd":
 					ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin + VectorScale((-8.5, 0, 2), 1), spawn_loc.angles);
@@ -2247,6 +2299,9 @@ function swap_chalk()
 						mp5++;
 						break;
 					}
+				case "zm_die":
+					ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin + (-8.5*cos(spawn_loc.angles[1]) + 1, -8.5*sin(spawn_loc.angles[1]), 1), spawn_loc.angles);
+					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin, spawn_loc.angles);
 					break;
@@ -2513,65 +2568,53 @@ function swap_claymores()
 			continue;
 		}
 		spawn_loc = struct::get(ent.target, "targetname");
-		switch( GetDvarString("mapname") )
+		switch(GetDvarString("mapname"))
 		{
-		case "zm_theater": //Kino der Toten
-		case "zm_cosmodrome": //Ascension
-		case "zm_temple": //Shangri-La, need to replace with Spikemore
+		case "zm_prison":
+		case "zm_die":
+			break;
+		case "zm_asylum":
+			{
+				if(count == 1) //American side
+					claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin + VectorScale((0, 5, 4), 1), spawn_loc.angles);
+				else
+					claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin + VectorScale((-6, 0, 4), 1), spawn_loc.angles);
+				break;
+			}
+		case "zm_sumpf":
+		case "zm_nuked":
+			claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin + VectorScale((-5, 0, 4), 1), spawn_loc.angles);
+			break;
+		case "zm_factory":
+			claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin + VectorScale((0, -6, 4), 1), spawn_loc.angles);
+			break;
+		case "zm_cosmodrome":
+			claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin + VectorScale((0, 6, 3), 1), spawn_loc.angles);
+			break;
+		case "zm_theater":
+			claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin + VectorScale((6, -0.5, 3), 1), spawn_loc.angles);
+			break;
 		case "zm_moon":
-			{
-				claymore = Spawn("trigger_radius_use", spawn_loc.origin, 0, 84, 72);
-				claymore.targetname = "claymore_trigger";
-				claymore zm_unitrigger::create_unitrigger( "Hold ^3&&1^7 to buy Claymores [Cost: 1000]" , 20, &visibility_and_update_prompt);
-				break;
-			}
-		case "zm_sumpf": //Shi no Numa
-		case "zm_factory": //The Giant
-			{
-				/*if(GetDvarInt("mutator_waw_wall_weapons") == 2)
-				{*/
-					claymore = Spawn("trigger_radius_use", spawn_loc.origin, 0, 84, 72);
-					claymore.targetname = "claymore_trigger";
-					claymore zm_unitrigger::create_unitrigger( "Hold ^3&&1^7 to buy Claymores [Cost: 1000]" , 20, &visibility_and_update_prompt);
-				//}
-				break;
-			}
-		case "zm_asylum": //Verrückt
+			claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin + VectorScale((-6, 1, 3), 1), spawn_loc.angles);
+			break;
+		case "zm_diner":
+			claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin + VectorScale((6, 0, 4), 1), spawn_loc.angles);
+			break;
 		case "zm_tomb":
 			{
-				/*if(GetDvarInt("mutator_waw_wall_weapons") == 2)
-				{*/
-					if(count == 1) //American side
-					{
-						claymore = Spawn("trigger_radius_use", spawn_loc.origin, 0, 84, 72);
-						claymore.targetname = "claymore_trigger";
-						claymore zm_unitrigger::create_unitrigger( "Hold ^3&&1^7 to buy Claymores [Cost: 1000]" , 20, &visibility_and_update_prompt);
-					}
-					else
-						claymore = ent;
-				//}
+				if(count == 0) //Generator Station 4
+					claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin + VectorScale((5, 0, 3), 1), spawn_loc.angles);
+				else if(count == 1) //Church
+					claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin + VectorScale((-6, 0, 3), 1), spawn_loc.angles);
+				else //Trenches
+					claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin + VectorScale((0, -6, 3), 1), spawn_loc.angles);
 				break;
 			}
+		default:
+			claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin, spawn_loc.angles);
+			break;
 		}
-		if(isdefined(claymore))
-		{
-			if(GetDvarString("mapname") == "zm_asylum")
-			{
-				if(count == 0) //German side
-					claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin + VectorScale((0, 1, 0), 1), spawn_loc.angles);
-				else
-					claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin + VectorScale((0, -0.5, 0), 1), spawn_loc.angles);
-				
-				count = 1;
-			}
-			else if(GetDvarString("mapname") != "zm_prison")
-			{
-				if(count == 1)
-					claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin + VectorScale((0, -0.5, 0), 1), spawn_loc.angles);
-				if(GetDvarString("mapname") == "zm_tomb")
-					count++;
-			}
-		}
+		count++;
 	}
 	thread zm_claymore::init();
 }

@@ -174,6 +174,13 @@ function init()
 	spawnable_weapon_spawns = ArrayCombine( spawnable_weapon_spawns, struct::get_array( "sickle_upgrade", "targetname" ), true, false );
 	spawnable_weapon_spawns = ArrayCombine( spawnable_weapon_spawns, struct::get_array( "tazer_upgrade", "targetname" ), true, false );
 	spawnable_weapon_spawns = ArrayCombine( spawnable_weapon_spawns, struct::get_array( "buildable_wallbuy", "targetname" ), true, false );
+	if(GetDvarString("ui_mapname") == "3551452640" || GetDvarString("ui_mapname") == "zm_cellblock_hd")
+	{
+		spawnable_weapon_spawns = ArrayCombine(spawnable_weapon_spawns, struct::get_array("t8_spoon_upgrade", "targetname"), 1, 0);
+		spawnable_weapon_spawns = ArrayCombine(spawnable_weapon_spawns, struct::get_array("t8_spork_upgrade", "targetname"), 1, 0);
+		spawnable_weapon_spawns = ArrayCombine(spawnable_weapon_spawns, struct::get_array("t8_goldenknife_upgrade", "targetname"), 1, 0);
+		spawnable_weapon_spawns = ArrayCombine(spawnable_weapon_spawns, struct::get_array("t8_spknifeork_upgrade", "targetname"), 1, 0);
+	}
 	
 	if ( IS_TRUE( level.use_autofill_wallbuy ) )
 	{

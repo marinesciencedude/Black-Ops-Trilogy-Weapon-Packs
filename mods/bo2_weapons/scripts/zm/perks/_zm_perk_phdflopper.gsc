@@ -78,12 +78,24 @@ function private phd_flopper_precache()
 		return;
 	}
 	
-	level._effect[PHDFLOPPER_MACHINE_LIGHT_FX]			= PHDFLOPPER_LIGHTING_FX;
+	if(GetDvarString("ui_mapname") == "3551452640" || GetDvarString("ui_mapname") == "zm_cellblock_hd")
+		level._effect[PHDFLOPPER_MACHINE_LIGHT_FX]			= "dlc5/zmhd/alcatraz/fx_perk_flopper_warp";
+	else
+		level._effect[PHDFLOPPER_MACHINE_LIGHT_FX]			= PHDFLOPPER_LIGHTING_FX;
 	
 	level.machine_assets[PERK_PHDFLOPPER] = SpawnStruct();
 	level.machine_assets[PERK_PHDFLOPPER].weapon = GetWeapon( PHDFLOPPER_PERK_BOTTLE_WEAPON );
-	level.machine_assets[PERK_PHDFLOPPER].off_model = PHDFLOPPER_MACHINE_DISABLED_MODEL;
-	level.machine_assets[PERK_PHDFLOPPER].on_model = PHDFLOPPER_MACHINE_ACTIVE_MODEL;	
+	if(GetDvarString("ui_mapname") == "3551452640" || GetDvarString("ui_mapname") == "zm_cellblock_hd")
+	{
+		level.machine_assets[PERK_PHDFLOPPER].off_model = "p8_zm_vending_flopper";
+		level.machine_assets[PERK_PHDFLOPPER].on_model = "p8_zm_vending_flopper";
+
+	}
+	else
+	{
+		level.machine_assets[PERK_PHDFLOPPER].off_model = PHDFLOPPER_MACHINE_DISABLED_MODEL;
+		level.machine_assets[PERK_PHDFLOPPER].on_model = PHDFLOPPER_MACHINE_ACTIVE_MODEL;	
+	}
 }
 
 function private phd_flopper_register_clientfield()

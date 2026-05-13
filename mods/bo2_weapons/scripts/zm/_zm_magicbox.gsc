@@ -55,7 +55,7 @@ REGISTER_SYSTEM_EX( "zm_magicbox", &__init__, &__main__, undefined )
 
 function __init__()
 {
-	if(GetDvarString("mapname") == "zm_cellblock")
+	if(GetDvarString("ui_mapname") == "zm_cellblock" || GetDvarString("ui_mapname") == "2553596961")
 	{
 		zm_utility::add_sound("motd_open_chest", "zmb_motd_magicbox_open");
 		zm_utility::add_sound("motd_music_chest", "zmb_motd_magicbox_jingle");
@@ -74,7 +74,7 @@ function __init__()
 	level._effect["lght_marker_flare"] 							= "zombie/fx_weapon_box_marker_fl_zmb";
 	level._effect["poltergeist"]										= "zombie/fx_barrier_buy_zmb";
 
-	if(GetDvarString("mapname") == "zm_cellblock")
+	if(GetDvarString("ui_mapname") == "zm_cellblock" || GetDvarString("ui_mapname") == "2553596961")
 	{
 		clientfield::register("zbarrier", "magicbox_open_glow", 1, 3, "int");
 		clientfield::register("zbarrier", "magicbox_closed_glow", 1, 3, "int");
@@ -145,13 +145,19 @@ function __main__()
 	// Set values that may be overwritten by level specific scripts
 	if( !IsDefined( level.chest_joker_model ) )
 	{
-		level.chest_joker_model = "p7_zm_teddybear";
+		if(GetDvarString("ui_mapname") == "3551452640" || GetDvarString("ui_mapname") == "zm_cellblock_hd")
+			level.chest_joker_model = "p8_zm_esc_magicbox_teddybearlock";
+		else
+			level.chest_joker_model = "p7_zm_teddybear";
 	}
 	
 	if( !IsDefined( level.magic_box_zbarrier_state_func ) )
 	{
 		level.magic_box_zbarrier_state_func = &process_magic_box_zbarrier_state;
 	}
+	
+	if(GetDvarString("ui_mapname") == "3551452640" || GetDvarString("ui_mapname") == "zm_cellblock_hd")
+		zm_magicbox_lock_init();
 	
 	if (!IsDefined(level.magic_box_check_equipment))
 		level.magic_box_check_equipment =  &default_magic_box_check_equipment;	
@@ -162,6 +168,102 @@ function __main__()
 	{
 		level.chests = struct::get_array( "treasure_chest_use", "targetname" );
 		treasure_chest_init( level.start_chest_name );
+	}
+}
+
+function zm_magicbox_lock_init()
+{
+	level.using_locked_magicbox = 1;
+	level.locked_magic_box_cost = 2000;
+	level.custom_magicbox_state_handler = &set_locked_magicbox_state;
+	zm_utility::add_zombie_hint("locked_magic_box_cost", &"ZOMBIE_LOCKED_COST_2000");
+}
+
+function watch_for_lock()
+{
+	self endon("user_grabbed_weapon");
+	self endon("chest_accessed");
+	self waittill("box_locked");
+	self notify("kill_chest_think");
+	self.grab_weapon_hint = 0;
+	self.chest_user = undefined;
+	wait(0.1);
+	self thread zm_unitrigger::register_static_unitrigger(self.unitrigger_stub, &zm_magicbox::magicbox_unitrigger_think);
+	self.unitrigger_stub zm_unitrigger::run_visibility_function_for_all_triggers();
+	self thread zm_magicbox::treasure_chest_think();
+}
+
+function clean_up_locked_box()
+{
+	self endon("box_spin_done");
+	self.owner waittill("box_locked");
+	if(isdefined(self.weapon_model))
+	{
+		self.weapon_model delete();
+		self.weapon_model = undefined;
+	}
+	if(isdefined(self.weapon_model_dw))
+	{
+		self.weapon_model_dw delete();
+		self.weapon_model_dw = undefined;
+	}
+	self HideZBarrierPiece(3);
+	self HideZBarrierPiece(4);
+	self SetZBarrierPieceState(3, "closed");
+	self SetZBarrierPieceState(4, "closed");
+}
+
+function magic_box_locks()
+{
+	self.owner.is_locked = 1;
+	self.owner notify("box_locked");
+	self playsound("zmb_hellbox_lock");
+	self clientfield::set("magicbox_open_fx", 0);
+	self clientfield::set("magicbox_amb_fx", 2);
+	self SetZBarrierPieceState(5, "closing");
+	while(self GetZBarrierPieceState(5) == "closing")
+	{
+		wait(0.5);
+	}
+	self notify("locked");
+}
+
+function magic_box_unlocks()
+{
+	zm_unitrigger::unregister_unitrigger(self.owner.unitrigger_stub);
+	self playsound("zmb_hellbox_unlock");
+	self SetZBarrierPieceState(5, "opening");
+	while(self GetZBarrierPieceState(5) == "opening")
+	{
+		wait(0.5);
+	}
+	self SetZBarrierPieceState(2, "closed");
+	self ShowZBarrierPiece(2);
+	self HideZBarrierPiece(5);
+	self notify("unlocked");
+	self.owner.is_locked = 0;
+	zm_unitrigger::register_unitrigger(self.owner.unitrigger_stub);
+	self clientfield::set("magicbox_amb_fx", 1);
+}
+
+function set_locked_magicbox_state(State)
+{
+	switch(State)
+	{
+		case "locking":
+		{
+			self ShowZBarrierPiece(5);
+			self thread magic_box_locks();
+			self.State = "locking";
+			break;
+		}
+		case "unlocking":
+		{
+			self ShowZBarrierPiece(5);
+			self magic_box_unlocks();
+			self.State = "close";
+			break;
+		}
 	}
 }
 
@@ -248,7 +350,7 @@ function init_starting_chest_location( start_chest_name )
 	level.chest_index = 0;
 	start_chest_found = false;
 	
-	if(GetDvarString("mapname") == "zm_cellblock")
+	if(GetDvarString("ui_mapname") == "zm_cellblock" || GetDvarString("ui_mapname") == "2553596961")
 	{
 		for(i = 0; i < level.chests.size; i++)
 		{
@@ -512,7 +614,7 @@ function play_crazi_sound(script_string)
 function show_chest()
 {
 	self.zbarrier set_magic_box_zbarrier_state("arriving");
-	if(GetDvarString("mapname") == "zm_cellblock")
+	if(GetDvarString("ui_mapname") == "zm_cellblock" || GetDvarString("ui_mapname") == "2553596961")
 	{
 		players = GetPlayers();
 		for(i = 0; i < players.size; i++)
@@ -538,7 +640,7 @@ function show_chest()
 	//self TriggerEnable( true );
 	thread zm_unitrigger::register_static_unitrigger(self.unitrigger_stub, &magicbox_unitrigger_think);
 
-	if(GetDvarString("mapname") != "zm_cellblock")
+	if(GetDvarString("ui_mapname") != "zm_cellblock" && GetDvarString("ui_mapname") != "2553596961")
 		self.zbarrier clientfield::increment("zbarrier_show_sounds" );
 
 	self.hidden = false;
@@ -575,7 +677,7 @@ function hide_chest(doBoxLeave)
 	{
 		if(IS_TRUE(doBoxLeave))
 		{
-			if(GetDvarString("mapname") == "zm_cellblock")
+			if(GetDvarString("ui_mapname") == "zm_cellblock" || GetDvarString("ui_mapname") == "2553596961")
 			{
 				players = GetPlayers();
 				for(i = 0; i < players.size; i++)
@@ -764,7 +866,7 @@ function default_pandora_show_func( anchor, anchorTarget, pieces )
 		// Show the column light effect on the box
 		if( !IsDefined( level.pandora_fx_func ) )
 		{
-			if(GetDvarString("mapname") == "zm_cellblock")
+			if(GetDvarString("ui_mapname") == "zm_cellblock" || GetDvarString("ui_mapname") == "2553596961")
 				level.pandora_fx_func = &cellblock_pandora_fx_func;
 			else
 				level.pandora_fx_func = &default_pandora_fx_func;
@@ -773,7 +875,7 @@ function default_pandora_show_func( anchor, anchorTarget, pieces )
 		self thread [[ level.pandora_fx_func ]]();
 	}
 
-	if(GetDvarString("mapname") != "zm_cellblock")
+	if(GetDvarString("ui_mapname") != "zm_cellblock" && GetDvarString("ui_mapname") != "2553596961")
 		playfx( level._effect["lght_marker_flare"],self.pandora_light.origin );
 	
 	//Add this location to the map

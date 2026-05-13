@@ -1281,6 +1281,25 @@ function swap_wall_weapon()
 				}
 				break;
 			}
+		case "zm_cellblock": //Hyb's Cell Block Survival
+			{
+				switch(VAL)
+				{
+				case "t6_xl_b23r":
+					ent.zombie_weapon_upgrade = "t6_b23r";
+					break;
+				case "t6_xl_olympia":
+					ent.zombie_weapon_upgrade = "t6_olympia";
+					break;
+				case "t6_xl_mp5":
+					ent.zombie_weapon_upgrade = "t6_mp5";
+					break;
+				case "smg_thompson":
+					ent.zombie_weapon_upgrade = "t6_uzi";
+					break;
+				}
+				break;
+			}
 		/*case "zm_coast":
 			{
 				if(GetDvarInt("mutator_wallbuys_callofthedead") == 2)
@@ -1690,6 +1709,49 @@ function swap_wall_weapon()
 		}
 	}
 	
+	if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON && GetDvarString("mapname") != "zm_prison" && GetDvarString("mapname") != "zm_die")
+	{
+		foreach(ent in struct::get_array("claymore_purchase", "targetname"))
+		{
+			ent.zombie_weapon_upgrade = "claymore";
+			spawn_loc = struct::get(ent.target, "targetname");
+			spawn_loc.angles -= (0, -90, 0);
+			spawn_loc.script_vector = (0, -90, 0);
+		}
+	}
+	else if(GetDvarString("mapname") == "zm_prison")
+	{
+		foreach(ent in struct::get_array("claymore_purchase", "targetname"))
+			struct::get(ent.target, "targetname").script_vector = (0, -90, 0);
+	}
+	
+	//Add M14 to Hybs' Cell Block Survival but skip DanWj's Cell Block
+	if(GetDvarString("ui_mapname") == "3551452640" || GetDvarString("ui_mapname") == "zm_cellblock_hd")
+	{
+		wallbuy = spawnstruct();
+		wallbuy.targetname = "weapon_upgrade";
+		wallbuy.zombie_weapon_upgrade = "t6_m14";
+		wallbuy.angles = (0, 90, 0);
+		wallbuy.origin = (2111, 10504, 1390);
+		wallbuy struct::init();
+		
+		claymorebuy = spawnstruct();
+		claymorebuy.targetname = "claymore_purchase";
+		claymorebuy.zombie_weapon_upgrade = "claymore";
+		claymorebuy.angles = (0, 90, 0);
+		claymorebuy.origin = (3395, 9877, 1390);
+		claymorebuy struct::init();
+	}
+	else if(GetDvarString("ui_mapname") == "zm_cellblock" || GetDvarString("ui_mapname") == "2553596961")
+	{
+		claymorebuy = spawnstruct();
+		claymorebuy.targetname = "claymore_purchase";
+		claymorebuy.zombie_weapon_upgrade = "claymore";
+		claymorebuy.angles = (0, 90, 0);
+		claymorebuy.origin = (3675, 570, 60);
+		claymorebuy struct::init();
+	}
+	
 	/*switch(GetDvarString("mapname"))
 	{
 	case "zm_zod": //Shadows of Evil
@@ -1699,25 +1761,6 @@ function swap_wall_weapon()
 			break;
 		}
 	}*/
-	
-	if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON)
-	{
-		count = 0;
-		foreach(ent in struct::get_array("claymore_purchase", "targetname"))
-		{
-			VAL = ent.zombie_weapon_upgrade;
-			if(!isdefined(VAL))
-			{
-				continue;
-			}
-			if(GetDvarString("mapname") != "zm_asylum" || GetDvarString("mapname") == "zm_asylum" && count != 0) //Don't delete German side
-				ent struct::delete();
-			if(GetDvarString("mapname") != "zm_tomb" || GetDvarString("mapname") == "zm_tomb" && count == 1) //Delete trip mine under church
-				ent struct::delete();
-			
-			count++;
-		}
-	}
 	
 	if(GetDvarString("mapname") == "zm_die")
 	{

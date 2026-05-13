@@ -172,6 +172,9 @@ function apply_choices() {
 		}
 	}
 	
+	if((GetDvarString("ui_mapname") == "3551452640" || GetDvarString("ui_mapname") == "zm_cellblock_hd") && (GetGametypeSetting(mutator_enable_gobblegum) == 2 || GetGametypeSetting(mutator_enable_gobblegum) == 3))
+		level.var_5a072535 = &function_b2f238aa;
+	
 	/*if(GetDvarInt("mutator_ray_gun") == 2)
 	{
 		level.zombie_weapons[GetWeapon("t4_ray_gun")].is_in_box = false;
@@ -394,6 +397,30 @@ function fire_sale_disable()
 	level waittill("fire_sale_on");
 	self hide_bgb_machine();
 	self fire_sale_disable();
+}
+
+function function_b2f238aa(State)
+{
+	self notify("away");
+	self.State = "away";
+	self ShowZBarrierPiece(0);
+	self ShowZBarrierPiece(5);
+	self thread function_af73d05f();
+}
+
+
+function function_af73d05f()
+{
+	self endon("zbarrier_state_change");
+	self clientfield::set("bgb_machine_state", 4);
+	self SetZBarrierPieceState(5, "closed");
+	for(;;)
+	{
+		wait(RandomFloatRange(180, 1800));
+		self SetZBarrierPieceState(0, "opening");
+		wait(RandomFloatRange(180, 1800));
+		self SetZBarrierPieceState(0, "closing");
+	}
 }
 
 function Sand() //I wonder why when decompiling from Cypress' Monkey Exterminiation Mod

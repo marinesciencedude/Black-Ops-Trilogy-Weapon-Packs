@@ -1487,6 +1487,16 @@ function perk_machine_spawn_init()
 		if(GetGametypeSetting(mutator_phd_widows) == BOOLMUTATOR_ONOFF_ON && perk == PERK_WIDOWS_WINE && GetDvarString("mapname") != "zm_nuked")
 			perk = PERK_PHDFLOPPER;
 		
+		if((GetDvarString("ui_mapname") == "3551452640" || GetDvarString("ui_mapname") == "zm_cellblock_hd") && GetGametypeSetting(mutator_cellblock_perks) == BOOLMUTATOR_ONOFF_ON)
+		{
+			if(perk == PERK_DOUBLETAP2)
+				perk = PERK_ADDITIONAL_PRIMARY_WEAPON;
+			else if(perk == PERK_ELECTRIC_CHERRY)
+				perk = PERK_DOUBLETAP2;
+			else if(perk == PERK_ADDITIONAL_PRIMARY_WEAPON)
+				perk = PERK_ELECTRIC_CHERRY;
+		}
+		
 		if(GetGametypeSetting(mutator_doubletap) == 1 && perk == PERK_DOUBLETAP2)
 			perk = "specialty_rof";
 		

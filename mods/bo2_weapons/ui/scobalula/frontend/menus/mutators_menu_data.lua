@@ -820,6 +820,13 @@ function(arg0, arg1, arg2, arg3, arg4)
 			"Whether the PDW-57 can be bought off the wall in Town Reimagined",
 			"MutatorSettings_TownPDW57",
 			"OvertimetimeLimit",
-			BuildBoolSettings({"Off", "On"}, "Off") )
+			BuildBoolSettings({"Off", "On"}, "Off") ),
+		CoD.OptionsUtility.CreateNamedSettings(
+			arg0,
+			"Cell Block Perk Swap",
+			"Swap positions of Mule Kick, Double Tap, Electric Cherry on Hybs' Cell Block Survival so that Mule Kick and Double Tap are in their original positions",
+			"MutatorSettings_CellBlockPerks",
+			"playerforcerespawn",
+			BuildBoolSettings({"On", "Off"}, "Off") )
 	}
 end, nil, nil, Update)

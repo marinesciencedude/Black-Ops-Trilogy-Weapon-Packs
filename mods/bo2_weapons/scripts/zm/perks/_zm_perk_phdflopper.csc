@@ -45,7 +45,12 @@ function __init__()
 function private init_phd_flopper()
 {
 	if( IS_TRUE(level.enable_magic) )
-		level._effect[PHDFLOPPER_MACHINE_LIGHT_FX]	= PHDFLOPPER_LIGHTING_FX;		
+	{
+		if(GetDvarString("ui_mapname") == "3551452640" || GetDvarString("ui_mapname") == "zm_cellblock_hd")
+			level._effect[PHDFLOPPER_MACHINE_LIGHT_FX]	= "dlc5/zmhd/alcatraz/fx_perk_flopper_warp";
+		else
+			level._effect[PHDFLOPPER_MACHINE_LIGHT_FX]	= PHDFLOPPER_LIGHTING_FX;		
+	}	
 
 }
 

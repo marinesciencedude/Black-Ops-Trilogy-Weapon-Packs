@@ -33,6 +33,14 @@ claymore,,,1000,claymore,,,,,false,false,false,,,false,true,special,,,,
 #Diner
 spx_zombie_shield,spx_zombie_shield_upgraded,,500,,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,special,TRUE,,,
 t6_taser_knuckles,,,5000,,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,special,,,,
+#Cell Block Survival
+t6_xl_claymore,,,1000,grenade,,1000,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,,
+t8_raygun,t8_raygun_up,,10000,wpck_ray,pistol,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,special,TRUE,TRUE,FALSE,
+spx_spectral_shield,spx_spectral_shield_upgraded,,500,,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,special,TRUE,,,
+t8_spoon,,,3000,wpck_bowie,,,,,FALSE,FALSE,,,,FALSE,FALSE,special,,,,
+t8_spork,,,5000,wpck_bowie,,,,,FALSE,FALSE,,,,FALSE,FALSE,special,,,,
+t8_goldenknife,,,10000,wpck_bowie,,,,,FALSE,FALSE,,,,FALSE,FALSE,special,,,,
+t8_spknifeork,,,20000,wpck_bowie,,,,,FALSE,FALSE,,,,FALSE,FALSE,special,,,,
 #other stuff
 t6_olympia,t6_olympia_up,,500,shotgun,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,shotgun,,,
 t6_mp5,t6_mp5_up,,1000,smg,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,smg,,,

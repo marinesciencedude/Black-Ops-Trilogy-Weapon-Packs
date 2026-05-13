@@ -28,7 +28,11 @@ function init_doubletap()
 {
 	if(isdefined(level.enable_magic) && level.enable_magic)
 	{
-		level._effect["doubletap_light"] = "zombie/fx_perk_doubletap2_zmb";
+		if(GetDvarString("ui_mapname") == "3551452640" || GetDvarString("ui_mapname") == "zm_cellblock_hd")
+			level._effect["doubletap_light"] = "dlc5/zmhd/alcatraz/fx_perk_doubletap_warp";
+		else
+			level._effect["doubletap_light"] = "zombie/fx_perk_doubletap2_zmb";
+		
 	}
 }
 
