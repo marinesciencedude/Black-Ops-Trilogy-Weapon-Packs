@@ -36,7 +36,8 @@ REGISTER_SYSTEM( "doubletap2", &__init__, undefined )
 //-----------------------------------------------------------------------------------
 function __init__()
 {
-	enable_doubletap2_perk_for_level();
+	if(GetDvarString("mapname") == "zm_factory_classic")
+		enable_doubletap2_perk_for_level();
 }
 
 function enable_doubletap2_perk_for_level()

@@ -2,7 +2,7 @@ weapon_name,upgrade_name,hint,cost,weaponVO,weaponVOresp,ammo_cost,create_vox,is
 pistol_standard,pistol_standard_upgraded,ZMWEAPON_PISTOL_STANDARD,50,pistol,,0,,,FALSE,FALSE,TRUE,0,,FALSE,FALSE,pistol,TRUE,,,
 t4_m1911,t4_m1911_up,,100,pistol,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,pistol,,,
 t5_m1911,t5_m1911_rdw_up,,300,pistol,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,pistol,TRUE,,
-claymore_zm,,,1000,betty,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,
+claymore,,,1000,betty,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,
 bouncingbetty,,,1000,grenade,,1000,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,,
 frag_grenade,,,250,grenade,,250,,,FALSE,FALSE,FALSE,,,FALSE,FALSE,grenade,,,,
 sticky_grenade_custom,,,250,grenade,,250,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,

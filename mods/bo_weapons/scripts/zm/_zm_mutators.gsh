@@ -96,8 +96,6 @@
 #define mutator_						"rebootTime"*/
 
 //bools
-/*#define "kothMode"
-#define "OvertimetimeLimit"*/
 //#define "pregameDraftEnabled"	//game stuck loading
 //#define "pregameItemVoteEnabled"	//game stuck loading
 

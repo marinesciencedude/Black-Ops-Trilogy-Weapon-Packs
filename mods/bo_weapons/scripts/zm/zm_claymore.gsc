@@ -2,6 +2,8 @@
 #using scripts\shared\callbacks_shared;
 #using scripts\shared\hud_util_shared;
 #using scripts\zm\_zm_weapons;
+#using scripts\zm\_zm_utility;
+#using scripts\zm\_zm_placeable_mine;
 
 #precache( "material", "claymore_hud" );
 #precache( "material", "claymore_hud_inactive" );
@@ -21,7 +23,12 @@ function init()
 	level.claymoreDetectionDot = cos( claymoreDetectionConeAngle );
 	level.claymoreDetectionMinDist = 20;
 	level.claymoreDetectionGracePeriod = .75;
-	thread purchaseClaymores();
+	
+	//thread purchaseClaymores();
+	claymore = GetWeapon("claymore");
+	zm_placeable_mine::add_mine_type("claymore");
+	zm_weapons::register_zombie_weapon_callback( claymore, &giveClaymores);
+	
 	callback::on_spawned( &claymoreSetup );
 }
 
@@ -98,13 +105,16 @@ function give_claymores_after_rounds()
 function giveClaymores()
 {
 	claymore = getWeapon("claymore");
+	self zm_utility::set_player_placeable_mine( claymore );
 	self giveweapon(claymore);
 	self setactionslot(4, "weapon", claymore);
 	self setweaponammostock(claymore, 2);
 	self thread claymore_death_think();
+	
+	self thread give_claymores_after_rounds();
 
 	// Hud
-	if(GetDvarInt("mutator_hud") != 2)
+	/*if(GetDvarInt("mutator_hud") != 2)
 	{
 		self.claymoreHud = self hud::createServerIcon( "claymore_hud", 18, 18 );
 		self.claymoreHud.horzAlign = "right";
@@ -119,7 +129,7 @@ function giveClaymores()
 		self waittill("death");
 		self.claymoreHud hud::destroyElem();
 		self.claymoreHud = undefined;
-	}
+	}*/
 }
 
 function manageClaymoreHud()
@@ -231,7 +241,7 @@ function claymoreDetonation()
 			
 		if(zombs[i].origin[2] < fake_model.origin[2] + 80 && zombs[i].origin[2] > fake_model.origin[2] - 80 && DistanceSquared(zombs[i].origin, fake_model.origin) < 200 * 200)
 		{
-			zombs[i] doDamage(zombs[i].health + 666, self.origin);
+			zombs[i] doDamage(level.round_number * randomintrange( 100, 200 ), self.origin);
 			self.owner zm_score::add_to_player_score(60);
 			self.owner.kills++;
 		}
@@ -275,7 +285,7 @@ function pickup_claymores()
 	self.owner  giveweapon(claymore);
 	self.owner  setactionslot(4,"weapon",claymore);
 	self.owner  setweaponammoclip(claymore,new_ammo);
-	self Delete();
+	self delete_claymore();
 }
 
 function playClaymoreEffects()
@@ -355,7 +365,7 @@ function earlyExplode()
 			continue;
 		if(zombs[i].origin[2] < self.origin[2] + 80 && zombs[i].origin[2] > self.origin[2] - 80 && DistanceSquared(zombs[i].origin, self.origin) < 200 * 200)
 		{
-			zombs[i] doDamage(zombs[i].health + 666, self.origin);
+			zombs[i] doDamage(level.round_number * randomintrange( 100, 200 ), self.origin);
 			self.owner zm_score::add_to_player_score(60);
 			self.owner.kills++;
 		}
@@ -369,7 +379,6 @@ function earlyExplode()
 		{
 			if(DistanceSquared(ents[i].origin, self.origin) < 200 * 200)
 				ents[i] notify("spiked", self.owner);
-				//ents[i] doDamage(666, self.origin, self.owner, self, "MOD_EXPLOSIVE", undefined, getweapon("claymore"));
 		}
 	}
 	

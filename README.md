@@ -47,7 +47,7 @@ Note also that share\raw\sound\aliases\user_aliases.csv and share\raw\sound\glob
 * ai_zombie_spets_roll_ and ai_zombie_spets_sidestep_left_ .xanim files (xanim_export\black_ops_3\zombie) from Harrybo21's New BT Stuff v3.0.0: https://mega.nz/file/bSAxWQJS#weh95pMZWuSmnV0kpgzt5mFtk7qZ4xq06E23PBOOOMQ
 * MikeyRay's Customizable PHD Flopper: https://forum.modme.co/wiki/threads/3537.html
 * Pmr360's Black Ops 1/4 - Revive animation: https://www.devraw.net/approved-assets/pmr360/black-ops-1%2F4---revive-animation
-* GCP, Kingslayer, Kyle, Lilrifa, Jarik, Scobalula, DTZxPorter T5_HUD: https://discord.com/channels/230615005194616834/233220803439755264/1380942431784145010
+* Kingslayer Kyle's Black Ops 1 HUD: https://drive.google.com/file/d/1JXbn3z1mvVpmrm1qOIGdSLCdLljXBiFd/view
 * GCPeinhardt's Winter's Howl: https://discord.com/channels/230615005194616834/233220803439755264/1328900707969142798
 * eMoX's T8 Powerup Delayed Drop: https://www.devraw.net/approved-assets/emox/emox---t8-powerup-delayed-drop
 
@@ -72,3 +72,4 @@ Then install all files from this repo into your Black Ops III installation apart
 * XcDylan93 for [dive-to-prone and sprint/reload cancel script]() and [improved Winter's](https://discord.com/channels/230615005194616834/230616047613378560/1416092794048483509) [Howl Scripts](https://discord.com/channels/230615005194616834/230616047613378560/1415799187668209719)
 * [hb21_black_ops_3_fx_library_v2.1.0](https://mega.nz/file/6WYARBxB#-NUWhmjzCySBXx9FCBpTy_wvjhe5FsyBec7nPKYwOl0) for fx_muz_thundergun_1p.efx, fx_muz_thundergun_3p.efx, fx_trail_thundergun.efx, fx_muz_thundergun_1p_ug.efx, fx_muz_thundergun_3p_ug.efx, fx_trail_thundergun_ug.efx, fx_muz_thundergun_1p_ug_child.efx, fx_trail_thundergun_tread.efx, fx_trail_thundergun_tread_ug.efx, fx_muz_thundergun_1p_ug_child.efx and pre-requisites gfx_ring_thin_nocull, gfx_fog_slow_md_anim_em_nocull, gfx_decal_blast_white_01
 * Apex for xmodelalias fix ([originally here](https://steamcommunity.com/sharedfiles/filedetails/?id=1833845566), one file extracted with Cerberus and other files downloaded [from here](https://github.com/clixmods/zm_nuked/blob/main/scripts/shared))
+* Underbarrel HUD scripting and some image assets are from T5_HUD by GCP, Kingslayer, Kyle, Lilrifa, Jarik, Scobalula, DTZxPorter

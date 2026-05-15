@@ -2317,20 +2317,12 @@ function swap_wall_weapon()
 	
 	if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON)
 	{
-		count = 0;
 		foreach(ent in struct::get_array("claymore_purchase", "targetname"))
 		{
-			VAL = ent.zombie_weapon_upgrade;
-			if(!isdefined(VAL))
-			{
-				continue;
-			}
-			if((GetDvarString("mapname") == "zm_asylum" && count == 0) || (GetGametypeSetting(mutator_waw_wall_weapons) != 2 && (GetDvarString("mapname") == "zm_asylum" || GetDvarString("mapname") == "zm_sumpf" || GetDvarString("mapname") == "zm_factory")))
-				ent.zombie_weapon_upgrade = "bo1_bouncingbetty";
-			else if(GetDvarString("mapname") != "zm_asylum" || (GetDvarString("mapname") == "zm_asylum" && count != 0)) //Don't delete German side
-				ent struct::delete();
-			
-			count = 1;
+			ent.zombie_weapon_upgrade = "claymore";
+			spawn_loc = struct::get(ent.target, "targetname");
+			spawn_loc.angles -= (0, -90, 0);
+			spawn_loc.script_vector = (0, -90, 0);
 		}
 	}
 }
