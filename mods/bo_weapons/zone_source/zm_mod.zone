@@ -477,6 +477,7 @@ xmodel,wallbuy_bouncingbetty
 scriptparsetree,scripts/zm/zm_temple_ffotd.gsc
 scriptparsetree,scripts/zm/zm_cosmodrome_ffotd.gsc
 //scriptparsetree,scripts/zm/zm_moon_ffotd.gsc
+scriptparsetree,scripts/zm/zm_theater_ffotd.gsc
 
 weapon,t5_ak47
 weapon,t5_ak47_up_zm

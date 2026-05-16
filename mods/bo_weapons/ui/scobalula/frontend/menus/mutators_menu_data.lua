@@ -435,6 +435,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 			BuildStringSettings({"BO III", "BO"}, "BO III"), nil, SetDvarSetting),
 		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
+			"Kino Zombies Climbing Stage",
+			"If zombies can climb up and jump down from the stage or if they have to go round the stairs like in the original game.",
+			"MutatorSettings_KinoStageClimb",
+			"pregameItemMaxVotes",
+			BuildStringSettings({"On", "Off"}, "Off") ),
+		CoD.OptionsUtility.CreateNamedSettings(
+			arg0,
 			"Starting Weapon",
 			"If the starting weapon should be the BO M1911 or leave it at the map's default. For maps like Origins which have unique starting weapons.",
 			"MutatorSettings_StartingWeapon",

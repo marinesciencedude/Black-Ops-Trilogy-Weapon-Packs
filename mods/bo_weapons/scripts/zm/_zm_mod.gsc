@@ -758,7 +758,7 @@ function apply_choices() {
 		}
 	}
 	
-	//this doesn't work??? I don't like repeating the maxhealth code
+	//this doesn't work??? I don't like repeating code
 	//if(GetDvarInt("mutator_health_difficulty" != 1))
 	//{
 		switch(GetGametypeSetting(mutator_health_difficulty))
@@ -773,12 +773,12 @@ function apply_choices() {
 				level.playerhealth_regularregendelay = 3000;
 				level.worthydamageratio = 0.0;
 				
-				//well, TF's Zombie Options set it to 75 so...
-				foreach(player in level.players){
-					player zombie_utility::set_zombie_var( "player_base_health", 75, false);
-					player.maxhealth = 75;
-					player.health = 75;
-				}
+				if(isdefined(level.zombie_init_done))
+					level.zombie_init_done_original = level.zombie_init_done;
+				level.zombie_init_done = &zombie_init_done;
+				if(isdefined(level.quad_prespawn))
+					level.quad_prespawn_original = level.quad_prespawn;
+				level.quad_prespawn = &quad_prespawn;
 				break;
 			}
 			case 3: //Regular
@@ -790,16 +790,16 @@ function apply_choices() {
 				level.invultime_postshield = 0.3;
 				level.playerhealth_regularregendelay = 2400;
 				
-				//well, TF's Zombie Options set it to 75 so...
-				foreach(player in level.players){
-					player zombie_utility::set_zombie_var( "player_base_health", 75, false);
-					player.maxhealth = 75;
-					player.health = 75;
-				}
+				if(isdefined(level.zombie_init_done))
+					level.zombie_init_done_original = level.zombie_init_done;
+				level.zombie_init_done = &zombie_init_done;
+				if(isdefined(level.quad_prespawn))
+					level.quad_prespawn_original = level.quad_prespawn;
+				level.quad_prespawn = &quad_prespawn;
 				break;
 			}
-			//case 4: //Hardened
-			/*{
+			case 4: //Hardened
+			{
 				level.player_deathinvulnerabletime = 600;
 				level.healthoverlaycutoff = 0.3;
 				level.invultime_preshield = 0.1;
@@ -807,16 +807,15 @@ function apply_choices() {
 				level.invultime_postshield = 0.1;
 				level.playerhealth_regularregendelay = 1200;
 				
-				//well, TF's Zombie Options set it to 75 so...
-				foreach(player in level.players){
-					player zombie_utility::set_zombie_var( "player_base_health", 75, false);
-					player.maxhealth = 75;
-					player.health = 75;
-				}
+				if(isdefined(level.zombie_init_done))
+					level.zombie_init_done_original = level.zombie_init_done;
+				level.zombie_init_done = &zombie_init_done;
+				if(isdefined(level.quad_prespawn))
+					level.quad_prespawn_original = level.quad_prespawn;
+				level.quad_prespawn = &quad_prespawn;
 				break;
-			}*/
-			//case 5: //Veteran
-			case 4: //Veteran
+			}
+			case 5: //Veteran
 			{
 				level.player_deathinvulnerabletime = 100;
 				level.healthoverlaycutoff = 0.5;
@@ -825,12 +824,12 @@ function apply_choices() {
 				level.invultime_postshield = 0.0;
 				level.playerhealth_regularregendelay = 1200;
 				
-				//well, TF's Zombie Options set it to 75 so...
-				foreach(player in level.players){
-					player zombie_utility::set_zombie_var( "player_base_health", 75, false);
-					player.maxhealth = 75;
-					player.health = 75;
-				}
+				if(isdefined(level.zombie_init_done))
+					level.zombie_init_done_original = level.zombie_init_done;
+				level.zombie_init_done = &zombie_init_done;
+				if(isdefined(level.quad_prespawn))
+					level.quad_prespawn_original = level.quad_prespawn;
+				level.quad_prespawn = &quad_prespawn;
 				break;
 			}
 		}
@@ -846,6 +845,30 @@ function apply_choices() {
 	
 
    
+}
+
+function twohitdown(player)
+{
+	//thanks 31-79 JGb215
+	if(isdefined(self.shrinked) && self.shrinked)
+		return 5;
+	else
+		return 50;
+}
+
+function zombie_init_done()
+{
+	if(isdefined(level.zombie_init_done_original))
+		self [[level.zombie_init_done_original]]();
+	if(self.targetname == "zombie")
+		self.custom_damage_func = &twohitdown;
+}
+
+function quad_prespawn()
+{
+	if(isdefined(level.zombie_init_done_original))
+		self [[level.quad_prespawn_original]]();
+	self.custom_damage_func = &twohitdown;
 }
 
 function hide_bgb_machine(do_bgb_machine_leave)
