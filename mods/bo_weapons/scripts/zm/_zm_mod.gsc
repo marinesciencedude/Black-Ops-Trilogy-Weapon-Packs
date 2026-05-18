@@ -773,6 +773,8 @@ function apply_choices() {
 				level.playerhealth_regularregendelay = 3000;
 				level.worthydamageratio = 0.0;
 				
+				zm_utility::set_zombie_var("zombie_perk_juggernaut_health", 150);
+				
 				if(isdefined(level.zombie_init_done))
 					level.zombie_init_done_original = level.zombie_init_done;
 				level.zombie_init_done = &zombie_init_done;
@@ -789,6 +791,8 @@ function apply_choices() {
 				level.invultime_onshield = 0.5;
 				level.invultime_postshield = 0.3;
 				level.playerhealth_regularregendelay = 2400;
+				
+				zm_utility::set_zombie_var("zombie_perk_juggernaut_health", 150);
 				
 				if(isdefined(level.zombie_init_done))
 					level.zombie_init_done_original = level.zombie_init_done;
@@ -807,6 +811,8 @@ function apply_choices() {
 				level.invultime_postshield = 0.1;
 				level.playerhealth_regularregendelay = 1200;
 				
+				zm_utility::set_zombie_var("zombie_perk_juggernaut_health", 150);
+				
 				if(isdefined(level.zombie_init_done))
 					level.zombie_init_done_original = level.zombie_init_done;
 				level.zombie_init_done = &zombie_init_done;
@@ -823,6 +829,8 @@ function apply_choices() {
 				level.invultime_onshield = 0.05;
 				level.invultime_postshield = 0.0;
 				level.playerhealth_regularregendelay = 1200;
+				
+				zm_utility::set_zombie_var("zombie_perk_juggernaut_health", 150);
 				
 				if(isdefined(level.zombie_init_done))
 					level.zombie_init_done_original = level.zombie_init_done;
