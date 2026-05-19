@@ -80,6 +80,7 @@
 #define mutator_george_reward				"objectiveSpawnTime"
 #define mutator_wallbuys_callofthedead		"pointsPerSecondaryKill"
 #define	mutator_delayed_powerup				"cumulativeroundscores"
+#define mutator_kino_stageclimb 			"pregameItemMaxVotes"
 
 #define mutator_wallbuys_gorod_krovi		"rebootTime"
 #define mutator_quickrevive					"teamkillpointloss"
@@ -94,9 +95,7 @@
 #define	mutator_firesale					"playerqueuedrespawn"
 
 //ints or int-compatible
-/*#define mutator_						"pregameItemVoteRoundTime"
-#define mutator_						"pregameItemMaxVotes"
-#define mutator_						"pregamePositionShuffleMethod"
+/*#define mutator_						"pregamePositionShuffleMethod"
 #define mutator_						"pregamePositionSortType"
 #define mutator_						"pregamePostRoundTime"
 #define mutator_						"pregamePostStageTime"
@@ -111,7 +110,6 @@
 #define "OvertimetimeLimit"*/
 //#define "pregameDraftEnabled"	//game stuck loading
 //#define "pregameItemVoteEnabled"	//game stuck loading
-/*#define	mutator_		"playerforcerespawn"*/
 
 //floats
 /*#define "defuseTime							
