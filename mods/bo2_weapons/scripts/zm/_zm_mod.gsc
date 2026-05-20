@@ -296,9 +296,6 @@ function apply_choices() {
 				if(isdefined(level.zombie_init_done))
 					level.zombie_init_done_original = level.zombie_init_done;
 				level.zombie_init_done = &zombie_init_done;
-				if(isdefined(level.quad_prespawn))
-					level.quad_prespawn_original = level.quad_prespawn;
-				level.quad_prespawn = &quad_prespawn;
 				break;
 			}
 			case 3: //Regular
@@ -315,9 +312,6 @@ function apply_choices() {
 				if(isdefined(level.zombie_init_done))
 					level.zombie_init_done_original = level.zombie_init_done;
 				level.zombie_init_done = &zombie_init_done;
-				if(isdefined(level.quad_prespawn))
-					level.quad_prespawn_original = level.quad_prespawn;
-				level.quad_prespawn = &quad_prespawn;
 				break;
 			}
 			case 4: //Hardened
@@ -334,9 +328,6 @@ function apply_choices() {
 				if(isdefined(level.zombie_init_done))
 					level.zombie_init_done_original = level.zombie_init_done;
 				level.zombie_init_done = &zombie_init_done;
-				if(isdefined(level.quad_prespawn))
-					level.quad_prespawn_original = level.quad_prespawn;
-				level.quad_prespawn = &quad_prespawn;
 				break;
 			}
 			case 5: //Veteran
@@ -353,9 +344,6 @@ function apply_choices() {
 				if(isdefined(level.zombie_init_done))
 					level.zombie_init_done_original = level.zombie_init_done;
 				level.zombie_init_done = &zombie_init_done;
-				if(isdefined(level.quad_prespawn))
-					level.quad_prespawn_original = level.quad_prespawn;
-				level.quad_prespawn = &quad_prespawn;
 				break;
 			}
 		}
@@ -379,7 +367,7 @@ function twohitdown(player)
 	if(isdefined(self.shrinked) && self.shrinked)
 		return 5;
 	else
-		return 50;
+		return 60;
 }
 
 function zombie_init_done()
@@ -388,13 +376,6 @@ function zombie_init_done()
 		self [[level.zombie_init_done_original]]();
 	if(self.targetname == "zombie")
 		self.custom_damage_func = &twohitdown;
-}
-
-function quad_prespawn()
-{
-	if(isdefined(level.zombie_init_done_original))
-		self [[level.quad_prespawn_original]]();
-	self.custom_damage_func = &twohitdown;
 }
 
 function hide_bgb_machine(do_bgb_machine_leave)
