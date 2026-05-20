@@ -473,7 +473,7 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"If Gobblegum Machines should be usable.",
 			"MutatorSettings_Gobblegum",
 			"leaderBonus",
-            BuildStringSettings({"Enabled", "Disabled", "Replaced"}, "Enabled") ),
+            BuildStringSettings({"Enabled", "Disabled"--[[, "Replaced"]]}, "Enabled") ),
 		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Der Wunderfizz",
