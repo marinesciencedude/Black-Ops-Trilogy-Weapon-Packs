@@ -330,7 +330,7 @@ function (arg0, arg1, arg2, arg3, arg4)
 		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Health Difficulty",
-			"BO III has 3-hit-down system, All other settings are 2-hit-down.\nRecruit has the longest delay before health regeneration, Hardened/Veteran has the shortest delay\nVeteran shows the critically injured overlay at 50% health (i.e. after a single hit pre-Juggernog)",
+			"BO III has 3-hit-down system, All other settings are 2-hit-down.\nRecruit has the longest delay before health regeneration, Hardened/Veteran has the shortest delay\nVeteran shows the critically injured overlay at 50% health (i.e. after a single hit pre-Juggernog)\nHardened is broken in the original game and does not consistently two-hit-down in early rounds when being attacked by a single zombie",
 			"MutatorSettings_HealthDifficulty",
 			"flagDecayTime",
 			BuildStringSettings({"BO III", "Recruit", "Regular", "Hardened", "Veteran"}, "BO III") ),
