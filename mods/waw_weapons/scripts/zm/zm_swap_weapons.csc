@@ -1371,6 +1371,15 @@ function swap_wall_weapon()
 		}
 	}
 	foreach(ent in struct::get_array("claymore_purchase", "targetname"))
+	{
 		ent.zombie_weapon_upgrade = "bo1_bouncingbetty";
+		
+		if(GetDvarString("mapname") == "zm_moon")
+		{
+			ent.origin += (0, 0, 3);
+			spawn_loc = struct::get(ent.target, "targetname");
+			spawn_loc.origin += (0, 0, 3);
+		}
+	}
 }
 

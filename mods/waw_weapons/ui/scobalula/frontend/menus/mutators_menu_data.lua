@@ -558,6 +558,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_DelayedPowerup",
 			"cumulativeroundscores",
 			BuildBoolSettings({"Off", "On"}, "Off") ),
+		CoD.OptionsUtility.CreateNamedSettings(
+			arg0,
+			"Zombie Movement Speed to Barriers",
+			"Override how fast zombies should be before they get to barriers. Useful for maps like Nacht der Untoten to make early rounds quicker, or for slowing down zombies in later rounds",
+			"MutatorSettings_RunToBarrier",
+			"pregamePositionShuffleMethod",
+			BuildStringSettings({"Default", "Walk", "Run", "Sprint", "Super Sprint"}, "Default") )
 		--CoD.OptionsUtility.CreateDvarSettings(
 		--	arg0,
 		--	"Remove Map Visionsets",
