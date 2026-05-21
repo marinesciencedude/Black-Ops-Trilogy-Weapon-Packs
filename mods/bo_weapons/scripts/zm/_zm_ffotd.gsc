@@ -15,10 +15,14 @@
 #using scripts\zm\_zm_weap_freezegun;
 #using scripts\zm\_zm_weap_bo1bouncingbetty;
 #using scripts\zm\_zm_xmodelalias;
+#using scripts\shared\ai\systems\behavior_tree_utility;
+#using scripts\shared\ai\systems\animation_state_machine_utility;
 
 #insert scripts\zm\_zm_perks.gsh;
 #insert scripts\shared\version.gsh;
 #insert scripts\zm\_zm_mutators.gsh;
+#insert scripts\shared\ai\systems\behavior_tree.gsh;
+#insert scripts\shared\ai\systems\behavior.gsh;
 
 #precache( "fx", "custom/magic_box_og/fx_weapon_box_marker_fl_og" );
 #precache( "fx", "custom/magic_box_og/fx_weapon_box_marker_og" );
@@ -168,6 +172,57 @@ function main_end()
 		clientfield::register("toplayer", "powerup_zombie_blood_bo", 1, 2, "int");
 		level.zombie_powerups["zombie_blood"].client_field_name = "powerup_zombie_blood_bo";
 	}
+	
+	if(GetGametypeSetting(mutator_runtobarrier) && GetGametypeSetting(mutator_runtobarrier) != 1)
+		BT_REGISTER_ACTION( "zombieMoveToEntranceAction", &zombieMoveToEntranceAction, undefined, &zombieMoveToEntranceActionTerminate );
+}
+
+function zombieMoveToEntranceAction( behaviorTreeEntity, asmStateName )
+{	
+	behaviorTreeEntity.got_to_entrance = false;
+	AnimationStateNetworkUtility::RequestState( behaviorTreeEntity, asmStateName );
+	
+	switch(GetGametypeSetting(mutator_runtobarrier))
+	{
+	case 2:
+		move_speed = "walk";
+		break;
+	case 3:
+		move_speed = "run";
+		break;
+	case 4:
+		move_speed = "sprint";
+		break;
+	case 5:
+		move_speed = "super_sprint";
+		break;
+	}
+	
+	behaviorTreeEntity zombie_utility::set_zombie_run_cycle(move_speed);
+	
+	return BHTN_RUNNING;
+}
+
+function zombieMoveToEntranceActionTerminate( behaviorTreeEntity, asmStateName )
+{
+	if ( zombieIsAtEntrance( behaviorTreeEntity ) )
+	{
+		behaviorTreeEntity.got_to_entrance = true;
+	}
+	
+	original_speed = behaviorTreeEntity.zombie_move_speed_original;
+	behaviorTreeEntity zombie_utility::set_zombie_run_cycle(behaviorTreeEntity.zombie_move_speed_original);
+	behaviorTreeEntity.zombie_move_speed_original = original_speed;
+
+	return BHTN_SUCCESS;	
+}
+
+function zombieIsAtEntrance( behaviorTreeEntity )
+{
+	isAtScriptGoal = behaviorTreeEntity IsAtGoal();
+	isAtEntrance = IsDefined( behaviorTreeEntity.first_node ) && isAtScriptGoal;
+
+	return isAtEntrance;
 }
 
 function deadshot_cost()
