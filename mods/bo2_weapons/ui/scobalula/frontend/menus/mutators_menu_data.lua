@@ -400,6 +400,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_Claymore",
 			"disableVehicleSpawners",
             BuildBoolSettings({"Claymore", "Trip Mines"}, "Claymore") ),
+		CoD.OptionsUtility.CreateNamedSettings(
+			arg0,
+			"Space Monkeys",
+			"Enable Monkey Rounds on Ascension.",
+			"MutatorSettings_SpaceMonkey",
+			"flagCanBeNeutralized",
+            BuildBoolSettings({"On", "Off"}, "On") ),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Ascension Red Telephone Quotes",
@@ -407,13 +414,6 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_RedTelephone",
 			"mutator_redphone",
 			BuildStringSettings({"Call of the Dead", "FIVE"}, "Call of the Dead"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateNamedSettings(
-			arg0,
-			"Shi no Numa Starting Room Perk",
-			"Which perk out of Mule Kick/Quick Revive will be spawned in Shi no Numa's starting room.",
-			"MutatorSettings_ShiNoNumaPerk",
-			"flagRespawnTime",
-			BuildStringSettings({"Mule Kick", "Quick Revive"}, "Mule Kick") ),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Ascension Black-and-White Vision",
@@ -421,6 +421,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_AscensionVisionset",
 			"mutator_ascension_visionset",
 			BuildStringSettings({"BO III", "BO"}, "BO III"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateNamedSettings(
+			arg0,
+			"Shi no Numa Starting Room Perk",
+			"Which perk out of Mule Kick/Quick Revive will be spawned in Shi no Numa's starting room.",
+			"MutatorSettings_ShiNoNumaPerk",
+			"flagRespawnTime",
+			BuildStringSettings({"Mule Kick", "Quick Revive"}, "Mule Kick") ),
 		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Kino Zombies Climbing Stage",
@@ -512,13 +519,6 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_WidowsWine",
 			"maxObjectiveEventsPerMinute",
             BuildStringSettings({"Enabled", "Removed from Wunderfizz", "Removed from Map"}, "Enabled") ),
-		CoD.OptionsUtility.CreateNamedSettings(
-			arg0,
-			"Space Monkeys",
-			"Enable Monkey Rounds on Ascension.",
-			"MutatorSettings_SpaceMonkey",
-			"flagCanBeNeutralized",
-            BuildBoolSettings({"On", "Off"}, "On") ),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Demonic Announcer",
@@ -589,6 +589,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_DelayedPowerup",
 			"cumulativeroundscores",
 			BuildBoolSettings({"Off", "On"}, "Off") ),
+		CoD.OptionsUtility.CreateNamedSettings(
+			arg0,
+			"Zombie Movement Speed to Barriers",
+			"Override how fast zombies should be before they get to barriers. Useful for maps like Nacht der Untoten to make early rounds quicker, or for slowing down zombies in later rounds",
+			"MutatorSettings_RunToBarrier",
+			"pregamePositionShuffleMethod",
+			BuildStringSettings({"Default", "Walk", "Run", "Sprint", "Super Sprint"}, "Default") )
 		--CoD.OptionsUtility.CreateDvarSettings(
 		--	arg0,
 		--	"Remove Map Visionsets",
