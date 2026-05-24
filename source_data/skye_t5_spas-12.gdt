@@ -34197,4 +34197,12 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
+	"t5_spas12_up_zm" [ "t5_spas12_up" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"t5_spas12_zm" [ "t5_spas12" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
 }

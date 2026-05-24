@@ -41828,4 +41828,12 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
+	"t5_m14_up_zm" [ "t5_m14_up" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"t5_m14_zm" [ "t5_m14" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
 }

@@ -38738,7 +38738,7 @@
 		"swimDiveIn" ""
 		"swimDiveLoop" ""
 		"swimDiveOut" ""
-		"swimDrop" ""
+		"swimDrop" "viewmodel_ray_gun_drop"
 		"swimDropTime" "0.25"
 		"swimFromLandTime" "0.3"
 		"swimIdleLoop" ""
@@ -38755,15 +38755,15 @@
 		"swimMovingOutTime" "0.3"
 		"swimMovingRight" ""
 		"swimMovingRightTime" "1.05"
-		"swimQuickRaise" ""
-		"swimRaise" ""
-		"swimSprintIn" ""
+		"swimQuickRaise" "viewmodel_ray_gun_raise"
+		"swimRaise" "viewmodel_ray_gun_raise"
+		"swimSprintIn" "vm_ap9_swim_uw_sprint_in"
 		"swimSprintInTime" "0.25"
-		"swimSprintLoop" ""
+		"swimSprintLoop" "vm_bare_hands_swim_uw_sprint_loop"
 		"swimSprintLoopTime" "1.25"
-		"swimSprintOut" ""
+		"swimSprintOut" "vm_ap9_swim_uw_sprint_out"
 		"swimSprintOutTime" "0.25"
-		"swimSprintSurfaceLoop" ""
+		"swimSprintSurfaceLoop" "vm_bare_hands_swim_tw_sprint_loop"
 		"swimSprintSurfaceLoopTime" "1.1"
 		"swimToLandTime" "0.3"
 		"swimTransitionFromLand" ""
@@ -40025,7 +40025,7 @@
 		"swimDiveIn" ""
 		"swimDiveLoop" ""
 		"swimDiveOut" ""
-		"swimDrop" ""
+		"swimDrop" "viewmodel_ray_gun_drop"
 		"swimDropTime" "0.25"
 		"swimFromLandTime" "0.3"
 		"swimIdleLoop" ""
@@ -40042,15 +40042,15 @@
 		"swimMovingOutTime" "0.3"
 		"swimMovingRight" ""
 		"swimMovingRightTime" "1.05"
-		"swimQuickRaise" ""
-		"swimRaise" ""
-		"swimSprintIn" ""
+		"swimQuickRaise" "viewmodel_ray_gun_raise"
+		"swimRaise" "viewmodel_ray_gun_raise"
+		"swimSprintIn" "vm_ap9_swim_uw_sprint_in"
 		"swimSprintInTime" "0.25"
-		"swimSprintLoop" ""
+		"swimSprintLoop" "vm_bare_hands_swim_uw_sprint_loop"
 		"swimSprintLoopTime" "1.25"
-		"swimSprintOut" ""
+		"swimSprintOut" "vm_ap9_swim_uw_sprint_out"
 		"swimSprintOutTime" "0.25"
-		"swimSprintSurfaceLoop" ""
+		"swimSprintSurfaceLoop" "vm_bare_hands_swim_tw_sprint_loop"
 		"swimSprintSurfaceLoopTime" "1.1"
 		"swimToLandTime" "0.3"
 		"swimTransitionFromLand" ""
@@ -42395,5 +42395,17 @@
 		"materialCategory" "Geometry Advanced"
 		"materialType" "lit_micro_tile_triple_mix_advanced_camo"
 		"specColorMap" ""
+	}
+	"t4_ray_gun_camo_up_zm" [ "t4_ray_gun_camo_up" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"t4_ray_gun_up_zm" [ "t4_ray_gun_up" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"t4_ray_gun_zm" [ "t4_ray_gun" ]
+	{
+		"attachmentUnique" "au_leviathan"
 	}
 }

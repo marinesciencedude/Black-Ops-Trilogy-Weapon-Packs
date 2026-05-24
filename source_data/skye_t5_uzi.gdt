@@ -39436,4 +39436,20 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
+	"t5_uzi_alt_zm" [ "t5_uzi_alt" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"t5_uzi_up_alt_zm" [ "t5_uzi_up_alt" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"t5_uzi_up_zm" [ "t5_uzi_up" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"t5_uzi_zm" [ "t5_uzi" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
 }

@@ -37208,7 +37208,7 @@
 		"antiQuickScopeTime" "0.15"
 		"applySpinPitch" "1"
 		"armorPiercing" "0"
-		"attachmentUnique" ""
+		"attachmentUnique" "au_leviathan"
 		"attachViewModel1" "vm_t5_enfield_reddot"
 		"attachViewModel2" ""
 		"attachViewModel3" ""
@@ -38498,7 +38498,7 @@
 		"antiQuickScopeTime" "0.15"
 		"applySpinPitch" "1"
 		"armorPiercing" "0"
-		"attachmentUnique" ""
+		"attachmentUnique" "au_leviathan"
 		"attachViewModel1" "vm_t5_enfield_reddot"
 		"attachViewModel2" ""
 		"attachViewModel3" ""
@@ -44790,5 +44790,17 @@
 		"usage_weapon" "0"
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
+	}
+	"t5_enfield_alt_up_zm" [ "t5_enfield_alt_up" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"t5_enfield_alt_zm" [ "t5_enfield_alt" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"t5_enfield_zm" [ "t5_enfield" ]
+	{
+		"attachmentUnique" "au_leviathan"
 	}
 }

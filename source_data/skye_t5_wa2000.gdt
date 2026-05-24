@@ -35587,7 +35587,7 @@
 		"antiQuickScopeTime" "0.15"
 		"applySpinPitch" "1"
 		"armorPiercing" "0"
-		"attachmentUnique" ""
+		"attachmentUnique" "au_leviathan"
 		"attachViewModel1" "vm_t5_wa2000_hip_scope"
 		"attachViewModel2" "vm_t5_wa2000_ads_scope"
 		"attachViewModel3" ""
@@ -36877,7 +36877,7 @@
 		"antiQuickScopeTime" "0.15"
 		"applySpinPitch" "1"
 		"armorPiercing" "0"
-		"attachmentUnique" ""
+		"attachmentUnique" "au_leviathan"
 		"attachViewModel1" "vm_t5_wa2000_hip_scope"
 		"attachViewModel2" "vm_t5_wa2000_ads_scope"
 		"attachViewModel3" ""
@@ -40747,7 +40747,7 @@
 		"antiQuickScopeTime" "0.15"
 		"applySpinPitch" "1"
 		"armorPiercing" "0"
-		"attachmentUnique" ""
+		"attachmentUnique" "au_leviathan"
 		"attachViewModel1" "vm_t5_wa2000_hip_scope"
 		"attachViewModel2" "vm_t5_wa2000_ads_scope"
 		"attachViewModel3" ""
@@ -42037,7 +42037,7 @@
 		"antiQuickScopeTime" "0.15"
 		"applySpinPitch" "1"
 		"armorPiercing" "0"
-		"attachmentUnique" ""
+		"attachmentUnique" "au_leviathan"
 		"attachViewModel1" "vm_t5_wa2000_hip_scope"
 		"attachViewModel2" "vm_t5_wa2000_ads_scope"
 		"attachViewModel3" ""
@@ -46169,5 +46169,21 @@
 		"usage_weapon" "0"
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
+	}
+	"t5_wa2000_overlay_zm" [ "t5_wa2000_overlay" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"t5_wa2000_up_overlay_zm" [ "t5_wa2000_up_overlay" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"t5_wa2000_up_zm" [ "t5_wa2000_up" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"t5_wa2000_zm" [ "t5_wa2000" ]
+	{
+		"attachmentUnique" "au_leviathan"
 	}
 }

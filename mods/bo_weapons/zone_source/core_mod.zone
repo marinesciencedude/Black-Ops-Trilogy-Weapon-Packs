@@ -12,6 +12,8 @@ rawfile,zm_mod.cfg
 // note that if you make changes in the cfg, you need to build this fastfile for the game to get the latest
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+stringtable,gamedata/weapons/common/attachmentmappingstable.csv
+
 rawfile,ui/t6/lobby/lobbymenubuttons.lua
 rawfile,ui/t6/lobby/lobbymenubuttons_og.luac
 rawfile,ui/t6/lobby/lobbymenus.lua

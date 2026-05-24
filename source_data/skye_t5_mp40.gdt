@@ -38216,4 +38216,12 @@
 		"glossRangeMin" "0.0"
 		"specColorMap" "white_specular_map"
 	}
+	"t5_mp40_up_zm" [ "t5_mp40_up" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"t5_mp40_zm" [ "t5_mp40" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
 }

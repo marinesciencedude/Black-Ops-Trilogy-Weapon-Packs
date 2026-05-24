@@ -4425,7 +4425,7 @@
 		"antiQuickScopeTime" "0.15"
 		"applySpinPitch" "1"
 		"armorPiercing" "0"
-		"attachmentUnique" ""
+		"attachmentUnique" "au_leviathan"
 		"attachViewModel1" ""
 		"attachViewModel2" ""
 		"attachViewModel3" ""
@@ -39910,5 +39910,13 @@
 		"usage_weapon" "0"
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
+	}
+	"t5_ak47_up_alt_zm" [ "t5_ak47_up_alt" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"t5_ak47_zm" [ "t5_ak47" ]
+	{
+		"attachmentUnique" "au_leviathan"
 	}
 }

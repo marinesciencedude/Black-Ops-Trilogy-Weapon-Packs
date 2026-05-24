@@ -45,8 +45,12 @@ function __init__()
 function private init_phd_flopper()
 {
 	if( IS_TRUE(level.enable_magic) )
-		level._effect[PHDFLOPPER_MACHINE_LIGHT_FX]	= PHDFLOPPER_LIGHTING_FX;		
-
+	{
+		if(GetDvarString("mapname") == "zm_leviathan")
+			level._effect[PHDFLOPPER_MACHINE_LIGHT_FX]	= "zombie/fx_perk_phd_flopper";		
+		else
+			level._effect[PHDFLOPPER_MACHINE_LIGHT_FX]	= PHDFLOPPER_LIGHTING_FX;		
+	}
 }
 
 function private phd_flopper_client_field_func()

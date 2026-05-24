@@ -36646,4 +36646,12 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
+	"t5_hk21_up_zm" [ "t5_hk21_up" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"t5_hk21_zm" [ "t5_hk21" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
 }

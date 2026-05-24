@@ -38721,4 +38721,12 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
+	"t5_famas_up_zm" [ "t5_famas_up" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"t5_famas_zm" [ "t5_famas" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
 }

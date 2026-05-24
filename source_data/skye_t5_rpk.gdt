@@ -38292,4 +38292,12 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
+	"t5_rpk_up_zm" [ "t5_rpk_up" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"t5_rpk_zm" [ "t5_rpk" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
 }

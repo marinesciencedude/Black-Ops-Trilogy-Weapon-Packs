@@ -39179,4 +39179,12 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
+	"t5_galil_up_zm" [ "t5_galil_up" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"t5_galil_zm" [ "t5_galil" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
 }

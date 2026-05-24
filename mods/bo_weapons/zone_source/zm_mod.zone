@@ -20,6 +20,8 @@ scriptparsetree,scripts/zm/_zm_perk_random.csc
 scriptparsetree,scripts/shared/xmodelalias_shared.gscc
 scriptparsetree,scripts/zm/_zm_xmodelalias.gscc
 scriptparsetree,scripts/zm/gametypes/_clientids.gsc
+scriptparsetree,scripts/zm/_load.gsc
+scriptparsetree,scripts/zm/_load.csc
 scriptparsetree,scripts/zm/_zm_ffotd.csc
 scriptparsetree,scripts/zm/_zm_ffotd.gsc
 scriptparsetree,scripts/zm/_zm_mod.gsc
@@ -47,7 +49,8 @@ scriptparsetree,scripts/zm/_zm_pack_a_punch.gsc
 scriptparsetree,scripts/zm/_zm_weap_shrink_ray.gsc
 scriptparsetree,scripts/zm/nuked_utility.gsh
 scriptparsetree,scripts/zm/nuked_utility.gsc
-scriptparsetree,scripts/zm/zm_nuked_perks.gsc
+//scriptparsetree,scripts/zm/zm_nuked_perks.gsc
+scriptparsetree,scripts/zm/weapons/zm_alt_weapons.gsc
 
 //aitype,archetype_zm_factory_zombie
 //aitype,spawner_zm_factory_zombie
@@ -91,6 +94,7 @@ stringtable,gamedata/weapons/zm/zm_castle_weapons.csv
 stringtable,gamedata/weapons/zm/zm_island_weapons.csv
 stringtable,gamedata/weapons/zm/zm_stalingrad_weapons.csv
 stringtable,gamedata/weapons/zm/zm_nuked_weapons.csv
+stringtable,gamedata/weapons/zm/zm_leviathan_weapons.csv
 
 stringtable,gamedata/weapons/zm/zm_zod_weapons.csv
 stringtable,gamedata/tables/zm/zm_zod_pods.csv
@@ -121,8 +125,8 @@ scriptparsetree,scripts/zm/perks/_zm_perk_phdflopper.gsh
 scriptparsetree,scripts/zm/_zm_perk_doubletap.gsc
 scriptparsetree,scripts/zm/_zm_perk_doubletap.csc
 //still needed due to gcp345's Der Riese
-scriptparsetree,scripts/zm/doubletap2.gsc
-scriptparsetree,scripts/zm/doubletap2.csc
+//scriptparsetree,scripts/zm/doubletap2.gsc
+//scriptparsetree,scripts/zm/doubletap2.csc
 
 scriptparsetree,scripts/zm/zm_sumpf_perks.gsc
 
@@ -322,133 +326,133 @@ stringtable,gamedata/weapons/common/weaponoptions.csv
 //weapon,t4_db_saw_up
 //xmodel,wallbuy_sawedoff
 
-weapon,t4_ray_gun
-weapon,t4_ray_gun_up
-weapon,t4_ray_gun_camo_up
+weaponfull,t4_ray_gun_zm
+weaponfull,t4_ray_gun_up_zm
+weaponfull,t4_ray_gun_camo_up_zm
 
-weapon,t5_ak74u
-weapon,t5_ak74u_up_zm
+weaponfull,t5_ak74u_zm
+weaponfull,t5_ak74u_up_zm
 //xmodel,wallbuy_ak74u
 
-weapon,t5_aug
-weapon,t5_aug_up_zm
-weapon,t5_aug_shotty_zm
+weaponfull,t5_aug_zm
+weaponfull,t5_aug_up_zm
+weaponfull,t5_aug_shotty_zm
 //xmodel,wallbuy_aug
 
-weapon,t5_china_lake
-weapon,t5_china_lake_up
+weaponfull,t5_china_lake_zm
+weaponfull,t5_china_lake_up_zm
 
-weapon,t5_commando
-weapon,t5_commando_up
+weaponfull,t5_commando_zm
+weaponfull,t5_commando_up_zm
 
-weapon,t5_cz75
-weapon,t5_cz75_up
-weapon,t5_cz75_rdw_zm
-weapon,t5_cz75_ldw_zm
-weapon,t5_cz75_rdw_up_zm
-weapon,t5_cz75_ldw_up_zm
+weaponfull,t5_cz75_zm
+weaponfull,t5_cz75_up_zm
+weaponfull,t5_cz75_rdw_zm
+weaponfull,t5_cz75_ldw_zm
+weaponfull,t5_cz75_rdw_up_zm
+weaponfull,t5_cz75_ldw_up_zm
 
-weapon,t5_dragunov
-weapon,t5_dragunov_overlay
-weapon,t5_dragunov_switch_zm
-weapon,t5_dragunov_switch_overlay_zm
-weapon,t5_dragunov_up
-weapon,t5_dragunov_up_overlay
-weapon,t5_dragunov_up_switch_zm
-weapon,t5_dragunov_up_switch_overlay_zm
+weaponfull,t5_dragunov_zm
+weaponfull,t5_dragunov_overlay_zm
+weaponfull,t5_dragunov_switch_zm
+weaponfull,t5_dragunov_switch_overlay_zm
+weaponfull,t5_dragunov_up_zm
+weaponfull,t5_dragunov_up_overlay_zm
+weaponfull,t5_dragunov_up_switch_zm
+weaponfull,t5_dragunov_up_switch_overlay_zm
 
-weapon,t5_famas
-weapon,t5_famas_up
+weaponfull,t5_famas_zm
+weaponfull,t5_famas_up_zm
 
-weapon,t5_fal
-weapon,t5_fal_up_zm
+weaponfull,t5_fal_zm
+weaponfull,t5_fal_up_zm
 //image,i_t5_weapon_fal_r
 //material,mc/mtl_t5_weapon_fal
 
-weapon,t5_g11
-weapon,t5_g11_overlay
-weapon,t5_g11_switch_zm
-weapon,t5_g11_switch_overlay_zm
-weapon,t5_g11_up
-weapon,t5_g11_up_overlay
-weapon,t5_g11_up_switch_zm
-weapon,t5_g11_up_switch_overlay_zm
+weaponfull,t5_g11_zm
+weaponfull,t5_g11_overlay_zm
+weaponfull,t5_g11_switch_zm
+weaponfull,t5_g11_switch_overlay_zm
+weaponfull,t5_g11_up_zm
+weaponfull,t5_g11_up_overlay_zm
+weaponfull,t5_g11_up_switch_zm
+weaponfull,t5_g11_up_switch_overlay_zm
 
-weapon,t5_galil
-weapon,t5_galil_up
+weaponfull,t5_galil_zm
+weaponfull,t5_galil_up_zm
 
-weapon,t5_hk21
-weapon,t5_hk21_up
+weaponfull,t5_hk21_zm
+weaponfull,t5_hk21_up_zm
 
-weapon,t5_hs10
-weapon,t5_hs10_rdw_up_zm
-weapon,t5_hs10_ldw_up_zm
+weaponfull,t5_hs10_zm
+weaponfull,t5_hs10_rdw_up_zm
+weaponfull,t5_hs10_ldw_up_zm
 
-weapon,t5_l96a1
-weapon,t5_l96a1_overlay
-weapon,t5_l96a1_switch_zm
-weapon,t5_l96a1_switch_overlay_zm
-weapon,t5_l96a1_up
-weapon,t5_l96a1_up_overlay
-weapon,t5_l96a1_up_switch_zm
-weapon,t5_l96a1_up_switch_overlay_zm
+weaponfull,t5_l96a1_zm
+weaponfull,t5_l96a1_overlay_zm
+weaponfull,t5_l96a1_switch_zm
+weaponfull,t5_l96a1_switch_overlay_zm
+weaponfull,t5_l96a1_up_zm
+weaponfull,t5_l96a1_up_overlay_zm
+weaponfull,t5_l96a1_up_switch_zm
+weaponfull,t5_l96a1_up_switch_overlay_zm
 //xmodel,wallbuy_l115
 
-weapon,t5_m14
-weapon,t5_m14_up
+weaponfull,t5_m14_zm
+weaponfull,t5_m14_up_zm
 //xmodel,wallbuy_m14
 
-weapon,t5_m16a1
-weapon,t5_m16a1_up_zm
-weapon,t5_m16a1_launcher_zm
+weaponfull,t5_m16a1_zm
+weaponfull,t5_m16a1_up_zm
+weaponfull,t5_m16a1_launcher_zm
 //xmodel,wallbuy_m16a1
 
-weapon,t5_m72
-weapon,t5_m72_up
+weaponfull,t5_m72_zm
+weaponfull,t5_m72_up_zm
 
-weapon,t5_m1911
-weapon,t5_m1911_rdw_up_zm
-weapon,t5_m1911_ldw_up_zm
+weaponfull,t5_m1911_zm
+weaponfull,t5_m1911_rdw_up_zm
+weaponfull,t5_m1911_ldw_up_zm
 
 weapon,t5_minigun
 weapon,t5_minigun_up
 
-weapon,t5_mp5k
-weapon,t5_mp5k_up
+weaponfull,t5_mp5k_zm
+weaponfull,t5_mp5k_up_zm
 //xmodel,wallbuy_mp5k
 
-weapon,t5_mp40
-weapon,t5_mp40_up
+weaponfull,t5_mp40_zm
+weaponfull,t5_mp40_up_zm
 //xmodel,wallbuy_mp40
 
-weapon,t5_mpl
-weapon,t5_mpl_up
+weaponfull,t5_mpl_zm
+weaponfull,t5_mpl_up_zm
 //xmodel,wallbuy_mpl
 
-weapon,t5_olympia
-weapon,t5_olympia_up
+weaponfull,t5_olympia_zm
+weaponfull,t5_olympia_up_zm
 //xmodel,wallbuy_olympia
 
-weapon,t5_pm63
-weapon,t5_pm63_rdw_up_zm
-weapon,t5_pm63_ldw_up_zm
+weaponfull,t5_pm63_zm
+weaponfull,t5_pm63_rdw_up_zm
+weaponfull,t5_pm63_ldw_up_zm
 //xmodel,wallbuy_pm63
 
-weapon,t5_python
-weapon,t5_python_rdw_up_zm
-weapon,t5_python_ldw_up_zm
+weaponfull,t5_python_zm
+weaponfull,t5_python_rdw_up_zm
+weaponfull,t5_python_ldw_up_zm
 
-weapon,t5_rpk
-weapon,t5_rpk_up
+weaponfull,t5_rpk_zm
+weaponfull,t5_rpk_up_zm
 
-weapon,t5_spas12
-weapon,t5_spas12_up
+weaponfull,t5_spas12_zm
+weaponfull,t5_spas12_up_zm
 
-weapon,t5_spectre
-weapon,t5_spectre_up
+weaponfull,t5_spectre_zm
+weaponfull,t5_spectre_up_zm
 
-weapon,t5_stakeout
-weapon,t5_stakeout_up
+weaponfull,t5_stakeout_zm
+weaponfull,t5_stakeout_up_zm
 //xmodel,wallbuy_stakeout
 
 //Improved Ray Gun
@@ -477,54 +481,54 @@ scriptparsetree,scripts/zm/zm_cosmodrome_ffotd.gsc
 //scriptparsetree,scripts/zm/zm_moon_ffotd.gsc
 scriptparsetree,scripts/zm/zm_theater_ffotd.gsc
 
-weapon,t5_ak47
-weapon,t5_ak47_up_zm
+weaponfull,t5_ak47_zm
+weaponfull,t5_ak47_up_zm
 weapon,t5_ak47_flamethrower_zm
-weapon,t5_ak47_up_alt
+weaponfull,t5_ak47_up_alt_zm
 
-weapon,t5_uzi
-weapon,t5_uzi_up
-weapon,t5_uzi_alt
-weapon,t5_uzi_up_alt
+weaponfull,t5_uzi_zm
+weaponfull,t5_uzi_up_zm
+weaponfull,t5_uzi_alt_zm
+weaponfull,t5_uzi_up_alt_zm
 
 //include,carrabella_wetegg_crossbow
 //T5 Crossbow
-weapon,t5_crossbow_zm
-weapon,t5_crossbow_up_zm
+weaponfull,t5_crossbow_zm
+weaponfull,t5_crossbow_up_zm
 scriptparsetree,scripts/zm/_zm_weap_crossbow.gsc
 //fx,carrabella/wpn_crossbow/exp/crossbow_impact_fx
 fx,carrabella/wpn_crossbow/impact_blink/crossbow_blink_2ms_red
-fx,carrabella/wpn_crossbow/impact_blink/crossbow_blink_2ms_green
+//fx,carrabella/wpn_crossbow/impact_blink/crossbow_blink_2ms_green
 
 //weapon,t9_crossbow
 //weapon,t9_crossbow_up
 scriptparsetree,scripts/zm/crossbow_bolt.csc
 scriptparsetree,scripts/zm/crossbow_bolt.gsc
 
-weapon,t9_ballistic_knife
-weapon,t9_ballistic_knife_up
-//weapon,knife_ballistic_bowie
-//weapon,knife_ballistic_bowie_upgraded
+weaponfull,t9_ballistic_knife_zm
+weaponfull,t9_ballistic_knife_up_zm
+weaponfull,knife_ballistic_bowie_zm
+weaponfull,knife_ballistic_bowie_upgraded_zm
 weapon,knife_ballistic_sickle
 weapon,knife_ballistic_sickle_upgraded
 scriptparsetree,scripts/zm/_zm_weap_ballistic_knife.gsc
 scriptparsetree,scripts/zm/_zm_melee_weapon.gsc
 
-weapon,t5_stoner63
-weapon,t5_stoner63_up
+weaponfull,t5_stoner63_zm
+weaponfull,t5_stoner63_up_zm
 
-weapon,t5_skorpion
-weapon,t5_skorpion_rdw_up_zm
-weapon,t5_skorpion_ldw_up_zm
-weapon,t5_skorpion_alt
-weapon,t5_skorpion_alt_rdw_up_zm
-weapon,t5_skorpion_alt_ldw_up_zm
+weaponfull,t5_skorpion_zm
+weaponfull,t5_skorpion_rdw_up_zm
+weaponfull,t5_skorpion_ldw_up_zm
+weaponfull,t5_skorpion_alt_zm
+weaponfull,t5_skorpion_alt_rdw_up_zm
+weaponfull,t5_skorpion_alt_ldw_up_zm
 
-weapon,t5_enfield
-weapon,t5_enfield_up_zm
-weapon,t5_enfield_shotty_zm
-weapon,t5_enfield_alt
-weapon,t5_enfield_alt_up
+weaponfull,t5_enfield_zm
+weaponfull,t5_enfield_up_zm
+weaponfull,t5_enfield_shotty_zm
+weaponfull,t5_enfield_alt_zm
+weaponfull,t5_enfield_alt_up_zm
 
 weapon,sticky_grenade_custom
 
@@ -534,34 +538,34 @@ weapon,sticky_grenade_custom
 //weapon,s2_sten
 //weapon,s2_sten_up
 
-weapon,t5_wa2000
-weapon,t5_wa2000_up
-weapon,t5_wa2000_overlay
-weapon,t5_wa2000_switch_zm
-weapon,t5_wa2000_switch_overlay_zm
-weapon,t5_wa2000_up_overlay
-weapon,t5_wa2000_up_switch_overlay_zm
-weapon,t5_wa2000_up_switch_zm
+weaponfull,t5_wa2000_zm
+weaponfull,t5_wa2000_up_zm
+weaponfull,t5_wa2000_overlay_zm
+weaponfull,t5_wa2000_switch_zm
+weaponfull,t5_wa2000_switch_overlay_zm
+weaponfull,t5_wa2000_up_overlay_zm
+weaponfull,t5_wa2000_up_switch_overlay_zm
+weaponfull,t5_wa2000_up_switch_zm
 
-weapon,t5_psg1
-weapon,t5_psg1_up
-weapon,t5_psg1_overlay
-weapon,t5_psg1_switch_zm
-weapon,t5_psg1_switch_overlay_zm
-weapon,t5_psg1_up_overlay
-weapon,t5_psg1_up_switch_overlay_zm
-weapon,t5_psg1_up_switch_zm
+weaponfull,t5_psg1_zm
+weaponfull,t5_psg1_up_zm
+weaponfull,t5_psg1_overlay_zm
+weaponfull,t5_psg1_switch_zm
+weaponfull,t5_psg1_switch_overlay_zm
+weaponfull,t5_psg1_up_overlay_zm
+weaponfull,t5_psg1_up_switch_overlay_zm
+weaponfull,t5_psg1_up_switch_zm
 
 weaponfull,t4r_ppsh_zm
 weaponfull,t4r_ppsh_etch_upgraded_zm
 
-weaponfull,t5_mac11
-weaponfull,t5_mac11_up
-weaponfull,t5_mac11_alt
-weaponfull,t5_mac11_alt_up
+weaponfull,t5_mac11_zm
+weaponfull,t5_mac11_up_zm
+weaponfull,t5_mac11_alt_zm
+weaponfull,t5_mac11_alt_up_zm
 
-weaponfull,t5_m60e3
-weaponfull,t5_m60e3_up
+weaponfull,t5_m60e3_zm
+weaponfull,t5_m60e3_up_zm
 
 //weapon,t5_thundergun_zm
 //weapon,t5_thundergun_upgraded_zm

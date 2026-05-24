@@ -84,7 +84,7 @@ function onPlayerConnect()
 function onPlayerSpawned()
 {
 	self endon("disconnect");
-
+	
 	for(;;)
 	{
 		self waittill("spawned_player");
@@ -2612,7 +2612,14 @@ function give_build_kit_weapon( weapon )
 	}
 	else
 	{
-		weapon = self GetBuildKitWeapon( weapon, upgraded );
+		//Leviathan Reserve Soda
+		if(isdefined(self.var_9033299a) && self.var_9033299a)
+		{
+			attachments = array("extclip");
+			weapon = GetWeapon(weapon.rootWeapon.name, attachments);
+		}
+		else
+			weapon = self GetBuildKitWeapon( weapon, upgraded );
 
 		weapon_options = self GetBuildKitWeaponOptions( weapon, camo );
 

@@ -18,9 +18,9 @@
 #insert scripts\shared\version.gsh;
 #insert scripts\shared\shared.gsh;
 
-//#precache( "fx", "carrabella/wpn_crossbow/exp/crossbow_impact_fx" );
+/*#precache( "fx", "carrabella/wpn_crossbow/exp/crossbow_impact_fx" );
 #precache( "fx", "explosions/fx_exp_rocket_default_sm" );
-#precache( "fx", "carrabella/wpn_crossbow/impact_blink/crossbow_blink_2ms_green" ); 
+#precache( "fx", "carrabella/wpn_crossbow/impact_blink/crossbow_blink_2ms_green" );*/
 #precache( "fx", "carrabella/wpn_crossbow/impact_blink/crossbow_blink_2ms_red" );
 
 #define DETONATION_TIME					2.1
@@ -48,8 +48,19 @@ function __main__()
 	level.weapCrossbowUpgraded = GetWeapon( "t5_crossbow_up" );
 	level._effect["xbow_alert"] = "carrabella/wpn_crossbow/impact_blink/crossbow_blink_2ms_green";
 	level._effect["xbow_alert_up"] = "carrabella/wpn_crossbow/impact_blink/crossbow_blink_2ms_red";
-	//level._effect["xbow_explode"] = "carrabella/wpn_crossbow/exp/crossbow_impact_fx";
-	level._effect["xbow_explode"] = "explosions/fx_exp_rocket_default_sm";
+	level._effect["xbow_explode"] = "carrabella/wpn_crossbow/exp/crossbow_impact_fx";
+	if(GetDvarString("mapname") == "zm_coast")
+	{
+		level._effect["xbow_alert"] = "weapon/fx_equip_light_os";
+		level._effect["xbow_alert_up"] = "carrabella/wpn_crossbow/impact_blink/crossbow_blink_2ms_red";
+		level._effect["xbow_explode"] = "explosions/fx_exp_grenade_default";
+	}
+	else if(GetDvarString("mapname") == "zm_leviathan")
+	{
+		level._effect["xbow_alert"] = "weapon/fx_semtex_alert_green";
+		level._effect["xbow_alert_up"] = "carrabella/wpn_crossbow/impact_blink/crossbow_blink_2ms_red";
+		level._effect["xbow_explode"] = "leviathan/fx_general_explosion";
+	}
 	callback::on_connect( &xbow_watcher );
 }
 

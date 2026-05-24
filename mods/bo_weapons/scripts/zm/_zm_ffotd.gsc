@@ -24,8 +24,8 @@
 #insert scripts\shared\ai\systems\behavior_tree.gsh;
 #insert scripts\shared\ai\systems\behavior.gsh;
 
-#precache( "fx", "custom/magic_box_og/fx_weapon_box_marker_fl_og" );
-#precache( "fx", "custom/magic_box_og/fx_weapon_box_marker_og" );
+/*#precache( "fx", "custom/magic_box_og/fx_weapon_box_marker_fl_og" );
+#precache( "fx", "custom/magic_box_og/fx_weapon_box_marker_og" );*/
 
 /*#precache( "fx", "zombie/fx_glow_eye_orange" );
 #precache( "fx", "zombie/fx_glow_eye_orange_zod" );

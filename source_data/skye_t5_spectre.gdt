@@ -35826,4 +35826,12 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
+	"t5_spectre_up_zm" [ "t5_spectre_up" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"t5_spectre_zm" [ "t5_spectre" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
 }

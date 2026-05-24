@@ -704,14 +704,14 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"Add Winter's Howl to all maps' mystery boxes.",
 			"MutatorSettings_FreezeGun",
 			"rebootPlayers",
-			BuildBoolSettings({"Off", "On"}, "Off") ),
+			BuildBoolSettings({"Off", "On"}, "Off") ),]]
 		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Ray Gun Mark II",
 			"Enable Ray Gun Mark II in the mystery box.",
 			"MutatorSettings_RayGunMkII",
 			"robotShield",
-            BuildBoolSettings({"On", "Off"}, "On") ),]]
+            BuildBoolSettings({"On", "Off"}, "On") ),
 		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Crossbow",
