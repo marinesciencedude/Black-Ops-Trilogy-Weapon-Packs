@@ -19,6 +19,18 @@ CoD.LobbyButtons.ZM_OPTIONS_BUTTON =
 	customId = "btnMutators",
 	starterPack = CoD.LobbyButtons.STARTERPACK_UPGRADE
 }
+CoD.LobbyButtons.ZM_GAMEMODE_BUTTON = {
+	stringRef = "MPUI_CHANGE_GAME_MODE_CAPS",
+	action = function(arg0, arg1, arg2, arg3, arg4)
+		CoD.LobbyBase.SetLeaderActivity( arg2, CoD.LobbyBase.LeaderActivity.CHOOSING_GAME_MODE )
+		LUI.OverrideFunction_CallOriginalFirst( OpenOverlay( arg0, "ZMGameMode", arg2 ), "close",
+		function ()
+			CoD.LobbyBase.ResetLeaderActivity( arg2 )
+		end )
+	end,
+	customId = "btnSetupZMGameMode",
+	disabledFunc = MapVoteTimerActive
+}
 CoD.LobbyButtons.ZM_SOLO_GAME = {
 	stringRef = "MENU_SOLO_GAME_CAPS",
 	action = NavigateToLobby_SelectionList,
