@@ -438,7 +438,7 @@ xmodel,wallbuy_pm63
 
 weapon,t5_python
 weapon,t5_python_rdw_up_zm
-weapon,t5_python_ldw_up_zm
+//weapon,t5_python_ldw_up_zm
 
 weapon,t5_rpk
 weapon,t5_rpk_up

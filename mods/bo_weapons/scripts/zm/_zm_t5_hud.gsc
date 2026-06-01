@@ -40,6 +40,8 @@ function __init__()
 		//register_dpad_weapon( "t5_ak47_up", DPAD_WEAP_TYPE_FLAMETHROWER ); //actually there isn't an image here
 		register_dpad_weapon( "microwavegundw", DPAD_WEAP_TYPE_40MM );
 		register_dpad_weapon( "microwavegundw_upgraded", DPAD_WEAP_TYPE_40MM );
+		
+		register_dpad_weapon( "t5_enfield_up", DPAD_WEAP_TYPE_MASTERKEY );
 	}
 }
 
