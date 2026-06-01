@@ -376,6 +376,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 		--	"MutatorSettings_AUG",
 		--	"mutator_aug",
         --    BuildStringSettings({"On", "Off"}, "Off"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateNamedSettings(
+			arg0,
+			"Space Monkeys",
+			"Enable Monkey Rounds on Ascension.",
+			"MutatorSettings_SpaceMonkey",
+			"flagCanBeNeutralized",
+            BuildBoolSettings({"On", "Off"}, "On") ),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Ascension Red Telephone Quotes",
@@ -383,13 +390,6 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_RedTelephone",
 			"mutator_redphone",
 			BuildStringSettings({"Call of the Dead", "FIVE"}, "Call of the Dead"), nil, SetDvarSetting),
-		CoD.OptionsUtility.CreateNamedSettings(
-			arg0,
-			"Shi no Numa Starting Room Perk",
-			"Which perk out of Mule Kick/Quick Revive will be spawned in Shi no Numa's starting room, or if there will be a perk machine at all.",
-			"MutatorSettings_ShiNoNumaPerk",
-			"flagRespawnTime",
-			BuildStringSettings({"Mule Kick", "Quick Revive"}, "Mule Kick") ),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Ascension Black-and-White Vision",
@@ -397,6 +397,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_AscensionVisionset",
 			"mutator_ascension_visionset",
 			BuildStringSettings({"BO III", "BO"}, "BO III"), nil, SetDvarSetting),
+		CoD.OptionsUtility.CreateNamedSettings(
+			arg0,
+			"Shi no Numa Starting Room Perk",
+			"Which perk out of Mule Kick/Quick Revive will be spawned in Shi no Numa's starting room, or if there will be a perk machine at all.",
+			"MutatorSettings_ShiNoNumaPerk",
+			"flagRespawnTime",
+			BuildStringSettings({"Mule Kick", "Quick Revive"}, "Mule Kick") ),
 		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Kino Zombies Climbing Stage",
@@ -481,13 +488,6 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_WidowsWine",
 			"maxObjectiveEventsPerMinute",
             BuildStringSettings({"Enabled", "Removed from Wunderfizz", "Removed from Map"}, "Enabled") ),
-		CoD.OptionsUtility.CreateNamedSettings(
-			arg0,
-			"Space Monkeys",
-			"Enable Monkey Rounds on Ascension.",
-			"MutatorSettings_SpaceMonkey",
-			"flagCanBeNeutralized",
-            BuildBoolSettings({"On", "Off"}, "On") ),
 		CoD.OptionsUtility.CreateDvarSettings(
 			arg0,
 			"Demonic Announcer",
