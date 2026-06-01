@@ -16,6 +16,11 @@
   "bo_m1911"
  ]
 },
+        { "Type" : "ALIAS", 
+        "Name" : "zm_mod",
+        "Filename" : "zm_mod.csv", 
+        "Specs" : [ ] 
+        },
 {
  "Type" : "ALIAS",
  "Name" : "t4_bolt_action_sounds",
