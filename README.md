@@ -27,6 +27,9 @@ It's advised to make a back-up of black_ops_3_fx.gdt, since this will be replace
 * eMoX's T8 Powerup Delayed Drop: https://www.devraw.net/approved-assets/emox/emox---t8-powerup-delayed-drop
 * natesmithzombies's Custom Random Weapon Powerup: https://forum.modme.co/wiki/threads/706.html
 
+Required for TF's Zombie Options:
+* natesmithzombies's Zombie Money, Bottomless Clip, Zombie Blood Powerups; ZoekMeMaar's Free Pack a Punch Powerup: https://forum.modme.co/wiki/threads/2831.html (ignore script files, these are installed from this repo)
+
 Then install all files from this repo into your Black Ops III installation apart from the folder chalk_drawing_models, which is for reference purposes only
 
 ## Credits
@@ -38,3 +41,4 @@ Then install all files from this repo into your Black Ops III installation apart
 * FAL chalk drawing from Black Ops port: https://www.ugx-mods.com/forum/full-weapons/84/skyes-bo1-weapon-ports/23143/
 * M14, Olympia, M16, MP5, AK74u chalk drawings from https://forum.plutonium.pw/topic/18568/release-zombies-all-bo2-zombies-xmodels-obj-ma-xe-smd-files-images-dds-tga
 * .357 Magnum chalk drawing used as placeholder for Executioner from TheAllNightFall's World at War Pistols: https://www.devraw.net/approved-assets/theallnightfall/world-at-war-pistols
+* TescoFresco for [TF's Zombie Options](https://github.com/tescfresc/TFs-Zombie-Options)
