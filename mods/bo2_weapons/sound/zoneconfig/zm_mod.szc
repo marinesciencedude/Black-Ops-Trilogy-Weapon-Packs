@@ -15,6 +15,11 @@
   "bo_trilogy"
  ]
 },
+        { "Type" : "ALIAS", 
+        "Name" : "zm_mod",
+        "Filename" : "zm_mod.csv", 
+        "Specs" : [ ] 
+        },
 {
  "Type" : "ALIAS",
  "Name" : "skye_t6_bo2",
