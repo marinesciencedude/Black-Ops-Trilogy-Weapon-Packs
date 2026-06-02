@@ -52,6 +52,9 @@ Note also that share\raw\sound\aliases\user_aliases.csv and share\raw\sound\glob
 * eMoX's T8 Powerup Delayed Drop: https://www.devraw.net/approved-assets/emox/emox---t8-powerup-delayed-drop
 * Mr Gadd, TNT, vnuser's Black Ops 1 Ballistic Knife + Bowie/Sickle Combo: https://mega.nz/file/dBEESD6B#iGwB0awBjLanIlEB5-9O55Ilfo_mkNLkL9_bqG8TVNk
 
+Required for TF's Zombie Options:
+* natesmithzombies's Zombie Money, Bottomless Clip, Zombie Blood Powerups; ZoekMeMaar's Free Pack a Punch Powerup: https://forum.modme.co/wiki/threads/2831.html (ignore script files, these are installed from this repo)
+
 Then install all files from this repo into your Black Ops III installation apart from the folder chalk_drawing_models, which is for reference purposes only
 
 ## Credits
