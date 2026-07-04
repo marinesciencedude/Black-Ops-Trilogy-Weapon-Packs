@@ -458,7 +458,7 @@ weaponfull,ray_gun_zm
 weaponfull,ray_gun_upgraded_zm
 
 scriptparsetree,scripts/zm/zm_claymore.gsc
-weapon,claymore_zm
+weapon,claymore_custom_zm
 material,claymore_hud
 material,claymore_hud_inactive
 fx,custom/weapon/fx_claymore_laser
@@ -633,11 +633,11 @@ weapon,t5_thundergun_upgraded_zm
 
 weapon,legacy_syrette_zm
 
-weapon,freezegun_zm
-weapon,freezegun_upgraded_zm
-scriptparsetree,scripts/zm/_zm_weap_freezegun.gsh
-scriptparsetree,scripts/zm/_zm_weap_freezegun.csc
-scriptparsetree,scripts/zm/_zm_weap_freezegun.gsc
+weapon,freezegun_custom_zm
+weapon,freezegun_custom_upgraded_zm
+scriptparsetree,scripts/zm/_zm_weap_freezegun_custom.gsh
+scriptparsetree,scripts/zm/_zm_weap_freezegun_custom.csc
+scriptparsetree,scripts/zm/_zm_weap_freezegun_custom.gsc
 xanim,ai_zm_dlc5_zombie_crawl_freeze_death_01
 xanim,ai_zm_dlc5_zombie_crawl_freeze_death_02
 xanim,ai_zm_dlc5_zombie_freeze_death_a

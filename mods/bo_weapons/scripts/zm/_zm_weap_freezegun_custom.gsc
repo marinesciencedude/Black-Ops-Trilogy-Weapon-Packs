@@ -26,19 +26,20 @@
 
 #insert scripts\shared\shared.gsh;
 #insert scripts\shared\version.gsh;
-#insert scripts\zm\_zm_weap_freezegun.gsh;
+#insert scripts\zm\_zm_weap_freezegun_custom.gsh;
 
-#namespace zm_weap_freezegun;
+#namespace zm_weap_freezegun_custom;
 
 function autoexec init_system()
 {
-	system::register( "zm_weap_freezegun", &__init__, &__main__, undefined );
+	if(GetDvarString("mapname") != "zm_pentagon")
+		system::register( "zm_weap_freezegun_custom", &__init__, &__main__, undefined );
 }
 
 function __init__()
 {
-	level.weaponZMFreezeGun = GetWeapon( "freezegun" );
-	level.weaponZMFreezeGunUpgraded = GetWeapon( "freezegun_upgraded" );
+	level.weaponZMFreezeGun = GetWeapon( "freezegun_custom" );
+	level.weaponZMFreezeGunUpgraded = GetWeapon( "freezegun_custom_upgraded" );
 
 	clientfield::register( "actor", "toggle_freezegun_crumple", VERSION_DLC5, 1, "int" );
 	clientfield::register( "actor", "toggle_freezegun_shatter", VERSION_DLC5, 1, "int" );

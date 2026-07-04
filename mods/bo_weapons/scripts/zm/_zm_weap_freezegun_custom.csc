@@ -9,16 +9,17 @@
 #insert scripts\shared\duplicaterender.gsh;
 #insert scripts\shared\shared.gsh;
 #insert scripts\shared\version.gsh;
-#insert scripts\zm\_zm_weap_freezegun.gsh;
+#insert scripts\zm\_zm_weap_freezegun_custom.gsh;
 
 #precache( "client_fx", FX_FREEZEGUN_SHATTER );
 #precache( "client_fx", FX_FREEZEGUN_CRUMPLE );
 
-#namespace zm_weap_freezegun;
+#namespace zm_weap_freezegun_custom;
 
 function autoexec init_system()
 {
-	system::register( "zm_weap_freezegun", &__init__, undefined, undefined );
+	if(GetDvarString("mapname") != "zm_pentagon")
+		system::register( "zm_weap_freezegun_custom", &__init__, undefined, undefined );
 }
 
 function __init__()

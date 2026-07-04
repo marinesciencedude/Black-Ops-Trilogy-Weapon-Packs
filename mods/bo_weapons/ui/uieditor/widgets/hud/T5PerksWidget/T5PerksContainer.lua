@@ -18,7 +18,7 @@ require( "ui.uieditor.widgets.HUD.T5PerksWidget.T5PerksListItem" )
 -- NOTE: The name, cost, description & specialty are specific to the Buyable Perk Machine
 -- NOTE: If you are not using the Buyable Perk Machine you can remove everything except image & clientFieldName (You don't have to, it doesn't matter)
 -- BLACK: ^0, RED: ^1, GREEN: ^2, YELLOW: ^3, BLUE: ^4, CYAN: ^5, MAGENTA: ^6, WHITE: ^7, MYTEAM: ^8, ENEMYTEAM: ^9
-CoD.ZMPerks = {
+CoD.ZMCustomPerks = {
 	{
 		name = "^2MULE KICK",
 		cost = 4000,
@@ -286,6 +286,473 @@ CoD.ZMPerks = {
 	}
 }
 
+--FIVE Remastered
+CoD.ZMPerksFIVE = {
+	{
+		name = "JUGGER-NOG",
+		cost = 2500,
+		description = "Raises maximum health to withstand more damage",
+		image = "ui_icon_perks_zm_juggernaut",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_juggernog",
+		specialty = "specialty_armorvest",
+		clientFieldName = "juggernaut"
+	},
+	{
+		name = "JUGGER-NOG",
+		cost = 2500,
+		description = "Raises maximum health to withstand more damage",
+		image = "classic_clean_juggernog",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_juggernog",
+		specialty = "specialty_armorvest",
+		clientFieldName = "juggernaut_bo"
+	},
+	{
+		name = "JUGGER-NOG",
+		cost = 2500,
+		description = "Raises maximum health to withstand more damage",
+		image = "madkixs_specialty_juggernog",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_juggernog",
+		specialty = "specialty_armorvest",
+		clientFieldName = "juggernaut_recolour"
+	},
+	{
+		name = "DOUBLE TAP II",
+		cost = 2000,
+		description = "Bullets deal double damage",
+		image = "ui_icon_perks_double_tap",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_doubletap",
+		specialty = "specialty_doubletap2",
+		clientFieldName = "doubletap2"
+	},
+	{
+		name = "DOUBLE TAP II",
+		cost = 2000,
+		description = "Bullets deal double damage",
+		image = "classic_clean_doubletap_alt",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_doubletap",
+		specialty = "specialty_doubletap2",
+		clientFieldName = "doubletap2_bo"
+	},
+	{
+		name = "DOUBLE TAP II",
+		cost = 2000,
+		description = "Bullets deal double damage",
+		image = "madkixs_specialty_doubletap2",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_doubletap",
+		specialty = "specialty_doubletap2",
+		clientFieldName = "doubletap2_recolour"
+	},
+	{
+		name = "DOUBLE TAP",
+		cost = 2000,
+		description = "Increase fire rate",
+		--image = "specialty_giant_doubletap1_zombies",
+		image = "classic_clean_doubletap",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_doubletap",
+		specialty = "specialty_rof",
+		clientFieldName = "doubletap"
+	},
+	{
+		name = "DOUBLE TAP",
+		cost = 2000,
+		description = "Increase fire rate",
+		image = "classic_clean_doubletap",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_doubletap",
+		specialty = "specialty_rof",
+		clientFieldName = "doubletap_bo"
+	},
+	{
+		name = "DOUBLE TAP",
+		cost = 2000,
+		description = "Increase fire rate",
+		image = "madkixs_specialty_doubletap",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_doubletap",
+		specialty = "specialty_rof",
+		clientFieldName = "doubletap_recolour"
+	},
+	{
+		name = "SPEED COLA",
+		cost = 3000,
+		description = "Reload weapons significantly faster",
+		image = "ui_icon_perks_zm_speedloader",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_speedcola",
+		specialty = "specialty_fastreload",
+		clientFieldName = "sleight_of_hand"
+	},
+	{
+		name = "SPEED COLA",
+		cost = 3000,
+		description = "Reload weapons significantly faster",
+		image = "classic_clean_speed",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_speedcola",
+		specialty = "specialty_fastreload",
+		clientFieldName = "sleight_of_hand_bo"
+	},
+	{
+		name = "SPEED COLA",
+		cost = 3000,
+		description = "Reload weapons significantly faster",
+		image = "madkixs_specialty_speedcola",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_speedcola",
+		specialty = "specialty_fastreload",
+		clientFieldName = "sleight_of_hand_recolour"
+	},
+	{
+		name = "QUICK REVIVE",
+		cost = 1500,
+		description = "Faster revives in co-op / Self-revive up to 3 times in solo",
+		image = "ui_icon_perks_zm_quickrevive",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_quickrevive",
+		specialty = "specialty_quickrevive",
+		clientFieldName = "quick_revive"
+	},
+	{
+		name = "QUICK REVIVE",
+		cost = 1500,
+		description = "Faster revives in co-op / Self-revive up to 3 times in solo",
+		image = "classic_clean_revive",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_quickrevive",
+		specialty = "specialty_quickrevive",
+		clientFieldName = "quick_revive_bo"
+	},
+	{
+		name = "QUICK REVIVE",
+		cost = 1500,
+		description = "Faster revives in co-op / Self-revive up to 3 times in solo",
+		image = "madkixs_specialty_quickrevive",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_quickrevive",
+		specialty = "specialty_quickrevive",
+		clientFieldName = "quick_revive_recolour"
+	},
+	{
+		name = "MULE KICK",
+		cost = 4000,
+		image = "ui_icon_perks_zm_mulekick",
+		image = "t5_specialty_additionalprimaryweapon",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_mulekick",
+		specialty = "specialty_additionalprimaryweapon",
+		clientFieldName = "additional_primary_weapon"
+	},
+	{
+		name = "MULE KICK",
+		cost = 4000,
+		description = "Carry a third primary weapon",
+		image = "classic_clean_mulekick",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_mulekick",
+		specialty = "specialty_additionalprimaryweapon",
+		clientFieldName = "additional_primary_weapon_bo"
+	},
+	{
+		name = "MULE KICK",
+		cost = 4000,
+		description = "Carry a third primary weapon",
+		image = "madkixs_specialty_mulekick",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_mulekick",
+		specialty = "specialty_additionalprimaryweapon",
+		clientFieldName = "additional_primary_weapon_recolour"
+	},
+	{
+		name = "STAMIN-UP",
+		cost = 2000,
+		description = "Sprint faster and for a longer duration",
+		image = "ui_icon_perks_zm_staminup",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_staminup",
+		specialty = "specialty_staminup",
+		clientFieldName = "marathon"
+	},
+	{
+		name = "STAMIN-UP",
+		cost = 2000,
+		description = "Sprint faster and for a longer duration",
+		image = "classic_clean_staminup",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_staminup",
+		specialty = "specialty_staminup",
+		clientFieldName = "marathon_bo"
+	},
+	{
+		name = "STAMIN-UP",
+		cost = 2000,
+		description = "Sprint faster and for a longer duration",
+		image = "madkixs_specialty_staminup",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_staminup",
+		specialty = "specialty_staminup",
+		clientFieldName = "marathon_recolour"
+	},
+	{
+		name = "PHD FLOPPER",
+		cost = 2000,
+		description = "Explosive/fall damage immunity, explosion from diving",
+		image = "ui_icon_perks_zm_phdflopper",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_phdflopper",
+		specialty = "specialty_phdflopper",
+		clientFieldName = "phdflopper"
+	},
+	{
+		name = "PHD FLOPPER",
+		cost = 2000,
+		description = "Explosive/fall damage immunity, explosion from diving",
+		image = "classic_clean_flopper",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_phdflopper",
+		specialty = "specialty_phdflopper",
+		clientFieldName = "phdflopper_bo"
+	},
+	{
+		name = "PHD FLOPPER",
+		cost = 2000,
+		description = "Explosive/fall damage immunity, explosion from diving",
+		image = "madkixs_specialty_phdflopper",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_phdflopper",
+		specialty = "specialty_phdflopper",
+		clientFieldName = "phdflopper_recolour"
+	},
+	{
+		name = "DEADSHOT DAIQUIRI",
+		cost = 1500,
+		description = "Aim down sights snaps to zombie heads",
+		image = "ui_icon_perks_zm_deadshot",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_deadshot",
+		specialty = "specialty_deadshot",
+		clientFieldName = "dead_shot"
+	},
+	{
+		name = "DEADSHOT DAIQUIRI",
+		cost = 1500,
+		description = "Aim down sights snaps to zombie heads",
+		image = "classic_clean_deadshot",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_deadshot",
+		specialty = "specialty_deadshot",
+		clientFieldName = "dead_shot_bo"
+	},
+	{
+		name = "DEADSHOT DAIQUIRI",
+		cost = 1500,
+		description = "Aim down sights snaps to zombie heads",
+		image = "madkixs_specialty_deadshot",
+		image_buyable = "ui_icon_zm_purchasemenu_perk_deadshot",
+		specialty = "specialty_deadshot",
+		clientFieldName = "dead_shot_recolour"
+	}
+}
+CoD.ZMPerksClassic = {
+	{
+		name = "JUGGER-NOG",
+		cost = 2500,
+		description = "",
+		image = "t5_specialty_armorvest",
+		image_buyable = "blacktransparent",
+		specialty = "specialty_armorvest",
+		clientFieldName = "juggernaut"
+	},
+	{
+		name = "JUGGER-NOG",
+		cost = 2500,
+		description = "",
+		image = "classic_clean_juggernog",
+		image_buyable = "blacktransparent",
+		specialty = "specialty_armorvest",
+		clientFieldName = "juggernaut_bo"
+	},
+	{
+		name = "JUGGER-NOG",
+		cost = 2500,
+		description = "",
+		image = "madkixs_specialty_juggernog",
+		image_buyable = "blacktransparent",
+		specialty = "specialty_armorvest",
+		clientFieldName = "juggernaut_recolour"
+	},
+	{
+		name = "DOUBLE TAP",
+		cost = 2000,
+		description = "",
+		--image = "specialty_giant_doubletap1_zombies",
+		image = "classic_clean_doubletap",
+		image_buyable = "blacktransparent",
+		specialty = "specialty_rof",
+		clientFieldName = "doubletap"
+	},
+	{
+		name = "DOUBLE TAP",
+		cost = 2000,
+		description = "",
+		image = "classic_clean_doubletap",
+		image_buyable = "blacktransparent",
+		specialty = "specialty_rof",
+		clientFieldName = "doubletap_bo"
+	},
+	{
+		name = "DOUBLE TAP",
+		cost = 2000,
+		description = "",
+		image = "madkixs_specialty_doubletap",
+		image_buyable = "blacktransparent",
+		specialty = "specialty_rof",
+		clientFieldName = "doubletap_recolour"
+	},
+	{
+		name = "SPEED COLA",
+		cost = 3000,
+		description = "",
+		image = "t5_specialty_fastreload",
+		image_buyable = "blacktransparent",
+		specialty = "specialty_fastreload",
+		clientFieldName = "sleight_of_hand"
+	},
+	{
+		name = "SPEED COLA",
+		cost = 3000,
+		description = "",
+		image = "classic_clean_speed",
+		image_buyable = "blacktransparent",
+		specialty = "specialty_fastreload",
+		clientFieldName = "sleight_of_hand_bo"
+	},
+	{
+		name = "SPEED COLA",
+		cost = 3000,
+		description = "",
+		image = "madkixs_specialty_speedcola",
+		image_buyable = "blacktransparent",
+		specialty = "specialty_fastreload",
+		clientFieldName = "sleight_of_hand_recolour"
+	},
+	{
+		name = "QUICK REVIVE",
+		cost = 1500,
+		description = "",
+		image = "t5_specialty_quickrevive",
+		image_buyable = "blacktransparent",
+		specialty = "specialty_quickrevive",
+		clientFieldName = "quick_revive"
+	},
+	{
+		name = "QUICK REVIVE",
+		cost = 1500,
+		description = "",
+		image = "classic_clean_revive",
+		image_buyable = "blacktransparent",
+		specialty = "specialty_quickrevive",
+		clientFieldName = "quick_revive_bo"
+	},
+	{
+		name = "QUICK REVIVE",
+		cost = 1500,
+		description = "",
+		image = "madkixs_specialty_quickrevive",
+		image_buyable = "blacktransparent",
+		specialty = "specialty_quickrevive",
+		clientFieldName = "quick_revive_recolour"
+	},
+	{
+		name = "MULE KICK",
+		cost = 4000,
+		description = "",
+		image = "t5_specialty_additionalprimaryweapon",
+		image_buyable = "blacktransparent",
+		specialty = "specialty_additionalprimaryweapon",
+		clientFieldName = "additional_primary_weapon"
+	},
+	{
+		name = "MULE KICK",
+		cost = 4000,
+		description = "",
+		image = "classic_clean_mulekick",
+		image_buyable = "blacktransparent",
+		specialty = "specialty_additionalprimaryweapon",
+		clientFieldName = "additional_primary_weapon_bo"
+	},
+	{
+		name = "MULE KICK",
+		cost = 4000,
+		description = "",
+		image = "madkixs_specialty_mulekick",
+		image_buyable = "blacktransparent",
+		specialty = "specialty_additionalprimaryweapon",
+		clientFieldName = "additional_primary_weapon_recolour"
+	},
+	{
+		name = "STAMIN-UP",
+		cost = 2000,
+		description = "",
+		image = "t5_specialty_staminup",
+		image_buyable = "blacktransparent",
+		specialty = "specialty_staminup",
+		clientFieldName = "marathon"
+	},
+	{
+		name = "STAMIN-UP",
+		cost = 2000,
+		description = "",
+		image = "classic_clean_staminup",
+		image_buyable = "blacktransparent",
+		specialty = "specialty_staminup",
+		clientFieldName = "marathon_bo"
+	},
+	{
+		name = "STAMIN-UP",
+		cost = 2000,
+		description = "",
+		image = "madkixs_specialty_staminup",
+		image_buyable = "blacktransparent",
+		specialty = "specialty_staminup",
+		clientFieldName = "marathon_recolour"
+	},
+	{
+		name = "PHD FLOPPER",
+		cost = 2000,
+		description = "",
+		image = "t5_specialty_phdflopper",
+		image_buyable = "blacktransparent",
+		specialty = "specialty_phdflopper",
+		clientFieldName = "phdflopper"
+	},
+	{
+		name = "PHD FLOPPER",
+		cost = 2000,
+		description = "",
+		image = "classic_clean_flopper",
+		image_buyable = "blacktransparent",
+		specialty = "specialty_phdflopper",
+		clientFieldName = "phdflopper_bo"
+	},
+	{
+		name = "PHD FLOPPER",
+		cost = 2000,
+		description = "",
+		image = "madkixs_specialty_phdflopper",
+		image_buyable = "blacktransparent",
+		specialty = "specialty_phdflopper",
+		clientFieldName = "phdflopper_recolour"
+	},
+	{
+		name = "DEADSHOT DAIQUIRI",
+		cost = 1500,
+		description = "",
+		image = "t5_specialty_deadshot",
+		image_buyable = "blacktransparent",
+		specialty = "specialty_deadshot",
+		clientFieldName = "dead_shot"
+	},
+	{
+		name = "DEADSHOT DAIQUIRI",
+		cost = 1500,
+		description = "",
+		image = "classic_clean_deadshot",
+		image_buyable = "blacktransparent",
+		specialty = "specialty_deadshot",
+		clientFieldName = "dead_shot_bo"
+	},
+	{
+		name = "DEADSHOT DAIQUIRI",
+		cost = 1500,
+		description = "",
+		image = "madkixs_specialty_deadshot",
+		image_buyable = "blacktransparent",
+		specialty = "specialty_deadshot",
+		clientFieldName = "dead_shot_recolour"
+	}
+}
+
 -- Summary: Used in the HandlePerksList function to get the perk index on the current iteration from element.perksList
 -- Arg 1: A table that contains the player's current perks
 -- Arg 2: The perk's clientfield name
@@ -332,23 +799,33 @@ local HandlePerksList = function ( element, controller )
 	-- Parent model, that each of the perks' sub-models will be stored on
 	local perksParentModel = Engine.GetModel( Engine.GetModelForController( controller ), "hudItems.perks" )
 
+	local f3_local2 = CoD.ZMCustomPerks
+	if Dvar.ui_mapname:get() == "3757218836" or Dvar.ui_mapname:get() == "zm_pentagon" then
+		local f3_local3 = Engine.GetModelValue( Engine.GetModel( Engine.GetModelForController( 0 ), "classicMode" ) )
+		if f3_local3 ~= nil and f3_local3 == 1 then
+			f3_local2 = CoD.ZMPerksClassic
+			f3_arg0:setSpacing( 9 )
+		else
+			f3_local2 = CoD.ZMPerksFIVE
+		end
+	end
 	-- Loop through each of the perks in perksTable
-	for index = 1, #CoD.ZMPerks do
+	for index = 1, #f3_local2 do
 		-- The model value for the individual perk, which indicates it's status, 0 == off, 1 == on, 2 == paused
-		local perkStatus = Engine.GetModelValue( Engine.GetModel( perksParentModel, CoD.ZMPerks[index].clientFieldName ) )
+		local perkStatus = Engine.GetModelValue( Engine.GetModel( perksParentModel, f3_local2[index].clientFieldName ) )
 
 		-- Let's check the model value is not nil, and then check if it's an active perk (value is more than 1)
 		if perkStatus ~= nil and perkStatus > 0 then
 			-- If it's not in element.perksList, let's add it
-			if not GetPerkIndex( element.perksList, CoD.ZMPerks[index].clientFieldName ) then
+			if not GetPerkIndex( element.perksList, f3_local2[index].clientFieldName ) then
 				table.insert( element.perksList, {
 					models = {
-						image = CoD.ZMPerks[index].image,
+						image = f3_local2[index].image,
 						status = perkStatus,
 						newPerk = false
 					},
 					properties = {
-						key = CoD.ZMPerks[index].clientFieldName
+						key = f3_local2[index].clientFieldName
 					}
 				} )
 
@@ -357,7 +834,7 @@ local HandlePerksList = function ( element, controller )
 			end
 
 			-- Let's make sure the status that's stored on the table is equal to the current model value
-			local perkIndexToCheck = CheckPerkIndexForUpdate( element.perksList, CoD.ZMPerks[index].clientFieldName, perkStatus )
+			local perkIndexToCheck = CheckPerkIndexForUpdate( element.perksList, f3_local2[index].clientFieldName, perkStatus )
 
 			-- If it isn't, let's update it
 			if perkIndexToCheck > 0 then
@@ -369,7 +846,7 @@ local HandlePerksList = function ( element, controller )
 		-- Otherwise, let's remove it if it's in element.perksList
 		else
 			-- Get the perk index to remove
-			local perkIndexToCheck = GetPerkIndex( element.perksList, CoD.ZMPerks[index].clientFieldName )
+			local perkIndexToCheck = GetPerkIndex( element.perksList, f3_local2[index].clientFieldName )
 
 			-- If we get a hit, remove it
 			if perkIndexToCheck then
@@ -412,8 +889,18 @@ local PreLoadFunc = function ( self, controller )
 	local perksParentModel = Engine.CreateModel( Engine.GetModelForController( controller ), "hudItems.perks" )
 
 	-- Creates and subscribes to each of the sub-models of the perks
-	for index = 1, #CoD.ZMPerks do
-		self:subscribeToModel( Engine.CreateModel( perksParentModel, CoD.ZMPerks[index].clientFieldName ), function ( model )
+	local f3_local2 = CoD.ZMCustomPerks
+	if Dvar.ui_mapname:get() == "3757218836" or Dvar.ui_mapname:get() == "zm_pentagon" then
+		local f3_local3 = Engine.GetModelValue( Engine.GetModel( Engine.GetModelForController( 0 ), "classicMode" ) )
+		if f3_local3 ~= nil and f3_local3 == 1 then
+			f3_local2 = CoD.ZMPerksClassic
+			f3_arg0:setSpacing( 9 )
+		else
+			f3_local2 = CoD.ZMPerksFIVE
+		end
+	end
+	for index = 1, #f3_local2 do
+		self:subscribeToModel( Engine.CreateModel( perksParentModel, f3_local2[index].clientFieldName ), function ( model )
 			-- If HandlePerksList returns true, let's update the datasource
 			if HandlePerksList( self.PerkList, controller ) then
 				self.PerkList:updateDataSource()

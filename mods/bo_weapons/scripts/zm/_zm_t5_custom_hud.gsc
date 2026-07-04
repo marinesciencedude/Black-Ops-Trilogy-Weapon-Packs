@@ -18,9 +18,9 @@
 #insert scripts\shared\version.gsh;
 
 #insert scripts\zm\_zm_utility.gsh;
-#insert scripts\zm\_zm_t5.gsh;
+#insert scripts\zm\_zm_t5_custom.gsh;
 
-REGISTER_SYSTEM_EX( "zm_t5_hud", &__init__, &__main__, undefined )
+REGISTER_SYSTEM_EX( "zm_t5_custom_hud", &__init__, &__main__, undefined )
 
 function __init__()
 {

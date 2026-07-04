@@ -19,13 +19,13 @@ require( "ui.uieditor.widgets.ZMInventoryStalingrad.GameTimeGroup" )
 
 -- BO1 Widgets
 require( "ui.uieditor.menus.StartMenu.T5StartMenu_Main" )
-require( "ui.uieditor.widgets.HUD.T5AmmoWidget.T5AmmoContainer" )
+require( "ui.uieditor.widgets.HUD.T5AmmoWidget.T5CustomAmmoContainer" )
 require( "ui.uieditor.widgets.HUD.T5NotificationWidget.T5Notification" )
 require( "ui.uieditor.widgets.HUD.T5PerksWidget.T5PerksContainer" )
-require( "ui.uieditor.widgets.HUD.T5ReviveWidget.T5ReviveContainer" )
-require( "ui.uieditor.widgets.HUD.T5RoundWidget.T5RoundContainer" )
-require( "ui.uieditor.widgets.HUD.T5ScoreWidget.T5ScoreContainer" )
-require( "ui.uieditor.widgets.HUD.T5ScoreboardWidget.T5Scoreboard" )
+require( "ui.uieditor.widgets.HUD.T5ReviveWidget.T5CustomReviveContainer" )
+require( "ui.uieditor.widgets.HUD.T5RoundWidget.T5CustomRoundContainer" )
+require( "ui.uieditor.widgets.HUD.T5ScoreWidget.T5CustomScoreContainer" )
+require( "ui.uieditor.widgets.HUD.T5ScoreboardWidget.T5CustomScoreboard" )
 require( "ui.uieditor.widgets.HUD.KingslayerPowerupsWidget.KingslayerPowerupsContainer" )
 
 CoD.Zombie.CommonHudRequire()
@@ -38,8 +38,8 @@ local PostLoadFunc = function ( self, controller )
 	CoD.Zombie.CommonPostLoadHud( self, controller )
 end
 
-LUI.createMenu.T5Hud_zm_factory = function ( controller )
-	local self = CoD.Menu.NewForUIEditor( "T5Hud_zm_factory" )
+LUI.createMenu.T5CustomHud_zm_factory = function ( controller )
+	local self = CoD.Menu.NewForUIEditor( "T5CustomHud_zm_factory" )
 
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
@@ -77,17 +77,17 @@ LUI.createMenu.T5Hud_zm_factory = function ( controller )
 	self.ZMPerksContainerFactory:setTopBottom( true, true, 0, 0 )
 	self:addElement( self.ZMPerksContainerFactory )
 	
-	self.Rounds = CoD.T5RoundContainer.new( self, controller )
+	self.Rounds = CoD.T5CustomRoundContainer.new( self, controller )
 	self.Rounds:setLeftRight( true, true, 0, 0 )
 	self.Rounds:setTopBottom( true, true, 0, 0 )
 	self:addElement( self.Rounds )
 	
-	self.Ammo = CoD.T5AmmoContainer.new( self, controller )
+	self.Ammo = CoD.T5CustomAmmoContainer.new( self, controller )
 	self.Ammo:setLeftRight( true, true, 0, 0 )
 	self.Ammo:setTopBottom( true, true, 0, 0 )
 	self:addElement( self.Ammo )
 	
-	self.Score = CoD.T5ScoreContainer.new( self, controller )
+	self.Score = CoD.T5CustomScoreContainer.new( self, controller )
 	self.Score:setLeftRight( true, true, 0, 0 )
 	self.Score:setTopBottom( true, true, 0, 0 )
 	self:addElement( self.Score )
@@ -316,7 +316,7 @@ LUI.createMenu.T5Hud_zm_factory = function ( controller )
 	self.ZMPrematchCountdown0:setTopBottom( false, false, -360, 360 )
 	self:addElement( self.ZMPrematchCountdown0 )
 	
-	self.ScoreboardWidget = CoD.T5Scoreboard.new( self, controller )
+	self.ScoreboardWidget = CoD.T5CustomScoreboard.new( self, controller )
 	self.ScoreboardWidget:setLeftRight( true, true, 0, 0 )
 	self.ScoreboardWidget:setTopBottom( true, true, 0, 0 )
 	self:addElement( self.ScoreboardWidget )
@@ -500,11 +500,11 @@ LUI.createMenu.T5Hud_zm_factory = function ( controller )
 	return self
 end
 
-LUI.createMenu.T7Hud_ZM = LUI.createMenu.T5Hud_zm_factory
-LUI.createMenu.T7Hud_zm_factory = LUI.createMenu.T5Hud_zm_factory
-LUI.createMenu.T7Hud_zm_castle = LUI.createMenu.T5Hud_zm_factory
-LUI.createMenu.T7Hud_zm_island = LUI.createMenu.T5Hud_zm_factory
-LUI.createMenu.T7Hud_zm_stalingrad = LUI.createMenu.T5Hud_zm_factory
-LUI.createMenu.T7Hud_zm_genesis = LUI.createMenu.T5Hud_zm_factory
-LUI.createMenu.T7Hud_zm_dlc5 = LUI.createMenu.T5Hud_zm_factory
-LUI.createMenu.T7Hud_zm_tomb = LUI.createMenu.T5Hud_zm_factory
+LUI.createMenu.T7Hud_ZM = LUI.createMenu.T5CustomHud_zm_factory
+LUI.createMenu.T7Hud_zm_factory = LUI.createMenu.T5CustomHud_zm_factory
+LUI.createMenu.T7Hud_zm_castle = LUI.createMenu.T5CustomHud_zm_factory
+LUI.createMenu.T7Hud_zm_island = LUI.createMenu.T5CustomHud_zm_factory
+LUI.createMenu.T7Hud_zm_stalingrad = LUI.createMenu.T5CustomHud_zm_factory
+LUI.createMenu.T7Hud_zm_genesis = LUI.createMenu.T5CustomHud_zm_factory
+LUI.createMenu.T7Hud_zm_dlc5 = LUI.createMenu.T5CustomHud_zm_factory
+LUI.createMenu.T7Hud_zm_tomb = LUI.createMenu.T5CustomHud_zm_factory

@@ -623,14 +623,28 @@ function apply_choices() {
 		}
 	}
 	
-	/*if(GetDvarInt("mutator_ray_gun") == 2)
+	//still crashes when opening the box, not sure why it doesn't happen in WaW mod
+	/*if(GetGametypeSetting(mutator_ray_gun) == 2)
 	{
 		level.zombie_weapons[GetWeapon("t4_ray_gun")].is_in_box = false;
 		zm_utility::include_weapon( "t4_ray_gun", false);
-		zm_utility::include_weapon( "ray_gun", true );
-		zm_utility::include_weapon( "ray_gun_upgraded", false );
-		zm_weapons::add_zombie_weapon( "ray_gun", "ray_gun_upgraded", "", 10000, "raygun", "", undefined, undefined, false, "" );
-		aat::register_aat_exemption(getweapon("ray_gun_upgraded"));
+		if(GetDvarString("mapname") != "zm_pentagon")
+		{
+			zm_utility::include_weapon( "ray_gun", true );
+			zm_utility::include_weapon( "ray_gun_upgraded", false );
+			zm_weapons::add_zombie_weapon( "ray_gun", "ray_gun_upgraded", "", 10000, "raygun", "", undefined, undefined, false, "" );
+			aat::register_aat_exemption(getweapon("ray_gun_upgraded"));
+		}
+	}
+	else if(GetDvarString("mapname") == "zm_pentagon")
+	{
+		level.zombie_weapons[GetWeapon("t9_ray_gun")].is_in_box = false;
+		zm_utility::include_weapon( "t9_ray_gun", false);
+		
+		zm_utility::include_weapon( "t4_ray_gun", true );
+		zm_utility::include_weapon( "t4_ray_gun_up", false );
+		zm_weapons::add_zombie_weapon( "t4_ray_gun", "t4_ray_gun_up", "", 10000, "raygun", "", undefined, undefined, false, "" );
+		aat::register_aat_exemption(getweapon("t4_ray_gun_up"));
 	}*/
 	
 	if(level.pack_a_punch_camo_index == 141 && GetGametypeSetting(mutator_camo_ingame_cycle) != BOOLMUTATOR_OFFON_ON)
@@ -702,13 +716,13 @@ function apply_choices() {
 		zm_utility::include_weapon( "t9_ballistic_knife", false);
 	}
 	
-	if(GetDvarString("mapname") != "zm_asylum" && GetGametypeSetting(mutator_freezegun) == BOOLMUTATOR_OFFON_ON)
+	if(GetDvarString("mapname") != "zm_asylum" && GetDvarString("mapname") != "zm_pentagon" && GetGametypeSetting(mutator_freezegun) == BOOLMUTATOR_OFFON_ON)
 	{
-		zm_utility::include_weapon( "freezegun", true );
-		zm_utility::include_weapon( "freezegun_upgraded", false );
-		zm_weapons::add_zombie_weapon( "freezegun", "freezegun_upgraded", "", 10000, "freezegun", "", undefined, undefined, true, "" );
-		zm_weapons::add_limited_weapon("freezegun", 1);
-		aat::register_aat_exemption(getweapon("freezegun_upgraded"));
+		zm_utility::include_weapon( "freezegun_custom", true );
+		zm_utility::include_weapon( "freezegun_custom_upgraded", false );
+		zm_weapons::add_zombie_weapon( "freezegun_custom", "freezegun_custom_upgraded", "", 10000, "freezegun", "", undefined, undefined, true, "" );
+		zm_weapons::add_limited_weapon("freezegun_custom", 1);
+		aat::register_aat_exemption(getweapon("freezegun_custom_upgraded"));
 	}
 	
 	if(GetGametypeSetting(mutator_enable_wunderfizz) == 2)

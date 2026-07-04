@@ -17065,7 +17065,7 @@
 		"table_09_name" ""
 		"table_10_name" ""
 	}
-	"freezegun_zm" ( "projectileweapon.gdf" )
+	"freezegun_custom_zm" ( "projectileweapon.gdf" )
 	{
 		"activate_mode" "hold"
 		"activate_with_primed_delay" "0"
@@ -18352,7 +18352,7 @@
 		"worldPersistentEffectSet" "fx_freezegun_table"
 		"worldShellEjectEffect" ""
 	}
-	"freezegun_upgraded_zm" ( "projectileweapon.gdf" )
+	"freezegun_custom_upgraded_zm" ( "projectileweapon.gdf" )
 	{
 		"activate_mode" "hold"
 		"activate_with_primed_delay" "0"

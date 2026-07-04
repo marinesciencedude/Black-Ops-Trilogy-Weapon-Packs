@@ -1,5 +1,5 @@
-CoD.T5PlusPoints = InheritFrom( LUI.UIElement )
-CoD.T5PlusPoints.new = function ( menu, controller )
+CoD.T5CustomPlusPoints = InheritFrom( LUI.UIElement )
+CoD.T5CustomPlusPoints.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
 
 	if PreLoadFunc then
@@ -7,8 +7,8 @@ CoD.T5PlusPoints.new = function ( menu, controller )
 	end
 
 	self:setUseStencil( false )
-	self:setClass( CoD.T5PlusPoints )
-	self.id = "T5PlusPoints"
+	self:setClass( CoD.T5CustomPlusPoints )
+	self.id = "T5CustomPlusPoints"
 	self.soundSet = "HUD"
 	self:setLeftRight( true, false, 0, 1280 )
 	self:setTopBottom( true, false, 0, 720 )

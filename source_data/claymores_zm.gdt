@@ -1823,7 +1823,7 @@
 		"zoomMin" "1"
 		"zoomRate" "0"
 	}
-	"claymore_zm" ( "grenadeweapon.gdf" )
+	"claymore_custom_zm" ( "grenadeweapon.gdf" )
 	{
 		"activate_mode" "hold"
 		"activate_with_primed_delay" "0"

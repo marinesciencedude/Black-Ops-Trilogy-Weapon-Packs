@@ -1,5 +1,5 @@
-CoD.T5AmmoWarning = InheritFrom( LUI.UIElement )
-CoD.T5AmmoWarning.new = function ( menu, controller )
+CoD.T5CustomAmmoWarning = InheritFrom( LUI.UIElement )
+CoD.T5CustomAmmoWarning.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
 
 	if PreLoadFunc then
@@ -7,8 +7,8 @@ CoD.T5AmmoWarning.new = function ( menu, controller )
 	end
 
 	self:setUseStencil( false )
-	self:setClass( CoD.T5AmmoWarning )
-	self.id = "T5AmmoWarning"
+	self:setClass( CoD.T5CustomAmmoWarning )
+	self.id = "T5CustomAmmoWarning"
 	self.soundSet = "default"
 	self:setLeftRight( true, false, 0, 1280 )
 	self:setTopBottom( true, false, 0, 720 )

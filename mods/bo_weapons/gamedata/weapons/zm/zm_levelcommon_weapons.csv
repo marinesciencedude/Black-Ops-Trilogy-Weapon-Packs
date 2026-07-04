@@ -10,7 +10,7 @@ humangun,humangun_up,,10000,humangun,,,,,true,false,true,,,false,true,special,tr
 sickle,,,3000,wpck_sickle,,,,,false,false,,,,false,false,special,,,,
 nesting_dolls,,,2000,dolls,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,,
 sticky_grenade,,,250,wpck_bowie,,,,,false,false,,,,false,false,grenade,,,,
-claymore,,,1000,claymore,,,,,false,false,false,,,false,true,special,,,,
+claymore_custom,,,1000,claymore_custom,,,,,false,false,false,,,false,true,special,,,,
 #TrustInUma's DER RIESE
 bouncingbetty,,,1000,betty,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,,
 t4_kar98k,t4_kar98k_up,,200,rifle,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,

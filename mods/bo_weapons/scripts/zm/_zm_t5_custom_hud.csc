@@ -13,7 +13,7 @@
 #insert scripts\shared\shared.gsh;
 #insert scripts\shared\version.gsh;
 
-REGISTER_SYSTEM_EX( "zm_t5_hud", &__init__, &__main__, undefined )
+REGISTER_SYSTEM_EX( "zm_t5_custom_hud", &__init__, &__main__, undefined )
 
 function __init__()
 {
@@ -25,7 +25,7 @@ function __init__()
 		clientfield::register( "clientuimodel", "hudItems.actionSlot4ammo", VERSION_DLC5, GetMinBitCountForNum( 36 ), "int", undefined, !CF_HOST_ONLY, !CF_CALLBACK_ZERO_ON_NEW_ENT );
 
 		// Load the menu
-		luiload( "ui.uieditor.menus.hud.T5Hud_zm_factory" );
+		luiload( "ui.uieditor.menus.hud.T5CustomHud_zm_factory" );
 
 		// Callbacks
 		callback::on_localplayer_spawned( &on_localplayer_spawned );

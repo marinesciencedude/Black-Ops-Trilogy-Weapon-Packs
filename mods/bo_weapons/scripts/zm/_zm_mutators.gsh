@@ -82,10 +82,10 @@
 #define	mutator_delayed_powerup				"cumulativeroundscores"
 #define mutator_kino_stageclimb				"pregameItemMaxVotes"
 #define mutator_runtobarrier				"pregamePositionShuffleMethod"
+#define mutator_ray_gun						"pregamePositionSortType"
 
 //ints or int-compatible
-/*#define mutator_						"pregamePositionSortType"
-#define mutator_						"pregamePostRoundTime"
+/*#define mutator_						"pregamePostRoundTime"
 #define mutator_						"pregamePostStageTime"
 #define mutator_						"pregamePreStageTime"
 #define mutator_						"pregameScorestreakModifyTime"

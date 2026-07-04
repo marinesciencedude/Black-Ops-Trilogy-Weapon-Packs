@@ -1,6 +1,6 @@
 weapon_name,upgrade_name,hint,cost,weaponVO,weaponVOresp,ammo_cost,create_vox,is_zcleansed,in_box,upgrade_in_box,is_limited,limit,upgrade_limit,content_restrict,wallbuy_autospawn,class,is_aat_exempt,is_wonder_weapon,force_attachments
 t5_m1911,t5_m1911_rdw_up,,300,pistol,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,pistol,,,
-claymore,,,1000,betty,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,
+claymore_custom,,,1000,betty,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,
 bouncingbetty,,,1000,betty,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,
 frag_grenade,,,250,grenade,,250,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,
 sticky_grenade_custom,,,250,grenade,,250,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,

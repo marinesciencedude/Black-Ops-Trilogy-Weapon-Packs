@@ -1,6 +1,6 @@
 weapon_name,upgrade_name,hint,cost,weaponVO,weaponVOresp,ammo_cost,create_vox,is_zcleansed,in_box,upgrade_in_box,is_limited,limit,upgrade_limit,content_restrict,wallbuy_autospawn,class,is_aat_exempt,is_wonder_weapon,force_attachments
 t5_m1911,t5_m1911_rdw_up,,300,pistol,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,pistol,TRUE,,
-claymore,,,1000,betty,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,
+claymore_custom,,,1000,betty,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,
 bo1_bouncingbetty,,,1000,betty,,5194303,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,
 bouncingbetty,,,1000,betty,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,
 cymbal_monkey,cymbal_monkey_upgraded,,2000,monkey,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,
@@ -53,4 +53,4 @@ t5_crossbow,t5_crossbow_up,,5000,special,,,,,TRUE,FALSE,TRUE,1,,FALSE,TRUE,speci
 t9_ballistic_knife,t9_ballistic_knife_up,,2000,,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,special,TRUE,,
 knife_ballistic_bowie,knife_ballistic_bowie_upgraded,,2000,,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,special,TRUE,,
 s2_sten,s2_sten_up,,2000,smg,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,smg,,,
-freezegun,freezegun_upgraded,,10000,freezegun,,,,,TRUE,FALSE,TRUE,1,,FALSE,TRUE,special,TRUE,TRUE,
+freezegun_custom,freezegun_custom_upgraded,,10000,freezegun,,,,,TRUE,FALSE,TRUE,1,,FALSE,TRUE,special,TRUE,TRUE,

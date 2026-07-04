@@ -477,8 +477,8 @@ function applyChoices() {
 	
 	if(GetDvarString("mapname") != "zm_asylum" && GetGametypeSetting(mutator_freezegun) == BOOLMUTATOR_OFFON_ON)
 	{
-		zm_weapons::include_weapon( "freezegun", true, 10000, 0 );
-		zm_weapons::include_upgraded_weapon( "freezegun", "freezegun_upgraded", false, 10000, 0 );
+		zm_weapons::include_weapon( "freezegun_custom", true, 10000, 0 );
+		zm_weapons::include_upgraded_weapon( "freezegun_custom", "freezegun_custom_upgraded", false, 10000, 0 );
 	}
 	
 	if(GetDvarInt("mutator_bocw_1911") == MUTATOR_OFFON_ON)
@@ -529,12 +529,19 @@ function applyChoices() {
 		RemoveZombieBoxWeapon(GetWeapon("t5_rpk"));
 	}
 	
-	/*if(GetDvarInt("mutator_ray_gun") == 2)
+	//still crashes when opening the box, not sure why it doesn't happen in WaW mod
+	/*if(GetGametypeSetting(mutator_ray_gun) == 2 && GetDvarString("mapname") != "zm_pentagon")
 	{
 														 // auto-calculate ammo cost
 		zm_weapons::include_weapon( "ray_gun", true, 10000, 0 );
 		zm_weapons::include_upgraded_weapon( "ray_gun", "ray_gun_upgraded", false, 10000, 0 );
 		RemoveZombieBoxWeapon(GetWeapon("t4_ray_gun"));
+	}
+	else if(GetDvarString("mapname") == "zm_pentagon")
+	{
+		zm_weapons::include_weapon( "t4_ray_gun", true, 10000, 0 );
+		zm_weapons::include_upgraded_weapon( "t4_ray_gun", "t4_ray_gun_up", false, 10000, 0 );
+		RemoveZombieBoxWeapon(GetWeapon("t9_ray_gun"));
 	}*/
 	
 	if(level.pack_a_punch_camo_index == 141 && GetGametypeSetting(mutator_camo_ingame_cycle) != BOOLMUTATOR_OFFON_ON)

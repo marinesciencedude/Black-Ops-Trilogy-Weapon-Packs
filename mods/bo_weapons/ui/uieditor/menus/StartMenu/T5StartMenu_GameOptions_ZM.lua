@@ -1,7 +1,7 @@
 require( "ui.uieditor.menus.StartMenu.T5StartMenu_Options" )
 require( "ui.uieditor.widgets.Lobby.Common.T5ButtonListItem" )
 
-DataSources.StartMenuGameOptions = ListHelper_SetupDataSource( "StartMenuGameOptions", function ( controller )
+DataSources.T5StartMenuGameOptions = ListHelper_SetupDataSource( "T5StartMenuGameOptions", function ( controller )
 	local options = {}
 
 	if CoD.isZombie then
@@ -90,7 +90,7 @@ CoD.T5StartMenu_GameOptions_ZM.new = function ( menu, controller )
 	self.buttonList:setTopBottom( true, false, 112.5, 0 )
 	self.buttonList:setWidgetType( CoD.T5ButtonListItem )
 	self.buttonList:setVerticalCount( 5 )
-	self.buttonList:setDataSource( "StartMenuGameOptions" )
+	self.buttonList:setDataSource( "T5StartMenuGameOptions" )
 	self.buttonList:registerEventHandler( "gain_focus", function ( element, event )
 		local retVal = nil
 

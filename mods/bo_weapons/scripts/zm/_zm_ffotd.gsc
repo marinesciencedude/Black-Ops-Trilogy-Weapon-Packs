@@ -11,8 +11,8 @@
 #using scripts\zm\crossbow_bolt;
 #using scripts\zm\_zm_weap_crossbow;
 #using scripts\zm\dive;
-#using scripts\zm\_zm_t5_hud;
-#using scripts\zm\_zm_weap_freezegun;
+#using scripts\zm\_zm_t5_custom_hud;
+#using scripts\zm\_zm_weap_freezegun_custom;
 #using scripts\zm\_zm_weap_bo1bouncingbetty;
 #using scripts\zm\_zm_xmodelalias;
 #using scripts\shared\ai\systems\behavior_tree_utility;

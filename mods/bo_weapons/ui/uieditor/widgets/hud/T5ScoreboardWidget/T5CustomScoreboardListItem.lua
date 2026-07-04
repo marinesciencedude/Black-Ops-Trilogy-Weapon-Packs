@@ -14,8 +14,8 @@ local PostLoadFunc = function ( self, controller )
 	end )
 end
 
-CoD.T5ScoreboardListItem = InheritFrom( LUI.UIElement )
-CoD.T5ScoreboardListItem.new = function ( menu, controller )
+CoD.T5CustomScoreboardListItem = InheritFrom( LUI.UIElement )
+CoD.T5CustomScoreboardListItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
 
 	if PreLoadFunc then
@@ -23,8 +23,8 @@ CoD.T5ScoreboardListItem.new = function ( menu, controller )
 	end
 
 	self:setUseStencil( false )
-	self:setClass( CoD.T5ScoreboardListItem )
-	self.id = "T5ScoreboardListItem"
+	self:setClass( CoD.T5CustomScoreboardListItem )
+	self.id = "T5CustomScoreboardListItem"
 	self.soundSet = "default"
 	self:setLeftRight( true, false, 0, 738 )
 	self:setTopBottom( true, false, 0, 18 )

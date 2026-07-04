@@ -2323,9 +2323,12 @@ function swap_wall_weapon()
 				ent.zombie_weapon_upgrade = "bo1_bouncingbetty";
 			else
 			{
-				ent.zombie_weapon_upgrade = "claymore";
 				spawn_loc = struct::get(ent.target, "targetname");
-				spawn_loc.angles -= (0, -90, 0);
+				if(GetDvarString("mapname") != "zm_pentagon")
+				{
+					ent.zombie_weapon_upgrade = "claymore_custom";
+					spawn_loc.angles -= (0, -90, 0);
+				}
 				spawn_loc.script_vector = (0, -90, 0);
 			}
 		}

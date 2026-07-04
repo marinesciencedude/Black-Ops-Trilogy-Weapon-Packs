@@ -6,35 +6,35 @@ ttf,fonts/morris_sans_w04_medium_cond.ttf
 fonticon,fonticon/weapons.csv
 
 // SCRIPTS
-scriptparsetree,scripts/zm/_zm_t5_hud.gsc
-scriptparsetree,scripts/zm/_zm_t5_hud.csc
-scriptparsetree,scripts/zm/_zm_t5.gsh
+scriptparsetree,scripts/zm/_zm_t5_custom_hud.gsc
+scriptparsetree,scripts/zm/_zm_t5_custom_hud.csc
+scriptparsetree,scripts/zm/_zm_t5_custom.gsh
 
 // LUA
-rawfile,ui/uieditor/menus/hud/T5Hud_zm_factory.lua
+rawfile,ui/uieditor/menus/hud/T5CustomHud_zm_factory.lua
 rawfile,ui/uieditor/menus/StartMenu/T5StartMenu_GameOptions_ZM.lua
 rawfile,ui/uieditor/menus/StartMenu/T5StartMenu_Main.lua
 rawfile,ui/uieditor/menus/StartMenu/T5StartMenu_Options.lua
 rawfile,ui/uieditor/widgets/HUD/KingslayerPowerupsWidget/KingslayerPowerupsContainer.lua
 rawfile,ui/uieditor/widgets/HUD/KingslayerPowerupsWidget/KingslayerPowerupsListItem.lua
-rawfile,ui/uieditor/widgets/HUD/T5AmmoWidget/T5AmmoContainer.lua
-rawfile,ui/uieditor/widgets/HUD/T5AmmoWidget/T5AmmoEquipment.lua
-rawfile,ui/uieditor/widgets/HUD/T5AmmoWidget/T5AmmoEquipmentListItem.lua
-rawfile,ui/uieditor/widgets/HUD/T5AmmoWidget/T5AmmoInfo.lua
-rawfile,ui/uieditor/widgets/HUD/T5AmmoWidget/T5AmmoWarning.lua
+rawfile,ui/uieditor/widgets/HUD/T5AmmoWidget/T5CustomAmmoContainer.lua
+rawfile,ui/uieditor/widgets/HUD/T5AmmoWidget/T5CustomAmmoEquipment.lua
+rawfile,ui/uieditor/widgets/HUD/T5AmmoWidget/T5CustomAmmoEquipmentListItem.lua
+rawfile,ui/uieditor/widgets/HUD/T5AmmoWidget/T5CustomAmmoInfo.lua
+rawfile,ui/uieditor/widgets/HUD/T5AmmoWidget/T5CustomAmmoWarning.lua
 rawfile,ui/uieditor/widgets/HUD/T5NotificationWidget/T5Notification.lua
 rawfile,ui/uieditor/widgets/HUD/T5PerksWidget/T5PerksContainer.lua
 rawfile,ui/uieditor/widgets/HUD/T5PerksWidget/T5PerksListItem.lua
-rawfile,ui/uieditor/widgets/HUD/T5ReviveWidget/T5Revive.lua
-rawfile,ui/uieditor/widgets/HUD/T5ReviveWidget/T5ReviveContainer.lua
-rawfile,ui/uieditor/widgets/HUD/T5RoundWidget/T5Round.lua
-rawfile,ui/uieditor/widgets/HUD/T5RoundWidget/T5RoundContainer.lua
-rawfile,ui/uieditor/widgets/HUD/T5ScoreboardWidget/T5Scoreboard.lua
-rawfile,ui/uieditor/widgets/HUD/T5ScoreboardWidget/T5ScoreboardListItem.lua
-rawfile,ui/uieditor/widgets/HUD/T5ScoreWidget/T5ClientScore.lua
-rawfile,ui/uieditor/widgets/HUD/T5ScoreWidget/T5PlusPoints.lua
-rawfile,ui/uieditor/widgets/HUD/T5ScoreWidget/T5PlusPointsContainer.lua
-rawfile,ui/uieditor/widgets/HUD/T5ScoreWidget/T5ScoreContainer.lua
+rawfile,ui/uieditor/widgets/HUD/T5ReviveWidget/T5CustomRevive.lua
+rawfile,ui/uieditor/widgets/HUD/T5ReviveWidget/T5CustomReviveContainer.lua
+rawfile,ui/uieditor/widgets/HUD/T5RoundWidget/T5CustomRound.lua
+rawfile,ui/uieditor/widgets/HUD/T5RoundWidget/T5CustomRoundContainer.lua
+rawfile,ui/uieditor/widgets/HUD/T5ScoreboardWidget/T5CustomScoreboard.lua
+rawfile,ui/uieditor/widgets/HUD/T5ScoreboardWidget/T5CustomScoreboardListItem.lua
+rawfile,ui/uieditor/widgets/HUD/T5ScoreWidget/T5CustomClientScore.lua
+rawfile,ui/uieditor/widgets/HUD/T5ScoreWidget/T5CustomPlusPoints.lua
+rawfile,ui/uieditor/widgets/HUD/T5ScoreWidget/T5CustomPlusPointsContainer.lua
+rawfile,ui/uieditor/widgets/HUD/T5ScoreWidget/T5CustomScoreContainer.lua
 rawfile,ui/uieditor/widgets/Lobby/Common/T5ButtonListItem.lua
 
 // IMAGES

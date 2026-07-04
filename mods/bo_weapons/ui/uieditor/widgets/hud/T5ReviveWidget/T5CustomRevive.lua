@@ -14,8 +14,8 @@ local SetReviveRGB = function ( self, controller, element )
 	end
 end
 
-CoD.T5Revive = InheritFrom( LUI.UIElement )
-CoD.T5Revive.new = function ( menu, controller )
+CoD.T5CustomRevive = InheritFrom( LUI.UIElement )
+CoD.T5CustomRevive.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
 
 	if PreLoadFunc then
@@ -23,8 +23,8 @@ CoD.T5Revive.new = function ( menu, controller )
 	end
 
 	self:setUseStencil( false )
-	self:setClass( CoD.T5Revive )
-	self.id = "T5Revive"
+	self:setClass( CoD.T5CustomRevive )
+	self.id = "T5CustomRevive"
 	self.soundSet = "default"
 	self:setLeftRight( true, false, 0, 220 )
 	self:setTopBottom( true, false, 0, 220 )

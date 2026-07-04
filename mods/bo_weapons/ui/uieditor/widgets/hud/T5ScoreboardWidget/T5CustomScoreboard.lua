@@ -1,4 +1,4 @@
-require( "ui.uieditor.widgets.HUD.T5ScoreboardWidget.T5ScoreboardListItem" )
+require( "ui.uieditor.widgets.HUD.T5ScoreboardWidget.T5CustomScoreboardListItem" )
 
 local PostLoadFunc = function ( self, controller )
 	self.Team1:subscribeToModel( Engine.CreateModel( Engine.GetModelForController( controller ), "updateScoreboard" ), function ( model )
@@ -30,8 +30,8 @@ local PreLoadFunc = function ( self, controller )
 	CoD.ScoreboardUtility.SetScoreboardUIModels( controller )
 end
 
-CoD.T5Scoreboard = InheritFrom( LUI.UIElement )
-CoD.T5Scoreboard.new = function ( menu, controller )
+CoD.T5CustomScoreboard = InheritFrom( LUI.UIElement )
+CoD.T5CustomScoreboard.new = function ( menu, controller )
     local self = LUI.UIElement.new()
 
 	if PreLoadFunc then
@@ -39,8 +39,8 @@ CoD.T5Scoreboard.new = function ( menu, controller )
 	end
 
 	self:setUseStencil( false )
-	self:setClass( CoD.T5Scoreboard )
-	self.id = "T5Scoreboard"
+	self:setClass( CoD.T5CustomScoreboard )
+	self.id = "T5CustomScoreboard"
 	self.soundSet = "default"
 	self:setLeftRight( true, false, 0, 1280 )
 	self:setTopBottom( true, false, 0, 720 )
@@ -227,7 +227,7 @@ CoD.T5Scoreboard.new = function ( menu, controller )
 	self.Team1:setLeftRight( true, true, 0, 0 )
 	self.Team1:setTopBottom( true, true, 0, 0 )
 	self.Team1:setDataSource( "ScoreboardTeam1List" )
-	self.Team1:setWidgetType( CoD.T5ScoreboardListItem )
+	self.Team1:setWidgetType( CoD.T5CustomScoreboardListItem )
 	self.Team1:setVerticalCount( 9 )
 	self:addElement( self.Team1 )
 

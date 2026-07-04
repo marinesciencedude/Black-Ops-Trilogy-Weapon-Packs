@@ -41,6 +41,10 @@ CoD.PowerUps.ClientFieldNames = {
 	{
 		clientFieldName = "powerup_zombie_blood_bo",
 		image = "classic_clean_powerup_blood"
+	},
+	{
+		clientFieldName = "powerup_bon_fire",
+		image = "t5_powerup_bon_fire"
 	}
 }
 

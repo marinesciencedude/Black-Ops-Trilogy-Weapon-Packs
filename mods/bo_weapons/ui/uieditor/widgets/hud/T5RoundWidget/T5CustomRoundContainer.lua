@@ -1,7 +1,7 @@
-require( "ui.uieditor.widgets.HUD.T5RoundWidget.T5Round" )
+require( "ui.uieditor.widgets.HUD.T5RoundWidget.T5CustomRound" )
 
-CoD.T5RoundContainer = InheritFrom( LUI.UIElement )
-CoD.T5RoundContainer.new = function ( menu, controller )
+CoD.T5CustomRoundContainer = InheritFrom( LUI.UIElement )
+CoD.T5CustomRoundContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
 
 	if PreLoadFunc then
@@ -9,29 +9,29 @@ CoD.T5RoundContainer.new = function ( menu, controller )
 	end
 
 	self:setUseStencil( false )
-	self:setClass( CoD.T5RoundContainer )
-	self.id = "T5RoundContainer"
+	self:setClass( CoD.T5CustomRoundContainer )
+	self.id = "T5CustomRoundContainer"
 	self.soundSet = "default"
 	self:setLeftRight( true, false, 0, 1280 )
 	self:setTopBottom( true, false, 0, 720 )
 	self.anyChildUsesUpdateState = true
 
-	self.T5Round = CoD.T5Round.new( menu, controller )
-	self.T5Round:setLeftRight( true, true, 0, 0 )
-	self.T5Round:setTopBottom( true, true, 0, 0 )
-	self.T5Round:subscribeToGlobalModel( controller, "GameScore", nil, function ( model )
-		self.T5Round:setModel( model, controller )
+	self.T5CustomRound = CoD.T5CustomRound.new( menu, controller )
+	self.T5CustomRound:setLeftRight( true, true, 0, 0 )
+	self.T5CustomRound:setTopBottom( true, true, 0, 0 )
+	self.T5CustomRound:subscribeToGlobalModel( controller, "GameScore", nil, function ( model )
+		self.T5CustomRound:setModel( model, controller )
 	end )
-	self:addElement( self.T5Round )
+	self:addElement( self.T5CustomRound )
 
 	self.clipsPerState = {
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
 
-				self.T5Round:completeAnimation()
-				self.T5Round:setAlpha( 1 )
-				self.clipFinished( self.T5Round, {} )
+				self.T5CustomRound:completeAnimation()
+				self.T5CustomRound:setAlpha( 1 )
+				self.clipFinished( self.T5CustomRound, {} )
 			end,
 			Invisible = function ()
 				self:setupElementClipCounter( 1 )
@@ -50,18 +50,18 @@ CoD.T5RoundContainer.new = function ( menu, controller )
 					end
 				end
 
-				self.T5Round:completeAnimation()
-				self.T5Round:setAlpha( 1 )
-				InvisibleStateTransition( self.T5Round, {} )
+				self.T5CustomRound:completeAnimation()
+				self.T5CustomRound:setAlpha( 1 )
+				InvisibleStateTransition( self.T5CustomRound, {} )
 			end
 		},
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
 
-				self.T5Round:completeAnimation()
-				self.T5Round:setAlpha( 0 )
-				self.clipFinished( self.T5Round, {} )
+				self.T5CustomRound:completeAnimation()
+				self.T5CustomRound:setAlpha( 0 )
+				self.clipFinished( self.T5CustomRound, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
@@ -80,9 +80,9 @@ CoD.T5RoundContainer.new = function ( menu, controller )
 					end
 				end
 
-				self.T5Round:completeAnimation()
-				self.T5Round:setAlpha( 0 )
-				DefaultStateTransition( self.T5Round, {} )
+				self.T5CustomRound:completeAnimation()
+				self.T5CustomRound:setAlpha( 0 )
+				DefaultStateTransition( self.T5CustomRound, {} )
 			end
 		}
 	}
@@ -245,7 +245,7 @@ CoD.T5RoundContainer.new = function ( menu, controller )
 	end )
 
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
-		element.T5Round:close()
+		element.T5CustomRound:close()
 	end )
 	
 	if PostLoadFunc then

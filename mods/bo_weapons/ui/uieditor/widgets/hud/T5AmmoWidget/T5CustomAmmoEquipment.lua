@@ -1,4 +1,4 @@
-require( "ui.uieditor.widgets.HUD.T5AmmoWidget.T5AmmoEquipmentListItem" )
+require( "ui.uieditor.widgets.HUD.T5AmmoWidget.T5CustomAmmoEquipmentListItem" )
 
 local SetWeaponName = function ( controller, element )
 	local weaponNameModel = Engine.GetModel( Engine.GetModelForController( controller ), "currentWeapon.weaponName" )
@@ -24,7 +24,7 @@ local SetWeaponName = function ( controller, element )
 	element:setText( Engine.Localize( weaponName ) )
 end
 
-DataSources.T5AmmoEquipmentLethals = DataSourceHelpers.ListSetup( "T5AmmoEquipmentLethals", function ( controller, element )
+DataSources.T5CustomAmmoEquipmentLethals = DataSourceHelpers.ListSetup( "T5CustomAmmoEquipmentLethals", function ( controller, element )
 	local primaryOffhand = Engine.GetModelValue( Engine.GetModel( Engine.GetModelForController( controller ), "currentPrimaryOffhand.primaryOffhand" ) )
 	local primaryOffhandCount = Engine.GetModelValue( Engine.GetModel( Engine.GetModelForController( controller ), "currentPrimaryOffhand.primaryOffhandCount" ) )
 
@@ -54,7 +54,7 @@ DataSources.T5AmmoEquipmentLethals = DataSourceHelpers.ListSetup( "T5AmmoEquipme
 	return lethals
 end, true )
 
-DataSources.T5AmmoEquipmentTacticals = DataSourceHelpers.ListSetup( "T5AmmoEquipmentTacticals", function ( controller, element )
+DataSources.T5CustomAmmoEquipmentTacticals = DataSourceHelpers.ListSetup( "T5CustomAmmoEquipmentTacticals", function ( controller, element )
 	local secondaryOffhand = Engine.GetModelValue( Engine.GetModel( Engine.GetModelForController( controller ), "currentSecondaryOffhand.secondaryOffhand" ) )
 	local secondaryOffhandCount = Engine.GetModelValue( Engine.GetModel( Engine.GetModelForController( controller ), "currentSecondaryOffhand.secondaryOffhandCount" ) )
 
@@ -94,7 +94,7 @@ DataSources.T5AmmoEquipmentTacticals = DataSourceHelpers.ListSetup( "T5AmmoEquip
 	return tacticals
 end, true )
 
-DataSources.T5AmmoEquipmentMines = DataSourceHelpers.ListSetup( "T5AmmoEquipmentMines", function ( controller, element )
+DataSources.T5CustomAmmoEquipmentMines = DataSourceHelpers.ListSetup( "T5CustomAmmoEquipmentMines", function ( controller, element )
 	local actionSlot3ammo = Engine.GetModelValue( Engine.GetModel( Engine.GetModelForController( controller ), "hudItems.actionSlot3ammo" ) )
 
 	local mines = {}
@@ -117,14 +117,14 @@ DataSources.T5AmmoEquipmentMines = DataSourceHelpers.ListSetup( "T5AmmoEquipment
 	return mines
 end, true )
 
-CoD.T5AmmoEquipment = InheritFrom( LUI.UIElement )
+CoD.T5CustomAmmoEquipment = InheritFrom( LUI.UIElement )
 
-CoD.T5AmmoEquipment.DPAD_WEAP_TYPE_NONE = 0
-CoD.T5AmmoEquipment.DPAD_WEAP_TYPE_40MM = 1
-CoD.T5AmmoEquipment.DPAD_WEAP_TYPE_MASTERKEY = 2
-CoD.T5AmmoEquipment.DPAD_WEAP_TYPE_FLAMETHROWER = 3
+CoD.T5CustomAmmoEquipment.DPAD_WEAP_TYPE_NONE = 0
+CoD.T5CustomAmmoEquipment.DPAD_WEAP_TYPE_40MM = 1
+CoD.T5CustomAmmoEquipment.DPAD_WEAP_TYPE_MASTERKEY = 2
+CoD.T5CustomAmmoEquipment.DPAD_WEAP_TYPE_FLAMETHROWER = 3
 
-CoD.T5AmmoEquipment.new = function ( menu, controller )
+CoD.T5CustomAmmoEquipment.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
 
 	if PreLoadFunc then
@@ -132,8 +132,8 @@ CoD.T5AmmoEquipment.new = function ( menu, controller )
 	end
 
 	self:setUseStencil( false )
-	self:setClass( CoD.T5AmmoEquipment )
-	self.id = "T5AmmoEquipment"
+	self:setClass( CoD.T5CustomAmmoEquipment )
+	self.id = "T5CustomAmmoEquipment"
 	self.soundSet = "default"
 	self:setLeftRight( true, false, 0, 1280 )
 	self:setTopBottom( true, false, 0, 720 )
@@ -383,11 +383,11 @@ CoD.T5AmmoEquipment.new = function ( menu, controller )
 	self.DpadOuterFrameLeftIcon:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "hudItems.showDpadLeftWeapon" ), function ( modelRef )
 		local ModelValue = Engine.GetModelValue( modelRef )
         if ModelValue then
-            if ModelValue == CoD.T5AmmoEquipment.DPAD_WEAP_TYPE_40MM then
+            if ModelValue == CoD.T5CustomAmmoEquipment.DPAD_WEAP_TYPE_40MM then
                 self.DpadOuterFrameLeftIcon:setImage( RegisterImage( "hud_40mmgrenade" ) )
-            elseif ModelValue == CoD.T5AmmoEquipment.DPAD_WEAP_TYPE_MASTERKEY then
+            elseif ModelValue == CoD.T5CustomAmmoEquipment.DPAD_WEAP_TYPE_MASTERKEY then
                 self.DpadOuterFrameLeftIcon:setImage( RegisterImage( "hud_mk_generic" ) )
-            elseif ModelValue == CoD.T5AmmoEquipment.DPAD_WEAP_TYPE_FLAMETHROWER then
+            elseif ModelValue == CoD.T5CustomAmmoEquipment.DPAD_WEAP_TYPE_FLAMETHROWER then
                 self.DpadOuterFrameLeftIcon:setImage( RegisterImage( "hud_flamethrower" ) )
 			else
 				self.DpadOuterFrameLeftIcon:setImage( RegisterImage( "blacktransparent" ) )
@@ -483,9 +483,9 @@ CoD.T5AmmoEquipment.new = function ( menu, controller )
 	self.DpadOuterFrameRightIcon:makeFocusable()
 	self.DpadOuterFrameRightIcon:setLeftRight( false, true, 0, -5 )
 	self.DpadOuterFrameRightIcon:setTopBottom( false, true, 0, -50 )
-	self.DpadOuterFrameRightIcon:setWidgetType( CoD.T5AmmoEquipmentListItem )
+	self.DpadOuterFrameRightIcon:setWidgetType( CoD.T5CustomAmmoEquipmentListItem )
 	self.DpadOuterFrameRightIcon:setHorizontalCount( 4 )
-	self.DpadOuterFrameRightIcon:setDataSource( "T5AmmoEquipmentMines" )
+	self.DpadOuterFrameRightIcon:setDataSource( "T5CustomAmmoEquipmentMines" )
 	self.DpadOuterFrameRightIcon:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "hudItems.actionSlot3ammo" ), function ( model )
 		self.DpadOuterFrameRightIcon:updateDataSource()
 	end )
@@ -633,9 +633,9 @@ CoD.T5AmmoEquipment.new = function ( menu, controller )
 	self.LethalImage:makeFocusable()
 	self.LethalImage:setLeftRight( false, true, 0, -108 )
 	self.LethalImage:setTopBottom( false, true, 0, -1.5 )
-	self.LethalImage:setWidgetType( CoD.T5AmmoEquipmentListItem )
+	self.LethalImage:setWidgetType( CoD.T5CustomAmmoEquipmentListItem )
 	self.LethalImage:setHorizontalCount( 4 )
-	self.LethalImage:setDataSource( "T5AmmoEquipmentLethals" )
+	self.LethalImage:setDataSource( "T5CustomAmmoEquipmentLethals" )
 	self.LethalImage:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "currentPrimaryOffhand.primaryOffhand" ), function ( model )
 		self.LethalImage:updateDataSource()
 	end )
@@ -648,9 +648,9 @@ CoD.T5AmmoEquipment.new = function ( menu, controller )
 	self.TacticalImage:makeFocusable()
 	self.TacticalImage:setLeftRight( false, true, 0, -152 )
 	self.TacticalImage:setTopBottom( false, true, 0, -1.5 )
-	self.TacticalImage:setWidgetType( CoD.T5AmmoEquipmentListItem )
+	self.TacticalImage:setWidgetType( CoD.T5CustomAmmoEquipmentListItem )
 	self.TacticalImage:setHorizontalCount( 4 )
-	self.TacticalImage:setDataSource( "T5AmmoEquipmentTacticals" )
+	self.TacticalImage:setDataSource( "T5CustomAmmoEquipmentTacticals" )
 	self.TacticalImage:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "currentSecondaryOffhand.secondaryOffhand" ), function ( model )
 		self.TacticalImage:updateDataSource()
 	end )

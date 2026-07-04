@@ -1,7 +1,7 @@
-require( "ui.uieditor.widgets.HUD.T5ScoreWidget.T5PlusPoints" )
+require( "ui.uieditor.widgets.HUD.T5ScoreWidget.T5CustomPlusPoints" )
 
-CoD.T5PlusPointsContainer = InheritFrom( LUI.UIElement )
-CoD.T5PlusPointsContainer.new = function ( menu, controller )
+CoD.T5CustomPlusPointsContainer = InheritFrom( LUI.UIElement )
+CoD.T5CustomPlusPointsContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
 
 	if PreLoadFunc then
@@ -9,14 +9,14 @@ CoD.T5PlusPointsContainer.new = function ( menu, controller )
 	end
 
 	self:setUseStencil( false )
-	self:setClass( CoD.T5PlusPointsContainer )
-	self.id = "T5PlusPointsContainer"
+	self:setClass( CoD.T5CustomPlusPointsContainer )
+	self.id = "T5CustomPlusPointsContainer"
 	self.soundSet = "HUD"
 	self:setLeftRight( true, false, 0, 1280 )
 	self:setTopBottom( true, false, 0, 720 )
 	self.anyChildUsesUpdateState = true
 	
-	self.ZMScrPlusPoints = CoD.T5PlusPoints.new( menu, controller )
+	self.ZMScrPlusPoints = CoD.T5CustomPlusPoints.new( menu, controller )
 	self.ZMScrPlusPoints:setLeftRight( true, true, 0, 0 )
 	self.ZMScrPlusPoints:setTopBottom( true, true, 0, 0 )
 	self:addElement( self.ZMScrPlusPoints )

@@ -1,10 +1,10 @@
-require( "ui.uieditor.widgets.HUD.T5AmmoWidget.T5AmmoEquipment" )
-require( "ui.uieditor.widgets.HUD.T5AmmoWidget.T5AmmoInfo" )
-require( "ui.uieditor.widgets.HUD.T5AmmoWidget.T5AmmoWarning" )
+require( "ui.uieditor.widgets.HUD.T5AmmoWidget.T5CustomAmmoEquipment" )
+require( "ui.uieditor.widgets.HUD.T5AmmoWidget.T5CustomAmmoInfo" )
+require( "ui.uieditor.widgets.HUD.T5AmmoWidget.T5CustomAmmoWarning" )
 require( "ui.uieditor.widgets.HUD.ZM_AmmoWidget.ZmAmmo_BBGumMeterWidget" )
 
-CoD.T5AmmoContainer = InheritFrom( LUI.UIElement )
-CoD.T5AmmoContainer.new = function ( menu, controller )
+CoD.T5CustomAmmoContainer = InheritFrom( LUI.UIElement )
+CoD.T5CustomAmmoContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
 
 	if PreLoadFunc then
@@ -12,19 +12,19 @@ CoD.T5AmmoContainer.new = function ( menu, controller )
 	end
 
 	self:setUseStencil( false )
-	self:setClass( CoD.T5AmmoContainer )
-	self.id = "T5AmmoContainer"
+	self:setClass( CoD.T5CustomAmmoContainer )
+	self.id = "T5CustomAmmoContainer"
 	self.soundSet = "default"
 	self:setLeftRight( true, false, 0, 1280 )
 	self:setTopBottom( true, false, 0, 720 )
 	self.anyChildUsesUpdateState = true
 
-	self.AmmoEquipment = CoD.T5AmmoEquipment.new( menu, controller )
+	self.AmmoEquipment = CoD.T5CustomAmmoEquipment.new( menu, controller )
 	self.AmmoEquipment:setLeftRight( true, true, 0, 0 )
 	self.AmmoEquipment:setTopBottom( true, true, 0, 0 )
 	self:addElement( self.AmmoEquipment )
 
-	self.AmmoInfo = CoD.T5AmmoInfo.new( menu, controller )
+	self.AmmoInfo = CoD.T5CustomAmmoInfo.new( menu, controller )
 	self.AmmoInfo:setLeftRight( true, true, 0, 0 )
 	self.AmmoInfo:setTopBottom( true, true, 0, 0 )
 	self:addElement( self.AmmoInfo )
@@ -35,7 +35,7 @@ CoD.T5AmmoContainer.new = function ( menu, controller )
 	self.ZmAmmoBBGumMeterWidget:setScale( 0.60 )
 	self:addElement( self.ZmAmmoBBGumMeterWidget )
 
-	self.AmmoWarning = CoD.T5AmmoWarning.new( menu, controller )
+	self.AmmoWarning = CoD.T5CustomAmmoWarning.new( menu, controller )
 	self.AmmoWarning:setLeftRight( true, true, 0, 0 )
 	self.AmmoWarning:setTopBottom( true, true, 0, 0 )
 	self:addElement( self.AmmoWarning )

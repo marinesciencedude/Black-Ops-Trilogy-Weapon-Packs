@@ -2488,9 +2488,12 @@ function swap_wall_weapon()
 				ent.zombie_weapon_upgrade = "bo1_bouncingbetty";
 			else
 			{
-				ent.zombie_weapon_upgrade = "claymore";
 				spawn_loc = struct::get(ent.target, "targetname");
-				spawn_loc.angles -= (0, -90, 0);
+				if(GetDvarString("mapname") != "zm_pentagon")
+				{
+					ent.zombie_weapon_upgrade = "claymore_custom";
+					spawn_loc.angles -= (0, -90, 0);
+				}
 				spawn_loc.script_vector = (0, -90, 0);
 			}
 		}
@@ -3672,9 +3675,9 @@ function swap_claymores()
 			continue;
 		}
 		spawn_loc = struct::get(ent.target, "targetname");
-		if((GetGametypeSetting(mutator_waw_wall_weapons) != 2 && (GetDvarString("mapname") == "zm_asylum" || GetDvarString("mapname") == "zm_sumpf" || GetDvarString("mapname") == "zm_factory" || GetDvarString("mapname") == "zm_giant" || GetDvarString("mapname") == "zm_der_riese")))
+		if(GetGametypeSetting(mutator_waw_wall_weapons) != 2 && (GetDvarString("mapname") == "zm_asylum" || GetDvarString("mapname") == "zm_sumpf" || GetDvarString("mapname") == "zm_factory" || GetDvarString("mapname") == "zm_giant" || GetDvarString("mapname") == "zm_der_riese"))
 			ent.var_47896610 = util::spawn_model("wallbuy_bouncingbetty", spawn_loc.origin + VectorScale((-7*cos(spawn_loc.angles[1]), -7*sin(spawn_loc.angles[1]), 0), 1), spawn_loc.angles);
-		else
+		else if (GetDvarString("mapname") != "zm_pentagon")
 		{
 			switch(GetDvarString("mapname"))
 			{
@@ -3719,7 +3722,8 @@ function swap_claymores()
 			count++;
 		}
 	}
-	thread zm_claymore::init();
+	if(GetDvarString("mapname") != "zm_pentagon")
+		thread zm_claymore::init();
 }
 
 function visibility_and_update_prompt( player )

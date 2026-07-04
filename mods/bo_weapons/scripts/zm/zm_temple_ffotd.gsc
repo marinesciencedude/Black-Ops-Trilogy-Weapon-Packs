@@ -599,7 +599,7 @@ function spikemore_plug_hole()
 	else
 	{
 		var_a4ff74b9 = getweapon("bouncingbetty");
-		claymore = GetWeapon("claymore");
+		claymore = GetWeapon("claymore_custom");
 		attacker = undefined;
 		while(true)
 		{

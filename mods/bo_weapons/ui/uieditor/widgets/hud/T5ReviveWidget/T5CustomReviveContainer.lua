@@ -1,4 +1,4 @@
-require( "ui.uieditor.widgets.HUD.T5ReviveWidget.T5Revive" )
+require( "ui.uieditor.widgets.HUD.T5ReviveWidget.T5CustomRevive" )
 require( "ui.uieditor.widgets.HUD.ZM_Revive.ZM_ReviveClampedArrow" )
 
 CoD.ZM_Revive = InheritFrom( LUI.UIElement )
@@ -17,7 +17,7 @@ CoD.ZM_Revive.new = function ( menu, controller )
 	self:setTopBottom( true, false, 0, 1 )
 	self.anyChildUsesUpdateState = true
 	
-	self.ZMReviveWidget = CoD.T5Revive.new( menu, controller )
+	self.ZMReviveWidget = CoD.T5CustomRevive.new( menu, controller )
 	self.ZMReviveWidget:setLeftRight( true, false, -109.5, 110.5 )
 	self.ZMReviveWidget:setTopBottom( true, false, -110, 110 )
 	self.ZMReviveWidget:linkToElementModel( self, nil, false, function ( model )

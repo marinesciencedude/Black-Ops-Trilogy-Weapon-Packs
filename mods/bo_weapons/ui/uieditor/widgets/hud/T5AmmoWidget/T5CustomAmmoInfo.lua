@@ -30,8 +30,8 @@ local SetAmmoPosition = function ( self, controller )
 	self.AmmoClipDW:setLeftRight( true, true, 0, dwRightPosition )
 end
 
-CoD.T5AmmoInfo = InheritFrom( LUI.UIElement )
-CoD.T5AmmoInfo.new = function ( menu, controller )
+CoD.T5CustomAmmoInfo = InheritFrom( LUI.UIElement )
+CoD.T5CustomAmmoInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
 
 	if PreLoadFunc then
@@ -39,8 +39,8 @@ CoD.T5AmmoInfo.new = function ( menu, controller )
 	end
 
 	self:setUseStencil( false )
-	self:setClass( CoD.T5AmmoInfo )
-	self.id = "T5AmmoInfo"
+	self:setClass( CoD.T5CustomAmmoInfo )
+	self.id = "T5CustomAmmoInfo"
 	self.soundSet = "default"
 	self:setLeftRight( true, false, 0, 1280 )
 	self:setTopBottom( true, false, 0, 720 )
