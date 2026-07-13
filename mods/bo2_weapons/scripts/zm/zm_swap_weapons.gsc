@@ -86,8 +86,16 @@ function main()
 */
 function starter_weapon()
 {
-	wait(1);
+	if(GetDvarString("mapname") == "zm_pentagon")
+	{
+		foreach(ent in GetEntArray("script_model", "classname"))
+		{
+			if(ent.model == "wall_chalks_bo1" || ent.model == "wall_chalks_cw")
+				ent hide();
+		}
+	}
 	
+	wait(1);
 	
 	
 	if(GetDvarString("mapname") == "zm_alcatraz_island")
@@ -499,6 +507,9 @@ function give_starting_weapon(starting_weapon)
 			wait(0.1);
 		wait(1);
 	}
+	
+	if(GetDvarString("mapname") == "zm_pentagon")
+		level flag::wait_till("start_zombie_round_logic");
 	
 	if(self GetCurrentWeapon() != starting_weapon || GetDvarString("mapname") == "zm_town_hd")
 	{
@@ -1574,6 +1585,45 @@ function swap_wall_weapon()
 				}
 				break;
 			}
+		case "zm_pentagon": //FIVE Remastered
+			{
+				switch(VAL)
+				{
+				//case "t5_m14":
+				case "t9_tr_dmr":
+					ent.zombie_weapon_upgrade = "t6_m14";
+					break;
+				//case "t5_olympia":
+				case "t9_sh_ironhide":
+					ent.zombie_weapon_upgrade = "t6_olympia";
+					break;
+				//case "t5_mpl":
+				case "t9_smg_ots9":
+					ent.zombie_weapon_upgrade = "t6_b23r";
+					break;
+				//case "t5_pm63":
+				case "t9_pi_amp63":
+					ent.zombie_weapon_upgrade = "t6_pdw57";
+					break;
+				//case "t5_mp5":
+				case "t9_smg_mp5":
+					ent.zombie_weapon_upgrade = "t6_mp5";
+					break;
+				//case "t5_stakeout":
+				case "t9_sh_hauer":
+					ent.zombie_weapon_upgrade = "t6_rem870mcs";
+					break;
+				//case "t5_ak74u":
+				case "t9_smg_ak74u":
+					ent.zombie_weapon_upgrade = "t6_ak74u";
+					break;
+				//case "t5_m16a1":
+				case "t9_tr_m16":
+					ent.zombie_weapon_upgrade = "t6_m16a1";
+					break;
+				}
+				break;
+			}
 		/*case "zm_coast":
 			{
 				if(GetDvarInt("mutator_wallbuys_callofthedead") == 2)
@@ -1986,20 +2036,18 @@ function swap_wall_weapon()
 		}
 	}
 	
-	if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON && GetDvarString("mapname") != "zm_prison" && GetDvarString("mapname") != "zm_die")
+	if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON && GetDvarString("mapname") != "zm_die")
 	{
 		foreach(ent in struct::get_array("claymore_purchase", "targetname"))
 		{
-			ent.zombie_weapon_upgrade = "claymore";
 			spawn_loc = struct::get(ent.target, "targetname");
-			spawn_loc.angles -= (0, -90, 0);
+			if(GetDvarString("mapname") != "zm_pentagon" && GetDvarString("mapname") != "zm_prison")
+			{
+				ent.zombie_weapon_upgrade = "claymore_custom";
+				spawn_loc.angles -= (0, -90, 0);
+			}
 			spawn_loc.script_vector = (0, -90, 0);
 		}
-	}
-	else if(GetDvarString("mapname") == "zm_prison")
-	{
-		foreach(ent in struct::get_array("claymore_purchase", "targetname"))
-			struct::get(ent.target, "targetname").script_vector = (0, -90, 0);
 	}
 	
 	//Add M14 to Hyb's Cell Block Survival but skip DanWj's Cell Block
@@ -2014,7 +2062,7 @@ function swap_wall_weapon()
 		
 		claymorebuy = spawnstruct();
 		claymorebuy.targetname = "claymore_purchase";
-		claymorebuy.zombie_weapon_upgrade = "claymore";
+		claymorebuy.zombie_weapon_upgrade = "claymore_custom";
 		claymorebuy.angles = (0, 90, 0);
 		claymorebuy.origin = (3395, 9877, 1390);
 		claymorebuy struct::init();
@@ -2026,7 +2074,7 @@ function swap_wall_weapon()
 	{
 		claymorebuy = spawnstruct();
 		claymorebuy.targetname = "claymore_purchase";
-		claymorebuy.zombie_weapon_upgrade = "claymore";
+		claymorebuy.zombie_weapon_upgrade = "claymore_custom";
 		claymorebuy.angles = (0, 90, 0);
 		claymorebuy.origin = (3675, 570, 60);
 		claymorebuy struct::init();
@@ -2106,6 +2154,9 @@ function swap_chalk()
 				case "zm_asylum":
 					ent.var_47896610 = util::spawn_model("wallbuy_m14_bo2", spawn_loc.origin + (1, 0, 0), spawn_loc.angles);
 					break;
+				case "zm_pentagon": //FIVE Remastered
+					ent.var_47896610 = util::spawn_model("wallbuy_m14_bo2", spawn_loc.origin + (0, 1, 0), spawn_loc.angles);
+					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_m14_bo2", spawn_loc.origin, spawn_loc.angles);
 					break;
@@ -2136,6 +2187,9 @@ function swap_chalk()
 					break;
 				case "zm_die":
 					ent.var_47896610 = util::spawn_model("wallbuy_olympia_bo2", spawn_loc.origin + VectorScale((-1*cos(spawn_loc.angles[1]) -1, -1*sin(spawn_loc.angles[1]), -3), 1), spawn_loc.angles);
+					break;
+				case "zm_pentagon": //FIVE Remastered
+					ent.var_47896610 = util::spawn_model("wallbuy_olympia_bo2", spawn_loc.origin + (1, -1, -3), spawn_loc.angles);
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_olympia_bo2", spawn_loc.origin + VectorScale((-1*cos(spawn_loc.angles[1]), -1*sin(spawn_loc.angles[1]), -3), 1), spawn_loc.angles);
@@ -2174,6 +2228,9 @@ function swap_chalk()
 				case "zm_die":
 					ent.var_47896610 = util::spawn_model("wallbuy_b23r", spawn_loc.origin + (-2, 1, 0), spawn_loc.angles);
 					break;
+				case "zm_pentagon": //FIVE Remastered				
+					ent.var_47896610 = util::spawn_model("wallbuy_b23r", spawn_loc.origin + (-2, 1, 0), spawn_loc.angles);
+					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_b23r", spawn_loc.origin, spawn_loc.angles);
 					break;
@@ -2187,6 +2244,9 @@ function swap_chalk()
 				{
 				case "zm_theater":
 					ent.var_47896610 = util::spawn_model("wallbuy_ak74u_bo2", spawn_loc.origin + VectorScale((-1, -1, 0), 1), spawn_loc.angles);
+					break;
+				case "zm_pentagon": //FIVE Remastered
+					ent.var_47896610 = util::spawn_model("wallbuy_ak74u_bo2", spawn_loc.origin + (1, 0, 0), spawn_loc.angles);
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_ak74u_bo2", spawn_loc.origin, spawn_loc.angles);
@@ -2210,6 +2270,9 @@ function swap_chalk()
 					break;
 				case "zm_town": //Town Reimagined already has this
 					break;
+				case "zm_pentagon": //FIVE Remastered					
+					ent.var_47896610 = util::spawn_model("wallbuy_pdw57", spawn_loc.origin + (-7*cos(spawn_loc.angles[1]), -7*sin(spawn_loc.angles[1]), 2), spawn_loc.angles);
+					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_pdw57", spawn_loc.origin + VectorScale((7*cos(spawn_loc.angles[1]), 7*sin(spawn_loc.angles[1]), 2), 1), spawn_loc.angles);
 					break;
@@ -2225,6 +2288,7 @@ function swap_chalk()
 					ent.var_47896610 = util::spawn_model("wallbuy_rem870mcs", spawn_loc.origin + VectorScale((0, 1, 0), 1), spawn_loc.angles);
 					break;
 				case "zm_prison": //copforthat's Mob of the Dead
+				case "zm_pentagon": //FIVE Remastered
 					ent.var_47896610 = util::spawn_model("wallbuy_rem870mcs", spawn_loc.origin + (1, 0, 0), spawn_loc.angles);
 					break;
 				default:
@@ -2302,6 +2366,9 @@ function swap_chalk()
 				case "zm_die":
 					ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin + (-8.5*cos(spawn_loc.angles[1]) + 1, -8.5*sin(spawn_loc.angles[1]), 1), spawn_loc.angles);
 					break;
+				case "zm_pentagon": //FIVE Remastered
+					ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin + (-8.5*cos(spawn_loc.angles[1]), -8.5*sin(spawn_loc.angles[1]), 2), spawn_loc.angles);
+					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_mp5", spawn_loc.origin, spawn_loc.angles);
 					break;
@@ -2328,6 +2395,9 @@ function swap_chalk()
 					break;
 				case "zm_die":
 					ent.var_47896610 = util::spawn_model("wallbuy_m16a1_bo2", spawn_loc.origin + (0, 6, 1), spawn_loc.angles);
+					break;
+				case "zm_pentagon": //FIVE Remastered
+					ent.var_47896610 = util::spawn_model("wallbuy_m16a1_bo2", spawn_loc.origin + (5, -1, -1), spawn_loc.angles);
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_m16a1_bo2", spawn_loc.origin, spawn_loc.angles);

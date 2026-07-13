@@ -82,6 +82,7 @@
 #define	mutator_delayed_powerup				"cumulativeroundscores"
 #define mutator_kino_stageclimb 			"pregameItemMaxVotes"
 #define mutator_runtobarrier				"pregamePositionShuffleMethod"
+#define mutator_ray_gun						"pregamePositionSortType"
 
 #define mutator_wallbuys_gorod_krovi		"rebootTime"
 #define mutator_quickrevive					"teamkillpointloss"
@@ -101,8 +102,7 @@
 #define mutator_cellblock_perks				"playerforcerespawn"
 
 //ints or int-compatible
-/*#define mutator_						"pregamePositionSortType"
-#define mutator_						"pregamePostRoundTime"
+/*#define mutator_						"pregamePostRoundTime"
 #define mutator_						"pregamePostStageTime"
 #define mutator_						"pregamePreStageTime"
 #define mutator_						"pregameScorestreakModifyTime"

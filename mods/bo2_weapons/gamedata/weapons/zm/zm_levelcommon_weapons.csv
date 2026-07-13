@@ -42,6 +42,7 @@ t8_spork,,,5000,wpck_bowie,,,,,FALSE,FALSE,,,,FALSE,FALSE,special,,,,
 t8_goldenknife,,,10000,wpck_bowie,,,,,FALSE,FALSE,,,,FALSE,FALSE,special,,,,
 t8_spknifeork,,,20000,wpck_bowie,,,,,FALSE,FALSE,,,,FALSE,FALSE,special,,,,
 #other stuff
+claymore_custom,,,1000,claymore,,,,,false,false,false,,,false,true,special,,,,
 t6_olympia,t6_olympia_up,,500,shotgun,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,shotgun,,,
 t6_mp5,t6_mp5_up,,1000,smg,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,smg,,,
 t6_b23r,t6_b23r_up,,900,pistol,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,pistol,,,,

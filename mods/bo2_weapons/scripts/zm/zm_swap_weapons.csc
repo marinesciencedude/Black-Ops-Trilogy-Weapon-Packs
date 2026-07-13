@@ -1300,6 +1300,45 @@ function swap_wall_weapon()
 				}
 				break;
 			}
+		case "zm_pentagon": //FIVE Remastered
+			{
+				switch(VAL)
+				{
+				//case "t5_m14":
+				case "t9_tr_dmr":
+					ent.zombie_weapon_upgrade = "t6_m14";
+					break;
+				//case "t5_olympia":
+				case "t9_sh_ironhide":
+					ent.zombie_weapon_upgrade = "t6_olympia";
+					break;
+				//case "t5_mpl":
+				case "t9_smg_ots9":
+					ent.zombie_weapon_upgrade = "t6_b23r";
+					break;
+				//case "t5_pm63":
+				case "t9_pi_amp63":
+					ent.zombie_weapon_upgrade = "t6_pdw57";
+					break;
+				//case "t5_mp5":
+				case "t9_smg_mp5":
+					ent.zombie_weapon_upgrade = "t6_mp5";
+					break;
+				//case "t5_stakeout":
+				case "t9_sh_hauer":
+					ent.zombie_weapon_upgrade = "t6_rem870mcs";
+					break;
+				//case "t5_ak74u":
+				case "t9_smg_ak74u":
+					ent.zombie_weapon_upgrade = "t6_ak74u";
+					break;
+				//case "t5_m16a1":
+				case "t9_tr_m16":
+					ent.zombie_weapon_upgrade = "t6_m16a1";
+					break;
+				}
+				break;
+			}
 		/*case "zm_coast":
 			{
 				if(GetDvarInt("mutator_wallbuys_callofthedead") == 2)
@@ -1709,20 +1748,18 @@ function swap_wall_weapon()
 		}
 	}
 	
-	if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON && GetDvarString("mapname") != "zm_prison" && GetDvarString("mapname") != "zm_die")
+	if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON && GetDvarString("mapname") != "zm_die")
 	{
 		foreach(ent in struct::get_array("claymore_purchase", "targetname"))
 		{
-			ent.zombie_weapon_upgrade = "claymore";
 			spawn_loc = struct::get(ent.target, "targetname");
-			spawn_loc.angles -= (0, -90, 0);
+			if(GetDvarString("mapname") != "zm_pentagon" && GetDvarString("mapname") != "zm_prison")
+			{
+				ent.zombie_weapon_upgrade = "claymore_custom";
+				spawn_loc.angles -= (0, -90, 0);
+			}
 			spawn_loc.script_vector = (0, -90, 0);
 		}
-	}
-	else if(GetDvarString("mapname") == "zm_prison")
-	{
-		foreach(ent in struct::get_array("claymore_purchase", "targetname"))
-			struct::get(ent.target, "targetname").script_vector = (0, -90, 0);
 	}
 	
 	//Add M14 to Hybs' Cell Block Survival but skip DanWj's Cell Block
@@ -1737,7 +1774,7 @@ function swap_wall_weapon()
 		
 		claymorebuy = spawnstruct();
 		claymorebuy.targetname = "claymore_purchase";
-		claymorebuy.zombie_weapon_upgrade = "claymore";
+		claymorebuy.zombie_weapon_upgrade = "claymore_custom";
 		claymorebuy.angles = (0, 90, 0);
 		claymorebuy.origin = (3395, 9877, 1390);
 		claymorebuy struct::init();
@@ -1746,7 +1783,7 @@ function swap_wall_weapon()
 	{
 		claymorebuy = spawnstruct();
 		claymorebuy.targetname = "claymore_purchase";
-		claymorebuy.zombie_weapon_upgrade = "claymore";
+		claymorebuy.zombie_weapon_upgrade = "claymore_custom";
 		claymorebuy.angles = (0, 90, 0);
 		claymorebuy.origin = (3675, 570, 60);
 		claymorebuy struct::init();

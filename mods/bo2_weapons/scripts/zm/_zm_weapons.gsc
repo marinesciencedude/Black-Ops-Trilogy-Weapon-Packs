@@ -840,9 +840,10 @@ function player_can_use_content( weapon )
 
 function init_spawnable_weapon_upgrade()
 {
-	if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON && GetDvarString("mapname") != "zm_prototype")
+	if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON && GetDvarString("mapname") != "zm_prototype" && GetDvarString("mapname") != "zm_pentagon")
 		zm_swap_weapons::swap_claymores();
-	else if(GetDvarString("mapname") != "zm_prototype") //is there an actual way to figure out trip mine wallbuys exist?
+	else if(GetDvarString("mapname") != "zm_prototype" && GetDvarString("mapname") != "zm_prototype" //is there an actual way to figure out trip mine wallbuys exist?
+			&& GetDvarString("mapname") != "zm_pentagon")
 	{
 		count = 0;
 		foreach(ent in struct::get_array("claymore_purchase", "targetname"))

@@ -25,8 +25,8 @@ function init()
 	level.claymoreDetectionGracePeriod = .75;
 	
 	//thread purchaseClaymores();
-	claymore = GetWeapon("claymore");
-	zm_placeable_mine::add_mine_type("claymore");
+	claymore = GetWeapon("claymore_custom");
+	zm_placeable_mine::add_mine_type("claymore_custom");
 	zm_weapons::register_zombie_weapon_callback( claymore, &giveClaymores);
 	
 	callback::on_spawned( &claymoreSetup );
@@ -60,7 +60,7 @@ function purchaseClaymores()
 					model = getent( trigger.target, "targetname" );
 					/*if ( isdefined( model ) )
 					{
-						model UseWeaponModel( GetWeapon("claymore") );
+						model UseWeaponModel( GetWeapon("claymore_custom") );
 						model hide(); 
 					} 
 					model thread zm_weapons::weapon_show( player );*/
@@ -86,7 +86,7 @@ function give_claymores_after_rounds()
 		{
 			if(isDefined(players[i].has_claymores) && players[i].has_claymores)
 			{
-				claymore = GetWeapon("claymore");
+				claymore = GetWeapon("claymore_custom");
 				ammo = players[i] GetWeaponAmmoStock( claymore );
 				
 				if(ammo < 2)
@@ -104,7 +104,7 @@ function give_claymores_after_rounds()
 
 function giveClaymores()
 {
-	claymore = getWeapon("claymore");
+	claymore = getWeapon("claymore_custom");
 	self zm_utility::set_player_placeable_mine( claymore );
 	self giveweapon(claymore);
 	self setactionslot(4, "weapon", claymore);
@@ -138,7 +138,7 @@ function manageClaymoreHud()
 
 	while(1)
 	{
-		claymore = GetWeapon("claymore");
+		claymore = GetWeapon("claymore_custom");
 		ammo = self GetWeaponAmmoStock( claymore );
 
 		if(ammo <= 0)
@@ -174,7 +174,7 @@ function watchClaymores()
 	{
 		self waittill( "grenade_fire", claymore, weap );
 		
-		if(isDefined(weap) && weap.name == "claymore")
+		if(isDefined(weap) && weap.name == "claymore_custom")
 		{
 			self addClaymoreArray( claymore );
 			
@@ -276,7 +276,7 @@ function pickup_claymores()
 {
 	self endon("death");
 
-	claymore = GetWeapon("claymore");
+	claymore = GetWeapon("claymore_custom");
 	ammo = self.owner GetWeaponAmmoStock( claymore );
 	if(ammo < 2)
 		new_ammo = self.owner GetWeaponAmmoStock( claymore ) + 1;

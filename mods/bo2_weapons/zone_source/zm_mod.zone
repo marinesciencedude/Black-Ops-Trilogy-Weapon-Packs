@@ -71,6 +71,8 @@ stringtable,gamedata/weapons/zm/zm_t6_weapons.csv
 stringtable,gamedata/weapons/zm/zm_t7_weapons.csv
 stringtable,gamedata/weapons/zm/zm_t4_weapons.csv
 stringtable,gamedata/weapons/zm/zm_die_weapons.csv
+stringtable,gamedata/weapons/zm/zm_pentagon_weapons_t5.csv
+stringtable,gamedata/weapons/zm/zm_pentagon_weapons_t9.csv
 
 rawfile,vision/black_and_white.vision
 //scriptparsetree,scripts/zm/zm_theater_ffotd.csc
@@ -138,7 +140,7 @@ weaponcamo,camo_t7_zm_tesla
 stringtable,gamedata/weapons/common/weaponoptions.csv
 
 scriptparsetree,scripts/zm/zm_claymore.gsc
-weapon,claymore_zm
+weapon,claymore_custom_zm
 material,claymore_hud
 material,claymore_hud_inactive
 fx,custom/weapon/fx_claymore_laser

@@ -737,7 +737,7 @@ function dig_up_weapon(digger)
 	if(digger.dig_vars["has_upgraded_shovel"])
 	{
 		if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON)
-			var_63eba41d = arraycombine(var_63eba41d, array(getweapon("claymore"), getweapon("t6_stg44"), getweapon("t6_ak74u"), getweapon("t6_mp40"), getweapon("t6_ksg")), 0, 0);
+			var_63eba41d = arraycombine(var_63eba41d, array(getweapon("claymore_custom"), getweapon("t6_stg44"), getweapon("t6_ak74u"), getweapon("t6_mp40"), getweapon("t6_ksg")), 0, 0);
 		else
 			var_63eba41d = arraycombine(var_63eba41d, array(getweapon("bouncingbetty"), getweapon("t6_stg44"), getweapon("t6_ak74u"), getweapon("t6_mp40"), getweapon("t6_ksg")), 0, 0);
 	}
