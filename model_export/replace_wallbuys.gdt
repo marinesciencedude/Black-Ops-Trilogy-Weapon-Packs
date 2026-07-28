@@ -874,4 +874,12 @@
 		"semantic" "diffuseMap"
 		"type" "image"
 	}
+	"i_t7_zm_chalk_buy_betty" ( "image.gdf" )
+	{
+		"baseImage" "model_export\\wallbuy\\betty-wall-buy.png"
+		"compressionMethod" "compressed high color"
+		"imageType" "Texture"
+		"semantic" "diffuseMap"
+		"type" "image"
+	}
 }

@@ -14,6 +14,8 @@
 #using scripts\zm\_zm_t5_custom_hud;
 #using scripts\zm\_zm_weap_freezegun_custom;
 #using scripts\zm\_zm_weap_bo1bouncingbetty;
+#using scripts\zm\zm_weap_t5_ballistic_knife;
+
 #using scripts\zm\_zm_xmodelalias;
 #using scripts\shared\ai\systems\behavior_tree_utility;
 #using scripts\shared\ai\systems\animation_state_machine_utility;
@@ -69,6 +71,14 @@ function main_start()
 */
 function main_end()
 {
+	if(GetDvarString("mapname") == "zm_nacht" && GetGametypeSetting(mutator_ukiyo_waw) == 2)
+	{
+		level.zombie_weapons[GetWeapon("t4_m1carbine")].cost = 600;
+		level.zombie_weapons[GetWeapon("t4_m1carbine")].ammo_cost = 600/2;
+		level.zombie_weapons[GetWeapon("t4_dbsg_sawn")].cost = 1200;
+		level.zombie_weapons[GetWeapon("t4_dbsg_sawn")].ammo_cost = 1200/2;
+	}
+	
 	difficulty = 1;
 	column = int(difficulty) + 1;
 	zombie_utility::set_zombie_var("zombie_move_speed_multiplier", 4, 0, column);

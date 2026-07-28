@@ -712,8 +712,10 @@ function apply_choices() {
 	
 	if(GetGametypeSetting(mutator_ballistic_knife) == BOOLMUTATOR_ONOFF_OFF)
 	{
-		level.zombie_weapons[GetWeapon("t9_ballistic_knife")].is_in_box = false;
-		zm_utility::include_weapon( "t9_ballistic_knife", false);
+		/*level.zombie_weapons[GetWeapon("t9_ballistic_knife")].is_in_box = false;
+		zm_utility::include_weapon( "t9_ballistic_knife", false);*/
+		level.zombie_weapons[GetWeapon("t5_bk_base_normal_bo1")].is_in_box = false;
+		zm_utility::include_weapon( "t5_bk_base_normal_bo1", false);
 	}
 	
 	if(GetDvarString("mapname") != "zm_asylum" && GetDvarString("mapname") != "zm_pentagon" && GetGametypeSetting(mutator_freezegun) == BOOLMUTATOR_OFFON_ON)

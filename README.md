@@ -50,6 +50,7 @@ Note also that share\raw\sound\aliases\user_aliases.csv and share\raw\sound\glob
 * Kingslayer Kyle's Black Ops 1 HUD: https://drive.google.com/file/d/1JXbn3z1mvVpmrm1qOIGdSLCdLljXBiFd/view
 * GCPeinhardt's Winter's Howl: https://discord.com/channels/230615005194616834/233220803439755264/1328900707969142798
 * eMoX's T8 Powerup Delayed Drop: https://www.devraw.net/approved-assets/emox/emox---t8-powerup-delayed-drop
+* Mr Gadd, TNT, vnuser's Black Ops 1 Ballistic Knife + Bowie/Sickle Combo: https://mega.nz/file/dBEESD6B#iGwB0awBjLanIlEB5-9O55Ilfo_mkNLkL9_bqG8TVNk
 
 Then install all files from this repo into your Black Ops III installation apart from the folder chalk_drawing_models, which is for reference purposes only
 

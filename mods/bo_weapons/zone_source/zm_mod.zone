@@ -49,6 +49,21 @@ scriptparsetree,scripts/zm/nuked_utility.gsh
 scriptparsetree,scripts/zm/nuked_utility.gsc
 scriptparsetree,scripts/zm/zm_nuked_perks.gsc
 
+//for ukiyo's Nacht der Untoten
+scriptparsetree,scripts/zm/_zm_t4_hud.csc
+stringtable,gamedata/weapons/zm/hud_weapons.csv
+//rawfile,ui/uieditor/widgets/HUD/T4AmmoWidget/T4AmmoInfo.lua
+//image,t4_weaponwidget_ammopip_belt
+//image,t4_weaponwidget_ammopip_largea
+//image,t4_weaponwidget_ammopip_largeahor
+//image,t4_weaponwidget_ammopip_largeb
+//image,t4_weaponwidget_ammopip_medium
+//image,t4_weaponwidget_ammopip_rpg7
+//image,t4_weaponwidget_ammopip_shell
+//image,t4_weaponwidget_ammopip_smalla
+//image,t4_weaponwidget_ammopip_smallb
+//image,t4_ammo_counter_tesla
+
 aitype,archetype_zm_factory_zombie
 aitype,spawner_zm_factory_zombie
 aitype,spawner_zm_prototype_zombie
@@ -503,12 +518,14 @@ fx,carrabella/wpn_crossbow/impact_blink/crossbow_blink_2ms_green
 scriptparsetree,scripts/zm/crossbow_bolt.csc
 scriptparsetree,scripts/zm/crossbow_bolt.gsc
 
-weapon,t9_ballistic_knife
-weapon,t9_ballistic_knife_up
-weapon,knife_ballistic_bowie
-weapon,knife_ballistic_bowie_upgraded
-weapon,knife_ballistic_sickle
-weapon,knife_ballistic_sickle_upgraded
+include,t5_ballistic_knife
+
+//weapon,t9_ballistic_knife
+//weapon,t9_ballistic_knife_up
+//weapon,knife_ballistic_bowie
+//weapon,knife_ballistic_bowie_upgraded
+//weapon,knife_ballistic_sickle
+//weapon,knife_ballistic_sickle_upgraded
 scriptparsetree,scripts/zm/_zm_weap_ballistic_knife.gsc
 scriptparsetree,scripts/zm/_zm_melee_weapon.gsc
 
@@ -656,6 +673,9 @@ fx,dlc5/zmb_weapon/fx_freezegun_shatter_upg
 fx,dlc5/zmb_weapon/fx_freezegun_freeze_torso
 material,mc/c_t8_freezegun_mtl
 
+//chalk drawing image from iw_03.iwd
+xmodel,wallbuy_grenade_bag
+
 sound,zm_mod
 
 image,i_t7_zm_chalk_buy_arak_c
@@ -688,6 +708,7 @@ image,i_jpn_type100_wall_chalk_c
 image,i_ger_fg42_wall_chalk_c
 image,i_ger_m30_wall_chalk_c
 image,i_t8_wpn_shotty_m1897_wall_chalk_c
+image,i_t7_zm_chalk_buy_betty
 
 xmodel,wallbuy_s2_fg42
 xmodel,wallbuy_s2_gewehr43

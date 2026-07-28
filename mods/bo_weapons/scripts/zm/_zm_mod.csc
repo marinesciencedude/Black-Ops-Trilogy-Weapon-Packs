@@ -333,7 +333,8 @@ function applyChoices() {
 	
 	if(GetGametypeSetting(mutator_ballistic_knife) == BOOLMUTATOR_ONOFF_OFF)
 	{
-		RemoveZombieBoxWeapon(GetWeapon("t9_ballistic_knife"));
+		//RemoveZombieBoxWeapon(GetWeapon("t9_ballistic_knife"));
+		RemoveZombieBoxWeapon(GetWeapon("t5_bk_base_normal_bo1"));
 	}
 	
 	switch(GetGametypeSetting(mutator_enfield))

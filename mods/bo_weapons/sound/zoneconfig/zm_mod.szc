@@ -130,6 +130,12 @@
  "Filename" : "emox_t8_powerups_delayed_drop.csv",
  "Specs" : [ ] 
 },
+{
+    "Type" : "ALIAS",
+    "Name" : "t5_ballistic_knife",
+    "Filename" : "_gadd/t5_ballistic_knife/t5_ballistic_knife.csv",
+    "Specs" : [ ]
+}
 ],
  "Ducks" : [ ] ,
  "MusicFiles" : [ "zm_mod.mus" ] 

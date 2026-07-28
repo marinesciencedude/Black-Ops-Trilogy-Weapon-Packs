@@ -6,7 +6,11 @@
 #using scripts\zm\_zm_t5_custom_hud;
 #using scripts\zm\_zm_weap_freezegun_custom;
 
+//ukiyo's Nacht der Untoten
+#using scripts\zm\_zm_t4_hud;
+
 #insert scripts\shared\version.gsh;
+#insert scripts\zm\_zm_mutators.gsh;
 
 #precache( "client_fx", "custom/magic_box_og/fx_weapon_box_open_glow_og" );
 #precache( "client_fx", "wetegg/iwperks/emptyFXIW" );
@@ -34,6 +38,14 @@ function main_start() {
 
 function main_end()
 {
+	if(GetDvarString("mapname") == "zm_nacht" && GetGametypeSetting(mutator_ukiyo_waw) == 2)
+	{
+		level.weapon_costs["t4_m1carbine"].cost = 600;
+		level.weapon_costs["t4_m1carbine"].ammo_cost = 600/2;
+		level.weapon_costs["t4_dbsg_sawn"].cost = 1200;
+		level.weapon_costs["t4_dbsg_sawn"].ammo_cost = 1200/2;
+	}
+	
 	if(GetDvarInt("mutator_mystery_box_fx") == 2) //Classic FX on
 	{
 		level._effect["chest_light"] = "custom/magic_box_og/fx_weapon_box_open_glow_og";

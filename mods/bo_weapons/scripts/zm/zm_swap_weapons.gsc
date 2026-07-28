@@ -2449,6 +2449,19 @@ function swap_wall_weapon()
 				}
 				break;
 			}
+			case "zm_nacht": // Nacht der Untoten
+			{
+				if(GetGametypeSetting(mutator_ukiyo_waw) == 2)
+				{
+					switch(VAL)
+					{
+					case "t4_ray_gun":
+						ent.zombie_weapon_upgrade = "t4_kar98k_scope";
+						break;
+					}
+				}
+				break;
+			}
 		}
 		
 		if(ent.zombie_weapon_upgrade == "sticky_grenade_custom" && GetGametypeSetting(mutator_grenade_wallbuy) == 2)
@@ -2479,12 +2492,36 @@ function swap_wall_weapon()
 			break;
 		}
 	}
-
-	if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON)
+	
+	
+	if(GetDvarString("mapname") == "zm_nacht")
+	{
+		if(GetGametypeSetting(mutator_ukiyo_waw) && GetGametypeSetting(mutator_ukiyo_waw) != 1)
+		{
+			count = 0;
+			foreach(ent in struct::get_array("claymore_purchase", "targetname"))
+			{
+				if(count == 0)
+				{
+					wallbuy = spawnstruct();
+					wallbuy.targetname = "weapon_upgrade";
+					wallbuy.zombie_weapon_upgrade = "frag_grenade";
+					wallbuy.angles = ent.angles;
+					wallbuy.origin = ent.origin;
+					wallbuy struct::init();
+					wallbuy.var_47896610 = util::spawn_model("wallbuy_grenade_bag", wallbuy.origin + (-1, 0, 0), wallbuy.angles);
+				}
+				ent struct::delete();
+				
+				count++;
+			}
+		}
+	}
+	else if(GetGametypeSetting(mutator_claymore) == BOOLMUTATOR_ONOFF_ON)
 	{
 		foreach(ent in struct::get_array("claymore_purchase", "targetname"))
 		{
-			if((GetGametypeSetting(mutator_waw_wall_weapons) != 2 && (GetDvarString("mapname") == "zm_asylum" || GetDvarString("mapname") == "zm_sumpf" || GetDvarString("mapname") == "zm_factory" || GetDvarString("mapname") == "zm_giant" || GetDvarString("mapname") == "zm_der_riese")))
+			if(GetGametypeSetting(mutator_waw_wall_weapons) != 2 && (GetDvarString("mapname") == "zm_asylum" || GetDvarString("mapname") == "zm_sumpf" || GetDvarString("mapname") == "zm_factory" || GetDvarString("mapname") == "zm_giant" || GetDvarString("mapname") == "zm_der_riese"))
 				ent.zombie_weapon_upgrade = "bo1_bouncingbetty";
 			else
 			{
@@ -2524,7 +2561,7 @@ function swap_chalk()
 	doublebarrel = 0;
 	trenchgun = 0;
 	kar98k = 0;
-	if(!(GetDvarString("mapname") == "zm_coast")) { //don't re-draw over existing ones
+	if(!(GetDvarString("mapname") == "zm_coast") && !(GetDvarString("mapname") == "zm_nacht")) { //don't re-draw over existing ones
 	foreach(ent in struct::get_array("weapon_upgrade", "targetname"))
 	{
 		VAL = ent.zombie_weapon_upgrade;
@@ -3675,9 +3712,9 @@ function swap_claymores()
 			continue;
 		}
 		spawn_loc = struct::get(ent.target, "targetname");
-		if(GetGametypeSetting(mutator_waw_wall_weapons) != 2 && (GetDvarString("mapname") == "zm_asylum" || GetDvarString("mapname") == "zm_sumpf" || GetDvarString("mapname") == "zm_factory" || GetDvarString("mapname") == "zm_giant" || GetDvarString("mapname") == "zm_der_riese"))
+		if(GetGametypeSetting(mutator_waw_wall_weapons) != 2 && (GetDvarString("mapname") == "zm_asylum" || GetDvarString("mapname") == "zm_sumpf" || GetDvarString("mapname") == "zm_factory" || GetDvarString("mapname") == "zm_giant" || GetDvarString("mapname") == "zm_der_riese") || (GetGametypeSetting(mutator_ukiyo_waw) != 3 && GetDvarString("mapname") == "zm_nacht"))
 			ent.var_47896610 = util::spawn_model("wallbuy_bouncingbetty", spawn_loc.origin + VectorScale((-7*cos(spawn_loc.angles[1]), -7*sin(spawn_loc.angles[1]), 0), 1), spawn_loc.angles);
-		else if (GetDvarString("mapname") != "zm_pentagon")
+		else if (GetDvarString("mapname") != "zm_pentagon" && GetDvarString("mapname") != "zm_nacht")
 		{
 			switch(GetDvarString("mapname"))
 			{
@@ -3719,8 +3756,8 @@ function swap_claymores()
 				claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin, spawn_loc.angles);
 				break;
 			}
-			count++;
 		}
+		count++;
 	}
 	if(GetDvarString("mapname") != "zm_pentagon")
 		thread zm_claymore::init();

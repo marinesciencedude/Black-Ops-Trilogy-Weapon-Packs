@@ -1167,6 +1167,13 @@ function(arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_DeclassifiedMG42",
 			"maxPlayerEventsPerMinute",
 			BuildStringSettings({"Off", "On"}, "Off") ),
+		CoD.OptionsUtility.CreateNamedSettings(
+			arg0,
+			"ukiyo's Nacht der Untoten Wallbuys",
+			"Whether the wallbuys provided by the custom map should remain or if the weapons and prices should be set to the original WaW map",
+			"MutatorSettings_ukiyoWaWWallbuys",
+			"pregamePostRoundTime",
+			BuildStringSettings({"Custom", "WaW"--[[, "BO"]]}, "Custom") ),
 		--[[CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Call of the Dead Easter Egg Reward",
