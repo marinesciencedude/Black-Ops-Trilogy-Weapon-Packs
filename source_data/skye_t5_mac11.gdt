@@ -41916,4 +41916,20 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
+	"t5_mac11_alt_up_zm" [ "t5_mac11_alt_up" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"t5_mac11_alt_zm" [ "t5_mac11_alt" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"t5_mac11_up_zm" [ "t5_mac11_up" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"t5_mac11_zm" [ "t5_mac11" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
 }

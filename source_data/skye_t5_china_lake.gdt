@@ -31870,4 +31870,12 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
+	"t5_china_lake_up_zm" [ "t5_china_lake_up" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"t5_china_lake_zm" [ "t5_china_lake" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
 }

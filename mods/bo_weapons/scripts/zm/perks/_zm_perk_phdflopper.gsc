@@ -40,8 +40,8 @@
 #using scripts\shared\callbacks_shared;
 #using scripts\zm\gametypes\_globallogic_score;
 
-#precache( "fx", PHDFLOPPER_LIGHTING_FX );
-#precache( "fx", PHDFLOPPER_EXPLOSION_EFFECT);
+/*#precache( "fx", PHDFLOPPER_LIGHTING_FX );
+#precache( "fx", PHDFLOPPER_EXPLOSION_EFFECT);*/
 
 #namespace zm_perk_phdflopper;
 
@@ -60,7 +60,10 @@ function __init__()
 
 function private enable_phd_flopper_for_level()
 {	
-	zm_perks::register_perk_basic_info( PERK_PHDFLOPPER, "phd", PHDFLOPPER_PERK_COST, "Hold ^3[{+activate}]^7 for PHD Flopper [Cost: &&1]", GetWeapon( PHDFLOPPER_PERK_BOTTLE_WEAPON ) );
+	if(GetDvarString("mapname") == "zm_leviathan")
+		zm_perks::register_perk_basic_info( PERK_PHDFLOPPER, "phd", PHDFLOPPER_PERK_COST, "Hold ^3[{+activate}]^7 for PHD Flopper [Cost: &&1]", GetWeapon( "zombie_perk_bottle_phd_flopper" ) );
+	else
+		zm_perks::register_perk_basic_info( PERK_PHDFLOPPER, "phd", PHDFLOPPER_PERK_COST, "Hold ^3[{+activate}]^7 for PHD Flopper [Cost: &&1]", GetWeapon( PHDFLOPPER_PERK_BOTTLE_WEAPON ) );
 	zm_perks::register_perk_precache_func( PERK_PHDFLOPPER, &phd_flopper_precache );
 	zm_perks::register_perk_clientfields( PERK_PHDFLOPPER, &phd_flopper_register_clientfield, &phd_flopper_set_clientfield );
 	zm_perks::register_perk_machine( PERK_PHDFLOPPER, &phd_flopper_perk_machine_setup );
@@ -78,12 +81,24 @@ function private phd_flopper_precache()
 		return;
 	}
 	
-	level._effect[PHDFLOPPER_MACHINE_LIGHT_FX]			= PHDFLOPPER_LIGHTING_FX;
+	if(GetDvarString("mapname") == "zm_leviathan")
+		level._effect[PHDFLOPPER_MACHINE_LIGHT_FX]			= "zombie/fx_perk_phd_flopper";
+	else
+		level._effect[PHDFLOPPER_MACHINE_LIGHT_FX]			= PHDFLOPPER_LIGHTING_FX;
 	
 	level.machine_assets[PERK_PHDFLOPPER] = SpawnStruct();
-	level.machine_assets[PERK_PHDFLOPPER].weapon = GetWeapon( PHDFLOPPER_PERK_BOTTLE_WEAPON );
-	level.machine_assets[PERK_PHDFLOPPER].off_model = PHDFLOPPER_MACHINE_DISABLED_MODEL;
-	level.machine_assets[PERK_PHDFLOPPER].on_model = PHDFLOPPER_MACHINE_ACTIVE_MODEL;	
+	if(GetDvarString("mapname") == "zm_leviathan")
+	{
+		level.machine_assets[PERK_PHDFLOPPER].weapon = GetWeapon( "zombie_perk_bottle_phd_flopper" );
+		level.machine_assets[PERK_PHDFLOPPER].off_model = "zm_vending_phd_flopper";
+		level.machine_assets[PERK_PHDFLOPPER].on_model = "zm_vending_phd_flopper";	
+	}
+	else
+	{
+		level.machine_assets[PERK_PHDFLOPPER].weapon = GetWeapon( PHDFLOPPER_PERK_BOTTLE_WEAPON );
+		level.machine_assets[PERK_PHDFLOPPER].off_model = PHDFLOPPER_MACHINE_DISABLED_MODEL;
+		level.machine_assets[PERK_PHDFLOPPER].on_model = PHDFLOPPER_MACHINE_ACTIVE_MODEL;	
+	}
 }
 
 function private phd_flopper_register_clientfield()
@@ -96,7 +111,7 @@ function private phd_flopper_register_clientfield()
 
 function private phd_flopper_set_clientfield( state )
 {
-	if(GetDvarString("mapname") == "zm_der_riese") //different one for Der Riese: Declassified
+	if(GetDvarString("mapname") == "zm_der_riese" || GetDvarString("mapname") == "zm_leviathan") //different one for Der Riese: Declassified and Leviathan
 	{
 		self clientfield::set_player_uimodel( "hudItems.perks.phd_flopper", state );
 	}
@@ -134,7 +149,10 @@ function private phd_flopper_perk_machine_setup( use_trigger, perk_machine, bump
 function phd_flopper_func_init() 
 {
 
-	level._effect["phdflopper_explode"] = PHDFLOPPER_EXPLOSION_EFFECT;
+	if(GetDvarString("mapname") == "zm_leviathan")
+		level._effect["phdflopper_explode"] = "leviathan/fx_general_explosion";
+	else
+		level._effect["phdflopper_explode"] = PHDFLOPPER_EXPLOSION_EFFECT;
 
 	if(IS_TRUE(PHDFLOPPER_EXPLOSIVE_IMMUNITY))
 		zm::register_player_damage_callback(&phd_flopper_explosive_immunity);

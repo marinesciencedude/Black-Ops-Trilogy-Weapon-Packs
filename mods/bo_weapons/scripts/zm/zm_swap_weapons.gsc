@@ -2462,6 +2462,74 @@ function swap_wall_weapon()
 				}
 				break;
 			}
+			case "zm_leviathan":
+			{
+				switch(VAL)
+				{
+				case "shotgun_olympia":
+					{
+						ent.zombie_weapon_upgrade = "t5_olympia";
+						
+						ent.origin += (0, 0, -1);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, 0, -1);
+						
+					}	break;
+				case "smg_mp5k":
+					{
+						ent.zombie_weapon_upgrade = "t5_mp5k";
+					
+						ent.origin += (0, 0, -1);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, 0, -1);
+					
+						break;
+					}
+				case "ar_m14":
+					{
+						ent.zombie_weapon_upgrade = "t5_m14";
+						
+						ent.origin += (2, 0, -1);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (2, 0, -1);
+						
+						break;
+					}
+				case "smg_pm63":
+					ent.zombie_weapon_upgrade = "t5_pm63";
+					break;
+				case "smg_ak74u":
+					ent.zombie_weapon_upgrade = "t5_ak74u";
+					break;
+				case "smg_mp40_1940":
+					{
+						ent.zombie_weapon_upgrade = "t5_mp40";
+						
+						ent.origin += (0, 0, -1);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, 0, -1);
+						
+						break;
+					}
+				case "smg_mpl":
+					{
+						ent.zombie_weapon_upgrade = "t5_mpl";
+						
+						ent.origin += (0, -1, 1);
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, -1, 1);
+						
+						break;
+					}
+				case "shotgun_stakeout":
+					ent.zombie_weapon_upgrade = "t5_stakeout";
+					break;
+				case "ar_m16":
+					ent.zombie_weapon_upgrade = "t5_m16a1";
+					break;
+				}
+				break;
+			}
 		}
 		
 		if(ent.zombie_weapon_upgrade == "sticky_grenade_custom" && GetGametypeSetting(mutator_grenade_wallbuy) == 2)
@@ -2560,7 +2628,7 @@ function swap_chalk()
 	doublebarrel = 0;
 	trenchgun = 0;
 	kar98k = 0;
-	if(!(GetDvarString("mapname") == "zm_coast") && !(GetDvarString("mapname") == "zm_nacht")) { //don't re-draw over existing ones
+	if(!(GetDvarString("mapname") == "zm_coast") && !(GetDvarString("mapname") == "zm_leviathan")) { //don't re-draw over existing ones
 	foreach(ent in struct::get_array("weapon_upgrade", "targetname"))
 	{
 		VAL = ent.zombie_weapon_upgrade;

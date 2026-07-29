@@ -36,7 +36,8 @@
 #insert scripts\zm\_zm_mutators.gsh;
 
 
-#using scripts\zm\_zm_weap_scavenger;
+//#using scripts\zm\_zm_weap_scavenger;
+//#using scripts\zm\_zm_equipment;
 
 #namespace zm_mod;
 
@@ -677,14 +678,14 @@ function apply_choices() {
 			zm_weapons::add_limited_weapon("raygun_mark2", 1);
 			aat::register_aat_exemption(getweapon("raygun_mark2_upgraded"));
 		}
-		else
+		/*else
 		{
 			zm_utility::include_weapon( "raygun_mark_ii", true );
 			zm_utility::include_weapon( "raygun_mark_ii_upgraded", false );
 			zm_weapons::add_zombie_weapon( "raygun_mark_ii", "raygun_mark_ii_upgraded", "raygun", 10000, "", "", undefined, undefined, true, "" );
 			zm_weapons::add_limited_weapon("raygun_mark_ii", 1);
 			aat::register_aat_exemption(getweapon("raygun_mark_ii_upgraded"));
-		}
+		}*/
 	}
 	
 	if(GetDvarString("mapname") == "zm_moon")
@@ -857,19 +858,28 @@ function apply_choices() {
         player util::clientNotify("choices_applied");
     }
 	
-	if(GetDvarInt("mutator_scavenger_damage") == 1)
+	if(GetDvarString("mapname") == "zm_coast" && GetDvarInt("mutator_scavenger_damage") == 1)
 	{
-		foreach ( index, func in level.actor_damage_callbacks )
-		{
-			if ( func == &zm_weap_scavenger::scavenger_inf_dmg )
-			{
-				ArrayRemoveIndex( level.actor_damage_callbacks, index, false );
-				break;
-			}
-		}
+		arrayremoveindex(level.actor_damage_callbacks, 1);
 	}
+	//callback_search(&zm_weap_scavenger::scavenger_inf_dmg);
    
 }
+
+/*function callback_search(func)
+{
+	foreach(index, callback in level.actor_damage_callbacks)
+	{
+		if(callback == func)
+		{
+			foreach(player in GetPlayers())
+			{
+				player thread zm_equipment::show_hint_text(index, 5, 1.5, 150);
+			}
+			break;
+		}
+	}
+}*/
 
 function twohitdown(player)
 {

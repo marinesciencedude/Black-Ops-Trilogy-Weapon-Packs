@@ -14,6 +14,8 @@ rawfile,zm_mod.cfg
 
 rawfile,ui/uieditor/menus/core_frontend_patch_require.lua
 
+stringtable,gamedata/weapons/common/attachmentmappingstable.csv
+
 rawfile,ui/t6/lobby/lobbymenubuttons.lua
 rawfile,ui/t6/lobby/lobbymenubuttons_og.luac
 rawfile,ui/t6/lobby/lobbymenus.lua

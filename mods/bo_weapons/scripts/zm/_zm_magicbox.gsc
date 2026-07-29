@@ -30,8 +30,8 @@
 #precache( "fx", "zombie/fx_weapon_box_marker_zmb" );
 #precache( "fx", "zombie/fx_weapon_box_marker_fl_zmb" );
 #precache( "fx", "zombie/fx_barrier_buy_zmb" );
-#precache( "fx", "custom/magic_box_og/fx_weapon_box_marker_fl_og" );
-#precache( "fx", "custom/magic_box_og/fx_weapon_box_marker_og" );
+/*#precache( "fx", "custom/magic_box_og/fx_weapon_box_marker_fl_og" );
+#precache( "fx", "custom/magic_box_og/fx_weapon_box_marker_og" );*/
 
 //////////////////////////////////////////////////
 ///////////// FUNCTION OVERRIDE LIST /////////////
@@ -368,7 +368,17 @@ function default_magic_box_check_equipment( weapon )
 function trigger_visible_to_player(player)
 {
 	self SetInvisibleToPlayer(player);
-
+	if(GetDvarString("mapname") == "zm_leviathan")
+	{
+		if(isdefined(self.var_e9cfec4) && self.var_e9cfec4 || (isdefined(self.stub.var_e9cfec4) && self.stub.var_e9cfec4) || (isdefined(self.sub.trigger_target.var_e9cfec4) && self.sub.trigger_target.var_e9cfec4))
+		{
+			return 0;
+		}
+		if(isdefined(self.stub.trigger_target.chest_user) && self.stub.trigger_target.chest_user != player && (!isdefined(self.stub.trigger_target.var_aa5defbe) && self.stub.trigger_target.var_aa5defbe))
+		{
+			return 0;
+		}
+	}
 	visible = true;	
 	
 	if(IsDefined(self.stub.trigger_target.chest_user) && !IsDefined(self.stub.trigger_target.box_rerespun))
@@ -1266,6 +1276,19 @@ function treasure_chest_CanPlayerReceiveWeapon( player, weapon, pap_triggers )
 		}
 	}	
 
+	//Leviathan
+	if(weapon.name == "special_harpoon")
+	{
+		players = GetPlayers();
+		foreach(plr in players)
+		{
+			if(plr zm_weapons::has_weapon_or_upgrade(GetWeapon("special_harpoon")) || plr zm_weapons::has_weapon_or_upgrade(GetWeapon("special_harpoon_upgraded")) || plr zm_weapons::has_weapon_or_upgrade(GetWeapon("special_harpoon_crystal")) || plr zm_weapons::has_weapon_or_upgrade(GetWeapon("special_harpoon_crystal_upgraded")) && (!isdefined(plr.var_b4e657b6) && plr.var_b4e657b6))
+			{
+				return 0;
+			}
+		}
+	}
+
 	// enable special level by level weapon checks
 	if( IsDefined( player ) && isdefined( level.special_weapon_magicbox_check ) )
 	{
@@ -1566,6 +1589,8 @@ function treasure_chest_weapon_locking( player, weapon, onOff )
 function treasure_chest_weapon_spawn( chest, player, respin )
 {
 	self endon("box_hacked_respin");
+	if(GetDvarString("mapname") == "zm_leviathan")
+		self.randomizing = 1;
 	self thread clean_up_hacked_box();
 	assert(IsDefined(player));
 	// spawn the model
@@ -1735,7 +1760,8 @@ function treasure_chest_weapon_spawn( chest, player, respin )
 	}
 
 	self notify( "randomization_done" );
- 
+	if(GetDvarString("mapname") == "zm_leviathan")
+		self.randomizing = 0;
 	if (IS_TRUE(self.chest_moving))
 	{
 		if( IsDefined( level.chest_joker_custom_movement ) )

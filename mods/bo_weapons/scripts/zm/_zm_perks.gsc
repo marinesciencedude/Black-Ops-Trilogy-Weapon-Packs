@@ -31,7 +31,7 @@
 
 #using scripts\zm\perks\_zm_perk_phdflopper;
 #using scripts\zm\_zm_perk_doubletap;
-#using scripts\zm\doubletap2;
+//#using scripts\zm\doubletap2;
 
 #insert scripts\zm\_zm_perks.gsh;
 #insert scripts\zm\_zm_utility.gsh;
@@ -546,8 +546,22 @@ function vending_trigger_think()
 			wait( 0.1 );
 			continue;
 		}
-
-		if ( player HasPerk( perk ) || player has_perk_paused( perk ) )
+		
+		if(GetDvarString("mapname") == "zm_leviathan" && !isdefined(player.var_cc8cebf3))
+		{
+			player.var_cc8cebf3 = [];
+		}
+		
+		proceed = false;
+		if(GetDvarString("mapname") == "zm_leviathan")
+		{
+			if(player hasPerk(perk) || player has_perk_paused(perk) || (isdefined(player.var_cc8cebf3[perk]) && player.var_cc8cebf3[perk]))
+				proceed = true;
+		}
+		else if ( player HasPerk( perk ) || player has_perk_paused( perk ) )
+			proceed = true;
+		
+		if(proceed)
 		{
 			cheat = false;
 
@@ -879,7 +893,15 @@ function check_player_has_perk(perk)
 		{
 			if(DistanceSquared( players[i].origin, self.origin ) < dist)
 			{
-				if(!players[i] HasPerk(perk) && 
+				if(GetDvarString("mapname") == "zm_leviathan")
+				{
+					if(!players[i] hasPerk(perk) && (!isdefined(players[i].var_cc8cebf3[perk]) && players[i].var_cc8cebf3[perk]) && self vending_trigger_can_player_use(players[i]) && !players[i] has_perk_paused(perk) && !players[i] zm_utility::in_revive_trigger() && !zm_equipment::is_equipment_that_blocks_purchase(players[i] GetCurrentWeapon()) && !players[i] zm_equipment::hacker_active())
+					{
+						self SetInvisibleToPlayer(players[i], 0);
+						continue;
+					}
+				}
+				else if(!players[i] HasPerk(perk) && 
 				    self vending_trigger_can_player_use( players[i] ) &&
 				   !players[i] has_perk_paused(perk) && 
 				   !(players[i] zm_utility::in_revive_trigger()) && 
@@ -1048,7 +1070,18 @@ function perk_give_bottle_end( original_weapon, perk )
 	}
 	else if( original_weapon != level.weaponNone && !zm_utility::is_placeable_mine( original_weapon ) && !zm_equipment::is_equipment_that_blocks_purchase( original_weapon ) )
 	{
-		self zm_weapons::switch_back_primary_weapon( original_weapon );
+		//Leviathan
+		if(perk == "specialty_reserve")
+		{
+			self.var_9033299a = 1;
+			self.var_e126aa9c = 1;
+			newWeapon = self function_fa154669(original_weapon);
+			self zm_weapons::switch_back_primary_weapon(newWeapon);
+		}
+		else
+		{
+			self zm_weapons::switch_back_primary_weapon(original_weapon);
+		}
 		
 		// ww: the knives have no first raise anim so they will never get a "weapon_change_complete" notify
 		// meaning it will never leave this funciton and will break buying weapons for the player
@@ -1069,6 +1102,35 @@ function perk_give_bottle_end( original_weapon, perk )
 	{
 		self zm_utility::decrement_is_drinking();
 	}
+}
+
+//Leviathan Reserve Soda
+function function_fa154669(weapon)
+{
+	if(WeaponHasAttachment(weapon, "extclip"))
+	{
+		return;
+	}
+	clip = self GetWeaponAmmoClip(weapon);
+	stock = self GetWeaponAmmoStock(weapon);
+	if(self HasWeapon(weapon))
+	{
+		self TakeWeapon(weapon);
+	}
+	newWeapon = self zm_weapons::give_build_kit_weapon(weapon);
+	clipSize = newWeapon.clipSize;
+	var_12e47baa = clipSize - clip;
+	if(stock >= var_12e47baa)
+	{
+		self SetWeaponAmmoClip(newWeapon, clipSize);
+		self SetWeaponAmmoStock(newWeapon, stock - var_12e47baa);
+	}
+	else
+	{
+		self SetWeaponAmmoClip(newWeapon, clip + stock);
+		self SetWeaponAmmoStock(newWeapon, 0);
+	}
+	return newWeapon;
 }
 
 //*****************************************************************************
@@ -1110,8 +1172,15 @@ function give_random_perk()
 		{
 			continue;
 		}
-
-		if ( !self HasPerk( perk ) && !self has_perk_paused( perk ) )
+		
+		if(GetDvarString("mapname") == "zm_leviathan")
+		{
+			if(!self hasPerk(perk) && !self has_perk_paused(perk) && (!isdefined(self.var_cc8cebf3[perk]) && self.var_cc8cebf3[perk]))
+			{
+				PERKS[PERKS.size] = perk;
+			}
+		}
+		else if ( !self HasPerk( perk ) && !self has_perk_paused( perk ) )
 		{
 			perks[ perks.size ] = perk;
 		}
@@ -1146,8 +1215,15 @@ function lose_random_perk()
 		{
 			continue;
 		}
-
-		if ( self HasPerk( perk ) || self has_perk_paused( perk ) )
+		
+		if(GetDvarString("mapname") == "zm_leviathan")
+		{
+			if(self hasPerk(perk) || self has_perk_paused(perk) || (isdefined(self.var_cc8cebf3[perk]) && self.var_cc8cebf3[perk]))
+			{
+				PERKS[PERKS.size] = perk;
+			}
+		}
+		else if ( self HasPerk( perk ) || self has_perk_paused( perk ) )
 		{
 			perks[ perks.size ] = perk;
 		}
@@ -1222,8 +1298,17 @@ function quantum_bomb_give_nearest_perk_result( position )
 		{
 			continue;
 		}
-
-		if ( !player HasPerk( perk ) && ( !isdefined( player.perk_purchased ) || player.perk_purchased != perk) && RandomInt( 5 ) ) // 80% chance
+		
+		proceed = false;
+		if(GetDvarString("mapname") == "zm_leviathan")
+		{
+			if(!player hasPerk(perk) && (!isdefined(player.var_cc8cebf3[perk]) && player.var_cc8cebf3[perk]) && (!isdefined(player.perk_purchased) || player.perk_purchased != perk) && RandomInt(5))
+				proceed = true;
+		}
+		else if ( !player HasPerk( perk ) && ( !isdefined( player.perk_purchased ) || player.perk_purchased != perk) && RandomInt( 5 ) ) // 80% chance
+			proceed = true;
+		
+		if ( proceed )
 		{
 			if( player == self )
 			{
@@ -1248,7 +1333,12 @@ function perk_pause( perk )
 		player = GetPlayers()[j];
 		if (!isdefined(player.disabled_perks))
 			player.disabled_perks=[];
-		player.disabled_perks[perk] = IS_TRUE(player.disabled_perks[perk]) || player HasPerk( perk ); 
+		
+		if(GetDvarString("mapname") == "zm_leviathan")
+			player.disabled_perks[perk] = isdefined(player.disabled_perks[perk]) && player.disabled_perks[perk] || player hasPerk(perk) || (isdefined(player.var_cc8cebf3[perk]) && player.var_cc8cebf3[perk]);
+		else
+			player.disabled_perks[perk] = IS_TRUE(player.disabled_perks[perk]) || player HasPerk( perk ); 
+		
 		if ( player.disabled_perks[perk] )
 		{
 			player UnsetPerk( perk );
@@ -1796,7 +1886,14 @@ function get_perk_array()
 		
 		for ( i = 0; i < a_keys.size; i++ )
 		{
-			if ( self HasPerk( a_keys[ i ] ) )
+			if(GetDvarString("mapname") == "zm_leviathan")
+			{
+				if(self hasPerk(a_keys[i]) || (isdefined(self.var_cc8cebf3[a_keys[i]]) && self.var_cc8cebf3[a_keys[i]]))
+				{
+					perk_array[perk_array.size] = a_keys[i];
+				}
+			}
+			else if ( self HasPerk( a_keys[ i ] ) )
 			{
 				perk_array[ perk_array.size ] = a_keys[ i ];
 			}

@@ -13262,7 +13262,7 @@
 		"antiQuickScopeTime" "0.15"
 		"applySpinPitch" "1"
 		"armorPiercing" "0"
-		"attachmentUnique" ""
+		"attachmentUnique" "au_leviathan"
 		"attachViewModel1" "vm_t5_aug_scope"
 		"attachViewModel2" ""
 		"attachViewModel3" "vm_t5_aug_heatguard"
@@ -14552,7 +14552,7 @@
 		"antiQuickScopeTime" "0.15"
 		"applySpinPitch" "1"
 		"armorPiercing" "0"
-		"attachmentUnique" ""
+		"attachmentUnique" "au_leviathan"
 		"attachViewModel1" "vm_t5_aug_scope"
 		"attachViewModel2" ""
 		"attachViewModel3" "vm_t5_aug_heatguard"
@@ -49299,5 +49299,9 @@
 		"usage_weapon" "0"
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
+	}
+	"t5_aug_zm" [ "t5_aug" ]
+	{
+		"attachmentUnique" "au_leviathan"
 	}
 }

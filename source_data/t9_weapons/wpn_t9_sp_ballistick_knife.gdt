@@ -43821,4 +43821,20 @@
 		"zoomMin" "1"
 		"zoomRate" "0"
 	}
+	"t9_ballistic_knife_up_zm" [ "t9_ballistic_knife_up" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"t9_ballistic_knife_zm" [ "t9_ballistic_knife" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"knife_ballistic_bowie_upgraded_zm" [ "knife_ballistic_bowie_upgraded" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
+	"knife_ballistic_bowie_zm" [ "knife_ballistic_bowie" ]
+	{
+		"attachmentUnique" "au_leviathan"
+	}
 }
