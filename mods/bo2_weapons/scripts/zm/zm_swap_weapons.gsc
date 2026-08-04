@@ -205,14 +205,14 @@ function starter_weapon()
 		zm_utility::include_weapon( "t6_rpd_up", false );
 		zm_weapons::add_zombie_weapon( "t6_rpd", "t6_rpd_up", "", 2500, "lmg", "", undefined, "", false, "" );
 		
-		/*zm_utility::include_weapon( "t9_ballistic_knife", true );
-		zm_utility::include_weapon( "t9_ballistic_knife_up", false );
-		zm_weapons::add_zombie_weapon( "t9_ballistic_knife", "t9_ballistic_knife_up", "", 2000, "", "", undefined, "", false, "" );
-		aat::register_aat_exemption(getweapon("t9_ballistic_knife_up"));
-		zm_utility::include_weapon( "knife_ballistic_bowie", false );
-		zm_utility::include_weapon( "knife_ballistic_bowie_upgraded", false );
-		zm_weapons::add_zombie_weapon( "knife_ballistic_bowie", "knife_ballistic_bowie_upgraded", "", 2000, "", "", undefined, "", false, "" );
-		aat::register_aat_exemption(getweapon("knife_ballistic_bowie_upgraded"));*/
+		zm_utility::include_weapon( "t5_bk_base_normal", true);
+		zm_utility::include_weapon( "t5_bk_base_upgraded", false);
+		zm_weapons::add_zombie_weapon( "t5_bk_base_normal", "t5_bk_base_upgraded", "", 0, "", "", undefined, "", false, "" );
+		aat::register_aat_exemption(getweapon("t5_bk_base_upgraded"));
+		zm_utility::include_weapon( "t5_bk_bowie_normal", true);
+		zm_utility::include_weapon( "t5_bk_bowie_upgraded", false);
+		zm_weapons::add_zombie_weapon( "t5_bk_bowie_normal", "t5_bk_bowie_upgraded", "", 0, "", "", undefined, "", false, "" );
+		aat::register_aat_exemption(getweapon("t5_bk_bowie_upgraded"));
 		
 		zm_utility::include_weapon( "t6_war_machine", true );
 		zm_utility::include_weapon( "t6_war_machine_up", false );

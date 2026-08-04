@@ -73,7 +73,7 @@ function applyChoices() {
 		}
 	}*/
 	
-	if(GetGametypeSetting(mutator_raygunmkii) == BOOLMUTATOR_ONOFF_ON)
+	/*if(GetGametypeSetting(mutator_raygunmkii) == BOOLMUTATOR_ONOFF_ON)
 	{
 		if(isdefined(GetWeapon("raygun_mark2").worldmodel)) //stock maps
 		{
@@ -85,11 +85,22 @@ function applyChoices() {
 			zm_weapons::include_weapon( "raygun_mark_ii", true, 10000, 0);
 			zm_weapons::include_upgraded_weapon( "raygun_mark_ii", "raygun_mark_ii_upgraded", false, 10000, 0);
 		}
-	}
+	}*/
 	
-	if(GetGametypeSetting(mutator_ballistic_knife) == BOOLMUTATOR_ONOFF_OFF)
+	if(GetGametypeSetting(mutator_ballistic_knife) == 3)
 	{
-		RemoveZombieBoxWeapon(GetWeapon("t9_ballistic_knife"));
+		RemoveZombieBoxWeapon(GetWeapon("t5_bk_base_normal"));
+	}
+	else if(GetGametypeSetting(mutator_ballistic_knife) == 2)
+	{
+		if(!isdefined(level._included_weapons[GetWeapon("t5_bk_base_normal")]))
+		{
+			zm_weapons::include_weapon( "t5_bk_base_normal", true, 0 );
+			zm_weapons::include_upgraded_weapon( "t5_bk_base_normal", "t5_bk_base_upgraded", false, 0 );
+			
+			zm_weapons::include_weapon( "t5_bk_bowie_normal", true, 0 );
+			zm_weapons::include_upgraded_weapon( "t5_bk_bowie_normal", "t5_bk_bowie_upgraded", false, 0 );
+		}
 	}
 	
 	switch(GetGametypeSetting(mutator_scopeads))

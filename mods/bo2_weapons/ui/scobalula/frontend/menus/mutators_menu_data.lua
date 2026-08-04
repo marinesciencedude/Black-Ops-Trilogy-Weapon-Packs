@@ -250,10 +250,10 @@ function (arg0, arg1, arg2, arg3, arg4)
             models        = { tabName 	= "General", 				        tabIcon = "" },
             properties    = { tabId 	= "MutatorSettingsGeneral", 		dataSourceName 	= "MutatorSettingsGeneral",	title =	"General Game Settings" }
         },
-        --[[{
+        {
             models        = { tabName 	= "Mystery Box", 				    tabIcon = "" },
             properties    = { tabId 	= "MutatorSettingsMysteryBox", 		dataSourceName 	= "MutatorSettingsMysteryBox",	title =	"Mystery Box Settings" }
-        },]]
+        },
 		{
 			models		  = { tabName	= "PaP Camo",						tabIcon = "" },
 			properties	  = { tabId		= "MutatorSettingsPaPCamo",			dataSourceName	= "MutatorSettingsPaPCamo",		title = "Pack-a-Punch Camouflage Settings" }
@@ -611,7 +611,7 @@ DataSources.MutatorSettingsMysteryBox = DataSourceHelpers.ListSetup("MutatorSett
 function (arg0, arg1, arg2, arg3, arg4)
 	return
 	{
-		CoD.OptionsUtility.CreateNamedSettings(
+		--[[CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"AK47",
 			"Add AK47 to the mystery box for all maps.",
@@ -624,7 +624,7 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"Add Uzi to the mystery box.",
 			"MutatorSettings_Uzi",
 			"pointsPerMeleeKill",
-            BuildStringSettings({"Off", "On"}, "Off") ),
+            BuildStringSettings({"Off", "On"}, "Off") ),]]
 		--CoD.OptionsUtility.CreateDvarSettings(
 		--	arg0,
 		--	"Ray Gun",
@@ -639,20 +639,20 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_FreezeGun",
 			"rebootPlayers",
 			BuildBoolSettings({"Off", "On"}, "Off") ),]]
-		CoD.OptionsUtility.CreateNamedSettings(
+		--[[CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Ray Gun Mark II",
 			"Enable Ray Gun Mark II in the mystery box.",
 			"MutatorSettings_RayGunMkII",
 			"robotShield",
-            BuildBoolSettings({"On", "Off"}, "On") ),
+            BuildBoolSettings({"On", "Off"}, "On") ),]]
 		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Ballistic Knife",
-			"Enable Ballistic Knife in the mystery box.",
+			"Enable or disable Ballistic Knife for all maps' mystery boxes. TURNING OFF MAY CRASH SOME MAPS",
 			"MutatorSettings_BallisticKnife",
-			"silentPlant",
-            BuildBoolSettings({"On", "Off"}, "On") ),
+			"pregamePostStageTime",
+            BuildStringSettings({"Map default", "On", "Off"}, "On") ),
 	}
 end, nil, nil, Update)
 

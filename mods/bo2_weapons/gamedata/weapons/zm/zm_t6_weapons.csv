@@ -22,3 +22,4 @@ t6_shotgun_blundergat,t6_shotgun_blundergat_upgraded,,5000,shotgun,,,,,FALSE,FAL
 t6_shotgun_acidgat,t6_shotgun_acidgat_upgraded,,5000,shotgun,,,,,FALSE,FALSE,FALSE,,,FALSE,FALSE,shotgun,TRUE,,,
 t6_zombie_tomahawk,t6_zombie_tomahawk_upgraded,,1000,grenade,,,,,FALSE,FALSE,FALSE,,,FALSE,FALSE,grenade,,,,
 t6_slipgun,t6_slipgun_upgraded,,10000,wpck_ray,,,,,FALSE,FALSE,FALSE,,,FALSE,FALSE,special,TRUE,,,
+t5_bk_bowie_wallbuy,,,3000,,,0,,,FALSE,FALSE,,,,FALSE,FALSE,special,,,,

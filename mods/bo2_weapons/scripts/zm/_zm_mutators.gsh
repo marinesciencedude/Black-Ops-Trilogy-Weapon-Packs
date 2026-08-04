@@ -57,7 +57,7 @@
 #define mutator_freezegun					"rebootPlayers"
 #define mutator_raygunmkii					"robotShield"
 #define mutator_crossbow					"pointsPerWeaponKill"
-#define mutator_ballistic_knife				"silentPlant"
+#define mutator_ballistic_knife				"pregamePostStageTime" //"silentPlant"  //map-specific option
 #define mutator_camo_disable				"timePausesWhenInZone"
 #define mutator_wunderwaffe_camo			"vehiclesEnabled"
 #define mutator_camo_ingame_cycle			"vehiclesTimed"
@@ -83,6 +83,7 @@
 #define mutator_kino_stageclimb 			"pregameItemMaxVotes"
 #define mutator_runtobarrier				"pregamePositionShuffleMethod"
 #define mutator_ray_gun						"pregamePositionSortType"
+#define mutator_ukiyo_waw					"pregamePostRoundTime"
 
 #define mutator_wallbuys_gorod_krovi		"rebootTime"
 #define mutator_quickrevive					"teamkillpointloss"
@@ -102,9 +103,7 @@
 #define mutator_cellblock_perks				"playerforcerespawn"
 
 //ints or int-compatible
-/*#define mutator_						"pregamePostRoundTime"
-#define mutator_						"pregamePostStageTime"
-#define mutator_						"pregamePreStageTime"
+/*#define mutator_						"pregamePreStageTime"
 #define mutator_						"pregameScorestreakModifyTime"
 #define mutator_						"prematchrequirement"
 #define mutator_						"prematchrequirementtime"

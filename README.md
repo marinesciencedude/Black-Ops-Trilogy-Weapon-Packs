@@ -26,6 +26,7 @@ It's advised to make a back-up of black_ops_3_fx.gdt, since this will be replace
 * MadKixs' Perks Shaders in BO3 style: https://forum.modme.co/wiki/threads/2836.html (install images from 'Black Ops 3 Perks' folder, [Perk] phd.tiff and [Perk] double_tap_2.0.tiff from 'Black Ops 2 Perks' folder into a single directory: texture_assets\Custom_Perk_Shaders), this is also what specialty_giant_alt_doubletap_zombies.tiff is taken from, this is also what specialty_giant_alt_doubletap_zombies.tiff is taken from
 * eMoX's T8 Powerup Delayed Drop: https://www.devraw.net/approved-assets/emox/emox---t8-powerup-delayed-drop
 * natesmithzombies's Custom Random Weapon Powerup: https://forum.modme.co/wiki/threads/706.html
+* Mr Gadd, TNT, vnuser's Black Ops 1 Ballistic Knife + Bowie/Sickle Combo: https://mega.nz/file/dBEESD6B#iGwB0awBjLanIlEB5-9O55Ilfo_mkNLkL9_bqG8TVNk
 
 Then install all files from this repo into your Black Ops III installation apart from the folder chalk_drawing_models, which is for reference purposes only
 

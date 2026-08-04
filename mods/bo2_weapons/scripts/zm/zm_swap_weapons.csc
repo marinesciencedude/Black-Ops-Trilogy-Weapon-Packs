@@ -136,10 +136,10 @@ function starter_weapon()
 		zm_weapons::include_weapon( "t6_rpd", true, 2500 );
 		zm_weapons::include_upgraded_weapon( "t6_rpd", "t6_rpd_up", false, 2500 );
 		
-		/*zm_weapons::include_weapon( "t9_ballistic_knife", true, 2000 );
-		zm_weapons::include_upgraded_weapon( "t9_ballistic_knife", "t9_ballistic_knife_up", false, 2000 );
-		zm_weapons::include_weapon( "knife_ballistic_bowie", true, 2000 );
-		zm_weapons::include_upgraded_weapon( "knife_ballistic_bowie", "knife_ballistic_bowie_upgraded", false, 2000 );*/
+		zm_weapons::include_weapon( "t5_bk_base_normal", true, 0 );
+		zm_weapons::include_upgraded_weapon( "t5_bk_base_normal", "t5_bk_base_upgraded", false, 0 );
+		zm_weapons::include_weapon( "t5_bk_bowie_normal", true, 0 );
+		zm_weapons::include_upgraded_weapon( "t5_bk_bowie_normal", "t5_bk_bowie_upgraded", false, 0 );
 		
 		zm_weapons::include_weapon( "t6_war_machine", true, 1700 );
 		zm_weapons::include_upgraded_weapon( "t6_war_machine", "t6_war_machine_up", false, 1700 );

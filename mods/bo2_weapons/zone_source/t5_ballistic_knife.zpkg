@@ -1,0 +1,39 @@
+/*
+******************************************************************************************************************
+**                                                                           									**
+**   					 BO1 Ballistic Knife + Bowie/Sickle Combo, Credits - Mr Gadd, TNT, vnuser, Hogarth		**
+**                                                                          									**
+******************************************************************************************************************
+*/
+
+localize,t5_ballistic_knife
+
+scriptparsetree,scripts/zm/zm_weap_t5_ballistic_knife.gsc
+scriptparsetree,scripts/zm/zm_weap_t5_ballistic_knife.gsh
+
+xmodel,t5_bk_base_blade
+xmodel,t5_bk_base_blade_retrieve
+
+weapon,t5_bk_base_normal_zm
+weapon,t5_bk_base_upgraded_zm
+
+weapon,t5_bk_bowie_normal_zm
+weapon,t5_bk_bowie_upgraded_zm
+weapon,t5_bk_bowie_wallbuy_zm
+weapon,t5_bk_bowie_flourish_zm
+
+weapon,t5_bk_sickle_normal_zm
+weapon,t5_bk_sickle_upgraded_zm
+weapon,t5_bk_sickle_wallbuy_zm
+weapon,t5_bk_sickle_flourish_zm
+
+weapon,t5_bk_bowie_fists_zm
+weapon,t5_bk_sickle_fists_zm
+
+
+
+
+
+
+
+

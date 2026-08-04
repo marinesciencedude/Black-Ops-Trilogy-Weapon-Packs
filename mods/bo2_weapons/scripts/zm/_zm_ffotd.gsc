@@ -14,6 +14,8 @@
 #using scripts\zm\_zm_t6_custom_hud;
 /*#using scripts\zm\_zm_weap_freezegun;
 #using scripts\zm\_zm_weap_bo1bouncingbetty;*/
+#using scripts\zm\zm_weap_t5_ballistic_knife;
+
 #using scripts\zm\_zm_xmodelalias;
 #using scripts\shared\ai\systems\behavior_tree_utility;
 #using scripts\shared\ai\systems\animation_state_machine_utility;

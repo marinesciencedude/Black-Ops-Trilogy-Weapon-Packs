@@ -44,8 +44,8 @@ function init() {
     //level.round_prestart_func = &do_pregame_menu;
     
 	zm_utility::register_lethal_grenade_for_level( "sticky_grenade_custom" );
-	zm_weapons::add_retrievable_knife_init_name("t9_ballistic_knife");
-	zm_weapons::add_retrievable_knife_init_name("t9_ballistic_knife_up");
+	/*zm_weapons::add_retrievable_knife_init_name("t9_ballistic_knife");
+	zm_weapons::add_retrievable_knife_init_name("t9_ballistic_knife_up");*/
 }
 
 function load_tf_options(){
@@ -221,14 +221,29 @@ function apply_choices() {
 			zm_weapons::add_limited_weapon("raygun_mark_ii", 1);
 			aat::register_aat_exemption(getweapon("raygun_mark_ii_upgraded"));
 		}
-	}
-	
-	if(GetGametypeSetting(mutator_ballistic_knife) == BOOLMUTATOR_ONOFF_OFF)
-	{
-		level.zombie_weapons[GetWeapon("t9_ballistic_knife")].is_in_box = false;
-		zm_utility::include_weapon( "t9_ballistic_knife", false);
 	}*/
 	
+	if(GetGametypeSetting(mutator_ballistic_knife) == 3)
+	{
+		level.zombie_weapons[GetWeapon("t5_bk_base_normal")].is_in_box = false;
+		zm_utility::include_weapon( "t5_bk_base_normal", false);
+	}
+	else if(GetGametypeSetting(mutator_ballistic_knife) == 2)
+	{
+		if(!isdefined(level.zombie_include_weapons[GetWeapon("t5_bk_base_normal")]))
+		{
+			zm_utility::include_weapon( "t5_bk_base_normal", true);
+			zm_utility::include_weapon( "t5_bk_base_upgraded", false);
+			zm_weapons::add_zombie_weapon( "t5_bk_base_normal", "t5_bk_base_upgraded", "", 0, "", "", undefined, "", false, "" );
+			aat::register_aat_exemption(getweapon("t5_bk_base_upgraded"));
+			
+			zm_utility::include_weapon( "t5_bk_bowie_normal", true);
+			zm_utility::include_weapon( "t5_bk_bowie_upgraded", false);
+			zm_weapons::add_zombie_weapon( "t5_bk_bowie_normal", "t5_bk_bowie_upgraded", "", 0, "", "", undefined, "", false, "" );
+			aat::register_aat_exemption(getweapon("t5_bk_bowie_upgraded"));
+		}
+	}
+		
 	if(GetGametypeSetting(mutator_enable_wunderfizz) == 2)
 	{
 		foreach(perk_random_machine in level.perk_random_machines)
