@@ -81,6 +81,27 @@ function melee_logic(){
 			}
 		}
 	}
+	melee_weapon_structs = struct::get_array("tazer_upgrade", "targetname");
+	if(melee_weapon_structs.size)
+	{
+		galvanuckles = level.weaponnone;
+		switch(GetDvarString("mapname"))
+		{
+		case "zm_nuked":
+		case "zm_town_hd":
+		case "zm_town":
+			galvanuckles = GetWeapon("t6_tazer_knuckles");
+			break;
+		case "zm_diner":
+			galvanuckles = GetWeapon("t6_taser_knuckles");
+			break;
+		}
+		if(galvanuckles)
+		{
+			level.ballistic_weapon[galvanuckles] = level.weapBallisticKnife;
+			level.ballistic_upgraded_weapon[galvanuckles] = level.weapBallisticKnifeUpgraded;
+		}
+	}
 }
 function my_melee_weapon_think( weapon, cost, flourish_fn, vo_dialog_id, flourish_weapon, ballistic_weapon, ballistic_upgraded_weapon ){
 	self.first_time_triggered = false;
