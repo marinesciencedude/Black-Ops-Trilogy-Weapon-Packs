@@ -8,6 +8,8 @@ It's advised to make a back-up of black_ops_3_fx.gdt, since this will be replace
 
 * TheSkyeLord's BO2 Weapon Ports: https://www.ugx-mods.com/forum/full-weapons/84/skyes-bo2-weapon-ports/23141/
 * JBird632's Custom Claymores: https://youtu.be/iYP_CdMhwG4
+* TheAllNightFall's World at War Raygun: https://www.devraw.net/approved-assets/theallnightfall/world-at-war-raygun
+* Smurphy's Improved BO3 Ray Gun: https://forum.modme.co/wiki/threads/3714.html
 * Scobalula's T7MTEnhancements: https://github.com/Scobalula/T7MTEnhancements
 * L3akMod: https://wiki.modme.co/wiki/black_ops_3/lua_(lui)/Installation.html
 * Kingslayer Kyle's Black Ops 2 HUD: https://drive.google.com/file/d/1V0ichbG3IkWSM1tCRxQFVDEozExTfNs6/view

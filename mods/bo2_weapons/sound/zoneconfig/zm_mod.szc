@@ -80,7 +80,13 @@
     "Name" : "t5_ballistic_knife",
     "Filename" : "_gadd/t5_ballistic_knife/t5_ballistic_knife.csv",
     "Specs" : [ ]
-}
+},
+{
+ "Type" : "ALIAS",
+ "Name" : "t4_raygun_sounds",
+ "Filename" : "t4_raygun_sounds.csv",
+ "Specs" : [ ] 
+},
 ],
  "Ducks" : [ ] ,
  "MusicFiles" : [ "zm_mod.mus" ] 

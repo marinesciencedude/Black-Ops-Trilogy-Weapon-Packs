@@ -37,5 +37,5 @@ t6_war_machine,t6_war_machine_up,,1700,launcher,,,,,TRUE,FALSE,FALSE,,,FALSE,TRU
 t6_rpg,t6_rpg_up,,3000,launcher,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,launcher,TRUE,,
 t5_bk_base_normal,t5_bk_base_upgraded,,0,,,0,,,TRUE,FALSE,TRUE,1,1,FALSE,FALSE,special,TRUE,,,
 t5_bk_bowie_normal,t5_bk_bowie_upgraded,,0,,,0,,,FALSE,FALSE,TRUE,1,1,FALSE,FALSE,special,TRUE,,,
-t9_ray_gun,t9_ray_gun_up,,10000,raygun,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,special,TRUE,TRUE,,
+t4_ray_gun,t4_ray_gun_camo_up,,10000,wpck_ray,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,special,TRUE,TRUE,
 cymbal_monkey,,,2000,monkey,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,grenade,,,,

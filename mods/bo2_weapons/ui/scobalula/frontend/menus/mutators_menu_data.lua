@@ -625,13 +625,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"MutatorSettings_Uzi",
 			"pointsPerMeleeKill",
             BuildStringSettings({"Off", "On"}, "Off") ),]]
-		--CoD.OptionsUtility.CreateDvarSettings(
-		--	arg0,
-		--	"Ray Gun",
-		--	"Switch between WaW Ray Gun and Improved BO3 Ray Gun",
-		--	"MutatorSettings_RayGun",
-		--	"mutator_ray_gun",
-		--	BuildStringSettings({"WaW", "BO III"}, "WaW"), nil, SetDvarSetting),
+		--[[CoD.OptionsUtility.CreateDvarSettings(
+			arg0,
+			"Ray Gun",
+			"Switch between WaW Ray Gun and Improved BO3 Ray Gun",
+			"MutatorSettings_RayGun",
+			"mutator_ray_gun",
+			BuildStringSettings({"WaW", "BO III"}, "WaW"), nil, SetDvarSetting),]]
 		--[[CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Winter's Howl",

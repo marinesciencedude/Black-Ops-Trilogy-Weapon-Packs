@@ -344,6 +344,14 @@ weapon,sticky_grenade_custom
 
 include,t5_ballistic_knife
 
+weapon,t4_ray_gun
+weapon,t4_ray_gun_up
+weapon,t4_ray_gun_camo_up
+
+//Improved Ray Gun
+weaponfull,ray_gun_zm
+weaponfull,ray_gun_upgraded_zm
+
 sound,zm_mod
 
 image,i_t7_zm_chalk_buy_arak_c

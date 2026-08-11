@@ -238,9 +238,6 @@ function starter_weapon()
 		zm_weapons::include_weapon( "t6_rpg", true, 3000 );
 		zm_weapons::include_upgraded_weapon( "t6_rpg", "t6_rpg_up", false, 3000 );
 		
-		zm_weapons::include_weapon( "t6_xl_ray_gun", true, 10000 );
-		zm_weapons::include_upgraded_weapon( "t6_xl_ray_gun", "t6_xl_ray_gun_up", false, 10000 );
-		
 		zm_weapons::include_weapon( "t6_xl_raygun_mark2", true, 10000 );
 		zm_weapons::include_upgraded_weapon( "t6_xl_raygun_mark2", "t6_xl_raygun_mark2_up", false, 10000 );
 		
@@ -257,10 +254,7 @@ function starter_weapon()
 		zm_weapons::include_upgraded_weapon( "knife_ballistic", "knife_ballistic_upgraded", false, 1000 );
 	}
 	else if(GetDvarString("mapname") == "zm_diner")
-	{
-		zm_weapons::include_weapon( "otg_bo4_ray_gun", true, 10000 );
-		zm_weapons::include_upgraded_weapon( "otg_bo4_ray_gun", "otg_bo4_ray_gun_up", false, 10000 );
-		
+	{	
 		zm_weapons::include_weapon( "t7_raygun_mark2", true, 10000 );
 		zm_weapons::include_upgraded_weapon( "t7_raygun_mark2", "t7_raygun_mark2_upgraded", false, 10000 );
 	}

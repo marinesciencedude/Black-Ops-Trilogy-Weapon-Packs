@@ -158,19 +158,28 @@ function applyChoices() {
 		}
 	}
 	
-	/*if(GetDvarInt("mutator_ray_gun") == 2)
+	/*Still crashing
+	if(GetDvarInt("mutator_ray_gun") == 2)
 	{
-														 // auto-calculate ammo cost
-		zm_weapons::include_weapon( "ray_gun", true, 10000, 0 );
-		zm_weapons::include_upgraded_weapon( "ray_gun", "ray_gun_upgraded", false, 10000, 0 );
+		if(GetDvarString("mapname") == "zm_die")
+		{
+			zm_weapons::include_weapon( "t6_ww_ray_gun", true, 10000, 5000 );
+			zm_weapons::include_upgraded_weapon( "t6_ww_ray_gun", "t6_ww_ray_gun_up", false, 10000, 5000 );
+		}
+		else
+		{
+															 // auto-calculate ammo cost
+			zm_weapons::include_weapon( "ray_gun", true, 10000, 0 );
+			zm_weapons::include_upgraded_weapon( "ray_gun", "ray_gun_upgraded", false, 10000, 0 );
+		}
 		RemoveZombieBoxWeapon(GetWeapon("t4_ray_gun"));
 	}*/
 	
-	/*if(level.pack_a_punch_camo_index == 141 && GetGametypeSetting(mutator_camo_ingame_cycle) != BOOLMUTATOR_OFFON_ON)
+	if(level.pack_a_punch_camo_index == 141 && GetGametypeSetting(mutator_camo_ingame_cycle) != BOOLMUTATOR_OFFON_ON)
 	{
 		zm_weapons::include_upgraded_weapon( "t4_ray_gun", "t4_ray_gun_up", false, 10000, 0 );
 		ArrayRemoveIndex(level.zombie_weapons_upgraded, GetWeapon("t4_ray_gun_camo_up"));
-	}*/
+	}
 	
 	if(GetDvarString("mapname") == "zm_giant")
 		zm_weapons::include_weapon( "tesla_gun", true, 10000, 0 );

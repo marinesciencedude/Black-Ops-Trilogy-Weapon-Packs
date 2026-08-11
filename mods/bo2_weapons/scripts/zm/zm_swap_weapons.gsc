@@ -349,11 +349,6 @@ function starter_weapon()
 		zm_weapons::add_zombie_weapon( "t6_rpg", "t6_rpg_up", "", 3000, "launcher", "", undefined, "", false, "" );
 		aat::register_aat_exemption(getweapon("t6_rpg_up"));
 		
-		zm_utility::include_weapon( "t6_xl_ray_gun", true );
-		zm_utility::include_weapon( "t6_xl_ray_gun_up", false );
-		zm_weapons::add_zombie_weapon( "t6_xl_ray_gun", "t6_xl_ray_gun_up", "", 10000, "wpck_ray", "", undefined, "", true, "" );
-		aat::register_aat_exemption(getweapon("t6_xl_ray_gun_up"));
-		
 		zm_utility::include_weapon( "t6_xl_raygun_mark2", true );
 		zm_utility::include_weapon( "t6_xl_raygun_mark2_up", false );
 		zm_weapons::add_zombie_weapon( "t6_xl_raygun_mark2", "t6_xl_raygun_mark2_up", "", 10000, "raygun_mk2", "", undefined, "", true, "" );
@@ -379,12 +374,7 @@ function starter_weapon()
 		aat::register_aat_exemption(getweapon("knife_ballistic_upgraded"));
 	}
 	else if(GetDvarString("mapname") == "zm_diner")
-	{
-		zm_utility::include_weapon( "otg_bo4_ray_gun", true );
-		zm_utility::include_weapon( "otg_bo4_ray_gun_up", false );
-		zm_weapons::add_zombie_weapon( "otg_bo4_ray_gun", "otg_bo4_ray_gun_up", "", 10000, "pistol", "", undefined, "", true, "" );
-		aat::register_aat_exemption(getweapon("otg_bo4_ray_gun_up"));
-		
+	{	
 		zm_utility::include_weapon( "t7_raygun_mark2", true );
 		zm_utility::include_weapon( "t7_raygun_mark2_upgraded", false );
 		zm_weapons::add_zombie_weapon( "t7_raygun_mark2", "t7_raygun_mark2_upgraded", "", 10000, "wpck_ray", "", undefined, "", true, "" );

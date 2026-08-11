@@ -175,14 +175,25 @@ function apply_choices() {
 	if((GetDvarString("ui_mapname") == "3551452640" || GetDvarString("ui_mapname") == "zm_cellblock_hd") && (GetGametypeSetting(mutator_enable_gobblegum) == 2 || GetGametypeSetting(mutator_enable_gobblegum) == 3))
 		level.var_5a072535 = &function_b2f238aa;
 	
-	/*if(GetDvarInt("mutator_ray_gun") == 2)
+	/*Still crashing
+	if(GetDvarInt("mutator_ray_gun") == 2)
 	{
 		level.zombie_weapons[GetWeapon("t4_ray_gun")].is_in_box = false;
 		zm_utility::include_weapon( "t4_ray_gun", false);
-		zm_utility::include_weapon( "ray_gun", true );
-		zm_utility::include_weapon( "ray_gun_upgraded", false );
-		zm_weapons::add_zombie_weapon( "ray_gun", "ray_gun_upgraded", "", 10000, "raygun", "", undefined, undefined, false, "" );
-		aat::register_aat_exemption(getweapon("ray_gun_upgraded"));
+		if(GetDvarString("mapname") == "zm_die")
+		{
+			zm_utility::include_weapon( "t6_ww_ray_gun", true );
+			zm_utility::include_weapon( "t6_ww_ray_gun_up", false );
+			zm_weapons::add_zombie_weapon( "t6_ww_ray_gun", "t6_ww_ray_gun_up", "", 10000, "wpck_ray", "", 5000, undefined, true, "" );
+			aat::register_aat_exemption(getweapon("t6_ww_ray_gun_up"));
+		}
+		else
+		{
+			zm_utility::include_weapon( "ray_gun", true );
+			zm_utility::include_weapon( "ray_gun_upgraded", false );
+			zm_weapons::add_zombie_weapon( "ray_gun", "ray_gun_upgraded", "", 10000, "raygun", "", undefined, undefined, true, "" );
+			aat::register_aat_exemption(getweapon("ray_gun_upgraded"));
+		}
 	}*/
 	
 	if(level.pack_a_punch_camo_index == 141 && GetGametypeSetting(mutator_camo_ingame_cycle) != BOOLMUTATOR_OFFON_ON)
