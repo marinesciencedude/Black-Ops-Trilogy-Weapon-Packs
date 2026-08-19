@@ -651,6 +651,13 @@ function (arg0, arg1, arg2, arg3, arg4)
 			BuildStringSettings({"Disabled", "SP/MP", "ZM"}, "Disabled") ),
 		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
+			"Kiparis",
+			"Add Kiparis to the mystery box.",
+			"MutatorSettings_Kiparis",
+			"pregamePreStageTime",
+			BuildStringSettings({"Off", "On"}, "Off") ),
+		CoD.OptionsUtility.CreateNamedSettings(
+			arg0,
 			"M60",
 			"Add M60 to the mystery box.",
 			"MutatorSettings_M60",

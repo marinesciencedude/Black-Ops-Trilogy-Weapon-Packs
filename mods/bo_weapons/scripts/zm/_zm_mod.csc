@@ -375,6 +375,12 @@ function applyChoices() {
 		zm_weapons::include_upgraded_weapon( "t5_m60e3", "t5_m60e3_up", false, 2750, 500);
 	}
 	
+	if(GetGametypeSetting(mutator_kiparis) == MUTATOR_OFFON_ON && (GetDvarString("mapname") != "zm_castle" || GetGametypeSetting(mutator_wallbuys_der_eisendrache) != 3))
+	{
+		zm_weapons::include_weapon( "t5_kiparis", true, 1100, 0 );
+		zm_weapons::include_upgraded_weapon( "t5_kiparis_up", "t5_kiparis_up", false, 1100, 0 );
+	}
+	
 	if(GetGametypeSetting(mutator_wa2000) == BOOLMUTATOR_OFFON_ON && (GetGametypeSetting(mutator_scopeads) == 2 || !GetGametypeSetting(mutator_scopeads)))
 	{
 		zm_weapons::include_weapon( "t5_wa2000", true, 1600, 500 );

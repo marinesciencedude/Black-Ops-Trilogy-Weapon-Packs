@@ -84,10 +84,10 @@
 #define mutator_runtobarrier				"pregamePositionShuffleMethod"
 #define mutator_ray_gun						"pregamePositionSortType"
 #define mutator_ukiyo_waw					"pregamePostRoundTime"
+#define mutator_kiparis						"pregamePreStageTime"
 
 //ints or int-compatible
-/*#define mutator_						"pregamePreStageTime"
-#define mutator_						"pregameScorestreakModifyTime"
+/*#define mutator_						"pregameScorestreakModifyTime"
 #define mutator_						"prematchrequirement"
 #define mutator_						"prematchrequirementtime"
 #define mutator_						"randomObjectiveLocations"

@@ -442,6 +442,13 @@ function apply_choices() {
 		zm_weapons::add_zombie_weapon( "t5_m60e3", "t5_m60e3_up", "", 2750, "lmg", "", undefined, undefined, false, "" );
 	}
 	
+	if(GetGametypeSetting(mutator_kiparis) == MUTATOR_OFFON_ON && (GetDvarString("mapname") != "zm_castle" || GetGametypeSetting(mutator_wallbuys_der_eisendrache) != 3))
+	{
+		zm_utility::include_weapon( "t5_kiparis", true );
+		zm_utility::include_weapon( "t5_kiparis_up", false );
+		zm_weapons::add_zombie_weapon( "t5_kiparis", "t5_kiparis_up", "", 1100, "smg", "", undefined, undefined, false, "" );
+	}
+	
 	if(GetGametypeSetting(mutator_wa2000) == BOOLMUTATOR_OFFON_ON && (GetGametypeSetting(mutator_scopeads) == 2 || !GetGametypeSetting(mutator_scopeads)))
 	{
 		zm_utility::include_weapon( "t5_wa2000", true );
