@@ -2117,7 +2117,7 @@ function swap_wall_weapon()
 							break;
 					}
 				}
-				else if(GetGametypeSetting(mutator_wallbuys_der_eisendrache) == 2) //Conn6orsuper117	
+				else if(GetGametypeSetting(mutator_wallbuys_der_eisendrache) == 2) //Conn6orsuper117
 				{
 					switch(VAL)
 					{
@@ -2224,6 +2224,207 @@ function swap_wall_weapon()
 								kn44++;
 								break;
 							}
+					}
+				}
+				else if(GetGametypeSetting(mutator_wallbuys_der_eisendrache) == 3) //Black Ops
+				{
+					switch(VAL)
+					{
+						case "pistol_burst": //RK5
+							{
+								ent.zombie_weapon_upgrade = "t5_olympia";
+								
+								ent.origin += (3, 0, 0);
+								spawn_loc = struct::get(ent.target, "targetname");
+								spawn_loc.origin += (3, 0, 0);
+								
+								break;
+							}
+						case "ar_marksman": //Sheiva
+							ent.zombie_weapon_upgrade = "t5_m14";
+							break;
+						case "pistol_fullauto": //L-CAR 9
+							{
+								if(lcar9 == 1) //left from spawn
+								{
+									ent.zombie_weapon_upgrade = "t5_pm63";
+									
+									//ent.origin += (4*cos(spawn_loc.angles[1]), 4*sin(spawn_loc.angles[1]), 0);
+									//spawn_loc = struct::get(ent.target, "targetname");
+									//spawn_loc.origin += (4*cos(spawn_loc.angles[1]), 4*sin(spawn_loc.angles[1]), 0);
+								}
+								else //Right from spawn
+									ent.zombie_weapon_upgrade = "t5_mp40";
+								
+								lcar9++;
+								break;
+							}
+						case "shotgun_pump": //KRM-262
+							{
+								if(krm262 == 0)
+									ent.zombie_weapon_upgrade = "t5_stakeout";
+								else
+								{
+									ent.zombie_weapon_upgrade = "t5_mpl";
+									ent.origin += (-5, -20, 0);
+								}
+								
+								krm262++;
+								break;
+							}
+						case "smg_standard": //Kuda
+							ent.zombie_weapon_upgrade = "t5_mp40";
+							break;
+						case "smg_fastfire": //Vesper
+							ent.zombie_weapon_upgrade = "t5_spectre";
+							break;
+						case "ar_longburst": //M8A7
+							ent.zombie_weapon_upgrade = "t5_m16a1";
+							break;
+						case "ar_cqb": //HVK-30
+							ent.zombie_weapon_upgrade = "t5_mp5k";
+							break;
+						case "smg_versatile": //VMP
+							{
+								if(vmp == 1) //teleporter
+								{
+									ent.zombie_weapon_upgrade = "t5_mp40";
+									spawn_loc = struct::get(ent.target, "targetname");
+									spawn_loc.origin += (-6*cos(spawn_loc.angles[1]), -6*sin(spawn_loc.angles[1]), 0);
+								}
+								else
+									ent.zombie_weapon_upgrade = "t5_kiparis";
+								
+								vmp++;
+								break;
+							}
+						case "ar_standard": //KN-44
+							ent.zombie_weapon_upgrade = "t5_ak74u";
+							break;
+						case "lmg_light": //BRM
+							ent.zombie_weapon_upgrade = "t5_hk21";
+							break;
+					}
+				}
+				else if(GetGametypeSetting(mutator_wallbuys_der_eisendrache) == 4) //Conn6orsuper117
+				{
+					switch(VAL)
+					{
+						case "pistol_burst": //RK5
+							{
+								ent.zombie_weapon_upgrade = "t5_m14";
+								
+								ent.origin += (3, 0, 0);
+								spawn_loc = struct::get(ent.target, "targetname");
+								spawn_loc.origin += (3, 0, 0);
+								
+								break;
+							}
+						case "ar_marksman": //Sheiva
+							ent.zombie_weapon_upgrade = "t5_olympia";
+							break;
+						case "pistol_fullauto": //L-CAR 9
+							{
+								if(lcar9 == 1) //left from spawn
+								{
+									//ent.zombie_weapon_upgrade = "t5_pm63";
+									ent struct::delete();
+									
+									//ent.origin += (4*cos(spawn_loc.angles[1]), 4*sin(spawn_loc.angles[1]), 0);
+									//spawn_loc = struct::get(ent.target, "targetname");
+									//spawn_loc.origin += (4*cos(spawn_loc.angles[1]), 4*sin(spawn_loc.angles[1]), 0);
+									
+									lcar9++;
+								}
+								else //Right from spawn
+								{
+									ent.origin += (-15, 0, 0);
+									spawn_loc = struct::get(ent.target, "targetname");
+									spawn_loc.origin += (-15, 0, 0);
+									
+									lcar9++;
+									switch(GetGametypeSetting(mutator_scopeads))
+									{
+									case 1:
+										ent.zombie_weapon_upgrade = "t5_l96a1_overlay";
+										break;
+									case 3:
+										ent.zombie_weapon_upgrade = "t5_l96a1_switch";
+										break;
+									default:
+										ent.zombie_weapon_upgrade = "t5_l96a1";
+										break;
+									}
+								}
+								
+								break;
+							}
+						case "shotgun_pump": //KRM-262
+							{
+								if(krm262 == 0) //Trophy Room
+									ent.zombie_weapon_upgrade = "t5_pm63";
+								else
+								{
+									ent.zombie_weapon_upgrade = "t5_mpl";
+									ent.origin += (-5, -20, 0);
+								}
+								
+								krm262++;
+								break;
+							}
+						case "smg_standard": //Kuda
+							ent.zombie_weapon_upgrade = "t5_ak74u";
+							break;
+						case "smg_fastfire": //Vesper
+							{
+								if(vesper == 0)
+									ent.zombie_weapon_upgrade = "t5_pm63";
+								else
+									ent.zombie_weapon_upgrade = "t5_stakeout";
+								
+								vesper++;
+								break;
+							}
+						case "ar_longburst": //M8A7
+							ent.zombie_weapon_upgrade = "t5_mp5k";
+							break;
+						case "ar_cqb": //HVK-30
+							{
+								if(hvk30 == 0)
+									ent.zombie_weapon_upgrade = "t5_m16a1";
+								else //Undercroft
+									ent.zombie_weapon_upgrade = "t5_ak74u";
+								
+								hvk30++;
+								break;
+							}
+						case "smg_versatile": //VMP
+							{
+								if(vmp == 1) //teleporter
+								{
+									ent.zombie_weapon_upgrade = "t5_mp5k";
+									//spawn_loc = struct::get(ent.target, "targetname");
+									//spawn_loc.origin += (-6*cos(spawn_loc.angles[1]), -6*sin(spawn_loc.angles[1]), 0);
+								}
+								else
+									ent.zombie_weapon_upgrade = "t5_stakeout";
+								
+								vmp++;
+								break;
+							}
+						case "ar_standard": //KN-44
+						{
+							if(kn44 == 0)
+								ent.zombie_weapon_upgrade = "t5_mp40";
+							else //Undercroft
+								ent.zombie_weapon_upgrade = "t5_m16a1";
+							
+							kn44++;
+							break;
+						}
+						case "lmg_light": //BRM
+							ent.zombie_weapon_upgrade = "t5_aug";
+							break;
 					}
 				}
 				break;
@@ -2384,6 +2585,9 @@ function swap_wall_weapon()
 					break;
 				case "ar_cqb": //HVK-30
 					ent.zombie_weapon_upgrade = "sticky_grenade_custom";
+					break;
+				case "ar_accurate": //ICR-1
+					ent struct::delete();
 					break;
 				case "smg_versatile": //VMP
 					ent.zombie_weapon_upgrade = "t5_ak74u";
@@ -3164,6 +3368,7 @@ function swap_chalk()
 				case "zm_factory": //The Giant
 				case "zm_giant": // TrustInUma's DER RIESE
 				case "zm_tomb": //Origins
+				case "zm_castle": //Der Eisendrache
 					ent.var_47896610 = util::spawn_model("wallbuy_olympia", spawn_loc.origin + VectorScale((0, 0, -1), 1), spawn_loc.angles);
 					break;
 				case "zm_asylum": //Verrückt
@@ -3239,6 +3444,20 @@ function swap_chalk()
 				case "zm_stalingrad": //Gorod Krovi
 					ent.var_47896610 = util::spawn_model("wallbuy_stakeout", spawn_loc.origin + VectorScale((-3, 0, 0), 1), spawn_loc.angles);
 					break;
+				case "zm_castle": //Der Eisendrache
+					{
+						if(GetGametypeSetting(mutator_wallbuys_der_eisendrache) == 3)
+							ent.var_47896610 = util::spawn_model("wallbuy_stakeout", spawn_loc.origin + (-3*cos(spawn_loc.angles[0]), -3*cos(spawn_loc.angles[0]), 0), spawn_loc.angles);
+						else
+						{
+							if(stakeout == 0) //left from spawn
+								ent.var_47896610 = util::spawn_model("wallbuy_stakeout", spawn_loc.origin + (-1, 3, 0), spawn_loc.angles);
+							else //right from spawn
+								ent.var_47896610 = util::spawn_model("wallbuy_stakeout", spawn_loc.origin + (6, -1, 1), spawn_loc.angles);
+							stakeout++;
+						}	
+						break;
+					}
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_stakeout", spawn_loc.origin, spawn_loc.angles);
 					break;
@@ -3293,12 +3512,29 @@ function swap_chalk()
 					}
 				case "zm_castle": //Der Eisendrache
 					{
-						if(mp40 == 0) //Living Quarters
-							ent.var_47896610 = util::spawn_model("wallbuy_mp40", spawn_loc.origin + VectorScale((0, 1, 0), 1), spawn_loc.angles);
-						else //Power door from spawn
-							ent.var_47896610 = util::spawn_model("wallbuy_mp40", spawn_loc.origin + VectorScale((1, 0, 0), 1), spawn_loc.angles);
+						if(GetGametypeSetting(mutator_wallbuys_der_eisendrache) != 3)
+						{
+							if(mp40 == 0) //Living Quarters
+								ent.var_47896610 = util::spawn_model("wallbuy_mp40", spawn_loc.origin + VectorScale((0, 1, 0), 1), spawn_loc.angles);
+							else //Power door from spawn
+								ent.var_47896610 = util::spawn_model("wallbuy_mp40", spawn_loc.origin + VectorScale((1, 0, 0), 1), spawn_loc.angles);
+							
+							mp40++;
+						}
+						else if(GetGametypeSetting(mutator_wallbuys_der_eisendrache) == 3)
+						{
+							if(mp40 == 0)
+								ent.var_47896610 = util::spawn_model("wallbuy_mp40", spawn_loc.origin + (-1, 0, 0), spawn_loc.angles);
+							else if(mp40 == 1) //Upper Courtyard
+								ent.var_47896610 = util::spawn_model("wallbuy_mp40", spawn_loc.origin + (0, 1, 0), spawn_loc.angles);
+							else if(mp40 == 2) //rocket site
+								ent.var_47896610 = util::spawn_model("wallbuy_mp40", spawn_loc.origin + (1, 0, 0), spawn_loc.angles);
+							
+							mp40++;
+						}
+						else if(GetGametypeSetting(mutator_wallbuys_der_eisendrache) == 4)
+							ent.var_47896610 = util::spawn_model("wallbuy_mp40", spawn_loc.origin + (0, -1, 0), spawn_loc.angles);
 						
-						mp40++;
 						break;
 					}
 				case "zm_island": //Zetsubou no Shima
@@ -3398,6 +3634,20 @@ function swap_chalk()
 				case "zm_stalingrad": //Gorod Krovi
 					ent.var_47896610 = util::spawn_model("wallbuy_pm63", spawn_loc.origin + VectorScale((5*cos(spawn_loc.angles[0]), 5*cos(spawn_loc.angles[1]), 5*sin(spawn_loc.angles[0])), 1), spawn_loc.angles);
 					break;
+				case "zm_castle": //Der Eisendrache
+					{
+						if(GetGametypeSetting(mutator_wallbuys_der_eisendrache) == 3)
+							ent.var_47896610 = util::spawn_model("wallbuy_pm63", spawn_loc.origin + (-7*cos(spawn_loc.angles[0])+3, -7*sin(spawn_loc.angles[0])+3, 0), spawn_loc.angles);
+						else
+						{
+							if(pm63 == 0) //Trophy Room
+								ent.var_47896610 = util::spawn_model("wallbuy_pm63", spawn_loc.origin + (6, 1, 1), spawn_loc.angles);
+							else //Supply Room
+								ent.var_47896610 = util::spawn_model("wallbuy_pm63", spawn_loc.origin + (0, -6, 0), spawn_loc.angles);
+							pm63++;
+						}	
+						break;
+					}
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_pm63", spawn_loc.origin, spawn_loc.angles);
 					break;
@@ -3455,6 +3705,9 @@ function swap_chalk()
 					break;
 				case "zm_sumpf": //Shi no Numa
 					ent.var_47896610 = util::spawn_model("wallbuy_ak74u", spawn_loc.origin + VectorScale((-6, -1, 0), 1), spawn_loc.angles);
+					break;
+				case "zm_castle": //Der Eisendrache
+					ent.var_47896610 = util::spawn_model("wallbuy_ak74u", spawn_loc.origin + (0, 1, 0), spawn_loc.angles);
 					break;
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_ak74u", spawn_loc.origin, spawn_loc.angles);
@@ -3548,6 +3801,20 @@ function swap_chalk()
 				case "zm_nuked": //Nuketown Zombies
 					ent.var_47896610 = util::spawn_model("wallbuy_m16a1", spawn_loc.origin + VectorScale((-2.5, 0, 1.2), 1), spawn_loc.angles);
 					break;
+				case "zm_castle": //Der Eisendrache
+					{
+						if(GetGametypeSetting(mutator_wallbuys_der_eisendrache) == 3)
+							ent.var_47896610 = util::spawn_model("wallbuy_m16a1", spawn_loc.origin + (0, -2.5, 1.2), spawn_loc.angles);
+						else
+						{
+							if(m16 == 0) //Undercroft
+								ent.var_47896610 = util::spawn_model("wallbuy_m16a1", spawn_loc.origin + (2.5, 0, 1.2), spawn_loc.angles);
+							else
+								ent.var_47896610 = util::spawn_model("wallbuy_m16a1", spawn_loc.origin + (-2.5, 0, 1.2), spawn_loc.angles);
+							m16++;
+						}
+						break;
+					}
 				default:
 					ent.var_47896610 = util::spawn_model("wallbuy_m16a1", spawn_loc.origin, spawn_loc.angles);
 					break;
@@ -3687,7 +3954,15 @@ function swap_chalk()
 			case "t9_lw3_tundra_switch":
 			{
 				spawn_loc = struct::get(ent.target, "targetname");
-				ent.var_47896610 = util::spawn_model("wallbuy_l115", spawn_loc.origin + VectorScale((0, 1, -2), 1), spawn_loc.angles);
+				switch(GetDvarString("mapname"))
+				{
+				case "zm_prototype":
+					ent.var_47896610 = util::spawn_model("wallbuy_l115", spawn_loc.origin + VectorScale((0, 1, -2), 1), spawn_loc.angles);
+					break;
+				case "zm_castle":
+					ent.var_47896610 = util::spawn_model("wallbuy_l115", spawn_loc.origin + VectorScale((-1, 0, 0), 1), spawn_loc.angles);
+					break;
+				}
 				break;
 			}
 			case "smg_thompson":
@@ -3695,6 +3970,20 @@ function swap_chalk()
 				//only Origins for now
 				spawn_loc = struct::get(ent.target, "targetname");
 				ent.var_47896610 = util::spawn_model("wallbuy_t7_m1927", spawn_loc.origin + VectorScale((9, 0, -1), 1), spawn_loc.angles);
+				break;
+			}
+			case "t5_spectre":
+			{
+				//only Der Eisendrache for now
+				spawn_loc = struct::get(ent.target, "targetname");
+				ent.var_47896610 = util::spawn_model("wallbuy_spectre", spawn_loc.origin + (-1, -5, 0), spawn_loc.angles);
+				break;
+			}
+			case "t5_kiparis":
+			{
+				//only Der Eisendrache for now
+				spawn_loc = struct::get(ent.target, "targetname");
+				ent.var_47896610 = util::spawn_model("wallbuy_kiparis", spawn_loc.origin + (-4*cos(spawn_loc.angles[1]), -4*sin(spawn_loc.angles[1]), 1), spawn_loc.angles);
 				break;
 			}
 		}
@@ -3752,6 +4041,9 @@ function swap_claymores()
 						claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin + VectorScale((0, -6, 3), 1), spawn_loc.angles);
 					break;
 				}
+			case "zm_castle":
+				claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin + (-6*cos(spawn_loc.angles[1]), -6*sin(spawn_loc.angles[1]), 3), spawn_loc.angles);
+				break;
 			default:
 				claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin, spawn_loc.angles);
 				break;

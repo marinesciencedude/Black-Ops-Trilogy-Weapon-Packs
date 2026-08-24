@@ -463,6 +463,7 @@ weapon,t5_spas12_up
 
 weapon,t5_spectre
 weapon,t5_spectre_up
+xmodel,wallbuy_spectre
 
 weapon,t5_stakeout
 weapon,t5_stakeout_up
@@ -587,6 +588,7 @@ weapon,t5_thundergun_upgraded_zm
 
 weapon,t5_kiparis
 weapon,t5_kiparis_up
+xmodel,wallbuy_kiparis
 
 //weapon,t9_xm4
 //weapon,t9_xm4_up

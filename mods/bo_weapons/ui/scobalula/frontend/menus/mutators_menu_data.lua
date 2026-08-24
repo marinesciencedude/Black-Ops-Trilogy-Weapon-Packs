@@ -484,10 +484,10 @@ function (arg0, arg1, arg2, arg3, arg4)
 		CoD.OptionsUtility.CreateNamedSettings(
 			arg0,
 			"Der Eisendrache Wallbuys",
-			"WaW Layout 1 is by poyzee, WaW Layout 2 is by Conn6orsuper117",
+			"WaW Layout 1 is by poyzee, WaW Layout 2 and BO Layout 2 are by Conn6orsuper117",
 			"MutatorSettings_WallbuysDerEisendrache",
 			"incrementalSpawnDelay",
-			BuildStringSettings({"WaW Layout 1", "WaW Layout 2"}, "WaW Layout 3") )
+			BuildStringSettings({"WaW Layout 1", "WaW Layout 2", "BO Layout 1", "BO Layout 2"}, "Black Ops") )
 		--CoD.OptionsUtility.CreateDvarSettings(
 		--	arg0,
 		--	"Random Moon Solo Character",
