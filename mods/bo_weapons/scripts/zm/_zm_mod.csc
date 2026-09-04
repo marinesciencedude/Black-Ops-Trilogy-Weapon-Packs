@@ -59,17 +59,18 @@ function applyChoices() {
 		}
 	}
 	
+	is_zns_uzi = (GetDvarString("mapname") == "zm_island" && GetGametypeSetting(mutator_wallbuys_zetsubou) == 3);
 	switch(GetGametypeSetting(mutator_uzi))
 	{
 	case 2:
 		{
-			zm_weapons::include_weapon( "t5_uzi", true, 1500, 500);
+			zm_weapons::include_weapon( "t5_uzi", is_zns_uzi, 1500, 500);
 			zm_weapons::include_upgraded_weapon( "t5_uzi", "t5_uzi_up", false, 1500, 500);
 			break;
 		}
 	case 3:
 		{
-			zm_weapons::include_weapon( "t5_uzi_alt", true, 1500, 500);
+			zm_weapons::include_weapon( "t5_uzi_alt", is_zns_uzi, 1500, 500);
 			zm_weapons::include_upgraded_weapon( "t5_uzi_alt", "t5_uzi_up_alt", false, 1500, 500);
 			break;
 		}
@@ -375,7 +376,7 @@ function applyChoices() {
 		zm_weapons::include_upgraded_weapon( "t5_m60e3", "t5_m60e3_up", false, 2750, 500);
 	}
 	
-	if(GetGametypeSetting(mutator_kiparis) == MUTATOR_OFFON_ON && (GetDvarString("mapname") != "zm_castle" || GetGametypeSetting(mutator_wallbuys_der_eisendrache) != 3))
+	if(GetGametypeSetting(mutator_kiparis) == MUTATOR_OFFON_ON && (GetDvarString("mapname") != "zm_castle" || GetGametypeSetting(mutator_wallbuys_der_eisendrache) != 3) && (GetDvarString("mapname") != "zm_island" || GetGametypeSetting(mutator_wallbuys_zetsubou) != 3))
 	{
 		zm_weapons::include_weapon( "t5_kiparis", true, 1100, 0 );
 		zm_weapons::include_upgraded_weapon( "t5_kiparis_up", "t5_kiparis_up", false, 1100, 0 );

@@ -487,7 +487,14 @@ function (arg0, arg1, arg2, arg3, arg4)
 			"WaW Layout 1 is by poyzee, WaW Layout 2 and BO Layout 2 are by Conn6orsuper117",
 			"MutatorSettings_WallbuysDerEisendrache",
 			"incrementalSpawnDelay",
-			BuildStringSettings({"WaW Layout 1", "WaW Layout 2", "BO Layout 1", "BO Layout 2"}, "Black Ops") )
+			BuildStringSettings({"WaW Layout 1", "WaW Layout 2", "BO Layout 1", "BO Layout 2"}, "Black Ops") ),
+		CoD.OptionsUtility.CreateNamedSettings(
+			arg0,
+			"Zetsubou no Shima Wallbuys",
+			"WaW/BO Layout 1 is by Conn6orsuper117",
+			"MutatorSettings_WallbuysZetsubou",
+			"pregameScorestreakModifyTime",
+			BuildStringSettings({"WaW Layout 1", "BO Layout 1", "BO Layout 2"}, "BO Layout 2") )
 		--CoD.OptionsUtility.CreateDvarSettings(
 		--	arg0,
 		--	"Random Moon Solo Character",

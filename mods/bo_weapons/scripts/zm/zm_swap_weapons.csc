@@ -152,6 +152,12 @@ function swap_wall_weapon()
 		}
 	}
 	
+	if(GetGametypeSetting(mutator_uzi) != 2)
+	{
+		zm_weapons::include_weapon( "t5_uzi_alt", false, 1500, 500);
+		zm_weapons::include_upgraded_weapon( "t5_uzi_alt", "t5_uzi_up_alt", false, 1500, 500);
+	}
+	
 	rk5 = 0;
 	vesper = 0;
 	kuda = 0;
@@ -2265,129 +2271,333 @@ function swap_wall_weapon()
 				break;
 			}
 			case "zm_island": //Zetsubou no Shima
-			{ //Conn6orsuper117
-				switch(VAL)
+			{
+				if(GetGametypeSetting(mutator_wallbuys_zetsubou) == 1) //Conn6orsuper117
 				{
-				case "ar_marksman": //Sheiva
-					ent.zombie_weapon_upgrade = "t4_type99r";
-					break;
-				case "pistol_burst": //RK5
+					switch(VAL)
 					{
-						ent.zombie_weapon_upgrade = "t4_carbine";
-						
-						ent.origin += (-5, 0, 0);
-						spawn_loc = struct::get(ent.target, "targetname");
-						spawn_loc.origin += (-5, 0, 0);
-						
+					case "ar_marksman": //Sheiva
+						ent.zombie_weapon_upgrade = "t4_type99r";
 						break;
-					}
-				case "pistol_fullauto": //L-CAR 9
-					{
-						ent.zombie_weapon_upgrade = "t4_m1";
-					
-						ent.origin += (-5, 40, 0);
-						ent.angles = (0, 90, 0);
-						spawn_loc = struct::get(ent.target, "targetname");
-						spawn_loc.origin += (-5, 40, 0);
-						spawn_loc.angles = (0, 90, 0);
-						
-						break;
-					}
-				case "shotgun_precision": //Argus
-					{
-						if(argus == 0) //Ruins to the right
-							ent.zombie_weapon_upgrade = "t4_m1897";
-						else //Bunker left room underwater
-							ent.zombie_weapon_upgrade = "t4_db";
-						
-						argus++;
-						break;
-					}
-				case "ar_accurate": //ICR-1
-					{
-						if(icr == 0)
-							ent.zombie_weapon_upgrade = "t4_bar";
-						else
-							ent.zombie_weapon_upgrade = "t5_mp40";
-						
-						icr++;
-						break;
-					}
-				case "smg_fastfire": //Vesper
-					{
-						if(vesper == 0) //Inside Bunker
-							ent.zombie_weapon_upgrade = "t4_thompson"; //developer's choice
-						else //Outside Lab B
+					case "pistol_burst": //RK5
 						{
-							ent.zombie_weapon_upgrade = "t4_thompson";
+							ent.zombie_weapon_upgrade = "t4_carbine";
 							
-							ent.origin += (5*cos(spawn_loc.angles[1]), 5*sin(spawn_loc.angles[1]), 5);
+							ent.origin += (-5, 0, 0);
 							spawn_loc = struct::get(ent.target, "targetname");
-							spawn_loc.origin += (5*cos(spawn_loc.angles[1]), 5*sin(spawn_loc.angles[1]), 5);
+							spawn_loc.origin += (-5, 0, 0);
+							
+							break;
 						}
-						
-						vesper++;
-						break;
-					}
-				case "shotgun_pump": //KRM-262
-					{
-						ent.zombie_weapon_upgrade = "t4_g43";
-						
-						ent.origin += (0, -7.5, 0);
-						spawn_loc = struct::get(ent.target, "targetname");
-						spawn_loc.origin += (0, -7.5, 0);
-						
-						break;
-					}
-				case "smg_burst": //Pharo
-					ent.zombie_weapon_upgrade = "t4_db_saw";
-					break;
-				case "ar_cqb": //HVK-30
-					{
-						if(hvk30 == 0) //Lab A
-							ent.zombie_weapon_upgrade = "t4_type100";
-						else //Bunker
-							ent.zombie_weapon_upgrade = "t4_mp44";
-						
-						hvk30++;
-						break;
-					}
-				case "smg_versatile": //VMP
-					if(vmp == 0)
-						ent.zombie_weapon_upgrade = "t4_fg42";
-					else
-					{
-						ent.zombie_weapon_upgrade = "t4_m1897"; //developer's choice
-						
-						ent.origin += (0, 0, 5);
-						spawn_loc = struct::get(ent.target, "targetname");
-						spawn_loc.origin += (0, 0, 5);
-					}
-					
-					vmp++;
-					break;
-				case "ar_standard": //KN-44
-					ent.zombie_weapon_upgrade = "t4_type100";
-					break;
-				case "smg_standard": //Kuda
-					{
-						if(kuda == 0) //Outside Laboratory A
-							ent.zombie_weapon_upgrade = "t5_mp40";
-						else //Bunker
+					case "pistol_fullauto": //L-CAR 9
+						{
 							ent.zombie_weapon_upgrade = "t4_m1";
 						
-						kuda++;
+							ent.origin += (-5, 40, 0);
+							ent.angles = (0, 90, 0);
+							spawn_loc = struct::get(ent.target, "targetname");
+							spawn_loc.origin += (-5, 40, 0);
+							spawn_loc.angles = (0, 90, 0);
+							
+							break;
+						}
+					case "shotgun_precision": //Argus
+						{
+							if(argus == 0) //Ruins to the right
+								ent.zombie_weapon_upgrade = "t4_m1897";
+							else //Bunker left room underwater
+								ent.zombie_weapon_upgrade = "t4_db";
+							
+							argus++;
+							break;
+						}
+					case "ar_accurate": //ICR-1
+						{
+							if(icr == 0)
+								ent.zombie_weapon_upgrade = "t4_bar";
+							else
+								ent.zombie_weapon_upgrade = "t5_mp40";
+							
+							icr++;
+							break;
+						}
+					case "smg_fastfire": //Vesper
+						{
+							if(vesper == 0) //Inside Bunker
+								ent.zombie_weapon_upgrade = "t4_thompson"; //developer's choice
+							else //Outside Lab B
+							{
+								ent.zombie_weapon_upgrade = "t4_thompson";
+								
+								ent.origin += (5*cos(spawn_loc.angles[1]), 5*sin(spawn_loc.angles[1]), 5);
+								spawn_loc = struct::get(ent.target, "targetname");
+								spawn_loc.origin += (5*cos(spawn_loc.angles[1]), 5*sin(spawn_loc.angles[1]), 5);
+							}
+							
+							vesper++;
+							break;
+						}
+					case "shotgun_pump": //KRM-262
+						{
+							ent.zombie_weapon_upgrade = "t4_g43";
+							
+							ent.origin += (0, -7.5, 0);
+							spawn_loc = struct::get(ent.target, "targetname");
+							spawn_loc.origin += (0, -7.5, 0);
+							
+							break;
+						}
+					case "smg_burst": //Pharo
+						ent.zombie_weapon_upgrade = "t4_db_saw";
 						break;
-					}
-				case "ar_longburst": //M8A7
-					{
-						if(m8a7 == 0)
-							ent.zombie_weapon_upgrade = "t4_type100";
+					case "ar_cqb": //HVK-30
+						{
+							if(hvk30 == 0) //Lab A
+								ent.zombie_weapon_upgrade = "t4_type100";
+							else //Bunker
+								ent.zombie_weapon_upgrade = "t4_mp44";
+							
+							hvk30++;
+							break;
+						}
+					case "smg_versatile": //VMP
+						if(vmp == 0)
+							ent.zombie_weapon_upgrade = "t4_fg42";
 						else
-							ent.zombie_weapon_upgrade = "t4_bar";
+						{
+							ent.zombie_weapon_upgrade = "t4_m1897"; //developer's choice
+							
+							ent.origin += (0, 0, 5);
+							spawn_loc = struct::get(ent.target, "targetname");
+							spawn_loc.origin += (0, 0, 5);
+						}
 						
-						m8a7++;
+						vmp++;
 						break;
+					case "ar_standard": //KN-44
+						ent.zombie_weapon_upgrade = "t4_type100";
+						break;
+					case "smg_standard": //Kuda
+						{
+							if(kuda == 0) //Outside Laboratory A
+								ent.zombie_weapon_upgrade = "t5_mp40";
+							else //Bunker
+								ent.zombie_weapon_upgrade = "t4_m1";
+							
+							kuda++;
+							break;
+						}
+					case "ar_longburst": //M8A7
+						{
+							if(m8a7 == 0)
+								ent.zombie_weapon_upgrade = "t4_type100";
+							else
+								ent.zombie_weapon_upgrade = "t4_bar";
+							
+							m8a7++;
+							break;
+						}
+					}
+				}
+				else if(GetGametypeSetting(mutator_wallbuys_zetsubou) == 2) //Conn6orsuper117
+				{
+					switch(VAL)
+					{
+					case "ar_marksman": //Sheiva
+						ent.zombie_weapon_upgrade = "t5_olympia";
+						break;
+					case "pistol_burst": //RK5
+						{
+							ent.zombie_weapon_upgrade = "t5_m14";
+							
+							//ent.origin += (-5, 0, 0);
+							//spawn_loc = struct::get(ent.target, "targetname");
+							//spawn_loc.origin += (-5, 0, 0);
+							
+							break;
+						}
+					case "pistol_fullauto": //L-CAR 9
+						{
+							ent.zombie_weapon_upgrade = "t5_mpl";
+						
+							/*ent.origin += (-5, 40, 0);
+							ent.angles = (0, 90, 0);
+							spawn_loc = struct::get(ent.target, "targetname");
+							spawn_loc.origin += (-5, 40, 0);
+							spawn_loc.angles = (0, 90, 0);*/
+							
+							break;
+						}
+					case "shotgun_precision": //Argus
+						ent.zombie_weapon_upgrade = "t5_stakeout";
+						break;
+					case "ar_accurate": //ICR-1
+						{
+							if(icr == 0)
+								ent.zombie_weapon_upgrade = "t5_ak74u";
+							else
+								ent.zombie_weapon_upgrade = "t5_mp40";
+							
+							icr++;
+							break;
+						}
+					case "smg_fastfire": //Vesper
+						{
+							if(vesper == 0) //Inside Bunker
+								ent.zombie_weapon_upgrade = "t5_mp5k"; //developer's choice
+							else //Outside Lab B
+							{
+								ent.zombie_weapon_upgrade = "t5_m16a1";
+								
+								/*ent.origin += (5*cos(spawn_loc.angles[1]), 5*sin(spawn_loc.angles[1]), 5);
+								spawn_loc = struct::get(ent.target, "targetname");
+								spawn_loc.origin += (5*cos(spawn_loc.angles[1]), 5*sin(spawn_loc.angles[1]), 5);*/
+							}
+							
+							vesper++;
+							break;
+						}
+					case "shotgun_pump": //KRM-262
+						{
+							ent.zombie_weapon_upgrade = "t5_pm63";
+							
+							/*ent.origin += (0, -7.5, 0);
+							spawn_loc = struct::get(ent.target, "targetname");
+							spawn_loc.origin += (0, -7.5, 0);*/
+							
+							break;
+						}
+					case "smg_burst": //Pharo
+						ent.zombie_weapon_upgrade = "t5_mp5k";
+						break;
+					case "ar_cqb": //HVK-30
+						{
+							if(hvk30 == 0) //Lab A
+								ent.zombie_weapon_upgrade = "t5_mp40";
+							else //Bunker
+								ent.zombie_weapon_upgrade = "t5_ak74u";
+							
+							hvk30++;
+							break;
+						}
+					case "smg_versatile": //VMP
+						ent.zombie_weapon_upgrade = "t5_aug";
+						break;
+					case "ar_standard": //KN-44
+						ent.zombie_weapon_upgrade = "t5_mpl";
+						break;
+					case "smg_standard": //Kuda
+						{
+							if(kuda == 0) //Outside Laboratory A
+								ent.zombie_weapon_upgrade = "t5_stakeout";
+							else //Bunker
+							{
+								wallbuy = spawnstruct();
+								wallbuy.targetname = "claymore_purchase";
+								wallbuy.zombie_weapon_upgrade = "claymore_custom";
+								wallbuy.angles = ent.angles;
+								wallbuy.origin = ent.origin;
+								wallbuy struct::init();
+								ent struct::delete();
+							}
+							
+							kuda++;
+							break;
+						}
+					case "ar_longburst": //M8A7
+						{
+							if(m8a7 == 0)
+								ent.zombie_weapon_upgrade = "t5_mp5k";
+							else
+								ent.zombie_weapon_upgrade = "t5_m16a1";
+							
+							m8a7++;
+							break;
+						}
+					}
+				}
+				else if(GetGametypeSetting(mutator_wallbuys_zetsubou) == 3)
+				{
+					switch(VAL)
+					{
+					case "ar_marksman": //Sheiva
+						ent.zombie_weapon_upgrade = "t5_m14";
+						break;
+					case "pistol_burst": //RK5
+						{
+							ent.zombie_weapon_upgrade = "t5_olympia";
+							
+							//ent.origin += (-5, 0, 0);
+							//spawn_loc = struct::get(ent.target, "targetname");
+							//spawn_loc.origin += (-5, 0, 0);
+							
+							break;
+						}
+					case "pistol_fullauto": //L-CAR 9
+						{
+							ent.zombie_weapon_upgrade = "t5_pm63";
+							
+							spawn_loc = struct::get(ent.target, "targetname");
+							spawn_loc.origin += (5*cos(spawn_loc.angles[0])-4, 5*cos(spawn_loc.angles[1])+4, 0);
+							
+							break;
+						}
+					case "shotgun_precision": //Argus
+						ent.zombie_weapon_upgrade = "t5_stakeout";
+						break;
+					case "ar_accurate": //ICR-1
+						{
+							if(GetGametypeSetting(mutator_uzi) == 2)
+								ent.zombie_weapon_upgrade = "t5_uzi";
+							else
+								ent.zombie_weapon_upgrade = "t5_uzi_alt";
+							break;
+						}
+					case "smg_fastfire": //Vesper
+						ent.zombie_weapon_upgrade = "t5_mp40";
+						break;
+					case "shotgun_pump": //KRM-262
+						{
+							ent.zombie_weapon_upgrade = "t5_mpl";
+							
+							//ent.origin += (0, -7.5, 0);
+							//spawn_loc = struct::get(ent.target, "targetname");
+							//spawn_loc.origin += (0, -7.5, 0);
+							
+							break;
+						}
+					case "smg_burst": //Pharo
+						ent.zombie_weapon_upgrade = "t5_ak74u";
+						break;
+					case "ar_cqb": //HVK-30
+						{
+							if(hvk30 == 0) //Lab A
+								ent.zombie_weapon_upgrade = "t5_m16a1";
+							else //Bunker
+								ent.zombie_weapon_upgrade = "t5_ak74u";
+							
+							hvk30++;
+							break;
+						}
+					case "smg_versatile": //VMP
+						ent.zombie_weapon_upgrade = "t5_mp5k";
+						break;
+					case "ar_standard": //KN-44
+						ent.zombie_weapon_upgrade = "t5_kiparis";
+						break;
+					case "smg_standard": //Kuda
+						ent.zombie_weapon_upgrade = "t5_spectre";
+						break;
+					case "ar_longburst": //M8A7
+						{
+							if(m8a7 == 0)
+								ent.zombie_weapon_upgrade = "t5_ak74u";
+							else
+								ent.zombie_weapon_upgrade = "t5_m16a1";
+							
+							m8a7++;
+							break;
+						}
 					}
 				}
 				break;

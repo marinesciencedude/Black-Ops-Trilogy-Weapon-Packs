@@ -37,6 +37,8 @@ t5_python,t5_python_rdw_up,,1300,pistol,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,pistol
 t5_rpk,t5_rpk_up,,2500,lmg,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,lmg,,,
 t5_spas12,t5_spas12_up,,1250,shotgun,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,shotgun,,,
 t5_spectre,t5_spectre_up,,1100,smg,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,smg,,,
+t5_kiparis,t5_kiparis_up,,1100,smg,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,smg,,,
+t5_uzi,t5_uzi_up,,1250,smg,,,,,TRUE,FALSE,FALSE,,,FALSE,TRUE,smg,,,
 t5_stakeout,t5_stakeout_up,,1500,shotgun,,,,,FALSE,FALSE,FALSE,,,FALSE,TRUE,shotgun,,,
 t5_crossbow,t5_crossbow_up,,5000,special,,,,,TRUE,FALSE,TRUE,1,,FALSE,TRUE,special,TRUE,,
 t5_bk_base_normal_bo1,t5_bk_base_upgraded_bo1,,0,,,0,,,TRUE,FALSE,TRUE,1,1,FALSE,FALSE,special,,,,
