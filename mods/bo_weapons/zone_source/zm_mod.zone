@@ -105,6 +105,7 @@ stringtable,gamedata/weapons/zm/zm_levelcommon_weapons.csv
 stringtable,gamedata/weapons/zm/zm_castle_weapons.csv
 stringtable,gamedata/weapons/zm/zm_island_weapons.csv
 stringtable,gamedata/weapons/zm/zm_stalingrad_weapons.csv
+stringtable,gamedata/weapons/zm/zm_genesis_weapons.csv
 stringtable,gamedata/weapons/zm/zm_nuked_weapons.csv
 
 stringtable,gamedata/weapons/zm/zm_zod_weapons.csv

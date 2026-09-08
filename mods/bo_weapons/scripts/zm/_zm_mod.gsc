@@ -105,19 +105,19 @@ function apply_choices() {
 		}
 	}
 	
-	is_zns_uzi = (GetDvarString("mapname") == "zm_island" && GetGametypeSetting(mutator_wallbuys_zetsubou) == 3);
+	is_notwallbuy_uzi = !((GetDvarString("mapname") == "zm_island" && GetGametypeSetting(mutator_wallbuys_zetsubou) == 3) || GetDvarString("mapname") == "zm_genesis");
 	switch(GetGametypeSetting(mutator_uzi))
 	{
 	case 2:
 		{
-			zm_utility::include_weapon( "t5_uzi", is_zns_uzi );
+			zm_utility::include_weapon( "t5_uzi", is_notwallbuy_uzi );
 			zm_utility::include_weapon( "t5_uzi_up", false );
 			zm_weapons::add_zombie_weapon( "t5_uzi", "t5_uzi_up", "", 1500, "smg", "", undefined, undefined, false, "" );
 			break;
 		}
 	case 3:
 		{
-			zm_utility::include_weapon( "t5_uzi_alt", is_zns_uzi );
+			zm_utility::include_weapon( "t5_uzi_alt", is_notwallbuy_uzi );
 			zm_utility::include_weapon( "t5_uzi_up_alt", false );
 			zm_weapons::add_zombie_weapon( "t5_uzi_alt", "t5_uzi_up_alt", "", 1500, "smg", "", undefined, undefined, false, "" );
 			break;

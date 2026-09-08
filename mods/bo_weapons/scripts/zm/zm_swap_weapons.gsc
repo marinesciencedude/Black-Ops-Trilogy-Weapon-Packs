@@ -2806,6 +2806,145 @@ function swap_wall_weapon()
 				}
 				break;
 			}
+			case "zm_genesis": //Revelations
+			{
+				switch(VAL)
+				{
+				case "ar_marksman": //Sheiva
+					{
+						ent.zombie_weapon_upgrade = "t5_m14";
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, 0, -1);
+						break;
+					}
+				case "pistol_burst": //RK5
+					{
+						ent.zombie_weapon_upgrade = "t5_olympia";
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, 0, -1);
+						break;
+					}
+				case "pistol_fullauto": //L-CAR 9
+					{
+						if(lcar9 == 0) //Shangri-La
+							ent.zombie_weapon_upgrade = "t5_m14";
+						else //Nacht der Untoten
+						{
+							ent.zombie_weapon_upgrade = "t4_carbine";
+							spawn_loc = struct::get(ent.target, "targetname");
+							spawn_loc.origin += (16, 0, -4);
+						}
+						lcar9++;
+						break;
+					}
+				case "shotgun_pump": //KRM-262
+					{
+						if(krm262 == 0) //Origins
+						{
+							ent.zombie_weapon_upgrade = "t5_stakeout";
+							spawn_loc = struct::get(ent.target, "targetname");
+							spawn_loc.origin += (4, 0, 0);
+						}
+						else //Shangri-La
+						{
+							ent.zombie_weapon_upgrade = "t5_olympia";
+							spawn_loc = struct::get(ent.target, "targetname");
+							spawn_loc.origin += (0, 0, -1);
+						}
+						krm262++;
+						break;
+					}
+				case "ar_longburst": //M8A7
+					ent.zombie_weapon_upgrade = "t5_mp5k";
+					break;
+				case "smg_standard": //Kuda
+					ent.zombie_weapon_upgrade = "t5_ak74u";
+					break;
+				case "smg_versatile": //VMP
+					{
+						if(vmp == 0) //Der Eisendrache
+						{
+							ent.zombie_weapon_upgrade = "t5_mp40";
+							spawn_loc = struct::get(ent.target, "targetname");
+							spawn_loc.origin += (0, 1, 0);
+						}
+						else //Origins
+						{
+							ent.zombie_weapon_upgrade = "t5_ak74u";
+							spawn_loc = struct::get(ent.target, "targetname");
+							spawn_loc.origin += (1, 1, 0);
+						}
+						vmp++;
+						break;
+					}
+				case "smg_fastfire": //Vesper
+					{
+						if(vesper == 0) //Nacht der Untoten
+						{
+							ent.zombie_weapon_upgrade = "t4_bar";
+							spawn_loc = struct::get(ent.target, "targetname");
+							spawn_loc.origin += (0, 11, -3);
+						}
+						else //Origins
+						{
+							ent.zombie_weapon_upgrade = "t5_mp40";
+							spawn_loc = struct::get(ent.target, "targetname");
+							spawn_loc.origin += (0, -1, 0);
+						}
+						vesper++;
+						break;
+					}
+				case "smg_burst": //Pharo
+					ent.zombie_weapon_upgrade = "t5_pm63";
+					break;
+				case "ar_accurate": //ICR-1
+					{
+						ent.zombie_weapon_upgrade = "t5_m16a1";
+						spawn_loc = struct::get(ent.target, "targetname");
+						spawn_loc.origin += (0, 3, 1);
+						break;
+					}
+				case "ar_standard": //KN-44
+					{
+						if(kn44 == 0) //Verrückt
+						{
+							ent.zombie_weapon_upgrade = "t4_mp44";
+							spawn_loc = struct::get(ent.target, "targetname");
+							spawn_loc.origin += (19, 8, -4);
+						}
+						else //Origins
+						{
+							ent.zombie_weapon_upgrade = "t5_m16a1";
+							spawn_loc = struct::get(ent.target, "targetname");
+							spawn_loc.origin += (-3*cos(spawn_loc.angles[1]), -3*sin(spawn_loc.angles[1]), 0);
+						}
+						kn44++;
+						break;
+					}
+				case "ar_cqb": //HVK-30
+					{
+						if(hvk30 == 0) //Verrückt
+						{
+							ent.zombie_weapon_upgrade = "t4_thompson";
+							spawn_loc = struct::get(ent.target, "targetname");
+							spawn_loc.origin += (0, 0, -1);
+						}
+						else //Mob of the Dead (suggested by Monkeyzon)
+						{
+							if(GetGametypeSetting(mutator_uzi) == 2)
+								ent.zombie_weapon_upgrade = "t5_uzi";
+							else
+								ent.zombie_weapon_upgrade = "t5_uzi_alt";
+						}
+						hvk30++;
+						break;
+					}
+				case "shotgun_precision": //Argus
+					ent.zombie_weapon_upgrade = "t5_mp5k";
+					break;
+				}
+				break;
+			}
 			case "zm_nuked": //Nuketown Zombies
 			{
 				switch(VAL)
@@ -3285,6 +3424,7 @@ function swap_chalk()
 				case "zm_castle": //Der Eisendrache
 					ent.var_47896610 = util::spawn_model("wallbuy_thompson", spawn_loc.origin + VectorScale((-19*cos(spawn_loc.angles[1]), -19*sin(spawn_loc.angles[1]), -4), 1), spawn_loc.angles);
 					break;
+				case "zm_genesis": //Revelations
 				case "zm_island": //Zetsubou no Shima
 					ent.var_47896610 = util::spawn_model("wallbuy_thompson", spawn_loc.origin + VectorScale((-19*cos(spawn_loc.angles[1]), -19*sin(spawn_loc.angles[1])-1, -4), 1), spawn_loc.angles);
 					break;
@@ -3586,6 +3726,7 @@ function swap_chalk()
 				case "zm_giant": // TrustInUma's DER RIESE
 				case "zm_tomb": //Origins
 				case "zm_castle": //Der Eisendrache
+				case "zm_genesis": //Revelations
 					ent.var_47896610 = util::spawn_model("wallbuy_olympia", spawn_loc.origin + VectorScale((0, 0, -1), 1), spawn_loc.angles);
 					break;
 				case "zm_asylum": //Verrückt
@@ -3848,6 +3989,7 @@ function swap_chalk()
 					ent.var_47896610 = util::spawn_model("wallbuy_pm63", spawn_loc.origin + VectorScale((6, -1, 0.5), 1), spawn_loc.angles);
 					break;
 				case "zm_moon":
+				case "zm_genesis": //Revelations
 					ent.var_47896610 = util::spawn_model("wallbuy_pm63", spawn_loc.origin + VectorScale((5, 0, 0), 1), spawn_loc.angles);
 					break;
 				case "zm_zod": //Shadows of Evil
@@ -4257,9 +4399,12 @@ function swap_chalk()
 			}
 			case "smg_thompson":
 			{
-				//only Origins for now
-				spawn_loc = struct::get(ent.target, "targetname");
-				ent.var_47896610 = util::spawn_model("wallbuy_t7_m1927", spawn_loc.origin + VectorScale((9, 0, -1), 1), spawn_loc.angles);
+				//only Origins for now, Revelations is hidden
+				if(GetDvarString("mapname") == "zm_tomb")
+				{
+					spawn_loc = struct::get(ent.target, "targetname");
+					ent.var_47896610 = util::spawn_model("wallbuy_t7_m1927", spawn_loc.origin + VectorScale((9, 0, -1), 1), spawn_loc.angles);
+				}
 				break;
 			}
 			case "t5_spectre":
@@ -4343,6 +4488,7 @@ function swap_claymores()
 				claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin + (-6*cos(spawn_loc.angles[1]), -6*sin(spawn_loc.angles[1]), 3), spawn_loc.angles);
 				break;
 			case "zm_island": //Zetsubou no Shima
+			case "zm_genesis": //Revelations
 				claymore.var_47896610 = util::spawn_model("wallbuy_claymore", spawn_loc.origin + (6, 0, 3), spawn_loc.angles);
 				break;
 			default:

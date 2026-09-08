@@ -2646,6 +2646,93 @@ function swap_wall_weapon()
 				}
 				break;
 			}
+			case "zm_genesis": //Revelations
+			{
+				switch(VAL)
+				{
+				case "ar_marksman": //Sheiva
+					ent.zombie_weapon_upgrade = "t5_m14";
+					break;
+				case "pistol_burst": //RK5
+					ent.zombie_weapon_upgrade = "t5_olympia";
+					break;
+				case "pistol_fullauto": //L-CAR 9
+					{
+						if(lcar9 == 0) //Shangri-La
+							ent.zombie_weapon_upgrade = "t5_m14";
+						else //Nacht der Untoten
+							ent.zombie_weapon_upgrade = "t4_carbine";
+						lcar9++;
+						break;
+					}
+				case "shotgun_pump": //KRM-262
+					{
+						if(krm262 == 0) //Origins
+							ent.zombie_weapon_upgrade = "t5_stakeout";
+						else //Shangri-La
+							ent.zombie_weapon_upgrade = "t5_olympia";
+						krm262++;
+						break;
+					}
+				case "ar_longburst": //M8A7
+					ent.zombie_weapon_upgrade = "t5_mp5k";
+					break;
+				case "smg_standard": //Kuda
+					ent.zombie_weapon_upgrade = "t5_ak74u";
+					break;
+				case "smg_versatile": //VMP
+					{
+						if(vmp == 0) //Der Eisendrache
+							ent.zombie_weapon_upgrade = "t5_mp40";
+						else //Origins
+							ent.zombie_weapon_upgrade = "t5_ak74u";
+						vmp++;
+						break;
+					}
+				case "smg_fastfire": //Vesper
+					{
+						if(vesper == 0) //Nacht der Untoten
+							ent.zombie_weapon_upgrade = "t4_bar";
+						else //Origins
+							ent.zombie_weapon_upgrade = "t5_mp40";
+						vesper++;
+						break;
+					}
+				case "smg_burst": //Pharo
+					ent.zombie_weapon_upgrade = "t5_pm63";
+					break;
+				case "ar_accurate": //ICR-1
+					ent.zombie_weapon_upgrade = "t5_m16a1";
+					break;
+				case "ar_standard": //KN-44
+					{
+						if(kn44 == 0) //Verrückt
+							ent.zombie_weapon_upgrade = "t4_mp44";
+						else //Origins
+							ent.zombie_weapon_upgrade = "t5_m16a1";
+						kn44++;
+						break;
+					}
+				case "ar_cqb": //HVK-30
+					{
+						if(hvk30 == 0) //Verrückt
+							ent.zombie_weapon_upgrade = "t4_thompson";
+						else //Mob of the Dead (suggested by Monkeyzon)
+						{
+							if(GetGametypeSetting(mutator_uzi) == 2)
+								ent.zombie_weapon_upgrade = "t5_uzi";
+							else
+								ent.zombie_weapon_upgrade = "t5_uzi_alt";
+						}
+						hvk30++;
+						break;
+					}
+				case "shotgun_precision": //Argus
+					ent.zombie_weapon_upgrade = "t5_mp5k";
+					break;
+				}
+				break;
+			}
 			case "zm_nuked": //Nuketown Zombies
 			{
 				switch(VAL)
